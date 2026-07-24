@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manga Cover Social Pack"
+  short_description: "Collect manga covers, humanized intros, and XHS cover variants"
+  default_prompt: "Use $manga-cover-social-pack to collect covers and intros for a manga, optionally humanize the intro, and build a Xiaohongshu cover package with XHS Visual Director variants."
