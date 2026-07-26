@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Comic Dossier Packer"
+  short_description: "Build comic dossiers, cover sets, and social cards"
+  default_prompt: "Use $aw-comic-dossier-packer to collect manga covers, synthesize a sourced introduction, generate Xiaohongshu cover cards, and assemble the final comic dossier."

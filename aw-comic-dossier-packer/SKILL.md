@@ -1,7 +1,7 @@
 ---
-name: manga-cover-social-pack
+name: aw-comic-dossier-packer
 description: >-
-  End-to-end manga package workflow: collect original manga volume cover images,
+  End-to-end comic dossier workflow: collect original manga volume cover images,
   optionally upscale them with Gemini/Nano Banana, collect official manga
   introduction text from ACG databases, generate one direct Codex ImageGen
   Xiaohongshu cover card, optionally generate XHS Visual Director cover
@@ -10,9 +10,13 @@ description: >-
   {manga name}.md with intro, social cards, volume covers, and intro source
   links. Use when the user gives a manga/comic title and wants covers plus a
   summarized introduction and social card output.
+metadata:
+  author: aaron_xu
+  version: "0.1"
+  creation_context: "为将漫画封面收集、图片高清化、资料检索、中文介绍整理、小红书视觉生成和最终档案交付整合为可复用工作流而创建。"
 ---
 
-# Manga Cover Social Pack
+# AW Comic Dossier Packer
 
 Build one complete manga dossier from a title: cover images, synthesized intro,
 Xiaohongshu cover cards, and a final Markdown report.
@@ -27,25 +31,39 @@ collection and enhancement:
 - `scripts/enhance_covers.mjs`: batch-enhances downloaded covers through
   `scripts/nano_banana_upscale.py`.
 
-Optional skill:
+Optional skills:
 
-- If `/Users/aaronxu/.codex/skills/humanizer-zh/SKILL.md` is installed, read it
+- If `humanizer-zh` is available in the Skill catalog or a standard user/project
+  Skill directory, read it
   after synthesizing the source-based intro and generate a natural Chinese
   rewrite for the final Markdown. If it is missing, skip the optimized intro
   section and continue.
-- If `/Users/aaronxu/.codex/skills/xhs-visual-director/SKILL.md` is installed,
+- If `xhs-visual-director` is available in the Skill catalog or a standard
+  user/project Skill directory,
   read it before step 5 and generate optional Xiaohongshu cover variants. If it
   is missing, skip the Visual Director variants and continue with the direct
   ImageGen card only.
 
 Do not edit optional upstream skills. Put all generated work in the current
-workspace.
+task output directory, never inside this Skill folder.
+
+## Resolve Directories
+
+Before collecting covers, ask the user to specify the task output directory.
+Use an explicit directory from the current request when already provided. If
+the user does not specify one, use the current project's repository root; when
+there is no repository, use the current working directory. State the resolved
+absolute task path before writing.
+
+Resolve `<skill-dir>` as the directory containing this `SKILL.md`. Use it only
+to locate bundled scripts. Resolve `<task>` under the selected task output
+directory as `manga-social-pack/<safe manga title>`.
 
 ## Workflow
 
 1. Collect all original volume cover images from BOOKOF/bookof.moe first.
    - Run:
-     `node /Users/aaronxu/.codex/skills/manga-cover-social-pack/scripts/collect_raw_covers.mjs "<漫画名>" --out-dir "<task>/covers"`.
+     `node "<skill-dir>/scripts/collect_raw_covers.mjs" "<漫画名>" --out-dir "<task>/covers"`.
    - If the exact title returns zero results, retry likely aliases before
      giving up: Simplified Chinese, Traditional Chinese, Japanese title, romaji,
      and English title discovered from intro/search results.
@@ -62,7 +80,7 @@ workspace.
    - If yes, keep `covers/` as the final cover folder and do not enhance.
    - If no, enhance the downloaded originals into `covers-enhanced/` with the
      bundled Nano Banana API workflow, not Gemini CLI:
-     `node /Users/aaronxu/.codex/skills/manga-cover-social-pack/scripts/enhance_covers.mjs --input-dir "<task>/covers" --out-dir "<task>/covers-enhanced"`.
+     `node "<skill-dir>/scripts/enhance_covers.mjs" --input-dir "<task>/covers" --out-dir "<task>/covers-enhanced"`.
    - The batch script calls `scripts/nano_banana_upscale.py`, which reads
      `GEMINI_API_KEY` or `GOOGLE_API_KEY` from the environment; if missing, it
      sources `~/.zshrc` and reads the key from there. Never print the key.
@@ -89,8 +107,7 @@ workspace.
    - Synthesize one copyright-safe Chinese intro of about 400 Chinese
      characters.
 4. Optimize the synthesized intro when `humanizer-zh` is installed.
-   - If `/Users/aaronxu/.codex/skills/humanizer-zh/SKILL.md` is readable, read
-     it before rewriting.
+   - If `humanizer-zh` is available, read it before rewriting.
    - Rewrite the synthesized intro to sound more natural and less AI-generated
      while preserving facts, names, genre, premise, and source-grounded claims.
    - Keep the optimized version concise, suitable for a manga dossier, and close
@@ -111,7 +128,7 @@ workspace.
    - If ImageGen saves the source image under Codex's generated-images folder,
      copy that exact generated image into `social-card/xhs-02-ai-generated.png`
      and leave the original generated-images file in place.
-   - If `/Users/aaronxu/.codex/skills/xhs-visual-director/SKILL.md` is readable,
+   - If `xhs-visual-director` is available,
      read it and use it as the optional visual-direction layer for Xiaohongshu
      cover generation. Read only the XHS Visual Director references it requires
      for cover style selection, prompt rules, final image generation, and visual
@@ -167,7 +184,8 @@ workspace.
 
 ## Output Folder
 
-Use a deterministic folder in the current workspace:
+Use a deterministic folder under the user-selected task output directory, or
+under the current project directory when the user did not specify one:
 
 ```text
 manga-social-pack/<safe manga title>/

@@ -1,4 +1,0 @@
-interface:
-  display_name: "AW Port AXO UI Component"
-  short_description: "Port verified Base UI components into AXO conventions"
-  default_prompt: "Use $aw-port-axo-ui-component to verify and minimally port this Base UI ecosystem component into AXO without importing its component library wholesale."

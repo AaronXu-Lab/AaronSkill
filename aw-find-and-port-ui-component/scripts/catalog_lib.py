@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Catalog refresh and search helpers for aw-find-ui-component."""
+"""Catalog refresh and search helpers for aw-find-and-port-ui-component."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any, Callable, Iterable
 
 
-USER_AGENT = "aw-find-ui-component/1.0 (+catalog refresh)"
+USER_AGENT = "aw-find-and-port-ui-component/1.0 (+catalog refresh)"
 LINK_RE = re.compile(r"^-\s+\[([^\]]+)\]\((https?://[^)]+)\)(?::\s*(.*))?\s*$")
 INLINE_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)(?::\s*(.*))?")
 
@@ -450,7 +450,7 @@ def _fetch_source_documents(
         command_env = os.environ.copy()
         command_env.setdefault(
             "npm_config_cache",
-            str(Path(tempfile.gettempdir()) / "aw-find-ui-component-npm-cache"),
+            str(Path(tempfile.gettempdir()) / "aw-find-and-port-ui-component-npm-cache"),
         )
         completed = subprocess.run(
             source["command"],

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Find and Port UI Component"
+  short_description: "Find, verify, and port UI components in two phases"
+  default_prompt: "Use $aw-find-and-port-ui-component to run either the Find phase or the Port phase for this UI component request, keeping explicit user selection between phases."
