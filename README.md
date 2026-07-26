@@ -49,8 +49,6 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-figma-component-governance`](./aw-figma-component-governance/) | 治理 Figma 组件命名、Variant、Property、Slot 和顺序 | 不安全的 Variant 值重排保留为人工操作 |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
 | [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
-| `aw-dingtalk-daily-report` | 在 macOS 钉钉中准备日报草稿 | 永不自动提交，始终留给用户复核 |
-| `aw-markdown-to-feishu` | 将本地 Markdown 章节发布到飞书 Wiki Docx | 保留本地图片；发布后回读验证标题和目录 |
 
 ## 这些 Skill 如何工作
 
@@ -86,7 +84,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 每个 Skill 的依赖不同。调用前请阅读对应 `SKILL.md`：
 
-- Figma、飞书、钉钉等流程需要对应应用、权限或授权状态。
+- Figma 等外部工具流程需要对应应用、权限或授权状态。
 - 图片高清化需要 Gemini API Key，并可能产生 API 费用。
 - 网页检索、GitHub 源码验证和远程发布需要网络访问。
 - 标注为 optional 的 Skill 缺失时应降级执行，而不是伪造能力。

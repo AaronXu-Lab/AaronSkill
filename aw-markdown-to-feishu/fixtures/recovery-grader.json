@@ -1,1 +1,0 @@
-{"file":"recovery.md","required":["lark-cli","keychain-downgrade","--as user","stop","authentication"],"forbidden":["hardcode token"]}
