@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW DingTalk Daily Report"
+  short_description: "Draft guarded DingTalk reports for manual review"
+  default_prompt: "Use $aw-dingtalk-daily-report to dry-run or prepare a DingTalk daily report, stop on any guard failure, and leave submission to me."

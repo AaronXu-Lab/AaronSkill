@@ -1,0 +1,3 @@
+shell: command not found: lark-cli
+previous sandbox attempt: keychain Get failed
+requested identity: user

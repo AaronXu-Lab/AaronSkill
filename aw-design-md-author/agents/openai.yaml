@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW DESIGN.md Author"
+  short_description: "Create and validate complete DESIGN.md contracts"
+  default_prompt: "Use $aw-design-md-author to fully create or review this DESIGN.md, choose the correct ownership mode, and validate the complete result."

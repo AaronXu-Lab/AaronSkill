@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Design Token Consistency Auditor"
+  short_description: "Compare design tokens across two or three sources"
+  default_prompt: "Use $aw-design-token-consistency-auditor to compare the selected Figma Variables, DESIGN.md, and CSS/Less sources, then generate schema-compliant Markdown, JSON, and CSV reports."

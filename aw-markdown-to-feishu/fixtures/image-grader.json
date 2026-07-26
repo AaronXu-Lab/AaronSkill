@@ -1,0 +1,1 @@
+{"file":"image-workflow.md","required":["upload_markdown_images.py","prepare_image_anchors.py","+media-insert","图片：","block_delete","GITHUB_TOKEN","local files"],"forbidden":["token=","--trash"]}

@@ -1,0 +1,4 @@
+{"stage":"fullscreen","status":"ok"}
+{"stage":"open_write_log","status":"failed","error":"blue 写日志 button was not detected"}
+{"stage":"fill_blank_write_log_keyboard","status":"skipped"}
+{"stage":"submit","status":"not_attempted"}

@@ -1,0 +1,1 @@
+{"id":"42:100","name":"Button","componentPropertyDefinitions":{"state":{"type":"VARIANT","variantOptions":["disable","default","hover"]},"size":{"type":"VARIANT","variantOptions":["small","large","medium"]},"showIcon":{"type":"BOOLEAN","defaultValue":true}},"children":[{"id":"42:101","name":"state=default,size=large"},{"id":"42:102","name":"state=hover,size=large"}]}

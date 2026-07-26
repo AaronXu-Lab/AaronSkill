@@ -1,0 +1,40 @@
+version: "1"
+defaults:
+  agent: codex
+  provider: local
+  trials: 5
+  timeout: 300
+  threshold: 0.8
+  docker:
+    base: node:20-slim
+    setup: apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+tasks:
+  - name: audit-three-token-sources
+    instruction: |
+      Use the aw-design-token-consistency-auditor skill to compare DESIGN.md, theme.css, and figma-variables.json. Write audit.json with summary, mismatches, missing tokens by source, and unclear mappings. Normalize case and units before deciding equality; do not edit inputs.
+    workspace:
+      - {src: fixtures/DESIGN.md, dest: DESIGN.md}
+      - {src: fixtures/theme.css, dest: theme.css}
+      - {src: fixtures/figma-variables.json, dest: figma-variables.json}
+      - {src: fixtures/audit-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - {type: llm_rubric, weight: 0.3, rubric: "Score normalization accuracy, source-aware mismatch classification, evidence, and actionable remediation without silently editing source files."}
+  - name: propose-alias-mapping
+    instruction: |
+      Use the aw-design-token-consistency-auditor skill to analyze aliases.json. Write mapping.json with normalized values, proposed cross-source mappings, conflicts, and uncertain mappings. Do not treat equal values alone as proof of semantic equivalence.
+    workspace:
+      - {src: fixtures/aliases.json, dest: aliases.json}
+      - {src: fixtures/alias-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - {type: llm_rubric, weight: 0.3, rubric: "Score semantic caution, unit normalization, duplicate handling, and clarity of proposed mappings."}
+  - name: report-incomplete-coverage
+    instruction: |
+      Read available-sources.md and use the aw-design-token-consistency-auditor skill. Write limitations.md explaining exactly what can and cannot be concluded, what evidence is missing, and the next steps needed for a complete three-source audit.
+    workspace:
+      - {src: fixtures/partial-source.md, dest: available-sources.md}
+      - {src: fixtures/partial-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - {type: llm_rubric, weight: 0.3, rubric: "Score epistemic restraint, explicit coverage boundaries, and practical next steps."}

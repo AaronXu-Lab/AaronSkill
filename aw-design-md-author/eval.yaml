@@ -1,0 +1,51 @@
+version: "1"
+
+defaults:
+  agent: codex
+  provider: local
+  trials: 5
+  timeout: 300
+  threshold: 0.8
+  docker:
+    base: node:20-slim
+    setup: apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+
+tasks:
+  - name: choose-ownership-mode
+    instruction: |
+      Read project-context.md and use the aw-design-md-author skill. Write ownership-review.md identifying the correct ownership mode, what DESIGN.md should own, what remains authoritative in code, and the required external verification. Do not modify project-context.md.
+    workspace:
+      - {src: fixtures/code-backed-context.md, dest: project-context.md}
+      - {src: fixtures/code-backed-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - type: llm_rubric
+        weight: 0.3
+        rubric: |
+          Score whether the response correctly selects code-backed ownership, avoids duplicating component-exact values, and identifies Storybook, visual-regression, theme, and accessibility verification.
+
+  - name: review-invalid-design-md
+    instruction: |
+      Review candidate-DESIGN.md with the aw-design-md-author skill without editing it. Write review.md. Use the exact official lint rule IDs for every identifiable problem and explicitly identify the boilerplate section that should be removed.
+    workspace:
+      - {src: fixtures/invalid-design.md, dest: candidate-DESIGN.md}
+      - {src: fixtures/review-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - type: llm_rubric
+        weight: 0.3
+        rubric: |
+          Score correctness, completeness, and whether proposed fixes preserve token ownership and canonical section order.
+
+  - name: author-standalone-contract
+    instruction: |
+      Read authoring-brief.md and use the aw-design-md-author skill to create a complete DESIGN.md. Follow the official flat schema, canonical section order, semantic references, and standalone ownership requirements.
+    workspace:
+      - {src: fixtures/authoring-brief.md, dest: authoring-brief.md}
+      - {src: fixtures/authoring-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - type: llm_rubric
+        weight: 0.3
+        rubric: |
+          Score schema fidelity, canonical order, semantic naming, component completeness, and whether prose explains application rather than repeating token values.

@@ -1,0 +1,38 @@
+version: "1"
+defaults:
+  agent: codex
+  provider: local
+  trials: 5
+  timeout: 300
+  threshold: 0.8
+  docker:
+    base: node:20-slim
+    setup: apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+tasks:
+  - name: audit-variant-order
+    instruction: |
+      Use the aw-figma-component-governance skill to inspect component-set.json and write audit.md. Compare every reported variantOptions order with the target order. Because the API cannot safely reorder existing values, include the mandatory Manual Value Reordering section with component ID, exact current order, target order, and right-sidebar action. Do not propose rebuilding the set.
+    workspace:
+      - {src: fixtures/component-set.json, dest: component-set.json}
+      - {src: fixtures/order-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - {type: llm_rubric, weight: 0.3, rubric: "Score exact order comparison, completeness of the mandatory manual section, safe API reasoning, and preservation of component identity."}
+  - name: plan-semantic-renames
+    instruction: |
+      Use the aw-figma-component-governance skill to audit layers.json and write rename-plan.json with component, renames, ignored, and validation. Rename only owned layers using title case and semantic responsibility; explicitly preserve inherited external internals.
+    workspace:
+      - {src: fixtures/layers.json, dest: layers.json}
+      - {src: fixtures/layer-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - {type: llm_rubric, weight: 0.3, rubric: "Score semantic naming, title case, correct treatment of external inherited layers, and a narrow validation plan."}
+  - name: model-variant-property-boundaries
+    instruction: |
+      Use the aw-figma-component-governance skill to read property-brief.md and write modeling.md. Choose appropriate Variant, Boolean Property, and Instance Swap boundaries, give exact proposed names/values, and explain how the model avoids variant explosion.
+    workspace:
+      - {src: fixtures/property-brief.md, dest: property-brief.md}
+      - {src: fixtures/property-grader.json, dest: grader-spec.json}
+    graders:
+      - {type: deterministic, run: graders/check-required.sh, weight: 0.7}
+      - {type: llm_rubric, weight: 0.3, rubric: "Score correct modeling boundaries, naming conventions, state handling, and avoidance of combinatorial variants."}

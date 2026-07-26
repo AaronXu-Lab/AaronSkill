@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "shadcn-base",
+      "name": "shadcn/ui Base",
+      "kind": "shadcn_cli",
+      "command": ["npx", "-y", "shadcn@latest", "list", "@shadcn", "--json", "--limit", "100"],
+      "preview_template": "https://ui.shadcn.com/docs/components/base/{slug}",
+      "source_template": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/bases/base/ui/{slug}.tsx",
+      "verify_preview": true,
+      "foundation": "base-ui",
+      "variant": "base",
+      "license": "MIT",
+      "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live."
+    },
+    {
+      "id": "coss-ui",
+      "name": "coss ui",
+      "kind": "markdown_index",
+      "catalog_url": "https://coss.com/ui/llms.txt",
+      "sections": ["Components", "Particles"],
+      "strip_preview_suffix": ".md",
+      "source_template": "https://coss.com/ui/r/{slug}.json",
+      "foundation": "base-ui",
+      "variant": "base",
+      "license": "MIT for apps/ui; verify exact source before copying",
+      "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI."
+    },
+    {
+      "id": "dice-ui-base",
+      "name": "Dice UI Base",
+      "kind": "registry_sitemap",
+      "catalog_url": "https://diceui.com/r/base-vega/registry.json",
+      "sitemap_url": "https://diceui.com/sitemap.xml",
+      "sitemap_prefix": "https://diceui.com/docs/components/base/",
+      "preview_template": "https://diceui.com/docs/components/base/{slug}",
+      "source_template": "https://diceui.com/r/base-vega/{slug}.json",
+      "forbidden_dependencies": ["radix-ui", "@radix-ui/", "react-aria", "@react-aria/", "@ark-ui/", "@headlessui/"],
+      "foundation": "base-ui",
+      "variant": "base",
+      "license": "MIT; verify exact source before copying",
+      "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present."
+    },
+    {
+      "id": "reui-public-base",
+      "name": "ReUI Public Base",
+      "kind": "github_tree_paths",
+      "catalog_url": "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1",
+      "path_prefix": "registry-reui/_meta/components/bases/base/",
+      "path_suffix": ".json",
+      "preview_template": "https://reui.io/components/{slug}",
+      "source_template": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/{slug}",
+      "foundation": "base-ui",
+      "variant": "base",
+      "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
+      "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting."
+    },
+    {
+      "id": "exabase-design",
+      "name": "exaBase Design System",
+      "kind": "markdown_link_prefix",
+      "catalog_url": "https://exawizards.com/exabase/design/llms.txt",
+      "base_url": "https://exawizards.com/exabase/design/",
+      "link_prefix": "/docs/components/",
+      "preview_template": "https://exawizards.com/exabase/design/docs/components/{slug}/",
+      "source_template": "https://exawizards.com/exabase/design/registry/{slug}.json",
+      "foundation": "base-ui",
+      "variant": "base",
+      "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
+      "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies."
+    }
+  ]
+}

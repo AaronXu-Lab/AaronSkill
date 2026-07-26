@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Figma Component Governance"
+  short_description: "Govern Figma components and variant ordering"
+  default_prompt: "Use $aw-figma-component-governance to audit or organize Figma components, include the fixed Manual Value Reordering section, and attach the structured governance audit."

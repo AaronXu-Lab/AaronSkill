@@ -1,0 +1,1 @@
+{"file":"audit.md","required":["Manual Value Reordering","42:100","right sidebar","manual dragging"],"required_regex":["disable\\W+default\\W+hover","default\\W+hover\\W+disable","small\\W+large\\W+medium","large\\W+medium\\W+small"],"forbidden":["rebuild the component set"]}

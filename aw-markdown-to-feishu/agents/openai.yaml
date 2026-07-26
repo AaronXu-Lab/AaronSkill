@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Markdown to Feishu"
+  short_description: "Publish local Markdown safely into Feishu Wiki"
+  default_prompt: "Use $aw-markdown-to-feishu to extract and publish a local Markdown section as a verified Feishu Wiki document while preserving all local source files."

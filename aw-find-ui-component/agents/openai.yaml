@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Find UI Component"
+  short_description: "Compare Base UI catalogs with license provenance"
+  default_prompt: "Use $aw-find-ui-component to find and compare Base UI implementations of this component across all curated catalogs, including ReUI public MIT and exaBase, and report license provenance plus excluded variants before choosing one to port."
