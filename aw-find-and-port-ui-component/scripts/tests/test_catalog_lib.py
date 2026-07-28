@@ -17,6 +17,7 @@ from catalog_lib import (  # noqa: E402
     parse_markdown_link_prefix,
     parse_registry_sitemap,
     parse_shadcn_cli,
+    parse_shadcn_registry_variants,
     refresh_catalogs,
     search_catalog,
 )
@@ -171,6 +172,69 @@ class CatalogParsingTests(unittest.TestCase):
         items = parse_github_tree_paths(source, tree)
         self.assertEqual([item["slug"] for item in items], ["breadcrumb"])
         self.assertEqual(items[0]["license"], "MIT public only")
+
+    def test_registry_variant_parser_prefers_base_and_keeps_native_items(self) -> None:
+        source = {
+            "id": "fluid",
+            "name": "Fluid",
+            "preview_template": "https://example.test/docs/{slug}",
+            "source_template": "https://example.test/r/{registry_slug}.json",
+            "preferred_suffix": "-base",
+            "preferred_title_suffix": " (Base UI)",
+            "forbidden_dependencies": ["@radix-ui/"],
+            "verify_preview": True,
+            "foundation": "base-ui-or-native",
+            "variant": "base-or-native",
+            "license": "MIT",
+            "base_ui_evidence": "verified",
+        }
+        registry = json.dumps(
+            {
+                "items": [
+                    {
+                        "name": "dialog",
+                        "title": "Dialog",
+                        "type": "registry:ui",
+                        "dependencies": ["@radix-ui/react-dialog"],
+                    },
+                    {
+                        "name": "dialog-base",
+                        "title": "Dialog (Base UI)",
+                        "type": "registry:ui",
+                        "dependencies": ["@base-ui/react"],
+                    },
+                    {
+                        "name": "badge",
+                        "title": "Badge",
+                        "type": "registry:ui",
+                        "dependencies": ["class-variance-authority"],
+                    },
+                    {
+                        "name": "radix-only",
+                        "title": "Radix Only",
+                        "type": "registry:ui",
+                        "dependencies": ["@radix-ui/react-popover"],
+                    },
+                    {
+                        "name": "utils",
+                        "title": "Utilities",
+                        "type": "registry:lib",
+                    },
+                ]
+            }
+        )
+        items = parse_shadcn_registry_variants(
+            source,
+            registry,
+            validator=lambda url: not url.endswith("/missing"),
+        )
+        self.assertEqual([item["slug"] for item in items], ["badge", "dialog"])
+        dialog = next(item for item in items if item["slug"] == "dialog")
+        self.assertEqual(dialog["name"], "Dialog")
+        self.assertEqual(dialog["registry_slug"], "dialog-base")
+        self.assertEqual(
+            dialog["source_url"], "https://example.test/r/dialog-base.json"
+        )
 
 
 class CatalogRefreshTests(unittest.TestCase):

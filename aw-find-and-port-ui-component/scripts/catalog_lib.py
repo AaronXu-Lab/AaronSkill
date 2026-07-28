@@ -432,6 +432,88 @@ def parse_shadcn_cli(
     )
 
 
+def parse_shadcn_registry_variants(
+    source: dict[str, Any],
+    text: str,
+    validator: Callable[[str], bool] = url_exists,
+) -> list[dict[str, Any]]:
+    """Prefer explicit Base UI variants and keep compatible native UI items."""
+    registry = json.loads(text)
+    preferred_suffix = source.get("preferred_suffix", "-base")
+    forbidden = tuple(source.get("forbidden_dependencies", []))
+    groups: dict[str, list[dict[str, Any]]] = {}
+
+    for raw_item in registry.get("items", []):
+        if raw_item.get("type") != "registry:ui":
+            continue
+        registry_slug = raw_item.get("name", "").strip()
+        if not registry_slug:
+            continue
+        slug = (
+            registry_slug[: -len(preferred_suffix)]
+            if preferred_suffix and registry_slug.endswith(preferred_suffix)
+            else registry_slug
+        )
+        groups.setdefault(slug, []).append(raw_item)
+
+    candidates: list[dict[str, Any]] = []
+    for slug, variants in groups.items():
+        preferred = [
+            item
+            for item in variants
+            if preferred_suffix and item["name"].endswith(preferred_suffix)
+        ]
+        selected = preferred or variants
+        for raw_item in selected:
+            dependencies = list(
+                dict.fromkeys(
+                    [
+                        *raw_item.get("dependencies", []),
+                        *raw_item.get("registryDependencies", []),
+                    ]
+                )
+            )
+            if any(
+                dependency == prefix or dependency.startswith(prefix)
+                for dependency in dependencies
+                for prefix in forbidden
+            ):
+                continue
+            registry_slug = raw_item["name"]
+            title = raw_item.get("title") or slug.replace("-", " ").title()
+            preferred_title_suffix = source.get("preferred_title_suffix", "")
+            if (
+                preferred_title_suffix
+                and registry_slug.endswith(preferred_suffix)
+                and title.endswith(preferred_title_suffix)
+            ):
+                title = title[: -len(preferred_title_suffix)]
+            item = _base_item(
+                source,
+                title,
+                slug,
+                raw_item.get("description") or "",
+                source["preview_template"].format(slug=slug),
+                source.get("source_template", "").format(
+                    slug=slug, registry_slug=registry_slug
+                )
+                or None,
+                "Components",
+                dependencies,
+            )
+            item["registry_slug"] = registry_slug
+            candidates.append(item)
+
+    if source.get("verify_preview"):
+        valid_urls = _validate_urls(
+            (item["preview_url"] for item in candidates), validator
+        )
+        candidates = [
+            item for item in candidates if item["preview_url"] in valid_urls
+        ]
+    return _deduplicate(candidates)
+
+
 def _deduplicate(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     unique: dict[tuple[str, str], dict[str, Any]] = {}
     for item in items:
@@ -556,6 +638,11 @@ def refresh_catalogs(
                 command_key = "command:" + " ".join(source["command"])
                 items = parse_shadcn_cli(
                     source, documents[command_key], validator
+                )
+                last_success = now
+            elif source["kind"] == "shadcn_registry_variants":
+                items = parse_shadcn_registry_variants(
+                    source, documents[source["catalog_url"]], validator
                 )
                 last_success = now
             else:

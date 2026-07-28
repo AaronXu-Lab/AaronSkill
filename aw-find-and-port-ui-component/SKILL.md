@@ -3,7 +3,7 @@ name: aw-find-and-port-ui-component
 description: Find, compare, verify, and port UI component implementations through two strictly separated phases. Use Find to discover candidates and compare behavior, source, license, dependencies, and target-project compatibility without modifying code. Use Port only after the user explicitly selects an implementation or supplies an exact source, then adapt the smallest required behavior to the target project's existing components, conventions, technology stack, and optional DESIGN.md guidance.
 metadata:
   author: aaron_xu
-  version: "0.1"
+  version: "0.2"
   creation_context: "为将 UI 组件发现、比较、来源验证与项目移植整合为通用的两阶段工作流而创建，在保留用户明确选择门的同时，统一处理许可证、依赖兼容性、现有组件复用与目标项目风格适配。"
 ---
 
@@ -46,6 +46,7 @@ The bundled catalogs currently cover verified Base UI or compatible native varia
 - Dice UI Base
 - ReUI material verified in its public MIT repository
 - exaBase Design System V4
+- Fluid Functionalism Base UI or compatible native variants
 
 These are the current built-in discovery sources, not permanent compatibility judgments or requirements for the Port phase.
 
@@ -62,7 +63,8 @@ python3 scripts/search_catalogs.py --query "<component>" --alias "<alternate ter
 4. When a catalog lacks an eligible match, inspect the same library's current official variants and record any incompatible result separately with evidence. Do not generalize a variant-level incompatibility to the whole library.
 5. For ReUI, accept only source traceable to the public repository; keep paid or authenticated distribution separate.
 6. For exaBase, report upstream and ExaWizards provenance accurately. Require attribution and a modification note when copied material requires CC BY 4.0 treatment.
-7. Rank exact behavioral matches first, semantic equivalents second, and useful compositions last.
+7. For Fluid Functionalism, prefer the Base UI registry item when both Base UI and Radix variants exist. Treat the catalog entry as a lead and verify the exact live registry item and its dependency graph before recommending or porting.
+8. Rank exact behavioral matches first, semantic equivalents second, and useful compositions last.
 
 Search beyond the bundled catalogs only when the user explicitly requests broader discovery. Verify each additional source's official documentation, repository, exact implementation, license, maintenance status, and target-project compatibility. Add it to `references/sources.json` only after the user approves maintaining it as a curated source.
 

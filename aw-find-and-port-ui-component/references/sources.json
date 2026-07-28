@@ -69,6 +69,22 @@
       "variant": "base",
       "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
       "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies."
+    },
+    {
+      "id": "fluid-functionalism",
+      "name": "Fluid Functionalism",
+      "kind": "shadcn_registry_variants",
+      "catalog_url": "https://www.fluidfunctionalism.com/r/registry.json",
+      "preview_template": "https://www.fluidfunctionalism.com/docs/{slug}",
+      "source_template": "https://www.fluidfunctionalism.com/r/{registry_slug}.json",
+      "verify_preview": true,
+      "preferred_suffix": "-base",
+      "preferred_title_suffix": " (Base UI)",
+      "forbidden_dependencies": ["radix-ui", "@radix-ui/", "react-aria", "@react-aria/", "@ark-ui/", "@headlessui/"],
+      "foundation": "base-ui-or-native",
+      "variant": "base-or-native",
+      "license": "MIT; verify the exact public registry item and preserve the repository license notice",
+      "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting."
     }
   ]
 }
