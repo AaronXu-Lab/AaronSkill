@@ -1,9 +1,9 @@
 # ReUI Public Base
 
 - Status: `fresh`
-- Last checked: `2026-07-24T06:04:28+00:00`
-- Last successful refresh: `2026-07-23T10:38:36+00:00`
-- Eligible components: `72`
+- Last checked: `2026-07-28T02:14:29+00:00`
+- Last successful refresh: `2026-07-27T07:25:29+00:00`
+- Eligible components: `73`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|
@@ -40,6 +40,7 @@
 | Gantt |  | [Preview](https://reui.io/components/gantt) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/gantt) |
 | Hover Card |  | [Preview](https://reui.io/components/hover-card) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/hover-card) |
 | Icon Stack |  | [Preview](https://reui.io/components/icon-stack) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/icon-stack) |
+| Icon Tile |  | [Preview](https://reui.io/components/icon-tile) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/icon-tile) |
 | Input |  | [Preview](https://reui.io/components/input) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/input) |
 | Input Group |  | [Preview](https://reui.io/components/input-group) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/input-group) |
 | Input Otp |  | [Preview](https://reui.io/components/input-otp) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/input-otp) |
