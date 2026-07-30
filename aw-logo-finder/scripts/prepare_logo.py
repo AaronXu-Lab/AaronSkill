@@ -59,8 +59,8 @@ def open_source(path: Path, render_width: int) -> Image.Image:
 
 def make_canvas(image: Image.Image, size: tuple[int, int], background: str) -> Image.Image:
     target_width, target_height = size
-    image = image.copy()
-    image.thumbnail(size, Image.Resampling.LANCZOS)
+    # contain() scales up as well as down; thumbnail() only ever shrinks.
+    image = ImageOps.contain(image, size, Image.Resampling.LANCZOS)
 
     if background.lower() == "transparent":
         canvas = Image.new("RGBA", size, (0, 0, 0, 0))
