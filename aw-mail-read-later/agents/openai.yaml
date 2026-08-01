@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW 稍后阅读内容"
+  short_description: "根据当下情境推荐并处理 Outlook 稍后阅读内容"
+  default_prompt: "使用 $aw-mail-read-later，从 Outlook 的 Read Later 文件夹中推荐一项适合当前阅读的内容。"
