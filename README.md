@@ -49,6 +49,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-figma-component-governance`](./aw-figma-component-governance/) | 治理 Figma 组件命名、Variant、Property、Slot 和顺序 | 不安全的 Variant 值重排保留为人工操作 |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
 | [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
+| [`rewrite-like-aaron`](./rewrite-like-aaron/) | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
 ## 这些 Skill 如何工作
 
