@@ -12,7 +12,7 @@ description: >-
   summarized introduction and social card output.
 metadata:
   author: aaron_xu
-  version: "0.1"
+  version: "1.0"
   creation_context: "为将漫画封面收集、图片高清化、资料检索、中文介绍整理、小红书视觉生成和最终档案交付整合为可复用工作流而创建。"
 ---
 

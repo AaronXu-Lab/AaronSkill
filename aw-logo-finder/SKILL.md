@@ -1,6 +1,9 @@
 ---
 name: aw-logo-finder
 description: Find, verify, compare, and export the best brand logo from the brand's official website, HQ ICON, BrandEPS, CDNLogo, Apple App Store, Google Play, and Xiaomi App Store. Use when Codex must locate a company or product logo, favicon, connector icon, or app icon; reject unsuitable aspect ratios and watermarks; prefer authentic high-resolution sources; pause for explicit candidate and output-dimension confirmation; then deliver a verified lossless WebP asset.
+metadata:
+  author: aaron_xu
+  version: "1.0"
 ---
 
 # AW Logo Finder
