@@ -1,4 +1,4 @@
 interface:
-  display_name: "AW DESIGN.md Author"
-  short_description: "Create and validate complete DESIGN.md contracts"
+  display_name: "AW Design.md Author"
+  short_description: "创建并校验完整的 DESIGN.md 设计契约"
   default_prompt: "Use $aw-design-md-author to fully create or review this DESIGN.md, choose the correct ownership mode, and validate the complete result."

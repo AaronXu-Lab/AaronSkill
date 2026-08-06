@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780" role="img" aria-labelledby="workflow-title workflow-desc">
+  <title id="workflow-title">UI/UX 重复信息审计流程</title>
+  <desc id="workflow-desc">从证据到最小改动的六阶段 UI/UX 重复信息审计流程图，包含盘点、归一化、判断、范围限制、建议以及验证与交付。</desc>
+
+  <defs>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#1d273d" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      text {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.44px;
+      }
+
+      .heading {
+        font-size: 46px;
+        font-weight: 650;
+        letter-spacing: -1.61px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .stage-card {
+        fill: #ffffff;
+        stroke: #dfe3e8;
+        stroke-width: 1;
+      }
+
+      .stage-number {
+        fill: #edf2ff;
+      }
+
+      .number {
+        font-size: 16px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+
+      .stage-title {
+        font-size: 17px;
+        font-weight: 650;
+      }
+
+      .stage-copy {
+        font-size: 14px;
+      }
+
+      .final-number {
+        fill: #ffffff;
+      }
+
+    </style>
+  </defs>
+
+  <rect width="1100" height="780" fill="#f3f5f8"/>
+  <rect x="60" y="40" width="980" height="700" rx="24" fill="#ffffff" stroke="#dfe3e8" filter="url(#card-shadow)"/>
+
+  <text class="eyebrow" x="96" y="86" fill="#315fce">UI/UX 重复信息审计</text>
+  <text class="heading" x="96" y="140" fill="#1c2028">从证据到最小改动</text>
+  <text class="intro" x="96" y="178" fill="#667085">先完成审计，再开始实现。每个阶段都让事实与操作逐步收敛到清晰、唯一的标准来源。</text>
+  <line x1="96" y1="214" x2="1004" y2="214" stroke="#dfe3e8"/>
+
+  <g aria-label="阶段 1 盘点">
+    <rect class="stage-card" x="96" y="242" width="447" height="132" rx="18"/>
+    <circle class="stage-number" cx="135" cy="281" r="19"/>
+    <text class="number" x="135" y="281" fill="#315fce">1</text>
+    <text class="stage-title" x="168" y="282" fill="#1c2028">盘点</text>
+    <text class="stage-copy" x="168" y="315" fill="#667085">记录当前页面、用户任务、状态、层级、</text>
+    <text class="stage-copy" x="168" y="336" fill="#667085">已展示数据和现有操作。</text>
+  </g>
+
+  <g aria-label="阶段 2 归一化">
+    <rect class="stage-card" x="557" y="242" width="447" height="132" rx="18"/>
+    <circle class="stage-number" cx="596" cy="281" r="19"/>
+    <text class="number" x="596" y="281" fill="#315fce">2</text>
+    <text class="stage-title" x="629" y="282" fill="#1c2028">归一化</text>
+    <text class="stage-copy" x="629" y="315" fill="#667085">把可见内容转成事实，并按页面位置</text>
+    <text class="stage-copy" x="629" y="336" fill="#667085">映射每次出现。</text>
+  </g>
+
+  <g aria-label="阶段 3 判断">
+    <rect class="stage-card" x="96" y="388" width="447" height="132" rx="18"/>
+    <circle class="stage-number" cx="135" cy="427" r="19"/>
+    <text class="number" x="135" y="427" fill="#315fce">3</text>
+    <text class="stage-title" x="168" y="428" fill="#1c2028">判断</text>
+    <text class="stage-copy" x="168" y="461" fill="#667085">分类重复信息，选择保留、合并、删除、</text>
+    <text class="stage-copy" x="168" y="482" fill="#667085">缩短、移动或拆分，并指定标准来源。</text>
+  </g>
+
+  <g aria-label="阶段 4 限制范围">
+    <rect class="stage-card" x="557" y="388" width="447" height="132" rx="18"/>
+    <circle class="stage-number" cx="596" cy="427" r="19"/>
+    <text class="number" x="596" y="427" fill="#315fce">4</text>
+    <text class="stage-title" x="629" y="428" fill="#1c2028">限制范围</text>
+    <text class="stage-copy" x="629" y="461" fill="#667085">区分影响任务的已验证缺口，以及已有内容</text>
+    <text class="stage-copy" x="629" y="482" fill="#667085">覆盖或只会增加密度的新增。</text>
+  </g>
+
+  <g aria-label="阶段 5 建议">
+    <rect class="stage-card" x="96" y="534" width="447" height="132" rx="18"/>
+    <circle class="stage-number" cx="135" cy="573" r="19"/>
+    <text class="number" x="135" y="573" fill="#315fce">5</text>
+    <text class="stage-title" x="168" y="574" fill="#1c2028">建议</text>
+    <text class="stage-copy" x="168" y="607" fill="#667085">先确定最小语义改动，再提出必要的间距</text>
+    <text class="stage-copy" x="168" y="628" fill="#667085">和层级调整。</text>
+  </g>
+
+  <g class="final-card" aria-label="阶段 6 验证与交付">
+    <rect x="557" y="534" width="447" height="132" rx="18" fill="#315fce" stroke="#315fce"/>
+    <circle class="final-number" cx="596" cy="573" r="19"/>
+    <text class="number" x="596" y="573" fill="#315fce">6</text>
+    <text class="stage-title" x="629" y="574" fill="#ffffff">验证与交付</text>
+    <text class="stage-copy" x="629" y="607" fill="#ffffff" opacity="0.78">确认信息清晰且标准来源唯一，记录不建议</text>
+    <text class="stage-copy" x="629" y="628" fill="#ffffff" opacity="0.78">做什么，再实现审计支持的改动。</text>
+  </g>
+</svg>
