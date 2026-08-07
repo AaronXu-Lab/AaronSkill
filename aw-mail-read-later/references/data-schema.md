@@ -31,6 +31,7 @@ python3 <skill-directory>/scripts/read_later_index.py init --data-dir <project-d
 | `estimated_minutes` | 预计阅读或浏览时间，使用数字记录。 |
 | `word_count` | 可读取的字数、字符数或其他长度数值（如果能获取）。 |
 | `first_seen_at` | URL 首次进入本地索引的时间。 |
+| `last_seen_at` | 最近一次从 Outlook `Read Later` 队列同步到本地索引的时间。 |
 | `last_checked_at` | 最近一次成功或失败的网页检查时间。 |
 | `status` | 生命周期状态，见下文。 |
 | `status_reason` | 跳过、失败、排除或删除的简短原因。 |
@@ -56,7 +57,7 @@ python3 <skill-directory>/scripts/read_later_index.py init --data-dir <project-d
 - `deleted`：用户明确排除或确认后，邮件已经移动到 `Deleted Items`；
 - `duplicate_deleted`：较早的重复邮件已经移动到 `Deleted Items`。
 
-刷新内容元数据时，不要静默覆盖 `status`、`status_reason` 或状态时间。只有工作流动作可以改变生命周期状态。
+刷新内容元数据时，不要静默覆盖 `status`、`status_reason` 或状态时间。只有工作流动作可以改变生命周期状态。同步邮件队列只更新 `last_seen_at`；只有实际打开或检查网页后才更新 `last_checked_at`。
 
 ## `feedback.csv`
 

@@ -1,0 +1,87 @@
+{
+  "recommended_threshold": 0.33,
+  "positive_patterns": [
+    "Read Later",
+    "稍后阅读",
+    "Outlook",
+    "推荐",
+    "归档",
+    "暂时跳过",
+    "不要再推荐"
+  ],
+  "negative_patterns": [
+    "收件箱",
+    "普通邮件",
+    "任意网页",
+    "日历",
+    "发邮件"
+  ],
+  "should_trigger": [
+    {
+      "text": "帮我从 Outlook 的 Read Later 文件夹找一项适合现在阅读的内容。",
+      "family": "recommend"
+    },
+    {
+      "text": "从 Read Later 里推荐一个适合今晚看的 GitHub 仓库。",
+      "family": "recommend"
+    },
+    {
+      "text": "阅读 Read Later 里刚才推荐的项目页，给我总结它解决什么问题。",
+      "family": "read_and_summarize"
+    },
+    {
+      "text": "把 Read Later 里这个仓库的 README 翻译成中文。",
+      "family": "read_and_translate"
+    },
+    {
+      "text": "这项 Read Later 内容我暂时跳过。",
+      "family": "skip"
+    },
+    {
+      "text": "我完成了刚才推荐的 Read Later 内容，归档来源邮件。",
+      "family": "archive"
+    },
+    {
+      "text": "以后不要再推荐 Read Later 里的这个，移除来源邮件。",
+      "family": "exclude"
+    },
+    {
+      "text": "根据我现在的时间和反馈，从 Outlook 的 Read Later 文件夹推荐一项内容。",
+      "family": "personalized_recommendation"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "帮我总结这封普通收件箱邮件。",
+      "family": "other_mail"
+    },
+    {
+      "text": "阅读这个网页，告诉我重点。",
+      "family": "arbitrary_webpage"
+    },
+    {
+      "text": "清理 Outlook 的收件箱。",
+      "family": "mailbox_management"
+    },
+    {
+      "text": "给我安排一个明天的日历事件。",
+      "family": "calendar"
+    },
+    {
+      "text": "把这篇文章翻译成中文。",
+      "family": "standalone_translation"
+    },
+    {
+      "text": "帮我发一封邮件给同事。",
+      "family": "send_email"
+    },
+    {
+      "text": "从浏览器书签里推荐一个链接。",
+      "family": "bookmark_recommendation"
+    },
+    {
+      "text": "查看 Outlook 的 Sent Items 文件夹。",
+      "family": "other_folder"
+    }
+  ]
+}

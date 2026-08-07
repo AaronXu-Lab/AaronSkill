@@ -33,6 +33,7 @@ ARTICLE_FIELDS = [
     "estimated_minutes",
     "word_count",
     "first_seen_at",
+    "last_seen_at",
     "last_checked_at",
     "status",
     "status_reason",
@@ -233,7 +234,21 @@ def cmd_upsert(args: argparse.Namespace) -> None:
     for field, value in values.items():
         if value:
             row[field] = value
-    row["last_checked_at"] = timestamp
+    row["last_seen_at"] = timestamp
+    write_rows(article_path(data_dir), ARTICLE_FIELDS, rows)
+    print(json.dumps(row, ensure_ascii=False))
+
+
+def cmd_check(args: argparse.Namespace) -> None:
+    data_dir = Path(args.data_dir).expanduser()
+    ensure_data_dir(data_dir)
+    canonical = require_url(args.url)
+    rows = read_rows(article_path(data_dir), ARTICLE_FIELDS)
+    row = find_article(rows, canonical)
+    if row is None:
+        raise ValueError(f"索引中找不到内容：{canonical}")
+
+    row["last_checked_at"] = now_iso()
     write_rows(article_path(data_dir), ARTICLE_FIELDS, rows)
     print(json.dumps(row, ensure_ascii=False))
 
@@ -330,6 +345,11 @@ def build_parser() -> argparse.ArgumentParser:
     upsert.add_argument("--estimated-minutes", default="")
     upsert.add_argument("--word-count", default="")
     upsert.set_defaults(func=cmd_upsert)
+
+    check = subparsers.add_parser("check", help="记录一次网页检查时间")
+    check.add_argument("--data-dir", required=True)
+    check.add_argument("--url", required=True)
+    check.set_defaults(func=cmd_check)
 
     status = subparsers.add_parser("status", help="修改一条内容的生命周期状态")
     status.add_argument("--data-dir", required=True)

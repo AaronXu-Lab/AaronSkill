@@ -1,0 +1,103 @@
+{
+  "optimizer_hints": {
+    "capability": "从 Outlook Read Later 队列推荐、阅读和处理一项内容",
+    "inputs": [
+      "Outlook",
+      "Read Later",
+      "稍后阅读",
+      "邮件",
+      "当前时间",
+      "阅读长度",
+      "反馈"
+    ],
+    "trigger_actions": [
+      "从 Read Later 推荐内容",
+      "阅读或总结当前推荐内容",
+      "翻译当前推荐内容",
+      "暂时跳过",
+      "归档",
+      "永久排除",
+      "记录反馈"
+    ],
+    "exclusions": [
+      "其他 Outlook 文件夹",
+      "任意网页阅读",
+      "日历任务",
+      "发邮件"
+    ],
+    "artifacts": [
+      "Read Later 邮件",
+      "项目级 CSV 索引",
+      "推荐结果",
+      "阅读总结或翻译"
+    ]
+  },
+  "fallback_positive_concepts": [
+    "read_later_queue"
+  ],
+  "positive_concepts": {
+    "read_later_queue": {
+      "weight": 0.5,
+      "phrases": [
+        "Read Later",
+        "稍后阅读",
+        "Read Later 文件夹",
+        "Read Later 里的"
+      ]
+    },
+    "outlook_context": {
+      "weight": 0.2,
+      "phrases": [
+        "Outlook",
+        "来源邮件",
+        "邮件"
+      ]
+    },
+    "reading_or_queue_action": {
+      "weight": 0.2,
+      "phrases": [
+        "推荐",
+        "阅读",
+        "总结",
+        "翻译",
+        "暂时跳过",
+        "归档",
+        "不要再推荐",
+        "feedback"
+      ]
+    },
+    "contextual_selection": {
+      "weight": 0.1,
+      "phrases": [
+        "当前",
+        "现在",
+        "今晚",
+        "时间",
+        "阅读长度",
+        "反馈"
+      ]
+    }
+  },
+  "negative_concepts": {
+    "other_folder": {
+      "weight": 0.45,
+      "exclusive": true,
+      "phrases": [
+        "收件箱",
+        "Sent Items",
+        "已发送",
+        "其他文件夹"
+      ]
+    },
+    "standalone_task": {
+      "weight": 0.3,
+      "exclusive": true,
+      "phrases": [
+        "任意网页",
+        "日历",
+        "发邮件",
+        "浏览器书签"
+      ]
+    }
+  }
+}
