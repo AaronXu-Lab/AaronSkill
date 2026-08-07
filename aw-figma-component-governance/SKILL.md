@@ -3,7 +3,7 @@ name: aw-figma-component-governance
 description: Govern Figma component libraries through semantic naming, Variant and Property modeling, stable variant ordering, slot conventions, safe incremental edits, mandatory manual value-reordering instructions, and a structured audit attachment.
 metadata:
   author: aaron_xu
-  version: "0.2"
+  version: "1.0"
   creation_context: "为沉淀个人 Figma 组件库的命名、Variant 排序、Property/Slot 建模和人工调整规则而创建，减少组件治理中的重复判断。"
 ---
 

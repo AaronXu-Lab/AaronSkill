@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW UX Info Redundancy Audit"
+  short_description: "审计界面中的语义重复与不必要密度"
+  default_prompt: "使用 $aw-ux-info-redundancy-audit 审计界面中的语义重复和不必要的信息密度。"

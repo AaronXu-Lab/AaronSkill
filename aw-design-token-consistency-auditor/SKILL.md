@@ -3,7 +3,7 @@ name: aw-design-token-consistency-auditor
 description: Audit design-token consistency across any two or all three of Figma Variables, DESIGN.md YAML, and CSS/Less tokens. Use to identify missing sources, missing or source-only tokens, value mismatches, canonical collisions, and unresolved references, and to generate stable Markdown, JSON, and CSV audit artifacts.
 metadata:
   author: aaron_xu
-  version: "0.2"
+  version: "1.0"
   creation_context: "为比较 Figma Variables、DESIGN.md 与 CSS/Less Token 的覆盖、映射和值一致性而创建，输出可供后续修复使用的结构化审计结果。"
 ---
 

@@ -1,9 +1,10 @@
 # coss ui
 
-- Status: `fresh`
-- Last checked: `2026-07-28T02:14:29+00:00`
+- Status: `stale`
+- Last checked: `2026-08-05T08:34:24+00:00`
 - Last successful refresh: `2026-07-23T10:38:36+00:00`
 - Eligible components: `55`
+- Refresh error: `URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|
