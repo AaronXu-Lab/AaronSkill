@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-05T08:34:24+00:00",
+  "generated_at": "2026-08-07T08:08:12+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
-      "status": "stale",
-      "last_checked_at": "2026-08-05T08:34:24+00:00",
+      "status": "fresh",
+      "last_checked_at": "2026-08-07T08:08:12+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
-      "error": "TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds",
+      "error": null,
       "fetch": {
         "command:npx -y shadcn@latest list @shadcn --json --limit 100": {
           "sha256": "0f25787be0f1a500193634da8629c193b74c5a71906432c5fe3d87960238a298"
@@ -996,10 +996,10 @@
     "coss-ui": {
       "id": "coss-ui",
       "name": "coss ui",
-      "status": "stale",
-      "last_checked_at": "2026-08-05T08:34:24+00:00",
+      "status": "fresh",
+      "last_checked_at": "2026-08-07T08:08:12+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
-      "error": "URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+      "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
           "etag": "W/\"78c8a00bd32f32c6051a1f3cb8014c36\"",
@@ -1893,7 +1893,7 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-05T08:34:24+00:00",
+      "last_checked_at": "2026-08-07T08:08:12+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -2681,13 +2681,13 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-05T08:34:24+00:00",
-      "last_success_at": "2026-08-04T09:06:51+00:00",
+      "last_checked_at": "2026-08-07T08:08:12+00:00",
+      "last_success_at": "2026-08-07T08:08:12+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"b2882769c1a23eb128ddd7b9b72b9654c3c9611d56ae4382bbab2eb4e29dbeaf\"",
-          "last_modified": "Tue, 04 Aug 2026 05:56:16 GMT"
+          "etag": "W/\"bb3b34a4cf65478eb3b572fea99b644d52b2fc55c38723cc044ef4dc7b452438\"",
+          "last_modified": "Fri, 07 Aug 2026 07:35:40 GMT"
         }
       },
       "items": [
@@ -3865,7 +3865,7 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-08-05T08:34:24+00:00",
+      "last_checked_at": "2026-08-07T08:08:12+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -4761,7 +4761,7 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-08-05T08:34:24+00:00",
+      "last_checked_at": "2026-08-07T08:08:12+00:00",
       "last_success_at": "2026-07-28T06:34:40+00:00",
       "error": null,
       "fetch": {

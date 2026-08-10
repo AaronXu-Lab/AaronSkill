@@ -1,10 +1,9 @@
 # shadcn/ui Base
 
-- Status: `stale`
-- Last checked: `2026-08-05T08:34:24+00:00`
+- Status: `fresh`
+- Last checked: `2026-08-07T08:08:12+00:00`
 - Last successful refresh: `2026-07-23T10:38:36+00:00`
 - Eligible components: `61`
-- Refresh error: `TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|

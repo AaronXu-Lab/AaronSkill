@@ -1,8 +1,8 @@
 # ReUI Public Base
 
 - Status: `fresh`
-- Last checked: `2026-08-05T08:34:24+00:00`
-- Last successful refresh: `2026-08-04T09:06:51+00:00`
+- Last checked: `2026-08-07T08:08:12+00:00`
+- Last successful refresh: `2026-08-07T08:08:12+00:00`
 - Eligible components: `73`
 
 | Component | Description | Preview | Source |
