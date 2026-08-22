@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  设计系统 · UI 组件 · 品牌资产 · 阅读助手 · 内容生产
+  Skill 工程 · 设计系统 · UI/UX 审计 · 品牌资产 · 阅读助手 · 内容生产
 </p>
 
 ## 一条命令安装
@@ -48,8 +48,11 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-figma-component-governance`](./aw-figma-component-governance/) | 治理 Figma 组件命名、Variant、Property、Slot 和顺序 | 不安全的 Variant 值重排保留为人工操作 |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
+| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
 | [`aw-logo-finder`](./aw-logo-finder/) | 从官网、Logo 资源站和应用商店寻找、比对并导出品牌或产品 Logo | 必须先确认候选与输出尺寸，再生成无损 WebP |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
+| [`aw-meta-skill`](./aw-meta-skill/) | 基于 `skill-creator` 创建或更新符合 AW 交付规范的 Skill | 必须维护版本元数据与 `docs/workflow.svg`，并通过基础及附加校验 |
+| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | 审计 Web 界面的语义重复、信息密度和层级问题 | 先输出审计证据与最小改动决策，再实施界面修改 |
 | [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
