@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 940" role="img" aria-labelledby="title desc">
+  <title id="title">Read Later 内容处理流程</title><desc id="desc">先初始化项目索引和定位唯一的 Outlook Read Later 文件夹，再同步链接、检查页面、推荐一项内容，并安全处理后续反馈或邮件移动。</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker><style>.h{font:700 30px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b}.l{font:600 18px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b;text-anchor:middle}.d{font:400 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#52606d;text-anchor:middle}.b{fill:#fff;stroke:#9eacb8;stroke-width:2}.x{fill:#edf6ff;stroke:#287bbb;stroke-width:2}.q{fill:#fff7e6;stroke:#c98312;stroke-width:2}.s{fill:#fff0ef;stroke:#c94b43;stroke-width:2}.g{fill:#edf9f1;stroke:#2e8b54;stroke-width:2}.p{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="940" fill="#f7f9fb"/><text class="h" x="600" y="48" text-anchor="middle">AW Read Later</text>
+  <rect class="b" x="420" y="80" width="360" height="64" rx="14"/><text class="l" x="600" y="108">初始化并读取项目索引</text><text class="d" x="600" y="130">失败则停止，不访问网页</text><path class="p" d="M600 144V185"/>
+  <polygon class="q" points="600,185 790,245 600,305 410,245"/><text class="l" x="600" y="241">唯一 Read Later 文件夹？</text><text class="d" x="600" y="265">同名时必须询问用户</text>
+  <path class="p" d="M790 245H850"/><rect class="s" x="850" y="210" width="300" height="70" rx="14"/><text class="l" x="1000" y="240">停止并澄清来源</text><text class="d" x="1000" y="262">不得自行选择文件夹</text>
+  <path class="p" d="M600 305V350"/><rect class="x" x="420" y="350" width="360" height="64" rx="14"/><text class="l" x="600" y="378">同步邮件与链接</text><text class="d" x="600" y="400">规范化 URL 并去重</text>
+  <path class="p" d="M600 414V460"/><rect class="x" x="420" y="460" width="360" height="64" rx="14"/><text class="l" x="600" y="488">检查新增页面</text><text class="d" x="600" y="510">类型 · 长度 · 投入 · 访问限制</text>
+  <path class="p" d="M600 524V570"/><rect class="x" x="420" y="570" width="360" height="64" rx="14"/><text class="l" x="600" y="598">选择并推荐一项</text><text class="d" x="600" y="620">情境 · 时间 · 历史反馈</text>
+  <path class="p" d="M600 634V680"/><rect class="x" x="420" y="680" width="360" height="64" rx="14"/><text class="l" x="600" y="708">处理用户后续指令</text><text class="d" x="600" y="730">阅读 · 反馈 · 跳过 · 归档 · 排除</text>
+  <path class="p" d="M600 744V785"/><polygon class="q" points="600,785 775,835 600,885 425,835"/><text class="l" x="600" y="831">需要移动邮件？</text><text class="d" x="600" y="853">先移动成功，再更新本地状态</text>
+  <path class="p" d="M775 835H850"/><rect class="g" x="850" y="803" width="300" height="64" rx="32"/><text class="l" x="1000" y="841">报告索引与操作结果</text>
+</svg>

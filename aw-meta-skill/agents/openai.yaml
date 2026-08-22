@@ -1,0 +1,4 @@
+interface:
+  display_name: "AW Meta Skill"
+  short_description: "基于 skill-creator 创建或更新带流程图和版本元数据的 SKILL"
+  default_prompt: "使用 $aw-meta-skill 创建或更新一个符合规范的 SKILL。"

@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1040" viewBox="0 0 1200 1040" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1320" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
   <title id="title">应用图标资源生成核心流程</title>
-  <desc id="desc">从依赖预检、用户安装授权、唯一 SVG 检查，到平台资源生成与 Apple 图标验证的流程图。</desc>
+  <desc id="desc">从用户显式指定 SVG 或图标资源目录并唯一解析源 SVG、只读主题检查和单主题 AI 补色授权，到依赖预检、包含不透明 Apple Touch、显式保留 Alpha 通道的 32-bit RGBA Play Store 提交图、最小 PWA manifest 和根目录分平台用法 README 的全平台生成及 Apple app.icon 明暗主题验证的流程图。</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
     </marker>
     <style>
-      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #17212b; }
-      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #687583; }
-      .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #17212b; text-anchor: middle; }
-      .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #52606d; text-anchor: middle; }
-      .branch { font: 700 14px -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #52606d; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; }
+      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #687583; }
+      .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; text-anchor: middle; }
+      .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; text-anchor: middle; }
+      .branch { font: 700 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; }
       .line { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
       .step { fill: #ffffff; stroke: #b7c2cc; stroke-width: 2; }
       .decision { fill: #fff8e8; stroke: #d89b26; stroke-width: 2.5; }
@@ -20,77 +20,84 @@
     </style>
   </defs>
 
-  <rect width="1200" height="1040" fill="#f7f9fb"/>
+  <rect width="1200" height="1320" fill="#f7f9fb"/>
   <text class="title" x="600" y="46" text-anchor="middle">应用图标资源生成核心流程</text>
-  <text class="subtitle" x="600" y="72" text-anchor="middle">所有依赖检查必须发生在清理或生成资源之前</text>
+  <text class="subtitle" x="600" y="72" text-anchor="middle">主题授权、依赖检查和复检全部发生在清理或生成之前</text>
 
-  <rect class="step" x="420" y="100" width="360" height="64" rx="16"/>
-  <text class="label" x="600" y="128">启动预检</text>
-  <text class="detail" x="600" y="150">定位项目根目录与关联 SKILL</text>
+  <rect class="step" x="420" y="100" width="360" height="68" rx="16"/>
+  <text class="label" x="600" y="129">用户指定 SVG 或图标资源目录</text>
+  <text class="detail" x="600" y="153">必须是明确的绝对路径与资源范围</text>
 
-  <path class="line" d="M600 164 V190"/>
-  <polygon class="decision" points="600,190 780,250 600,310 420,250"/>
-  <text class="label" x="600" y="246">compose-app-icon</text>
-  <text class="detail" x="600" y="270">安装完整，且 uv 可用？</text>
+  <path class="line" d="M600 168 V205"/>
+  <polygon class="decision" points="600,205 790,265 600,325 410,265"/>
+  <text class="label" x="600" y="261">能唯一解析到 SVG？</text>
+  <text class="detail" x="600" y="285">文件本身，或目录根层唯一 *.svg</text>
 
-  <text class="branch" x="392" y="236">否</text>
-  <path class="line" d="M420 250 H350"/>
-  <rect class="stop" x="40" y="210" width="310" height="80" rx="16"/>
-  <text class="label" x="195" y="242">停止，不触碰现有产物</text>
-  <text class="detail" x="195" y="266">说明缺失项并请求安装许可</text>
+  <path class="line" d="M410 265 H335"/>
+  <rect class="stop" x="35" y="228" width="300" height="74" rx="16"/>
+  <text class="label" x="185" y="258">停止并请用户指定</text>
+  <text class="detail" x="185" y="282">无 SVG 或多个候选；不递归猜测</text>
 
-  <path class="line" d="M195 290 V325"/>
-  <polygon class="decision" points="195,325 335,375 195,425 55,375"/>
-  <text class="label" x="195" y="371">用户明确同意？</text>
-  <text class="detail" x="195" y="394">未授权不得安装</text>
+  <path class="line" d="M600 325 V365"/>
+  <rect class="action" x="420" y="365" width="360" height="70" rx="16"/>
+  <text class="label" x="600" y="395">只读检查明暗主题</text>
+  <text class="detail" x="600" y="419">dual · single-light · single-dark</text>
 
-  <text class="branch" x="12" y="362">否</text>
-  <path class="line" d="M55 375 H20 V470 H5"/>
-  <rect class="stop" x="5" y="438" width="150" height="64" rx="16"/>
-  <text class="label" x="80" y="467">保持停止</text>
-  <text class="detail" x="80" y="489">等待后续指示</text>
+  <path class="line" d="M600 435 V475"/>
+  <polygon class="decision" points="600,475 790,535 600,595 410,535"/>
+  <text class="label" x="600" y="531">已包含可区分明暗色？</text>
+  <text class="detail" x="600" y="555">完整保留现有主题行为</text>
 
-  <text class="branch" x="210" y="447">是</text>
-  <path class="line" d="M195 425 V540"/>
-  <rect class="action" x="45" y="540" width="300" height="82" rx="16"/>
-  <text class="label" x="195" y="571">从可信来源安装</text>
-  <text class="detail" x="195" y="595">验证文件并完整阅读关联 SKILL</text>
-  <path class="line" d="M345 581 H380 V250 H420"/>
+  <text class="branch" x="805" y="521">否</text>
+  <path class="line" d="M790 535 H850"/>
+  <rect class="stop" x="850" y="495" width="310" height="80" rx="16"/>
+  <text class="label" x="1005" y="527">提示缺失主题并询问</text>
+  <text class="detail" x="1005" y="551">是否允许 AI 补充互补主题色？</text>
 
-  <text class="branch" x="616" y="334">是</text>
-  <path class="line" d="M600 310 V350"/>
-  <polygon class="decision" points="600,350 780,410 600,470 420,410"/>
-  <text class="label" x="600" y="406">根目录 SVG</text>
-  <text class="detail" x="600" y="430">是否恰好一个？</text>
+  <path class="line" d="M1005 575 V615"/>
+  <polygon class="decision" points="1005,615 1145,665 1005,715 865,665"/>
+  <text class="label" x="1005" y="661">用户明确允许？</text>
+  <text class="detail" x="1005" y="684">未授权不得补色</text>
 
-  <text class="branch" x="794" y="396">否</text>
-  <path class="line" d="M780 410 H850"/>
-  <rect class="stop" x="850" y="370" width="310" height="80" rx="16"/>
-  <text class="label" x="1005" y="402">请求用户补充或选择</text>
-  <text class="detail" x="1005" y="426">禁止猜测唯一事实源</text>
+  <path class="line" d="M865 665 H810"/>
+  <rect class="stop" x="535" y="630" width="275" height="70" rx="16"/>
+  <text class="label" x="672" y="659">停止，不做任何生成</text>
+  <text class="detail" x="672" y="682">不修改 SVG，不清理现有产物</text>
 
-  <text class="branch" x="616" y="494">是</text>
-  <path class="line" d="M600 470 V520"/>
-  <rect class="action" x="420" y="520" width="360" height="70" rx="16"/>
-  <text class="label" x="600" y="550">解析 SVG</text>
-  <text class="detail" x="600" y="574">提取明暗配色并保留几何与主题行为</text>
+  <path class="line" d="M1005 715 V755"/>
+  <rect class="action" x="825" y="755" width="360" height="82" rx="16"/>
+  <text class="label" x="1005" y="786">AI 创建临时双主题 SVG</text>
+  <text class="detail" x="1005" y="810">保留原主题与几何，只补缺失主题</text>
 
-  <path class="line" d="M600 590 V630"/>
-  <rect class="action" x="420" y="630" width="360" height="70" rx="16"/>
-  <text class="label" x="600" y="660">重建最小平台资源</text>
-  <text class="detail" x="600" y="684">Web · Apple · Windows · Linux · Android</text>
+  <path class="line" d="M825 796 H790 V865 H780"/>
+  <rect class="action" x="420" y="830" width="360" height="70" rx="16"/>
+  <text class="label" x="600" y="860">渲染明暗外观并复检</text>
+  <text class="detail" x="600" y="884">复检仍非 dual 则停止</text>
 
-  <path class="line" d="M600 700 V740"/>
-  <rect class="action" x="420" y="740" width="360" height="82" rx="16"/>
-  <text class="label" x="600" y="771">验证 Apple app.icon</text>
-  <text class="detail" x="600" y="795">Schema → Default / Dark / Mono / Clear 渲染</text>
+  <text class="branch" x="616" y="619">是</text>
+  <path class="line" d="M600 595 V610 H385 V865 H420"/>
 
-  <path class="line" d="M600 822 V862"/>
-  <rect class="step" x="420" y="862" width="360" height="70" rx="16"/>
-  <text class="label" x="600" y="892">检查目录纯净与命名</text>
-  <text class="detail" x="600" y="916">不保留临时预览或冗余明暗副本</text>
+  <path class="line" d="M600 900 V940"/>
+  <polygon class="decision" points="600,940 790,1000 600,1060 410,1000"/>
+  <text class="label" x="600" y="996">compose-app-icon 完整？</text>
+  <text class="detail" x="600" y="1020">文件、uv 与关联 SKILL 预检</text>
 
-  <path class="line" d="M600 932 V966"/>
-  <rect class="done" x="470" y="966" width="260" height="56" rx="28"/>
-  <text class="label" x="600" y="1001">完成并报告验证结果</text>
+  <path class="line" d="M410 1000 H350"/>
+  <rect class="stop" x="40" y="960" width="310" height="80" rx="16"/>
+  <text class="label" x="195" y="992">停止并请求安装许可</text>
+  <text class="detail" x="195" y="1016">获准安装后重新完整预检</text>
+
+  <path class="line" d="M600 1060 V1095"/>
+  <rect class="action" x="420" y="1095" width="360" height="72" rx="16"/>
+  <text class="label" x="600" y="1125">重建最小平台资源</text>
+  <text class="detail" x="600" y="1149">全平台资源 · PWA manifest · 用法 README</text>
+
+  <path class="line" d="M600 1167 V1200"/>
+  <rect class="action" x="420" y="1200" width="360" height="72" rx="16"/>
+  <text class="label" x="600" y="1230">验证 Apple app.icon</text>
+  <text class="detail" x="600" y="1254">Default · Dark · Mono · Clear 均使用最终主题</text>
+
+  <path class="line" d="M600 1272 V1287"/>
+  <rect class="done" x="470" y="1287" width="260" height="30" rx="15"/>
+  <text class="label" x="600" y="1310">完成并报告</text>
 </svg>

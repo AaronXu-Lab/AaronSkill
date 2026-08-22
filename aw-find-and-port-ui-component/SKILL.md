@@ -3,13 +3,15 @@ name: aw-find-and-port-ui-component
 description: Find, compare, verify, and port UI component implementations through two strictly separated phases. Use Find to discover candidates and compare behavior, source, license, dependencies, and target-project compatibility without modifying code. Use Port only after the user explicitly selects an implementation or supplies an exact source, then adapt the smallest required behavior to the target project's existing components, conventions, technology stack, and optional DESIGN.md guidance.
 metadata:
   author: aaron_xu
-  version: "1.0"
+  version: "1.0.1"
   creation_context: "为将 UI 组件发现、比较、来源验证与项目移植整合为通用的两阶段工作流而创建，在保留用户明确选择门的同时，统一处理许可证、依赖兼容性、现有组件复用与目标项目风格适配。"
 ---
 
 # AW Find and Port UI Component
 
 Find references before implementing. Keep Find and Port as separate runs with an explicit user-selection gate between them. Never continue automatically from Find into Port.
+
+![UI component finding and porting workflow](docs/workflow.svg)
 
 ## Choose One Phase
 

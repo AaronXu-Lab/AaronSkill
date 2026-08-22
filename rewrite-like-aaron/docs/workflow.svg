@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 940" role="img" aria-labelledby="title desc">
+  <title id="title">Aaron 文风改写流程</title><desc id="desc">读取文风资料，锁定不可改事实和立场，选择文章模式，重建论证并校准声音，再通过两轮反 Slop 审计后交付终稿。</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker><style>.h{font:700 30px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b}.l{font:600 18px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b;text-anchor:middle}.d{font:400 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#52606d;text-anchor:middle}.b{fill:#fff;stroke:#9eacb8;stroke-width:2}.x{fill:#edf6ff;stroke:#287bbb;stroke-width:2}.q{fill:#fff7e6;stroke:#c98312;stroke-width:2}.s{fill:#fff0ef;stroke:#c94b43;stroke-width:2}.g{fill:#edf9f1;stroke:#2e8b54;stroke-width:2}.p{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="940" fill="#f7f9fb"/><text class="h" x="600" y="48" text-anchor="middle">Aaron 文风改写</text>
+  <rect class="b" x="420" y="80" width="360" height="64" rx="14"/><text class="l" x="600" y="108">读取文风与反 Slop 资料</text><text class="d" x="600" y="130">按文章类型加载补充参考</text><path class="p" d="M600 144V190"/>
+  <rect class="x" x="420" y="190" width="360" height="64" rx="14"/><text class="l" x="600" y="218">建立不可改动清单</text><text class="d" x="600" y="240">事实 · 经历 · 立场 · 不确定性</text>
+  <path class="p" d="M600 254V300"/><polygon class="q" points="600,300 790,360 600,420 410,360"/><text class="l" x="600" y="356">选择文章模式</text><text class="d" x="600" y="380">体裁和语气强度必须有原稿依据</text>
+  <path class="p" d="M600 420V465"/><rect class="x" x="420" y="465" width="360" height="64" rx="14"/><text class="l" x="600" y="493">找回真正问题</text><text class="d" x="600" y="515">触发点 · 矛盾 · 观察 · 目标</text>
+  <path class="p" d="M600 529V575"/><rect class="x" x="420" y="575" width="360" height="64" rx="14"/><text class="l" x="600" y="603">重建论证</text><text class="d" x="600" y="625">先处理逻辑，再处理语言</text>
+  <path class="p" d="M600 639V685"/><rect class="x" x="420" y="685" width="360" height="64" rx="14"/><text class="l" x="600" y="713">克制地校准声音</text><text class="d" x="600" y="735">只保留有功能的文风特征</text>
+  <path class="p" d="M600 749V790"/><polygon class="q" points="600,790 780,840 600,890 420,840"/><text class="l" x="600" y="836">两轮审计通过？</text><text class="d" x="600" y="858">AI 痕迹和人格表演均受控</text>
+  <path class="p" d="M780 840H850"/><rect class="s" x="850" y="808" width="300" height="64" rx="14"/><text class="l" x="1000" y="846">回退并修订</text>
+  <path class="p" d="M600 890V910"/><rect class="g" x="460" y="905" width="280" height="32" rx="16"/><text class="l" x="600" y="928">交付可直接使用的终稿</text>
+</svg>

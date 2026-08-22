@@ -1,6 +1,10 @@
 ---
 name: aw-ux-info-redundancy-audit
 description: 审计 Web 界面中的语义信息重复、不必要的信息密度和不清晰的信息层级。适用于审查或简化页面、详情页、列表、表单、弹窗、流程或响应式状态；处理信息重复、界面杂乱、拥挤或文案过多；以及在实现前需要明确保留、合并、删除、缩短、移动或拆分决策的场景。
+metadata:
+  version: "1.0.0"
+  author: "aaron_xu"
+  creation_context: "为在界面改动前系统识别语义重复、信息密度和层级问题，并形成可验证的最小安全改动决策而创建。"
 ---
 
 # UI/UX 重复信息审计
@@ -11,7 +15,9 @@ description: 审计 Web 界面中的语义信息重复、不必要的信息密�
 
 不要把某个页面变成通用视觉模板。依据当前页面的结构、状态和交互语境作判断，只复用判断规则。
 
-详细流程与阶段概览见 [docs/workflow.md](docs/workflow.md) 和 [docs/workflow.svg](docs/workflow.svg)。
+详细流程见 [docs/workflow.md](docs/workflow.md)，阶段概览如下：
+
+![UI/UX 重复信息审计流程](docs/workflow.svg)
 
 ## 输入
 
