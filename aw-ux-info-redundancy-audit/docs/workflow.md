@@ -10,24 +10,27 @@ flowchart TD
     REQUEST[索取最小缺失材料<br/>不可用证据标记为待验证]
 
     subgraph DISCOVER[阶段 1 · 盘点当前状态]
+        FRESHNESS[确认当前页面与代码是最新证据<br/>旧截图和中途方案标记为历史证据]
         INVENTORY[盘点已有区块、组件、展示数据、行动入口和页面层级]
         CONTEXT[记录主要任务、进入语境、状态、约束、操作和恢复路径]
         POSITION[把证据绑定到人能理解的页面位置]
     end
 
     subgraph NORMALIZE[阶段 2 · 归一化可见信息]
-        ATOMS[提取身份、状态、时间、数量、描述、约束、后果、操作和恢复事实]
-        MAP[映射每个完全、语义、派生和视觉出现位置]
-        CONTRADICTION[标记视觉别名、派生摘要和矛盾表达]
+        ATOMS[提取事实并标记身份、状态、摘要、属性、配置、活动或操作角色]
+        MAP[映射当前页面、来源表面以及每个完全、语义、派生和视觉出现位置]
+        CONTRADICTION[标记视觉别名、状态占位值、派生摘要和矛盾表达]
     end
 
     subgraph DECIDE[阶段 3 · 判断每处重复]
         CLASSIFY[分类完全、语义、派生、状态、指引、操作、层级或语境性重复]
         Q1{另一处是否回答不同的用户问题？}
         Q2{是否增加约束、后果、风险、确认或恢复路径？}
-        Q3{是否显著改善局部扫描？}
-        Q4{删除后是否会让状态或下一步操作变得含糊？}
-        Q5{能否缩短为语境提示并保留价值？}
+        Q3{是否维持跨页面识别连续性或显著改善局部扫描？}
+        Q4{操作是否对应不同作用域或决策时机？}
+        Q5{删除后是否会让状态、操作或无障碍语义变得含糊？}
+        Q6{是否只是无行动价值的正常或默认状态？}
+        Q7{能否缩短为语境提示并保留价值？}
         KEEP[保留]
         SHORTEN[缩短]
         EDIT[选择合并、删除、移动或拆分]
@@ -51,7 +54,9 @@ flowchart TD
 
     subgraph VERIFY[阶段 6 · 验证与交付]
         CHECK[对比修改前后的同一页面状态]
-        VALID{标准事实仍清晰，且没有新增重复或矛盾吗？}
+        MATRIX[覆盖页面实际支持的集合、生命周期、权限和长短内容状态]
+        ACCESS[确认关键状态不只依赖颜色或装饰图标<br/>hover、focus 和键盘路径仍成立]
+        VALID{标准事实仍清晰，且没有新增重复、矛盾或语义缺失吗？}
         OUTPUT[输出盘点、信息原子、决策、标准层级、缺口、非缺口、不建议项和最小改动]
         IMPLEMENT{用户是否要求实现？}
         APPLY[只实现审计支持的改动]
@@ -60,7 +65,7 @@ flowchart TD
 
     START --> INPUT --> EVIDENCE
     EVIDENCE -- 否 --> REQUEST --> INPUT
-    EVIDENCE -- 是 --> INVENTORY --> CONTEXT --> POSITION
+    EVIDENCE -- 是 --> FRESHNESS --> INVENTORY --> CONTEXT --> POSITION
     POSITION --> ATOMS --> MAP --> CONTRADICTION --> CLASSIFY --> Q1
 
     Q1 -- 是 --> KEEP
@@ -71,8 +76,12 @@ flowchart TD
     Q3 -- 否 --> Q4
     Q4 -- 是 --> KEEP
     Q4 -- 否 --> Q5
-    Q5 -- 是 --> SHORTEN
-    Q5 -- 否 --> EDIT
+    Q5 -- 是 --> KEEP
+    Q5 -- 否 --> Q6
+    Q6 -- 是 --> EDIT
+    Q6 -- 否 --> Q7
+    Q7 -- 是 --> SHORTEN
+    Q7 -- 否 --> EDIT
     KEEP --> CANONICAL
     SHORTEN --> CANONICAL
     EDIT --> CANONICAL
@@ -81,7 +90,7 @@ flowchart TD
     GAPQ -- 是 --> VERIFIED --> BOUNDARY
     GAPQ -- 否 --> NOTGAP --> BOUNDARY
     BOUNDARY --> SEMANTIC --> CONSOLIDATE --> STRUCTURE --> VISUAL --> DONT
-    DONT --> CHECK --> VALID
+    DONT --> CHECK --> MATRIX --> ACCESS --> VALID
     VALID -- 否 --> MAP
     VALID -- 是 --> OUTPUT --> IMPLEMENT
     IMPLEMENT -- 是 --> APPLY --> END

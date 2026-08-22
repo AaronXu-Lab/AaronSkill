@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780" role="img" aria-labelledby="workflow-title workflow-desc">
   <title id="workflow-title">UI/UX 重复信息审计流程</title>
-  <desc id="workflow-desc">从证据到最小改动的六阶段 UI/UX 重复信息审计流程图，包含盘点、归一化、判断、范围限制、建议以及验证与交付。</desc>
+  <desc id="workflow-desc">从最新证据到最小改动的六阶段 UI/UX 重复信息审计流程图，包含证据确认、归一化、判断、范围限制、建议、状态覆盖与无障碍验证。</desc>
 
   <defs>
     <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
@@ -73,8 +73,8 @@
     <circle class="stage-number" cx="135" cy="281" r="19"/>
     <text class="number" x="135" y="281" fill="#315fce">1</text>
     <text class="stage-title" x="168" y="282" fill="#1c2028">盘点</text>
-    <text class="stage-copy" x="168" y="315" fill="#667085">记录当前页面、用户任务、状态、层级、</text>
-    <text class="stage-copy" x="168" y="336" fill="#667085">已展示数据和现有操作。</text>
+    <text class="stage-copy" x="168" y="315" fill="#667085">先确认页面与代码是最新证据，再记录任务、</text>
+    <text class="stage-copy" x="168" y="336" fill="#667085">状态、层级、展示数据和现有操作。</text>
   </g>
 
   <g aria-label="阶段 2 归一化">
@@ -82,8 +82,8 @@
     <circle class="stage-number" cx="596" cy="281" r="19"/>
     <text class="number" x="596" y="281" fill="#315fce">2</text>
     <text class="stage-title" x="629" y="282" fill="#1c2028">归一化</text>
-    <text class="stage-copy" x="629" y="315" fill="#667085">把可见内容转成事实，并按页面位置</text>
-    <text class="stage-copy" x="629" y="336" fill="#667085">映射每次出现。</text>
+    <text class="stage-copy" x="629" y="315" fill="#667085">按角色把内容转成事实，归一视觉别名、</text>
+    <text class="stage-copy" x="629" y="336" fill="#667085">状态占位值及跨表面出现位置。</text>
   </g>
 
   <g aria-label="阶段 3 判断">
@@ -91,8 +91,8 @@
     <circle class="stage-number" cx="135" cy="427" r="19"/>
     <text class="number" x="135" y="427" fill="#315fce">3</text>
     <text class="stage-title" x="168" y="428" fill="#1c2028">判断</text>
-    <text class="stage-copy" x="168" y="461" fill="#667085">分类重复信息，选择保留、合并、删除、</text>
-    <text class="stage-copy" x="168" y="482" fill="#667085">缩短、移动或拆分，并指定标准来源。</text>
+    <text class="stage-copy" x="168" y="461" fill="#667085">比较识别连续性、操作作用域和默认态价值，</text>
+    <text class="stage-copy" x="168" y="482" fill="#667085">再选择决策并指定标准来源。</text>
   </g>
 
   <g aria-label="阶段 4 限制范围">
@@ -118,7 +118,7 @@
     <circle class="final-number" cx="596" cy="573" r="19"/>
     <text class="number" x="596" y="573" fill="#315fce">6</text>
     <text class="stage-title" x="629" y="574" fill="#ffffff">验证与交付</text>
-    <text class="stage-copy" x="629" y="607" fill="#ffffff" opacity="0.78">确认信息清晰且标准来源唯一，记录不建议</text>
-    <text class="stage-copy" x="629" y="628" fill="#ffffff" opacity="0.78">做什么，再实现审计支持的改动。</text>
+    <text class="stage-copy" x="629" y="607" fill="#ffffff" opacity="0.78">覆盖关键状态，并确认语义不只依赖颜色或</text>
+    <text class="stage-copy" x="629" y="628" fill="#ffffff" opacity="0.78">装饰图标，再实现审计支持的改动。</text>
   </g>
 </svg>
