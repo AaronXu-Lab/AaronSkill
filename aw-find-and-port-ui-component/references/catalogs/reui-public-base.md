@@ -1,9 +1,9 @@
 # ReUI Public Base
 
 - Status: `fresh`
-- Last checked: `2026-08-11T02:39:57+00:00`
-- Last successful refresh: `2026-08-07T08:08:12+00:00`
-- Eligible components: `73`
+- Last checked: `2026-08-27T11:44:10+00:00`
+- Last successful refresh: `2026-08-24T10:25:35+00:00`
+- Eligible components: `74`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|
@@ -20,6 +20,7 @@
 | Calendar |  | [Preview](https://reui.io/components/calendar) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/calendar) |
 | Card |  | [Preview](https://reui.io/components/card) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/card) |
 | Carousel |  | [Preview](https://reui.io/components/carousel) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/carousel) |
+| Cascader |  | [Preview](https://reui.io/components/cascader) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/cascader) |
 | Chart |  | [Preview](https://reui.io/components/chart) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/chart) |
 | Checkbox |  | [Preview](https://reui.io/components/checkbox) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/checkbox) |
 | Collapsible |  | [Preview](https://reui.io/components/collapsible) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/collapsible) |

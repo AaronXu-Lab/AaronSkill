@@ -1,9 +1,9 @@
 ---
 name: aw-design-md-author
-description: Create, review, validate, and maintain complete DESIGN.md contracts against Google Labs' official format. Use for full DESIGN.md authoring, ownership decisions, token schema, canonical sections, semantic naming, iteration, and official lint validation. Always perform the complete workflow; there is no quick mode.
+description: Create, review, validate, and maintain DESIGN.md contracts against Google Labs' official format, including detailed annotation-only TODOs for deferred design decisions. Use for full authoring, ownership decisions, token schema, canonical sections, semantic naming, deferred annotations, iteration, and official lint validation.
 metadata:
   author: aaron_xu
-  version: "1.0.1"
+  version: "1.1.0"
   creation_context: "为按照 Google Labs DESIGN.md 官方规范完整创建、审查和维护设计系统文档而创建，统一处理 Token 所有权、语义命名、章节结构与验证。"
 ---
 
@@ -11,11 +11,11 @@ metadata:
 
 Create and maintain `DESIGN.md` as a complete, verifiable visual contract. Work in the user's language and preserve their design intent and voice.
 
-![DESIGN.md authoring workflow](docs/workflow.svg)
+![Normative DESIGN.md authoring workflow](docs/workflow.svg)
 
 ## Required References
 
-Read these before authoring or reviewing:
+Read these before normative authoring or reviewing:
 
 - `references/spec-summary.md`: canonical schema and section model.
 - `references/lint-rules.md`: official validation rules.
@@ -35,9 +35,33 @@ Before writing, choose one ownership mode:
 
 The scope test is: “Is this a formally verifiable visual rule another agent can apply consistently?” Visual rules belong here; behavior belongs in `AGENTS.md` or `CLAUDE.md`; implementation belongs in code or specifications.
 
+## Work Modes
+
+Classify the request before editing:
+
+1. **Normative Contract Mode:** Use for creation, review, validation, or any edit that changes a token value, key, reference, theme definition, canonical prose rule, or ownership boundary. Run the complete authoring workflow and follow the project's versioning policy.
+2. **Annotation Mode:** Use only when the user is iterating directly in HTML or implementation code and explicitly wants to record a pending `DESIGN.md` decision as comments without changing the current contract. This mode creates a detailed deferred TODO, not a normative design change.
+
+### Annotation Mode
+
+1. Inspect project instructions, the existing `DESIGN.md`, the owning section, and the implementation evidence behind the note. Preserve the current ownership mode.
+2. Create a temporary baseline copy. Add the comment immediately before the owning key or section so its intended scope is unambiguous.
+3. Start the note with `TODO(DESIGN):` and make it detailed enough that a future agent can resolve it without reconstructing the current session. Include:
+   - the current implementation or observed behavior, with affected surfaces or paths when known;
+   - the candidate contract change or question to revisit;
+   - the reason and evidence for recording it, plus why the decision is deferred;
+   - affected tokens, components, surfaces, themes, and states;
+   - unresolved decisions or tradeoffs;
+   - the next review action and the criterion for resolving or deleting the TODO.
+4. Keep normative YAML unchanged: do not alter exact values, keys, references, theme entries, or prose that changes the contract. Do not edit implementation solely to make the annotation true.
+5. Do **not** increment the `DESIGN.md` version for an annotation-only change.
+6. Run the official lint and diff gate. The diff for this task must contain only comments. If a normative value or rule must change, leave Annotation Mode and use Normative Contract Mode.
+
+Deferred TODOs may accumulate across implementation iterations. At the next normative design-system update, review all relevant TODOs together, resolve the decisions, update the owning contract and implementation as needed, remove resolved annotations, and apply versioning once for that normative batch.
+
 ## Complete Authoring Workflow
 
-There is no quick or partial authoring mode. Even for a narrow request, inspect and validate the complete contract before finishing.
+This workflow is mandatory for Normative Contract Mode; there is no quick or partial normative authoring mode. Even for a narrow normative request, inspect and validate the complete contract before finishing.
 
 1. Inspect project instructions, existing `DESIGN.md`, component/theme sources, and distribution needs.
 2. Select and state the ownership mode.

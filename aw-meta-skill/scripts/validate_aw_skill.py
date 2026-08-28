@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate AW metadata and workflow-diagram requirements for a Codex skill."""
+"""Validate AW metadata and text/visual workflow requirements for a Codex skill."""
 
 from __future__ import annotations
 
@@ -36,7 +36,8 @@ def load_frontmatter(skill_md: Path) -> tuple[dict, str]:
 def validate(skill_dir: Path) -> list[str]:
     errors: list[str] = []
     skill_md = skill_dir / "SKILL.md"
-    workflow = skill_dir / "docs" / "workflow.svg"
+    workflow_md = skill_dir / "docs" / "workflow.md"
+    workflow_svg = skill_dir / "docs" / "workflow.svg"
 
     if not skill_md.is_file():
         return ["SKILL.md is missing"]
@@ -58,15 +59,32 @@ def validate(skill_dir: Path) -> list[str]:
         if isinstance(version, str) and version.strip() and not SEMVER.fullmatch(version.strip()):
             errors.append("metadata.version must use semantic versioning (MAJOR.MINOR.PATCH)")
 
+    if not re.search(r"\[[^\]]+\]\(docs/workflow\.md\)", body):
+        errors.append("SKILL.md must link to docs/workflow.md with descriptive text")
     if not re.search(r"!\[[^\]]+\]\(docs/workflow\.svg\)", body):
         errors.append("SKILL.md must embed docs/workflow.svg with descriptive alt text")
 
-    if not workflow.is_file():
+    if not workflow_md.is_file():
+        errors.append("docs/workflow.md is missing")
+    else:
+        try:
+            workflow_text = workflow_md.read_text(encoding="utf-8")
+        except OSError as exc:
+            errors.append(f"docs/workflow.md cannot be read: {exc}")
+        else:
+            if not re.search(r"^#\s+\S", workflow_text, re.MULTILINE):
+                errors.append("docs/workflow.md must contain a top-level heading")
+            if not re.search(r"^##\s+\S", workflow_text, re.MULTILINE):
+                errors.append("docs/workflow.md must contain structured sections")
+            if "workflow.svg" not in workflow_text:
+                errors.append("docs/workflow.md must identify workflow.svg as its visual projection")
+
+    if not workflow_svg.is_file():
         errors.append("docs/workflow.svg is missing")
         return errors
 
     try:
-        root = ET.parse(workflow).getroot()
+        root = ET.parse(workflow_svg).getroot()
     except (OSError, ET.ParseError) as exc:
         errors.append(f"docs/workflow.svg is not valid XML: {exc}")
         return errors

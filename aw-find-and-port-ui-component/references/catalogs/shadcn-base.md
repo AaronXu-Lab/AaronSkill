@@ -1,7 +1,7 @@
 # shadcn/ui Base
 
 - Status: `fresh`
-- Last checked: `2026-08-11T02:39:57+00:00`
+- Last checked: `2026-08-27T11:44:10+00:00`
 - Last successful refresh: `2026-07-23T10:38:36+00:00`
 - Eligible components: `61`
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
   <title id="title">AW Meta Skill 工作流程</title>
-  <desc id="desc">先加载 skill-creator 基础规范，判断创建或更新路径，再维护元数据与流程图，最后执行双重校验并交付。</desc>
+  <desc id="desc">先加载 skill-creator 基础规范，判断创建或更新路径，再维护元数据、文本工作流与可视化流程图，最后执行双重校验并交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#4b5d6b"/>
@@ -22,7 +22,7 @@
 
   <rect width="1200" height="1200" fill="#f7f9fb"/>
   <text class="title" x="600" y="48" text-anchor="middle">AW Meta Skill</text>
-  <text class="subtitle" x="600" y="75" text-anchor="middle">以 skill-creator 为基础，增加元数据与流程图交付门禁</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">以 skill-creator 为基础，增加元数据与双轨工作流交付门禁</text>
 
   <rect class="step" x="420" y="105" width="360" height="72" rx="16"/>
   <text class="label" x="600" y="135">接收创建或更新请求</text>
@@ -70,13 +70,13 @@
 
   <path class="line" d="M600 911 V950"/>
   <rect class="action" x="400" y="950" width="400" height="86" rx="16"/>
-  <text class="label" x="600" y="983">创建或同步 workflow.svg</text>
-  <text class="detail" x="600" y="1009">阶段、判断、停止条件与产物保持一致</text>
+  <text class="label" x="600" y="983">同步 workflow.md + workflow.svg</text>
+  <text class="detail" x="600" y="1009">Markdown 为执行事实源，SVG 为可视化投影</text>
 
   <path class="line" d="M600 1036 V1070"/>
   <rect class="step" x="400" y="1070" width="400" height="72" rx="16"/>
   <text class="label" x="600" y="1100">基础校验 + AW 附加校验</text>
-  <text class="detail" x="600" y="1124">人工复核语义、版本与 UI metadata</text>
+  <text class="detail" x="600" y="1124">人工复核双轨一致性、版本与 UI metadata</text>
 
   <path class="line" d="M600 1142 V1160"/>
   <rect class="done" x="470" y="1160" width="260" height="36" rx="18"/>

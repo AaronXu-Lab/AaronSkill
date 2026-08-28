@@ -1,9 +1,9 @@
 # Fluid Functionalism
 
 - Status: `fresh`
-- Last checked: `2026-08-11T02:39:57+00:00`
-- Last successful refresh: `2026-08-11T02:38:51+00:00`
-- Eligible components: `23`
+- Last checked: `2026-08-27T11:44:10+00:00`
+- Last successful refresh: `2026-08-24T10:25:35+00:00`
+- Eligible components: `24`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|
@@ -22,6 +22,7 @@
 | Input Message | Chat-style message composer with auto-resizing textarea, drag-and-drop file attachments (PNG / JPEG / PDF), flexible left/right action slots, and a built-in send button on a Surface-2 substrate. | [Preview](https://www.fluidfunctionalism.com/docs/input-message) | [Source](https://www.fluidfunctionalism.com/r/input-message.json) |
 | Radio Group | Animated radio group with proximity hover, spring-animated selection dot. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/radio-group) | [Source](https://www.fluidfunctionalism.com/r/radio-group-base.json) |
 | Select | Animated select menu with collision-aware positioning, typeahead, proximity hover, spring-animated popover, and animated checkmark. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/select) | [Source](https://www.fluidfunctionalism.com/r/select-base.json) |
+| Sidebar | Refined, composable app sidebar with offcanvas collapse, floating and inset variants, a mobile drawer, cookie-persisted state, keyboard shortcut, and proximity-hover menus with traveling selection, hover, and focus indicators. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/sidebar) | [Source](https://www.fluidfunctionalism.com/r/sidebar-base.json) |
 | Slider | Animated slider with spring-snapped thumb, step dots, range mode, and click-to-edit value display. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/slider) | [Source](https://www.fluidfunctionalism.com/r/slider-base.json) |
 | Switch | Animated toggle switch with spring-based thumb animation and fluid font-weight label transitions. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/switch) | [Source](https://www.fluidfunctionalism.com/r/switch-base.json) |
 | Table | Animated table with proximity-based row hover highlighting and fluid border transitions. Includes TableHeader, TableBody, TableRow, TableHead, and TableCell sub-components. | [Preview](https://www.fluidfunctionalism.com/docs/table) | [Source](https://www.fluidfunctionalism.com/r/table.json) |

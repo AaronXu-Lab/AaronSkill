@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-11T02:39:57+00:00",
+  "generated_at": "2026-08-27T11:44:10+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-11T02:39:57+00:00",
+      "last_checked_at": "2026-08-27T11:44:10+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -997,7 +997,7 @@
       "id": "coss-ui",
       "name": "coss ui",
       "status": "fresh",
-      "last_checked_at": "2026-08-11T02:39:57+00:00",
+      "last_checked_at": "2026-08-27T11:44:10+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -1893,7 +1893,7 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-11T02:39:57+00:00",
+      "last_checked_at": "2026-08-27T11:44:10+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -2681,13 +2681,13 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-11T02:39:57+00:00",
-      "last_success_at": "2026-08-07T08:08:12+00:00",
+      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_success_at": "2026-08-24T10:25:35+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"bb3b34a4cf65478eb3b572fea99b644d52b2fc55c38723cc044ef4dc7b452438\"",
-          "last_modified": "Fri, 07 Aug 2026 07:35:40 GMT"
+          "etag": "W/\"93cecdb50e53a325d62adb74343911a0895c72f6ea7d5b4218793e57897c443b\"",
+          "last_modified": "Mon, 24 Aug 2026 07:53:05 GMT"
         }
       },
       "items": [
@@ -2892,6 +2892,22 @@
           "category": "Components and examples",
           "preview_url": "https://reui.io/components/carousel",
           "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/carousel",
+          "foundation": "base-ui",
+          "variant": "base",
+          "dependencies": [],
+          "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
+          "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Cascader",
+          "slug": "cascader",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/cascader",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/cascader",
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [],
@@ -3865,7 +3881,7 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-08-11T02:39:57+00:00",
+      "last_checked_at": "2026-08-27T11:44:10+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -4761,13 +4777,13 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-08-11T02:39:57+00:00",
-      "last_success_at": "2026-08-11T02:38:51+00:00",
+      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_success_at": "2026-08-24T10:25:35+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"b12cf491b05af13fe4335fa92352048c\"",
-          "last_modified": "Tue, 11 Aug 2026 02:39:13 GMT"
+          "etag": "\"e89b76bbf1d678adb4685f747cc33394\"",
+          "last_modified": "Mon, 24 Aug 2026 10:25:59 GMT"
         }
       },
       "items": [
@@ -4979,7 +4995,8 @@
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
             "https://www.fluidfunctionalism.com/r/slider.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tooltip.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5064,7 +5081,8 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tooltip.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5119,6 +5137,7 @@
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/file-thumbnail.json",
+            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/button.json",
             "https://www.fluidfunctionalism.com/r/tooltip.json"
           ],
@@ -5183,6 +5202,40 @@
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": true,
           "registry_slug": "select-base"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Sidebar",
+          "slug": "sidebar",
+          "description": "Refined, composable app sidebar with offcanvas collapse, floating and inset variants, a mobile drawer, cookie-persisted state, keyboard shortcut, and proximity-hover menus with traveling selection, hover, and focus indicators. Base UI flavor.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/sidebar",
+          "source_url": "https://www.fluidfunctionalism.com/r/sidebar-base.json",
+          "foundation": "base-ui-or-native",
+          "variant": "base-or-native",
+          "dependencies": [
+            "@base-ui/react",
+            "framer-motion",
+            "lucide-react",
+            "class-variance-authority",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-classes.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/base/tooltip.json",
+            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
+            "https://www.fluidfunctionalism.com/r/base/button.json"
+          ],
+          "license": "MIT; verify the exact public registry item and preserve the repository license notice",
+          "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": true,
+          "registry_slug": "sidebar-base"
         },
         {
           "source_id": "fluid-functionalism",

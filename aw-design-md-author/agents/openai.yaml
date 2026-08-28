@@ -1,4 +1,4 @@
 interface:
   display_name: "AW Design.md Author"
-  short_description: "创建并校验完整的 DESIGN.md 设计契约"
-  default_prompt: "Use $aw-design-md-author to fully create or review this DESIGN.md, choose the correct ownership mode, and validate the complete result."
+  short_description: "创建、校验 DESIGN.md，并记录详细的延后变更 TODO"
+  default_prompt: "Use $aw-design-md-author to create, review, or maintain this DESIGN.md, using annotation-only TODO mode when I ask to defer value changes."
