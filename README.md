@@ -42,7 +42,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 ## Skills
 
-目前共收录 **12 个 Skill**，按主要用途分为 Skill 工程、设计相关、资源获取和其他四类。
+目前共收录 **11 个 Skill**，按主要用途分为 Skill 工程、设计相关、资源获取和其他四类。
 
 ### Skill 工程
 
@@ -59,7 +59,6 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.9.0` | 治理 Figma 组件命名、Variant、Property、Slot 和顺序 | 不安全的 Variant 值重排保留为人工操作 |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.0.3` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.0.0` | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
-| [`aw-mg-import-parity`](./aw-mg-import-parity/) | `1.0.2` | 修复 MasterGo `.mg` 文件导入 Figma 后的结构与视觉保真问题 | 以截图为渲染基准、zip 为结构辅助，并要求全 fixture 回归 |
 | [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.2.0` | 审计所有 UI/UX 界面与交互表面的语义重复、信息密度和层级问题 | 先输出审计证据与最小改动决策，再实施界面修改 |
 
 ### 资源获取
