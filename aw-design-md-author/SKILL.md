@@ -3,13 +3,15 @@ name: aw-design-md-author
 description: Create, review, validate, and maintain DESIGN.md contracts against Google Labs' official format, including detailed annotation-only TODOs for deferred design decisions. Use for full authoring, ownership decisions, token schema, canonical sections, semantic naming, deferred annotations, iteration, and official lint validation.
 metadata:
   author: aaron_xu
-  version: "1.1.0"
+  version: "1.1.2"
   creation_context: "为按照 Google Labs DESIGN.md 官方规范完整创建、审查和维护设计系统文档而创建，统一处理 Token 所有权、语义命名、章节结构与验证。"
 ---
 
 # AW DESIGN.md Author
 
 Create and maintain `DESIGN.md` as a complete, verifiable visual contract. Work in the user's language and preserve their design intent and voice.
+
+执行时先读取 [DESIGN.md 编写文本工作流](docs/workflow.md)。
 
 ![Normative DESIGN.md authoring workflow](docs/workflow.svg)
 

@@ -1,4 +1,0 @@
-interface:
-  display_name: "AW Logo Asset Cook"
-  short_description: "从指定 SVG 重建全平台图标与分平台用法说明"
-  default_prompt: "使用 $aw-logo-asset-cook 从我明确指定的 SVG 或图标资源目录解析唯一 SVG，检查明暗主题并重建全平台图标及根目录用法 README。"

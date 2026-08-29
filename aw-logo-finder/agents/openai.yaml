@@ -1,4 +1,0 @@
-interface:
-  display_name: "AW Logo Finder"
-  short_description: "从官网、Logo 资源站和应用商店寻找并规范输出品牌 Logo"
-  default_prompt: "Use $aw-logo-finder to find the best verified logo for a brand and prepare a confirmed WebP asset."

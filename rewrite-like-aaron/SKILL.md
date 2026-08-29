@@ -3,13 +3,15 @@ name: rewrite-like-aaron
 description: 将 AI 生成、AI 协作或表达过于通用的中文草稿，改写成 Aaron Xu 当前的博客文风；也可把 Aaron 的零散笔记整理成文章。用于博客、产品体验、设计与技术复盘、观点评论、教程、资讯整理和个人文化评论。保留原稿的事实、立场、经历、信息边界与 Markdown 结构，去除 AI 套路，同时防止用口头禅、中英混写、反问和短句进行表面模仿。
 metadata:
   author: aaron_xu
-  version: "1.0.1"
+  version: "1.0.3"
   creation_context: "为将通用或 AI 痕迹明显的中文草稿恢复为 Aaron Xu 当前的思考与表达方式，同时严格保留事实、立场和信息边界而创建。"
 ---
 
 # Aaron 文风改写
 
 把任务理解为“恢复作者的思考方式”，不要理解为“添加 Aaron 常用词”。
+
+执行时先读取 [Aaron 文风改写文本工作流](docs/workflow.md)。
 
 ![Aaron 文风改写流程](docs/workflow.svg)
 

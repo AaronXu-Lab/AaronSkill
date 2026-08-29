@@ -2,7 +2,7 @@
 name: aw-meta-skill
 description: 基于 skill-creator 创建或更新 Codex SKILL，并额外强制维护机器可读的 docs/workflow.md、可视化的 docs/workflow.svg，以及包含 version、author、creation_context 的 metadata。用户要求新建、改造、升级或规范化 SKILL，且需要这些 AW 交付约束时使用。
 metadata:
-  version: "2.1.0"
+  version: "1.1.0"
   author: "aaron_xu"
   creation_context: "为统一 AW 系列 SKILL 的创建与更新流程，确保每个交付都包含便于模型读取的文本工作流、面向人的可视化流程图，以及可追溯的版本、作者及创建语境元数据而创建。"
 ---
@@ -29,7 +29,7 @@ metadata:
 
 ### 1. 读取基础规范与目标现状
 
-完整读取 `$skill-creator`。若为更新，先检查目标 SKILL 的 `SKILL.md`、`agents/openai.yaml`、`docs/workflow.md`、`docs/workflow.svg`、脚本、引用资料及调用关系；保留不在用户范围内的现有字段和资源，不重新初始化已有目录。
+完整读取 `$skill-creator`。若为更新，先检查目标 SKILL 的 `SKILL.md`、`docs/workflow.md`、`docs/workflow.svg`、脚本、引用资料及调用关系；保留不在用户范围内的现有字段和资源，不重新初始化已有目录。
 
 明确目标 SKILL 应处理的真实请求、触发边界、必需资源和可验证结果。不要把本包装层的约束扩张成与用户目标无关的目录或文档。
 
@@ -50,7 +50,9 @@ metadata:
   creation_context: "说明该 SKILL 为何在此业务或工作流语境中创建。"
 ```
 
-- `version` 使用语义化版本 `MAJOR.MINOR.PATCH`。新建默认为 `1.0.0`；不兼容的契约变化增加 MAJOR，向后兼容的新能力增加 MINOR，修复或澄清增加 PATCH。只修改目标 SKILL 时才升级版本。
+- `version` 使用语义化版本 `MAJOR.MINOR.PATCH`。新建默认为 `1.0.0`。更新现有 SKILL 时，默认把 MINOR 加一，即 `+0.1.0`；只有明确属于小改动的修复、澄清、文档或内部实现调整才把 PATCH 加一，即 `+0.0.1`。
+- 只有用户明确要求升级大版本号时才增加 MAJOR。不得自行推断或主动提升 MAJOR；若改动具有不兼容性但用户未明确授权大版本升级，停止并向用户确认。
+- 只修改目标 SKILL 时才升级其版本。每次变更版本号都必须在交付中明确通知用户，报告旧版本与新版本；不得静默升级。
 - `author` 优先沿用现有值；新建时从用户明确输入、仓库约定或当前项目上下文中确定。无法可靠推断时再询问，不能虚构个人身份。
 - `creation_context` 使用稳定的一至两句话说明创建该 SKILL 的业务背景、重复工作或决策需求。不要粘贴临时对话、日期流水或实现步骤。更新时默认保留；只有目标用途或业务语境实质变化时才同步修订。
 - 旧 SKILL 使用 `context` 时，更新过程中迁移为 `creation_context`，除非外部调用方明确依赖旧键；存在依赖时保留兼容键并说明原因。
@@ -90,6 +92,6 @@ python3 /path/to/skill-creator/scripts/quick_validate.py /absolute/path/to/targe
 python3 /path/to/aw-meta-skill/scripts/validate_aw_skill.py /absolute/path/to/target-skill
 ```
 
-附加校验只证明结构性不变量成立；仍需人工核对文本工作流与流程图是否真实反映阶段和判断、两者是否一致、元数据是否准确、版本升级是否合理，以及基础 `skill-creator` 的内容质量要求是否满足。有脚本时运行其最小相关测试，有 UI metadata 时核对 `agents/openai.yaml` 与 SKILL 一致。
+附加校验只证明结构性不变量成立；仍需人工核对文本工作流与流程图是否真实反映阶段和判断、两者是否一致、元数据是否准确、版本升级是否合理，以及基础 `skill-creator` 的内容质量要求是否满足。有脚本时运行其最小相关测试。
 
-最终报告目标路径、版本变化、author/creation_context 的取值、文本工作流与流程图状态和全部校验结果。
+最终报告目标路径、明确的版本变化（旧版本 → 新版本）、author/creation_context 的取值、文本工作流与流程图状态和全部校验结果。即使版本变化是任务中的附带动作，也必须主动通知用户。

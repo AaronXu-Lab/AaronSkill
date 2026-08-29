@@ -1,4 +1,0 @@
-interface:
-  display_name: "AW MG Import Parity"
-  short_description: "以截图为准、zip 辅助，修复 MasterGo2Figma 的 mg 导入还原问题"
-  default_prompt: "Use $aw-mg-import-parity: 我给出 .mg 与基准 zip 的路径和包含 mg/zip/截图三页的 Figma 链接，请以截图为渲染基准、zip 为结构辅助，修复 mg 导入问题并交付前后对照数字表。"

@@ -2,7 +2,7 @@
 name: aw-mg-import-parity
 description: MasterGo2Figma 仓库的 mg 导入保真度修复工作流。用户给出新的 .mg 测试文件与对应基准 zip 的路径，外加一个包含 mg 导入、zip 导入、截图（图片）三种页面的 Figma 链接，要求以截图为渲染基准、zip 为结构辅助、修复 mg 导入还原问题时必须使用本 SKILL。只要用户在 MasterGo2Figma 项目里提到"新测试集""导入效果不对""贴近图片/截图""mg 导入问题""还原有问题"并附上 .mg/zip 路径或 figma.com 链接，即使没有点名本 SKILL 也应触发。覆盖 compare_mg_import 结构比对、mgPackage.js 二进制逆向、importer 视觉缺陷取证、全 fixture 回归与文档同步。
 metadata:
-  version: "1.0.0"
+  version: "1.0.2"
   author: "aaron_xu"
   creation_context: "MasterGo→Figma 迁移插件需要反复用新测试集校准 .mg 二进制解码器与导入端还原效果；为固化『截图为准、zip 辅助、修 mg』的多轮实战流程与踩坑守则而创建。"
 ---
@@ -10,6 +10,9 @@ metadata:
 # AW MG Import Parity
 
 修复 MasterGo2Figma 仓库（`~/Documents/Figma Plugin/MasterGo2Figma`）的 `.mg` 导入保真度。
+
+执行时先读取 [MG 导入保真度修复文本工作流](docs/workflow.md)。
+
 三个证据源各司其职，混用会误诊：
 
 - **图片页（截图导入）= 渲染基准**。MasterGo 自己导出的 PNG，是"屏幕上应该长什么样"的唯一真相。

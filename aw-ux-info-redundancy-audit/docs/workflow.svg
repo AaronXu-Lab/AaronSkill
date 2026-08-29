@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780" role="img" aria-labelledby="workflow-title workflow-desc">
   <title id="workflow-title">UI/UX 重复信息审计流程</title>
-  <desc id="workflow-desc">从最新证据到最小改动的六阶段 UI/UX 重复信息审计流程图，包含证据确认、归一化、判断、范围限制、建议、状态覆盖与无障碍验证。</desc>
+  <desc id="workflow-desc">适用于所有 UI/UX 界面与交互表面的六阶段重复信息审计流程图，包含跨界面证据确认、归一化、判断、范围限制、建议、状态覆盖与无障碍验证。</desc>
 
   <defs>
     <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
@@ -73,8 +73,8 @@
     <circle class="stage-number" cx="135" cy="281" r="19"/>
     <text class="number" x="135" y="281" fill="#315fce">1</text>
     <text class="stage-title" x="168" y="282" fill="#1c2028">盘点</text>
-    <text class="stage-copy" x="168" y="315" fill="#667085">先确认页面与代码是最新证据，再记录任务、</text>
-    <text class="stage-copy" x="168" y="336" fill="#667085">状态、层级、展示数据和现有操作。</text>
+    <text class="stage-copy" x="168" y="315" fill="#667085">先确认目标语境中的界面与实现是最新证据，</text>
+    <text class="stage-copy" x="168" y="336" fill="#667085">再记录载体、媒介、输入、状态和现有操作。</text>
   </g>
 
   <g aria-label="阶段 2 归一化">
@@ -118,7 +118,7 @@
     <circle class="final-number" cx="596" cy="573" r="19"/>
     <text class="number" x="596" y="573" fill="#315fce">6</text>
     <text class="stage-title" x="629" y="574" fill="#ffffff">验证与交付</text>
-    <text class="stage-copy" x="629" y="607" fill="#ffffff" opacity="0.78">覆盖关键状态，并确认语义不只依赖颜色或</text>
-    <text class="stage-copy" x="629" y="628" fill="#ffffff" opacity="0.78">装饰图标，再实现审计支持的改动。</text>
+    <text class="stage-copy" x="629" y="607" fill="#ffffff" opacity="0.78">覆盖关键状态，确认语义不依赖单一感知线索，</text>
+    <text class="stage-copy" x="629" y="628" fill="#ffffff" opacity="0.78">并在目标输入与辅助方式下完成验证。</text>
   </g>
 </svg>

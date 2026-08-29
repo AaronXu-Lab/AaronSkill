@@ -1,4 +1,0 @@
-interface:
-  display_name: "AW Find and Port UI Component"
-  short_description: "分阶段查找、验证并移植 UI 组件"
-  default_prompt: "Use $aw-find-and-port-ui-component to run either the Find phase or the Port phase for this UI component request, keeping explicit user selection between phases."

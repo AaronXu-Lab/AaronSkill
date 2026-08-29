@@ -1,4 +1,0 @@
-interface:
-  display_name: "Aaron 文风改写"
-  short_description: "将 AI 中文草稿改写为 Aaron 当前的博客文风"
-  default_prompt: "使用 $rewrite-like-aaron，在不改动事实、立场和信息边界的前提下，把这篇中文草稿改写成 Aaron Xu 当前的博客文风。"

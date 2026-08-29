@@ -3,7 +3,7 @@ name: aw-logo-asset-cook
 description: 从用户在请求开头明确指定的 SVG 或图标资源目录，解析唯一 SVG 并重建精简且经过验证的全平台图标资源与分平台用法 README；覆盖网页 favicon、Apple Touch、PWA、Apple、Windows、Linux、Android、菜单栏及托盘图标，并处理明暗主题。源图更新或需要刷新这些资源时使用。
 metadata:
   author: aaron_xu
-  version: "2.4.0"
+  version: "1.0.0"
   creation_context: "为从用户显式选择的 SVG 唯一事实源稳定生成网页 favicon、可引用的安装图标、桌面端、移动端、菜单栏及托盘图标，并提供可随资源同步更新的分平台用法说明；同时在单主题补色、清理产物和 Apple Icon Composer 验证前设置明确授权门禁。"
 ---
 
@@ -18,6 +18,8 @@ metadata:
 目标 `favicon-package` 默认使用源 SVG 所在目录；目录模式默认使用用户指定的目录。如果用户指定了其他目标目录，以用户指定为准。运行生成时仍必须通过 `--project-root` 显式传入目标目录，禁止根据当前工作目录或 SKILL 所在位置猜测。
 
 ## 流程概览
+
+执行时先读取 [应用图标资源生成文本工作流](docs/workflow.md)。
 
 ![应用图标资源生成核心流程](docs/workflow.svg)
 
