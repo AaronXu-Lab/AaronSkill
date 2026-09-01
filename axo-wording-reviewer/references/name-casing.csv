@@ -1,0 +1,55 @@
+# 品牌与产品实体名的大小写表。第一列是官方写法，第二列是需要报错的错误写法，用 | 分隔。
+# 也收录被当作产品实体名使用的普通英文词（如 Skill）：它们在中文文案里只有首字母
+# 大写一种正确写法，全大写是把标识符或文件名的写法漏进了文案。
+# 小写形式一般不登记——它同时是合法的 ID、枚举值与用户输入的字面命令（@workflow）。
+官方写法,错误用法枚举
+GitHub,Github|GITHUB|github|Git Hub
+GitLab,Gitlab|GITLAB|gitlab
+Slack,SLACK|slack
+Notion,NOTION|notion
+Figma,FIGMA|figma
+Jira,JIRA|jira
+Confluence,CONFLUENCE|confluence
+Zoom,ZOOM
+Google,GOOGLE|google
+Gmail,GMail|gmail|G Mail
+YouTube,Youtube|youtube|You Tube
+LinkedIn,Linkedin|LinkedIN|linkedin
+OpenAI,Openai|OpenAi|openai|Open AI
+Anthropic,anthropic|ANTHROPIC
+Salesforce,SalesForce|salesforce
+HubSpot,Hubspot|HUBSPOT|hubspot
+Shopify,shopify|SHOPIFY
+Stripe,STRIPE
+macOS,MacOS|Macos|MACOS|macos|Mac OS
+iOS,IOS|Ios|ios
+iPadOS,IPadOS|ipadOS
+Android,android|ANDROID
+Windows,windows|WINDOWS
+Linux,linux|LINUX
+MacBook,Macbook|MACBOOK|Mac Book
+iPhone,IPhone|Iphone|iphone
+iPad,IPad|Ipad|ipad
+JavaScript,Javascript|javascript|JAVASCRIPT|Java Script
+TypeScript,Typescript|typescript|TYPESCRIPT|Type Script
+Node.js,Nodejs|NodeJS|NodeJs|node.js
+Python,python|PYTHON
+MySQL,Mysql|mysql|MYSQL|MySql
+PostgreSQL,Postgresql|postgresql|POSTGRESQL|PostgresQL
+MongoDB,Mongodb|mongodb|mongoDB
+Redis,redis|REDIS
+Docker,docker|DOCKER
+Kubernetes,kubernetes|KUBERNETES
+GraphQL,Graphql|graphql|GraphQl
+Excel,EXCEL
+PowerPoint,Powerpoint|powerpoint|Power Point
+Outlook,outlook|OUTLOOK
+飞书,Feishu|FeiShu|feishu
+钉钉,DingTalk|Dingtalk|dingtalk
+企业微信,WeCom|Wecom|wecom
+豆包,Doubao|DouBao|doubao
+淘宝,Taobao|TaoBao
+支付宝,Alipay|alipay
+微信,WeChat|Wechat|WECHAT|weChat
+微信支付,WeChat Pay|Wechat Pay
+Skill,SKILL

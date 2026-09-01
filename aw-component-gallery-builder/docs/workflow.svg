@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2200" role="img" aria-labelledby="title desc">
+  <title id="title">AW Component Gallery Builder 工作流程</title>
+  <desc id="desc">从确认组件 Gallery 范围、审计 API、选择规范化或从零建设模式，到建立展示矩阵、验证和交付的流程；包含非 Gallery 请求、未授权 API 缺口和验证失败的停止分支。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    </marker>
+    <style>
+      .canvas { fill: #f7f9fb; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; text-anchor: middle; }
+      .node-title { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; text-anchor: middle; }
+      .body { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; text-anchor: middle; }
+      .label { font: 600 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #334e68; }
+      .input { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
+      .stage { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
+      .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
+      .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
+      .output { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
+      .flow { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .merge { fill: none; stroke: #52606d; stroke-width: 2.5; }
+      .junction { fill: #52606d; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="1200" height="2200"/>
+  <text class="title" x="600" y="52">AW Component Gallery Builder 工作流程</text>
+
+  <!-- Connections are drawn first so node fills keep all routes outside content. -->
+  <path class="flow" d="M600 150 V200"/>
+  <path class="flow" d="M600 300 V340"/>
+  <path class="flow" d="M760 410 H880"/>
+  <path class="flow" d="M600 480 V540"/>
+  <path class="flow" d="M600 670 V700"/>
+  <path class="flow" d="M760 770 H900 V860"/>
+  <path class="merge" d="M600 840 V1180"/>
+  <path class="flow" d="M900 1020 V1040 H830 V1060"/>
+  <path class="flow" d="M1040 940 H1110 V1020"/>
+  <path class="merge" d="M830 1160 V1180 H600"/>
+  <circle class="junction" cx="600" cy="1180" r="5"/>
+  <path class="flow" d="M600 1180 V1220"/>
+  <path class="flow" d="M440 1290 H270 V1400"/>
+  <path class="flow" d="M760 1290 H930 V1400"/>
+  <path class="merge" d="M270 1500 V1540 H600"/>
+  <path class="merge" d="M930 1500 V1540 H600"/>
+  <circle class="junction" cx="600" cy="1540" r="5"/>
+  <path class="flow" d="M600 1540 V1580"/>
+  <path class="flow" d="M600 1680 V1730"/>
+  <path class="flow" d="M600 1850 V1870"/>
+  <path class="flow" d="M760 1940 H880"/>
+  <path class="flow" d="M600 2010 V2070"/>
+
+  <text class="label" x="785" y="395">否</text>
+  <text class="label" x="620" y="515">是</text>
+  <text class="label" x="785" y="755">是</text>
+  <text class="label" x="620" y="865">否</text>
+  <text class="label" x="845" y="1030">是</text>
+  <text class="label" x="1050" y="925">否</text>
+  <text class="label" x="305" y="1275">是</text>
+  <text class="label" x="835" y="1275">否</text>
+  <text class="label" x="785" y="1925">否</text>
+  <text class="label" x="620" y="2045">是</text>
+
+  <rect class="input" x="380" y="80" width="440" height="70" rx="14"/>
+  <text class="node-title" x="600" y="112">接收目标组件与 Gallery 请求</text>
+  <text class="body" x="600" y="135">确认范围、仓库与 API 修改授权</text>
+
+  <rect class="stage" x="380" y="200" width="440" height="100" rx="14"/>
+  <text class="node-title" x="600" y="238">读取仓库规则并收集证据</text>
+  <text class="body" x="600" y="264">实现 · 类型 · 样式 · 调用点</text>
+  <text class="body" x="600" y="284">Gallery · Token · 验证入口</text>
+
+  <polygon class="decision" points="600,340 760,410 600,480 440,410"/>
+  <text class="node-title" x="600" y="405">目标是可复用组件 Gallery？</text>
+  <text class="body" x="600" y="429">排除产品页、fixture 与调参器</text>
+
+  <rect class="stop" x="880" y="360" width="280" height="100" rx="14"/>
+  <text class="node-title" x="1020" y="398">停止套用 Gallery 结构</text>
+  <text class="body" x="1020" y="424">回到目标表面的本地规则</text>
+
+  <rect class="stage" x="380" y="540" width="440" height="130" rx="14"/>
+  <text class="node-title" x="600" y="578">审计组件公开 API</text>
+  <text class="body" x="600" y="604">默认值 · 视觉/内容/状态/行为轴</text>
+  <text class="body" x="600" y="626">受控状态 · 事件 · slot · 可访问性</text>
+  <text class="body" x="600" y="648">判断 Gallery 能否诚实表达</text>
+
+  <polygon class="decision" points="600,700 760,770 600,840 440,770"/>
+  <text class="node-title" x="600" y="765">存在实质 API 缺口？</text>
+  <text class="body" x="600" y="789">是否必须虚构、隐藏或联动无关轴</text>
+
+  <polygon class="decision" points="900,860 1040,940 900,1020 760,940"/>
+  <text class="node-title" x="900" y="935">已授权修改 API？</text>
+  <text class="body" x="900" y="959">确认公开契约变更范围</text>
+
+  <rect class="stage" x="680" y="1060" width="300" height="100" rx="14"/>
+  <text class="node-title" x="830" y="1098">最小化重构组件 API</text>
+  <text class="body" x="830" y="1124">同步类型、导出与调用点</text>
+
+  <rect class="stop" x="1020" y="1020" width="160" height="120" rx="14"/>
+  <text class="node-title" x="1100" y="1058">停止误导实现</text>
+  <text class="body" x="1100" y="1084">交付 API 缺口</text>
+  <text class="body" x="1100" y="1106">与建议决策</text>
+
+  <polygon class="decision" points="600,1220 760,1290 600,1360 440,1290"/>
+  <text class="node-title" x="600" y="1285">已有可维护 Gallery？</text>
+  <text class="body" x="600" y="1309">检查 shell、helper 与运行入口</text>
+
+  <rect class="stage" x="120" y="1400" width="300" height="100" rx="14"/>
+  <text class="node-title" x="270" y="1438">规范化现有 Gallery</text>
+  <text class="body" x="270" y="1464">保留本地视觉语言</text>
+  <text class="body" x="270" y="1484">只改目标 section</text>
+
+  <rect class="stage" x="780" y="1400" width="300" height="100" rx="14"/>
+  <text class="node-title" x="930" y="1438">从零建立最小骨架</text>
+  <text class="body" x="930" y="1464">Section · Caption · 舞台</text>
+  <text class="body" x="930" y="1484">主题与交互环境</text>
+
+  <rect class="stage" x="380" y="1580" width="440" height="100" rx="14"/>
+  <text class="node-title" x="600" y="1618">建立并实现展示矩阵</text>
+  <text class="body" x="600" y="1644">default 优先，每个主要公开轴一行</text>
+
+  <rect class="stage" x="380" y="1730" width="440" height="120" rx="14"/>
+  <text class="node-title" x="600" y="1768">运行代码与视觉验证</text>
+  <text class="body" x="600" y="1794">类型 · lint · 测试 · 构建</text>
+  <text class="body" x="600" y="1816">主题 · 视口 · 键盘 · 焦点 · 状态</text>
+
+  <polygon class="decision" points="600,1870 760,1940 600,2010 440,1940"/>
+  <text class="node-title" x="600" y="1935">全部必要验证通过？</text>
+  <text class="body" x="600" y="1959">代码结果与 Gallery 视觉一致</text>
+
+  <rect class="stop" x="880" y="1890" width="280" height="100" rx="14"/>
+  <text class="node-title" x="1020" y="1928">修复或报告验证阻塞</text>
+  <text class="body" x="1020" y="1954">失败时不得宣称完成</text>
+
+  <rect class="output" x="360" y="2070" width="480" height="90" rx="14"/>
+  <text class="node-title" x="600" y="2108">交付真实 API 对齐的 Gallery</text>
+  <text class="body" x="600" y="2134">报告修改、验证与保留的 API 债务</text>
+</svg>

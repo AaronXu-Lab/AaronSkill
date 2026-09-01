@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-27T11:44:10+00:00",
+  "generated_at": "2026-08-31T05:41:52+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_checked_at": "2026-08-31T05:41:52+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -997,7 +997,7 @@
       "id": "coss-ui",
       "name": "coss ui",
       "status": "fresh",
-      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_checked_at": "2026-08-31T05:41:52+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -1893,17 +1893,17 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-27T11:44:10+00:00",
-      "last_success_at": "2026-07-23T10:38:36+00:00",
+      "last_checked_at": "2026-08-31T05:41:52+00:00",
+      "last_success_at": "2026-08-31T05:41:52+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
           "etag": "\"a13ef2629ec081680a6f1eea4ac83022\"",
-          "last_modified": "Thu, 23 Jul 2026 10:35:48 GMT"
+          "last_modified": "Mon, 31 Aug 2026 05:42:50 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"91cc6efe26237fc56532e57908f47350\"",
-          "last_modified": "Thu, 23 Jul 2026 10:35:51 GMT"
+          "etag": "\"6eff429cfb41a143829461444158399a\"",
+          "last_modified": "Mon, 31 Aug 2026 05:42:47 GMT"
         }
       },
       "items": [
@@ -2681,7 +2681,7 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_checked_at": "2026-08-31T05:41:52+00:00",
       "last_success_at": "2026-08-24T10:25:35+00:00",
       "error": null,
       "fetch": {
@@ -3881,7 +3881,7 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_checked_at": "2026-08-31T05:41:52+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -4777,7 +4777,7 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-08-27T11:44:10+00:00",
+      "last_checked_at": "2026-08-31T05:41:52+00:00",
       "last_success_at": "2026-08-24T10:25:35+00:00",
       "error": null,
       "fetch": {

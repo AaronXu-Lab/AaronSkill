@@ -1,8 +1,8 @@
 # Dice UI Base
 
 - Status: `fresh`
-- Last checked: `2026-08-27T11:44:10+00:00`
-- Last successful refresh: `2026-07-23T10:38:36+00:00`
+- Last checked: `2026-08-31T05:41:52+00:00`
+- Last successful refresh: `2026-08-31T05:41:52+00:00`
 - Eligible components: `37`
 
 | Component | Description | Preview | Source |

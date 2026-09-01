@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1740" role="img" aria-labelledby="title desc">
+  <title id="title">AXO Wording Reviewer 工作流程</title>
+  <desc id="desc">先从项目文档收集命名禁令、规则集与项目专有约束，再把这些完整告知用户，取得许可后才继续，用户可以逐项取消而只执行获准的部分。随后确定简体中文文案审查范围，依次执行机械检查和人工复核；发现手写日期格式时，只有获得用户许可才迁移格式化器。随后输出分级 Review 报告，并仅在用户明确要求时应用修改和重新验证。范围无效、语料不适用或需要越界时停止。</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker>
+    <style>
+      .h{font:700 30px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b}.l{font:600 18px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b;text-anchor:middle}.d{font:400 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#52606d;text-anchor:middle}.e{font:600 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#52606d;text-anchor:middle}.b{fill:#fff;stroke:#9eacb8;stroke-width:2}.x{fill:#edf6ff;stroke:#287bbb;stroke-width:2}.q{fill:#fff7e6;stroke:#c98312;stroke-width:2}.s{fill:#fff0ef;stroke:#c94b43;stroke-width:2}.g{fill:#edf9f1;stroke:#2e8b54;stroke-width:2}.p{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}.r{fill:none;stroke:#52606d;stroke-width:2.5}
+    </style>
+  </defs>
+  <rect width="1200" height="1740" fill="#f7f9fb"/><text class="h" x="600" y="48" text-anchor="middle">AXO Wording Reviewer</text>
+  <rect class="x" x="360" y="76" width="480" height="104" rx="14"/><text class="l" x="600" y="106">1 · 收集项目专有约束</text><text class="d" x="600" y="129">--list-bans 提取命名禁令 · --list-rules 列出规则集</text><text class="d" x="600" y="150">通读 AGENTS.md / 设计文档：术语表 · 状态词 · 占位约定</text><text class="d" x="600" y="171">补记脚本抓不到的自然语言禁令 · 不与用户交互</text>
+  <path class="p" d="M600 180V206"/>
+  <g transform="translate(0,130)">
+  <rect class="x" x="400" y="76" width="400" height="92" rx="14"/><text class="l" x="600" y="106">2 · 预检与确认（扫描前）</text><text class="d" x="600" y="129">把阶段 1 收集到的逐条摆给用户</text><text class="d" x="600" y="150">禁用词及其出处 · 规则集 · 项目专有约束</text>
+  <path class="p" d="M600 168V206"/><polygon class="q" points="600,206 790,266 600,326 410,266"/><text class="l" x="600" y="262">用户许可继续？</text><text class="d" x="600" y="286">逐条告知后再开始扫描</text>
+  <path class="p" d="M790 266H850"/><text class="e" x="820" y="254">否</text><rect class="s" x="850" y="223" width="300" height="86" rx="14"/><text class="l" x="1000" y="253">不开始扫描</text><text class="d" x="1000" y="276">完全未回应时不扫描</text><text class="d" x="1000" y="296">未获准的规则与禁用词不执行</text>
+  <path class="p" d="M410 266H350"/><text class="e" x="380" y="254">部分</text><rect class="g" x="50" y="223" width="300" height="86" rx="14"/><text class="l" x="200" y="253">只执行获准的部分</text><text class="d" x="200" y="276">--skip-rule · --rule</text><text class="d" x="200" y="296">--skip-ban · --ban · --agents-md</text>
+  <path class="p" d="M600 326V366"/><text class="e" x="620" y="350">是</text>
+  <g transform="translate(0,290)">
+  <rect class="b" x="420" y="80" width="360" height="64" rx="14"/><text class="l" x="600" y="108">3 · 确定审查范围</text><text class="d" x="600" y="130">显式目标 › 未提交改动 › 业务域</text>
+  <path class="p" d="M600 144V190"/><polygon class="q" points="600,190 790,250 600,310 410,250"/><text class="l" x="600" y="246">范围有效且适用？</text><text class="d" x="600" y="270">仅审查指定范围内的简体中文文案</text>
+  <path class="p" d="M790 250H850"/><text class="e" x="820" y="238">否</text><rect class="s" x="850" y="207" width="300" height="86" rx="14"/><text class="l" x="1000" y="237">说明原因并停止</text><text class="d" x="1000" y="260">范围为空 · 非简体中文语料</text><text class="d" x="1000" y="280">或需要跨出用户指定范围</text>
+  <path class="p" d="M600 310V476"/><text class="e" x="620" y="338">是</text>
+  <rect class="x" x="420" y="476" width="360" height="74" rx="14"/><text class="l" x="600" y="505">4 · 运行机械检查</text><text class="d" x="600" y="528">check_copy.py --json · error / warn · 只报告</text>
+  <path class="p" d="M600 550V596"/><rect class="x" x="420" y="596" width="360" height="74" rx="14"/><text class="l" x="600" y="625">5 · 人工复核不可机械判定的规则</text><text class="d" x="600" y="648">段位 · 时间模式 · 术语 · 语气证据 · 微文案</text>
+  <path class="p" d="M600 670V716"/><polygon class="q" points="600,716 790,776 600,836 410,776"/><text class="l" x="600" y="772">发现手写或多套日期格式？</text><text class="d" x="600" y="796">仅命中时进入可选迁移判断</text>
+  <path class="p" d="M790 776H850"/><text class="e" x="820" y="764">是</text><polygon class="q" points="1000,716 1150,776 1000,836 850,776"/><text class="l" x="1000" y="772">用户许可迁移？</text><text class="d" x="1000" y="796">未许可则只报告</text>
+  <path class="p" d="M1000 836V882"/><text class="e" x="1020" y="861">是</text><rect class="x" x="850" y="882" width="300" height="86" rx="14"/><text class="l" x="1000" y="912">6 · 迁移并替换格式化逻辑</text><text class="d" x="1000" y="935">复制 format-time.ts · 调整导入</text><text class="d" x="1000" y="955">替换手写格式 · 运行类型检查</text>
+  <path class="p" d="M600 836V1008"/><text class="e" x="620" y="864">否</text>
+  <path class="r" d="M1150 776H1170V1045H840"/><text class="e" x="1170" y="760">否</text>
+  <path class="r" d="M1000 968V988H840V1045"/>
+  <circle cx="840" cy="1045" r="3" fill="#52606d"/>
+  <path class="p" d="M840 1045H780"/>
+  <rect class="x" x="420" y="1008" width="360" height="74" rx="14"/><text class="l" x="600" y="1037">7 · 输出分级 Review 报告</text><text class="d" x="600" y="1060">file:line · 规则 ID · 原文 · 完整改写 · 依据</text>
+  <path class="p" d="M600 1082V1128"/><polygon class="q" points="600,1128 790,1188 600,1248 410,1188"/><text class="l" x="600" y="1184">用户明确要求修改？</text><text class="d" x="600" y="1208">Review 本身默认不改文件</text>
+  <path class="p" d="M410 1188H350"/><text class="e" x="380" y="1176">否</text><rect class="g" x="50" y="1156" width="300" height="64" rx="14"/><text class="l" x="200" y="1184">交付 Review 报告</text><text class="d" x="200" y="1206">含待确认项与可选迁移建议</text>
+  <path class="p" d="M790 1188H850"/><text class="e" x="820" y="1176">是</text><rect class="g" x="850" y="1145" width="300" height="86" rx="14"/><text class="l" x="1000" y="1175">8 · 应用文案修改并验证</text><text class="d" x="1000" y="1198">只改字符串 · i18n key 不变</text><text class="d" x="1000" y="1218">重跑检查；需要时运行类型检查</text>
+  </g>
+  </g>
+</svg>

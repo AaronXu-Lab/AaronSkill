@@ -42,38 +42,62 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 ## Skills
 
-目前共收录 **11 个 Skill**，按主要用途分为 Skill 工程、设计相关、资源获取和其他四类。
+目前共收录 **13 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另单独标记不再维护的 Skill。
 
-### Skill 工程
+### 元 Skill
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
-| --- | --- | --- | --- |
-| [`aw-meta-skill`](./aw-meta-skill/) | `1.1.0` | 基于 `skill-creator` 创建或更新符合 AW 交付规范的 Skill | 必须维护版本元数据与 `docs/workflow.svg`，并通过基础及附加校验 |
-
-### 设计相关
+用于创建、升级和规范化其他 Skill 的元能力。
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-design-md-author`](./aw-design-md-author/) | `1.1.2` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 必须完成官方 lint；不代替代码或 Figma |
-| [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.9.0` | 治理 Figma 组件命名、Variant、Property、Slot 和顺序 | 不安全的 Variant 值重排保留为人工操作 |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.0.3` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
+| [`aw-meta-skill`](./aw-meta-skill/) | `1.2.0` | 基于 `skill-creator` 创建或更新符合 AW 交付规范的 Skill | 必须维护版本元数据与 `docs/workflow.svg`，并通过基础及附加校验 |
+
+### 工具类
+
+面向明确输入与结果的实用工作流，帮助完成资产加工、内容处理或专项工程任务。
+
+| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| --- | --- | --- | --- |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.0.0` | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
-| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.2.0` | 审计所有 UI/UX 界面与交互表面的语义重复、信息密度和层级问题 | 先输出审计证据与最小改动决策，再实施界面修改 |
+| [`aw-mail-read-later`](./aw-mail-read-later/) | `1.0.2` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
+| [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.0.3` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
 ### 资源获取
+
+负责从外部来源检索、验证、筛选并整理可用资源。
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | `1.0.3` | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
 | [`aw-logo-finder`](./aw-logo-finder/) | `1.0.3` | 从官网、Logo 资源站和应用商店寻找、比对并导出品牌或产品 Logo | 必须先确认候选与输出尺寸，再生成无损 WebP |
 
-### 其他
+### 设计 · 支撑
+
+为设计系统、组件实现和设计交付提供基础设施、规范与工程支撑。
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-mail-read-later`](./aw-mail-read-later/) | `1.0.2` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
-| [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.0.3` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
+| [`aw-design-md-author`](./aw-design-md-author/) | `1.1.2` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 必须完成官方 lint；不代替代码或 Figma |
+| [`aw-component-gallery-builder`](./aw-component-gallery-builder/) | `3.0.0` | 设计、重建或规范化与组件真实 API 对齐的 Gallery | 不把 Gallery 结构套到产品页面；未授权时不擅自重构公开 API |
+| [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.0.4` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
+
+### 设计 · Agent
+
+直接参与界面判断、审查和表达质量控制的设计 Agent。
+
+| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| --- | --- | --- | --- |
+| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.2.0` | 审计 Web 界面的语义重复、信息密度和层级问题 | 先输出审计证据与最小改动决策，再实施界面修改 |
+| [`axo-wording-reviewer`](./axo-wording-reviewer/) | `0.4.0` | 审查简体中文 UI 的排版、术语、格式与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
+
+### 不再维护
+
+以下 Skill 保留在仓库中供已有使用者参考，但不再主动演进或纳入新能力建设。
+
+| Skill | 版本 | 状态 |
+| --- | --- | --- |
+| [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.9.0` | 不再维护 |
 
 ## 这些 Skill 如何工作
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
   <title id="title">AW Meta Skill 工作流程</title>
-  <desc id="desc">先加载 skill-creator 基础规范，判断创建或更新路径，再按授权规则维护版本、文本工作流与可视化流程图，最后执行双重校验并报告版本变化。</desc>
+  <desc id="desc">先加载 skill-creator 基础规范，判断创建或更新路径，再维护元数据、文本工作流与遵循 AW 统一视觉语言的可视化流程图，确保连线不与节点和文字重叠，最后执行双重校验、渲染复核并交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#4b5d6b"/>
@@ -12,6 +12,7 @@
       .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; text-anchor: middle; }
       .branch { font: 700 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; }
       .line { fill: none; stroke: #4b5d6b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .route { fill: none; stroke: #4b5d6b; stroke-width: 2.5; }
       .step { fill: #ffffff; stroke: #aebbc5; stroke-width: 2; }
       .action { fill: #edf6ff; stroke: #2f7fbd; stroke-width: 2; }
       .decision { fill: #fff7e6; stroke: #c98918; stroke-width: 2.5; }
@@ -57,8 +58,10 @@
   <text class="label" x="885" y="582">检查现有结构与调用方</text>
   <text class="detail" x="885" y="606">保留无关字段、资源和策略</text>
 
-  <path class="line" d="M315 632 V670 H600 V700"/>
-  <path class="line" d="M885 632 V670 H600"/>
+  <path class="route" d="M315 632 V670 H600"/>
+  <path class="route" d="M885 632 V670 H600"/>
+  <circle cx="600" cy="670" r="4" fill="#4b5d6b"/>
+  <path class="line" d="M600 670 V700"/>
   <rect class="action" x="400" y="700" width="400" height="86" rx="16"/>
   <text class="label" x="600" y="733">编写或修订目标 SKILL</text>
   <text class="detail" x="600" y="759">遵循基础规范与用户真实用途</text>
@@ -71,12 +74,12 @@
   <path class="line" d="M600 911 V950"/>
   <rect class="action" x="400" y="950" width="400" height="86" rx="16"/>
   <text class="label" x="600" y="983">同步 workflow.md + workflow.svg</text>
-  <text class="detail" x="600" y="1009">Markdown 为执行事实源，SVG 为可视化投影</text>
+  <text class="detail" x="600" y="1009">Markdown 为事实源 · SVG 遵循 AW 统一视觉语言</text>
 
   <path class="line" d="M600 1036 V1070"/>
   <rect class="step" x="400" y="1070" width="400" height="72" rx="16"/>
   <text class="label" x="600" y="1100">基础校验 + AW 附加校验</text>
-  <text class="detail" x="600" y="1124">人工复核双轨一致性与版本合理性</text>
+  <text class="detail" x="600" y="1124">复核双轨一致性 · 渲染检查连线避障 · 核对版本</text>
 
   <path class="line" d="M600 1142 V1160"/>
   <rect class="done" x="470" y="1160" width="260" height="36" rx="18"/>
