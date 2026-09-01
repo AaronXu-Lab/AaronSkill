@@ -1,13 +1,13 @@
 ---
-name: axo-wording-reviewer
+name: aw-wording-reviewer
 description: "审查简体中文 UI 文案时使用：中英与数字混排空格、' · ' 分隔符、全角标点、省略号、直角引号、日期时间格式与模式、品牌与产品实体名大小写、项目命名禁令、AI 拟人化，以及按钮、空状态、错误、toast、占位符等微文案形状。适用于 review 文案、检查措辞、统一术语、批量校对 i18n 中文词条，以及改完页面后自查。多语言项目只检查简体中文语料。不要用于英文或日文文案、代码标识符命名，也不要用于产品信息架构评审。"
 metadata:
-  version: "0.4.0"
+  version: "0.6.0"
   author: "aaron_xu"
   creation_context: "中文界面的排版与微文案约定通常散落在各项目的设计文档和语料惯例里，每次改文案都要重新推断混排空格、分隔符和日期格式的边界。为把这些通用规则固化成与具体项目无关、可机械校验的审查流程而创建。"
 ---
 
-# AXO Wording Reviewer
+# AW Wording Reviewer
 
 ## 目标
 
@@ -58,7 +58,7 @@ python3 <本 SKILL 目录>/scripts/check_copy.py --list-rules             # 将�
 
 只许可一部分时，只执行获准的部分，不扩大到未获准的规则与禁用词；完全未回应时不开始扫描。
 
-![AXO Wording Reviewer 工作流程](docs/workflow.svg)
+![AW Wording Reviewer 工作流程](docs/workflow.svg)
 
 ## 两层审查，缺一不可
 
@@ -93,6 +93,7 @@ python3 <本 SKILL 目录>/scripts/check_copy.py <范围路径> --json [用户�
 | B4 / B5 拼接 | ` · ` 链最多 3 段；拼接前 `filter(Boolean)`，不产生空段与悬挂点 |
 | C6 `description` | 说明性文案的成句与否要读语义，脚本不判，逐条看 |
 | D2 时间模式 | relative / absolute / hybrid 按用户任务选；同一信息流不混用 |
+| D6 时间戳直传 | 源码里没有文案的一类违例，必须按 rules.md 的检索式过一遍或直接看渲染结果 |
 | E1 表外名称 | name-casing.csv 只是参考，表外的品牌与实体名照样要逐个看 |
 | E2 术语 | 收敛到哪个词见 terms.csv；项目有术语表时以项目为准，接近时交用户裁定 |
 | F2 / F3 语气与人称 | 紧凑理性的陈述句；产品不自称「我们」，不用「它」指代对象 |
@@ -112,6 +113,8 @@ python3 <本 SKILL 目录>/scripts/check_copy.py <范围路径> --json [用户�
 4. 把散落的手写格式逐处替换为 `formatTimeDisplay`，并在改动后运行项目自身的类型检查。
 
 用户未明确同意时，只报告不迁移。
+
+**另有一类时间问题机械层与人工层都看不见**：后端时间戳被直接绑到 props 上，源码里一个文案字面量都没有，渲染出来才是 ISO 串或毫秒数。它归 D6，判法见 [rules.md](references/rules.md) —— 这是唯一一条要求看渲染结果而不是只读源码的规则。
 
 ## 报告
 

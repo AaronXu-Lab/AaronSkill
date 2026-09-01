@@ -1,0 +1,47 @@
+key,kind,value,note
+sonner.title,string,功能暂未实现,占位提示标题
+sonner.description,string,你要是看到这个说明代码没删干净,占位提示说明
+sonner.actionLabel,string,牛逼👍,占位提示的动作按钮文案
+boolean,boolean,true,通用布尔真值
+zero,number,0,通用零值，用于空计数与边界
+smallNumber,number,7,一位数占位，用于个位计数
+number,number,42,通用数值，两位数占位默认取它
+amount,string,42.00,金额字符串
+percentage,string,42%,百分比
+duration,string,42 秒,时长
+distance,string,42 km,距离
+relativeTime,string,42 分钟前,相对时间
+title,string,小车正穿行在落基山脉,通用标题
+description,longform,description,通用说明文案，正文见 fake-longform.md
+article,longform,article,长正文，段落用 <br/> 连接，正文见 fake-longform.md
+personName,string,克里斯朵夫·李维,人名
+organization,string,四十二度科技有线公司,组织名
+email,string,forty-two@42.example.com,邮箱，固定使用 example.com
+phone,string,+86 000 0000 0042,电话
+url,string,https://42.example.com,链接
+host,string,*.42.example.com,主机与通配域名
+localPath,string,/example/axo/00000042,本地路径
+shellCommand,string,python /example/axo/00000042/task.py *,命令行
+address,string,示例省示例市四十二号路 42 号,地址
+date,string,2038-01-19,日期，所有日期占位统一用它
+time,string,03:14:07,时间
+datetime,string,2038-01-19 03:14:07,日期时间
+ids.agent,string,agent_00000042,Agent ID
+ids.credential,string,cred_00000042,凭证 ID
+ids.user,string,usr_00000042,用户 ID
+ids.project,string,proj_00000042,项目 ID
+ids.session,string,ses_00000042,会话 ID
+ids.job,string,job_00000042,任务 ID
+ids.automation,string,auto_00000042,自动化 ID
+ids.worker,string,worker_00000042,Worker ID
+statuses.idle,string,待处理,状态词：待处理
+statuses.running,string,执行中,状态词：执行中
+statuses.succeeded,string,已完成,状态词：已完成
+statuses.failed,string,执行失败,状态词：失败
+statuses.disabled,string,已停用,状态词：停用
+tags,list,假数据 · 默认|假数据 · 边界|假数据 · 极端数量,标签组，| 分隔
+avatar.defaultSrc,asset,avatar-default.svg,默认头像，走 adapter 的 assetUrl
+avatar.initials,string,克李,头像文字
+image,asset,logo.svg,通用图片，走 adapter 的 assetUrl
+fileName,string,第四十二号文件.pdf,单个文件名
+fileNames,list,step-1.py|note-1.md|report.md|第四十二号文件.pdf,文件名列表，| 分隔

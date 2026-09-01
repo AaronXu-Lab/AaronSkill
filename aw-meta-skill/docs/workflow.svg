@@ -1,87 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1040" role="img" aria-labelledby="title desc">
   <title id="title">AW Meta Skill 工作流程</title>
-  <desc id="desc">先加载 skill-creator 基础规范，判断创建或更新路径，再维护元数据、文本工作流与遵循 AW 统一视觉语言的可视化流程图，确保连线不与节点和文字重叠，最后执行双重校验、渲染复核并交付。</desc>
+  <desc id="desc">理解 Skill 目标，遵循基础规范，创建或聚焦更新 Skill，分别为 AI 编写可含 Mermaid 的精确 Markdown 工作流、为人类提炼保留关键结构的 SVG 概览，最后校验并交付。</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M0 0 L10 5 L0 10 Z" fill="#4b5d6b"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
     </marker>
     <style>
-      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; }
+      .canvas { fill: #f7f9fb; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; }
       .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #60717f; }
-      .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; text-anchor: middle; }
-      .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; text-anchor: middle; }
-      .branch { font: 700 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; }
-      .line { fill: none; stroke: #4b5d6b; stroke-width: 2.5; marker-end: url(#arrow); }
-      .route { fill: none; stroke: #4b5d6b; stroke-width: 2.5; }
-      .step { fill: #ffffff; stroke: #aebbc5; stroke-width: 2; }
-      .action { fill: #edf6ff; stroke: #2f7fbd; stroke-width: 2; }
-      .decision { fill: #fff7e6; stroke: #c98918; stroke-width: 2.5; }
-      .stop { fill: #fff0ef; stroke: #c84e46; stroke-width: 2; }
-      .done { fill: #edf9f1; stroke: #2f8b54; stroke-width: 2.5; }
+      .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; text-anchor: middle; }
+      .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; text-anchor: middle; }
+      .audience { font: 600 13px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; text-anchor: middle; }
+      .link { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .input { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
+      .step { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
+      .md { fill: #eef3ff; stroke: #536fbd; stroke-width: 2; }
+      .svg { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
+      .done { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
     </style>
   </defs>
 
-  <rect width="1200" height="1200" fill="#f7f9fb"/>
-  <text class="title" x="600" y="48" text-anchor="middle">AW Meta Skill</text>
-  <text class="subtitle" x="600" y="75" text-anchor="middle">以 skill-creator 为基础，增加元数据与双轨工作流交付门禁</text>
+  <rect class="canvas" width="1200" height="1040"/>
+  <text class="title" x="600" y="54" text-anchor="middle">AW Meta Skill</text>
+  <text class="subtitle" x="600" y="82" text-anchor="middle">同一工作流，两种载体，两种合适的复杂度</text>
 
-  <rect class="step" x="420" y="105" width="360" height="72" rx="16"/>
-  <text class="label" x="600" y="135">接收创建或更新请求</text>
-  <text class="detail" x="600" y="159">确认目标路径、用途与范围</text>
+  <path class="link" d="M600 190 V230"/>
+  <path class="link" d="M600 330 V370"/>
+  <path class="link" d="M600 470 V510"/>
+  <path class="link" d="M600 630 V670"/>
+  <path class="link" d="M600 790 V830"/>
 
-  <path class="line" d="M600 177 V215"/>
-  <polygon class="decision" points="600,215 790,280 600,345 410,280"/>
-  <text class="label" x="600" y="276">skill-creator 可用？</text>
-  <text class="detail" x="600" y="301">完整读取基础规范</text>
+  <rect class="input" x="350" y="110" width="500" height="80" rx="14"/>
+  <text class="label" x="600" y="143">理解目标与范围</text>
+  <text class="detail" x="600" y="168">明确 Skill 要解决的问题与交付边界</text>
 
-  <text class="branch" x="817" y="267">否</text>
-  <path class="line" d="M790 280 H865"/>
-  <rect class="stop" x="865" y="240" width="290" height="80" rx="16"/>
-  <text class="label" x="1010" y="273">停止并报告缺失</text>
-  <text class="detail" x="1010" y="297">不凭记忆重建基础规则</text>
+  <rect class="step" x="350" y="230" width="500" height="100" rx="14"/>
+  <text class="label" x="600" y="267">读取 skill-creator</text>
+  <text class="detail" x="600" y="294">以基础规范约束结构、描述与资源选择</text>
 
-  <text class="branch" x="616" y="371">是</text>
-  <path class="line" d="M600 345 V390"/>
-  <polygon class="decision" points="600,390 790,455 600,520 410,455"/>
-  <text class="label" x="600" y="451">目标 SKILL 已存在？</text>
-  <text class="detail" x="600" y="476">选择聚焦更新或标准初始化</text>
+  <rect class="step" x="350" y="370" width="500" height="100" rx="14"/>
+  <text class="label" x="600" y="407">创建或聚焦更新 Skill</text>
+  <text class="detail" x="600" y="434">维护必要资源、metadata 与版本</text>
 
-  <text class="branch" x="260" y="442">否：创建</text>
-  <path class="line" d="M410 455 H315 V550"/>
-  <rect class="action" x="140" y="550" width="350" height="82" rx="16"/>
-  <text class="label" x="315" y="582">运行标准初始化器</text>
-  <text class="detail" x="315" y="606">建立 SKILL.md 与必要资源</text>
+  <rect class="md" x="290" y="510" width="620" height="120" rx="16"/>
+  <text class="audience" x="600" y="541" fill="#536fbd">给 AI 执行</text>
+  <text class="label" x="600" y="574">先写精确的 workflow.md</text>
+  <text class="detail" x="600" y="601">正文定义规则，复杂结构可用 Mermaid 完整表达</text>
 
-  <text class="branch" x="804" y="442">是：更新</text>
-  <path class="line" d="M790 455 H885 V550"/>
-  <rect class="action" x="710" y="550" width="350" height="82" rx="16"/>
-  <text class="label" x="885" y="582">检查现有结构与调用方</text>
-  <text class="detail" x="885" y="606">保留无关字段、资源和策略</text>
+  <rect class="svg" x="290" y="670" width="620" height="120" rx="16"/>
+  <text class="audience" x="600" y="701" fill="#9a6810">给人类理解</text>
+  <text class="label" x="600" y="734">再提炼易懂的 workflow.svg</text>
+  <text class="detail" x="600" y="761">合并工程细节，但保留不同路径、门槛与结果</text>
 
-  <path class="route" d="M315 632 V670 H600"/>
-  <path class="route" d="M885 632 V670 H600"/>
-  <circle cx="600" cy="670" r="4" fill="#4b5d6b"/>
-  <path class="line" d="M600 670 V700"/>
-  <rect class="action" x="400" y="700" width="400" height="86" rx="16"/>
-  <text class="label" x="600" y="733">编写或修订目标 SKILL</text>
-  <text class="detail" x="600" y="759">遵循基础规范与用户真实用途</text>
-
-  <path class="line" d="M600 786 V825"/>
-  <rect class="action" x="400" y="825" width="400" height="86" rx="16"/>
-  <text class="label" x="600" y="858">维护 metadata</text>
-  <text class="detail" x="600" y="884">默认 MINOR · 小改 PATCH · MAJOR 需明确授权</text>
-
-  <path class="line" d="M600 911 V950"/>
-  <rect class="action" x="400" y="950" width="400" height="86" rx="16"/>
-  <text class="label" x="600" y="983">同步 workflow.md + workflow.svg</text>
-  <text class="detail" x="600" y="1009">Markdown 为事实源 · SVG 遵循 AW 统一视觉语言</text>
-
-  <path class="line" d="M600 1036 V1070"/>
-  <rect class="step" x="400" y="1070" width="400" height="72" rx="16"/>
-  <text class="label" x="600" y="1100">基础校验 + AW 附加校验</text>
-  <text class="detail" x="600" y="1124">复核双轨一致性 · 渲染检查连线避障 · 核对版本</text>
-
-  <path class="line" d="M600 1142 V1160"/>
-  <rect class="done" x="470" y="1160" width="260" height="36" rx="18"/>
-  <text class="label" x="600" y="1184">完成并报告旧版本 → 新版本</text>
+  <rect class="done" x="350" y="830" width="500" height="126" rx="14"/>
+  <text class="label" x="600" y="869">双重校验并交付</text>
+  <text class="detail" x="600" y="896">确认 Markdown 精确、SVG 易懂、两者语义一致</text>
+  <text class="detail" x="600" y="920">报告版本变化与验证结果</text>
 </svg>

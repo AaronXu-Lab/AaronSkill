@@ -39,6 +39,6 @@
 - 元 Skill：`aw-meta-skill`
 - 工具类：`aw-logo-asset-cook`、`aw-mail-read-later`、`rewrite-like-aaron`
 - 资源获取：`aw-comic-dossier-packer`、`aw-logo-finder`
-- 设计 · 支撑：`aw-design-md-author`、`aw-component-gallery-builder`、`aw-design-token-consistency-auditor`、`aw-find-and-port-ui-component`
-- 设计 · Agent：`aw-ux-info-redundancy-audit`、`axo-wording-reviewer`
+- 设计 · 支撑：`aw-design-md-author`、`aw-component-gallery-builder`、`aw-design-fake`、`aw-design-token-consistency-auditor`、`aw-find-and-port-ui-component`
+- 设计 · Agent：`aw-ux-info-redundancy-audit`、`aw-wording-reviewer`
 - 不再维护：`aw-figma-component-governance`

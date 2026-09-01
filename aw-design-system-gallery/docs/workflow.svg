@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2200" role="img" aria-labelledby="title desc">
-  <title id="title">AW Component Gallery Builder 工作流程</title>
-  <desc id="desc">从确认组件 Gallery 范围、审计 API、选择规范化或从零建设模式，到建立展示矩阵、验证和交付的流程；包含非 Gallery 请求、未授权 API 缺口和验证失败的停止分支。</desc>
+  <title id="title">AW Design System Gallery 工作流程</title>
+  <desc id="desc">从确认设计系统 Gallery 范围、分类 section、审计对应事实源、选择规范化或从零建设模式，到建立展示模型、验证和交付的流程；包含非 Gallery 请求、未授权 API 缺口和验证失败的停止分支。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
@@ -23,7 +23,7 @@
   </defs>
 
   <rect class="canvas" width="1200" height="2200"/>
-  <text class="title" x="600" y="52">AW Component Gallery Builder 工作流程</text>
+  <text class="title" x="600" y="52">AW Design System Gallery 工作流程</text>
 
   <!-- Connections are drawn first so node fills keep all routes outside content. -->
   <path class="flow" d="M600 150 V200"/>
@@ -61,16 +61,16 @@
   <text class="label" x="620" y="2045">是</text>
 
   <rect class="input" x="380" y="80" width="440" height="70" rx="14"/>
-  <text class="node-title" x="600" y="112">接收目标组件与 Gallery 请求</text>
-  <text class="body" x="600" y="135">确认范围、仓库与 API 修改授权</text>
+  <text class="node-title" x="600" y="112">接收设计系统 Gallery 请求</text>
+  <text class="body" x="600" y="135">确认范围、仓库与事实源修改授权</text>
 
   <rect class="stage" x="380" y="200" width="440" height="100" rx="14"/>
   <text class="node-title" x="600" y="238">读取仓库规则并收集证据</text>
-  <text class="body" x="600" y="264">实现 · 类型 · 样式 · 调用点</text>
-  <text class="body" x="600" y="284">Gallery · Token · 验证入口</text>
+  <text class="body" x="600" y="264">组件 · Token · 规则 · 组合契约</text>
+  <text class="body" x="600" y="284">Gallery · 调用点 · 验证入口</text>
 
   <polygon class="decision" points="600,340 760,410 600,480 440,410"/>
-  <text class="node-title" x="600" y="405">目标是可复用组件 Gallery？</text>
+  <text class="node-title" x="600" y="405">目标是设计系统 Gallery？</text>
   <text class="body" x="600" y="429">排除产品页、fixture 与调参器</text>
 
   <rect class="stop" x="880" y="360" width="280" height="100" rx="14"/>
@@ -78,14 +78,14 @@
   <text class="body" x="1020" y="424">回到目标表面的本地规则</text>
 
   <rect class="stage" x="380" y="540" width="440" height="130" rx="14"/>
-  <text class="node-title" x="600" y="578">审计组件公开 API</text>
-  <text class="body" x="600" y="604">默认值 · 视觉/内容/状态/行为轴</text>
-  <text class="body" x="600" y="626">受控状态 · 事件 · slot · 可访问性</text>
+  <text class="node-title" x="600" y="578">分类 section 并审计事实源</text>
+  <text class="body" x="600" y="604">组件 · 样式/Token · 规则</text>
+  <text class="body" x="600" y="626">模式/组合场景 · 内部调试面</text>
   <text class="body" x="600" y="648">判断 Gallery 能否诚实表达</text>
 
   <polygon class="decision" points="600,700 760,770 600,840 440,770"/>
-  <text class="node-title" x="600" y="765">存在实质 API 缺口？</text>
-  <text class="body" x="600" y="789">是否必须虚构、隐藏或联动无关轴</text>
+  <text class="node-title" x="600" y="765">组件分支存在实质 API 缺口？</text>
+  <text class="body" x="600" y="789">非组件分支直接沿主流程继续</text>
 
   <polygon class="decision" points="900,860 1040,940 900,1020 760,940"/>
   <text class="node-title" x="900" y="935">已授权修改 API？</text>
@@ -115,8 +115,8 @@
   <text class="body" x="930" y="1484">主题与交互环境</text>
 
   <rect class="stage" x="380" y="1580" width="440" height="100" rx="14"/>
-  <text class="node-title" x="600" y="1618">建立并实现展示矩阵</text>
-  <text class="body" x="600" y="1644">default 优先，每个主要公开轴一行</text>
+  <text class="node-title" x="600" y="1618">建立并实现展示模型</text>
+  <text class="body" x="600" y="1644">按 section 类型匹配结构与事实源</text>
 
   <rect class="stage" x="380" y="1730" width="440" height="120" rx="14"/>
   <text class="node-title" x="600" y="1768">运行代码与视觉验证</text>
@@ -132,6 +132,6 @@
   <text class="body" x="1020" y="1954">失败时不得宣称完成</text>
 
   <rect class="output" x="360" y="2070" width="480" height="90" rx="14"/>
-  <text class="node-title" x="600" y="2108">交付真实 API 对齐的 Gallery</text>
-  <text class="body" x="600" y="2134">报告修改、验证与保留的 API 债务</text>
+  <text class="node-title" x="600" y="2108">交付与事实源对齐的 Gallery</text>
+  <text class="body" x="600" y="2134">报告修改、验证与保留的系统债务</text>
 </svg>

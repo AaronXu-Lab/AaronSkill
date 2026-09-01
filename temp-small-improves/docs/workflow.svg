@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1160" viewBox="0 0 1200 1160" role="img" aria-labelledby="title desc">
+  <title id="title">小型界面优化工作流程</title>
+  <desc id="desc">先确认显式调用，再收集界面证据、检查十四条细节规则、判断是否存在问题与修改授权，最后验证并交付结果。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#52606d"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; }
+      .title { font-size: 30px; font-weight: 700; text-anchor: middle; }
+      .node-title { font-size: 18px; font-weight: 600; text-anchor: middle; }
+      .note { font-size: 14px; font-weight: 400; text-anchor: middle; fill: #52606d; }
+      .branch { font-size: 14px; font-weight: 600; fill: #52606d; }
+      .line { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .input { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
+      .process { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
+      .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
+      .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
+      .result { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1160" fill="#f7f9fb"/>
+  <text x="600" y="55" class="title">小型界面优化工作流程</text>
+  <text x="600" y="84" class="note">只在用户主动唤起时检查，并只修复有证据支持的问题</text>
+
+  <path class="decision" d="M600 120 L770 190 L600 260 L430 190 Z"/>
+  <text x="600" y="184" class="node-title">是否显式调用本 Skill？</text>
+  <text x="600" y="208" class="note">当前请求必须明确点名</text>
+
+  <rect x="85" y="145" width="260" height="90" rx="14" class="stop"/>
+  <text x="215" y="184" class="node-title">停止自动触发</text>
+  <text x="215" y="208" class="note">回到用户原始任务</text>
+  <path class="line" d="M430 190 H345"/>
+  <text x="375" y="178" class="branch">否</text>
+
+  <rect x="425" y="310" width="350" height="90" rx="14" class="input"/>
+  <text x="600" y="348" class="node-title">收集界面与使用语境</text>
+  <text x="600" y="372" class="note">确认状态、频率、平台与既有规范</text>
+  <path class="line" d="M600 260 V310"/>
+  <text x="615" y="290" class="branch">是</text>
+
+  <rect x="425" y="450" width="350" height="90" rx="14" class="process"/>
+  <text x="600" y="488" class="node-title">逐条检查 14 项规则</text>
+  <text x="600" y="512" class="note">标记适用、满足、问题或待验证</text>
+  <path class="line" d="M600 400 V450"/>
+
+  <path class="decision" d="M600 590 L770 660 L600 730 L430 660 Z"/>
+  <text x="600" y="654" class="node-title">存在可验证问题？</text>
+  <text x="600" y="678" class="note">不为产生改动而制造问题</text>
+  <path class="line" d="M600 540 V590"/>
+
+  <rect x="855" y="615" width="260" height="90" rx="14" class="result"/>
+  <text x="985" y="654" class="node-title">交付无需修改</text>
+  <text x="985" y="678" class="note">报告已满足与待验证项</text>
+  <path class="line" d="M770 660 H855"/>
+  <text x="804" y="648" class="branch">否</text>
+
+  <path class="decision" d="M600 780 L770 850 L600 920 L430 850 Z"/>
+  <text x="600" y="844" class="node-title">用户授权实施修改？</text>
+  <text x="600" y="868" class="note">审查请求默认只给建议</text>
+  <path class="line" d="M600 730 V780"/>
+  <text x="615" y="760" class="branch">是</text>
+
+  <rect x="85" y="805" width="260" height="90" rx="14" class="result"/>
+  <text x="215" y="844" class="node-title">交付审查建议</text>
+  <text x="215" y="868" class="note">保留证据、位置与理由</text>
+  <path class="line" d="M430 850 H345"/>
+  <text x="375" y="838" class="branch">否</text>
+
+  <rect x="425" y="970" width="350" height="90" rx="14" class="process"/>
+  <text x="600" y="1008" class="node-title">实施最小改动并验证</text>
+  <text x="600" y="1032" class="note">检查状态、尺寸、可中断性与降级</text>
+  <path class="line" d="M600 920 V970"/>
+  <text x="615" y="950" class="branch">是</text>
+
+  <rect x="425" y="1100" width="350" height="48" rx="14" class="result"/>
+  <text x="600" y="1131" class="node-title">交付修改与验证结果</text>
+  <path class="line" d="M600 1060 V1100"/>
+</svg>

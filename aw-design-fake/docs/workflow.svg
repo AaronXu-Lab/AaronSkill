@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1430" role="img" aria-labelledby="title desc">
+  <title id="title">AW Design Fake 工作流程</title>
+  <desc id="desc">确认 fake 需求与项目现状，判断共享 fake 能力是否就绪，再按占位操作、占位内容或演示状态三条路径实现；隔离真实业务、验证，失败时回到修正，通过后交付。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
+    </marker>
+    <style>
+      .canvas { fill: #f7f9fb; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; }
+      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #60717f; }
+      .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; text-anchor: middle; }
+      .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; text-anchor: middle; }
+      .branch { font: 600 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; }
+      .link { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .route { fill: none; stroke: #52606d; stroke-width: 2.5; }
+      .input { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
+      .step { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
+      .judge { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
+      .fix { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
+      .done { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="1200" height="1430"/>
+  <text class="title" x="600" y="54" text-anchor="middle">AW Design Fake</text>
+  <text class="subtitle" x="600" y="82" text-anchor="middle">先统一 fake 基础，再按需求分层实现，并与真实业务彻底隔离</text>
+
+  <!-- 主流程与分支连线 -->
+  <path class="link" d="M600 190 V225"/>
+  <path class="link" d="M600 315 V350"/>
+  <path class="link" d="M600 490 V545"/>
+  <path class="link" d="M800 420 H865"/>
+  <path class="link" d="M1010 510 V530 H720 V570"/>
+
+  <path class="link" d="M430 635 H200 V745"/>
+  <path class="link" d="M600 705 V745"/>
+  <path class="link" d="M770 635 H1000 V745"/>
+
+  <path class="route" d="M200 845 V900 H600"/>
+  <path class="route" d="M600 845 V900"/>
+  <path class="route" d="M1000 845 V900 H600"/>
+  <circle cx="600" cy="900" r="4" fill="#52606d"/>
+  <path class="link" d="M600 900 V940"/>
+  <path class="link" d="M600 1030 V1065"/>
+
+  <path class="link" d="M400 1135 H340"/>
+  <path class="link" d="M600 1205 V1260"/>
+  <path class="link" d="M190 1180 V1225 H280 V985 H330"/>
+
+  <!-- 节点 -->
+  <rect class="input" x="330" y="110" width="540" height="80" rx="14"/>
+  <text class="label" x="600" y="143">确认任务属于原型 fake</text>
+  <text class="detail" x="600" y="168">排除测试 mock 与正式生产实现</text>
+
+  <rect class="step" x="330" y="225" width="540" height="90" rx="14"/>
+  <text class="label" x="600" y="261">了解项目现状</text>
+  <text class="detail" x="600" y="288">读取约定，寻找已有入口、演示开关与调用方式</text>
+
+  <polygon class="judge" points="600,350 800,420 600,490 400,420"/>
+  <text class="label" x="600" y="414">共享 fake 能力已就绪？</text>
+  <text class="detail" x="600" y="440">统一入口、内容与项目适配是否可用</text>
+  <text class="branch" x="620" y="520">是</text>
+  <text class="branch" x="820" y="405">需处理</text>
+
+  <rect class="step" x="865" y="365" width="290" height="145" rx="14"/>
+  <text class="label" x="1010" y="402">准备共享能力</text>
+  <text class="detail" x="1010" y="430">缺失则初始化，过期则同步</text>
+  <text class="detail" x="1010" y="454">项目版本更新则先合并回 SKILL</text>
+  <text class="detail" x="1010" y="478">保留项目自己的适配层</text>
+
+  <polygon class="judge" points="600,565 770,635 600,705 430,635"/>
+  <text class="label" x="600" y="629">需要哪一类 fake？</text>
+  <text class="detail" x="600" y="655">选择满足需求的最小层级</text>
+  <text class="branch" x="340" y="620">占位操作</text>
+  <text class="branch" x="615" y="730">占位内容</text>
+  <text class="branch" x="805" y="620">演示状态</text>
+
+  <rect class="step" x="55" y="745" width="290" height="100" rx="14"/>
+  <text class="label" x="200" y="782">A · 统一操作反馈</text>
+  <text class="detail" x="200" y="810">可交互，但不触发真实写操作</text>
+
+  <rect class="step" x="455" y="745" width="290" height="100" rx="14"/>
+  <text class="label" x="600" y="782">B · 统一占位内容</text>
+  <text class="detail" x="600" y="810">优先复用，缺少时更新数据源</text>
+
+  <rect class="step" x="855" y="745" width="290" height="100" rx="14"/>
+  <text class="label" x="1000" y="782">C · 可关闭演示状态</text>
+  <text class="detail" x="1000" y="810">支持跨界面联动与一致关闭</text>
+
+  <rect class="step" x="330" y="940" width="540" height="90" rx="14"/>
+  <text class="label" x="600" y="976">隔离真实业务</text>
+  <text class="detail" x="600" y="1003">fake 不出网、不写真实对象、不改变正式契约</text>
+
+  <polygon class="judge" points="600,1065 800,1135 600,1205 400,1135"/>
+  <text class="label" x="600" y="1129">行为与关闭验证通过？</text>
+  <text class="detail" x="600" y="1155">共享能力同步，所选层级可观察且无真实副作用</text>
+  <text class="branch" x="355" y="1120">否</text>
+  <text class="branch" x="620" y="1235">是</text>
+
+  <rect class="fix" x="40" y="1090" width="300" height="90" rx="14"/>
+  <text class="label" x="190" y="1126">修正后重新验证</text>
+  <text class="detail" x="190" y="1153">处理实现、同步或关闭问题</text>
+
+  <rect class="done" x="330" y="1260" width="540" height="105" rx="14"/>
+  <text class="label" x="600" y="1300">交付可移除的最小 fake 实现</text>
+  <text class="detail" x="600" y="1328">说明所选层级、改动范围与验证结果</text>
+</svg>
