@@ -78,7 +78,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.1.2` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 必须完成官方 lint；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.1.0` | 设计、重建、规范化或审查与设计系统事实源对齐的 Gallery | 不把 Gallery 结构套到产品页面；组件 API 或其他事实源未经授权不修改 |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.11.0` | 审查或优化 Gallery 的组件展示、属性轴、默认示例与比较结构 | Caption 仅含真实公开轴；通用分类保持领域中立，项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.2.0` | 为原型工程初始化、同步并规范 fake 数据与占位交互 | 只做可移除的占位实现；不碰单测 mock 与真实契约 |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.0.4` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |

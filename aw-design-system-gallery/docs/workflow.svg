@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2200" role="img" aria-labelledby="title desc">
-  <title id="title">AW Design System Gallery 工作流程</title>
-  <desc id="desc">从确认设计系统 Gallery 范围、分类 section、审计对应事实源、选择规范化或从零建设模式，到建立展示模型、验证和交付的流程；包含非 Gallery 请求、未授权 API 缺口和验证失败的停止分支。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1660" role="img" aria-labelledby="title desc">
+  <title id="title">Design System Gallery 工作流程</title>
+  <desc id="desc">从授权范围和目标项目约定出发，区分公开设计轴与场景条件，保持通用分类领域中立和 Panel ID 稳定，覆盖组件边界并完成可访问与视觉验证后交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
@@ -17,121 +17,86 @@
       .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
       .output { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
       .flow { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
-      .merge { fill: none; stroke: #52606d; stroke-width: 2.5; }
-      .junction { fill: #52606d; }
     </style>
   </defs>
 
-  <rect class="canvas" width="1200" height="2200"/>
-  <text class="title" x="600" y="52">AW Design System Gallery 工作流程</text>
+  <rect class="canvas" width="1200" height="1660"/>
+  <text class="title" x="600" y="52">Design System Gallery 工作流程</text>
 
-  <!-- Connections are drawn first so node fills keep all routes outside content. -->
-  <path class="flow" d="M600 150 V200"/>
-  <path class="flow" d="M600 300 V340"/>
-  <path class="flow" d="M760 410 H880"/>
-  <path class="flow" d="M600 480 V540"/>
-  <path class="flow" d="M600 670 V700"/>
-  <path class="flow" d="M760 770 H900 V860"/>
-  <path class="merge" d="M600 840 V1180"/>
-  <path class="flow" d="M900 1020 V1040 H830 V1060"/>
-  <path class="flow" d="M1040 940 H1110 V1020"/>
-  <path class="merge" d="M830 1160 V1180 H600"/>
-  <circle class="junction" cx="600" cy="1180" r="5"/>
-  <path class="flow" d="M600 1180 V1220"/>
-  <path class="flow" d="M440 1290 H270 V1400"/>
-  <path class="flow" d="M760 1290 H930 V1400"/>
-  <path class="merge" d="M270 1500 V1540 H600"/>
-  <path class="merge" d="M930 1500 V1540 H600"/>
-  <circle class="junction" cx="600" cy="1540" r="5"/>
-  <path class="flow" d="M600 1540 V1580"/>
-  <path class="flow" d="M600 1680 V1730"/>
-  <path class="flow" d="M600 1850 V1870"/>
-  <path class="flow" d="M760 1940 H880"/>
-  <path class="flow" d="M600 2010 V2070"/>
+  <path class="flow" d="M600 150 V190"/>
+  <path class="flow" d="M760 260 H880"/>
+  <path class="flow" d="M600 330 V390"/>
+  <path class="flow" d="M600 500 V550"/>
+  <path class="flow" d="M600 660 V700"/>
+  <path class="flow" d="M760 770 H880"/>
+  <path class="flow" d="M600 840 V900"/>
+  <path class="flow" d="M600 1010 V1060"/>
+  <path class="flow" d="M600 1170 V1220"/>
+  <path class="flow" d="M600 1330 V1370"/>
+  <path class="flow" d="M760 1440 H880"/>
+  <path class="flow" d="M600 1510 V1560"/>
 
-  <text class="label" x="785" y="395">否</text>
-  <text class="label" x="620" y="515">是</text>
-  <text class="label" x="785" y="755">是</text>
-  <text class="label" x="620" y="865">否</text>
-  <text class="label" x="845" y="1030">是</text>
-  <text class="label" x="1050" y="925">否</text>
-  <text class="label" x="305" y="1275">是</text>
-  <text class="label" x="835" y="1275">否</text>
-  <text class="label" x="785" y="1925">否</text>
-  <text class="label" x="620" y="2045">是</text>
+  <text class="label" x="785" y="245">否</text>
+  <text class="label" x="620" y="355">是</text>
+  <text class="label" x="785" y="755">否</text>
+  <text class="label" x="620" y="865">是</text>
+  <text class="label" x="785" y="1425">否</text>
+  <text class="label" x="620" y="1535">是</text>
 
   <rect class="input" x="380" y="80" width="440" height="70" rx="14"/>
-  <text class="node-title" x="600" y="112">接收设计系统 Gallery 请求</text>
-  <text class="body" x="600" y="135">确认范围、仓库与事实源修改授权</text>
+  <text class="node-title" x="600" y="112">接收 Gallery 审阅或优化请求</text>
+  <text class="body" x="600" y="135">确认局部、批量或完整授权范围</text>
 
-  <rect class="stage" x="380" y="200" width="440" height="100" rx="14"/>
-  <text class="node-title" x="600" y="238">读取仓库规则并收集证据</text>
-  <text class="body" x="600" y="264">组件 · Token · 规则 · 组合契约</text>
-  <text class="body" x="600" y="284">Gallery · 调用点 · 验证入口</text>
+  <polygon class="decision" points="600,190 760,260 600,330 440,260"/>
+  <text class="node-title" x="600" y="255">范围与目标项目约定明确？</text>
+  <text class="body" x="600" y="279">识别当地术语、框架、配置与验证入口</text>
 
-  <polygon class="decision" points="600,340 760,410 600,480 440,410"/>
-  <text class="node-title" x="600" y="405">目标是设计系统 Gallery？</text>
-  <text class="body" x="600" y="429">排除产品页、fixture 与调参器</text>
+  <rect class="stop" x="880" y="210" width="280" height="100" rx="14"/>
+  <text class="node-title" x="1020" y="248">停止并说明前置条件</text>
+  <text class="body" x="1020" y="274">补充目标、约定或写入授权</text>
 
-  <rect class="stop" x="880" y="360" width="280" height="100" rx="14"/>
-  <text class="node-title" x="1020" y="398">停止套用 Gallery 结构</text>
-  <text class="body" x="1020" y="424">回到目标表面的本地规则</text>
+  <rect class="stage" x="360" y="390" width="480" height="110" rx="14"/>
+  <text class="node-title" x="600" y="428">读取范围相称的证据</text>
+  <text class="body" x="600" y="454">用户决策 · 项目契约 · 设计文档 · 运行时默认</text>
+  <text class="body" x="600" y="476">必要时说明原因并渐进扩展只读证据</text>
 
-  <rect class="stage" x="380" y="540" width="440" height="130" rx="14"/>
-  <text class="node-title" x="600" y="578">分类 section 并审计事实源</text>
-  <text class="body" x="600" y="604">组件 · 样式/Token · 规则</text>
-  <text class="body" x="600" y="626">模式/组合场景 · 内部调试面</text>
-  <text class="body" x="600" y="648">判断 Gallery 能否诚实表达</text>
+  <rect class="stage" x="360" y="550" width="480" height="110" rx="14"/>
+  <text class="node-title" x="600" y="588">筛选有审阅价值的设计轴</text>
+  <text class="body" x="600" y="614">区分设计轴 · 调用数据 · 实现机制 · 调试属性</text>
+  <text class="body" x="600" y="636">Caption 仅含公开轴与状态 · 场景条件另作说明</text>
 
   <polygon class="decision" points="600,700 760,770 600,840 440,770"/>
-  <text class="node-title" x="600" y="765">组件分支存在实质 API 缺口？</text>
-  <text class="body" x="600" y="789">非组件分支直接沿主流程继续</text>
+  <text class="node-title" x="600" y="765">语义映射明确且一致？</text>
+  <text class="body" x="600" y="789">比较概念和值域，不只比较字面名称</text>
 
-  <polygon class="decision" points="900,860 1040,940 900,1020 760,940"/>
-  <text class="node-title" x="900" y="935">已授权修改 API？</text>
-  <text class="body" x="900" y="959">确认公开契约变更范围</text>
+  <rect class="stop" x="880" y="720" width="280" height="100" rx="14"/>
+  <text class="node-title" x="1020" y="758">先向用户确认映射</text>
+  <text class="body" x="1020" y="784">确认后才能修改组件 API</text>
 
-  <rect class="stage" x="680" y="1060" width="300" height="100" rx="14"/>
-  <text class="node-title" x="830" y="1098">最小化重构组件 API</text>
-  <text class="body" x="830" y="1124">同步类型、导出与调用点</text>
+  <rect class="stage" x="360" y="900" width="480" height="110" rx="14"/>
+  <text class="node-title" x="600" y="938">建立当前范围的展示模型</text>
+  <text class="body" x="600" y="964">有轴：同序 Caption · 无轴：default 舞台但省略 Caption</text>
+  <text class="body" x="600" y="986">依赖分组优先 · 通用角色分类 · Panel ID 稳定</text>
 
-  <rect class="stop" x="1020" y="1020" width="160" height="120" rx="14"/>
-  <text class="node-title" x="1100" y="1058">停止误导实现</text>
-  <text class="body" x="1100" y="1084">交付 API 缺口</text>
-  <text class="body" x="1100" y="1106">与建议决策</text>
+  <rect class="stage" x="360" y="1060" width="480" height="110" rx="14"/>
+  <text class="node-title" x="600" y="1098">实现授权范围</text>
+  <text class="body" x="600" y="1124">估算宽度，选择单行、显式网格或纵向比较</text>
+  <text class="body" x="600" y="1146">直接展示浮层 · 保留窄容器、溢出与响应式覆盖</text>
 
-  <polygon class="decision" points="600,1220 760,1290 600,1360 440,1290"/>
-  <text class="node-title" x="600" y="1285">已有可维护 Gallery？</text>
-  <text class="body" x="600" y="1309">检查 shell、helper 与运行入口</text>
+  <rect class="stage" x="360" y="1220" width="480" height="110" rx="14"/>
+  <text class="node-title" x="600" y="1258">运行范围相称的验证</text>
+  <text class="body" x="600" y="1284">语义排序 · 尺寸边界 · 可访问性 · 视觉复核</text>
+  <text class="body" x="600" y="1306">机器核对同序 · 人工评审语义依赖</text>
 
-  <rect class="stage" x="120" y="1400" width="300" height="100" rx="14"/>
-  <text class="node-title" x="270" y="1438">规范化现有 Gallery</text>
-  <text class="body" x="270" y="1464">保留本地视觉语言</text>
-  <text class="body" x="270" y="1484">只改目标 section</text>
+  <polygon class="decision" points="600,1370 760,1440 600,1510 440,1440"/>
+  <text class="node-title" x="600" y="1435">授权范围验证通过？</text>
+  <text class="body" x="600" y="1459">修改范围与视觉结果一致</text>
 
-  <rect class="stage" x="780" y="1400" width="300" height="100" rx="14"/>
-  <text class="node-title" x="930" y="1438">从零建立最小骨架</text>
-  <text class="body" x="930" y="1464">Section · Caption · 舞台</text>
-  <text class="body" x="930" y="1484">主题与交互环境</text>
+  <rect class="stop" x="880" y="1390" width="280" height="100" rx="14"/>
+  <text class="node-title" x="1020" y="1428">修复或报告局部阻塞</text>
+  <text class="body" x="1020" y="1454">失败时不得宣称完成</text>
 
-  <rect class="stage" x="380" y="1580" width="440" height="100" rx="14"/>
-  <text class="node-title" x="600" y="1618">建立并实现展示模型</text>
-  <text class="body" x="600" y="1644">按 section 类型匹配结构与事实源</text>
-
-  <rect class="stage" x="380" y="1730" width="440" height="120" rx="14"/>
-  <text class="node-title" x="600" y="1768">运行代码与视觉验证</text>
-  <text class="body" x="600" y="1794">类型 · lint · 测试 · 构建</text>
-  <text class="body" x="600" y="1816">主题 · 视口 · 键盘 · 焦点 · 状态</text>
-
-  <polygon class="decision" points="600,1870 760,1940 600,2010 440,1940"/>
-  <text class="node-title" x="600" y="1935">全部必要验证通过？</text>
-  <text class="body" x="600" y="1959">代码结果与 Gallery 视觉一致</text>
-
-  <rect class="stop" x="880" y="1890" width="280" height="100" rx="14"/>
-  <text class="node-title" x="1020" y="1928">修复或报告验证阻塞</text>
-  <text class="body" x="1020" y="1954">失败时不得宣称完成</text>
-
-  <rect class="output" x="360" y="2070" width="480" height="90" rx="14"/>
-  <text class="node-title" x="600" y="2108">交付与事实源对齐的 Gallery</text>
-  <text class="body" x="600" y="2134">报告修改、验证与保留的系统债务</text>
+  <rect class="output" x="350" y="1560" width="500" height="70" rx="14"/>
+  <text class="node-title" x="600" y="1592">交付 Gallery 审阅或优化结果</text>
+  <text class="body" x="600" y="1616">报告证据、修改、验证、假设与债务</text>
 </svg>
