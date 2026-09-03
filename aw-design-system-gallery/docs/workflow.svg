@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1660" role="img" aria-labelledby="title desc">
   <title id="title">Design System Gallery 工作流程</title>
-  <desc id="desc">从授权范围和目标项目约定出发，区分公开设计轴与场景条件，保持通用分类领域中立和 Panel ID 稳定，覆盖组件边界并完成可访问与视觉验证后交付。</desc>
+  <desc id="desc">从授权范围和目标项目约定出发，区分公开设计轴与场景条件，依据边界可辨识度和审阅必要性决定 Gallery-only 的真实占位范围提示，保持通用分类领域中立和 Panel ID 稳定，完成可访问与视觉验证后交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
@@ -76,12 +76,12 @@
   <rect class="stage" x="360" y="900" width="480" height="110" rx="14"/>
   <text class="node-title" x="600" y="938">建立当前范围的展示模型</text>
   <text class="body" x="600" y="964">有轴：同序 Caption · 无轴：default 舞台但省略 Caption</text>
-  <text class="body" x="600" y="986">依赖分组优先 · 通用角色分类 · Panel ID 稳定</text>
+  <text class="body" x="600" y="986">边界提示按审阅必要性决定 · 通用角色分类 · Panel ID 稳定</text>
 
   <rect class="stage" x="360" y="1060" width="480" height="110" rx="14"/>
   <text class="node-title" x="600" y="1098">实现授权范围</text>
   <text class="body" x="600" y="1124">估算宽度，选择单行、显式网格或纵向比较</text>
-  <text class="body" x="600" y="1146">直接展示浮层 · 保留窄容器、溢出与响应式覆盖</text>
+  <text class="body" x="600" y="1146">复用 Dashed Light / line-light · 不改布局或公开 API</text>
 
   <rect class="stage" x="360" y="1220" width="480" height="110" rx="14"/>
   <text class="node-title" x="600" y="1258">运行范围相称的验证</text>
