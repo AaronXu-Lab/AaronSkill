@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1660" role="img" aria-labelledby="title desc">
   <title id="title">Design System Gallery 工作流程</title>
-  <desc id="desc">从授权范围和目标项目约定出发，区分公开设计轴与场景条件，依据边界可辨识度和审阅必要性决定 Gallery-only 的真实占位范围提示，保持通用分类领域中立和 Panel ID 稳定，完成可访问与视觉验证后交付。</desc>
+  <desc id="desc">从授权范围和目标项目约定出发，区分公开设计轴与场景条件，确定默认占位文本与图标，依据边界可辨识度和审阅必要性决定 Gallery-only 的真实占位范围提示，保持通用分类领域中立和 Panel ID 稳定，以 Light 为默认主题完成可访问与视觉验证后交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
@@ -79,14 +79,14 @@
   <text class="body" x="600" y="986">边界可辨识度 × 范围审阅价值 · 依赖分组优先</text>
 
   <rect class="stage" x="360" y="1060" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="1098">实现授权范围</text>
-  <text class="body" x="600" y="1124">两项条件同时成立才用范围提示，并保持 Gallery-only</text>
-  <text class="body" x="600" y="1146">估算宽度 · 复用当地提示 · 保留尺寸与响应式覆盖</text>
+  <text class="node-title" x="600" y="1098">确定默认占位内容并实现</text>
+  <text class="body" x="600" y="1124">无覆盖时使用 Text / Placeholder；有语义要求时遵循事实源</text>
+  <text class="body" x="600" y="1146">范围提示须满足双条件并保持 Gallery-only · 估算宽度</text>
 
   <rect class="stage" x="360" y="1220" width="480" height="110" rx="14"/>
   <text class="node-title" x="600" y="1258">运行范围相称的验证</text>
-  <text class="body" x="600" y="1284">真实占位范围 · 语义排序 · 尺寸边界 · 可访问性</text>
-  <text class="body" x="600" y="1306">机器核对同序 · 人工评审语义依赖</text>
+  <text class="body" x="600" y="1284">默认验证 Light · 有主题风险时才追加 Dark</text>
+  <text class="body" x="600" y="1306">范围 · 排序 · 尺寸 · 可访问性 · 语义依赖</text>
 
   <polygon class="decision" points="600,1370 760,1440 600,1510 440,1440"/>
   <text class="node-title" x="600" y="1435">授权范围验证通过？</text>
