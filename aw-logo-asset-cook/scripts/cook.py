@@ -8,6 +8,7 @@ import copy
 import json
 import re
 import shutil
+import struct
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
@@ -367,6 +368,7 @@ def write_usage_readme(source: Path) -> None:
 ## iOS 与 macOS
 
 - `iOS&macOS/app.icon`：iOS 与 macOS 共用的 Icon Composer 应用图标包，包含 Default、Dark 与 Tinted/Mono 外观。通过 Xcode 或 Icon Composer 加入应用图标配置，不要转换为 `.icns` 代替。
+- `iOS&macOS/app.icns`：用于传统 macOS（包括 2023 年以前的版本）或要求 ICNS 的打包工具，与 `.icon` 同时保留。内含 16、32、128、256、512 点的 1x/2x 图像，最大 1024×1024；固定明色主题，不自动切换外观，保留源图轮廓与透明区域。原生应用可放入 `Contents/Resources` 并通过 `CFBundleIconFile` 引用；其他打包工具使用对应图标配置。临时 `.iconset` 不随资源交付。
 - `iOS&macOS/menu-bar/appTemplate.svg`：macOS 菜单栏 Template Image 的矢量源，由系统按当前外观着色。
 - `iOS&macOS/menu-bar/appTemplate.png` 与 `appTemplate@2x.png`：分别用于 1x/2x 菜单栏位图接入。加载后应标记为 template image，不要作为全彩应用图标使用。
 
@@ -415,6 +417,64 @@ def cook_web(
         palette["light"]["background"],
     )
     write_pwa_manifest(root / "pwa")
+
+
+def normalize_legacy_icns(output: Path, iconset: Path) -> None:
+    """Use classic RGB + mask chunks for small icons, avoiding ic04/ic05 ARGB drift."""
+    def chunk(kind: bytes, data: bytes) -> bytes:
+        return struct.pack(">4sI", kind, len(data) + 8) + data
+
+    data = output.read_bytes()
+    parts = []
+    offset = 8
+    while offset < len(data):
+        kind, length = struct.unpack(">4sI", data[offset:offset + 8])
+        if length < 8 or offset + length > len(data):
+            raise ValueError("Malformed ICNS chunk")
+        if kind not in (b"ic04", b"ic05", b"is32", b"il32", b"s8mk", b"l8mk"):
+            parts.append(data[offset:offset + length])
+        offset += length
+    for size, rgb_kind, alpha_kind in ((16, b"is32", b"s8mk"), (32, b"il32", b"l8mk")):
+        with Image.open(iconset / f"icon_{size}x{size}.png") as image:
+            rgba = image.convert("RGBA")
+            encoded = bytearray()
+            for channel in rgba.split()[:3]:
+                raw = channel.tobytes()
+                # Literal RLE packets; a trailing pad accommodates Apple's decoder lookahead.
+                for start in range(0, len(raw), 127):
+                    block = raw[start:start + 127]
+                    encoded.append(len(block) - 1)
+                    encoded.extend(block)
+            encoded.append(0)
+            parts.append(chunk(rgb_kind, bytes(encoded)))
+            parts.append(chunk(alpha_kind, rgba.getchannel("A").tobytes()))
+    output.write_bytes(chunk(b"icns", b"".join(parts)))
+
+
+def cook_macos_legacy(build: Path) -> None:
+    """Compile the complete Retina iconset and verify the ICNS round trip."""
+    iconutil = require("iconutil")
+    iconset = build / "app.iconset"
+    expected: dict[str, int] = {}
+    for points in (16, 32, 128, 256, 512):
+        for scale in (1, 2):
+            suffix = "@2x" if scale == 2 else ""
+            name = f"icon_{points}x{points}{suffix}.png"
+            expected[name] = points * scale
+            render(build / "full-light.svg", iconset / name, points * scale)
+    output = PROJECT_ROOT / "iOS&macOS" / "app.icns"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    run(iconutil, "-c", "icns", str(iconset), "-o", str(output))
+    normalize_legacy_icns(output, iconset)
+    unpacked = build / "roundtrip.iconset"
+    run(iconutil, "-c", "iconset", str(output), "-o", str(unpacked))
+    for name, size in expected.items():
+        with Image.open(iconset / name) as source, Image.open(unpacked / name) as decoded:
+            if decoded.size != (size, size):
+                raise ValueError(f"ICNS size mismatch: {name}: {decoded.size}")
+            if source.convert("RGBA").tobytes() != decoded.convert("RGBA").tobytes():
+                raise ValueError(f"ICNS pixel mismatch: {name}")
+    print("ICNS round-trip verified: all ten standard/Retina images, 16–1024 pixels")
 
 
 def cook_apple(build: Path, palette: dict[str, dict[str, str]], validator: Path) -> None:
@@ -579,6 +639,7 @@ def main() -> None:
     palette = svg_palette(source)
     validator = preflight_compose_skill()
     RSVG = require("rsvg-convert")
+    require("iconutil")
     clean_outputs()
 
     with tempfile.TemporaryDirectory(prefix="app-logo-cook-") as temp:
@@ -608,6 +669,7 @@ def main() -> None:
         light_png = build / "full-light-1024.png"
         render(build / "full-light.svg", light_png, 1024)
         cook_web(source, build, palette, light_png)
+        cook_macos_legacy(build)
         cook_apple(build, palette, validator)
         cook_windows(build, light_png)
         cook_linux(source)

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1320" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
   <title id="title">应用图标资源生成核心流程</title>
-  <desc id="desc">从用户显式指定 SVG 或图标资源目录并唯一解析源 SVG、只读主题检查和单主题 AI 补色授权，到依赖预检、包含不透明 Apple Touch、显式保留 Alpha 通道的 32-bit RGBA Play Store 提交图、最小 PWA manifest 和根目录分平台用法 README 的全平台生成及 Apple app.icon 明暗主题验证的流程图。</desc>
+  <desc id="desc">从用户显式指定 SVG 或图标资源目录并唯一解析源 SVG、只读主题检查和单主题 AI 补色授权，到依赖预检、包含不透明 Apple Touch、显式保留 Alpha 通道的 32-bit RGBA Play Store 提交图、最小 PWA manifest 和根目录分平台用法 README 的全平台生成及 Apple app.icon 明暗主题与传统 app.icns 解包验证的流程图。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
@@ -94,8 +94,8 @@
 
   <path class="line" d="M600 1167 V1200"/>
   <rect class="action" x="420" y="1200" width="360" height="72" rx="16"/>
-  <text class="label" x="600" y="1230">验证 Apple app.icon</text>
-  <text class="detail" x="600" y="1254">Default · Dark · Mono · Clear 均使用最终主题</text>
+  <text class="label" x="600" y="1230">验证 Apple 双格式图标</text>
+  <text class="detail" x="600" y="1254">.icon 外观验证 · .icns 尺寸与像素复检</text>
 
   <path class="line" d="M600 1272 V1287"/>
   <rect class="done" x="470" y="1287" width="260" height="30" rx="15"/>

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import importlib.util
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -175,6 +176,34 @@ class AndroidAssetTests(unittest.TestCase):
             self.assertEqual(output.read_bytes()[25], 6)
 
 
+class MacOSLegacyTests(unittest.TestCase):
+    @unittest.skipUnless(shutil.which("iconutil") and shutil.which("rsvg-convert"), "macOS icon tools required")
+    def test_icns_roundtrip_preserves_sizes_colors_and_transparency(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            build = root / "build"
+            build.mkdir()
+            (build / "full-light.svg").write_text(
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">'
+                '<rect x="4" y="4" width="24" height="24" fill="#CC2200"/></svg>'
+            )
+            with mock.patch.object(COOK, "PROJECT_ROOT", root), mock.patch.object(
+                COOK, "RSVG", shutil.which("rsvg-convert"), create=True
+            ):
+                COOK.cook_macos_legacy(build)
+            output = root / "iOS&macOS" / "app.icns"
+            self.assertEqual(output.read_bytes()[:4], b"icns")
+            for points in (16, 32, 128, 256, 512):
+                for scale in (1, 2):
+                    suffix = "@2x" if scale == 2 else ""
+                    with COOK.Image.open(build / "roundtrip.iconset" / f"icon_{points}x{points}{suffix}.png") as image:
+                        self.assertEqual(image.size, (points * scale, points * scale))
+                        rgba = image.convert("RGBA")
+                        self.assertEqual(rgba.getpixel((0, 0))[3], 0)
+                        self.assertEqual(rgba.getpixel((points * scale // 2, points * scale // 2)), (204, 34, 0, 255))
+            self.assertEqual([p.name for p in output.parent.iterdir()], ["app.icns"])
+
+
 class UsageReadmeTests(unittest.TestCase):
     def test_readme_maps_generated_paths_without_brand_specific_names(self) -> None:
         expected_paths = (
@@ -182,6 +211,7 @@ class UsageReadmeTests(unittest.TestCase):
             "web/apple-touch-icon.png",
             "web/pwa/manifest.webmanifest",
             "iOS&macOS/app.icon",
+            "iOS&macOS/app.icns",
             "iOS&macOS/menu-bar/appTemplate.svg",
             "windows/app.ico",
             "windows/tray-light.ico",

@@ -58,7 +58,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.0.0` | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
+| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.1.0` | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.0.2` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.0.3` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 

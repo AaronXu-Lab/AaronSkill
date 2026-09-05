@@ -3,7 +3,7 @@ name: aw-logo-asset-cook
 description: 从用户在请求开头明确指定的 SVG 或图标资源目录，解析唯一 SVG 并重建精简且经过验证的全平台图标资源与分平台用法 README；覆盖网页 favicon、Apple Touch、PWA、Apple、Windows、Linux、Android、菜单栏及托盘图标，并处理明暗主题。源图更新或需要刷新这些资源时使用。
 metadata:
   author: aaron_xu
-  version: "1.0.0"
+  version: "1.1.0"
   creation_context: "为从用户显式选择的 SVG 唯一事实源稳定生成网页 favicon、可引用的安装图标、桌面端、移动端、菜单栏及托盘图标，并提供可随资源同步更新的分平台用法说明；同时在单主题补色、清理产物和 Apple Icon Composer 验证前设置明确授权门禁。"
 ---
 
@@ -74,7 +74,7 @@ python3 scripts/cook.py \
   --project-root /绝对路径/favicon-package
 ```
 
-若原 SVG 已是双主题，直接传入原文件；若用户授权 AI 补色，传入已经通过双主题复检的临时 SVG。脚本依赖 `rsvg-convert` 与 Pillow，只会替换各平台的生成目录。脚本自身会再次执行主题门禁，单主题 SVG 无法进入清理阶段。
+若原 SVG 已是双主题，直接传入原文件；若用户授权 AI 补色，传入已经通过双主题复检的临时 SVG。脚本依赖 `rsvg-convert`、Pillow 与 macOS 的 `iconutil`（生成前检查，缺失时不得清理），只会替换各平台的生成目录。脚本自身会再次执行主题门禁，单主题 SVG 无法进入清理阶段。
 
 ## 最小产物
 
@@ -82,7 +82,8 @@ python3 scripts/cook.py \
 - `web/favicon.svg`：保留已确认或补齐后的 SVG 主题切换；`web/favicon.ico` 仅作为旧环境的亮色回退。网页 UI 应直接使用该主题感知 SVG。
 - `web/apple-touch-icon.png`：180×180 的 iOS/iPadOS 网页主屏幕图标。使用明色主题背景铺满不透明方形画布，不预先烘焙圆角。
 - `web/pwa/`：包含普通的 192×192 与 512×512 PNG、不透明全画布且主体位于安全区内的 512×512 maskable PNG，以及使用相对路径引用三张图标的最小 `manifest.webmanifest`。该 manifest 只声明图标；集成时应合并进目标项目现有 manifest，不能覆盖产品名称、启动路径、显示模式和主题色等字段。
-- `iOS&macOS/app.icon`：位于 `iOS&macOS` 根目录的唯一 Apple 应用图标产物。Default 和 Dark 必须分别使用最终双主题 SVG 的明暗配色与前景，Tinted 使用专用高对比 Mono 前景。
+- `iOS&macOS/app.icon`：现代 Apple 应用图标产物，与旧版 macOS 的 `.icns` 并存。Default 和 Dark 必须分别使用最终双主题 SVG 的明暗配色与前景，Tinted 使用专用高对比 Mono 前景。
+- `iOS&macOS/app.icns`：传统 macOS 应用图标，覆盖 2023 年以前的 macOS 及需要 ICNS 的打包工具。固定使用明色主题，保留源 SVG 轮廓与透明区域，不自动切换明暗。由临时 `.iconset` 的 16、32、128、256、512 点各 1x/2x PNG 编译，最大 1024×1024；不交付临时 `.iconset`。
 - `iOS&macOS/menu-bar/`：包含一个 macOS Template Image SVG，以及 1x/2x PNG；由 macOS 自动着色。
 - `windows/app.ico`：稳定的应用图标。由于 ICO 无法在内部切换主题，只有托盘保留 `tray-light.ico` 与 `tray-dark.ico`。
 - `linux/app.svg`：保留 SVG 内部主题切换。
@@ -90,13 +91,15 @@ python3 scripts/cook.py \
 
 生成平台资源时，除根目录用法 README 与最小 PWA 图标 manifest 外，不额外创建产品元数据、清单、预览、校验和、锁文件、联系表；平台原生自适应格式能够处理外观时，也不显式复制明暗资源。
 
-## Apple `.icon` 验证
+## Apple 图标验证
 
 生成脚本必须使用 `<project-root>/.agents/skills/compose-app-icon` 校验 `app.icon`，再使用 Icon Composer 的 `ictool` 分别渲染 iOS 与 macOS 的 Default、Dark、Tinted（Mono）及 Clear 模式。渲染图仅用于临时验证，不得保留。
 
 当主题由 AI 补齐时，Apple 产物也必须同步使用新主题：`fill-specializations` 同时写入明暗背景，前景分别提供 Default 与 Dark specialization，Mono 仍使用透明底上的不透明白色遮罩。禁止只补 Web SVG 而让 `app.icon` 继续复用单一主题。
 
-若 Icon Composer 本体不可用，保留已经通过 Schema 校验的 `.icon` 包，并明确报告仅跳过了引擎渲染。禁止用 `.icns` 替代所需的 `.icon` 格式。
+若 Icon Composer 本体不可用，保留已经通过 Schema 校验的 `.icon` 包，并明确报告仅跳过了引擎渲染。`.icns` 是必须同时交付的兼容资源，不能替代 `.icon`，也不能因缺少 Icon Composer 而跳过 `.icns` 验证。
+
+传统 `.icns` 使用 `iconutil -c icns` 打包；16/32px 使用传统 RGB RLE 与独立 Alpha 块，避免部分 `iconutil` 的 ARGB 编码颜色差异。再用 `iconutil -c iconset` 解包到临时目录，逐项验证十张 PNG 的尺寸与 RGBA 像素一致。任何缺失、损坏或像素不一致都应失败。README 应说明旧版原生应用可把 ICNS 放入应用包 `Contents/Resources` 并由 `CFBundleIconFile` 引用；打包工具使用对应图标配置，资源生成不修改这些配置。规格参考 [Apple Icon Set Type](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/IconSetType.html)。
 
 ## 不变量
 
