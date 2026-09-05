@@ -14,6 +14,8 @@ relativeTime,string,42 分钟前,相对时间
 title,string,小车正穿行在落基山脉,通用标题
 description,longform,description,通用说明文案，正文见 fake-longform.md
 article,longform,article,长正文，段落用 <br/> 连接，正文见 fake-longform.md
+code.source,source,code/conway.ts.txt,完整展示源码，逐字读取 assets 内文本，不执行
+code.language,string,typescript,展示源码的语言，不随普通或高亮模式更换文本
 personName,string,克里斯朵夫·李维,人名
 organization,string,四十二度科技有线公司,组织名
 email,string,forty-two@42.example.com,邮箱，固定使用 example.com

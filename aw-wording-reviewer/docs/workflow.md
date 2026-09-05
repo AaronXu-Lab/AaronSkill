@@ -92,32 +92,31 @@ python3 <本 SKILL 目录>/scripts/check_copy.py <范围路径> --json [用户�
 
 ## 阶段 5：人工复核不可机械判定的规则
 
-
-
 读 [references/rules.md](../references/rules.md)，对范围内每条文案逐项核对标记为「人工」的规则族：
 
 - ` · ` 链的段位数量与空段过滤（B4 / B5）。
 - 说明性文案的句末句号：脚本只判标签与按钮，`description` 成句与否逐条看（C6）。
-- 日期时间的模式选择：relative / absolute / hybrid 是否与该信息流的用户任务匹配，同一列表内是否混用（D2）。
-- 时间戳是否直传到界面：按 [rules.md](../references/rules.md) D6 的检索式过一遍，逐条确认命中处包在格式化调用里；范围内有可运行的页面时，直接打开看渲染结果更快（D6）。
+- 时间点契约：同类信息流只用 relative 或 absolute；确认 `showExactTime`、优先级首次命中、本地自然日、同年/跨年与空值行为符合 D2。Duration、Elapsed、Countdown 与 Recurrence 文案不进入时间点 formatter。
+- 时间戳是否直传到界面：按 [rules.md](../references/rules.md) D6 的两组检索式检查原始 props 与 formatter 调用，再逐条确认所有 `formatTimeDisplay` 调用；范围内有可运行页面时核对渲染结果，「下一次运行」必须是 relative 且 `showExactTime=true`（D6）。
 - 名称与术语：name-casing.csv 表外的品牌与产品实体名、同义词是否漂移（E1 / E2）。
 - 语气与人称：是否紧凑理性、产品是否自称「我们」、是否用「它」指代对象（F2 / F3）。
 - 微文案形状：按钮、确认弹窗、空状态两语域、错误、toast、占位符、标题（G1–G9）。
+- 跨组件数据展示：对照 [rules.md](../references/rules.md) 的 H1–H4，核对文件名截断、文件大小 formatter、邮箱脱敏和周期文案；这部分除 H2 间距外通常要结合实现和渲染结果判断。
 - 阶段 1 登记的项目专有约束，以及脚本抓不到、阶段 2 已告知用户的禁令。
 
 **判断：** 需要产品事实才能裁定的措辞（业务对象叫什么、状态含义），以项目的产品规格为准；查不到就标记为待确认，不要自行编造。
 
-## 阶段 6：日期时间格式化器的迁移判断
+## 阶段 6：时间点格式化器的接入判断
 
 **仅当**阶段 4 或阶段 5 发现目标项目在页面里手写日期格式、或存在多套格式化逻辑时进入本阶段。
 
 1. 在报告中说明现状：有哪些手写格式、分布在哪些文件。
-2. 说明本 SKILL 内置的 [assets/format-time.ts](../assets/format-time.ts) 可整份迁移，无依赖、无框架绑定。
+2. 说明本 SKILL 内置的 [assets/format-time.ts](../assets/format-time.ts) 可整份复用，无依赖、无框架绑定；它只处理时间点，不吸收 Duration、Elapsed、Countdown 或 Recurrence 文案逻辑。
 3. **征求用户许可。**
 
-**停止条件：** 用户未明确同意 → 只报告不迁移，进入阶段 7。
+**停止条件：** 用户未明确同意 → 只报告不接入，进入阶段 7。
 
-获准后：把该文件复制到项目约定的工具目录，按项目的导入风格调整路径与命名（需要其他语言时通过 `labels` 覆盖默认中文标签），把散落的手写格式逐处替换为 `formatTimeDisplay`，改动后运行项目自身的类型检查。
+获准后：把该文件复制到项目约定的工具目录，按项目的导入风格调整路径与命名（需要其他语言时通过 `labels` 覆盖默认中文标签，但不改变分档），把散落的手写格式逐处替换为 `formatTimeDisplay`，并把「下一次运行」接到 `formatNextRunTime`。接入后运行项目自身的类型检查与时间点测试，至少覆盖秒/分钟/小时边界、本地自然日、跨年、前三档不受 `showExactTime` 影响，以及 Absolute 过去与未来共用一套规则。
 
 ## 阶段 7：分级与报告
 
@@ -142,4 +141,4 @@ python3 <本 SKILL 目录>/scripts/check_copy.py <范围路径> --json [用户�
 3. 重跑 `python3 <本 SKILL 目录>/scripts/check_copy.py <范围路径>` 确认新增违例为零。
 4. 涉及类型化源码时运行项目自身的类型检查。
 
-**最终产物：** 一份带 `file:line`、规则依据和逐字改写建议的 Review 报告；用户要求时附带已应用的文案改动、可选的格式化器迁移与验证结果。
+**最终产物：** 一份带 `file:line`、规则依据和逐字改写建议的 Review 报告；用户要求时附带已应用的文案改动、可选的格式化器接入与验证结果。

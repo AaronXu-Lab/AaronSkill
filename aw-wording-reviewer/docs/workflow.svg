@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1740" role="img" aria-labelledby="title desc">
   <title id="title">AW Wording Reviewer 工作流程</title>
-  <desc id="desc">先从项目文档收集命名禁令、规则集与项目专有约束，再把这些完整告知用户，取得许可后才继续，用户可以逐项取消而只执行获准的部分。随后确定简体中文文案审查范围，依次执行机械检查和人工复核；发现手写日期格式时，只有获得用户许可才迁移格式化器。随后输出分级 Review 报告，并仅在用户明确要求时应用修改和重新验证。范围无效、语料不适用或需要越界时停止。</desc>
+  <desc id="desc">先从项目文档收集命名禁令、规则集与项目专有约束，再把这些完整告知用户，取得许可后才继续，用户可以逐项取消而只执行获准的部分。随后确定简体中文文案审查范围，依次执行机械检查和人工复核；人工复核还检查时间点契约、文件名截断、文件大小、邮箱脱敏和独立的周期展示规则。发现手写或分散的时间点格式时，只有获得用户许可才接入统一格式化器。随后输出分级 Review 报告，并仅在用户明确要求时应用修改和重新验证。范围无效、语料不适用或需要越界时停止。</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker>
     <style>
@@ -22,10 +22,10 @@
   <path class="p" d="M790 250H850"/><text class="e" x="820" y="238">否</text><rect class="s" x="850" y="207" width="300" height="86" rx="14"/><text class="l" x="1000" y="237">说明原因并停止</text><text class="d" x="1000" y="260">范围为空 · 非简体中文语料</text><text class="d" x="1000" y="280">或需要跨出用户指定范围</text>
   <path class="p" d="M600 310V476"/><text class="e" x="620" y="338">是</text>
   <rect class="x" x="420" y="476" width="360" height="74" rx="14"/><text class="l" x="600" y="505">4 · 运行机械检查</text><text class="d" x="600" y="528">check_copy.py --json · error / warn · 只报告</text>
-  <path class="p" d="M600 550V596"/><rect class="x" x="420" y="596" width="360" height="74" rx="14"/><text class="l" x="600" y="625">5 · 人工复核不可机械判定的规则</text><text class="d" x="600" y="648">段位 · 时间模式 · 术语 · 语气证据 · 微文案</text>
-  <path class="p" d="M600 670V716"/><polygon class="q" points="600,716 790,776 600,836 410,776"/><text class="l" x="600" y="772">发现手写或多套日期格式？</text><text class="d" x="600" y="796">仅命中时进入可选迁移判断</text>
-  <path class="p" d="M790 776H850"/><text class="e" x="820" y="764">是</text><polygon class="q" points="1000,716 1150,776 1000,836 850,776"/><text class="l" x="1000" y="772">用户许可迁移？</text><text class="d" x="1000" y="796">未许可则只报告</text>
-  <path class="p" d="M1000 836V882"/><text class="e" x="1020" y="861">是</text><rect class="x" x="850" y="882" width="300" height="86" rx="14"/><text class="l" x="1000" y="912">6 · 迁移并替换格式化逻辑</text><text class="d" x="1000" y="935">复制 format-time.ts · 调整导入</text><text class="d" x="1000" y="955">替换手写格式 · 运行类型检查</text>
+  <path class="p" d="M600 550V596"/><rect class="x" x="420" y="596" width="360" height="74" rx="14"/><text class="l" x="600" y="625">5 · 人工复核不可机械判定的规则</text><text class="d" x="600" y="648">段位 · 时间点契约 · 术语 · 数据展示 · 微文案</text>
+  <path class="p" d="M600 670V716"/><polygon class="q" points="600,716 790,776 600,836 410,776"/><text class="l" x="600" y="772">发现手写或分散的时间点格式？</text><text class="d" x="600" y="796">仅命中时判断是否接入统一实现</text>
+  <path class="p" d="M790 776H850"/><text class="e" x="820" y="764">是</text><polygon class="q" points="1000,716 1150,776 1000,836 850,776"/><text class="l" x="1000" y="772">用户许可接入？</text><text class="d" x="1000" y="796">未许可则只报告</text>
+  <path class="p" d="M1000 836V882"/><text class="e" x="1020" y="861">是</text><rect class="x" x="850" y="882" width="300" height="86" rx="14"/><text class="l" x="1000" y="912">6 · 接入统一时间点逻辑</text><text class="d" x="1000" y="935">复制 format-time.ts · 调整导入</text><text class="d" x="1000" y="955">替换手写格式 · 运行测试</text>
   <path class="p" d="M600 836V1008"/><text class="e" x="620" y="864">否</text>
   <path class="r" d="M1150 776H1170V1045H840"/><text class="e" x="1170" y="760">否</text>
   <path class="r" d="M1000 968V988H840V1045"/>
@@ -33,7 +33,7 @@
   <path class="p" d="M840 1045H780"/>
   <rect class="x" x="420" y="1008" width="360" height="74" rx="14"/><text class="l" x="600" y="1037">7 · 输出分级 Review 报告</text><text class="d" x="600" y="1060">file:line · 规则 ID · 原文 · 完整改写 · 依据</text>
   <path class="p" d="M600 1082V1128"/><polygon class="q" points="600,1128 790,1188 600,1248 410,1188"/><text class="l" x="600" y="1184">用户明确要求修改？</text><text class="d" x="600" y="1208">Review 本身默认不改文件</text>
-  <path class="p" d="M410 1188H350"/><text class="e" x="380" y="1176">否</text><rect class="g" x="50" y="1156" width="300" height="64" rx="14"/><text class="l" x="200" y="1184">交付 Review 报告</text><text class="d" x="200" y="1206">含待确认项与可选迁移建议</text>
+  <path class="p" d="M410 1188H350"/><text class="e" x="380" y="1176">否</text><rect class="g" x="50" y="1156" width="300" height="64" rx="14"/><text class="l" x="200" y="1184">交付 Review 报告</text><text class="d" x="200" y="1206">含待确认项与可选接入建议</text>
   <path class="p" d="M790 1188H850"/><text class="e" x="820" y="1176">是</text><rect class="g" x="850" y="1145" width="300" height="86" rx="14"/><text class="l" x="1000" y="1175">8 · 应用文案修改并验证</text><text class="d" x="1000" y="1198">只改字符串 · i18n key 不变</text><text class="d" x="1000" y="1218">重跑检查；需要时运行类型检查</text>
   </g>
   </g>

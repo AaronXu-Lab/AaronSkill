@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 // aw-design-fake：把 SKILL 内置的 fake bundle 初始化、校验并同步到目标项目。
-// 数据来自 references/fake-data.csv 与 references/fake-longform.md，data.ts 由本脚本生成。
+// 数据来自 CSV、长文与 assets 内的源码文本；只序列化展示源码，绝不执行。
 
-import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises'
-import { dirname, join, resolve } from 'node:path'
+import { copyFile, mkdir, readFile, realpath, writeFile } from 'node:fs/promises'
+import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path'
+import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
 const SKILL_ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)))
@@ -23,7 +24,7 @@ function flag(args, name) {
   return index < 0 ? null : (args[index + 1] ?? null)
 }
 
-// --- CSV / longform -> data.ts -------------------------------------------------
+// --- CSV / longform / source text -> data.ts ------------------------------------
 
 function parseCsv(source) {
   const rows = []
@@ -47,7 +48,16 @@ function parseCsv(source) {
   const [header, ...body] = rows
   return body
     .filter((cells) => cells.some((cell) => cell.trim() !== ''))
-    .map((cells) => Object.fromEntries(header.map((name, index) => [name.trim(), (cells[index] ?? '').trim()])))
+    .map((cells) => {
+      const record = Object.fromEntries(header.map((name, index) => {
+        const key = name.trim()
+        const value = cells[index] ?? ''
+        // Metadata is normalized; literal content (including quoted CR/LF) is not.
+        return [key, key === 'value' ? value : value.trim()]
+      }))
+      if (record.kind !== 'string') record.value = record.value.trim()
+      return record
+    })
 }
 
 function parseLongform(source) {
@@ -70,16 +80,22 @@ function parseLongform(source) {
 }
 
 function literal(value) {
-  return `'${String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`
+  // JSON strings preserve whitespace, backslashes, quotes and control characters.
+  // Escape line separators as well so generated literals work in older parsers.
+  return JSON.stringify(String(value)).replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029')
 }
 
-function valueExpression(row, longform) {
+function valueExpression(row, longform, sourceAssets) {
   switch (row.kind) {
     case 'string': return literal(row.value)
     case 'number': return String(Number(row.value))
     case 'boolean': return row.value === 'true' ? 'true' : 'false'
     case 'list': return `[${row.value.split('|').map((item) => literal(item.trim())).join(', ')}]`
     case 'asset': return `assetUrl(${literal(row.value)})`
+    case 'source': {
+      if (!sourceAssets.has(row.value)) throw new Error(`缺少 source 文本资产: ${row.value}`)
+      return literal(sourceAssets.get(row.value))
+    }
     case 'longform': {
       const paragraphs = longform.get(row.value)
       if (!paragraphs) throw new Error(`fake-longform.md 缺少小节 "## ${row.value}"`)
@@ -105,7 +121,7 @@ function emitTree(tree, indent) {
   return lines.join('\n')
 }
 
-function buildDataSource(csvSource, longformSource) {
+export function buildDataSource(csvSource, longformSource, sourceAssets = new Map()) {
   const rows = parseCsv(csvSource)
   const longform = parseLongform(longformSource)
   const tree = new Map()
@@ -119,12 +135,12 @@ function buildDataSource(csvSource, longformSource) {
       if (!node.has(segment)) node.set(segment, new Map())
       node = node.get(segment)
     }
-    node.set(path[path.length - 1], valueExpression(row, longform))
+    node.set(path[path.length - 1], valueExpression(row, longform, sourceAssets))
   }
   const head = [
     START,
-    '// 由 aw-design-fake 从 references/fake-data.csv 与 references/fake-longform.md 生成，不要手改。',
-    '// 需要增删字段时改 CSV 或长文，再运行 scripts/fake-bundle.mjs --write。',
+    '// 由 aw-design-fake 从 CSV、长文与 assets 源码文本生成，不要手改。',
+    '// 修改 canonical 资产后运行 scripts/fake-bundle.mjs --write；code.source 仅展示，禁止执行。',
   ]
   if (usesAsset) head.push('', "import { assetUrl } from './adapter'", '', '')
   else head.push('', '')
@@ -160,14 +176,31 @@ async function readOptional(path) {
   }
 }
 
-async function buildCanonical() {
+export async function buildCanonical(skillRoot = SKILL_ROOT) {
+  const csvSource = await readFile(join(skillRoot, 'references/fake-data.csv'), 'utf8')
+  const sourceAssets = new Map()
+  const assetsRoot = await realpath(join(skillRoot, 'assets'))
+  for (const row of parseCsv(csvSource)) {
+    if (row.kind !== 'source' || sourceAssets.has(row.value)) continue
+    const path = resolve(assetsRoot, row.value)
+    const outside = (candidate) => {
+      const rel = relative(assetsRoot, candidate)
+      return rel === '..' || rel.startsWith(`..${sep}`) || isAbsolute(rel)
+    }
+    if (isAbsolute(row.value) || outside(path) || outside(await realpath(path))) {
+      throw new Error(`source 资产必须位于 SKILL 的 assets/ 内: ${row.value}`)
+    }
+    // No trimming, newline conversion, entity decoding or Unicode normalization.
+    sourceAssets.set(row.value, await readFile(path, 'utf8'))
+  }
   const files = new Map()
   files.set('data.ts', buildDataSource(
-    await readFile(join(SKILL_ROOT, 'references/fake-data.csv'), 'utf8'),
-    await readFile(join(SKILL_ROOT, 'references/fake-longform.md'), 'utf8'),
+    csvSource,
+    await readFile(join(skillRoot, 'references/fake-longform.md'), 'utf8'),
+    sourceAssets,
   ))
   for (const name of ['actions.ts', 'version.ts', 'index.ts']) {
-    files.set(name, await readFile(join(SKILL_ROOT, 'assets/fake', name), 'utf8'))
+    files.set(name, await readFile(join(skillRoot, 'assets/fake', name), 'utf8'))
   }
   return files
 }
@@ -184,21 +217,10 @@ async function main() {
   const args = process.argv.slice(2)
 
   if (args.includes('--self-check')) {
-    const data = buildDataSource(
-      await readFile(join(SKILL_ROOT, 'references/fake-data.csv'), 'utf8'),
-      await readFile(join(SKILL_ROOT, 'references/fake-longform.md'), 'utf8'),
-    )
-    const checks = [
-      [data.includes(START) && data.includes(END), 'managed 标记缺失'],
-      [/sonner: \{[\s\S]*?title: '/.test(data), '嵌套字段未生成'],
-      [data.includes("assetUrl('"), 'asset 字段未走 adapter'],
-      [data.includes(".join('<br/>')"), 'longform 多段落未生成'],
-      [!/undefined|NaN/.test(data), '生成结果包含 undefined / NaN'],
-      [managedBlock(data) === data.trimEnd(), '生成结果存在 managed 标记外的内容'],
-    ]
-    const failed = checks.filter(([ok]) => !ok).map(([, message]) => message)
-    process.stdout.write(failed.length ? `self-check: 失败 — ${failed.join('；')}\n` : 'self-check: 通过\n')
-    process.exitCode = failed.length ? 1 : 0
+    const result = spawnSync(process.execPath, ['--test', join(SKILL_ROOT, 'tests/fake-bundle.test.mjs')], { stdio: 'inherit' })
+    if (result.error) throw result.error
+    process.exitCode = result.status ?? 1
+    process.stdout.write(process.exitCode ? 'self-check: 失败\n' : 'self-check: 通过\n')
     return
   }
 
@@ -284,4 +306,5 @@ async function main() {
   if (['missing', 'outdated', 'drifted'].includes(status) || !adapterReady) process.exitCode = 1
 }
 
-await main()
+// Skill installations may be symlinked; compare real paths without running on import.
+if (process.argv[1] && await realpath(process.argv[1]) === fileURLToPath(import.meta.url)) await main()

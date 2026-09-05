@@ -1,9 +1,9 @@
 # ReUI Public Base
 
 - Status: `fresh`
-- Last checked: `2026-08-31T05:41:52+00:00`
-- Last successful refresh: `2026-08-24T10:25:35+00:00`
-- Eligible components: `74`
+- Last checked: `2026-09-04T04:12:33+00:00`
+- Last successful refresh: `2026-09-04T04:12:33+00:00`
+- Eligible components: `75`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|
@@ -23,6 +23,7 @@
 | Cascader |  | [Preview](https://reui.io/components/cascader) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/cascader) |
 | Chart |  | [Preview](https://reui.io/components/chart) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/chart) |
 | Checkbox |  | [Preview](https://reui.io/components/checkbox) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/checkbox) |
+| Code Block |  | [Preview](https://reui.io/components/code-block) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/code-block) |
 | Collapsible |  | [Preview](https://reui.io/components/collapsible) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/collapsible) |
 | Combobox |  | [Preview](https://reui.io/components/combobox) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/combobox) |
 | Command |  | [Preview](https://reui.io/components/command) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/command) |

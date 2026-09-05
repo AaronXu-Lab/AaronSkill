@@ -140,7 +140,7 @@ MASK_PATTERNS = [
     re.compile(r"https?://\S+"),
     *([re.compile("|".join(re.escape(n) for n in PROPER_NOUNS))] if PROPER_NOUNS else []),
     # 文件名是业务内容而非文案，用户本来就会把中英数字连写：GMV看板.xlsx、会议录音.mp3
-    re.compile(r"[^\s，。！？；：、「」（）]+\.[A-Za-z0-9]{1,5}(?=$|[\s，。！？；：、「」（）])"),
+    re.compile(r"[^\s，。！？；：、「」（）]+\.(?=[A-Za-z])[A-Za-z0-9]{1,5}(?=$|[\s，。！？；：、「」（）])"),
 ]
 
 # 内嵌的脚本片段（fixture 里的 PowerShell / JS）不是文案。
@@ -275,11 +275,11 @@ def extract_bans(files: list[Path]) -> tuple[dict[str, str], dict[str, str]]:
 # 规则
 # ---------------------------------------------------------------------------
 
-# 不受「数字↔中文加空格」约束的结构：日期、时钟、版本号。
+# 不受「数字↔中文加空格」约束的结构：时间点日期、周期日期、时钟、版本号。
 # 契约见 assets/format-time.ts。
 DATE_LIKE = re.compile(
-    r"\d{4}-\d{2}-\d{2}(?:[ T]\d{1,2}:\d{2}(?::\d{2})?)?"
-    r"|\d{1,2}-\d{1,2}(?: \d{1,2}:\d{2})?"
+    r"\d{4}[/-]\d{2}[/-]\d{2}(?:[ T]\d{1,2}:\d{2}(?::\d{2})?)?"
+    r"|\d{1,2}[/-]\d{1,2}(?: \d{1,2}:\d{2})?"
     r"|\d{1,2}:\d{2}(?::\d{2})?"
     r"|v?\d+(?:\.\d+)+"
 )
@@ -327,6 +327,17 @@ def _space_cjk_digit(text: str):
 @rule("space-before-cjk-punct", ERROR, "全角标点前后不留空格", "由 Agent ，执行 → 由 Agent，执行")
 def _space_before_cjk_punct(text: str):
     for m in re.finditer(r" [" + re.escape("，。！？；：、）」》】") + r"]", text):
+        yield m.start(), m.group(0)
+
+
+@rule(
+    "file-size-unit-spacing",
+    ERROR,
+    "文件大小的数字与 B / KB / MB / GB / TB 之间保留一个半角空格",
+    "1.44KB → 1.44 KB",
+)
+def _file_size_unit_spacing(text: str):
+    for m in re.finditer(r"(?<![A-Za-z0-9])\d+(?:\.\d+)?(?:B|KB|MB|GB|TB)\b", text):
         yield m.start(), m.group(0)
 
 
@@ -476,12 +487,12 @@ def _trailing_period(text: str, role: str):
 @rule(
     "date-format",
     ERROR,
-    "日期写作 YYYY-MM-DD（同年可省略为 MM-DD），时钟写作 24 小时制 HH:mm",
-    "2026年7月31日 / 2026/07/31 → 2026-07-31",
+    "时间点日期写作 YYYY/MM/DD（同年省略为 MM/DD），时钟写作 24 小时制 HH:mm",
+    "2026年7月31日 / 2026-07-31 → 2026/07/31",
 )
 def _date_format(text: str):
     for m in re.finditer(
-        r"\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}[/.]\d{1,2}[/.]\d{1,2}", text
+        r"\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{4}[.-]\d{1,2}[.-]\d{1,2}", text
     ):
         yield m.start(), m.group(0)
 
@@ -666,7 +677,7 @@ SELF_CHECK_CASES = [
     ("最多选择50个文件", "", "space-cjk-digit", True),
     ("最多选择 50 个文件", "", "space-cjk-digit", False),
     ("30天内", "", "space-cjk-digit", True),
-    ("更新于 2026-07-31 14:30", "", "space-cjk-digit", False),
+    ("更新于 2026/07/31 14:30", "", "space-cjk-digit", False),
     ("共 {{count}} 个文件", "", "space-cjk-digit", False),
     ("成功 · 8 分钟前 · 生成价格异常表", "", "middot-spacing", False),
     ("正在执行「摘要」· 张三", "", "middot-spacing", True),
@@ -706,7 +717,8 @@ SELF_CHECK_CASES = [
     ("由你确认", "", "personal-pronoun", False),
     ("我的文件", "", "personal-pronoun", False),
     ("2026年7月31日提交", "", "date-format", True),
-    ("2026-07-31 提交", "", "date-format", False),
+    ("2026-07-31 提交", "", "date-format", True),
+    ("2026/07/31 提交", "", "date-format", False),
     ("N/A", "", "empty-value-em-dash", True),
     ("—", "", "empty-value-em-dash", False),
     ("绑定 Github 账号", "", "name-casing", True),
@@ -717,6 +729,9 @@ SELF_CHECK_CASES = [
     ("输入项目名称", "placeholder", "placeholder-qing-prefix", False),
     ("请先完成授权", "message", "placeholder-qing-prefix", False),
     ("由 Agent ，执行", "", "space-before-cjk-punct", True),
+    ("文件大小：1.44KB", "", "file-size-unit-spacing", True),
+    ("文件大小：1.44 KB", "", "file-size-unit-spacing", False),
+    ("文件名 100MB", "", "file-size-unit-spacing", False),
 ]
 
 

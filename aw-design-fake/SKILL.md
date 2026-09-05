@@ -1,8 +1,8 @@
 ---
 name: aw-design-fake
-description: "在前端原型或设计稿工程中实现、补齐或审查 fake 行为时使用：包括 fake action / 占位提示、功能暂未实现的临时交互、假数据 / fixture / seed、演示模拟、缺少 fake bundle、假数据版本过旧，以及假数据与真实数据叠加；负责把 SKILL 内置的 fake bundle 初始化或同步进项目，并隔离真实写操作。不要用于单元测试 mock、网络层 mock，也不要用于正式生产工程的真实实现。"
+description: "在前端原型或设计稿工程中实现、补齐或审查 fake 行为时使用：包括 fake action / 占位提示、功能暂未实现的临时交互、假数据 / fixture / seed、演示源码展示、演示模拟、缺少 fake bundle、假数据版本过旧，以及假数据与真实数据叠加；维护统一数据与源码资产，初始化或同步 fake bundle，并隔离真实写操作。不要用于单元测试 mock、网络层 mock，也不要用于正式生产工程的真实实现。"
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   author: "aaron_xu"
   creation_context: "原型与设计验证工程里的占位交互、占位文案和演示数据长期靠人凭记忆各写各的，导致同一语义的假数据出现多份副本、假提示混进真实链路、演示开关关不干净。为把 fake 的分层判断、统一入口和真实契约隔离固化成与具体项目无关、可同步可校验的流程而创建。"
 ---
@@ -20,6 +20,8 @@ metadata:
 1. 读 [文本工作流](docs/workflow.md)，它是执行事实源。
 2. 读项目自己的约定：`AGENTS.md` / `CLAUDE.md` / 设计文档中关于假数据、演示开关、原型工作区边界的说明。项目没有成文约定时记为「无项目专有约束」，不停止。
 3. 检查 fake bundle 状态：
+
+   仅需展示源码、项目尚无 bundle 且已有 Gallery / 原型 fixture 入口时，直接按 [源码消费约定](references/code-demo.md) 接入唯一文本资产；不为展示文本强制初始化 bundle、添加 fake action 或运行模拟。其他任务继续检查：
 
    ```bash
    node <本 SKILL 目录>/scripts/fake-bundle.mjs --project-root <项目根目录> --check
@@ -46,7 +48,7 @@ node <本 SKILL 目录>/scripts/fake-bundle.mjs --project-root <项目根目录>
 
 ```text
 <target>/
-├── data.ts       # 受管：全局 FAKE_DATA，由 SKILL 的 CSV 与长文生成
+├── data.ts       # 受管：全局 FAKE_DATA，由 CSV、长文与源码文本生成
 ├── actions.ts    # 受管：showFakeSonner 等通用 fake action
 ├── version.ts    # 受管：FAKE_DATA_VERSION 与 FAKE_LOGIC_VERSION
 ├── index.ts      # 受管：统一导出
@@ -61,23 +63,31 @@ node <本 SKILL 目录>/scripts/fake-bundle.mjs --project-root <项目根目录>
 ### 同步规则
 
 - 所有调用方只从 bundle 目录入口导入，不直接依赖 `data.ts`、`actions.ts` 或 `version.ts`，也不创建 `fake-main.ts`、`fake-sonner.ts` 这类平铺入口。
-- 受管文件的内容由 SKILL 决定，项目侧不手改。要改内容就改 SKILL 的 [references/fake-data.csv](references/fake-data.csv)、[references/fake-longform.md](references/fake-longform.md) 或 `assets/fake/`，再同步回项目。
+- 受管文件的内容由 SKILL 决定，项目侧不手改。要改内容就改 SKILL 的 [references/fake-data.csv](references/fake-data.csv)、[references/fake-longform.md](references/fake-longform.md) 或对应 `assets/`，再同步回项目。
 - 同步只替换 `aw-design-fake:managed-start` / `aw-design-fake:managed-end` 之间的内容，保留项目在标记之外的注释和扩展。
 - 目标文件没有 managed 标记时，`--write` 会先创建同名 `.aw-design-fake-backup` 再写入；完成后必须检查备份里的项目扩展并按需迁回标记之外，不能静默丢弃。
-- canonical 内容发生任何变化时递增对应 semver patch；字段删除、重命名或行为不兼容时递增 major。项目文件不能手工提升版本却不把变更回灌到 SKILL。
+- canonical 数据兼容新增字段时提升 `FAKE_DATA_VERSION` 的 MINOR，明确的小修复提升 PATCH；通用 action 行为变化才提升 `FAKE_LOGIC_VERSION`。字段删除、重命名或行为不兼容时先确认 MAJOR 授权，不自行升级。生成器、规则与文档变化同时按仓库约定提升 Skill 版本；项目文件不能手动提升版本却不回灌变更。
 - 同版本但 managed block 不同视为 `drifted`，以 SKILL 为准同步；项目版本高于 SKILL 时视为 `newer`，脚本不会自动覆盖。
 - 改动脚本后先跑 `node <本 SKILL 目录>/scripts/fake-bundle.mjs --self-check`。
 
 ### 维护假数据
 
-`data.ts` 不是手写文件，它由两份可维护资产生成：
+`data.ts` 不是手写文件，它由以下 canonical 资产生成：
 
 | 资产 | 内容 |
 | --- | --- |
-| [references/fake-data.csv](references/fake-data.csv) | 字段表：`key,kind,value,note`。`key` 用点号表达嵌套，`kind` 取 `string` / `number` / `boolean` / `list` / `asset` / `longform`，`list` 用 `\|` 分隔。 |
+| [references/fake-data.csv](references/fake-data.csv) | 字段表：`key,kind,value,note`。`key` 用点号表达嵌套，`kind` 取 `string` / `number` / `boolean` / `list` / `asset` / `longform` / `source`，`list` 用 `\|` 分隔。`string` 保留 value 的原始空白，含逗号或换行时按 CSV 规则加引号。 |
 | [references/fake-longform.md](references/fake-longform.md) | 长文正文。二级标题即字段名，段落用空行分隔；多段落生成数组并以 `<br/>` 连接。 |
+| [assets/code/conway.ts.txt](assets/code/conway.ts.txt) | 唯一 canonical 演示源码：完整 TypeScript 生命游戏文本。CSV 的 `code.source,source,code/conway.ts.txt` 指向它，UTF-8 逐字读取，不执行。 |
 
-`asset` 字段生成为 `assetUrl('<路径>')`，由项目 `adapter.ts` 决定真实 URL。改完任一资产都要提升 `assets/fake/version.ts` 中的 `FAKE_DATA_VERSION`，再同步到项目。
+`asset` 字段调用 `assetUrl`，由项目 `adapter.ts` 决定真实 URL；`source` 是 `assets/` 内的文本路径（拒绝越界路径及指向界外的符号链接），直接序列化为字符串，不走长文段落处理。改完数据资产都要提升 `assets/fake/version.ts` 中的 `FAKE_DATA_VERSION`，再同步到项目。当前版本与消费示例见 [源码消费约定](references/code-demo.md)。
+
+### 统一演示源码
+
+- 适用的原型、设计验证、代码展示、普通 / 高亮、换行 / 不换行演示默认共用 `FAKE_DATA.code.source`，语言取 `FAKE_DATA.code.language`（`typescript`）；不要各处重新编写 Text、greet 或另一份长行样例。
+- 完整保留用户给定的逻辑、注释、空白、空行、转义、Unicode 字符及末尾换行，不截断、格式化、trim、拼接、重复或改写源码。生成和消费都不做 HTML 实体转换或 Unicode 归一化。换行效果通过容器宽度与显示选项验证，不改源码。
+- 这是展示文本：只传给文本渲染、高亮与复制入口，不求值、不作为可执行模块导入、不放入运行型预览；其中的 `console.clear`、`setInterval` 与模拟循环不得运行。普通 / 高亮切换及软换行不改变原始字符串，复制返回完整原文。
+- 不把统一演示源码规则扩大到真实产品实现、单元测试或用户明确指定其他示例的场景；仅复用源码也不意味着获准在组件库生产代码中加入 fake action 或模拟逻辑。
 
 ## 分类与实现
 
@@ -96,7 +106,7 @@ node <本 SKILL 目录>/scripts/fake-bundle.mjs --project-root <项目根目录>
 适用于界面需要假文案、假数字、假时间、假链接、假文件名或全局占位资源的情况。
 
 - 写入任何占位字面量前，必须先逐字段检查 bundle 导出的 `FAKE_DATA`；已有同语义字段时直接复用，不得在业务 `fake.ts`、store、view-model 或 JSX 中另造近义值。时间统一使用 `FAKE_DATA.date`、`FAKE_DATA.time` 或 `FAKE_DATA.datetime`，人物、组织、数值和通用 ID 同理。
-- 确认 `FAKE_DATA` 缺少所需语义后才新增全局字段：先改 SKILL 的 CSV 或长文并提升 `FAKE_DATA_VERSION`，再运行同步脚本，不要只改项目副本。
+- 确认 `FAKE_DATA` 缺少所需语义后才新增全局字段：先改 SKILL 的 CSV、长文或对应文本资产并提升 `FAKE_DATA_VERSION`，再运行同步脚本，不要只改项目副本。演示源码直接使用已有的 `FAKE_DATA.code`。
 - 业务域的一组演示条目放在该域自己的 `fake.ts`，由该域的 data / view-model 消费；展示组件不得在 JSX、CSS 或页面数据中重复定义占位值。
 - 业务域 `fake.ts` 只保存可替换内容，不承载 API、权限、store 或持久化逻辑。
 - 假数据必须一眼可辨：域名使用 `example.com`，ID 使用 `*_00000042` 这类明显编号；一位数占位使用 `FAKE_DATA.smallNumber`（7），两位数及默认数值使用 `FAKE_DATA.number`（42）。不要编造看似真实的企业、人名、运行结果或错误原因。
@@ -128,7 +138,8 @@ node <本 SKILL 目录>/scripts/fake-bundle.mjs --project-root <项目根目录>
 按所选层级验证可观察行为：
 
 - A 类：触发动作后出现统一 fake 提示；确认没有网络请求或真实持久化副作用。
-- B 类：确认展示值来自 `FAKE_DATA` 或唯一的业务域 `fake.ts`，页面中没有重复副本。
+- B 类：确认展示值来自 `FAKE_DATA` 或唯一的业务域 fixture，页面中没有重复副本。源码展示与复制结果须与 canonical 文本逐字相等，普通 / 高亮 / 换行仅改变呈现，且无源码执行副作用。
 - C 类：分别验证演示开关关闭与开启。关闭时 fixture / seed 为 0 或只保留真实数据，开启时演示数据恢复，相关列表、详情与计数保持一致。
-- 结束前重新运行 `--check`：bundle 必须为 `current`，或明确记录为项目侧 `newer`，不能留下 `missing`、`outdated`、`drifted` 或缺失的 `adapter.ts`。
+- 已有 bundle 在结束前重新运行 `--check`：必须为 `current`，或明确记录为项目侧 `newer`，不能留下 `missing`、`outdated`、`drifted` 或缺失的 `adapter.ts`。仅展示源码且沿用已有 fixture 的分支记录未初始化与唯一消费入口，不强制创建 bundle。
 - 涉及 TypeScript 或状态逻辑时至少运行项目自身的类型检查；新流程或非平凡交互按项目文档做浏览器验证。
+- 维护本 SKILL 时运行 `node scripts/fake-bundle.mjs --self-check`，覆盖源码指纹、生成文本回读与同步回归；再运行基础与 AW 校验器。

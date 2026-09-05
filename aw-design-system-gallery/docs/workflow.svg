@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1660" role="img" aria-labelledby="title desc">
   <title id="title">Design System Gallery 工作流程</title>
-  <desc id="desc">从授权范围和目标项目约定出发，区分公开设计轴与场景条件，确定默认占位文本与图标，依据边界可辨识度和审阅必要性决定 Gallery-only 的真实占位范围提示，保持通用分类领域中立和 Panel ID 稳定，以 Light 为默认主题完成可访问与视觉验证后交付。</desc>
+  <desc id="desc">从授权范围和目标项目约定出发，筛选默认示例与有审阅价值的真实设计轴和正式状态。仅验证健壮性的案例留给测试或临时验证，不新增正式面板或场景区；边界展示须有明确用户要求或当前组件的正式设计契约。为复合组件分别建立父级代表性组合与原子化子级矩阵，按审阅必要性决定范围提示。已有边界显示开关时，提示接入共享受控机制并验证开关两态，保持布局与真实边框不变。以 Light 为默认主题完成验证后交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
@@ -16,7 +16,8 @@
       .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
       .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
       .output { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
-      .flow { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .flow, .join { fill: none; stroke: #52606d; stroke-width: 2.5; }
+      .flow { marker-end: url(#arrow); }
     </style>
   </defs>
 
@@ -27,17 +28,22 @@
   <path class="flow" d="M760 260 H880"/>
   <path class="flow" d="M600 330 V390"/>
   <path class="flow" d="M600 500 V550"/>
+  <path class="flow" d="M360 605 H300"/>
+  <path class="join" d="M170 655 V1195 H600"/>
   <path class="flow" d="M600 660 V700"/>
   <path class="flow" d="M760 770 H880"/>
   <path class="flow" d="M600 840 V900"/>
   <path class="flow" d="M600 1010 V1060"/>
-  <path class="flow" d="M600 1170 V1220"/>
+  <path class="join" d="M600 1170 V1195"/>
+  <path class="flow" d="M600 1195 V1220"/>
   <path class="flow" d="M600 1330 V1370"/>
   <path class="flow" d="M760 1440 H880"/>
   <path class="flow" d="M600 1510 V1560"/>
 
   <text class="label" x="785" y="245">否</text>
   <text class="label" x="620" y="355">是</text>
+  <text class="label" x="306" y="590">仅验证</text>
+  <text class="label" x="620" y="685">正式展示</text>
   <text class="label" x="785" y="755">否</text>
   <text class="label" x="620" y="865">是</text>
   <text class="label" x="785" y="1425">否</text>
@@ -61,9 +67,14 @@
   <text class="body" x="600" y="476">必要时说明原因并渐进扩展只读证据</text>
 
   <rect class="stage" x="360" y="550" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="588">筛选有审阅价值的设计轴</text>
-  <text class="body" x="600" y="614">区分设计轴 · 调用数据 · 实现机制 · 调试属性</text>
-  <text class="body" x="600" y="636">Caption 仅含公开轴与状态 · 场景条件另作说明</text>
+  <text class="node-title" x="600" y="588">筛选正式 Gallery 内容</text>
+  <text class="body" x="600" y="614">默认示例 · 真实设计轴与正式状态（含 Empty State）</text>
+  <text class="body" x="600" y="636">边界展示须有用户要求或组件设计契约</text>
+
+  <rect class="stage" x="40" y="555" width="260" height="100" rx="14"/>
+  <text class="node-title" x="170" y="593">留在测试或临时验证</text>
+  <text class="body" x="170" y="619">不新增正式面板或场景区</text>
+  <text class="body" x="170" y="641">取消 Caption 不构成保留理由</text>
 
   <polygon class="decision" points="600,700 760,770 600,840 440,770"/>
   <text class="node-title" x="600" y="765">语义映射明确且一致？</text>
@@ -75,18 +86,20 @@
 
   <rect class="stage" x="360" y="900" width="480" height="110" rx="14"/>
   <text class="node-title" x="600" y="938">建立当前范围的展示模型</text>
-  <text class="body" x="600" y="964">有轴：同序 Caption · 无轴：default 舞台但省略 Caption</text>
-  <text class="body" x="600" y="986">边界可辨识度 × 范围审阅价值 · 依赖分组优先</text>
+  <text class="body" x="600" y="964">父级代表性组合 · 子级原子化矩阵 · 依赖分组优先</text>
+  <text class="body" x="600" y="986">子级轴独立保留 · 技术 wrapper 视觉不可见</text>
 
   <rect class="stage" x="360" y="1060" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="1098">确定默认占位内容并实现</text>
-  <text class="body" x="600" y="1124">无覆盖时使用 Text / Placeholder；有语义要求时遵循事实源</text>
-  <text class="body" x="600" y="1146">范围提示须满足双条件并保持 Gallery-only · 估算宽度</text>
+  <text class="node-title" x="600" y="1088">确定默认占位内容并实现</text>
+  <text class="body" x="600" y="1110">无覆盖时使用 Text / Placeholder；有语义要求时遵循事实源</text>
+  <text class="body" x="600" y="1132">范围提示满足双条件 · Gallery-only · 估算宽度</text>
+  <text class="body" x="600" y="1154">已有边界开关时复用受控入口，不直接写死虚线</text>
 
   <rect class="stage" x="360" y="1220" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="1258">运行范围相称的验证</text>
-  <text class="body" x="600" y="1284">默认验证 Light · 有主题风险时才追加 Dark</text>
-  <text class="body" x="600" y="1306">范围 · 排序 · 尺寸 · 可访问性 · 语义依赖</text>
+  <text class="node-title" x="600" y="1248">运行范围相称的验证</text>
+  <text class="body" x="600" y="1270">默认验证 Light · 有主题风险时才追加 Dark</text>
+  <text class="body" x="600" y="1292">提示随开关显隐，布局与真实边框不变</text>
+  <text class="body" x="600" y="1314">检查设计与行为 · 恢复预览状态 · 清理临时展示</text>
 
   <polygon class="decision" points="600,1370 760,1440 600,1510 440,1440"/>
   <text class="node-title" x="600" y="1435">授权范围验证通过？</text>

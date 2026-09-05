@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-31T05:41:52+00:00",
+  "generated_at": "2026-09-04T04:12:33+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
-      "status": "fresh",
-      "last_checked_at": "2026-08-31T05:41:52+00:00",
+      "status": "stale",
+      "last_checked_at": "2026-09-04T04:12:33+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
-      "error": null,
+      "error": "TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds",
       "fetch": {
         "command:npx -y shadcn@latest list @shadcn --json --limit 100": {
           "sha256": "0f25787be0f1a500193634da8629c193b74c5a71906432c5fe3d87960238a298"
@@ -997,7 +997,7 @@
       "id": "coss-ui",
       "name": "coss ui",
       "status": "fresh",
-      "last_checked_at": "2026-08-31T05:41:52+00:00",
+      "last_checked_at": "2026-09-04T04:12:33+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -1893,17 +1893,17 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-31T05:41:52+00:00",
-      "last_success_at": "2026-08-31T05:41:52+00:00",
+      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_success_at": "2026-09-04T04:12:33+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
-          "etag": "\"a13ef2629ec081680a6f1eea4ac83022\"",
-          "last_modified": "Mon, 31 Aug 2026 05:42:50 GMT"
+          "etag": "\"fdf6d0763826db888ac2fe5dbadb935a\"",
+          "last_modified": "Fri, 04 Sep 2026 04:13:37 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"6eff429cfb41a143829461444158399a\"",
-          "last_modified": "Mon, 31 Aug 2026 05:42:47 GMT"
+          "etag": "\"144e5c74ae100c3d48585cd0f3a69298\"",
+          "last_modified": "Fri, 04 Sep 2026 04:13:39 GMT"
         }
       },
       "items": [
@@ -2193,6 +2193,29 @@
         {
           "source_id": "dice-ui-base",
           "library": "Dice UI Base",
+          "name": "Kanban",
+          "slug": "kanban",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/kanban",
+          "source_url": "https://diceui.com/r/base-vega/kanban.json",
+          "foundation": "base-ui",
+          "variant": "base",
+          "dependencies": [
+            "@base-ui/react",
+            "@dnd-kit/core",
+            "@dnd-kit/modifiers",
+            "@dnd-kit/sortable",
+            "@dnd-kit/utilities",
+            "@diceui/use-isomorphic-layout-effect"
+          ],
+          "license": "MIT; verify exact source before copying",
+          "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
           "name": "Key Value",
           "slug": "key-value",
           "description": "",
@@ -2316,6 +2339,26 @@
             "@diceui/use-as-ref",
             "@diceui/use-isomorphic-layout-effect",
             "@diceui/use-lazy-ref"
+          ],
+          "license": "MIT; verify exact source before copying",
+          "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Presentation",
+          "slug": "presentation",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/presentation",
+          "source_url": "https://diceui.com/r/base-vega/presentation.json",
+          "foundation": "base-ui",
+          "variant": "base",
+          "dependencies": [
+            "@diceui/pptx",
+            "button",
+            "@diceui/use-mobile"
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
@@ -2484,6 +2527,29 @@
             "@diceui/use-as-ref",
             "@diceui/use-isomorphic-layout-effect",
             "@diceui/use-lazy-ref"
+          ],
+          "license": "MIT; verify exact source before copying",
+          "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Sortable",
+          "slug": "sortable",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/sortable",
+          "source_url": "https://diceui.com/r/base-vega/sortable.json",
+          "foundation": "base-ui",
+          "variant": "base",
+          "dependencies": [
+            "@base-ui/react",
+            "@dnd-kit/core",
+            "@dnd-kit/modifiers",
+            "@dnd-kit/sortable",
+            "@dnd-kit/utilities",
+            "@diceui/use-isomorphic-layout-effect"
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
@@ -2681,13 +2747,13 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-08-31T05:41:52+00:00",
-      "last_success_at": "2026-08-24T10:25:35+00:00",
+      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_success_at": "2026-09-04T04:12:33+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"93cecdb50e53a325d62adb74343911a0895c72f6ea7d5b4218793e57897c443b\"",
-          "last_modified": "Mon, 24 Aug 2026 07:53:05 GMT"
+          "etag": "W/\"2cb0592adc61d47aadf8d365bf8f92733ad17b4c386d13564eb87a2c6dbe476d\"",
+          "last_modified": "Fri, 04 Sep 2026 02:53:08 GMT"
         }
       },
       "items": [
@@ -2940,6 +3006,22 @@
           "category": "Components and examples",
           "preview_url": "https://reui.io/components/checkbox",
           "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/checkbox",
+          "foundation": "base-ui",
+          "variant": "base",
+          "dependencies": [],
+          "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
+          "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Code Block",
+          "slug": "code-block",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/code-block",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/code-block",
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [],
@@ -3881,7 +3963,7 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-08-31T05:41:52+00:00",
+      "last_checked_at": "2026-09-04T04:12:33+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -4777,13 +4859,13 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-08-31T05:41:52+00:00",
-      "last_success_at": "2026-08-24T10:25:35+00:00",
+      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_success_at": "2026-09-04T04:12:33+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"e89b76bbf1d678adb4685f747cc33394\"",
-          "last_modified": "Mon, 24 Aug 2026 10:25:59 GMT"
+          "etag": "\"5139ae352c4f1aa82c23a603273a5c5f\"",
+          "last_modified": "Wed, 02 Sep 2026 12:26:37 GMT"
         }
       },
       "items": [
@@ -4808,7 +4890,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -4837,7 +4920,8 @@
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/use-merge-split.json",
             "https://www.fluidfunctionalism.com/r/button.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -4886,7 +4970,8 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -4912,7 +4997,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -4964,7 +5050,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/use-merge-split.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -4996,7 +5083,8 @@
             "https://www.fluidfunctionalism.com/r/elevated.json",
             "https://www.fluidfunctionalism.com/r/slider.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tooltip.json"
+            "https://www.fluidfunctionalism.com/r/tooltip.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5055,7 +5143,8 @@
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5082,7 +5171,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tooltip.json"
+            "https://www.fluidfunctionalism.com/r/tooltip.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5108,7 +5198,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5139,7 +5230,8 @@
             "https://www.fluidfunctionalism.com/r/file-thumbnail.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/button.json",
-            "https://www.fluidfunctionalism.com/r/tooltip.json"
+            "https://www.fluidfunctionalism.com/r/tooltip.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5165,7 +5257,8 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5196,7 +5289,8 @@
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5230,7 +5324,8 @@
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
             "https://www.fluidfunctionalism.com/r/base/tooltip.json",
             "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
-            "https://www.fluidfunctionalism.com/r/base/button.json"
+            "https://www.fluidfunctionalism.com/r/base/button.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5255,7 +5350,8 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5279,7 +5375,8 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5303,7 +5400,8 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5331,7 +5429,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5358,7 +5457,8 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
@@ -5408,7 +5508,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/badge.json"
+            "https://www.fluidfunctionalism.com/r/badge.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",

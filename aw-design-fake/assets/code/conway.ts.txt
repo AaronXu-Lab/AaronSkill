@@ -1,0 +1,110 @@
+type Cell = 0 | 1;
+type Grid = Cell[][];
+
+const ROWS = 20;
+const COLS = 40;
+
+/**
+ * Count the number of living neighbors around a cell.
+ * The grid wraps around at the edges.
+ */
+function countNeighbors(
+  grid: Grid,
+  row: number,
+  col: number
+): number {
+  let count = 0;
+
+  for (let dr = -1; dr <= 1; dr++) {
+    for (let dc = -1; dc <= 1; dc++) {
+      // Skip the current cell itself.
+      if (dr === 0 && dc === 0) continue;
+
+      const r = (row + dr + ROWS) % ROWS;
+      const c = (col + dc + COLS) % COLS;
+
+      count += grid[r][c];
+    }
+  }
+
+  return count;
+}
+
+/**
+ * Compute the next generation according to Conway's rules:
+ *
+ * 1. A live cell with fewer than 2 neighbors dies.
+ * 2. A live cell with 2 or 3 neighbors survives.
+ * 3. A live cell with more than 3 neighbors dies.
+ * 4. A dead cell with exactly 3 neighbors becomes alive.
+ */
+function nextGeneration(grid: Grid): Grid {
+  return grid.map((row, r) =>
+    row.map((cell, c) => {
+      const neighbors = countNeighbors(grid, r, c);
+
+      if (cell === 1) {
+        return neighbors === 2 || neighbors === 3 ? 1 : 0;
+      }
+
+      return neighbors === 3 ? 1 : 0;
+    })
+  );
+}
+
+/**
+ * Create an empty grid.
+ */
+function createGrid(): Grid {
+  return Array.from({ length: ROWS }, () =>
+    Array<Cell>(COLS).fill(0)
+  );
+}
+
+/**
+ * Add a classic "glider" pattern.
+ */
+function addGlider(
+  grid: Grid,
+  row: number,
+  col: number
+): void {
+  const pattern = [
+    [0, 1, 0],
+    [0, 0, 1],
+    [1, 1, 1],
+  ] as const;
+
+  pattern.forEach((line, r) => {
+    line.forEach((cell, c) => {
+      grid[row + r][col + c] = cell;
+    });
+  });
+}
+
+/**
+ * Render the grid in the terminal.
+ */
+function render(grid: Grid): void {
+  console.clear();
+
+  const output = grid
+    .map(row =>
+      row.map(cell => (cell ? "█" : " ")).join("")
+    )
+    .join("\n");
+
+  console.log(output);
+}
+
+// Initialize the simulation.
+let grid = createGrid();
+
+addGlider(grid, 2, 4);
+addGlider(grid, 10, 20);
+
+// Advance one generation every 100 ms.
+setInterval(() => {
+  render(grid);
+  grid = nextGeneration(grid);
+}, 100);

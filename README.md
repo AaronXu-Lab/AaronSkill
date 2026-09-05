@@ -78,8 +78,8 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.1.2` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 必须完成官方 lint；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.13.0` | 审查或优化 Gallery 的组件展示、属性轴、默认示例与比较结构 | Caption 仅含真实公开轴；默认占位遵循 `Text` / `Placeholder`；主题默认只验证 Light，存在具体风险时再验证 Dark；范围提示保持 Gallery-only；项目配置留在目标仓库 |
-| [`aw-design-fake`](./aw-design-fake/) | `1.2.0` | 为原型工程初始化、同步并规范 fake 数据与占位交互 | 只做可移除的占位实现；不碰单测 mock 与真实契约 |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.16.0` | 审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 纯健壮性验证不默认进入正式 Gallery；明确要求或正式设计契约按范围处理；复合展示不替代子级矩阵；技术 wrapper 视觉不可见；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
+| [`aw-design-fake`](./aw-design-fake/) | `1.3.0` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 源码逐字复用、仅展示不执行；仅源码展示可沿用已有 fixture；不碰单测 mock 与真实契约 |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.0.4` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
 
@@ -90,7 +90,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.2.0` | 审计 Web 界面的语义重复、信息密度和层级问题 | 先输出审计证据与最小改动决策，再实施界面修改 |
-| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.6.0` | 审查简体中文 UI 的排版、术语、格式与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
+| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.8.1` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
 | [`temp-small-improves`](./temp-small-improves/) | `1.0.0` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
 
 ### 不再维护

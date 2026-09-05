@@ -1,9 +1,9 @@
 # Dice UI Base
 
 - Status: `fresh`
-- Last checked: `2026-08-31T05:41:52+00:00`
-- Last successful refresh: `2026-08-31T05:41:52+00:00`
-- Eligible components: `37`
+- Last checked: `2026-09-04T04:12:33+00:00`
+- Last successful refresh: `2026-09-04T04:12:33+00:00`
+- Eligible components: `40`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|
@@ -21,12 +21,14 @@
 | File Upload |  | [Preview](https://diceui.com/docs/components/base/file-upload) | [Source](https://diceui.com/r/base-vega/file-upload.json) |
 | Fps |  | [Preview](https://diceui.com/docs/components/base/fps) | [Source](https://diceui.com/r/base-vega/fps.json) |
 | Gauge |  | [Preview](https://diceui.com/docs/components/base/gauge) | [Source](https://diceui.com/r/base-vega/gauge.json) |
+| Kanban |  | [Preview](https://diceui.com/docs/components/base/kanban) | [Source](https://diceui.com/r/base-vega/kanban.json) |
 | Key Value |  | [Preview](https://diceui.com/docs/components/base/key-value) | [Source](https://diceui.com/r/base-vega/key-value.json) |
 | Marquee |  | [Preview](https://diceui.com/docs/components/base/marquee) | [Source](https://diceui.com/r/base-vega/marquee.json) |
 | Mask Input |  | [Preview](https://diceui.com/docs/components/base/mask-input) | [Source](https://diceui.com/r/base-vega/mask-input.json) |
 | Masonry |  | [Preview](https://diceui.com/docs/components/base/masonry) | [Source](https://diceui.com/r/base-vega/masonry.json) |
 | Media Player |  | [Preview](https://diceui.com/docs/components/base/media-player) | [Source](https://diceui.com/r/base-vega/media-player.json) |
 | Phone Input |  | [Preview](https://diceui.com/docs/components/base/phone-input) | [Source](https://diceui.com/r/base-vega/phone-input.json) |
+| Presentation |  | [Preview](https://diceui.com/docs/components/base/presentation) | [Source](https://diceui.com/r/base-vega/presentation.json) |
 | Qr Code |  | [Preview](https://diceui.com/docs/components/base/qr-code) | [Source](https://diceui.com/r/base-vega/qr-code.json) |
 | Rating |  | [Preview](https://diceui.com/docs/components/base/rating) | [Source](https://diceui.com/r/base-vega/rating.json) |
 | Relative Time Card |  | [Preview](https://diceui.com/docs/components/base/relative-time-card) | [Source](https://diceui.com/r/base-vega/relative-time-card.json) |
@@ -35,6 +37,7 @@
 | Scroller |  | [Preview](https://diceui.com/docs/components/base/scroller) | [Source](https://diceui.com/r/base-vega/scroller.json) |
 | Segmented Input |  | [Preview](https://diceui.com/docs/components/base/segmented-input) | [Source](https://diceui.com/r/base-vega/segmented-input.json) |
 | Selection Toolbar |  | [Preview](https://diceui.com/docs/components/base/selection-toolbar) | [Source](https://diceui.com/r/base-vega/selection-toolbar.json) |
+| Sortable |  | [Preview](https://diceui.com/docs/components/base/sortable) | [Source](https://diceui.com/r/base-vega/sortable.json) |
 | Speed Dial |  | [Preview](https://diceui.com/docs/components/base/speed-dial) | [Source](https://diceui.com/r/base-vega/speed-dial.json) |
 | Stack |  | [Preview](https://diceui.com/docs/components/base/stack) | [Source](https://diceui.com/r/base-vega/stack.json) |
 | Stat |  | [Preview](https://diceui.com/docs/components/base/stat) | [Source](https://diceui.com/r/base-vega/stat.json) |
