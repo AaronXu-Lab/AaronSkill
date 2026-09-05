@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-04T04:12:33+00:00",
+  "generated_at": "2026-09-05T10:02:09+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
-      "status": "stale",
-      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "status": "fresh",
+      "last_checked_at": "2026-09-05T10:02:09+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
-      "error": "TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds",
+      "error": null,
       "fetch": {
         "command:npx -y shadcn@latest list @shadcn --json --limit 100": {
           "sha256": "0f25787be0f1a500193634da8629c193b74c5a71906432c5fe3d87960238a298"
@@ -997,7 +997,7 @@
       "id": "coss-ui",
       "name": "coss ui",
       "status": "fresh",
-      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-05T10:02:09+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -1893,7 +1893,7 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-05T10:02:09+00:00",
       "last_success_at": "2026-09-04T04:12:33+00:00",
       "error": null,
       "fetch": {
@@ -2747,7 +2747,7 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-05T10:02:09+00:00",
       "last_success_at": "2026-09-04T04:12:33+00:00",
       "error": null,
       "fetch": {
@@ -3963,7 +3963,7 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-05T10:02:09+00:00",
       "last_success_at": "2026-07-23T10:38:36+00:00",
       "error": null,
       "fetch": {
@@ -4859,7 +4859,7 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-05T10:02:09+00:00",
       "last_success_at": "2026-09-04T04:12:33+00:00",
       "error": null,
       "fetch": {

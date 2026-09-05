@@ -89,7 +89,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.2.0` | 审计 Web 界面的语义重复、信息密度和层级问题 | 先输出审计证据与最小改动决策，再实施界面修改 |
+| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.4.0` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
 | [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.8.1` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
 | [`temp-small-improves`](./temp-small-improves/) | `1.0.0` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
 

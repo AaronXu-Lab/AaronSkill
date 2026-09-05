@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2160" viewBox="0 0 1200 2160" role="img" aria-labelledby="title desc">
   <title id="title">UI/UX 重复信息审计工作流程</title>
-  <desc id="desc">先确认目标语境中的当前界面证据，在审计门禁下完成盘点、信息原子归一化与出现位置映射，再分类重复、执行判断测试并作出保留、合并、删除、缩短、移动或拆分决策；随后区分已验证缺口、推荐最小安全改动并验证结果，发现新重复时返回出现位置映射，最后交付九部分审计报告，仅在用户明确要求时实施审计已支持的改动。</desc>
+  <desc id="desc">先确认目标语境中的当前界面证据，在审计门禁下完成盘点、信息原子归一化与出现位置映射，再分类重复、判断所有信息与视觉承载物的当前价值和适用阶段并作出保留、合并、删除、缩短、移动或拆分决策；随后区分已验证缺口、推荐最小安全改动并验证结果，发现新重复时返回出现位置映射，最后交付九部分审计报告，仅在用户明确要求时实施审计已支持的改动。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M0 0 L10 5 L0 10 Z" fill="#4b5d6b"/>
+      <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
     </marker>
     <style>
       .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; }
@@ -11,22 +11,22 @@
       .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; text-anchor: middle; }
       .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; text-anchor: middle; }
       .branch { font: 700 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; }
-      .line { fill: none; stroke: #4b5d6b; stroke-width: 2.5; marker-end: url(#arrow); }
-      .route { fill: none; stroke: #4b5d6b; stroke-width: 2.5; }
-      .step { fill: #ffffff; stroke: #aebbc5; stroke-width: 2; }
-      .action { fill: #edf6ff; stroke: #2f7fbd; stroke-width: 2; }
-      .decision { fill: #fff7e6; stroke: #c98918; stroke-width: 2.5; }
-      .stop { fill: #fff0ef; stroke: #c84e46; stroke-width: 2; }
-      .done { fill: #edf9f1; stroke: #2f8b54; stroke-width: 2.5; }
+      .line { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .route { fill: none; stroke: #52606d; stroke-width: 2.5; }
+      .step { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
+      .action { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
+      .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2.5; }
+      .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
+      .done { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2.5; }
     </style>
   </defs>
 
   <rect width="1200" height="2160" fill="#f7f9fb"/>
   <text class="title" x="600" y="48" text-anchor="middle">UI/UX 重复信息审计</text>
-  <text class="subtitle" x="600" y="75" text-anchor="middle">先审计信息，再调整样式：把每个事实收敛到唯一的标准来源</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">先审计信息，再调整样式：按当前任务价值与适用阶段保留信息</text>
 
   <!-- 1 接收请求 -->
-  <rect class="step" x="400" y="105" width="400" height="72" rx="16"/>
+  <rect class="step" x="400" y="105" width="400" height="72" rx="14"/>
   <text class="label" x="600" y="135">接收界面审计请求</text>
   <text class="detail" x="600" y="159">任务 · 语境 · 载体 · 媒介 · 输入方式</text>
 
@@ -38,73 +38,73 @@
 
   <text class="branch" x="812" y="267">否</text>
   <path class="line" d="M790 280 H865"/>
-  <rect class="stop" x="865" y="240" width="290" height="80" rx="16"/>
+  <rect class="stop" x="865" y="240" width="290" height="80" rx="14"/>
   <text class="label" x="1010" y="273">停止结论并索取材料</text>
   <text class="detail" x="1010" y="297">标记待验证 · 不用假设补齐</text>
 
   <!-- 2 盘点 -->
   <text class="branch" x="616" y="371">是</text>
   <path class="line" d="M600 345 V390"/>
-  <rect class="action" x="400" y="390" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="390" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="423">盘点当前界面与任务状态</text>
   <text class="detail" x="600" y="449">表面 · 组件 · 数据 · 操作入口 · 层级 · 恢复路径</text>
 
   <!-- 审计门禁 -->
   <path class="line" d="M400 433 H344"/>
-  <rect class="stop" x="40" y="393" width="300" height="80" rx="16"/>
+  <rect class="stop" x="40" y="393" width="300" height="80" rx="14"/>
   <text class="label" x="190" y="426">审计门禁：先审计</text>
   <text class="detail" x="190" y="450">决策未完成前不得改 UI</text>
 
   <!-- 3 提取信息原子 -->
   <path class="line" d="M600 476 V515"/>
-  <rect class="action" x="400" y="515" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="515" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="548">提取信息原子并归一化</text>
   <text class="detail" x="600" y="574">统一同义词 · 视觉别名 · 状态占位值</text>
 
   <!-- 4 出现位置映射 -->
   <path class="line" d="M600 601 V640"/>
-  <rect class="action" x="400" y="640" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="640" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="673">建立出现位置映射</text>
-  <text class="detail" x="600" y="699">含来源表面与跨屏、跨表面入口</text>
+  <text class="detail" x="600" y="699">来源表面 · 适用条件 · 当前与后续保留阶段</text>
 
   <!-- 5 分类与判断测试 -->
   <path class="line" d="M600 726 V765"/>
-  <rect class="action" x="400" y="765" width="400" height="86" rx="16"/>
-  <text class="label" x="600" y="798">分类重复并执行判断测试</text>
-  <text class="detail" x="600" y="824">完全 · 语义 · 派生 · 状态 · 指引 · 操作 · 层级 · 语境</text>
+  <rect class="action" x="400" y="765" width="400" height="86" rx="14"/>
+  <text class="label" x="600" y="798">分类重复并判断所有信息价值</text>
+  <text class="detail" x="600" y="824">唯一事实也检查 · 标题、图标与边界也检查</text>
 
   <!-- 判断：删除是否损害语义 -->
   <path class="line" d="M600 851 V890"/>
   <polygon class="decision" points="600,890 800,955 600,1020 400,955"/>
-  <text class="label" x="600" y="951">删除会让状态或无障碍含糊？</text>
-  <text class="detail" x="600" y="976">下一步操作是否仍然清楚</text>
+  <text class="label" x="600" y="951">删除依据不足或损害必要语义？</text>
+  <text class="detail" x="600" y="976">用途未明 · 业务、安全、状态与操作</text>
 
   <text class="branch" x="822" y="942">是</text>
   <path class="line" d="M800 955 H875"/>
-  <rect class="action" x="875" y="913" width="290" height="84" rx="16"/>
-  <text class="label" x="1020" y="946">改用合并或缩短</text>
-  <text class="detail" x="1020" y="970">保留可感知的标准表达</text>
+  <rect class="action" x="875" y="913" width="290" height="84" rx="14"/>
+  <text class="label" x="1020" y="946">保留待验证或合并、缩短</text>
+  <text class="detail" x="1020" y="970">用途未明先验证 · 必要语义仍可感知</text>
 
   <text class="branch" x="616" y="1046">否</text>
   <path class="route" d="M600 1020 V1060"/>
   <path class="route" d="M1020 997 V1060 H600"/>
-  <circle cx="600" cy="1060" r="4" fill="#4b5d6b"/>
+  <circle cx="600" cy="1060" r="4" fill="#52606d"/>
 
   <!-- 6 决策 -->
   <path class="line" d="M600 1060 V1090"/>
-  <rect class="action" x="400" y="1090" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="1090" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="1123">作出决策并指定标准位置</text>
   <text class="detail" x="600" y="1149">保留 · 合并 · 删除 · 缩短 · 移动 · 拆分</text>
 
   <!-- 7 缺口判断 -->
   <path class="line" d="M600 1176 V1215"/>
-  <rect class="action" x="400" y="1215" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="1215" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="1248">区分已验证缺口与非缺口</text>
   <text class="detail" x="600" y="1274">限制在重复审计范围 · 不扩张为功能构思</text>
 
   <!-- 8 最小安全改动 -->
   <path class="line" d="M600 1301 V1340"/>
-  <rect class="action" x="400" y="1340" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="1340" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="1373">推荐最小安全改动</text>
   <text class="detail" x="600" y="1399">先语义与标准来源 · 再结构 · 最后布局</text>
 
@@ -112,7 +112,7 @@
   <path class="line" d="M600 1426 V1465"/>
   <polygon class="decision" points="600,1465 810,1530 600,1595 390,1530"/>
   <text class="label" x="600" y="1526">验证发现新重复或矛盾？</text>
-  <text class="detail" x="600" y="1551">标准来源是否缺失</text>
+  <text class="detail" x="600" y="1551">必要信息是否缺失 · 条件与阶段是否适用</text>
 
   <text class="branch" x="200" y="1512">是：返回映射</text>
   <path class="line" d="M390 1530 H180 V683 H400"/>
@@ -120,7 +120,7 @@
   <!-- 10 交付 -->
   <text class="branch" x="616" y="1621">否</text>
   <path class="line" d="M600 1595 V1635"/>
-  <rect class="action" x="400" y="1635" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="1635" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="1668">交付九部分审计报告</text>
   <text class="detail" x="600" y="1694">盘点 · 映射 · 决策表 · 层级 · 缺口 · 改动 · 验证</text>
 
@@ -132,13 +132,13 @@
 
   <text class="branch" x="802" y="1812">否</text>
   <path class="line" d="M780 1825 H855"/>
-  <rect class="done" x="855" y="1785" width="300" height="80" rx="16"/>
+  <rect class="done" x="855" y="1785" width="300" height="80" rx="14"/>
   <text class="label" x="1005" y="1818">止于审计交付</text>
   <text class="detail" x="1005" y="1842">只交付审计证据与决策</text>
 
   <text class="branch" x="616" y="1916">是</text>
   <path class="line" d="M600 1890 V1930"/>
-  <rect class="action" x="400" y="1930" width="400" height="86" rx="16"/>
+  <rect class="action" x="400" y="1930" width="400" height="86" rx="14"/>
   <text class="label" x="600" y="1963">只实施审计支持的改动</text>
   <text class="detail" x="600" y="1989">复用现有组件与交互约定 · 运行最小检查</text>
 
