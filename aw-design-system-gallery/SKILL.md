@@ -1,8 +1,8 @@
 ---
 name: aw-design-system-gallery
-description: 审查或优化设计系统 Gallery 的组件展示、属性轴、默认示例与比较结构；默认从局部范围开始，也适用于用户明确要求的批量规范化或完整 Gallery 审计。
+description: 创建或修改设计系统 Gallery 展示时使用，包括新增或修改组件时顺带创建或调整 Gallery Panel、默认或对比示例、属性轴、Caption、占位文案或图标，即使用户未明确要求 Gallery 审查；不用于完全不涉及 Gallery 的普通组件实现或产品文案修改。
 metadata:
-  version: "3.18.0"
+  version: "3.18.1"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---

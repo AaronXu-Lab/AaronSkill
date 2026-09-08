@@ -80,7 +80,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.5.1` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.18.0` | 审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 纯健壮性验证不默认进入正式 Gallery；明确要求或正式设计契约按范围处理；复合展示不替代子级矩阵；技术 wrapper 视觉不可见；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.18.1` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 纯健壮性验证不默认进入正式 Gallery；明确要求或正式设计契约按范围处理；复合展示不替代子级矩阵；技术 wrapper 视觉不可见；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.6.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 源码逐字复用、仅展示不执行；仅源码展示可沿用已有 fixture；不碰单测 mock 与真实契约 |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.2.1` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
