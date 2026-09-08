@@ -1,13 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
-  <title id="title">Normative DESIGN.md authoring workflow</title><desc id="desc">For normative contract changes, read the canonical references, select ownership, author the complete contract, lint and diff it, then report external checks. Annotation-only TODO mode is documented separately in SKILL.md.</desc>
-  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker><style>.h{font:700 30px -apple-system,BlinkMacSystemFont,sans-serif;fill:#17212b}.l{font:600 18px -apple-system,BlinkMacSystemFont,sans-serif;fill:#17212b;text-anchor:middle}.d{font:400 14px -apple-system,BlinkMacSystemFont,sans-serif;fill:#52606d;text-anchor:middle}.b{fill:#fff;stroke:#9eacb8;stroke-width:2}.x{fill:#edf6ff;stroke:#287bbb;stroke-width:2}.q{fill:#fff7e6;stroke:#c98312;stroke-width:2}.s{fill:#fff0ef;stroke:#c94b43;stroke-width:2}.g{fill:#edf9f1;stroke:#2e8b54;stroke-width:2}.p{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}</style></defs>
-  <rect width="1200" height="900" fill="#f7f9fb"/><text class="h" x="600" y="48" text-anchor="middle">AW DESIGN.md Author</text>
-  <rect class="b" x="420" y="80" width="360" height="64" rx="14"/><text class="l" x="600" y="108">Read required references</text><text class="d" x="600" y="130">Schema · lint rules · conventions</text><path class="p" d="M600 144V190"/>
-  <rect class="x" x="420" y="190" width="360" height="64" rx="14"/><text class="l" x="600" y="218">Inspect project and contract</text><text class="d" x="600" y="240">Existing file · themes · distribution</text><path class="p" d="M600 254V300"/>
-  <polygon class="q" points="600,300 790,360 600,420 410,360"/><text class="l" x="600" y="356">Choose ownership mode</text><text class="d" x="600" y="380">Standalone · code-backed · generated</text>
-  <path class="p" d="M600 420V465"/><rect class="x" x="420" y="465" width="360" height="64" rx="14"/><text class="l" x="600" y="493">Author complete contract</text><text class="d" x="600" y="515">Normative YAML and canonical sections</text>
-  <path class="p" d="M600 529V575"/><rect class="x" x="420" y="575" width="360" height="64" rx="14"/><text class="l" x="600" y="603">Check semantic integrity</text><text class="d" x="600" y="625">Names · references · contrast · parity</text>
-  <path class="p" d="M600 639V685"/><rect class="x" x="420" y="685" width="360" height="64" rx="14"/><text class="l" x="600" y="713">Run lint and diff gate</text><text class="d" x="600" y="735">Errors block completion</text>
-  <path class="p" d="M780 717H850"/><rect class="s" x="850" y="682" width="300" height="70" rx="14"/><text class="l" x="1000" y="712">Lint errors?</text><text class="d" x="1000" y="734">Fix and rerun before delivery</text>
-  <path class="p" d="M600 749V790"/><rect class="g" x="450" y="790" width="300" height="60" rx="30"/><text class="l" x="600" y="826">Report result and external checks</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc">
+<title id="title">DESIGN.md authoring, review and annotation workflow</title>
+<desc id="desc">Select task-relevant references; distinguish new authoring from narrow maintenance while retaining full contract checks. Determine the editing source internally from evidence and prior decisions. Keep formal prose about design; put engineering evidence in separate reports or requested TODO annotations. Review without edits, change the owning source, or add deferred comments. Prefer spacing tiers and preserve resolved values during migration; distinguish settled contracts from pending implementation. Regenerate projections, run local protection and official checks, then report passed gates, content issues or unavailable validation separately.</desc>
+<defs>
+ <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker>
+ <style>
+ text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#17212b}
+ .h{font-size:30px;font-weight:700}.l{font-size:18px;font-weight:600}.d{font-size:14px;font-weight:400;fill:#52606d}
+ .b{fill:#ffffff;stroke:#9eacb8;stroke-width:2}.x{fill:#edf6ff;stroke:#287bbb;stroke-width:2}.q{fill:#fff7e6;stroke:#c98312;stroke-width:2}.s{fill:#fff0ef;stroke:#c94b43;stroke-width:2}.g{fill:#edf9f1;stroke:#2e8b54;stroke-width:2}
+ .p{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}
+ </style>
+</defs>
+<rect width="1200" height="1030" fill="#f7f9fb"/>
+<text class="h" x="600" y="48">AW DESIGN.md Author</text>
+<text class="d" x="600" y="76">维护可信视觉契约，并保留未决设计选择</text>
+<rect class="b" x="390" y="105" width="420" height="70" rx="14"/>
+<text class="l" x="600" y="135">按任务读取资料与项目证据</text><text class="d" x="600" y="158">选择相关资料 · 沿用完整会话授权</text>
+<path class="p" d="M600 175V205"/>
+<polygon class="q" points="600,205 825,265 600,325 375,265"/>
+<text class="l" x="600" y="261">能够确定编辑事实源？</text><text class="d" x="600" y="284">内部判断，不写入设计正文</text>
+<path class="p" d="M825 265H900"/><text class="d" x="860" y="249">否</text>
+<rect class="s" x="900" y="228" width="260" height="74" rx="14"/>
+<text class="l" x="1030" y="258">保留文件并澄清</text><text class="d" x="1030" y="282">仅限会改变编辑源的歧义</text>
+<path class="p" d="M600 325V360"/><text class="d" x="620" y="348">是</text>
+<polygon class="q" points="600,360 805,415 600,470 395,415"/>
+<text class="l" x="600" y="421">选择工作模式与资料</text>
+<path class="p" d="M395 415H210V515"/><text class="d" x="293" y="400">只读审查</text>
+<path class="p" d="M600 470V515"/><text class="d" x="650" y="495">规范更新</text>
+<path class="p" d="M805 415H990V515"/><text class="d" x="902" y="400">纯注释</text>
+<rect class="x" x="45" y="515" width="330" height="78" rx="14"/>
+<text class="l" x="210" y="546">检查并记录问题</text><text class="d" x="210" y="572">保留原文件，不自动修复</text>
+<rect class="x" x="435" y="515" width="330" height="78" rx="14"/>
+<text class="l" x="600" y="546">新建或局部维护视觉契约</text><text class="d" x="600" y="572">维护沿用设计决定，迁移保持原值</text>
+<rect class="x" x="825" y="515" width="330" height="78" rx="14"/>
+<text class="l" x="990" y="546">记录设计或迁移 TODO</text><text class="d" x="990" y="572">保留正式规则、YAML 与版本</text>
+<path class="p" d="M600 593V640H795V665"/>
+<path class="p" d="M990 593V640H795"/>
+<rect class="x" x="585" y="665" width="420" height="64" rx="14"/>
+<text class="l" x="795" y="692">生成投影时重新构建</text><text class="d" x="795" y="715">规范与注释均从拥有源维护</text>
+<path class="p" d="M210 593V762H600V787"/><path class="p" d="M795 729V762H600"/>
+<rect class="x" x="370" y="787" width="460" height="72" rx="14"/>
+<text class="l" x="600" y="817">运行保护检查、官方 lint 与 diff</text><text class="d" x="600" y="841">另审正文边界与实际变更；lint 不证明视觉无回归</text>
+<path class="p" d="M370 823H210V921"/><text class="d" x="280" y="807">内容错误</text>
+<path class="p" d="M600 859V921"/><text class="d" x="634" y="891">通过</text>
+<path class="p" d="M830 823H990V921"/><text class="d" x="916" y="807">环境不可用</text>
+<rect class="s" x="45" y="921" width="330" height="76" rx="14"/>
+<text class="l" x="210" y="952">修复或交付审查问题</text><text class="d" x="210" y="977">仅修改已授权范围</text>
+<rect class="g" x="435" y="921" width="330" height="76" rx="14"/>
+<text class="l" x="600" y="952">交付产物与验证边界</text><text class="d" x="600" y="977">单列实现迁移与外部验证状态</text>
+<rect class="s" x="825" y="921" width="330" height="76" rx="14"/>
+<text class="l" x="990" y="952">交付阶段性结果</text><text class="d" x="990" y="977">明确官方验证尚未完成</text>
 </svg>

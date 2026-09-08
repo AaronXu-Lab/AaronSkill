@@ -1,1 +1,7 @@
-{"file":"ownership-review.md","required":["code-backed","component library","DESIGN.md","visual-regression","accessibility"],"forbidden":["duplicate every component"]}
+{
+  "file": "ownership-review.md",
+  "kind": "report",
+  "protected_sha256": {
+    "project-context.md": "3e5825a78166052bbe315032036c6c60bdc56bcb1cfba5fecab153cc29ca3a98"
+  }
+}

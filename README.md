@@ -42,7 +42,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 ## Skills
 
-目前共收录 **15 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另单独标记不再维护的 Skill。
+目前共收录 **17 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另单独标记不再维护的 Skill。
 
 ### 元 Skill
 
@@ -50,7 +50,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-meta-skill`](./aw-meta-skill/) | `1.4.0` | 基于 `skill-creator` 创建或更新符合 AW 交付规范的 Skill | Markdown 可用 Mermaid 精确表达复杂流程；SVG 保留人类理解所需的关键结构 |
+| [`aw-meta-skill`](./aw-meta-skill/) | `1.7.2` | 基于 `skill-creator` 创建或更新符合 AW 交付规范的 Skill | 按变更范围读取与验证；Markdown 为执行事实源，SVG 细则按需加载 |
 
 ### 工具类
 
@@ -61,6 +61,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.1.0` | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.0.2` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.0.3` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
+| [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.0.0` | 启动本地多服务并定位端口、接口与页面加载故障 | 优先复用现有入口；确认进程归属；以调用链和目标页面验证结果 |
 
 ### 资源获取
 
@@ -70,6 +71,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | --- | --- | --- | --- |
 | [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | `1.0.3` | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
 | [`aw-logo-finder`](./aw-logo-finder/) | `1.0.3` | 从官网、Logo 资源站和应用商店寻找、比对并导出品牌或产品 Logo | 必须先确认候选与输出尺寸，再生成无损 WebP |
+| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.0.0` | 从项目 PRD 查证需求并按需与界面或实现对照 | 区分明确规定、推断与未覆盖；只读查证或沿已有授权修正 |
 
 ### 设计 · 支撑
 
@@ -77,11 +79,11 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-design-md-author`](./aw-design-md-author/) | `1.1.2` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 必须完成官方 lint；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.16.0` | 审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 纯健壮性验证不默认进入正式 Gallery；明确要求或正式设计契约按范围处理；复合展示不替代子级矩阵；技术 wrapper 视觉不可见；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
-| [`aw-design-fake`](./aw-design-fake/) | `1.3.0` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 源码逐字复用、仅展示不执行；仅源码展示可沿用已有 fixture；不碰单测 mock 与真实契约 |
+| [`aw-design-md-author`](./aw-design-md-author/) | `1.5.1` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.18.0` | 审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 纯健壮性验证不默认进入正式 Gallery；明确要求或正式设计契约按范围处理；复合展示不替代子级矩阵；技术 wrapper 视觉不可见；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
+| [`aw-design-fake`](./aw-design-fake/) | `1.6.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 源码逐字复用、仅展示不执行；仅源码展示可沿用已有 fixture；不碰单测 mock 与真实契约 |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.0.4` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.2.1` | 搜索、验证并移植 UI 组件实现 | Find 与 Port 严格分阶段，必须由用户明确选择 |
 
 ### 设计 · Agent
 
@@ -89,8 +91,8 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.4.0` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
-| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.8.1` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
+| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.6.1` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
+| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.10.1` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
 | [`temp-small-improves`](./temp-small-improves/) | `1.0.0` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
 
 ### 不再维护

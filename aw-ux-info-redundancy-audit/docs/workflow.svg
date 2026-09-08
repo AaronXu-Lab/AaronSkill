@@ -1,148 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2160" viewBox="0 0 1200 2160" role="img" aria-labelledby="title desc">
-  <title id="title">UI/UX 重复信息审计工作流程</title>
-  <desc id="desc">先确认目标语境中的当前界面证据，在审计门禁下完成盘点、信息原子归一化与出现位置映射，再分类重复、判断所有信息与视觉承载物的当前价值和适用阶段并作出保留、合并、删除、缩短、移动或拆分决策；随后区分已验证缺口、推荐最小安全改动并验证结果，发现新重复时返回出现位置映射，最后交付九部分审计报告，仅在用户明确要求时实施审计已支持的改动。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1450" viewBox="0 0 1200 1450" role="img" aria-labelledby="title desc">
+  <title id="title">UI/UX 信息冗余审计工作流程</title>
+  <desc id="desc">限定请求范围，在当前证据充分的部分映射事实并判断价值，未知部分保留待验证。核对必要语义后，局部问题简短交付，完整审计使用九项报告。只审查时完成报告；沿用完整会话实施授权，修改并验证，发现语义问题返回映射，检查失败或不可用时交付验证缺口。</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
-    </marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/></marker>
     <style>
-      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; }
-      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #60717f; }
-      .label { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17212b; text-anchor: middle; }
-      .detail { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; text-anchor: middle; }
-      .branch { font: 700 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52616d; }
+      text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; text-anchor: middle; fill: #17212b; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 18px; font-weight: 600; }
+      .detail, .branch { font-size: 14px; font-weight: 400; fill: #52606d; }
       .line { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
       .route { fill: none; stroke: #52606d; stroke-width: 2.5; }
-      .step { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
+      .input { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
       .action { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
-      .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2.5; }
+      .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
       .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
-      .done { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2.5; }
+      .done { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
     </style>
   </defs>
+  <rect width="1200" height="1450" fill="#f7f9fb"/>
+  <text class="title" x="600" y="48">UI/UX 信息冗余审计</text>
+  <text class="detail" x="600" y="78">按任务价值精简信息 · 按请求范围交付 · 沿用已有授权</text>
 
-  <rect width="1200" height="2160" fill="#f7f9fb"/>
-  <text class="title" x="600" y="48" text-anchor="middle">UI/UX 重复信息审计</text>
-  <text class="subtitle" x="600" y="75" text-anchor="middle">先审计信息，再调整样式：按当前任务价值与适用阶段保留信息</text>
-
-  <!-- 1 接收请求 -->
-  <rect class="step" x="400" y="105" width="400" height="72" rx="14"/>
-  <text class="label" x="600" y="135">接收界面审计请求</text>
-  <text class="detail" x="600" y="159">任务 · 语境 · 载体 · 媒介 · 输入方式</text>
-
-  <!-- 判断：证据新鲜度 -->
-  <path class="line" d="M600 177 V215"/>
-  <polygon class="decision" points="600,215 790,280 600,345 410,280"/>
-  <text class="label" x="600" y="276">证据是否为目标当前版本？</text>
-  <text class="detail" x="600" y="301">确认证据新鲜度与目标语境</text>
-
-  <text class="branch" x="812" y="267">否</text>
-  <path class="line" d="M790 280 H865"/>
+  <rect class="input" x="400" y="105" width="400" height="75" rx="14"/>
+  <text class="label" x="600" y="135">限定用户请求与当前证据</text>
+  <text class="detail" x="600" y="160">局部或完整范围 · 对象、状态与证据版本</text>
+  <path class="line" d="M600 180 V215"/>
+  <polygon class="decision" points="600,215 795,280 600,345 405,280"/>
+  <text class="label" x="600" y="277">有可审计的当前证据？</text>
+  <text class="detail" x="600" y="302">部分可知也继续 · 未知部分待验证</text>
+  <path class="line" d="M795 280 H865"/>
+  <text class="branch" x="830" y="266">无</text>
   <rect class="stop" x="865" y="240" width="290" height="80" rx="14"/>
-  <text class="label" x="1010" y="273">停止结论并索取材料</text>
-  <text class="detail" x="1010" y="297">标记待验证 · 不用假设补齐</text>
-
-  <!-- 2 盘点 -->
-  <text class="branch" x="616" y="371">是</text>
+  <text class="label" x="1010" y="271">索取最小材料</text>
+  <text class="detail" x="1010" y="298">整个目标未知时暂停结论</text>
   <path class="line" d="M600 345 V390"/>
-  <rect class="action" x="400" y="390" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="423">盘点当前界面与任务状态</text>
-  <text class="detail" x="600" y="449">表面 · 组件 · 数据 · 操作入口 · 层级 · 恢复路径</text>
+  <text class="branch" x="660" y="372">全部或部分</text>
 
-  <!-- 审计门禁 -->
-  <path class="line" d="M400 433 H344"/>
-  <rect class="stop" x="40" y="393" width="300" height="80" rx="14"/>
-  <text class="label" x="190" y="426">审计门禁：先审计</text>
-  <text class="detail" x="190" y="450">决策未完成前不得改 UI</text>
+  <rect class="action" x="400" y="390" width="400" height="80" rx="14"/>
+  <text class="label" x="600" y="422">映射事实并判断信息价值</text>
+  <text class="detail" x="600" y="448">出现位置 · 条件与阶段 · 重复的独立作用</text>
+  <path class="line" d="M600 470 V505"/>
+  <rect class="action" x="400" y="505" width="400" height="80" rx="14"/>
+  <text class="label" x="600" y="537">作出决策并推荐最小改动</text>
+  <text class="detail" x="600" y="563">标准位置 · 缺口与待验证项 · 先语义后布局</text>
+  <path class="line" d="M600 585 V625"/>
+  <polygon class="decision" points="600,625 795,690 600,755 405,690"/>
+  <text class="label" x="600" y="687">方案保留必要语义？</text>
+  <text class="detail" x="600" y="712">必要语义保留 · 未知用途不删</text>
+  <path class="route" d="M405 690 H265 V430"/>
+  <circle cx="265" cy="430" r="4" fill="#52606d"/>
+  <path class="line" d="M265 430 H400"/>
+  <text class="branch" x="320" y="676">否：修正映射</text>
+  <path class="line" d="M600 755 V795"/>
+  <text class="branch" x="620" y="782">是</text>
 
-  <!-- 3 提取信息原子 -->
-  <path class="line" d="M600 476 V515"/>
-  <rect class="action" x="400" y="515" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="548">提取信息原子并归一化</text>
-  <text class="detail" x="600" y="574">统一同义词 · 视觉别名 · 状态占位值</text>
+  <rect class="action" x="400" y="795" width="400" height="80" rx="14"/>
+  <text class="label" x="600" y="827">按请求范围交付审计</text>
+  <text class="detail" x="600" y="853">局部：简短结论 · 完整：九项报告</text>
+  <path class="line" d="M600 875 V915"/>
+  <polygon class="decision" points="600,915 795,980 600,1045 405,980"/>
+  <text class="label" x="600" y="977">完整会话已授权实施？</text>
+  <text class="detail" x="600" y="1002">先审计 · 沿用已有授权</text>
+  <path class="line" d="M795 980 H865"/>
+  <text class="branch" x="830" y="966">否</text>
+  <rect class="done" x="865" y="940" width="290" height="80" rx="14"/>
+  <text class="label" x="1010" y="972">完成审计报告</text>
+  <text class="detail" x="1010" y="998">建议与未执行检查明确区分</text>
+  <path class="line" d="M600 1045 V1085"/>
+  <text class="branch" x="620" y="1072">是</text>
 
-  <!-- 4 出现位置映射 -->
-  <path class="line" d="M600 601 V640"/>
-  <rect class="action" x="400" y="640" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="673">建立出现位置映射</text>
-  <text class="detail" x="600" y="699">来源表面 · 适用条件 · 当前与后续保留阶段</text>
-
-  <!-- 5 分类与判断测试 -->
-  <path class="line" d="M600 726 V765"/>
-  <rect class="action" x="400" y="765" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="798">分类重复并判断所有信息价值</text>
-  <text class="detail" x="600" y="824">唯一事实也检查 · 标题、图标与边界也检查</text>
-
-  <!-- 判断：删除是否损害语义 -->
-  <path class="line" d="M600 851 V890"/>
-  <polygon class="decision" points="600,890 800,955 600,1020 400,955"/>
-  <text class="label" x="600" y="951">删除依据不足或损害必要语义？</text>
-  <text class="detail" x="600" y="976">用途未明 · 业务、安全、状态与操作</text>
-
-  <text class="branch" x="822" y="942">是</text>
-  <path class="line" d="M800 955 H875"/>
-  <rect class="action" x="875" y="913" width="290" height="84" rx="14"/>
-  <text class="label" x="1020" y="946">保留待验证或合并、缩短</text>
-  <text class="detail" x="1020" y="970">用途未明先验证 · 必要语义仍可感知</text>
-
-  <text class="branch" x="616" y="1046">否</text>
-  <path class="route" d="M600 1020 V1060"/>
-  <path class="route" d="M1020 997 V1060 H600"/>
-  <circle cx="600" cy="1060" r="4" fill="#52606d"/>
-
-  <!-- 6 决策 -->
-  <path class="line" d="M600 1060 V1090"/>
-  <rect class="action" x="400" y="1090" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="1123">作出决策并指定标准位置</text>
-  <text class="detail" x="600" y="1149">保留 · 合并 · 删除 · 缩短 · 移动 · 拆分</text>
-
-  <!-- 7 缺口判断 -->
-  <path class="line" d="M600 1176 V1215"/>
-  <rect class="action" x="400" y="1215" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="1248">区分已验证缺口与非缺口</text>
-  <text class="detail" x="600" y="1274">限制在重复审计范围 · 不扩张为功能构思</text>
-
-  <!-- 8 最小安全改动 -->
-  <path class="line" d="M600 1301 V1340"/>
-  <rect class="action" x="400" y="1340" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="1373">推荐最小安全改动</text>
-  <text class="detail" x="600" y="1399">先语义与标准来源 · 再结构 · 最后布局</text>
-
-  <!-- 9 验证判断 -->
-  <path class="line" d="M600 1426 V1465"/>
-  <polygon class="decision" points="600,1465 810,1530 600,1595 390,1530"/>
-  <text class="label" x="600" y="1526">验证发现新重复或矛盾？</text>
-  <text class="detail" x="600" y="1551">必要信息是否缺失 · 条件与阶段是否适用</text>
-
-  <text class="branch" x="200" y="1512">是：返回映射</text>
-  <path class="line" d="M390 1530 H180 V683 H400"/>
-
-  <!-- 10 交付 -->
-  <text class="branch" x="616" y="1621">否</text>
-  <path class="line" d="M600 1595 V1635"/>
-  <rect class="action" x="400" y="1635" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="1668">交付九部分审计报告</text>
-  <text class="detail" x="600" y="1694">盘点 · 映射 · 决策表 · 层级 · 缺口 · 改动 · 验证</text>
-
-  <!-- 判断：是否实施 -->
-  <path class="line" d="M600 1721 V1760"/>
-  <polygon class="decision" points="600,1760 780,1825 600,1890 420,1825"/>
-  <text class="label" x="600" y="1821">用户明确要求实现？</text>
-  <text class="detail" x="600" y="1846">审计已交付并获得授权</text>
-
-  <text class="branch" x="802" y="1812">否</text>
-  <path class="line" d="M780 1825 H855"/>
-  <rect class="done" x="855" y="1785" width="300" height="80" rx="14"/>
-  <text class="label" x="1005" y="1818">止于审计交付</text>
-  <text class="detail" x="1005" y="1842">只交付审计证据与决策</text>
-
-  <text class="branch" x="616" y="1916">是</text>
-  <path class="line" d="M600 1890 V1930"/>
-  <rect class="action" x="400" y="1930" width="400" height="86" rx="14"/>
-  <text class="label" x="600" y="1963">只实施审计支持的改动</text>
-  <text class="detail" x="600" y="1989">复用现有组件与交互约定 · 运行最小检查</text>
-
-  <path class="line" d="M600 2016 V2055"/>
-  <rect class="done" x="410" y="2055" width="380" height="44" rx="22"/>
-  <text class="label" x="600" y="2083">改动完成且无新的标准来源冲突</text>
+  <rect class="action" x="400" y="1085" width="400" height="80" rx="14"/>
+  <text class="label" x="600" y="1117">实施并执行相关验证</text>
+  <text class="detail" x="600" y="1143">按需读取实施细则 · 修复并重验受影响路径</text>
+  <path class="route" d="M400 1125 H120 V430 H265"/>
+  <text class="branch" x="235" y="1110">语义问题：返回映射</text>
+  <path class="line" d="M600 1165 V1205"/>
+  <polygon class="decision" points="600,1205 795,1270 600,1335 405,1270"/>
+  <text class="label" x="600" y="1267">相关检查实际通过？</text>
+  <text class="detail" x="600" y="1292">方案推演不能代替实测</text>
+  <path class="line" d="M795 1270 H865"/>
+  <text class="branch" x="830" y="1256">否</text>
+  <rect class="stop" x="865" y="1230" width="290" height="80" rx="14"/>
+  <text class="label" x="1010" y="1262">交付改动与验证缺口</text>
+  <text class="detail" x="1010" y="1288">检查失败或不可用 · 保留证据</text>
+  <path class="line" d="M600 1335 V1370"/>
+  <text class="branch" x="620" y="1359">是</text>
+  <rect class="done" x="400" y="1370" width="400" height="55" rx="14"/>
+  <text class="label" x="600" y="1404">交付改动与明确验证范围</text>
 </svg>

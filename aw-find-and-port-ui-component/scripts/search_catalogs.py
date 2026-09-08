@@ -27,6 +27,15 @@ def main() -> int:
     aliases.extend(args.alias)
     aliases = list(dict.fromkeys(alias for alias in aliases if alias.strip()))
     catalog = read_json(SKILL_DIR / "references" / "catalog.json", {})
+    config = read_json(SKILL_DIR / "references" / "sources.json", {})
+    cached_sources = catalog.get("sources", {})
+    catalog["sources"] = {
+        source["id"]: cached_sources.get(source["id"], {
+            "id": source["id"], "name": source["name"], "status": "unavailable",
+            "error": "No cached catalog; run refresh_catalogs.py", "items": [],
+        })
+        for source in config.get("sources", [])
+    }
     result = search_catalog(catalog, args.query, aliases, args.limit_per_source)
     if args.json:
         print(json.dumps(result, indent=2, ensure_ascii=False))

@@ -48,7 +48,7 @@ def atomic_write(path: Path, text: str) -> None:
 
 def normalize_text(value: str) -> str:
     normalized = unicodedata.normalize("NFKD", value).casefold()
-    return " ".join(re.findall(r"[a-z0-9]+", normalized))
+    return " ".join(re.findall(r"[^\W_]+", normalized))
 
 
 def slugify(value: str) -> str:
@@ -233,7 +233,9 @@ def _base_item(
         "dependencies": dependencies or [],
         "license": source.get("license", "unknown"),
         "base_ui_evidence": source["base_ui_evidence"],
-        "port_eligible": True,
+        "port_eligible": False,
+        "verification_status": "unverified",
+        "requires_verification": True,
     }
 
 
@@ -374,6 +376,8 @@ def parse_github_tree_paths(
 ) -> list[dict[str, Any]]:
     """Build a component catalog from direct JSON files in a public GitHub tree."""
     tree = json.loads(text)
+    if tree.get("truncated"):
+        raise ValueError("GitHub tree is truncated; complete source evidence is required")
     prefix = source["path_prefix"]
     suffix = source.get("path_suffix", ".json")
     pattern = re.compile(rf"^{re.escape(prefix)}([^/]+){re.escape(suffix)}$")
@@ -591,6 +595,10 @@ def refresh_catalogs(
     if config.get("schema_version") != 1:
         raise ValueError("Unsupported or missing sources schema_version")
 
+    configured_ids = {source["id"] for source in config.get("sources", [])}
+    if selected_sources and selected_sources - configured_ids:
+        raise ValueError(f"Unknown source ids: {sorted(selected_sources - configured_ids)}")
+
     catalog = read_json(
         catalog_path, {"schema_version": 1, "generated_at": None, "sources": {}}
     )
@@ -603,9 +611,13 @@ def refresh_catalogs(
             continue
         old_entry = catalog["sources"].get(source_id, {})
         old_items = old_entry.get("items", [])
+        config_hash = hashlib.sha256(
+            json.dumps(source, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        ).hexdigest()
+        refresh_force = force or old_entry.get("config_sha256") != config_hash
         try:
             documents, fetch_metadata = _fetch_source_documents(
-                source, old_entry.get("fetch", {}), force, fetcher
+                source, old_entry.get("fetch", {}), refresh_force, fetcher
             )
             if documents is None:
                 if not old_items:
@@ -657,6 +669,7 @@ def refresh_catalogs(
                 "last_success_at": last_success,
                 "error": None,
                 "fetch": fetch_metadata,
+                "config_sha256": config_hash,
                 "items": items,
             }
         except Exception as error:  # Keep independent sources usable.
@@ -689,7 +702,8 @@ def write_catalog_markdown(path: Path, source: dict[str, Any]) -> None:
         f"- Status: `{source.get('status', 'unknown')}`",
         f"- Last checked: `{source.get('last_checked_at', 'never')}`",
         f"- Last successful refresh: `{source.get('last_success_at', 'never')}`",
-        f"- Eligible components: `{len(source.get('items', []))}`",
+        f"- Discovery leads: `{len(source.get('items', []))}`",
+        "- Evidence: index metadata only; verify exact source, behavior, dependencies and license.",
     ]
     if source.get("error"):
         lines.append(f"- Refresh error: `{_escape_markdown(source['error'])}`")
@@ -732,9 +746,14 @@ def load_alias_terms(path: Path, query: str) -> list[str]:
         canonical = columns[0]
         aliases = [value.strip() for value in columns[1].split(",")]
         normalized_values = [normalize_text(canonical), *(normalize_text(v) for v in aliases)]
-        if any(value and value in query_normalized for value in normalized_values):
+        if any(value and _contains_phrase(query_normalized, value) for value in normalized_values):
             terms.extend([canonical, *aliases])
     return list(dict.fromkeys(term for term in terms if term.strip()))
+
+
+def _contains_phrase(text: str, phrase: str) -> bool:
+    """Match whole normalized words, not substrings such as card in discard."""
+    return bool(phrase) and f" {phrase} " in f" {text} "
 
 
 def _score_item(item: dict[str, Any], original: str, terms: list[str]) -> tuple[int, str]:
@@ -744,7 +763,7 @@ def _score_item(item: dict[str, Any], original: str, terms: list[str]) -> tuple[
     description = normalize_text(item.get("description", ""))
     name_tokens = set(f"{name} {slug}".split())
     description_tokens = set(description.split())
-    if original_normalized in {name, slug}:
+    if original_normalized and original_normalized in {name, slug}:
         return 100, "Exact"
 
     best = 0
@@ -755,7 +774,7 @@ def _score_item(item: dict[str, Any], original: str, terms: list[str]) -> tuple[
         if normalized in {name, slug}:
             best = max(best, 92)
             continue
-        if len(normalized) >= 3 and (normalized in name or name in normalized):
+        if len(normalized) >= 3 and (_contains_phrase(name, normalized) or _contains_phrase(normalized, name)):
             best = max(best, 80)
         tokens = set(normalized.split())
         if tokens and tokens.issubset(name_tokens):
@@ -794,14 +813,20 @@ def search_catalog(
         for item in source.get("items", []):
             score, match = _score_item(item, query, aliases)
             if score:
-                scored.append({**item, "score": score, "match": match})
+                scored.append({
+                    **item, "score": score, "match": match,
+                    "port_eligible": False, "verification_status": "unverified",
+                    "requires_verification": True,
+                })
         scored.sort(key=lambda item: (-item["score"], normalize_text(item["name"])))
         result["sources"].append(
             {
                 "id": source.get("id"),
                 "name": source.get("name"),
                 "status": source.get("status", "unavailable"),
-                "last_verified_at": source.get("last_success_at"),
+                "last_verified_at": None,  # A catalog fetch is not source verification.
+                "catalog_last_checked_at": source.get("last_checked_at"),
+                "catalog_last_success_at": source.get("last_success_at"),
                 "error": source.get("error"),
                 "matches": scored[:limit_per_source],
             }
@@ -813,13 +838,15 @@ def search_as_markdown(result: dict[str, Any]) -> str:
     lines = [
         f"# Results for {result['query']}",
         "",
-        "| Library | Component | Match | Preview | Source | License / provenance | Base UI evidence | Verified |",
+        "Catalog leads only. Match labels are lexical hints; behavior, source, dependencies and license remain unverified.",
+        "",
+        "| Library | Component | Match hint | Preview | Source | Catalog license claim | Catalog foundation claim | Source verified |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for source in result["sources"]:
         if not source["matches"]:
             lines.append(
-                f"| {_escape_markdown(source['name'])} | No match | — | — | — | — | — | {_escape_markdown(source['last_verified_at'])} |"
+                f"| {_escape_markdown(source['name'])} | {'Unavailable' if source['status'] == 'unavailable' else 'No cached match'} | — | — | — | — | — | No |"
             )
             continue
         for item in source["matches"]:
@@ -834,8 +861,15 @@ def search_as_markdown(result: dict[str, Any]) -> str:
                     preview=item["preview_url"],
                     source_link=source_link,
                     license=_escape_markdown(item.get("license", "unknown")),
-                    evidence=_escape_markdown(item["base_ui_evidence"]),
-                    verified=_escape_markdown(source["last_verified_at"]),
+                    evidence=_escape_markdown(item.get("base_ui_evidence", "unknown")),
+                    verified="No",
                 )
             )
+    lines.extend(["", "Catalog refresh status:"])
+    for source in result["sources"]:
+        lines.append(
+            f"- {_escape_markdown(source['name'])}: `{source['status']}`; "
+            f"checked {_escape_markdown(source.get('catalog_last_checked_at')) or 'never'}"
+            + (f" — {_escape_markdown(source['error'])}" if source.get("error") else "")
+        )
     return "\n".join(lines)

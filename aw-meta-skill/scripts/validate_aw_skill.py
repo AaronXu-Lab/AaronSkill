@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Validate AW metadata and text/visual workflow requirements for a Codex skill."""
+"""Validate structural AW metadata and standalone workflow requirements."""
 
 from __future__ import annotations
 
+import math
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -13,9 +14,81 @@ import yaml
 
 SEMVER = re.compile(
     r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
-    r"(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
+    r"(?:-(?:0|[1-9]\d*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)"
+    r"(?:\.(?:0|[1-9]\d*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*))*)?"
     r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$"
 )
+
+
+def prose_only(text: str, *, keep_inline_code: bool = False) -> str:
+    """Remove comments and code examples before checking document links/headings."""
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+    lines = []
+    fence = None
+    for line in text.splitlines():
+        marker = re.match(r"^\s*(`{3,}|~{3,})(.*)$", line)
+        if marker:
+            run, rest = marker.groups()
+            if fence is None:
+                fence = run
+            elif run[0] == fence[0] and len(run) >= len(fence) and not rest.strip():
+                fence = None
+            continue
+        if fence is None and not line.startswith(('    ', '\t')):
+            lines.append(line)
+    prose = '\n'.join(lines)
+    return prose if keep_inline_code else re.sub(r"(`+)(.*?)\1", "", prose, flags=re.DOTALL)
+
+
+def has_workflow_link(body: str, filename: str, image: bool) -> bool:
+    # Inline and reference links are accepted; plain mentions/code samples are not.
+    text = prose_only(body)
+    references = {}
+    for match in re.finditer(r'^\s{0,3}\[([^\]]+)\]:\s*<?(\S+?)>?(?:\s+[\'"(].*)?$', text, re.MULTILINE):
+        references[' '.join(match[1].split()).casefold()] = match[2]
+    for match in re.finditer(r'(?<!\\)(!?)\[([^\]\n]+)\](?:\(\s*<?([^\s)>]+)>?(?:\s+[\'"][^\n]*?[\'"])?\s*\)|\[([^\]\n]*)\])', text):
+        is_image, label, inline, ref = match.groups()
+        target = inline or references.get(' '.join((ref or label).split()).casefold(), '')
+        if bool(is_image) == image and label.strip() and target in (filename, './'+filename):
+            return True
+    return False
+
+
+def css_text(value: str) -> str:
+    """Normalize comments and CSS escapes for resource checks, not a CSS sanitizer."""
+    value = re.sub(r'/\*.*?\*/', '', value, flags=re.DOTALL)
+    def unescape(match):
+        if match[1]:
+            point = int(match[1], 16)
+            return chr(point) if 0 < point <= 0x10ffff else '\ufffd'
+        return match[2]
+    return re.sub(r'\\(?:([0-9a-fA-F]{1,6})\s?|([^\r\n]))', unescape, value)
+
+
+def svg_resource_errors(root: ET.Element, source: str) -> list[str]:
+    errors = []
+    if re.search(r'<\?xml-stylesheet\b', source, re.IGNORECASE):
+        errors.append('docs/workflow.svg must not load an XML stylesheet')
+    for node in root.iter():
+        name = local_name(node.tag)
+        if name == 'script' or any(local_name(key).lower().startswith('on') for key in node.attrib):
+            errors.append('docs/workflow.svg must not contain scripts or event handlers')
+        for key, value in node.attrib.items():
+            if local_name(key) in ('href', 'src') and name != 'a':
+                embedded_bitmap = name == 'image' and re.match(r'^data:image/(?:png|jpeg|gif|webp);base64,', value.strip(), re.IGNORECASE)
+                if not value.strip().startswith('#') and not embedded_bitmap:
+                    errors.append('docs/workflow.svg resource references must be internal fragments')
+        styles = list(node.attrib.values())
+        if name == 'style':
+            styles.append(''.join(node.itertext()))
+        for style in styles:
+            style = css_text(style)
+            if re.search(r'@import\b', style, re.IGNORECASE):
+                errors.append('docs/workflow.svg must not import external styles')
+            for match in re.finditer(r'url\(\s*([\'"]?)(.*?)\1\s*\)', style, re.IGNORECASE | re.DOTALL):
+                if not match[2].strip().startswith('#'):
+                    errors.append('docs/workflow.svg CSS resources must be internal fragments')
+    return list(dict.fromkeys(errors))
 
 
 def local_name(tag: str) -> str:
@@ -59,9 +132,9 @@ def validate(skill_dir: Path) -> list[str]:
         if isinstance(version, str) and version.strip() and not SEMVER.fullmatch(version.strip()):
             errors.append("metadata.version must use semantic versioning (MAJOR.MINOR.PATCH)")
 
-    if not re.search(r"\[[^\]]+\]\(docs/workflow\.md\)", body):
+    if not has_workflow_link(body, 'docs/workflow.md', image=False):
         errors.append("SKILL.md must link to docs/workflow.md with descriptive text")
-    if not re.search(r"!\[[^\]]+\]\(docs/workflow\.svg\)", body):
+    if not has_workflow_link(body, 'docs/workflow.svg', image=True):
         errors.append("SKILL.md must embed docs/workflow.svg with descriptive alt text")
 
     if not workflow_md.is_file():
@@ -69,9 +142,10 @@ def validate(skill_dir: Path) -> list[str]:
     else:
         try:
             workflow_text = workflow_md.read_text(encoding="utf-8")
-        except OSError as exc:
+        except (OSError, UnicodeError) as exc:
             errors.append(f"docs/workflow.md cannot be read: {exc}")
         else:
+            workflow_text = prose_only(workflow_text, keep_inline_code=True)
             if not re.search(r"^#\s+\S", workflow_text, re.MULTILINE):
                 errors.append("docs/workflow.md must contain a top-level heading")
             if not re.search(r"^##\s+\S", workflow_text, re.MULTILINE):
@@ -84,15 +158,21 @@ def validate(skill_dir: Path) -> list[str]:
         return errors
 
     try:
-        root = ET.parse(workflow_svg).getroot()
-    except (OSError, ET.ParseError) as exc:
+        source = workflow_svg.read_text(encoding='utf-8')
+        root = ET.fromstring(source)
+    except (OSError, UnicodeError, ET.ParseError) as exc:
         errors.append(f"docs/workflow.svg is not valid XML: {exc}")
         return errors
 
     if local_name(root.tag) != "svg":
         errors.append("docs/workflow.svg root element must be <svg>")
-    if not root.get("viewBox"):
-        errors.append("docs/workflow.svg must define viewBox")
+    try:
+        box = [float(value) for value in re.split(r'[\s,]+', root.get('viewBox', '').strip())]
+        valid_box = len(box) == 4 and all(math.isfinite(v) for v in box) and box[2] > 0 and box[3] > 0
+    except ValueError:
+        valid_box = False
+    if not valid_box:
+        errors.append("docs/workflow.svg must define a finite four-number viewBox with positive width and height")
     if root.get("role") != "img":
         errors.append('docs/workflow.svg must set role="img"')
 
@@ -104,11 +184,9 @@ def validate(skill_dir: Path) -> list[str]:
     if not descriptions or not any("".join(node.itertext()).strip() for node in descriptions):
         errors.append("docs/workflow.svg must contain a non-empty <desc>")
 
-    for node in descendants:
-        for key, value in node.attrib.items():
-            if local_name(key) == "href" and re.match(r"^(?:https?:)?//", value):
-                errors.append("docs/workflow.svg must not reference remote resources")
-                break
+    if not any(local_name(node.tag) == 'text' and ''.join(node.itertext()).strip() for node in descendants):
+        errors.append('docs/workflow.svg must contain non-empty text labels')
+    errors.extend(svg_resource_errors(root, source))
 
     return errors
 

@@ -64,7 +64,10 @@ function pad(value: number): string {
 
 function dateKey(time: number): number {
   const date = new Date(time)
-  return Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+  const calendar = new Date(0)
+  calendar.setUTCFullYear(date.getFullYear(), date.getMonth(), date.getDate())
+  calendar.setUTCHours(0, 0, 0, 0)
+  return calendar.getTime()
 }
 
 function calendarDayDiff(targetTime: number, baseTime: number): number {
@@ -87,7 +90,7 @@ function clock(time: number): string {
 function calendarDate(time: number, includeYear: boolean): string {
   const date = new Date(time)
   const monthAndDay = `${pad(date.getMonth() + 1)}/${pad(date.getDate())}`
-  return includeYear ? `${date.getFullYear()}/${monthAndDay}` : monthAndDay
+  return includeYear ? `${String(date.getFullYear()).padStart(4, '0')}/${monthAndDay}` : monthAndDay
 }
 
 function appendClock(text: string, time: number, showExactTime: boolean): string {
@@ -96,7 +99,10 @@ function appendClock(text: string, time: number, showExactTime: boolean): string
 
 function resolveTime(value: TTimeValue): number | null {
   if (value === null || value === undefined) return null
-  if (typeof value === 'number') return Number.isFinite(value) ? value : null
+  if (typeof value === 'number') {
+    const time = new Date(value).getTime()
+    return Number.isFinite(time) ? time : null
+  }
   if (value instanceof Date) {
     const time = value.getTime()
     return Number.isFinite(time) ? time : null
@@ -125,6 +131,8 @@ function resolveTime(value: TTimeValue): number | null {
       parsedMinute,
       parsedSecond,
     )
+    // Date constructors map 0–99 to 1900–1999; restore the literal calendar year.
+    if (parsedYear < 100) date.setFullYear(parsedYear)
     const valid =
       date.getFullYear() === parsedYear &&
       date.getMonth() === parsedMonth - 1 &&

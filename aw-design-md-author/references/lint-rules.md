@@ -1,10 +1,10 @@
-# DESIGN.md — Linter Rules (official `@google/design.md`, current CLI)
+# DESIGN.md — Linter Rules (official `@google/design.md@0.4.0`)
 
-Run: `npx @google/design.md lint DESIGN.md` (JSON output; exit code 1 if any error). Nine rules:
+Run: `npx --yes @google/design.md@0.4.0 lint DESIGN.md` (JSON output; exit code 1 if any error). Eleven rules (verified 2026-09-08 against `spec --rules-only`):
 
 | Rule | Severity | What it checks | How to fix while writing |
 |---|---|---|---|
-| `broken-ref` | **error** | A `{token.ref}` doesn't resolve to a defined token | Define the token, or correct the path. References must point to a primitive (except composite refs inside `components`). |
+| `broken-ref` | **error** | Broken/circular references or unknown component sub-tokens | Define the token, or correct the path. References must point to a primitive (except composite refs inside `components`). |
 | `missing-primary` | warning | Colors defined but no `primary` color | Add a `primary` color; agents otherwise auto-generate one. |
 | `contrast-ratio` | warning | A component's `textColor` on `backgroundColor` is below WCAG AA (4.5:1) | Darken/lighten one of the pair, or swap to a higher-contrast token. Surface to the user; don't silently change the palette. |
 | `orphaned-tokens` | warning | A token is defined but never referenced by any component | If components are present, reference it where semantically correct or remove it if unused. If components are intentionally omitted in code-backed mode, do not add fake references; report the reduced lint coverage. |
@@ -12,19 +12,27 @@ Run: `npx @google/design.md lint DESIGN.md` (JSON output; exit code 1 if any err
 | `section-order` | warning | `##` sections are out of canonical order | Reorder to: Overview → Colors → Typography → Layout → Elevation & Depth → Shapes → Components → Do's and Don'ts. |
 | `unknown-key` | warning | A top-level key looks like a typo of a known schema key | Correct genuine typos. Deliberate extension keys that do not resemble schema keys remain silent. |
 | `token-summary` | info | Count of tokens per section | Informational. |
-| `missing-sections` | info | Optional sections (spacing, rounded) absent while other tokens exist | Consider adding them. |
+| `missing-sections` | info | Optional sections (spacing, rounded) absent while other tokens exist | Add only when relevant to the owned contract. |
+| `token-like-ignored` | warning | A top-level token-like map is outside the recognized export schema | Correct misplaced tokens or document an intentional extension; do not assume exports include it. |
+| `omitted-rules` | info | Unknown or redundant entries in `omitted` | Keep intentional omissions with accurate reasons. |
 
-Also enforced by the parser: a **duplicate `##` section heading rejects the file** (treated as an error).
+Duplicate `##` headings remain forbidden by this Skill, including canonical aliases. The tested CLI 0.4.0 did **not** reject duplicate headings; `scripts/check.sh` adds a local gate. Report it as a local contract finding, not an invented official rule ID. The wrapper also checks duplicate YAML keys. Do not rely on official lint alone for these constraints.
+
+## Running the protection gate
+
+Run `scripts/check.sh CURRENT [BASELINE]` from the skill directory. Annotation-only changes require a baseline and `--annotation`. Read-only lint needs only CURRENT; diff needs an actual comparison baseline, not an invented one.
+
+The wrapper requires Python 3 and PyYAML and never installs dependencies implicitly. It defaults to pinned CLI 0.4.0. `DESIGN_MD_CLI` may name one preinstalled executable; record its version. `DESIGN_MD_TIMEOUT` controls each invocation in seconds. Exit 0 means the checked gates passed, 1 is a content/protection failure, and 2 means validation is unavailable. Warnings must be reviewed and reported but are not automatically errors.
 
 ## Other useful CLI commands
 
 ```bash
-npx @google/design.md spec              # full spec as markdown (inject into context)
-npx @google/design.md spec --rules-only # just this rules table
-npx @google/design.md diff A.md B.md    # token + prose diff; exit 1 on regression
-npx @google/design.md export --format dtcg DESIGN.md         # → W3C DTCG tokens.json
-npx @google/design.md export --format css-tailwind DESIGN.md # → Tailwind v4 @theme {}
-npx @google/design.md export --format json-tailwind DESIGN.md# → Tailwind v3 theme.extend
+npx --yes @google/design.md@0.4.0 spec              # full spec as markdown (inject into context)
+npx --yes @google/design.md@0.4.0 spec --rules-only # just this rules table
+npx --yes @google/design.md@0.4.0 diff A.md B.md    # token diff + lint-count delta; exit 1 if error/warning counts rise
+npx --yes @google/design.md@0.4.0 export --format dtcg DESIGN.md         # → W3C DTCG tokens.json
+npx --yes @google/design.md@0.4.0 export --format css-tailwind DESIGN.md # → Tailwind v4 @theme {}
+npx --yes @google/design.md@0.4.0 export --format json-tailwind DESIGN.md# → Tailwind v3 theme.extend
 ```
 
 Windows: if invoking from a `package.json` script, use the `designmd` alias (the `.md` bin name confuses Windows resolution). If `npm error ENOVERSIONS`, your npm registry isn't pointing at `https://registry.npmjs.org/`.
@@ -35,10 +43,16 @@ Windows: if invoking from a `package.json` script, use the `designmd` alias (the
 2. `name` present; `primary` color present; at least a few typography levels present.
 3. Every `{ref}` resolves to a defined token; refs point to primitives (composite refs only inside `components`).
 4. If components exist, review defined-but-unreferenced tokens; never invent component references in code-backed mode.
-5. Each declared component `textColor`/`backgroundColor` pair ≥ 4.5:1 (normal text) / ≥ 3:1 (large). If components are omitted, run contrast checks against the actual component library instead.
+5. Normal text, including meaningful secondary metadata and placeholders, requires 4.5:1. The 3:1 large-text exception begins at 24 CSS px regular or approximately 18.67 CSS px bold (18pt / 14pt bold), not 14px. See [W3C SC 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Each declared component `textColor`/`backgroundColor` pair ≥ 4.5:1 (normal text) / ≥ 3:1 (large). If components are omitted, run contrast checks against the actual component library instead.
 6. `##` sections are in canonical order and none is duplicated.
 7. Colors are valid CSS color strings; dimensions use `px`/`em`/`rem`.
 
 ## Coverage warning
 
 A clean report validates only the content present in DESIGN.md. When `components:` is absent, the linter does not establish component contrast, state styling, alternate-theme parity, or accessibility. Require code-backed gallery/Storybook, visual-regression, contrast, and a11y checks for those concerns.
+
+## Diff and unavailable validation
+
+`regression: false` reports only lint-count changes; a token deletion can still return false. Inspect token changes and the actual file diff. For annotation-only edits, use `scripts/check.sh CURRENT BASELINE --annotation` to compare YAML, version and formal text. The gate does not grade the TODO meaning.
+
+Malformed/non-JSON output, timeout, missing dependencies and transport errors are unavailable validation, not content errors or passes. Deliver useful manual findings or edits with official validation explicitly incomplete. Do not claim a normative artifact passed while content errors remain; a read-only review can finish by reporting them. Do not silently compare runs on different CLI versions.

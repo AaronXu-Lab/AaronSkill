@@ -120,15 +120,6 @@ components:
     padding: 2px 8px
 ---
 
-<!--
-  Illustrative standalone/full-contract example. Use this when DESIGN.md owns
-  component appearance or must travel without an authoritative component
-  library. Values are invented; the point is the shape: flat frontmatter, the
-  canonical sections in order, and prose that says WHEN to use each value.
--->
-
-# Console UI
-
 ## Overview
 
 Calm, precise, information-dense — a native developer tool, not a marketing

@@ -49,6 +49,6 @@ After retrieval, identify:
 - styling and token assumptions;
 - optional complexity that the current use case does not require.
 
-Map these findings to the target project's installed stack. Reuse existing components and utilities where their public contract fits. If `DESIGN.md` exists, use its owned visual rules as style guidance while respecting implementation details owned by code.
+Use these findings for the selected phase: [Find comparison](find.md) or [Port adaptation](port.md). Read only that phase; source retrieval does not switch phases.
 
 Stop when the exact source cannot be verified, the license does not permit the intended use, or compatibility would require an unapproved foundational dependency.

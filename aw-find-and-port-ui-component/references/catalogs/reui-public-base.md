@@ -3,7 +3,8 @@
 - Status: `fresh`
 - Last checked: `2026-09-05T10:02:09+00:00`
 - Last successful refresh: `2026-09-04T04:12:33+00:00`
-- Eligible components: `75`
+- Discovery leads: `75`
+- Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
 | Component | Description | Preview | Source |
 |---|---|---|---|

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc"><title id="title">PRD 需求查证与界面对照</title><desc id="desc">定位适用来源；依据不足时交付已知部分。读条款后按请求回答或对照，已有授权且依据充分时修正并复查。</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#263642;text-anchor:middle} .heading{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px;font-weight:400}.edge{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52606d"/></marker></defs><path fill="#f7f9fb" d="M0 0H1200V1030H0Z"/>
+<text class="heading" x="600" y="55">PRD 需求查证与界面对照</text>
+<path class="edge" d="M600 170V205"/>
+<path class="edge" d="M445 260H360"/>
+<path class="edge" d="M600 315V355"/>
+<path class="edge" d="M600 435V475"/>
+<path class="edge" d="M755 530H850"/>
+<path class="edge" d="M600 585V625"/>
+<path class="edge" d="M600 705V745"/>
+<path class="edge" d="M780 800H835"/>
+<path class="edge" d="M600 855V915"/>
+<path class="edge" d="M1000 840V955H800"/>
+<rect x="400" y="95" width="400" height="75" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/>
+<text class="label" x="600.0" y="129.5">明确问题与来源</text>
+<text class="note" x="600.0" y="155.5">沿用当前项目、版本与请求范围</text>
+<path d="M600.0 205 L755 260.0 L600.0 315 L445 260.0 Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/>
+<text class="label" x="600.0" y="266.0">来源可判定？</text>
+<rect x="50" y="220" width="310" height="80" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/>
+<text class="label" x="205.0" y="257.0">交付已知部分</text>
+<text class="note" x="205.0" y="283.0">补充缺失来源或冲突决定</text>
+<rect x="400" y="355" width="400" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
+<text class="label" x="600.0" y="392.0">读取条款与上下文</text>
+<text class="note" x="600.0" y="418.0">区分明确规定、推断与未覆盖</text>
+<path d="M600.0 475 L755 530.0 L600.0 585 L445 530.0 Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/>
+<text class="label" x="600.0" y="536.0">需要界面对照？</text>
+<rect x="850" y="490" width="300" height="80" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>
+<text class="label" x="1000.0" y="527.0">交付带出处的回答</text>
+<text class="note" x="1000.0" y="553.0">保留关键条件与证据边界</text>
+<rect x="400" y="625" width="400" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
+<text class="label" x="600.0" y="662.0">对照需求与实现</text>
+<text class="note" x="600.0" y="688.0">标出差异及未验证状态</text>
+<path d="M600.0 745 L780 800.0 L600.0 855 L420 800.0 Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/>
+<text class="label" x="600.0" y="806.0">已授权且依据充分？</text>
+<rect x="835" y="760" width="330" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
+<text class="label" x="1000.0" y="797.0">最小修正并复查</text>
+<text class="note" x="1000.0" y="823.0">沿相同角色、状态与入口验证</text>
+<rect x="400" y="915" width="400" height="80" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>
+<text class="label" x="600.0" y="952.0">交付差异与处理结果</text>
+<text class="note" x="600.0" y="978.0">保留待决定项及验证限制</text>
+<text class="note" x="390" y="247">否</text>
+<text class="note" x="626" y="340">是</text>
+<text class="note" x="803" y="518">否</text>
+<text class="note" x="626" y="608">是</text>
+<text class="note" x="806" y="787">是</text>
+<text class="note" x="626" y="888">否</text>
+</svg>

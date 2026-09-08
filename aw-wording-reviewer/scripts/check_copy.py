@@ -27,6 +27,7 @@ import argparse
 import csv
 import json
 import re
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -50,6 +51,7 @@ class Finding:
     message: str
     text: str
     excerpt: str
+    original_text: str = ""
 
 
 # ---------------------------------------------------------------------------
@@ -57,7 +59,7 @@ class Finding:
 # ---------------------------------------------------------------------------
 
 I18N_MARKERS = ("i18n", "locale", "locales", "lang", "langs", "translation", "translations", "messages")
-SIMPLIFIED_ZH = {"zh", "zh-cn", "zh_cn", "zh-hans", "zh_hans", "zh-hans-cn", "cn", "chs", "zh-chs"}
+SIMPLIFIED_ZH = {"zh", "zh-cn", "zh_cn", "zh-hans", "zh_hans", "zh-hans-cn", "cn", "chs", "zh-chs", "zh-sg", "zh-hans-sg"}
 KNOWN_LANGS = {
     "en", "ja", "ko", "fr", "de", "es", "ru", "pt", "it", "vi", "th", "ar", "id", "tr",
     "nl", "pl", "sv", "da", "fi", "nb", "no", "cs", "el", "he", "hi", "hu", "ro", "sk",
@@ -68,7 +70,7 @@ LOCALE_TOKEN = re.compile(r"^([a-z]{2})(?:[-_]([A-Za-z]{2,4}))?(?:[-_]([A-Za-z]{
 
 def locale_of(token: str) -> str | None:
     """把路径片段解析成规范化 locale；不是 locale 时返回 None。"""
-    match = LOCALE_TOKEN.match(token)
+    match = LOCALE_TOKEN.match(token.lower())
     if not match or match.group(1) not in KNOWN_LANGS:
         return None
     return token.lower().replace("_", "-")
@@ -80,7 +82,8 @@ def skip_for_locale(path: Path) -> bool:
     lowered = [p.lower() for p in parts]
     if not any(marker in lowered for marker in I18N_MARKERS):
         return False
-    for part in parts:
+    marker_index = next(i for i, part in enumerate(lowered) if part in I18N_MARKERS)
+    for part in parts[marker_index + 1:]:
         locale = locale_of(part)
         if locale is None:
             continue
@@ -99,15 +102,12 @@ STRING_LITERAL = re.compile(
     r"|`((?:[^`\\]|\\.)*)`",
     re.DOTALL,
 )
-MARKUP_TEXT = re.compile(r">([^<>{}]*[" + CJK + r"][^<>{}]*)<")
 HAS_CJK = re.compile(r"[" + CJK + r"]")
-LINE_COMMENT = re.compile(r"^\s*(//|\*|/\*|#)")
-LOG_CALL = re.compile(r"(?:console|logger|log)\.\w+\(\s*$")
 # 字符串前面的属性名决定它的角色，句末标点等规则按角色判定。
 ROLE = re.compile(
     r"\b(label|name|title|message|confirmText|cancelText|actionLabel|placeholder"
-    r"|aria-label|ariaLabel|description|tooltip|heading|caption)"
-    r"\s*[:=]\s*\{?\s*$"
+    r"|aria-label|ariaLabel|description|tooltip|heading|caption|value)"
+    r"[\"']?\s*[:=]\s*\{?\s*$"
 )
 
 REFERENCES = Path(__file__).resolve().parent.parent / "references"
@@ -157,35 +157,63 @@ def mask(text: str) -> str:
     return out
 
 
+def blank_comments(source: str) -> str:
+    """Keep string contents and offsets; erase JS/HTML comments outside literals."""
+    token = re.compile(STRING_LITERAL.pattern + r"|//[^\n]*|/\*[\s\S]*?\*/|<!--[\s\S]*?-->")
+    return token.sub(lambda m: re.sub(r"[^\n]", " ", m.group(0))
+                     if m.group(0).startswith(("//", "/*", "<!--")) else m.group(0), source)
+
+
+def log_ranges(source: str) -> list[tuple[int, int]]:
+    # Ignore punctuation inside strings while balancing call arguments.
+    masked = STRING_LITERAL.sub(lambda m: " " * len(m.group(0)), source)
+    ranges = []
+    for m in re.finditer(r"\b(?:console|logger|log)\.\w+\s*\(", masked):
+        depth = 1
+        for i in range(m.end(), len(masked)):
+            depth += (masked[i] == "(") - (masked[i] == ")")
+            if depth == 0:
+                ranges.append((m.start(), i + 1))
+                break
+    return ranges
+
+
 def extract(path: Path) -> list[tuple[int, str, str]]:
-    """返回 (行号, 文案片段, 属性角色) 列表；无角色时角色为空串。"""
-    try:
-        source = path.read_text(encoding="utf-8")
-    except (OSError, UnicodeDecodeError):
-        return []
-
-    # 整行注释里的反引号会被误读成模板字符串，先按行抹平（保留行数）。
-    source = "\n".join("" if LINE_COMMENT.match(line) else line for line in source.split("\n"))
-
+    """Return literal start lines, original text and contextual roles; heuristic, not an AST."""
+    source = path.read_text(encoding="utf-8")
+    source = blank_comments(source) if path.suffix != ".json" else source
     results: list[tuple[int, str, str]] = []
-    for match in STRING_LITERAL.finditer(source):
+    literals = list(STRING_LITERAL.finditer(source))
+    logs = log_ranges(source) if path.suffix != ".json" else []
+    for match in literals:
         raw = next(g for g in match.groups() if g is not None)
-        if not HAS_CJK.search(raw):
+        # JSON and object property keys are identifiers, not display values.
+        if (re.match(r"\s*:", source[match.end():]) and match.group(0)[0] != "`"
+                and (path.suffix == ".json" or source[:match.start()].rstrip().endswith(("{", ",")))):
             continue
-        # 日志不是用户可见文案。
-        if LOG_CALL.search(source[max(0, match.start() - 40) : match.start()]):
+        if any(start <= match.start() < end for start, end in logs):
+            continue
+        prefix = source[max(0, match.start() - 100):match.start()]
+        role_match = ROLE.search(prefix)
+        role = role_match.group(1) if role_match else ""
+        if re.search(r"(?:\?\?|\|\|)\s*$", prefix):
+            role = "value"
+        if not HAS_CJK.search(raw) and not (role == "value" and raw in {"N/A", "--", "-", "null"}):
             continue
         line = source.count("\n", 0, match.start()) + 1
-        role_match = ROLE.search(source[max(0, match.start() - 60) : match.start()])
-        results.append((line, raw, role_match.group(1) if role_match else ""))
+        results.append((line, raw, role))
 
-    for match in MARKUP_TEXT.finditer(source):
-        raw = match.group(1)
-        if not raw.strip():
-            continue
-        line = source.count("\n", 0, match.start()) + 1
-        results.append((line, raw, ""))
-
+    if path.suffix in {".tsx", ".jsx", ".vue", ".svelte"}:
+        # Retain visible text around JSX/Vue interpolations, masking expressions only.
+        for match in re.finditer(r">([^<>]*)<", source):
+            if any(m.start() <= match.start() < m.end() for m in literals):
+                continue
+            raw = match.group(1)
+            visible = re.sub(r"\{[^{}]*\}", lambda m: "\x00" * len(m.group(0)), raw)
+            if not HAS_CJK.search(visible):
+                continue
+            line = source.count("\n", 0, match.start(1)) + 1
+            results.append((line, raw, "markup"))
     return results
 
 
@@ -251,10 +279,7 @@ def extract_bans(files: list[Path]) -> tuple[dict[str, str], dict[str, str]]:
     bans: dict[str, str] = {}
     code_only: dict[str, str] = {}
     for file in files:
-        try:
-            text = file.read_text(encoding="utf-8")
-        except (OSError, UnicodeDecodeError):
-            continue
+        text = file.read_text(encoding="utf-8")
         for match in BAN_SENTENCE.finditer(text):
             term = (match.group("quoted") or match.group("bare") or "").strip()
             if not term or term.lower() in BAN_STOPWORDS:
@@ -319,8 +344,8 @@ def _space_cjk_latin(text: str):
     "最多选择50个文件 → 最多选择 50 个文件",
 )
 def _space_cjk_digit(text: str):
-    masked = DATE_LIKE.sub(lambda m: "\x00" * len(m.group(0)), text)
-    for m in re.finditer(r"[" + CJK + r"]\d|\d[" + CJK + r"]", masked):
+    # Date punctuation is already non-CJK; masking entire numbers loses their outer edges.
+    for m in re.finditer(r"[" + CJK + r"]\d|\d[" + CJK + r"]", text):
         yield m.start(), text[m.start() : m.end()]
 
 
@@ -442,10 +467,12 @@ def _cjk_quote_style(text: str):
     # 只认「短语式引用」这一形态。叙事散文里的长引号对话不在此列；
     # 单引号一律不认——模板字符串里嵌套的 JS 定界符会与之混淆。
     for m in re.finditer(r"“[" + CJK + r"][^”]{0,7}”|\"[" + CJK + r"][^\"]{0,7}\"", text):
+        if re.search(r"[，。！？；：]", m.group(0)):
+            continue  # Sentence quotations need semantic review, not short-phrase conversion.
         yield m.start(), m.group(0)
 
 
-# 名词性与动作性文案：标签、名称、标题、按钮。任何长度都不加句号。
+# 名词性与动作性文案：按停顿数判断句末句号。
 NOMINAL_ROLES = {"label", "name", "title", "message", "confirmText", "cancelText",
                  "actionLabel", "heading", "caption"}
 # 停顿数决定说明性文案是否成句。顿号是并列，不算停顿。
@@ -458,9 +485,9 @@ FRAGMENT_TAIL = ("？", "！", "?", "!", ".", "…", "：", ":", "，", "、", "
 @rule(
     "trailing-period",
     ERROR,
-    "短句结尾不加句号；含两处以上停顿的成句说明用 。 收尾；标签、标题与按钮任何长度都不加",
+    "短句结尾不加句号；名词性与动作性角色含两处以上停顿时用 。 收尾；description 留给语义复核",
     'title="没有需要配置的连接器。" → 去掉句号；'
-    'description="归档后只读，历史仍保留，可随时恢复" → 补 。',
+    'message="归档后只读，历史仍保留，可随时恢复" → 补 。',
     needs_role=True,
 )
 def _trailing_period(text: str, role: str):
@@ -502,8 +529,11 @@ def _date_format(text: str):
     ERROR,
     "字段值缺失时显示全角破折号 —",
     "value={x ?? 'N/A'} → value={x ?? '—'}",
+    needs_role=True,
 )
-def _empty_value_em_dash(text: str):
+def _empty_value_em_dash(text: str, role: str):
+    if role != "value":
+        return
     for m in re.finditer(r"^(?:N/A|--|-|无|空|null)$", text.strip()):
         yield 0, m.group(0)
 
@@ -517,7 +547,7 @@ def load_name_cases(path: Path = REFERENCES / "name-casing.csv") -> dict[str, st
     if not path.exists():
         return cases
     for row in csv.reader(path.read_text(encoding="utf-8").splitlines()):
-        if len(row) < 2 or row[0].lstrip().startswith("#"):
+        if len(row) < 2 or row[0].lstrip().startswith("#") or row[0] == "官方写法":
             continue
         correct = row[0].strip()
         for wrong in row[1].split("|"):
@@ -533,7 +563,7 @@ NAME_CASE = load_name_cases()
 @rule("name-casing", ERROR, "品牌与产品实体名使用官方写法（表见 references/name-casing.csv）", "Github → GitHub")
 def _name_casing(text: str):
     for wrong, right in NAME_CASE.items():
-        for m in re.finditer(r"\b" + re.escape(wrong) + r"\b", text):
+        for m in re.finditer(r"(?<![A-Za-z0-9_])" + re.escape(wrong) + r"(?![A-Za-z0-9_])", text):
             yield m.start(), f"{m.group(0)} → {right}"
 
 
@@ -582,8 +612,8 @@ def resolve_bans(
     for term in extra or []:
         # --ban 是用户的显式决定，可以把代码约束提回文案禁令。
         bans.setdefault(term, code_only.pop(term, "命令行 --ban"))
-    for term in skipped or []:
-        bans.pop(term, None)
+    skipped_keys = {term.casefold() for term in skipped or []}
+    bans = {term: source for term, source in bans.items() if term.casefold() not in skipped_keys}
     return bans, code_only
 
 
@@ -593,7 +623,7 @@ def install_ban_rule(bans: dict[str, str]) -> None:
     # 拉丁词大小写不敏感：AGENTS.md 写 SOIA，语料里可能写成 Soia / soia。
     latin = [t for t in bans if re.match(r"[A-Za-z]", t)]
     other = [t for t in bans if t not in latin]
-    parts = [r"(?i:\b" + re.escape(t) + r"\b)" for t in latin] + [re.escape(t) for t in other]
+    parts = [r"(?i:(?<![A-Za-z0-9_])" + re.escape(t) + r"(?![A-Za-z0-9_]))" for t in latin] + [re.escape(t) for t in other]
     pattern = re.compile("|".join(parts))
     sources = "；".join(f"{t}（{src}）" for t, src in list(bans.items())[:6])
 
@@ -616,6 +646,8 @@ def install_ban_rule(bans: dict[str, str]) -> None:
 def check_text(text: str, role: str = "") -> list[tuple[str, str, str, str, int]]:
     """返回 (rule_id, severity, message, matched, offset)。"""
     masked = mask(text)
+    if role == "markup":
+        masked = re.sub(r"\{[^{}]*\}", lambda m: "\x00" * len(m.group(0)), masked)
     if DATA_ROW.match(masked.strip()) or CODE_SNIPPET.search(masked):
         return []
     out = []
@@ -632,18 +664,18 @@ def check_text(text: str, role: str = "") -> list[tuple[str, str, str, str, int]
 
 
 def iter_files(paths: list[Path]):
+    seen: set[Path] = set()
     for path in paths:
-        if path.is_file():
-            if not skip_for_locale(path):
-                yield path
-            continue
-        for child in path.rglob("*"):
+        candidates = [path] if path.is_file() else sorted(path.rglob("*"))
+        for child in candidates:
             if not child.is_file() or child.suffix not in SCAN_SUFFIXES:
                 continue
-            if SKIP_DIR_NAMES & set(child.parts):
+            if SKIP_DIR_NAMES & set(child.parts) or skip_for_locale(child):
                 continue
-            if skip_for_locale(child):
+            resolved = child.resolve()
+            if resolved in seen:
                 continue
+            seen.add(resolved)
             yield child
 
 
@@ -658,8 +690,8 @@ def run(paths: list[Path]) -> list[Finding]:
         for line, text, role in extract(path):
             for rid, severity, message, matched, offset in check_text(text, role):
                 findings.append(
-                    Finding(str(path), line, rid, severity, message, str(matched),
-                            excerpt(text, offset))
+                    Finding(str(path), line + text.count("\n", 0, offset), rid, severity, message, str(matched),
+                            excerpt(text, offset), text)
                 )
     findings.sort(key=lambda f: (f.severity != ERROR, f.rule, f.file, f.line))
     return findings
@@ -719,7 +751,7 @@ SELF_CHECK_CASES = [
     ("2026年7月31日提交", "", "date-format", True),
     ("2026-07-31 提交", "", "date-format", True),
     ("2026/07/31 提交", "", "date-format", False),
-    ("N/A", "", "empty-value-em-dash", True),
+    ("N/A", "value", "empty-value-em-dash", True),
     ("—", "", "empty-value-em-dash", False),
     ("绑定 Github 账号", "", "name-casing", True),
     ("绑定 GitHub 账号", "", "name-casing", False),
@@ -731,7 +763,7 @@ SELF_CHECK_CASES = [
     ("由 Agent ，执行", "", "space-before-cjk-punct", True),
     ("文件大小：1.44KB", "", "file-size-unit-spacing", True),
     ("文件大小：1.44 KB", "", "file-size-unit-spacing", False),
-    ("文件名 100MB", "", "file-size-unit-spacing", False),
+    ("文件名 100MB.bin", "", "file-size-unit-spacing", False),
 ]
 
 
@@ -769,7 +801,8 @@ def self_check() -> int:
         "- 禁止擅自使用 useContext\n"
         "- 不要使用炒作话术\n"
     )
-    tmp = Path("/tmp/_awr_agents_sample.md")
+    tempdir = tempfile.TemporaryDirectory(prefix="awr-self-check-")
+    tmp = Path(tempdir.name) / "AGENTS.md"
     tmp.write_text(sample, encoding="utf-8")
     bans, code_only = extract_bans([tmp])
     tmp.unlink(missing_ok=True)
@@ -792,6 +825,7 @@ def self_check() -> int:
     if "SOIA" not in forced:
         failures.append("--ban SOIA 应能把代码命名禁令提回文案禁用词")
 
+    tempdir.cleanup()
     total = len(SELF_CHECK_CASES) + len(locale_cases) + 7
     for failure in failures:
         print(f"FAIL {failure}")
@@ -827,11 +861,22 @@ def main() -> int:
     if not args.paths:
         parser.error("需要至少一个路径，或使用 --self-check")
 
-    bans: dict[str, str] = {}
-    if not args.no_agents_md:
-        files = args.agents_md if args.agents_md else find_agents_files(args.paths)
+    known = {spec["id"] for spec in RULES} | {"banned-term"}
+    unknown = (set(args.rule or []) | set(args.skip_rule)) - known
+    if unknown:
+        parser.error("未知规则 ID：" + ", ".join(sorted(unknown)))
+    for path in args.paths:
+        if not path.exists():
+            parser.error(f"扫描路径不存在：{path}")
+    files = [] if args.no_agents_md else (args.agents_md or find_agents_files(args.paths))
+    for path in files:
+        if not path.is_file():
+            parser.error(f"禁令来源不存在：{path}")
+    try:
         bans, code_only = resolve_bans(files, args.ban, args.skip_ban)
-        install_ban_rule(bans)
+    except (OSError, UnicodeDecodeError) as exc:
+        parser.error(f"禁令来源不可读：{exc}")
+    install_ban_rule(bans)
 
     if args.list_bans:
         if bans:
@@ -850,9 +895,12 @@ def main() -> int:
         skipped = set(args.skip_rule)
         RULES[:] = [spec for spec in RULES if spec["id"] not in skipped]
 
-    findings = run(args.paths)
     if args.rule:
-        findings = [f for f in findings if f.rule in set(args.rule)]
+        RULES[:] = [spec for spec in RULES if spec["id"] in set(args.rule)]
+    try:
+        findings = run(args.paths)
+    except (OSError, UnicodeDecodeError) as exc:
+        parser.error(f"未完成扫描：{exc}")
     if args.severity:
         findings = [f for f in findings if f.severity == args.severity]
 

@@ -1,1 +1,7 @@
-{"file":"review.md","required":["broken-ref","section-order","Token Usage","missing-typography"],"forbidden":[]}
+{
+  "file": "review.md",
+  "kind": "report",
+  "protected_sha256": {
+    "candidate-DESIGN.md": "645e6548c7d89f953312cc50ca340eecc5ac3fad264af630bec4404673a4ffc9"
+  }
+}

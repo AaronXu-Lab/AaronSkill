@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc"><title id="title">本地多服务启动与故障定位</title><desc id="desc">识别入口并观察现场；只诊断时交付原因，否则按现有授权启动修复，验证服务调用链和目标页面。不能继续时报告阻塞。</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#263642;text-anchor:middle} .heading{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px;font-weight:400}.edge{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52606d"/></marker></defs><path fill="#f7f9fb" d="M0 0H1200V1030H0Z"/>
+<text class="heading" x="600" y="55">本地多服务启动与故障定位</text>
+<path class="edge" d="M600 170V210"/>
+<path class="edge" d="M600 290V330"/>
+<path class="edge" d="M755 385H850"/>
+<path class="edge" d="M600 440V480"/>
+<path class="edge" d="M400 520H195V735"/>
+<path class="edge" d="M600 560V600"/>
+<path class="edge" d="M600 680V720"/>
+<path class="edge" d="M435 775H350"/>
+<path class="edge" d="M765 775H1180V185H825V250H800"/>
+<path class="edge" d="M600 830V915"/>
+<rect x="400" y="95" width="400" height="75" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/>
+<text class="label" x="600.0" y="129.5">识别项目与启动入口</text>
+<text class="note" x="600.0" y="155.5">读取现有脚本、依赖和实际端口</text>
+<rect x="400" y="210" width="400" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
+<text class="label" x="600.0" y="247.0">观察服务现场</text>
+<text class="note" x="600.0" y="273.0">检查进程归属、日志与响应</text>
+<path d="M600.0 330 L755 385.0 L600.0 440 L445 385.0 Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/>
+<text class="label" x="600.0" y="391.0">本次仅诊断？</text>
+<rect x="850" y="345" width="300" height="80" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>
+<text class="label" x="1000.0" y="382.0">交付故障定位</text>
+<text class="note" x="1000.0" y="408.0">说明证据和下一步</text>
+<rect x="400" y="480" width="400" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
+<text class="label" x="600.0" y="517.0">按现有授权启动或修复</text>
+<text class="note" x="600.0" y="543.0">复用正确实例，等待依赖就绪</text>
+<rect x="400" y="600" width="400" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
+<text class="label" x="600.0" y="637.0">验证实际可用性</text>
+<text class="note" x="600.0" y="663.0">检查服务、调用链与目标页面</text>
+<path d="M600.0 720 L765 775.0 L600.0 830 L435 775.0 Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/>
+<text class="label" x="600.0" y="781.0">目标已验证？</text>
+<rect x="40" y="735" width="310" height="80" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/>
+<text class="label" x="195.0" y="772.0">交付剩余阻塞</text>
+<text class="note" x="195.0" y="798.0">无新证据或缺少必要条件</text>
+<rect x="400" y="915" width="400" height="80" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>
+<text class="label" x="600.0" y="952.0">交付地址与管理方式</text>
+<text class="note" x="600.0" y="978.0">说明保留的服务及如何停止</text>
+<text class="note" x="800" y="371">是</text>
+<text class="note" x="626" y="465">否</text>
+<text class="note" x="275" y="507">超出范围或条件不足</text>
+<text class="note" x="389" y="762">否</text>
+<text class="note" x="1010" y="762">否：有新证据可继续</text>
+<text class="note" x="626" y="870">是</text>
+</svg>

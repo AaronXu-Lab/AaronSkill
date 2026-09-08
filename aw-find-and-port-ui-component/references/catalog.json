@@ -29,7 +29,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -45,7 +47,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -61,7 +65,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -77,7 +83,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -93,7 +101,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -109,7 +119,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -125,7 +137,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -141,7 +155,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -157,7 +173,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -173,7 +191,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -189,7 +209,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -205,7 +227,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -221,7 +245,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -237,7 +263,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -253,7 +281,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -269,7 +299,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -285,7 +317,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -301,7 +335,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -317,7 +353,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -333,7 +371,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -349,7 +389,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -365,7 +407,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -381,7 +425,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -397,7 +443,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -413,7 +461,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -429,7 +479,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -445,7 +497,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -461,7 +515,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -477,7 +533,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -493,7 +551,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -509,7 +569,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -525,7 +587,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -541,7 +605,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -557,7 +623,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -573,7 +641,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -589,7 +659,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -605,7 +677,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -621,7 +695,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -637,7 +713,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -653,7 +731,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -669,7 +749,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -685,7 +767,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -701,7 +785,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -717,7 +803,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -733,7 +821,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -749,7 +839,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -765,7 +857,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -781,7 +875,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -797,7 +893,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -813,7 +911,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -829,7 +929,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -845,7 +947,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -861,7 +965,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -877,7 +983,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -893,7 +1001,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -909,7 +1019,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -925,7 +1037,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -941,7 +1055,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -957,7 +1073,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -973,7 +1091,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "shadcn-base",
@@ -989,7 +1109,9 @@
           "dependencies": [],
           "license": "MIT",
           "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         }
       ]
     },
@@ -1021,7 +1143,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1037,7 +1161,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1053,7 +1179,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1069,7 +1197,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1085,7 +1215,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1101,7 +1233,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1117,7 +1251,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1133,7 +1269,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1149,7 +1287,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1165,7 +1305,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1181,7 +1323,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1197,7 +1341,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1213,7 +1359,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1229,7 +1377,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1245,7 +1395,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1261,7 +1413,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1277,7 +1431,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1293,7 +1449,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1309,7 +1467,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1325,7 +1485,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1341,7 +1503,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1357,7 +1521,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1373,7 +1539,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1389,7 +1557,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1405,7 +1575,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1421,7 +1593,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1437,7 +1611,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1453,7 +1629,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1469,7 +1647,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1485,7 +1665,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1501,7 +1683,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1517,7 +1701,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1533,7 +1719,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1549,7 +1737,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1565,7 +1755,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1581,7 +1773,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1597,7 +1791,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1613,7 +1809,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1629,7 +1827,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1645,7 +1845,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1661,7 +1863,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1677,7 +1881,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1693,7 +1899,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1709,7 +1917,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1725,7 +1935,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1741,7 +1953,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1757,7 +1971,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1773,7 +1989,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1789,7 +2007,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1805,7 +2025,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1821,7 +2043,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1837,7 +2061,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1853,7 +2079,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1869,7 +2097,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "coss-ui",
@@ -1885,7 +2115,9 @@
           "dependencies": [],
           "license": "MIT for apps/ui; verify exact source before copying",
           "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         }
       ]
     },
@@ -1927,7 +2159,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -1949,7 +2183,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -1967,7 +2203,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -1985,7 +2223,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2006,7 +2246,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2024,7 +2266,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2051,7 +2295,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2069,7 +2315,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2090,7 +2338,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2111,7 +2361,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2133,7 +2385,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2154,7 +2408,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2170,7 +2426,9 @@
           "dependencies": [],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2188,7 +2446,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2211,7 +2471,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2235,7 +2497,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2254,7 +2518,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2272,7 +2538,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2291,7 +2559,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2317,7 +2587,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2342,7 +2614,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2362,7 +2636,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2382,7 +2658,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2404,7 +2682,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2423,7 +2703,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2447,7 +2729,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2469,7 +2753,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2487,7 +2773,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2507,7 +2795,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2530,7 +2820,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2553,7 +2845,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2575,7 +2869,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2593,7 +2889,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2611,7 +2909,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2629,7 +2929,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2651,7 +2953,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2672,7 +2976,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2694,7 +3000,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2715,7 +3023,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "dice-ui-base",
@@ -2739,7 +3049,9 @@
           ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         }
       ]
     },
@@ -2771,7 +3083,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2787,7 +3101,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2803,7 +3119,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2819,7 +3137,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2835,7 +3155,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2851,7 +3173,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2867,7 +3191,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2883,7 +3209,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2899,7 +3227,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2915,7 +3245,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2931,7 +3263,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2947,7 +3281,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2963,7 +3299,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2979,7 +3317,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -2995,7 +3335,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3011,7 +3353,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3027,7 +3371,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3043,7 +3389,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3059,7 +3407,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3075,7 +3425,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3091,7 +3443,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3107,7 +3461,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3123,7 +3479,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3139,7 +3497,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3155,7 +3515,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3171,7 +3533,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3187,7 +3551,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3203,7 +3569,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3219,7 +3587,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3235,7 +3605,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3251,7 +3623,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3267,7 +3641,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3283,7 +3659,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3299,7 +3677,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3315,7 +3695,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3331,7 +3713,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3347,7 +3731,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3363,7 +3749,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3379,7 +3767,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3395,7 +3785,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3411,7 +3803,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3427,7 +3821,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3443,7 +3839,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3459,7 +3857,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3475,7 +3875,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3491,7 +3893,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3507,7 +3911,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3523,7 +3929,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3539,7 +3947,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3555,7 +3965,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3571,7 +3983,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3587,7 +4001,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3603,7 +4019,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3619,7 +4037,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3635,7 +4055,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3651,7 +4073,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3667,7 +4091,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3683,7 +4109,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3699,7 +4127,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3715,7 +4145,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3731,7 +4163,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3747,7 +4181,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3763,7 +4199,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3779,7 +4217,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3795,7 +4235,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3811,7 +4253,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3827,7 +4271,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3843,7 +4289,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3859,7 +4307,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3875,7 +4325,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3891,7 +4343,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3907,7 +4361,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3923,7 +4379,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3939,7 +4397,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "reui-public-base",
@@ -3955,7 +4415,9 @@
           "dependencies": [],
           "license": "MIT only for files confirmed in the public keenthemes/reui repository; Pro/Ultimate materials excluded",
           "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         }
       ]
     },
@@ -3987,7 +4449,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4003,7 +4467,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4019,7 +4485,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4035,7 +4503,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4051,7 +4521,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4067,7 +4539,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4083,7 +4557,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4099,7 +4575,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4115,7 +4593,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4131,7 +4611,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4147,7 +4629,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4163,7 +4647,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4179,7 +4665,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4195,7 +4683,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4211,7 +4701,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4227,7 +4719,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4243,7 +4737,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4259,7 +4755,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4275,7 +4773,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4291,7 +4791,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4307,7 +4809,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4323,7 +4827,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4339,7 +4845,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4355,7 +4863,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4371,7 +4881,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4387,7 +4899,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4403,7 +4917,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4419,7 +4935,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4435,7 +4953,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4451,7 +4971,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4467,7 +4989,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4483,7 +5007,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4499,7 +5025,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4515,7 +5043,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4531,7 +5061,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4547,7 +5079,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4563,7 +5097,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4579,7 +5115,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4595,7 +5133,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4611,7 +5151,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4627,7 +5169,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4643,7 +5187,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4659,7 +5205,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4675,7 +5223,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4691,7 +5241,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4707,7 +5259,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4723,7 +5277,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4739,7 +5295,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4755,7 +5313,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4771,7 +5331,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4787,7 +5349,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4803,7 +5367,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4819,7 +5385,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4835,7 +5403,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "exabase-design",
@@ -4851,7 +5421,9 @@
           "dependencies": [],
           "license": "Mixed provenance: shadcn/ui portions MIT; ExaWizards changes/additions CC BY 4.0 with attribution and modification notice",
           "base_ui_evidence": "Official exaBase V4 documentation is shadcn-compatible and primarily Base UI. Verify each exact registry item for Base UI, native React/HTML, and incompatible primitive dependencies.",
-          "port_eligible": true
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
         }
       ]
     },
@@ -4895,8 +5467,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "accordion-base"
+          "port_eligible": false,
+          "registry_slug": "accordion-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -4925,8 +5499,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "ask-user-questions"
+          "port_eligible": false,
+          "registry_slug": "ask-user-questions",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -4947,8 +5523,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "badge"
+          "port_eligible": false,
+          "registry_slug": "badge",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -4975,8 +5553,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "button-base"
+          "port_eligible": false,
+          "registry_slug": "button-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5002,8 +5582,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "card"
+          "port_eligible": false,
+          "registry_slug": "card",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5027,8 +5609,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "chat-message"
+          "port_eligible": false,
+          "registry_slug": "chat-message",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5055,8 +5639,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "checkbox-group-base"
+          "port_eligible": false,
+          "registry_slug": "checkbox-group-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5088,8 +5674,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "color-picker"
+          "port_eligible": false,
+          "registry_slug": "color-picker",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5117,8 +5705,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "dialog-base"
+          "port_eligible": false,
+          "registry_slug": "dialog-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5148,8 +5738,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "dropdown-base"
+          "port_eligible": false,
+          "registry_slug": "dropdown-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5176,8 +5768,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "input-copy"
+          "port_eligible": false,
+          "registry_slug": "input-copy",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5203,8 +5797,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "input-group"
+          "port_eligible": false,
+          "registry_slug": "input-group",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5235,8 +5831,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "input-message"
+          "port_eligible": false,
+          "registry_slug": "input-message",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5262,8 +5860,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "radio-group-base"
+          "port_eligible": false,
+          "registry_slug": "radio-group-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5294,8 +5894,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "select-base"
+          "port_eligible": false,
+          "registry_slug": "select-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5329,8 +5931,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "sidebar-base"
+          "port_eligible": false,
+          "registry_slug": "sidebar-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5355,8 +5959,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "slider-base"
+          "port_eligible": false,
+          "registry_slug": "slider-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5380,8 +5986,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "switch-base"
+          "port_eligible": false,
+          "registry_slug": "switch-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5405,8 +6013,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "table"
+          "port_eligible": false,
+          "registry_slug": "table",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5434,8 +6044,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "tabs-base"
+          "port_eligible": false,
+          "registry_slug": "tabs-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5462,8 +6074,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "tabs-subtle-base"
+          "port_eligible": false,
+          "registry_slug": "tabs-subtle-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5484,8 +6098,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "thinking-indicator"
+          "port_eligible": false,
+          "registry_slug": "thinking-indicator",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5513,8 +6129,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "thinking-steps-base"
+          "port_eligible": false,
+          "registry_slug": "thinking-steps-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         },
         {
           "source_id": "fluid-functionalism",
@@ -5537,8 +6155,10 @@
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": true,
-          "registry_slug": "tooltip-base"
+          "port_eligible": false,
+          "registry_slug": "tooltip-base",
+          "verification_status": "unverified",
+          "requires_verification": true
         }
       ]
     }

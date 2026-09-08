@@ -1,6 +1,6 @@
 # DESIGN.md — Spec Summary (condensed from the official Google Labs spec, version: alpha)
 
-Source of truth: https://github.com/google-labs-code/design.md (`docs/spec.md`). This is a working condensation for offline use; when in doubt, run `npx @google/design.md spec`.
+Source of truth: https://github.com/google-labs-code/design.md (`docs/spec.md`). This is a working condensation for offline use; when in doubt, run `npx --yes @google/design.md@0.4.0 spec`.
 
 ## Structure
 
@@ -16,6 +16,7 @@ Prose may use descriptive color names that correspond to systematic token names.
 version: <string>          # optional, current: "alpha"
 name: <string>
 description: <string>      # optional
+omitted: <string[] | OmittedSection[]> # optional; intentional section omissions
 colors:
   <token-name>: <Color>          # Any valid CSS color; hex is recommended
 typography:
@@ -29,7 +30,7 @@ components:
     <token-name>: <string | {token reference}>
 ```
 
-Token groups and Markdown sections may be omitted when they are not relevant. `components:` is supported, not required.
+Token groups and Markdown sections may be omitted when they are not relevant. `omitted` may list a section string or `{ section: <name>, reason: <reason> }`; preserve meaningful omissions and report any CLI diagnostics. `components:` is supported, not required.
 
 ### Types
 
@@ -57,7 +58,7 @@ Variants (hover/active/pressed) = separate entries with related keys, e.g. `butt
 | 8 | Do's and Don'ts | |
 
 - All sections use `##`. An optional `#` H1 title may precede Section 1 (not parsed as a section).
-- **Duplicate `##` section heading → file is rejected.** Unknown sections are preserved, not errored.
+- **Duplicate `##` headings violate this Skill’s contract.** CLI 0.4.0 does not reliably reject them; the bundled wrapper supplies this check. Unknown sections are preserved, not errored.
 
 ### What each section is for
 
@@ -85,7 +86,7 @@ Variants (hover/active/pressed) = separate entries with related keys, e.g. `butt
 | Unknown typography token name | Accept |
 | Unknown spacing value | Accept; store as string if not a valid dimension |
 | Unknown component property | Accept with warning |
-| Duplicate section heading | Error; reject file |
+| Duplicate section heading | Local Skill gate rejects; do not assume CLI 0.4.0 catches it |
 
 ## Minimal valid example
 

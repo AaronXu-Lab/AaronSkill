@@ -79,7 +79,8 @@ class CatalogParsingTests(unittest.TestCase):
             validator=lambda url: url.endswith("/base/message"),
         )
         self.assertEqual([item["slug"] for item in items], ["message"])
-        self.assertTrue(items[0]["port_eligible"])
+        self.assertFalse(items[0]["port_eligible"])
+        self.assertEqual(items[0]["verification_status"], "unverified")
 
     def test_registry_parser_intersects_base_sitemap_and_component_types(self) -> None:
         source = {

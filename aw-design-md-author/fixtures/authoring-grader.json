@@ -1,1 +1,24 @@
-{"file":"DESIGN.md","required":["name: Quiet Tools","primary: \"#224466\"","## Overview","## Colors","## Typography","## Layout","## Shapes","## Components","## Do's and Don'ts","{colors.primary}"],"forbidden":["## Token Usage"]}
+{
+  "file": "DESIGN.md",
+  "kind": "contract",
+  "protected_sha256": {
+    "authoring-brief.md": "fe481d7320c8d9a9484792aba6a49afde27fd6cd877c4edff40af57033dd67ea"
+  },
+  "tokens": {
+    "name": "Quiet Tools",
+    "colors.primary": "#224466",
+    "colors.surface": "#F7F8FA",
+    "colors.on-surface": "#17202A",
+    "rounded.md": "8px",
+    "spacing.md": "16px"
+  },
+  "sections": [
+    "Overview",
+    "Colors",
+    "Typography",
+    "Layout",
+    "Shapes",
+    "Components",
+    "Do's and Don'ts"
+  ]
+}

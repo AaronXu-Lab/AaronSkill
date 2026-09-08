@@ -17,7 +17,7 @@ Distilled from a high-quality real-world DESIGN.md (a dual-theme developer-conso
 
 ## Contrast discipline (ties to the lint `contrast-ratio` rule)
 
-- State the **contrast target per text rung**, and flag the rung that sits below AA: e.g. a `text-dim` tuned to ~3.6:1 clears AA-Large (3:1) but fails AA-Normal (4.5:1) → reserve for ≥14px non-essential metadata, and say so explicitly in the token's prose and in Do's/Don'ts. Never let a sub-AA color carry essential text.
+- State the **contrast target per text rung**, and flag the rung that sits below AA: e.g. a `text-dim` tuned to ~3.6:1 clears AA-Large (3:1) but fails AA-Normal (4.5:1) → use only where text actually qualifies as large: at least 24 CSS px regular or approximately 18.67 CSS px bold (18pt / 14pt bold). A 14px regular timestamp is normal text and requires 4.5:1, even when secondary. Record the actual size, weight and background before asserting compliance. See [W3C contrast minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
 
 ## Abstracted usage (ties to house rule 3)
 

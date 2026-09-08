@@ -1,115 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1660" role="img" aria-labelledby="title desc">
-  <title id="title">Design System Gallery 工作流程</title>
-  <desc id="desc">从授权范围和目标项目约定出发，筛选默认示例与有审阅价值的真实设计轴和正式状态。仅验证健壮性的案例留给测试或临时验证，不新增正式面板或场景区；边界展示须有明确用户要求或当前组件的正式设计契约。为复合组件分别建立父级代表性组合与原子化子级矩阵，按审阅必要性决定范围提示。已有边界显示开关时，提示接入共享受控机制并验证开关两态，保持布局与真实边框不变。以 Light 为默认主题完成验证后交付。</desc>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
-    </marker>
-    <style>
-      .canvas { fill: #f7f9fb; }
-      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; text-anchor: middle; }
-      .node-title { font: 600 18px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #1f2933; text-anchor: middle; }
-      .body { font: 400 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #52606d; text-anchor: middle; }
-      .label { font: 600 14px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #334e68; }
-      .input { fill: #ffffff; stroke: #9eacb8; stroke-width: 2; }
-      .stage { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
-      .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
-      .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
-      .output { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
-      .flow, .join { fill: none; stroke: #52606d; stroke-width: 2.5; }
-      .flow { marker-end: url(#arrow); }
-    </style>
-  </defs>
-
-  <rect class="canvas" width="1200" height="1660"/>
-  <text class="title" x="600" y="52">Design System Gallery 工作流程</text>
-
-  <path class="flow" d="M600 150 V190"/>
-  <path class="flow" d="M760 260 H880"/>
-  <path class="flow" d="M600 330 V390"/>
-  <path class="flow" d="M600 500 V550"/>
-  <path class="flow" d="M360 605 H300"/>
-  <path class="join" d="M170 655 V1195 H600"/>
-  <path class="flow" d="M600 660 V700"/>
-  <path class="flow" d="M760 770 H880"/>
-  <path class="flow" d="M600 840 V900"/>
-  <path class="flow" d="M600 1010 V1060"/>
-  <path class="join" d="M600 1170 V1195"/>
-  <path class="flow" d="M600 1195 V1220"/>
-  <path class="flow" d="M600 1330 V1370"/>
-  <path class="flow" d="M760 1440 H880"/>
-  <path class="flow" d="M600 1510 V1560"/>
-
-  <text class="label" x="785" y="245">否</text>
-  <text class="label" x="620" y="355">是</text>
-  <text class="label" x="306" y="590">仅验证</text>
-  <text class="label" x="620" y="685">正式展示</text>
-  <text class="label" x="785" y="755">否</text>
-  <text class="label" x="620" y="865">是</text>
-  <text class="label" x="785" y="1425">否</text>
-  <text class="label" x="620" y="1535">是</text>
-
-  <rect class="input" x="380" y="80" width="440" height="70" rx="14"/>
-  <text class="node-title" x="600" y="112">接收 Gallery 审阅或优化请求</text>
-  <text class="body" x="600" y="135">确认局部、批量或完整授权范围</text>
-
-  <polygon class="decision" points="600,190 760,260 600,330 440,260"/>
-  <text class="node-title" x="600" y="255">范围与目标项目约定明确？</text>
-  <text class="body" x="600" y="279">识别当地术语、框架、配置与验证入口</text>
-
-  <rect class="stop" x="880" y="210" width="280" height="100" rx="14"/>
-  <text class="node-title" x="1020" y="248">停止并说明前置条件</text>
-  <text class="body" x="1020" y="274">补充目标、约定或写入授权</text>
-
-  <rect class="stage" x="360" y="390" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="428">读取范围相称的证据</text>
-  <text class="body" x="600" y="454">用户决策 · 项目契约 · 设计文档 · 运行时默认</text>
-  <text class="body" x="600" y="476">必要时说明原因并渐进扩展只读证据</text>
-
-  <rect class="stage" x="360" y="550" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="588">筛选正式 Gallery 内容</text>
-  <text class="body" x="600" y="614">默认示例 · 真实设计轴与正式状态（含 Empty State）</text>
-  <text class="body" x="600" y="636">边界展示须有用户要求或组件设计契约</text>
-
-  <rect class="stage" x="40" y="555" width="260" height="100" rx="14"/>
-  <text class="node-title" x="170" y="593">留在测试或临时验证</text>
-  <text class="body" x="170" y="619">不新增正式面板或场景区</text>
-  <text class="body" x="170" y="641">取消 Caption 不构成保留理由</text>
-
-  <polygon class="decision" points="600,700 760,770 600,840 440,770"/>
-  <text class="node-title" x="600" y="765">语义映射明确且一致？</text>
-  <text class="body" x="600" y="789">比较概念和值域，不只比较字面名称</text>
-
-  <rect class="stop" x="880" y="720" width="280" height="100" rx="14"/>
-  <text class="node-title" x="1020" y="758">先向用户确认映射</text>
-  <text class="body" x="1020" y="784">确认后才能修改组件 API</text>
-
-  <rect class="stage" x="360" y="900" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="938">建立当前范围的展示模型</text>
-  <text class="body" x="600" y="964">父级代表性组合 · 子级原子化矩阵 · 依赖分组优先</text>
-  <text class="body" x="600" y="986">子级轴独立保留 · 技术 wrapper 视觉不可见</text>
-
-  <rect class="stage" x="360" y="1060" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="1088">确定默认占位内容并实现</text>
-  <text class="body" x="600" y="1110">无覆盖时使用 Text / Placeholder；有语义要求时遵循事实源</text>
-  <text class="body" x="600" y="1132">范围提示满足双条件 · Gallery-only · 估算宽度</text>
-  <text class="body" x="600" y="1154">已有边界开关时复用受控入口，不直接写死虚线</text>
-
-  <rect class="stage" x="360" y="1220" width="480" height="110" rx="14"/>
-  <text class="node-title" x="600" y="1248">运行范围相称的验证</text>
-  <text class="body" x="600" y="1270">默认验证 Light · 有主题风险时才追加 Dark</text>
-  <text class="body" x="600" y="1292">提示随开关显隐，布局与真实边框不变</text>
-  <text class="body" x="600" y="1314">检查设计与行为 · 恢复预览状态 · 清理临时展示</text>
-
-  <polygon class="decision" points="600,1370 760,1440 600,1510 440,1440"/>
-  <text class="node-title" x="600" y="1435">授权范围验证通过？</text>
-  <text class="body" x="600" y="1459">修改范围与视觉结果一致</text>
-
-  <rect class="stop" x="880" y="1390" width="280" height="100" rx="14"/>
-  <text class="node-title" x="1020" y="1428">修复或报告局部阻塞</text>
-  <text class="body" x="1020" y="1454">失败时不得宣称完成</text>
-
-  <rect class="output" x="350" y="1560" width="500" height="70" rx="14"/>
-  <text class="node-title" x="600" y="1592">交付 Gallery 审阅或优化结果</text>
-  <text class="body" x="600" y="1616">报告证据、修改、验证、假设与债务</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
+<title id="title">Design System Gallery 工作流程</title>
+<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，局部任务不通读全部资料。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606d"/></marker>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#1f2933}
+.title{font-size:30px;font-weight:700}.node-title{font-size:18px;font-weight:600}.body{font-size:14px;fill:#52606d}.label{font-size:14px;font-weight:600;fill:#334e68}
+.input{fill:#fff;stroke:#9eacb8}.stage{fill:#edf6ff;stroke:#287bbb}.decision{fill:#fff7e6;stroke:#c98312}.stop{fill:#fff0ef;stroke:#c94b43}.output{fill:#edf9f1;stroke:#2e8b54}
+rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.5}.flow{marker-end:url(#arrow)}
+</style></defs><rect width="1200" height="1320" fill="#f7f9fb"/>
+<text class="title" x="600" y="52">Design System Gallery 工作流程</text>
+<path class="flow" d="M600 155V190"/>
+<path class="flow" d="M780 250H890"/>
+<path class="flow" d="M600 310V350"/>
+<path class="flow" d="M600 430V470"/>
+<path class="flow" d="M600 565V600"/>
+<path class="flow" d="M780 660H890"/>
+<path class="flow" d="M600 720V800"/>
+<path class="join" d="M1030 710V760H600"/>
+<path class="flow" d="M420 860H270V970"/>
+<path class="flow" d="M780 860H930V970"/>
+<path class="join" d="M270 1080V1150H600"/>
+<path class="join" d="M930 1080V1150H600"/>
+<path class="flow" d="M600 1150V1190"/>
+<text class="body" x="832" y="235">不足</text>
+<text class="body" x="629" y="335">足够</text>
+<text class="body" x="839" y="645">有</text>
+<text class="body" x="630" y="748">无</text>
+<text class="body" x="818" y="747">独立项继续</text>
+<text class="body" x="326" y="845">仅审查</text>
+<text class="body" x="872" y="845">已授权实施</text>
+<rect class="input" x="350" y="80" width="500" height="75" rx="14"/>
+<text class="node-title" x="600.0" y="110">确定本次范围与执行模式</text>
+<text class="body" x="600.0" y="135">沿用完整会话授权，局部或全量按请求处理</text>
+<polygon class="decision" points="600,190 780,250 600,310 420,250"/>
+<text class="node-title" x="600" y="246">目标与判断证据足够？</text>
+<text class="body" x="600" y="270">缺少专门约定文档不等于缺少目标</text>
+<rect class="stop" x="890" y="200" width="280" height="100" rx="14"/>
+<text class="node-title" x="1030.0" y="230">请求必要输入</text>
+<text class="body" x="1030.0" y="255">只补当前判断缺失的目标或证据</text>
+<rect class="stage" x="330" y="350" width="540" height="80" rx="14"/>
+<text class="node-title" x="600.0" y="380">按当前问题读取约定与证据</text>
+<text class="body" x="600.0" y="405">缺少约定时沿用现有结构与最小 fallback</text>
+<rect class="stage" x="330" y="470" width="540" height="95" rx="14"/>
+<text class="node-title" x="600.0" y="500">按任务章节审阅展示</text>
+<text class="body" x="600.0" y="525">只读取当前动作所需规则，跨任务组合读取</text>
+<text class="body" x="600.0" y="546">新增场景或改变轴与状态内容时，先筛选正式展示</text>
+<polygon class="decision" points="600,600 780,660 600,720 420,660"/>
+<text class="node-title" x="600" y="656">存在歧义或范围阻塞？</text>
+<text class="body" x="600" y="680">唯一映射直接记录；不擅改 API</text>
+<rect class="stop" x="890" y="610" width="280" height="100" rx="14"/>
+<text class="node-title" x="1030.0" y="640">仅暂停受影响项</text>
+<text class="body" x="1030.0" y="665">说明具体选择或未授权写入</text>
+<text class="body" x="1030.0" y="686">已有授权不重复询问</text>
+<polygon class="decision" points="600,800 780,860 600,920 420,860"/>
+<text class="node-title" x="600" y="856">本次是否实施修改？</text>
+<text class="body" x="600" y="880">“移除、调整”按执行模式处理</text>
+<rect class="stage" x="40" y="970" width="460" height="110" rx="14"/>
+<text class="node-title" x="270.0" y="1000">核对证据并整理审查建议</text>
+<text class="body" x="270.0" y="1025">保留文件与公开契约</text>
+<text class="body" x="270.0" y="1046">建议说明位置、原因和可执行改法</text>
+<rect class="stage" x="700" y="970" width="460" height="110" rx="14"/>
+<text class="node-title" x="930.0" y="1000">实施修改、检查并修复</text>
+<text class="body" x="930.0" y="1025">运行适用检查，修复后重验受影响部分</text>
+<text class="body" x="930.0" y="1046">开关两态与主题检查按改动触发</text>
+<rect class="output" x="300" y="1190" width="600" height="85" rx="14"/>
+<text class="node-title" x="600.0" y="1220">交付证据、修改或建议及验证状态</text>
+<text class="body" x="600.0" y="1245">恢复预览、清理临时展示；明确局部阻塞与未验证项</text>
 </svg>

@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Workbench UI
-description: A restrained enterprise workspace backed by an implemented component library.
+description: A restrained, compact visual system with clear action hierarchy.
 colors:
   primary: "#172033"
   surface: "#FFFFFF"
@@ -37,12 +37,6 @@ spacing:
   lg: 24px
 ---
 
-<!--
-  Illustrative code-backed example. The repository's component library owns
-  exact component appearance, states, behavior, and accessibility. This file
-  owns shared visual language and component-selection intent; it intentionally
-  has no hand-maintained components YAML.
--->
 
 ## Overview
 
@@ -89,7 +83,7 @@ surfaces, and full pills for short data or action objects.
 
 ## Do's and Don'ts
 
-- Do compose the authoritative components and their documented variants.
-- Do promote a value into shared tokens only when it carries reusable semantics.
-- Don't restate component padding, dimensions, or states in prose.
-- Don't rebuild an existing system component with local CSS.
+- Do reserve `primary` for the strongest action so supporting actions stay quiet.
+- Do use `surface-subtle` to distinguish inset groups in dense content.
+- Don't use `error` as decoration; it signals feedback requiring attention.
+- Don't use pills for long-form content; their shape identifies compact objects.
