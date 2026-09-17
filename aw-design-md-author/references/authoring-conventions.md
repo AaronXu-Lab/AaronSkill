@@ -64,8 +64,45 @@ Use known versions and paths instead of inventing them. Distinguish this impleme
 - Keep the formal body limited to applicable design language, token semantics, visual rules, component selection, and design rationale. Omit document duties, ownership-mode introductions, code/document responsibility splits, specific projects, repository/subproject names, paths, API ownership, and engineering workflows.
 - Preserve legitimate frontmatter identity fields such as `name` and `description`. Keep engineering evidence in a separate report; requested TODO annotations may retain paths and migration traceability. Do not hide excluded responsibility statements in ordinary comments.
 - Keep every sentence tied to this system's design decisions. If a paragraph can be pasted unchanged into any design system, remove it.
-- Components prose covers selection, hierarchy, and semantic misuse—not state machines, events, props, or APIs.
+- Components prose covers selection, hierarchy, visual states, composition, and semantic misuse. Keep state machines, events, props, and APIs outside the contract; see Visual states and composition below.
 - Write Do's and Don'ts last, using observed bad outcomes rather than generic UX advice.
+
+## Design intent
+
+Review whether the contract connects **design intent → visual treatment → applicable conditions → observable result**. Use this as a reasoning aid, not four mandatory fields per rule. A stated quality such as “compact” or “editorial” needs enough concrete relationships to guide a new design: where density changes, what carries emphasis, and what stays subordinate.
+
+For example, “compact and efficient” alone leaves layout choices open. A supported rule might say: “Use the dense spacing tier between comparable data rows; keep group headings separated with the group-spacing role so users can distinguish groups while scanning.” Reference the project's actual roles; this example does not establish new tokens or values.
+
+Preserve the user's intent and voice. Flag adjectives with no corresponding decisions, and decisions that undermine stated priorities. Suggest options when the project has not settled a choice; do not manufacture dimensions, ratios, or breakpoints to make the prose sound precise. Prose can state observable visual relationships that are not representable in the token schema, while exact token values remain in their owning layer.
+
+## Layout and media
+
+Use the relevant dimensions below when authoring or reviewing Layout, Shapes, and Components. Extend existing subsections where useful; neither new top-level sections nor a fixed checklist in the output are required.
+
+- **Composition and density:** distinguish container width from reading width; explain alignment, gutters, grouping, and where dense comparison or spacious presentation applies. A spacing scale alone does not define page composition.
+- **Responsive changes:** describe what reorders, stacks, hides, scrolls, or stays reachable as available space changes. Breakpoint numbers alone are insufficient. Preserve established content priority and distinguish decorative simplification from removing information or actions.
+- **Content variation:** cover relevant long headings, labels, lists, or empty content with wrapping, truncation, overflow, or layout rules where the contract owns these decisions. Do not invent application behavior.
+- **Media treatment:** where imagery contributes to the design, describe aspect ratio, crop focus, framing, text overlays, and narrow-screen treatment. Distinguish product captures that must remain legible from atmospheric images that can be cropped more freely.
+
+Only include rules supported by the target system and relevant to the request. For instance, a side panel becoming a bottom action area is a possible responsive choice, not a universal mobile pattern. Missing evidence is a reportable gap, not permission to invent a transformation or extract another website.
+
+## Visual states and composition
+
+Describe the visual distinctions needed for the component's applicable states: hover, keyboard focus, selected, pressed, disabled, error, or loading. Include only relevant, established states; do not require every component to implement a full matrix. A source's inability or policy not to capture hover does not prohibit documenting supported hover styling in the target contract.
+
+Explain which role or treatment changes and which remains stable, including meaningful differences between focus, selection, and error. Keep exact values in the owning layer; use the existing component-token convention when the document owns them. Do not copy component internals into a code-backed contract merely to fill gaps.
+
+For composition, specify relevant relationships among icon, label, supporting text, and container: alignment, relative emphasis, spacing roles, and how the group handles content growth. Describe observable presentation, not event handling or API behavior. State and composition guidance should let a reader extend a component without guessing its visual grammar.
+
+## Semantic consistency
+
+Compare the same role across YAML, Overview, token explanations, component descriptions, responsive rules, and Do's and Don'ts. Check values and resolved references, intended usage, applicable theme or viewport, state, and stated exceptions or category boundaries. This is a manual semantic review; lint success is not evidence that these claims agree.
+
+First determine whether apparently different treatments belong to explicitly differentiated contexts. A pill marketing CTA and a compact rectangular navigation action can coexist when their roles are clear. “All buttons are pills” and “all buttons use the medium radius” without scope distinctions are a conflict.
+
+For each meaningful conflict, identify both locations, the shared role, the conflicting claims, and the design choice it leaves ambiguous. Use an established authoritative decision to resolve it within the authorized scope. Do not silently choose the later passage, the more detailed passage, or a preferred exemplar. Normative YAML owns token values, but a discrepancy with prose may indicate a stale token or an unresolved visual decision; do not automatically rewrite the prose to conceal it.
+
+In a narrow task, check related claims throughout the complete contract and change only affected, authorized content. Report unrelated conflicts separately. Review-only findings remain read-only; unresolved choices can be reported while other authorized work is completed.
 
 ## Multi-theme systems
 

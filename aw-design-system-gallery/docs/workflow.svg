@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
 <title id="title">Design System Gallery 工作流程</title>
-<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，局部任务不通读全部资料。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
+<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，名称映射需分离 Gallery 设计值、代码值与渲染适配。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606d"/></marker>
 <style>
 text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#1f2933}
@@ -44,7 +44,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <rect class="stage" x="330" y="470" width="540" height="95" rx="14"/>
 <text class="node-title" x="600.0" y="500">按任务章节审阅展示</text>
 <text class="body" x="600.0" y="525">只读取当前动作所需规则，跨任务组合读取</text>
-<text class="body" x="600.0" y="546">新增场景或改变轴与状态内容时，先筛选正式展示</text>
+<text class="body" x="600.0" y="546">名称映射分离设计值、代码值与渲染适配</text>
 <polygon class="decision" points="600,600 780,660 600,720 420,660"/>
 <text class="node-title" x="600" y="656">存在歧义或范围阻塞？</text>
 <text class="body" x="600" y="680">唯一映射直接记录；不擅改 API</text>
@@ -62,7 +62,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <rect class="stage" x="700" y="970" width="460" height="110" rx="14"/>
 <text class="node-title" x="930.0" y="1000">实施修改、检查并修复</text>
 <text class="body" x="930.0" y="1025">运行适用检查，修复后重验受影响部分</text>
-<text class="body" x="930.0" y="1046">开关两态与主题检查按改动触发</text>
+<text class="body" x="930.0" y="1046">核对默认编辑、Caption、描述与实际渲染</text>
 <rect class="output" x="300" y="1190" width="600" height="85" rx="14"/>
 <text class="node-title" x="600.0" y="1220">交付证据、修改或建议及验证状态</text>
 <text class="body" x="600.0" y="1245">恢复预览、清理临时展示；明确局部阻塞与未验证项</text>

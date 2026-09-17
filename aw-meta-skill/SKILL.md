@@ -1,8 +1,8 @@
 ---
 name: aw-meta-skill
-description: 基于 skill-creator 创建或更新需要 AW 元数据、文本工作流和 SVG 流程图的 Skill 包。
+description: 创建或更新任何 Skill 时使用，完整替代 skill-creator 作为统一入口，并维护版本元数据、文本工作流、SVG 流程图与双重校验。
 metadata:
-  version: "1.7.2"
+  version: "1.7.4"
   author: "aaron_xu"
   creation_context: "为统一 AW 系列 SKILL 的创建与更新流程，确保每个交付都包含便于模型读取的文本工作流、面向人的可视化流程图，以及可追溯的版本、作者及创建语境元数据而创建。"
 ---

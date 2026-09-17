@@ -42,7 +42,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 ## Skills
 
-目前共收录 **17 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另单独标记不再维护的 Skill。
+目前共收录 **18 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另单独标记不再维护的 Skill。
 
 ### 元 Skill
 
@@ -50,7 +50,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-meta-skill`](./aw-meta-skill/) | `1.7.2` | 基于 `skill-creator` 创建或更新符合 AW 交付规范的 Skill | 按变更范围读取与验证；Markdown 为执行事实源，SVG 细则按需加载 |
+| [`aw-meta-skill`](./aw-meta-skill/) | `1.7.4` | 创建或更新任何 Skill，完整替代 `skill-creator` 作为统一入口 | 按变更范围读取与验证；Markdown 为执行事实源，SVG 细则按需加载 |
 
 ### 工具类
 
@@ -79,7 +79,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-design-md-author`](./aw-design-md-author/) | `1.5.1` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
+| [`aw-design-md-author`](./aw-design-md-author/) | `1.6.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
 | [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.18.1` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 纯健壮性验证不默认进入正式 Gallery；明确要求或正式设计契约按范围处理；复合展示不替代子级矩阵；技术 wrapper 视觉不可见；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.6.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 源码逐字复用、仅展示不执行；仅源码展示可沿用已有 fixture；不碰单测 mock 与真实契约 |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
@@ -91,6 +91,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
+| [`aw-canvas-design`](./aw-canvas-design/) | `1.0.0` | 用实际组件画布设计多弹层业务流程，通过评论迭代并验收入口覆盖，提供独立环境初始化 | 复用已有画布、按需补齐；不限定技术栈；画布认可不自动授权业务迁移 |
 | [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.6.1` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
 | [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.10.1` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
 | [`temp-small-improves`](./temp-small-improves/) | `1.0.0` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |

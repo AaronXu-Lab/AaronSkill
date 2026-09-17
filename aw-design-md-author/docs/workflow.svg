@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc">
 <title id="title">DESIGN.md authoring, review and annotation workflow</title>
-<desc id="desc">Select task-relevant references; distinguish new authoring from narrow maintenance while retaining full contract checks. Determine the editing source internally from evidence and prior decisions. Keep formal prose about design; put engineering evidence in separate reports or requested TODO annotations. Review without edits, change the owning source, or add deferred comments. Prefer spacing tiers and preserve resolved values during migration; distinguish settled contracts from pending implementation. Regenerate projections, run local protection and official checks, then report passed gates, content issues or unavailable validation separately.</desc>
+<desc id="desc">Select task-relevant references; distinguish new authoring from narrow maintenance while retaining full contract checks. Determine the editing source internally from evidence and prior decisions. Keep formal prose about design; put engineering evidence in separate reports or requested TODO annotations. Review without edits, change the owning source, or add deferred comments. Connect design intent to observable rules; inspect applicable layout, media, visual states and composition. Compare claims across sections, distinguishing supported contexts before resolving conflicts. Prefer spacing tiers and preserve resolved values during migration; distinguish settled contracts from pending implementation. Regenerate projections, run local protection and official checks, then report passed gates, content issues or unavailable validation separately.</desc>
 <defs>
  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker>
  <style>
@@ -17,7 +17,7 @@
 <text class="l" x="600" y="135">按任务读取资料与项目证据</text><text class="d" x="600" y="158">选择相关资料 · 沿用完整会话授权</text>
 <path class="p" d="M600 175V205"/>
 <polygon class="q" points="600,205 825,265 600,325 375,265"/>
-<text class="l" x="600" y="261">能够确定编辑事实源？</text><text class="d" x="600" y="284">内部判断，不写入设计正文</text>
+<text class="l" x="600" y="261">能够确定编辑事实源？</text><text class="d" x="600" y="284">仅编辑需确定；只读沿用现有证据</text>
 <path class="p" d="M825 265H900"/><text class="d" x="860" y="249">否</text>
 <rect class="s" x="900" y="228" width="260" height="74" rx="14"/>
 <text class="l" x="1030" y="258">保留文件并澄清</text><text class="d" x="1030" y="282">仅限会改变编辑源的歧义</text>
@@ -28,9 +28,9 @@
 <path class="p" d="M600 470V515"/><text class="d" x="650" y="495">规范更新</text>
 <path class="p" d="M805 415H990V515"/><text class="d" x="902" y="400">纯注释</text>
 <rect class="x" x="45" y="515" width="330" height="78" rx="14"/>
-<text class="l" x="210" y="546">检查并记录问题</text><text class="d" x="210" y="572">保留原文件，不自动修复</text>
+<text class="l" x="210" y="546">审查规则与设计意图</text><text class="d" x="210" y="572">按需检查布局、媒体、状态与组合</text>
 <rect class="x" x="435" y="515" width="330" height="78" rx="14"/>
-<text class="l" x="600" y="546">新建或局部维护视觉契约</text><text class="d" x="600" y="572">维护沿用设计决定，迁移保持原值</text>
+<text class="l" x="600" y="546">新建或局部维护视觉契约</text><text class="d" x="600" y="572">落实意图与适用条件，保留既有决定</text>
 <rect class="x" x="825" y="515" width="330" height="78" rx="14"/>
 <text class="l" x="990" y="546">记录设计或迁移 TODO</text><text class="d" x="990" y="572">保留正式规则、YAML 与版本</text>
 <path class="p" d="M600 593V640H795V665"/>
@@ -39,7 +39,7 @@
 <text class="l" x="795" y="692">生成投影时重新构建</text><text class="d" x="795" y="715">规范与注释均从拥有源维护</text>
 <path class="p" d="M210 593V762H600V787"/><path class="p" d="M795 729V762H600"/>
 <rect class="x" x="370" y="787" width="460" height="72" rx="14"/>
-<text class="l" x="600" y="817">运行保护检查、官方 lint 与 diff</text><text class="d" x="600" y="841">另审正文边界与实际变更；lint 不证明视觉无回归</text>
+<text class="l" x="600" y="817">运行校验并核对跨章节语义</text><text class="d" x="600" y="841">保护检查、lint 与 diff；区分场景差异与真实冲突</text>
 <path class="p" d="M370 823H210V921"/><text class="d" x="280" y="807">内容错误</text>
 <path class="p" d="M600 859V921"/><text class="d" x="634" y="891">通过</text>
 <path class="p" d="M830 823H990V921"/><text class="d" x="916" y="807">环境不可用</text>

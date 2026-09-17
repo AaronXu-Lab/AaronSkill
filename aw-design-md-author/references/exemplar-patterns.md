@@ -1,19 +1,19 @@
-# Exemplar patterns — transferable conventions from a gold-standard DESIGN.md
+# Exemplar patterns — conditional design judgments
 
-Distilled from a high-quality real-world DESIGN.md (a dual-theme developer-console design system). These are *reusable design judgments* to reach for while authoring — not values to copy. Read this when the user wants examples of "what good looks like."
+Use these patterns to compare ways of expressing the target system's intent. They are alternatives with conditions and trade-offs, not a preferred aesthetic or default tokens. Preserve established choices even when a different pattern could also work. Read this when design examples would help resolve a specific question.
 
-> Caveat: the source document names its product in body prose. That conflicts with the house rule "no product/brand name in the markdown body." Treat the structural patterns below as exemplary; keep following the house rule on naming.
+Brand names and source descriptions in external examples are not wording to copy into the contract. Apply the authoring conventions to the resulting design rules.
 
 ## Naming & roles
 
-- **Name by intent, build ladders.** Colors form a *surface ladder* (`bg` → `bg-deep` → `bg-card` → `bg-card2`) with stable semantics: inputs sit *below* cards (read as "wells"), hover sits *above*. Text is a 3-step ladder (`text` / `text-muted` / `text-dim`). Naming the rung by its role lets the same token carry across themes/contexts.
-- **One brand constant, rationed.** A single accent carries every conversion target (CTA, active nav, focus ring, wordmark) and is kept under ~10% of any screen. Everything else stays low-voltage so it reads.
+- **Name by intent where hierarchy needs distinct roles.** A surface ladder can distinguish canvas, grouped content, and sunken inputs; another system may keep inputs level and use borders. Name the roles the project actually needs, such as `surface-sunken`, rather than assuming a fixed number or order of surfaces or text levels. Preserve those meanings across supported contexts.
+- **Choose how color carries emphasis.** For a quiet operational interface, a restrained accent can make key actions easy to locate; relying on it for every unrelated role can blur meaning. For an expressive presentation, multiple colors or a gradient may carry identity while action emphasis comes from contrast and placement. Define functional, semantic, and decorative roles and the conditions for each. Neither a single accent nor a fixed screen-area percentage is universal.
 - **Promote recurring domain colors to first-class tokens.** Chat-bubble roles, compare-slots, KPI gradients are named token families, not ad-hoc hexes. If a color recurs with meaning, it earns a token.
 
 ## Theme parity (if multi-theme)
 
-- **Parity, not translation.** A light theme is not the dark theme re-tinted. Each surface needs *different materials* to produce the *same hierarchy*: e.g. dark uses translucent-accent hairlines on near-black (the luminance step does the work); light uses **solid warm-grey hex** hairlines on cream (a translucent tint would composite to invisible on white). Define both values in the same commit; a token without its pair will fall back and break one theme.
-- **Shadows are theme-specific material.** Near-black eats soft shadows → single deep drop; light surfaces → a two-stop stack tinted with the same ink as the body text (not slate), so cards lift without a cool smudge.
+- **Preserve hierarchy across materials.** When multiple themes are established, retain semantic roles while choosing fills, borders, and contrast for each background. A translucent hairline may work on a dark surface but disappear on a light one; a solid neutral border is one alternative, not a required warm-gray palette. Verify the actual composited treatment in each theme's owning artifact; follow the multi-theme storage conventions.
+- **Choose the depth cue for the surface.** Tonal steps and borders can keep dense surfaces quiet; shadows can distinguish floating layers but may muddy light surfaces or vanish on dark ones. Select shadow stacks, single drops, or flat separation by the hierarchy needed, then check their effect against the actual background. No shadow recipe is a universal theme default.
 
 ## Contrast discipline (ties to the lint `contrast-ratio` rule)
 
@@ -25,14 +25,14 @@ Distilled from a high-quality real-world DESIGN.md (a dual-theme developer-conso
 
 ## Shape grammar
 
-- **Each radius signals a category, stated as a positive rule** (not an exception): small radius = interactive controls; medium = cards; full-pill = *data* (badges/chips/scores). "Pills are for data, sm/md radii are for interactive containers" — so mixing them on one row is a grammar break.
+- **Map shape to the project's roles.** Square or small-radius controls can express precision; pills and circles can emphasize compact actions or touch-oriented controls; larger radii can group content softly. These are possible choices, not guaranteed effects. Define the relationship among role, scale, and shape for the target system. Pill buttons are valid when intentional; mixed radii need clear category or scale distinctions. Check whether a reader can predict the shape of another object with the same role rather than enforcing “pills are only data.”
 
 ## Do's & Don'ts that scale
 
-- **Closed sets.** "The palette is closed at [these hues] + the dynamic score — new accents flatten the voice." A closed-set rule scales better than per-case approvals.
-- **Cite tokens, give the reason.** Each rule names the token and the visual failure it prevents ("don't use translucent accent for light hairlines — it composites to invisible on white"). The *why* is what lets an agent generalize.
+- **Bound additions when identity depends on a closed set.** If the system deliberately limits its palette, explain which roles the set covers and how semantic or content-driven colors fit. An expanding data visualization palette may instead need assignment rules. Do not impose a closed palette merely because an exemplar uses one.
+- **Cite tokens, give the reason.** Name the affected token and the observed visual failure a rule prevents, such as a particular translucent border disappearing against its intended background. The reason lets an agent generalize without banning a treatment that works in another context.
 - **Treat a signature formula/asset as normative.** If the system computes something (e.g. a score→hue formula), pin it: "treat the formula as a brand asset — don't reskin to buckets, don't add a hue."
 
 ## How to use this with the user
 
-Offer these as menus of judgment when they're stuck on a section ("for elevation, do you want a single deep drop or a stacked lift? here's the trade-off"), not as values to paste. The point is to help them make *their* call consistently, then validate with `scripts/check.sh`.
+Choose only patterns relevant to an unresolved design question. Explain the intended effect, applicable conditions, trade-off, and relationship that should stay consistent. Use existing project decisions without asking the user to choose again. Where evidence is missing, offer a candidate rather than claiming an established rule. Validate the contract with `scripts/check.sh` and the authoring conventions' semantic review; the script does not grade these design judgments.

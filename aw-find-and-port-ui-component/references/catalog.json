@@ -1,19 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-05T10:02:09+00:00",
+  "generated_at": "2026-09-15T09:25:38+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
-      "status": "fresh",
-      "last_checked_at": "2026-09-05T10:02:09+00:00",
-      "last_success_at": "2026-07-23T10:38:36+00:00",
-      "error": null,
+      "status": "stale",
+      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_success_at": "2026-09-14T09:45:00+00:00",
+      "error": "TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds",
       "fetch": {
         "command:npx -y shadcn@latest list @shadcn --json --limit 100": {
           "sha256": "0f25787be0f1a500193634da8629c193b74c5a71906432c5fe3d87960238a298"
         }
       },
+      "config_sha256": "0459d101c212bc50d099bab1f9868446fac865a9603ce43fa0402729328caac9",
       "items": [
         {
           "source_id": "shadcn-base",
@@ -1118,16 +1119,17 @@
     "coss-ui": {
       "id": "coss-ui",
       "name": "coss ui",
-      "status": "fresh",
-      "last_checked_at": "2026-09-05T10:02:09+00:00",
-      "last_success_at": "2026-07-23T10:38:36+00:00",
-      "error": null,
+      "status": "stale",
+      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_success_at": "2026-09-10T10:22:07+00:00",
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
       "fetch": {
         "https://coss.com/ui/llms.txt": {
           "etag": "W/\"78c8a00bd32f32c6051a1f3cb8014c36\"",
-          "last_modified": "Thu, 23 Jul 2026 02:15:32 GMT"
+          "last_modified": "Wed, 09 Sep 2026 01:18:57 GMT"
         }
       },
+      "config_sha256": "c18dbf29642b276a95f9a4c80c5a1b925e56f102049de8b382457382e1c15137",
       "items": [
         {
           "source_id": "coss-ui",
@@ -2125,19 +2127,20 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-09-05T10:02:09+00:00",
-      "last_success_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_success_at": "2026-09-10T10:22:07+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
           "etag": "\"fdf6d0763826db888ac2fe5dbadb935a\"",
-          "last_modified": "Fri, 04 Sep 2026 04:13:37 GMT"
+          "last_modified": "Thu, 10 Sep 2026 10:23:13 GMT"
         },
         "https://diceui.com/sitemap.xml": {
           "etag": "\"144e5c74ae100c3d48585cd0f3a69298\"",
-          "last_modified": "Fri, 04 Sep 2026 04:13:39 GMT"
+          "last_modified": "Thu, 10 Sep 2026 10:23:16 GMT"
         }
       },
+      "config_sha256": "7a068f11b83e40a64d11e91736c37e42099ef058de9064ed274249ebe64e0643",
       "items": [
         {
           "source_id": "dice-ui-base",
@@ -3059,15 +3062,16 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-09-05T10:02:09+00:00",
-      "last_success_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_success_at": "2026-09-14T09:45:00+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
           "etag": "W/\"2cb0592adc61d47aadf8d365bf8f92733ad17b4c386d13564eb87a2c6dbe476d\"",
-          "last_modified": "Fri, 04 Sep 2026 02:53:08 GMT"
+          "last_modified": "Mon, 14 Sep 2026 06:35:06 GMT"
         }
       },
+      "config_sha256": "c60f8ff973c5aef67d7a4472e751ab40d8e521110b07549fe10b3519ac7bb826",
       "items": [
         {
           "source_id": "reui-public-base",
@@ -4425,8 +4429,8 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-09-05T10:02:09+00:00",
-      "last_success_at": "2026-07-23T10:38:36+00:00",
+      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_success_at": "2026-09-14T09:45:00+00:00",
       "error": null,
       "fetch": {
         "https://exawizards.com/exabase/design/llms.txt": {
@@ -4434,6 +4438,7 @@
           "last_modified": "Thu, 18 Jun 2026 10:36:29 GMT"
         }
       },
+      "config_sha256": "693a620a288df33e4d2b2d9228fe2d63342c97e8ff9e812ee33ad33a109efe07",
       "items": [
         {
           "source_id": "exabase-design",
@@ -5431,22 +5436,23 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-09-05T10:02:09+00:00",
-      "last_success_at": "2026-09-04T04:12:33+00:00",
+      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_success_at": "2026-09-10T10:22:07+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"5139ae352c4f1aa82c23a603273a5c5f\"",
-          "last_modified": "Wed, 02 Sep 2026 12:26:37 GMT"
+          "etag": "\"9c46f2c48c001bb78619cd6b544c94ec\"",
+          "last_modified": "Thu, 10 Sep 2026 10:23:27 GMT"
         }
       },
+      "config_sha256": "b4d97205cc5fef7067346b14bd38d8e635b3b723763053336e3d111ba8250b89",
       "items": [
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Accordion",
           "slug": "accordion",
-          "description": "Collapsible accordion with animated height transitions, spring-animated chevron, and proximity hover in grouped mode. Base UI flavor.",
+          "description": "Collapsible accordion with animated height transitions, spring-animated chevron, and fluid hover in grouped mode. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/accordion",
           "source_url": "https://www.fluidfunctionalism.com/r/accordion-base.json",
@@ -5461,23 +5467,23 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "accordion-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "accordion-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Ask User Questions",
           "slug": "ask-user-questions",
-          "description": "Stepped question flow with numbered options, keyboard shortcuts (1–9), single or multi-select, inline 'other' text input, optional skip, proximity-based hover, and multi-question navigation. Auto-advances on selection in single-select.",
+          "description": "Stepped question flow with numbered options, keyboard shortcuts (1–9), single or multi-select, inline 'other' text input, optional skip, fluid hover, and multi-question navigation. Auto-advances on selection in single-select.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/ask-user-questions",
           "source_url": "https://www.fluidfunctionalism.com/r/ask-user-questions.json",
@@ -5491,7 +5497,7 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/use-merge-split.json",
             "https://www.fluidfunctionalism.com/r/button.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -5500,9 +5506,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "ask-user-questions",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "ask-user-questions"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5524,9 +5530,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "badge",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "badge"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5554,16 +5560,16 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "button-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "button-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Card",
           "slug": "card",
-          "description": "shadcn's compositional card (Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter) with the Fluid Functionalism layer: transparent substrate, weight-animated title, media/logo/feature/image slots, and a CardGroup that owns stacked, inline, and grid layouts plus 2-D proximity-hover highlighting.",
+          "description": "shadcn's compositional card (Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter) with the Fluid Functionalism layer: transparent substrate, weight-animated title, media/logo/feature/image slots, and a CardGroup that owns stacked, inline, and grid layouts plus 2-D fluid-hover highlighting.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/card",
           "source_url": "https://www.fluidfunctionalism.com/r/card.json",
@@ -5576,16 +5582,16 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "card",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "card"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5610,16 +5616,16 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "chat-message",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "chat-message"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Checkbox Group",
           "slug": "checkbox-group",
-          "description": "Animated checkbox group with proximity hover, contiguous selection merging, and spring-animated check marks. Base UI flavor.",
+          "description": "Animated checkbox group with fluid hover, contiguous selection merging, and spring-animated check marks. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/checkbox-group",
           "source_url": "https://www.fluidfunctionalism.com/r/checkbox-group-base.json",
@@ -5632,7 +5638,7 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/use-merge-split.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
@@ -5640,9 +5646,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "checkbox-group-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "checkbox-group-base"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5665,7 +5671,7 @@
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
             "https://www.fluidfunctionalism.com/r/slider.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -5675,16 +5681,90 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "color-picker",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "color-picker"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Combobox",
+          "slug": "combobox",
+          "description": "Type-to-filter combobox with single or multiple (chips, merged selection backgrounds) selection: a text field that filters a list as you type, with keyboard highlight, fluid hover, spring-animated popover, animated checkmark, and clear/chevron controls. Optional create-from-query row (onCreate) and hideSelected for chips fields. Base UI flavor.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/combobox",
+          "source_url": "https://www.fluidfunctionalism.com/r/combobox-base.json",
+          "foundation": "base-ui-or-native",
+          "variant": "base-or-native",
+          "dependencies": [
+            "@base-ui/react",
+            "framer-motion",
+            "class-variance-authority",
+            "lucide-react",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-classes.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-merge-split.json",
+            "https://www.fluidfunctionalism.com/r/elevated.json",
+            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
+            "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
+          ],
+          "license": "MIT; verify the exact public registry item and preserve the repository license notice",
+          "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "combobox-base"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Command Menu",
+          "slug": "command-menu",
+          "description": "Search field over a list of actions: type to filter, arrows to move the fluid hover highlight, Enter to run. Grouped rows with icons, descriptions, and shortcut caps; suggestions listed first while nothing is typed; subtle tabs or a borderless filter bar under the field; and a dialog shell opened by a global shortcut (default ⌘K / Ctrl+K). The list needs no primitive; the dialog is the library's Dialog in either flavor.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/command-menu",
+          "source_url": "https://www.fluidfunctionalism.com/r/command-menu.json",
+          "foundation": "base-ui-or-native",
+          "variant": "base-or-native",
+          "dependencies": [
+            "framer-motion",
+            "lucide-react",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-classes.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
+            "https://www.fluidfunctionalism.com/r/scroll-area.json",
+            "https://www.fluidfunctionalism.com/r/dialog.json",
+            "https://www.fluidfunctionalism.com/r/tabs-subtle.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
+          ],
+          "license": "MIT; verify the exact public registry item and preserve the repository license notice",
+          "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "command-menu"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Dialog",
           "slug": "dialog",
-          "description": "Animated modal dialog with spring-based scale and opacity transitions. Base UI flavor.",
+          "description": "Animated modal dialog with spring-based scale and opacity transitions in three widths (sm, lg, and an xl canvas for composed layouts such as a sidebar), plus a container prop to scope it to a region. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/dialog",
           "source_url": "https://www.fluidfunctionalism.com/r/dialog-base.json",
@@ -5706,16 +5786,16 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "dialog-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "dialog-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Dropdown",
           "slug": "dropdown",
-          "description": "Dropdown menu with proximity hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem. Base UI flavor.",
+          "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), and multiple selection with merged backgrounds. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/dropdown",
           "source_url": "https://www.fluidfunctionalism.com/r/dropdown-base.json",
@@ -5731,17 +5811,20 @@
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-merge-split.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
+            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "dropdown-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "dropdown-base"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5769,16 +5852,16 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "input-copy",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "input-copy"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Input Group",
           "slug": "input-group",
-          "description": "Grouped input fields with proximity-based highlighting, animated label transitions, optional icons, and error states.",
+          "description": "Grouped input fields with fluid hover highlighting, animated label transitions, optional icons, and error states.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/input-group",
           "source_url": "https://www.fluidfunctionalism.com/r/input-group.json",
@@ -5791,16 +5874,16 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "input-group",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "input-group"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5824,7 +5907,7 @@
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/file-thumbnail.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/button.json",
             "https://www.fluidfunctionalism.com/r/tooltip.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
@@ -5832,16 +5915,16 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "input-message",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "input-message"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Radio Group",
           "slug": "radio-group",
-          "description": "Animated radio group with proximity hover, spring-animated selection dot. Base UI flavor.",
+          "description": "Animated radio group with fluid hover, spring-animated selection dot. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/radio-group",
           "source_url": "https://www.fluidfunctionalism.com/r/radio-group-base.json",
@@ -5854,23 +5937,23 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "radio-group-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "radio-group-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Select",
           "slug": "select",
-          "description": "Animated select menu with collision-aware positioning, typeahead, proximity hover, spring-animated popover, and animated checkmark. Base UI flavor.",
+          "description": "Animated select menu with collision-aware positioning, typeahead, fluid hover, spring-animated popover, and animated checkmark. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/select",
           "source_url": "https://www.fluidfunctionalism.com/r/select-base.json",
@@ -5887,24 +5970,27 @@
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
+            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
+            "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "select-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "select-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Sidebar",
           "slug": "sidebar",
-          "description": "Refined, composable app sidebar with offcanvas collapse, floating and inset variants, a mobile drawer, cookie-persisted state, keyboard shortcut, and proximity-hover menus with traveling selection, hover, and focus indicators. Base UI flavor.",
+          "description": "Refined, composable app sidebar with offcanvas collapse, floating and inset variants, a mobile drawer, cookie-persisted state, keyboard shortcut, and fluid-hover menus with traveling selection, hover, and focus indicators. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/sidebar",
           "source_url": "https://www.fluidfunctionalism.com/r/sidebar-base.json",
@@ -5923,7 +6009,7 @@
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/base/tooltip.json",
             "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/base/button.json",
@@ -5932,9 +6018,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "sidebar-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "sidebar-base"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5960,9 +6046,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "slider-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "slider-base"
         },
         {
           "source_id": "fluid-functionalism",
@@ -5987,16 +6073,16 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "switch-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "switch-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Table",
           "slug": "table",
-          "description": "Animated table with proximity-based row hover highlighting and fluid border transitions. Includes TableHeader, TableBody, TableRow, TableHead, and TableCell sub-components.",
+          "description": "Animated table with fluid hover row highlighting and fluid border transitions. Includes TableHeader, TableBody, TableRow, TableHead, and TableCell sub-components.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/table",
           "source_url": "https://www.fluidfunctionalism.com/r/table.json",
@@ -6007,23 +6093,23 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "table",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "table"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Tabs",
           "slug": "tabs",
-          "description": "Segmented control tabs with sliding active indicator, proximity hover, and spring animations. Base UI flavor.",
+          "description": "Segmented control tabs with sliding active indicator, fluid hover, and spring animations. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/tabs",
           "source_url": "https://www.fluidfunctionalism.com/r/tabs-base.json",
@@ -6038,23 +6124,23 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "tabs-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "tabs-base"
         },
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
           "name": "Tabs Subtle",
           "slug": "tabs-subtle",
-          "description": "Horizontal tab navigation with proximity hover, animated pill selection indicator, and fluid font-weight transitions. Base UI flavor.",
+          "description": "Horizontal tab navigation with fluid hover, animated pill selection indicator, and fluid font-weight transitions. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/tabs-subtle",
           "source_url": "https://www.fluidfunctionalism.com/r/tabs-subtle-base.json",
@@ -6068,16 +6154,16 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-proximity-hover.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "tabs-subtle-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "tabs-subtle-base"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6099,9 +6185,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "thinking-indicator",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "thinking-indicator"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6130,9 +6216,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "thinking-steps-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "thinking-steps-base"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6156,9 +6242,9 @@
           "license": "MIT; verify the exact public registry item and preserve the repository license notice",
           "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
           "port_eligible": false,
-          "registry_slug": "tooltip-base",
           "verification_status": "unverified",
-          "requires_verification": true
+          "requires_verification": true,
+          "registry_slug": "tooltip-base"
         }
       ]
     }
