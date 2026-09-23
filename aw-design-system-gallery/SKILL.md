@@ -1,8 +1,8 @@
 ---
 name: aw-design-system-gallery
-description: 创建或修改设计系统 Gallery 展示时使用，包括新增或修改组件时顺带创建或调整 Gallery Panel、默认或对比示例、属性轴、Caption、占位文案或图标，即使用户未明确要求 Gallery 审查；不用于完全不涉及 Gallery 的普通组件实现或产品文案修改。
+description: 创建或修改设计系统 Gallery 展示时使用，包括新增或修改组件时顺带创建或调整 Gallery Panel、默认或对比示例、属性轴及其适用条件、Caption、占位文案或图标，即使用户未明确要求 Gallery 审查；不用于完全不涉及 Gallery 的普通组件实现或产品文案修改。
 metadata:
-  version: "3.25.0"
+  version: "3.28.0"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---
@@ -18,7 +18,9 @@ metadata:
 | 当前任务 | 读取资料 |
 | --- | --- |
 | 选择展示轴、筛选正式场景、调整 Caption | [§2 正式展示筛选](references/gallery-rules.md#2-选择设计审阅轴) |
+| 新增或修改属性适用条件；某模式下不生效、禁用、隐藏或条件展示 | 修改前识别父子依赖，读取 [§3 属性依赖与失效展示](references/gallery-rules.md#属性依赖与失效展示)，按其依赖验收取证；区分组件本体、Default 控件与 Properties 比较块，不只按章节标题筛选 |
 | 排列依赖轴、核对 default、处理无轴组件 | [§3 轴顺序与默认示例](references/gallery-rules.md#3-决定轴顺序) |
+| 新增或调整组件 Panel 的整体内容结构、Default／Properties／Demo 组合 | [§3 Panel 内容结构](references/gallery-rules.md#panel-内容结构)；涉及轴选择时同时读 §2 |
 | 核对名称映射、组件契约、代码 API 更新后的 Gallery 同步或修改 API | [§4 名称与 API](references/gallery-rules.md#4-核对-gallery-名称与实现-api)，按其链接读取相关 API 约束 |
 | 判断、增改真实占位范围提示或接入边界开关 | [§5 范围提示](references/gallery-rules.md#5-决定真实占位范围提示) |
 | 调整示例内容、触发器与浮层选项文案、比较布局或浮层表面 | [§6 可比较示例](references/gallery-rules.md#6-构造可比较示例) |

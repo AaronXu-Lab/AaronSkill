@@ -1,8 +1,8 @@
 # Dice UI Base
 
 - Status: `fresh`
-- Last checked: `2026-09-15T09:25:38+00:00`
-- Last successful refresh: `2026-09-10T10:22:07+00:00`
+- Last checked: `2026-09-21T03:33:21+00:00`
+- Last successful refresh: `2026-09-20T15:30:21+00:00`
 - Discovery leads: `40`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 

@@ -1,11 +1,10 @@
 # coss ui
 
-- Status: `stale`
-- Last checked: `2026-09-15T09:25:38+00:00`
+- Status: `fresh`
+- Last checked: `2026-09-21T03:33:21+00:00`
 - Last successful refresh: `2026-09-10T10:22:07+00:00`
 - Discovery leads: `55`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
-- Refresh error: `URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>`
 
 | Component | Description | Preview | Source |
 |---|---|---|---|

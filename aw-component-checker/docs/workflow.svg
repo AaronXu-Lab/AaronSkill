@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1140" viewBox="0 0 1200 1140" role="img" aria-labelledby="title desc">
+  <title id="title">组件审查与编辑工作流</title>
+  <desc id="desc">识别任务与已有授权，读取组件索引后区分审查和编辑。审查按需读取规则并判断组件用法，核心条件不明时澄清；编辑核对最新正式注册，联动维护规则、索引和链接，检查通过后交付，有问题时修复重验或保留待定差异。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52606d"/></marker></defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #243746; text-anchor: middle; }
+    .title { font-size: 30px; font-weight: 700; }
+    .label { font-size: 18px; font-weight: 600; }
+    .note { font-size: 14px; font-weight: 400; }
+    .node { stroke-width: 2; rx: 14; }
+    .input { fill: #ffffff; stroke: #9eacb8; }
+    .step { fill: #edf6ff; stroke: #287bbb; }
+    .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
+    .pending { fill: #fff0ef; stroke: #c94b43; }
+    .done { fill: #edf9f1; stroke: #2e8b54; }
+    .edge { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="1200" height="1140" fill="#f7f9fb"/>
+  <text class="title" x="600" y="51">组件审查与编辑</text>
+  <text class="note" x="600" y="78">审查用法，或随组件变化维护规则与索引</text>
+  <rect class="node input" x="390" y="105" width="420" height="74"/>
+  <text class="label" x="600" y="136">识别任务范围与已有授权</text>
+  <text class="note" x="600" y="161">局部修改保持范围；纯视觉请求不启动审查</text>
+  <path class="edge" d="M600 179 V210"/>
+  <rect class="node step" x="390" y="210" width="420" height="74"/>
+  <text class="label" x="600" y="241">读取组件索引，定位目标</text>
+  <text class="note" x="600" y="266">以 Gallery ID 区分展示名与文件名</text>
+  <path class="edge" d="M600 284 V315"/>
+  <path class="decision" d="M600 315 L785 375 L600 435 L415 375 Z"/>
+  <text class="label" x="600" y="381">当前要审查还是维护？</text>
+  <path class="edge" d="M415 375 H300 V475"/>
+  <text class="note" x="341" y="363">审查模式</text>
+  <path class="edge" d="M785 375 H900 V475"/>
+  <text class="note" x="858" y="363">编辑模式</text>
+  <rect class="node step" x="80" y="475" width="440" height="80"/>
+  <text class="label" x="300" y="507">按需加载相关组件规则</text>
+  <text class="note" x="300" y="535">需要区分边界时才补读相似组件</text>
+  <rect class="node step" x="680" y="475" width="440" height="80"/>
+  <text class="label" x="900" y="507">核对最新正式注册与变更</text>
+  <text class="note" x="900" y="535">区分新增、移除、改名和能力变化</text>
+  <path class="edge" d="M300 555 V602"/>
+  <path class="edge" d="M900 555 V602"/>
+  <rect class="node step" x="80" y="602" width="440" height="88"/>
+  <text class="label" x="300" y="635">判断语义、场景与组件用法</text>
+  <text class="note" x="300" y="663">先跨组件组合，再内部意图；示例帮助解释</text>
+  <rect class="node step" x="680" y="602" width="440" height="88"/>
+  <text class="label" x="900" y="635">联动维护规则、索引与链接</text>
+  <text class="note" x="900" y="663">只处理实际差异；迁移前检查受影响引用</text>
+  <path class="edge" d="M300 690 V735"/>
+  <path class="edge" d="M900 690 V735"/>
+  <path class="decision" d="M300 735 L480 796 L300 857 L120 796 Z"/>
+  <text class="label" x="300" y="802">核心条件仍无法判断？</text>
+  <path class="decision" d="M900 735 L1080 796 L900 857 L720 796 Z"/>
+  <text class="label" x="900" y="802">校验与差异核对通过？</text>
+  <path class="edge" d="M300 857 V900"/>
+  <text class="note" x="277" y="884">否</text>
+  <path class="edge" d="M900 857 V900"/>
+  <text class="note" x="877" y="884">是</text>
+  <rect class="node done" x="80" y="900" width="440" height="74"/>
+  <text class="label" x="300" y="931">交付有依据的审查结论</text>
+  <text class="note" x="300" y="958">说明问题、成立条件与最小调整建议</text>
+  <rect class="node done" x="680" y="900" width="440" height="74"/>
+  <text class="label" x="900" y="931">交付已同步的规则与索引</text>
+  <text class="note" x="900" y="958">记录实际增删改、覆盖数、检查与版本</text>
+  <path class="edge" d="M120 796 H35 V1043 H80"/>
+  <text class="note" x="76" y="784">是</text>
+  <path class="edge" d="M1080 796 H1165 V1043 H1120"/>
+  <text class="note" x="1122" y="784">否</text>
+  <rect class="node pending" x="80" y="1006" width="440" height="74"/>
+  <text class="label" x="300" y="1037">澄清关键条件，交付已审部分</text>
+  <text class="note" x="300" y="1064">仅保留依赖答案的结论</text>
+  <rect class="node pending" x="680" y="1006" width="440" height="74"/>
+  <text class="label" x="900" y="1037">修复重验或说明待定差异</text>
+  <text class="note" x="900" y="1064">在授权范围内继续；不伪造完整同步</text>
+  <text class="note" x="600" y="1117">文字工作流是事实源 · 仅加载当前模式需要的资料</text>
+</svg>

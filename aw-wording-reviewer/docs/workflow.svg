@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1430" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1610" role="img" aria-labelledby="title desc">
 <title id="title">AW Wording Reviewer 工作流程</title>
-<desc id="desc">先确定简体中文审查范围和已有授权，再按任务读取相关规则。片段直接审查，源码按范围运行机械检查并复核语义；仅预检时提前交付。只审查则报告，已授权修改则完成修改与复验。时间接入有独立授权边界，缺少接入授权不阻断已有审查。无法验证时报告具体缺口。</desc>
+<desc id="desc">按范围审查文案；已授权时先完成独立字符串修改与验证，仅审查则交付结论。必要的非字符串实现项单独列出问题、建议、实现与影响范围；已有具体授权直接执行，否则明确请求同意并等待。批准后实施和验证，未批准保留未修状态。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52606d"/></marker>
 <style>
 text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#17212b}.title{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px;font-weight:400;fill:#52606d}.input{fill:#fff;stroke:#9eacb8}.step{fill:#edf6ff;stroke:#287bbb}.decision{fill:#fff7e6;stroke:#c98312}.stop{fill:#fff0ef;stroke:#c94b43}.result{fill:#edf9f1;stroke:#2e8b54}rect,polygon{stroke-width:2}.line{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}.join{fill:none;stroke:#52606d;stroke-width:2.5}
 </style></defs>
-<rect width="1200" height="1430" fill="#f7f9fb" stroke="none"/>
+<rect width="1200" height="1610" fill="#f7f9fb" stroke="none"/>
 <text class="title" x="600" y="48">AW Wording Reviewer</text>
 <rect class="input" x="390" y="80" width="420" height="68" rx="14"/><text class="label" x="600" y="108">确定审查范围与已有授权</text><text class="note" x="600" y="131">先看用户目标 · 保留规则选择与项目边界</text>
 <path class="line" d="M600 148V178"/>
@@ -29,13 +29,20 @@ text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-
 <path class="line" d="M410 864H330"/><text class="note" x="367" y="850">否</text>
 <rect class="result" x="50" y="830" width="280" height="68" rx="14"/><text class="label" x="190" y="858">交付有依据的审查结果</text><text class="note" x="190" y="881">位置、原文、改写与规则</text>
 <path class="line" d="M600 918V958"/><text class="note" x="621" y="944">是</text>
-<rect class="step" x="390" y="958" width="420" height="68" rx="14"/><text class="label" x="600" y="986">应用范围内的文案修改</text><text class="note" x="600" y="1009">保留 key、插值与其他语言</text>
-<path class="line" d="M600 1026V1064"/>
-<polygon class="decision" points="600,1064 810,1124 600,1184 390,1124"/><text class="label" x="600" y="1120">需要且已授权时间接入？</text><text class="note" x="600" y="1144">仅改字符串不包含接入</text>
-<path class="line" d="M810 1124H870"/><text class="note" x="839" y="1110">是</text>
-<rect class="step" x="870" y="1090" width="280" height="68" rx="14"/><text class="label" x="1010" y="1118">接入统一格式化器</text><text class="note" x="1010" y="1141">调整已授权的工具函数与调用</text>
-<path class="join" d="M1010 1158V1220H600"/><path class="join" d="M600 1184V1220"/><text class="note" x="622" y="1203">否</text><text class="note" x="354" y="1210">仅需要时报告待授权接入，不阻断交付</text>
-<path class="line" d="M600 1220V1256"/>
-<rect class="result" x="390" y="1256" width="420" height="78" rx="14"/><text class="label" x="600" y="1286">完成相关验证并交付</text><text class="note" x="600" y="1311">修复本次问题 · 说明未修项与验证缺口</text>
-<text class="note" x="600" y="1390">已获授权的修改持续到验证完成；必要检查失败时说明阻塞，不虚报通过</text>
+<rect class="step" x="390" y="958" width="420" height="68" rx="14"/><text class="label" x="600" y="986">完成独立字符串修改与验证</text><text class="note" x="600" y="1009">保留 key、插值与其他语言</text>
+<path class="join" d="M190 898V1050H600"/>
+<path class="join" d="M600 1026V1050"/><path class="line" d="M600 1050V1080"/>
+<polygon class="decision" points="600,1080 790,1134 600,1188 410,1134"/><text class="label" x="600" y="1140">有必要的非字符串实现项？</text>
+<path class="line" d="M790 1134H890"/><text class="note" x="835" y="1120">无</text>
+<rect class="result" x="890" y="1100" width="260" height="68" rx="14"/><text class="label" x="1020" y="1128">交付已完成结果</text><text class="note" x="1020" y="1151">说明验证与剩余问题</text>
+<path class="line" d="M600 1188V1220"/><text class="note" x="623" y="1210">有</text>
+<rect class="step" x="390" y="1220" width="420" height="68" rx="14"/><text class="label" x="600" y="1248">单独列出具体实现方案</text><text class="note" x="600" y="1271">当前问题 · 建议修改 · 涉及实现与影响范围</text>
+<path class="line" d="M600 1288V1320"/>
+<polygon class="decision" points="600,1320 790,1374 600,1428 410,1374"/><text class="label" x="600" y="1380">已有明确的具体授权？</text>
+<path class="line" d="M410 1374H330"/><text class="note" x="368" y="1360">无</text>
+<rect class="stop" x="40" y="1340" width="290" height="78" rx="14"/><text class="label" x="185" y="1370">明确请求同意并等待</text><text class="note" x="185" y="1395">未回复 / 拒绝：保留待确认或未修项</text>
+<path class="line" d="M600 1428V1480"/><text class="note" x="624" y="1457">有</text>
+<path class="join" d="M185 1418V1455H600"/><text class="note" x="327" y="1446">后续批准具体项</text>
+<rect class="result" x="390" y="1480" width="420" height="78" rx="14"/><text class="label" x="600" y="1510">实施获准项、验证并交付</text><text class="note" x="600" y="1535">已有授权不重复询问 · 部分批准仅实施批准项</text>
+<text class="note" x="600" y="1590">实现待确认不阻断独立字符串修改；不得仅报告未修项后略过确认</text>
 </svg>

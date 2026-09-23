@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-15T09:25:38+00:00",
+  "generated_at": "2026-09-21T03:33:21+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
       "name": "shadcn/ui Base",
-      "status": "stale",
-      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "status": "fresh",
+      "last_checked_at": "2026-09-21T03:33:21+00:00",
       "last_success_at": "2026-09-14T09:45:00+00:00",
-      "error": "TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds",
+      "error": null,
       "fetch": {
         "command:npx -y shadcn@latest list @shadcn --json --limit 100": {
           "sha256": "0f25787be0f1a500193634da8629c193b74c5a71906432c5fe3d87960238a298"
@@ -1119,10 +1119,10 @@
     "coss-ui": {
       "id": "coss-ui",
       "name": "coss ui",
-      "status": "stale",
-      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "status": "fresh",
+      "last_checked_at": "2026-09-21T03:33:21+00:00",
       "last_success_at": "2026-09-10T10:22:07+00:00",
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+      "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
           "etag": "W/\"78c8a00bd32f32c6051a1f3cb8014c36\"",
@@ -2127,17 +2127,17 @@
       "id": "dice-ui-base",
       "name": "Dice UI Base",
       "status": "fresh",
-      "last_checked_at": "2026-09-15T09:25:38+00:00",
-      "last_success_at": "2026-09-10T10:22:07+00:00",
+      "last_checked_at": "2026-09-21T03:33:21+00:00",
+      "last_success_at": "2026-09-20T15:30:21+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
-          "etag": "\"fdf6d0763826db888ac2fe5dbadb935a\"",
-          "last_modified": "Thu, 10 Sep 2026 10:23:13 GMT"
+          "etag": "\"cdbfd015b2411ffaf1895b066708aa31\"",
+          "last_modified": "Sun, 20 Sep 2026 15:30:58 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"144e5c74ae100c3d48585cd0f3a69298\"",
-          "last_modified": "Thu, 10 Sep 2026 10:23:16 GMT"
+          "etag": "\"022c0d2f69acb3d600640547014fe667\"",
+          "last_modified": "Sun, 20 Sep 2026 15:31:01 GMT"
         }
       },
       "config_sha256": "7a068f11b83e40a64d11e91736c37e42099ef058de9064ed274249ebe64e0643",
@@ -2154,6 +2154,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "button",
             "direction",
@@ -2178,6 +2179,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-as-ref",
@@ -2202,6 +2204,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2222,6 +2225,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2242,6 +2246,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "button",
             "@diceui/use-as-ref",
@@ -2265,6 +2270,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2285,6 +2291,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "button",
             "input",
@@ -2314,6 +2321,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2334,6 +2342,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@diceui/use-as-ref",
             "@diceui/use-isomorphic-layout-effect",
@@ -2357,6 +2366,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@diceui/use-as-ref",
             "@diceui/use-isomorphic-layout-effect",
@@ -2380,6 +2390,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-as-ref",
@@ -2404,6 +2415,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-as-ref",
@@ -2426,7 +2438,9 @@
           "source_url": "https://diceui.com/r/base-vega/fps.json",
           "foundation": "base-ui",
           "variant": "base",
-          "dependencies": [],
+          "dependencies": [
+            "cn"
+          ],
           "license": "MIT; verify exact source before copying",
           "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
           "port_eligible": false,
@@ -2445,6 +2459,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2465,6 +2480,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@dnd-kit/core",
             "@dnd-kit/modifiers",
@@ -2490,6 +2506,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "button",
             "input",
@@ -2516,6 +2533,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction"
           ],
@@ -2537,6 +2555,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2578,6 +2597,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "media-chrome",
             "badge",
@@ -2606,6 +2626,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "cmdk",
             "popover",
@@ -2633,6 +2654,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@diceui/pptx",
             "button",
             "@diceui/use-mobile"
@@ -2655,6 +2677,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "qrcode",
             "@diceui/use-lazy-ref"
@@ -2677,6 +2700,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-as-ref",
@@ -2701,6 +2725,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "hover-card"
           ],
@@ -2722,7 +2747,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
-            "vaul",
+            "cn",
             "dialog",
             "drawer",
             "@diceui/use-as-ref",
@@ -2748,6 +2773,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-as-ref",
@@ -2772,6 +2798,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2792,6 +2819,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "input",
             "direction"
@@ -2814,6 +2842,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@floating-ui/react-dom",
             "button",
@@ -2839,6 +2868,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@dnd-kit/core",
             "@dnd-kit/modifiers",
@@ -2864,6 +2894,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "button",
             "@diceui/use-as-ref",
@@ -2888,6 +2919,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2908,6 +2940,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "separator"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2928,6 +2961,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react"
           ],
           "license": "MIT; verify exact source before copying",
@@ -2948,6 +2982,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-as-ref",
@@ -2972,6 +3007,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@diceui/use-as-ref",
             "@diceui/use-isomorphic-layout-effect",
@@ -2995,6 +3031,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "popover",
             "@diceui/use-as-ref",
@@ -3019,6 +3056,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "direction",
             "@diceui/use-isomorphic-layout-effect",
@@ -3042,6 +3080,7 @@
           "foundation": "base-ui",
           "variant": "base",
           "dependencies": [
+            "cn",
             "@base-ui/react",
             "@floating-ui/react-dom",
             "button",
@@ -3062,13 +3101,13 @@
       "id": "reui-public-base",
       "name": "ReUI Public Base",
       "status": "fresh",
-      "last_checked_at": "2026-09-15T09:25:38+00:00",
-      "last_success_at": "2026-09-14T09:45:00+00:00",
+      "last_checked_at": "2026-09-21T03:33:21+00:00",
+      "last_success_at": "2026-09-17T04:45:10+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"2cb0592adc61d47aadf8d365bf8f92733ad17b4c386d13564eb87a2c6dbe476d\"",
-          "last_modified": "Mon, 14 Sep 2026 06:35:06 GMT"
+          "etag": "W/\"75be7baaf802ae37ed5843612d6b2e2b1babe1321524548235fd5ef78b9d5537\"",
+          "last_modified": "Thu, 17 Sep 2026 04:38:29 GMT"
         }
       },
       "config_sha256": "c60f8ff973c5aef67d7a4472e751ab40d8e521110b07549fe10b3519ac7bb826",
@@ -4429,7 +4468,7 @@
       "id": "exabase-design",
       "name": "exaBase Design System",
       "status": "fresh",
-      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_checked_at": "2026-09-21T03:33:21+00:00",
       "last_success_at": "2026-09-14T09:45:00+00:00",
       "error": null,
       "fetch": {
@@ -5436,7 +5475,7 @@
       "id": "fluid-functionalism",
       "name": "Fluid Functionalism",
       "status": "fresh",
-      "last_checked_at": "2026-09-15T09:25:38+00:00",
+      "last_checked_at": "2026-09-21T03:33:21+00:00",
       "last_success_at": "2026-09-10T10:22:07+00:00",
       "error": null,
       "fetch": {
