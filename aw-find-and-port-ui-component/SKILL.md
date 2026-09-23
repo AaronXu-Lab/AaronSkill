@@ -3,7 +3,7 @@ name: aw-find-and-port-ui-component
 description: Find and compare implementations for a concrete UI component, or adapt an explicitly selected component implementation into a target project. Use for component-level discovery or porting, not whole app, page, workspace, or generic file migration.
 metadata:
   author: aaron_xu
-  version: "1.3.0"
+  version: "1.4.0"
   creation_context: "为将 UI 组件发现、比较、来源验证与项目移植整合为通用的两阶段工作流而创建，在保留用户明确选择门的同时，统一处理许可证、依赖兼容性、现有组件复用与目标项目风格适配。"
 ---
 
@@ -11,7 +11,7 @@ metadata:
 
 Discover suitable implementations or adapt a selected reference when the request centers on one concrete UI component.
 
-Read the [workflow](docs/workflow.md) first to apply the intent-and-granularity gate, select one phase and use its shared evidence, authorization and completion rules. Then read only the selected phase:
+Read the [workflow](references/workflow.md) first to apply the intent-and-granularity gate, select one phase and use its shared evidence, authorization and completion rules. Then read only the selected phase:
 
 - [Find](references/find.md): discovery, comparison and recommendations; ends at explicit user selection.
 - [Port](references/port.md): requested implementation of an explicitly selected candidate or exact source.

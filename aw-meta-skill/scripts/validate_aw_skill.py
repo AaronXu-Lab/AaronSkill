@@ -91,6 +91,51 @@ def svg_resource_errors(root: ET.Element, source: str) -> list[str]:
     return list(dict.fromkeys(errors))
 
 
+def workflow_hierarchy_errors(skill_dir: Path, main_root: ET.Element) -> list[str]:
+    """Require direct, visible main-diagram links and prevent deeper SVG nesting."""
+    docs = skill_dir / "docs"
+    children = sorted(docs.glob("workflow.*.svg"))
+    errors: list[str] = []
+    main_links: list[tuple[str, str]] = []
+    for node in main_root.iter():
+        if local_name(node.tag) == "a":
+            href = node.get("href") or node.get("{http://www.w3.org/1999/xlink}href") or ""
+            label = "".join(node.itertext()).strip()
+            main_links.append((href, label))
+
+    for child in children:
+        name = child.name
+        matching = [
+            (href, label) for href, label in main_links
+            if not re.match(r"^[A-Za-z][A-Za-z0-9+.-]*:", href)
+            and not href.startswith("/")
+            and Path(href.split("#", 1)[0]).name == name
+            and name in label
+        ]
+        if not matching:
+            errors.append(
+                f"docs/workflow.svg must show the visible filename {name} as a direct relative link"
+            )
+        try:
+            child_root = ET.fromstring(child.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, ET.ParseError):
+            # The regular SVG validation reports malformed child diagrams separately.
+            continue
+        for node in child_root.iter():
+            if local_name(node.tag) != "a":
+                continue
+            href = node.get("href") or node.get("{http://www.w3.org/1999/xlink}href") or ""
+            if re.search(r"(?:^|/)workflow(?:\.[^/#]+)?\.svg(?:#.*)?$", href):
+                errors.append(f"{name} must not link to another workflow SVG")
+                break
+        source = child.read_text(encoding="utf-8")
+        references = set(re.findall(r"\bworkflow\.[A-Za-z0-9_-]+\.svg\b", source))
+        references.discard(name)
+        if references:
+            errors.append(f"{name} must not reference deeper workflow SVGs: {', '.join(sorted(references))}")
+    return errors
+
+
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
@@ -109,11 +154,15 @@ def load_frontmatter(skill_md: Path) -> tuple[dict, str]:
 def validate(skill_dir: Path) -> list[str]:
     errors: list[str] = []
     skill_md = skill_dir / "SKILL.md"
-    workflow_md = skill_dir / "docs" / "workflow.md"
+    workflow_md = skill_dir / "references" / "workflow.md"
     workflow_svg = skill_dir / "docs" / "workflow.svg"
+    legacy_workflow_md = skill_dir / "docs" / "workflow.md"
 
     if not skill_md.is_file():
         return ["SKILL.md is missing"]
+
+    if legacy_workflow_md.exists():
+        errors.append("docs/workflow.md is obsolete; keep the execution workflow only at references/workflow.md")
 
     try:
         frontmatter, body = load_frontmatter(skill_md)
@@ -132,26 +181,26 @@ def validate(skill_dir: Path) -> list[str]:
         if isinstance(version, str) and version.strip() and not SEMVER.fullmatch(version.strip()):
             errors.append("metadata.version must use semantic versioning (MAJOR.MINOR.PATCH)")
 
-    if not has_workflow_link(body, 'docs/workflow.md', image=False):
-        errors.append("SKILL.md must link to docs/workflow.md with descriptive text")
+    if not has_workflow_link(body, 'references/workflow.md', image=False):
+        errors.append("SKILL.md must link to references/workflow.md with descriptive text")
     if not has_workflow_link(body, 'docs/workflow.svg', image=True):
         errors.append("SKILL.md must embed docs/workflow.svg with descriptive alt text")
 
     if not workflow_md.is_file():
-        errors.append("docs/workflow.md is missing")
+        errors.append("references/workflow.md is missing")
     else:
         try:
             workflow_text = workflow_md.read_text(encoding="utf-8")
         except (OSError, UnicodeError) as exc:
-            errors.append(f"docs/workflow.md cannot be read: {exc}")
+            errors.append(f"references/workflow.md cannot be read: {exc}")
         else:
             workflow_text = prose_only(workflow_text, keep_inline_code=True)
             if not re.search(r"^#\s+\S", workflow_text, re.MULTILINE):
-                errors.append("docs/workflow.md must contain a top-level heading")
+                errors.append("references/workflow.md must contain a top-level heading")
             if not re.search(r"^##\s+\S", workflow_text, re.MULTILINE):
-                errors.append("docs/workflow.md must contain structured sections")
+                errors.append("references/workflow.md must contain structured sections")
             if "workflow.svg" not in workflow_text:
-                errors.append("docs/workflow.md must identify workflow.svg as its visual projection")
+                errors.append("references/workflow.md must identify ../docs/workflow.svg as its visual projection")
 
     if not workflow_svg.is_file():
         errors.append("docs/workflow.svg is missing")
@@ -187,6 +236,7 @@ def validate(skill_dir: Path) -> list[str]:
     if not any(local_name(node.tag) == 'text' and ''.join(node.itertext()).strip() for node in descendants):
         errors.append('docs/workflow.svg must contain non-empty text labels')
     errors.extend(svg_resource_errors(root, source))
+    errors.extend(workflow_hierarchy_errors(skill_dir, root))
 
     return errors
 

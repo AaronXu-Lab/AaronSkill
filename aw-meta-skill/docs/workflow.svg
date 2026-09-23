@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1340" role="img" aria-labelledby="title desc">
 <title id="title">AW Meta Skill 工作流程</title>
-<desc id="desc">明确范围与基础规范并检查版本授权；新建或聚焦更新，落实目标 Skill 的描述、按需加载、授权与完成标准等编写准则。先维护文本工作流，按需更新或复核 SVG，否则复用有效视觉证据。双校验与相关检查通过后交付，失败则修复或报告阻塞。</desc>
+<desc id="desc">明确范围与基础规范并检查版本授权；新建或聚焦更新，落实目标 Skill 的描述、按需加载、授权、完成标准及最多两层的主图子图规则。先维护文本工作流，按需更新或复核 SVG，否则复用有效视觉证据。双校验与相关检查通过后交付，失败则修复或报告阻塞。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/></marker>
 <style>
 .canvas{fill:#f7f9fb}.title{font:700 30px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#1f2933;text-anchor:middle}.label{font:600 18px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#1f2933;text-anchor:middle}.detail{font:400 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#52606d;text-anchor:middle}.input{fill:#ffffff;stroke:#9eacb8;stroke-width:2}.step{fill:#edf6ff;stroke:#287bbb;stroke-width:2}.gate{fill:#fff7e6;stroke:#c98312;stroke-width:2}.stop{fill:#fff0ef;stroke:#c94b43;stroke-width:2}.done{fill:#edf9f1;stroke:#2e8b54;stroke-width:2}.link{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}
@@ -51,7 +51,7 @@
 <text class="detail" x="735.0" y="663">保留依赖、策略与范围外内容</text>
 <rect class="step" x="280" y="740" width="500" height="70" rx="14"/>
 <text class="label" x="530.0" y="769">落实编写准则与文本工作流</text>
-<text class="detail" x="530.0" y="793">描述明确、资料按需加载、完成标准可验证</text>
+<text class="detail" x="530.0" y="793">资料按需加载、主图直链子图且最多两层</text>
 <path class="link" d="M780 905 H900"/>
 <path class="link" style="marker-end:none" d="M1030 950 V1005 H530"/>
 <path class="link" d="M530 960 V1050"/>

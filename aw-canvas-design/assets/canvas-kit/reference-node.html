@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>引用节点 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-spec">
+<header><h1>引用节点</h1><p>指向其他流程的单行节点，尺寸明显小于页面卡片。</p><nav><a href="index.html">目录</a><a href="page-card.html">页面卡片</a><a href="decision-node.html">判断节点</a><a href="reference-node.html">引用节点</a><a href="note-node.html">说明节点</a><a href="edge-styles.html">连线与标签</a><a href="sidebar.html">目录面板</a><a href="legend.html">图例</a><a href="controls.html">视口控件</a><a href="canvas-shell.html">整页组合</a></nav></header>
+<section class="ck-demo">
+<h2>标准状态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots>
+<figure><section class="ck-node" data-kind="reference">
+  <header class="ck-compact"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg><h2>注册与找回</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看注册与找回" title="查看注册与找回"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-right"/></svg></button></header>
+</section><figcaption>跨流程引用</figcaption></figure><figure><section class="ck-node" data-kind="reference">
+  <header class="ck-compact"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg><h2>选择与开通组织</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看选择与开通组织" title="查看选择与开通组织"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-right"/></svg></button></header>
+</section><figcaption>较长标题</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>单行、高约 49px（46px 内容 + 描边）、宽 max-content 且至少 160px；1.5px 虚线描边、白底。</li><li>左侧跨流程图标，标题 20px / 500，右侧箭头按钮打开目标流程（按钮带 nodrag）。</li><li>同一流程内同一目标默认只放一个；只有合并会产生回指边、穿过节点、超过 2 个拐点或迫使分支列插进主路径时才复制，复制的实例标题相同。</li><li>单行节点不能为了入边端口被撑高：多条不同条件的入边时，第一条从左侧基线进入，其余从底边进入。</li></ul>
+</section>
+
+</main>
+</body>
+</html>

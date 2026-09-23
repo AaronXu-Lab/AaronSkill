@@ -9,7 +9,7 @@
 - 每次版本号发生变化，都必须主动通知用户并报告“旧版本 → 新版本”，不得静默升级。
 - 只修改仓库级文件且没有改变任何 Skill 时，不提升 Skill 版本。
 - 版本变化后，同步更新根目录 `README.md` 的 Skill 版本列，确保它与 `SKILL.md` 一致。
-- 工作流发生变化时，先更新 `docs/workflow.md`，再同步 `docs/workflow.svg` 和 `SKILL.md` 中的相关说明。
+- 工作流发生变化时，先更新 `references/workflow.md`，再同步 `docs/workflow.svg` 和 `SKILL.md` 中的相关说明。
 - 交付前同时运行 `skill-creator` 的基础校验器和 `aw-meta-skill/scripts/validate_aw_skill.py`，不得把校验失败的 Skill 标记为完成。
 
 ## Skill 分类

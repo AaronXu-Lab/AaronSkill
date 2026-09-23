@@ -26,7 +26,7 @@
 
 - Skill 版本以 [SKILL.md](../SKILL.md) 的 `metadata.version` 为准。指令、资料、脚本、测试或资源变化按仓库规则更新版本和根 README；默认 MINOR，小修 PATCH，未获明确授权不提升 MAJOR。保留 author 与 creation_context，不添加供应商专属 metadata。
 - 数据与 action 版本以 [assets/fake/version.ts](../assets/fake/version.ts) 为准。兼容新增数据字段提升 `FAKE_DATA_VERSION` 的 MINOR，小修 PATCH；只有通用 action 行为改变才提升 `FAKE_LOGIC_VERSION`。字段删除、重命名或不兼容行为涉及 MAJOR，必须先核对明确授权。
-- 流程变化先更新 `docs/workflow.md`，再同步 SVG 与入口。数据、action、Skill 三种版本按各自实际变更决定，不机械联动。
+- 流程变化先更新 `references/workflow.md`，再同步 SVG 与入口。数据、action、Skill 三种版本按各自实际变更决定，不机械联动。
 
 ## 验证
 
@@ -35,7 +35,7 @@
 | 变更 | 检查 |
 | --- | --- |
 | 每次 Skill 更新 | 基础 `skill-creator/scripts/quick_validate.py` 与 `aw-meta-skill/scripts/validate_aw_skill.py` 两项校验，核对元数据、链接、README 版本。路径按环境解析。 |
-| 描述、路由、授权或完成条件 | 用适用请求、容易误触发的反例、局部修改请求走查；实质调整时做隔离项目回放。记录读取范围、完成结果、额外确认与越界行为，不以字数下降当作效果提升。 |
+| 描述、路由、授权或完成条件 | 用适用请求、容易误触发的反例、局部修改请求走查；实质调整时做隔离项目回放。涉及真实契约优先级时，检查全局假数据开关开启/关闭两态、真实空/加载/失败/业务状态及 fake ID 写入隔离。记录读取范围、完成结果、额外确认与越界行为，不以字数下降当作效果提升。 |
 | canonical 数据、源码、action 或生成器 | `node scripts/fake-bundle.mjs --self-check`；检查值、源码指纹、生成文本与同步。修改源码基线须有用户明确更换源码的依据。 |
 | 跨层接入、adapter 或状态行为 | 运行受影响的原型集成/项目检查；有新流程或非平凡交互时按项目约定验证浏览器。 |
 | 工作流或 SVG | 检查文本与图语义一致，图或流程改变时渲染目视复核。 |

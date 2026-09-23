@@ -8,13 +8,13 @@
 
 | 请求 | 读取资料 | 工作范围 |
 | --- | --- | --- |
-| 新建契约 | [规范摘要](../references/spec-summary.md)、[编写约定](../references/authoring-conventions.md)与[校验指南](../references/lint-rules.md) | 覆盖文档实际拥有的完整设计范围；示例仅在需要格式或设计参考时读取 |
+| 新建契约 | [规范摘要](spec-summary.md)、[编写约定](authoring-conventions.md)与[校验指南](lint-rules.md) | 覆盖文档实际拥有的完整设计范围；示例仅在需要格式或设计参考时读取 |
 | 局部规范维护 | 编写约定中相关章节、校验指南；涉及 schema 时读规范摘要相关部分 | 检查完整契约，修改拥有层及受影响引用；沿用无关设计决定 |
 | 审查 | 全面审查读规范摘要、编写约定、校验指南；专项审查读相应章节 | 检查完整契约，在请求的审查维度报告问题；不自动修复 |
 | 仅运行校验 | 校验指南；需要解释发现时再读对应规范或约定 | 运行检查，报告证据，保持文件不变 |
-| 纯注释 TODO | [注释模式](../references/annotation-mode.md)、校验指南 | 保存基线，记录待定设计或已定契约的实现迁移，不改规范 |
+| 纯注释 TODO | [注释模式](annotation-mode.md)、校验指南 | 保存基线，记录待定设计或已定契约的实现迁移，不改规范 |
 
-涉及间距命名或迁移时，读取[尺寸档位与迁移](../references/authoring-conventions.md#spacing-tiers-and-migration)；涉及正文修改或正文审查时，读取同一文档的 Prose 与 Body boundary examples；涉及主题时读取 Multi-theme systems。参考文档可按章节读取。不能用减少资料读取代替必要的契约检查或验证。
+涉及间距命名或迁移时，读取[尺寸档位与迁移](authoring-conventions.md#spacing-tiers-and-migration)；涉及正文修改或正文审查时，读取同一文档的 Prose 与 Body boundary examples；涉及主题时读取 Multi-theme systems。参考文档可按章节读取。不能用减少资料读取代替必要的契约检查或验证。
 
 全面创建、优化或设计质量审查时，读取编写约定的 Design intent、Layout and media、Visual states and composition 与 Semantic consistency；专项请求只读取涉及的维度。需要设计参考时按适用意图选择 exemplar patterns，不将其配色、形状或密度偏好作为项目默认规则。
 

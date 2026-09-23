@@ -1,0 +1,700 @@
+/*
+ * canvas-kit：流程画布的视觉标准件。
+ * 所有取值集中在 :root 的 --ck-* token 上；接入有设计系统的项目时，把这些 token 映射到项目 token，
+ * 组件结构与尺寸保持不变。组件尺寸均为画布坐标（缩放 100% 时的像素）。
+ */
+:root {
+  /* 字体 */
+  --ck-font: "Geist Variable", "Geist", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+
+  /* 中性色 */
+  --ck-black: #000000;
+  --ck-surface: #ffffff;
+  --ck-canvas: #ffffff;
+  /* 画布底色：黑 2% 混入画布色，中性淡灰，不带蓝调。 */
+  --ck-canvas-bg: color-mix(in srgb, var(--ck-black) 2%, var(--ck-canvas));
+  /* 目录面板：设计系统侧栏的凹陷底色。 */
+  --ck-canvas-recessed: #f1f6fc;
+  /* 预览区：黑 3% 混入卡片底色。 */
+  --ck-preview-bg: color-mix(in srgb, var(--ck-black) 3%, var(--ck-surface));
+  --ck-dot: color-mix(in srgb, var(--ck-black) 6%, transparent);
+  --ck-ink: #10151f;
+  --ck-ink-strong: #080d14;
+  --ck-ink-muted: #4b5565;
+  --ck-ink-faint: #6b778a;
+  --ck-ink-section: color-mix(in srgb, #6b778a 72%, transparent);
+  --ck-line-subtle: color-mix(in srgb, #6b778a 20%, transparent);
+  --ck-line-default: #dde7f2;
+  --ck-hover-overlay: color-mix(in srgb, var(--ck-black) 5%, transparent);
+
+  /* 语义色 */
+  --ck-accent: #3363ad;
+  --ck-accent-subtle: #f2f6fb;
+  --ck-primary: #10151f;
+  --ck-warning: #b35b00;
+  --ck-warning-subtle: #fbf4ef;
+  --ck-warning-ink: #974d06;
+  --ck-error: #dc0736;
+
+  /* 描边、圆角、投影 */
+  --ck-border-subtle: 0.5px solid var(--ck-line-subtle);
+  --ck-border-default: 1px solid var(--ck-line-default);
+  --ck-radius-md: 8px;
+  --ck-radius-lg: 12px;
+  --ck-radius-xl: 16px;
+  --ck-radius-full: 9999px;
+  --ck-shadow-hover: 0 2px 6px 0 color-mix(in srgb, #10151f 4%, transparent);
+  --ck-shadow-floating: 0 4px 20px -6px color-mix(in srgb, #10151f 10%, transparent), 0 2px 8px color-mix(in srgb, #10151f 4%, transparent);
+
+  /* 间距与动效 */
+  --ck-inset: 20px;
+  --ck-space-xs: 4px;
+  --ck-space-sm: 6px;
+  --ck-space-md: 8px;
+  --ck-space-lg: 12px;
+  --ck-motion-fast: 140ms ease;
+  --ck-motion-base: 190ms cubic-bezier(0.2, 0, 0, 1);
+  --ck-opacity-disabled: 0.4;
+
+  /* 连线 */
+  --ck-edge-main: var(--ck-ink-strong);
+  --ck-edge-branch: var(--ck-ink-muted);
+  --ck-edge-fault: var(--ck-error);
+  --ck-edge-peek: var(--ck-accent);
+
+  /* 画布几何：与参考实现 layout.ts 的常量一致。 */
+  --ck-card-min-width: 240px;
+  --ck-preview-width: 196px;   /* 392 × 0.5 */
+  --ck-preview-height: 280px;  /* 560 × 0.5 */
+  --ck-sidebar-width: 280px;
+  --ck-dot-gap: 27px;
+}
+
+.ck-page, .ck-page * { box-sizing: border-box; }
+.ck-page {
+  margin: 0;
+  font-family: var(--ck-font);
+  color: var(--ck-ink);
+  -webkit-font-smoothing: antialiased;
+}
+.ck-icon { width: 1em; height: 1em; flex: none; fill: currentColor; }
+
+/* ───────── 画布 ───────── */
+/* 自成层叠上下文，不设 z-index：设计系统的 Dialog / Popover（通常 z-index 50）才能盖在画布上。 */
+.ck-canvas {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--ck-canvas-bg);
+}
+/* 静态演示用 CSS 点阵；真实画布用画布库的背景组件，随平移缩放（间距 27、点色 6% 黑、半径约 1.5）。 */
+.ck-canvas[data-static-dots] {
+  background-image: radial-gradient(circle, var(--ck-dot) 1.5px, transparent 1.6px);
+  background-size: var(--ck-dot-gap) var(--ck-dot-gap);
+}
+
+/* ───────── 通用节点 ───────── */
+.ck-node {
+  position: relative;
+  border-radius: var(--ck-radius-lg);
+  color: var(--ck-ink);
+  cursor: grab;
+  user-select: none;
+}
+.ck-node:active { cursor: grabbing; }
+.ck-node[data-selected] { outline: 3px solid var(--ck-ink); outline-offset: 6px; }
+/* 悬停出口时，去向卡片描一圈强调色虚线。 */
+.ck-node[data-peek-target] { outline: 2px dashed var(--ck-accent); outline-offset: 6px; }
+.ck-kind-icon { flex: none; color: var(--ck-ink-muted); }
+
+/* 入口：卡片外上方的一枚白底小旗，不占卡片主体。 */
+.ck-entry {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: -1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 9px 0 7px;
+  border: var(--ck-border-subtle);
+  border-radius: var(--ck-radius-full);
+  background: var(--ck-surface);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ck-black) 6%, transparent);
+  color: var(--ck-ink);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.ck-entry::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: var(--ck-radius-full);
+  background: var(--ck-accent);
+}
+
+/* ───────── 页面卡片（方向 C：顶栏 / 预览 / 底栏） ───────── */
+.ck-node[data-kind="screen"] {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  min-width: var(--ck-card-min-width);
+  border: var(--ck-border-subtle);
+  background: var(--ck-surface);
+  box-shadow: var(--ck-shadow-floating);
+}
+/* 顶栏与底栏用 contain: inline-size，不参与撑宽；卡片宽度只随预览变化。 */
+.ck-card-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 52px;
+  padding: 0 8px 0 16px;
+  border-bottom: var(--ck-border-subtle);
+  contain: inline-size;
+}
+.ck-card-bar h2 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 顶栏右侧的次要图标按钮：info 在左、重置场景在右。 */
+.ck-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ck-radius-md);
+  background: transparent;
+  color: var(--ck-ink-faint);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color var(--ck-motion-fast), color var(--ck-motion-fast);
+}
+.ck-icon-btn:hover, .ck-icon-btn:focus-visible { background: var(--ck-hover-overlay); color: var(--ck-ink); }
+.ck-card-body {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  background: var(--ck-preview-bg);
+}
+.ck-card-body:last-child { border-radius: 0 0 calc(var(--ck-radius-lg) - 1px) calc(var(--ck-radius-lg) - 1px); }
+/* 预览占位：真实实现里是按 0.5 缩放的透明 iframe，不垫白底、不套内框。 */
+.ck-preview {
+  position: relative;
+  width: var(--ck-preview-width);
+  height: var(--ck-preview-height);
+  background: transparent;
+}
+.ck-preview iframe { display: block; border: none; background: transparent; }
+/* 演示用的页面缩略图：代表 iframe 内的真实页面。 */
+.ck-mock-page {
+  position: absolute;
+  inset: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 26px 16px 16px;
+  border: 1px solid var(--ck-line-default);
+  border-radius: 10px;
+  background: var(--ck-surface);
+}
+.ck-mock-page i { display: block; height: 7px; border-radius: 4px; background: #e6ebf1; }
+.ck-mock-page i[data-w="logo"] { width: 18px; height: 18px; border-radius: 50%; background: #d7dee7; margin-bottom: 4px; }
+.ck-mock-page i[data-w="title"] { width: 58%; height: 9px; background: #cfd7e1; }
+.ck-mock-page i[data-w="input"] { width: 100%; height: 20px; margin-top: 8px; border: 1px solid #dde3ea; background: #fff; border-radius: 10px; }
+.ck-mock-page i[data-w="button"] { width: 100%; height: 18px; background: var(--ck-ink); border-radius: 9px; }
+.ck-mock-page i[data-w="line"] { width: 44%; }
+/* 加载骨架：收到预览的首次尺寸上报前显示，不留空白框。 */
+.ck-skeleton {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  border: var(--ck-border-subtle);
+  border-radius: var(--ck-radius-lg);
+  background: var(--ck-surface);
+}
+.ck-skeleton i {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eef1f5 0%, #f6f8fa 50%, #eef1f5 100%);
+  background-size: 200% 100%;
+  animation: ck-shimmer 1.4s ease-in-out infinite;
+}
+.ck-skeleton i:first-child { width: 60%; }
+.ck-skeleton i:last-child { height: 40px; margin-top: 12px; }
+@keyframes ck-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+/* 底栏：场景切换（描边小按钮）+ 出口。 */
+.ck-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-top: var(--ck-border-subtle);
+  contain: inline-size;
+  cursor: default;
+}
+.ck-variant {
+  height: 26px;
+  padding: 0 10px;
+  border: var(--ck-border-subtle);
+  border-radius: var(--ck-radius-md);
+  background: var(--ck-surface);
+  color: var(--ck-ink-muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.ck-variant[aria-pressed="true"] { border-color: var(--ck-ink); color: var(--ck-ink); }
+/* 出口：一排小控件，不画常驻线；悬停时画布临时画出去向线，或用提示说明去向。 */
+.ck-exits {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ck-exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  height: 26px;
+  padding: 0 8px;
+  border: none;
+  border-radius: var(--ck-radius-md);
+  background: transparent;
+  color: var(--ck-ink-muted);
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: default;
+  transition: background-color var(--ck-motion-fast), color var(--ck-motion-fast);
+}
+.ck-exit:hover, .ck-exit:focus-visible, .ck-exit[data-hover] { background: var(--ck-hover-overlay); color: var(--ck-ink); }
+/* 去向在其他流程时的提示。 */
+.ck-tooltip {
+  position: absolute;
+  z-index: 50;
+  padding: 6px 10px;
+  border-radius: var(--ck-radius-md);
+  background: var(--ck-ink);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ───────── 判断节点 ───────── */
+/* 没有预览；判断依据直接写在标题下，只写分流的时机与依据。 */
+.ck-node[data-kind="decision"] {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  border: 2px solid var(--ck-accent);
+  border-radius: var(--ck-radius-xl);
+  background: var(--ck-accent-subtle);
+}
+.ck-node[data-kind="decision"] .ck-card-bar {
+  height: auto;
+  min-height: 52px;
+  padding-block: 12px;
+  border-bottom: none;
+}
+.ck-node[data-kind="decision"] .ck-card-bar:has(+ .ck-decision-detail) { padding-bottom: 4px; }
+.ck-node[data-kind="decision"] h2 { color: var(--ck-accent); white-space: normal; }
+.ck-node[data-kind="decision"] .ck-kind-icon { margin-right: 6px; color: var(--ck-accent); }
+.ck-decision-detail {
+  margin: 0;
+  padding: 0 16px 14px 38px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ck-ink-muted);
+}
+
+/* ───────── 引用节点与说明节点（单行、紧凑） ───────── */
+.ck-node[data-kind="reference"] {
+  width: max-content;
+  min-width: 160px;
+  border: 1.5px dashed var(--ck-primary);
+  background: var(--ck-surface);
+}
+.ck-node[data-kind="note"] {
+  width: max-content;
+  max-width: 320px;
+  border: 1px solid var(--ck-warning);
+  background: var(--ck-warning-subtle);
+}
+.ck-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 46px;
+  padding: 0 var(--ck-space-sm) 0 var(--ck-space-md);
+  white-space: nowrap;
+}
+.ck-compact h2 { margin: 0; font-size: 20px; font-weight: 500; }
+.ck-compact .ck-icon-btn { color: var(--ck-ink); }
+details.ck-compact { display: block; }
+details.ck-compact summary { display: flex; align-items: center; gap: 6px; height: 46px; cursor: pointer; list-style: none; }
+details.ck-compact summary::-webkit-details-marker { display: none; }
+details.ck-compact[open] { height: auto; padding-bottom: var(--ck-space-sm); }
+.ck-node[data-kind="note"] .ck-kind-icon { color: var(--ck-warning-ink); }
+.ck-note-body {
+  margin: 0;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+  color: var(--ck-ink-muted);
+}
+
+/* ───────── 连线与标签（SVG） ───────── */
+.ck-edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+.ck-edge { fill: none; transition: opacity 160ms ease; }
+.ck-edge[data-kind="main"] { stroke: var(--ck-edge-main); stroke-width: 3; }
+.ck-edge[data-kind="branch"] { stroke: var(--ck-edge-branch); stroke-width: 2; }
+.ck-edge[data-kind="fault"] { stroke: var(--ck-edge-fault); stroke-width: 2; stroke-dasharray: 8 6; }
+.ck-edge[data-kind="peek"] { stroke: var(--ck-edge-peek); stroke-width: 2; stroke-dasharray: 6 4; }
+/* 默认「全部」：主路径强调，分支淡化；选中节点时相邻边加粗、无关边几乎隐去。 */
+.ck-edge[data-tone="faded"] { opacity: 0.5; }
+.ck-edge[data-tone="hidden"] { opacity: 0.1; }
+.ck-edge[data-kind="main"][data-tone="focus"] { stroke-width: 4; }
+.ck-edge[data-kind="branch"][data-tone="focus"], .ck-edge[data-kind="fault"][data-tone="focus"] { stroke-width: 3; }
+/* 主路径与分支标签同一套样式：同样的框、底色和字号，只用字重和颜色区分层级；标签贴在所属线段上、靠近目标。 */
+.ck-edge-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0 10px;
+  border: var(--ck-border-default);
+  border-radius: 6px;
+  background: var(--ck-surface);
+  color: var(--ck-ink-muted);
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+.ck-edge-label[data-kind="main"] { color: var(--ck-ink); font-weight: 600; }
+.ck-edge-label[data-kind="fault"] { color: var(--ck-error); }
+.ck-edge-label[data-kind="peek"] { color: var(--ck-accent); border-color: var(--ck-accent); }
+.ck-edge-label[data-tone="hidden"] { opacity: 0.1; }
+@media (prefers-reduced-motion: reduce) {
+  .ck-edge, .ck-edge-label { transition: none; }
+}
+
+/* ───────── 目录（设计系统侧栏的组合） ───────── */
+/* 面板配方：凹陷底、圆角 xl、无描边，只用最淡一档投影；浮在画布上，不挤占布局。 */
+.ck-sidebar {
+  position: absolute;
+  top: var(--ck-inset);
+  bottom: var(--ck-inset);
+  left: var(--ck-inset);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  width: min(var(--ck-sidebar-width), 84vw);
+  min-height: 0;
+  border-radius: var(--ck-radius-xl);
+  background: var(--ck-canvas-recessed);
+  box-shadow: var(--ck-shadow-hover);
+  overflow: hidden;
+  transition: opacity var(--ck-motion-base), transform var(--ck-motion-base);
+}
+/* 收起：面板保持挂载（配合 inert），平移淡出。 */
+.ck-sidebar[data-closed] { opacity: 0; pointer-events: none; transform: translateX(calc(-100% - var(--ck-inset))); }
+.ck-sidebar-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  height: 64px;
+  padding: 0 12px;
+  flex: none;
+}
+.ck-topbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ck-radius-full);
+  background: transparent;
+  color: var(--ck-ink);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color var(--ck-motion-fast);
+}
+.ck-topbar-btn:hover, .ck-topbar-btn:focus-visible { background: var(--ck-hover-overlay); }
+.ck-sidebar-title { padding: var(--ck-space-md) 24px var(--ck-space-md); flex: none; }
+.ck-sidebar-title span { display: block; color: var(--ck-ink-faint); font-size: 12px; line-height: 16px; }
+.ck-sidebar-body {
+  flex: 1;
+  min-height: 0;
+  padding: var(--ck-space-md) var(--ck-space-lg) 18px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.ck-sidebar-body > section + section { margin-top: var(--ck-space-lg); }
+.ck-section { display: flex; flex-direction: column; gap: 2px; }
+/* 分组标题：可收起，右侧可带数量。 */
+.ck-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--ck-radius-md);
+  background: transparent;
+  color: var(--ck-ink-section);
+  font: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+.ck-section-header:hover { background: var(--ck-hover-overlay); }
+.ck-section-items, .ck-group-items { display: flex; flex-direction: column; gap: 4px; }
+.ck-section[data-collapsed] > .ck-section-items, .ck-group[data-collapsed] > .ck-group-items { display: none; }
+.ck-group { display: flex; flex-direction: column; gap: 4px; }
+/* 目录项：40px 高、16px 字；当前项用白底标出，不能只改文字颜色。 */
+.ck-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--ck-radius-md);
+  background: transparent;
+  color: var(--ck-ink-muted);
+  font: inherit;
+  font-size: 16px;
+  line-height: 18.4px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--ck-motion-fast), color var(--ck-motion-fast);
+}
+.ck-item:hover { background: var(--ck-hover-overlay); color: var(--ck-ink); }
+.ck-item[aria-current="true"], .ck-item[aria-pressed="true"] { background: var(--ck-surface); color: var(--ck-ink); }
+/* 子项缩进：父流程作为分组里的第一项，与子流程同级缩进；最多两级。 */
+.ck-item[data-indent] { padding-left: 38px; }
+.ck-item .ck-icon { font-size: 18px; }
+.ck-item-trailing { margin-left: auto; color: var(--ck-ink-faint); font-size: 16px; }
+/* 收起后的「展开目录」：与收起按钮同一位置。 */
+.ck-sidebar-trigger {
+  position: absolute;
+  top: calc(var(--ck-inset) + var(--ck-space-lg));
+  left: calc(var(--ck-inset) + var(--ck-space-lg));
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: var(--ck-border-default);
+  border-radius: var(--ck-radius-full);
+  background: var(--ck-surface);
+  box-shadow: var(--ck-shadow-floating);
+  color: var(--ck-ink);
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity var(--ck-motion-fast), transform var(--ck-motion-fast);
+}
+.ck-sidebar-trigger[data-hidden] { opacity: 0; transform: scale(0.97); pointer-events: none; }
+
+/* ───────── 图例（一行，只解释图形） ───────── */
+.ck-legend {
+  position: absolute;
+  z-index: 5;
+  left: calc(var(--ck-sidebar-space, 0px) + var(--ck-inset));
+  bottom: var(--ck-inset);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 0;
+  min-height: 40px;
+  padding: 0 6px 0 14px;
+  border: var(--ck-border-subtle);
+  border-radius: 20px;
+  background: var(--ck-surface);
+  box-shadow: var(--ck-shadow-floating);
+  font-size: 12px;
+  color: var(--ck-ink-muted);
+  transition: left var(--ck-motion-base);
+}
+.ck-legend[data-inline] { position: static; display: inline-flex; }
+.ck-legend section { display: flex; align-items: center; gap: 8px; padding: 0 12px; border-left: var(--ck-border-subtle); }
+.ck-legend h3 { margin: 0; font-size: 11px; font-weight: 500; color: var(--ck-ink-faint); }
+.ck-legend ul { display: flex; align-items: center; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ck-legend li { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+.ck-legend:not([data-open]) section { display: none; }
+.ck-legend:not([data-open]) .ck-legend-toggle { padding-right: 12px; }
+.ck-legend-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 14px 0 0;
+  border: 0;
+  background: none;
+  color: var(--ck-ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ck-legend-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 14px;
+  border-radius: 4px;
+  font-size: 9px;
+}
+.ck-legend-node[data-kind="screen"] { border: var(--ck-border-default); background: var(--ck-surface); }
+.ck-legend-node[data-kind="decision"] { border: 1.5px solid var(--ck-accent); background: var(--ck-accent-subtle); color: var(--ck-accent); }
+.ck-legend-node[data-kind="reference"] { border: 1.5px dashed var(--ck-primary); color: var(--ck-primary); }
+.ck-legend-node[data-kind="note"] { border: 1px solid var(--ck-warning); background: var(--ck-warning-subtle); color: var(--ck-warning-ink); }
+.ck-legend-line { width: 20px; border-top: 1.5px solid var(--ck-ink-muted); }
+.ck-legend-line[data-kind="main"] { border-top: 2.5px solid var(--ck-ink-strong); }
+.ck-legend-line[data-kind="fault"] { border-top: 1.5px dashed var(--ck-error); }
+
+/* ───────── 右下角视口控件组 ───────── */
+.ck-controls {
+  position: absolute;
+  right: var(--ck-inset);
+  bottom: var(--ck-inset);
+  z-index: 5;
+  display: flex;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+}
+.ck-controls[data-inline] { position: static; display: inline-flex; }
+.ck-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  border: 0;
+  border-right: 1px solid #eeeeee;
+  background: #fefefe;
+  color: var(--ck-ink);
+  font-size: 12px;
+  cursor: pointer;
+}
+.ck-control:last-child { border-right: 0; }
+.ck-control:hover { background: #f4f4f4; }
+.ck-control:disabled { opacity: var(--ck-opacity-disabled); cursor: default; background: #fefefe; }
+
+/* ───────── 说明 Dialog（点卡片 info 打开，只有「知道了」） ───────── */
+.ck-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--ck-black) 32%, transparent);
+}
+.ck-dialog {
+  border: 0;
+  width: min(420px, calc(100vw - 32px));
+  padding: 24px;
+  border-radius: var(--ck-radius-xl);
+  background: var(--ck-surface);
+  box-shadow: var(--ck-shadow-floating);
+}
+dialog.ck-dialog::backdrop { background: color-mix(in srgb, var(--ck-black) 32%, transparent); }
+.ck-dialog h2 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
+.ck-dialog p { margin: 0 0 20px; font-size: 14px; line-height: 1.6; color: var(--ck-ink-muted); }
+.ck-dialog footer { display: flex; justify-content: flex-end; }
+.ck-button-primary {
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--ck-radius-full);
+  background: var(--ck-ink);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ───────── 规格页（components 展示用，不属于画布本身） ───────── */
+.ck-spec { padding: 40px 48px 64px; background: #f6f7f9; min-height: 100vh; }
+.ck-spec > header { max-width: 960px; margin-bottom: 32px; }
+.ck-spec > header h1 { margin: 0 0 8px; font-size: 24px; }
+.ck-spec > header p { margin: 0; color: var(--ck-ink-muted); line-height: 1.6; }
+.ck-spec nav { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 14px; font-size: 13px; }
+.ck-spec nav a { color: var(--ck-accent); text-decoration: none; }
+.ck-demo {
+  margin-bottom: 32px;
+  border: 1px solid #e3e7ec;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+.ck-demo > h2 { margin: 0; padding: 14px 20px; border-bottom: 1px solid #eef1f4; font-size: 15px; }
+.ck-demo-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 56px;
+  padding: 56px 48px 40px;
+}
+.ck-demo-stage > figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.ck-demo-stage figcaption { font-size: 12px; color: var(--ck-ink-faint); }
+.ck-demo ul.ck-rules {
+  margin: 0;
+  padding: 16px 20px 18px 38px;
+  border-top: 1px solid #eef1f4;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ck-ink-muted);
+}
+
+/* ───────── 接入 @xyflow/react 时的适配（参考实现用） ───────── */
+.ck-canvas .react-flow__background { --xy-background-pattern-dots-color-default: var(--ck-dot); }
+.ck-canvas .react-flow__controls-button:disabled { opacity: var(--ck-opacity-disabled); }
+/* 悬停出口时的去向卡片（节点外层包装加 .ck-peek-host）。 */
+.ck-peek-host > .ck-node { outline: 2px dashed var(--ck-accent); outline-offset: 6px; }
+/* 拖动节点期间让出指针，避免 iframe 吞掉 pointer 事件。 */
+.ck-canvas[data-dragging] .ck-preview iframe { pointer-events: none; }

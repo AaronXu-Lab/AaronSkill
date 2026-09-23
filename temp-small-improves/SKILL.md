@@ -2,7 +2,7 @@
 name: temp-small-improves
 description: 仅在用户明确点名 `$temp-small-improves` 或要求调用 temp-small-improves 时，审查或实施一组窄范围 UI 细节优化，覆盖媒体占位、文本换行、数字对齐、控件间距、工具提示与动效连续性。不得因普通的设计、前端、审查或优化请求自动触发。
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   author: "aaron_xu"
   creation_context: "为把容易遗漏但可复用的界面细节判断集中记录为一次显式调用的轻量设计检查，并在不扩张产品范围的前提下实施最小优化而创建。"
 ---
@@ -15,7 +15,7 @@ metadata:
 
 本 Skill 是一组聚焦的细节检查，不是完整的可用性、无障碍、视觉设计、性能或动效审计，也不替代产品既有设计系统。
 
-执行前先读取 [文本工作流](docs/workflow.md)，再完整读取 [判断与优化规则](docs/rules.md)。原始规则网址保留在规则文档中。
+执行前先读取 [文本工作流](references/workflow.md)，再完整读取 [判断与优化规则](docs/rules.md)。原始规则网址保留在规则文档中。
 
 ![小型界面优化流程](docs/workflow.svg)
 

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1320" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1560" viewBox="0 0 1200 1560" role="img" aria-labelledby="title desc">
   <title id="title">应用图标资源生成核心流程</title>
-  <desc id="desc">从用户显式指定 SVG 或图标资源目录并唯一解析源 SVG、只读主题检查和单主题 AI 补色授权，到依赖预检、包含不透明 Apple Touch、显式保留 Alpha 通道的 32-bit RGBA Play Store 提交图、最小 PWA manifest 和根目录分平台用法 README 的全平台生成及 Apple app.icon 明暗主题与传统 app.icns 解包验证的流程图。</desc>
+  <desc id="desc">从用户指定图片先评估、循环重绘并检查兼容性，或显式指定 SVG 或图标资源目录并唯一解析源 SVG、只读主题检查和单主题 AI 补色授权，到依赖预检、包含不透明 Apple Touch、显式保留 Alpha 通道的 32-bit RGBA Play Store 提交图、最小 PWA manifest 和根目录分平台用法 README 的全平台生成及 Apple app.icon 明暗主题与传统 app.icns 解包验证的流程图。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
@@ -20,12 +20,24 @@
     </style>
   </defs>
 
-  <rect width="1200" height="1320" fill="#f7f9fb"/>
+  <rect width="1200" height="1560" fill="#f7f9fb"/>
   <text class="title" x="600" y="46" text-anchor="middle">应用图标资源生成核心流程</text>
   <text class="subtitle" x="600" y="72" text-anchor="middle">主题授权、依赖检查和复检全部发生在清理或生成之前</text>
 
+  <rect class="step" x="420" y="100" width="360" height="62" rx="14"/>
+  <text class="label" x="600" y="138">用户指定图片、SVG 或资源目录</text>
+  <path class="line" d="M600 162 V200"/>
+  <text class="branch" x="615" y="188">图片</text>
+  <rect class="action" x="420" y="200" width="360" height="82" rx="14"/>
+  <text class="label" x="600" y="228">评估 → 重绘循环 → 兼容性检查</text>
+  <a href="workflow.image.svg"><text class="detail" x="600" y="255">workflow.image.svg</text></a>
+  <path class="line" d="M600 282 V340"/>
+  <text class="branch" x="615" y="314">通过</text>
+  <path class="line" d="M420 131 H370 V310 H600"/>
+  <text class="branch" x="190" y="188">SVG / 目录直接进入</text>
+  <g transform="translate(0 240)">
   <rect class="step" x="420" y="100" width="360" height="68" rx="16"/>
-  <text class="label" x="600" y="129">用户指定 SVG 或图标资源目录</text>
+  <text class="label" x="600" y="129">取得源 SVG 或指定资源目录</text>
   <text class="detail" x="600" y="153">必须是明确的绝对路径与资源范围</text>
 
   <path class="line" d="M600 168 V205"/>
@@ -100,4 +112,5 @@
   <path class="line" d="M600 1272 V1287"/>
   <rect class="done" x="470" y="1287" width="260" height="30" rx="15"/>
   <text class="label" x="600" y="1310">完成并报告</text>
+  </g>
 </svg>

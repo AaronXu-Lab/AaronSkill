@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>说明节点 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-spec">
+<header><h1>说明节点</h1><p>补充说明，默认只显示一行标题，正文折叠。</p><nav><a href="index.html">目录</a><a href="page-card.html">页面卡片</a><a href="decision-node.html">判断节点</a><a href="reference-node.html">引用节点</a><a href="note-node.html">说明节点</a><a href="edge-styles.html">连线与标签</a><a href="sidebar.html">目录面板</a><a href="legend.html">图例</a><a href="controls.html">视口控件</a><a href="canvas-shell.html">整页组合</a></nav></header>
+<section class="ck-demo">
+<h2>标准状态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots>
+<figure><section class="ck-node" data-kind="note">
+  <details class="ck-compact"><summary><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-info-bold"/></svg><h2>渠道页回跳</h2></summary><p class="ck-note-body nodrag">redirect 指向合作渠道页时，登录或注册成功后直接返回该渠道页，不需要组织上下文。</p></details>
+</section><figcaption>默认折叠</figcaption></figure><figure><section class="ck-node" data-kind="note">
+  <details class="ck-compact" open><summary><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-info-bold"/></svg><h2>渠道页回跳</h2></summary><p class="ck-note-body nodrag">redirect 指向合作渠道页时，登录或注册成功后直接返回该渠道页，不需要组织上下文，由渠道页按合作联系人授权校验访问权限。</p></details>
+</section><figcaption>展开</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>单行、1px 警示色描边、警示浅底；标题 20px / 500，最大宽度 320px。</li><li>正文 14px、行高 1.5，最大宽度 300px；点标题展开或收起。</li><li>视觉权重最低：页面卡片 > 判断 > 引用 > 说明。</li></ul>
+</section>
+
+</main>
+</body>
+</html>

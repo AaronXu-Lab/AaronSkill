@@ -10,7 +10,7 @@
 <path class="line" d="M600 158V184"/>
 <rect x="850" y="198" width="300" height="70" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
 <text class="node" x="1000.0" y="228">独立初始化 / 增量补齐</text>
-<text class="detail" x="1000.0" y="253">路由、隔离、操作、连线</text>
+<text class="detail" x="1000.0" y="253">路由、隔离、分层布局</text>
 <path class="line" d="M750 232H850"/>
 <text class="detail" x="800" y="218">否</text>
 <rect x="850" y="319" width="300" height="70" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>

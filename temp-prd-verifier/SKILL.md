@@ -2,7 +2,7 @@
 name: temp-prd-verifier
 description: 从项目 PRD 查证功能、对象归属、权限、状态、术语及需求变更，并按需与界面或实现逐项对照。用于“根据 PRD 回答”“这个需求有没有”“检查页面是否符合 PRD”等请求；不用于从零撰写 PRD 或没有需求依据的纯视觉审美评审。
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   author: "aaron_xu"
   creation_context: "产品讨论中反复需要从 PRD 查证对象、权限、状态和入口，并判断界面实现是否遗漏或偏离需求。将来源定位、条款判定和实现对照沉淀为可追溯的通用流程。"
 ---
@@ -11,7 +11,7 @@ metadata:
 
 将产品问题转成有出处的结论；需要对照时，把需求条款与实际页面或实现建立可核验的对应关系。
 
-执行前读取 [PRD 查证工作流](docs/workflow.md)。它是执行事实源；仅在查看流程概览时读取下图：
+执行前读取 [PRD 查证工作流](references/workflow.md)。它是执行事实源；仅在查看流程概览时读取下图：
 
 ![PRD 查证工作流程](docs/workflow.svg)
 

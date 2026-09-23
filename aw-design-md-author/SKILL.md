@@ -3,7 +3,7 @@ name: aw-design-md-author
 description: Create, review, and maintain Google-format DESIGN.md contracts, including deferred TODO annotations.
 metadata:
   author: aaron_xu
-  version: "1.6.0"
+  version: "1.7.0"
   creation_context: "为按照 Google Labs DESIGN.md 官方规范完整创建、审查和维护设计系统文档而创建，统一处理 Token 所有权、语义命名、章节结构与验证。"
 ---
 
@@ -11,7 +11,7 @@ metadata:
 
 Create and maintain a verifiable visual contract in the user's language, preserving their design intent and voice. Use for DESIGN.md work; extracting websites, screenshots, Figma or code is outside this skill.
 
-Start with the [execution workflow](docs/workflow.md) to select the task, editing source, protection checks and completion criteria. Read only the relevant references below; reuse current guidance already read in this conversation.
+Start with the [execution workflow](references/workflow.md) to select the task, editing source, protection checks and completion criteria. Read only the relevant references below; reuse current guidance already read in this conversation.
 
 ## Task routing
 

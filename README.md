@@ -50,7 +50,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-meta-skill`](./aw-meta-skill/) | `1.7.4` | 创建或更新任何 Skill，完整替代 `skill-creator` 作为统一入口 | 按变更范围读取与验证；Markdown 为执行事实源，SVG 细则按需加载 |
+| [`aw-meta-skill`](./aw-meta-skill/) | `1.9.0` | 创建或更新任何 Skill，完整替代 `skill-creator` 作为统一入口 | 按变更范围读取与验证；Markdown 为执行事实源，SVG 细则按需加载 |
 
 ### 工具类
 
@@ -58,10 +58,10 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.1.0` | 从唯一 SVG 事实源生成并验证 Web、桌面端与移动端全平台图标资源 | 必须由用户明确指定源文件或目录；单主题补色与清理产物前需要授权 |
-| [`aw-mail-read-later`](./aw-mail-read-later/) | `1.0.2` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
-| [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.0.3` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
-| [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.0.0` | 启动本地多服务并定位端口、接口与页面加载故障 | 优先复用现有入口；确认进程归属；以调用链和目标页面验证结果 |
+| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.0` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
+| [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.0` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
+| [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.0` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
+| [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.0` | 启动本地多服务并定位端口、接口与页面加载故障 | 优先复用现有入口；确认进程归属；以调用链和目标页面验证结果 |
 
 ### 资源获取
 
@@ -69,9 +69,9 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | `1.0.3` | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
-| [`aw-logo-finder`](./aw-logo-finder/) | `1.0.3` | 从官网、Logo 资源站和应用商店寻找、比对并导出品牌或产品 Logo | 必须先确认候选与输出尺寸，再生成无损 WebP |
-| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.0.0` | 从项目 PRD 查证需求并按需与界面或实现对照 | 区分明确规定、推断与未覆盖；只读查证或沿已有授权修正 |
+| [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | `1.1.0` | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
+| [`aw-logo-finder`](./aw-logo-finder/) | `1.1.0` | 从官网、Logo 资源站和应用商店寻找、比对并导出品牌或产品 Logo | 必须先确认候选与输出尺寸，再生成无损 WebP |
+| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.0` | 从项目 PRD 查证需求并按需与界面或实现对照 | 区分明确规定、推断与未覆盖；只读查证或沿已有授权修正 |
 
 ### 设计 · 支撑
 
@@ -79,11 +79,11 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-design-md-author`](./aw-design-md-author/) | `1.6.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.28.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准 Default／Properties／Demo 结构；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
-| [`aw-design-fake`](./aw-design-fake/) | `1.6.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 源码逐字复用、仅展示不执行；仅源码展示可沿用已有 fixture；不碰单测 mock 与真实契约 |
-| [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.8.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.3.0` | 发现、比较并移植具体 UI 组件实现 | 仅处理组件级意图；整应用、页面、工作区或通用文件迁移不触发，Find 与 Port 保持选择门 |
+| [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.29.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准 Default／Properties／Demo 结构；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
+| [`aw-design-fake`](./aw-design-fake/) | `1.8.0` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
+| [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.4.0` | 发现、比较并移植具体 UI 组件实现 | 仅处理组件级意图；整应用、页面、工作区或通用文件迁移不触发，Find 与 Port 保持选择门 |
 
 ### 设计 · Agent
 
@@ -91,11 +91,11 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-canvas-design`](./aw-canvas-design/) | `1.0.0` | 用实际组件画布设计多弹层业务流程，通过评论迭代并验收入口覆盖，提供独立环境初始化 | 复用已有画布、按需补齐；不限定技术栈；画布认可不自动授权业务迁移 |
-| [`aw-component-checker`](./aw-component-checker/) | `1.17.1` | 审查桌面端组件的语义、组合与内部使用，并维护 Component Reference 和索引 | 按需读取相关规则；纯审查不自动改写；不用于单纯视觉规格检查 |
-| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.6.1` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
-| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.11.0` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
-| [`temp-small-improves`](./temp-small-improves/) | `1.0.0` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
+| [`aw-canvas-design`](./aw-canvas-design/) | `1.2.6` | 用实际组件画布设计多弹层业务流程，挂在所属业务路由下的 `/<业务路由>/design-canvas` 并支持 `?preview={name}` 单流程走查，以分层布局、连线精简和默认视图可读性走查保持画布可读，通过评论迭代并验收入口覆盖，提供独立环境初始化 | 复用已有画布、按需补齐；不限定技术栈；画布认可不自动授权业务迁移 |
+| [`aw-component-checker`](./aw-component-checker/) | `1.24.0` | 审查桌面端组件的语义、组合与内部使用，并维护 Component Reference 和索引 | 按需读取相关规则；纯审查不自动改写；不用于单纯视觉规格检查 |
+| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.7.0` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
+| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.12.0` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
+| [`temp-small-improves`](./temp-small-improves/) | `1.1.0` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
 
 ### 不再维护
 
@@ -103,7 +103,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 状态 |
 | --- | --- | --- |
-| [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.9.0` | 不再维护 |
+| [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.10.0` | 不再维护 |
 
 ## 这些 Skill 如何工作
 

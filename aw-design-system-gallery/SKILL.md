@@ -2,14 +2,14 @@
 name: aw-design-system-gallery
 description: 创建或修改设计系统 Gallery 展示时使用，包括新增或修改组件时顺带创建或调整 Gallery Panel、默认或对比示例、属性轴及其适用条件、Caption、占位文案或图标，即使用户未明确要求 Gallery 审查；不用于完全不涉及 Gallery 的普通组件实现或产品文案修改。
 metadata:
-  version: "3.28.0"
+  version: "3.29.0"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---
 
 # AW Design System Gallery
 
-以目标项目的事实源和 Gallery 约定审查或优化组件展示。执行模式、授权范围、证据与完成标准见 [Gallery 工作流](docs/workflow.md)；首次执行读取这份短工作流，本会话已读且仍适用时直接复用。
+以目标项目的事实源和 Gallery 约定审查或优化组件展示。执行模式、授权范围、证据与完成标准见 [Gallery 工作流](references/workflow.md)；首次执行读取这份短工作流，本会话已读且仍适用时直接复用。
 
 ## 按任务读取
 

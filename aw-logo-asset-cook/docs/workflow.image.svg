@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1040" viewBox="0 0 1200 1040" role="img" aria-labelledby="title desc"><title id="title">图片转 SVG</title><desc id="desc">评估可行性，低保真授权，重绘渲染对照循环，失败停止，通过后检查生成器兼容性。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52606d"/></marker></defs><style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#17212b;text-anchor:middle}.label{font-size:18px;font-weight:600}.detail{font-size:14px}.line{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}.action{fill:#edf6ff;stroke:#287bbb}.stop{fill:#fff0ef;stroke:#c94b43}.done{fill:#edf9f1;stroke:#2e8b54}.decision{fill:#fff7e6;stroke:#c98312}rect,polygon{stroke-width:2}</style>
+<rect width="1200" height="1040" fill="#f7f9fb"/><text x="600" y="48" font-size="30" font-weight="700">图片转 SVG · 评估与重绘循环</text>
+<rect class="action" x="420" y="85" width="360" height="70" rx="14"/><text class="label" x="600.0" y="114">读取并查看明确指定图片</text><text class="detail" x="600.0" y="138">保留原图 · 核对轮廓、颜色、纹理</text>
+<path class="line" d="M600 155 V185"/>
+<polygon class="decision" points="600,185 780,240 600,295 420,240"/><text class="label" x="600" y="245">适合高保真重绘？</text>
+<path class="line" d="M780 240 H840"/>
+<text class="detail" x="807" y="225">否</text>
+<rect class="stop" x="840" y="205" width="330" height="70" rx="14"/><text class="label" x="1005.0" y="234">说明降级并询问强制转换</text><text class="detail" x="1005.0" y="258">未授权 / 信息不足 → 停止</text>
+<path class="line" d="M1005 275 V345 H780"/>
+<text class="detail" x="1005" y="315">已获降级授权</text>
+<path class="line" d="M600 295 V345"/>
+<text class="detail" x="620" y="323">是</text>
+<rect class="action" x="420" y="345" width="360" height="70" rx="14"/><text class="label" x="600.0" y="374">创建真实矢量候选</text><text class="detail" x="600.0" y="398">路径 / 色块 / 必要渐变 · 禁止嵌入位图</text>
+<path class="line" d="M600 415 V455"/>
+<rect class="action" x="420" y="455" width="360" height="70" rx="14"/><text class="label" x="600.0" y="484">渲染并与原图对照</text><text class="detail" x="600.0" y="508">大图、128px、32px · 记录关键偏差</text>
+<path class="line" d="M600 525 V565"/>
+<polygon class="decision" points="600,565 780,620 600,675 420,620"/><text class="label" x="600" y="625">关键偏差已解决？</text>
+<path class="line" d="M420 620 H335"/>
+<text class="detail" x="375" y="605">否</text>
+<rect class="action" x="35" y="585" width="300" height="70" rx="14"/><text class="label" x="185.0" y="614">修改路径、颜色或层级</text><text class="detail" x="185.0" y="638">未达上限且持续改善 → 继续</text>
+<path class="line" d="M185 585 V490 H420"/>
+<path class="line" d="M185 655 V730"/>
+<rect class="stop" x="35" y="730" width="300" height="70" rx="14"/><text class="label" x="185.0" y="759">交付最佳候选并报告未达标</text><text class="detail" x="185.0" y="783">最多 4 轮 / 连续两轮无改善</text>
+<path class="line" d="M600 675 V730"/>
+<text class="detail" x="620" y="705">是</text>
+<rect class="action" x="420" y="730" width="360" height="70" rx="14"/><text class="label" x="600.0" y="759">保存稳定 SVG 并检查兼容性</text><text class="detail" x="600.0" y="783">独立源文件 · 单测转换可在此交付</text>
+<path class="line" d="M780 765 H840"/>
+<text class="detail" x="808" y="750">不兼容</text>
+<rect class="stop" x="840" y="730" width="330" height="70" rx="14"/><text class="label" x="1005.0" y="759">报告生成器限制并保留 SVG</text><text class="detail" x="1005.0" y="783">适配或获准简化后再继续</text>
+<path class="line" d="M600 800 V855"/>
+<text class="detail" x="625" y="832">兼容</text>
+<rect class="done" x="420" y="855" width="360" height="70" rx="14"/><text class="label" x="600.0" y="884">进入原有主题与依赖门禁</text><text class="detail" x="600.0" y="908">重绘授权不包含补色或依赖安装</text>
+</svg>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>图例 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-spec">
+<header><h1>图例</h1><p>一行，只解释图形，分「节点」「连线」两组，可收起。</p><nav><a href="index.html">目录</a><a href="page-card.html">页面卡片</a><a href="decision-node.html">判断节点</a><a href="reference-node.html">引用节点</a><a href="note-node.html">说明节点</a><a href="edge-styles.html">连线与标签</a><a href="sidebar.html">目录面板</a><a href="legend.html">图例</a><a href="controls.html">视口控件</a><a href="canvas-shell.html">整页组合</a></nav></header>
+<section class="ck-demo">
+<h2>展开 / 收起</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots>
+<figure><aside class="ck-legend" data-inline data-open aria-label="图例">
+  <button type="button" class="ck-legend-toggle" aria-expanded="true">图例<svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-down"/></svg></button>
+  <section aria-label="节点"><h3>节点</h3><ul>
+    <li><span class="ck-legend-node" data-kind="screen"></span>页面</li>
+    <li><span class="ck-legend-node" data-kind="decision"><svg class="ck-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg></span>判断</li>
+    <li><span class="ck-legend-node" data-kind="reference"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg></span>跨流程</li>
+    <li><span class="ck-legend-node" data-kind="note"><svg class="ck-icon" aria-hidden="true"><use href="#ck-info-bold"/></svg></span>说明</li>
+  </ul></section>
+  <section aria-label="连线"><h3>连线</h3><ul>
+    <li><span class="ck-legend-line" data-kind="main"></span>主路径</li>
+    <li><span class="ck-legend-line" data-kind="branch"></span>分支</li>
+    <li><span class="ck-legend-line" data-kind="fault"></span>异常</li>
+  </ul></section>
+</aside><figcaption>点「图例」收起</figcaption></figure><figure><aside class="ck-legend" data-inline aria-label="图例">
+  <button type="button" class="ck-legend-toggle" aria-expanded="false">图例<svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-up"/></svg></button>
+  <section aria-label="节点"><h3>节点</h3><ul>
+    <li><span class="ck-legend-node" data-kind="screen"></span>页面</li>
+    <li><span class="ck-legend-node" data-kind="decision"><svg class="ck-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg></span>判断</li>
+    <li><span class="ck-legend-node" data-kind="reference"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg></span>跨流程</li>
+    <li><span class="ck-legend-node" data-kind="note"><svg class="ck-icon" aria-hidden="true"><use href="#ck-info-bold"/></svg></span>说明</li>
+  </ul></section>
+  <section aria-label="连线"><h3>连线</h3><ul>
+    <li><span class="ck-legend-line" data-kind="main"></span>主路径</li>
+    <li><span class="ck-legend-line" data-kind="branch"></span>分支</li>
+    <li><span class="ck-legend-line" data-kind="fault"></span>异常</li>
+  </ul></section>
+</aside><figcaption>收起态</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>胶囊：最小高 40px、圆角 20px、0.5px 描边、白底、浮起投影，左下角浮在画布上（目录展开时让出目录宽度）。</li><li>组名 11px 淡色，条目 12px；组之间用 0.5px 细竖线分隔。</li><li>卡片上自带文字的标记（入口、返回）不进图例；快捷键写在视口控件的按钮提示里。</li></ul>
+</section>
+
+</main>
+</body>
+</html>

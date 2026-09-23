@@ -2,7 +2,7 @@
 name: aw-ux-info-redundancy-audit
 description: 审查 UI/UX 的信息重复、密度与层级，给出有依据的精简决策。纯样式调整、逐字翻译或非语义代码修复不触发。
 metadata:
-  version: "1.6.1"
+  version: "1.7.0"
   author: "aaron_xu"
   creation_context: "为在界面改动前系统识别语义重复、信息密度和层级问题，并形成可验证的最小安全改动决策而创建。"
 ---
@@ -13,7 +13,7 @@ metadata:
 
 ## 使用方式
 
-- 审查时读取 [工作流](docs/workflow.md)：它集中维护证据边界、信息映射、决策与交付规则。局部问题按相关范围短答；全面审计保留完整九项结构，沿用用户指定格式。
+- 审查时读取 [工作流](references/workflow.md)：它集中维护证据边界、信息映射、决策与交付规则。局部问题按相关范围短答；全面审计保留完整九项结构，沿用用户指定格式。
 - 涉及多状态、跨表面、条件变化、摘要关系或装饰与操作的区分时，按相关小节读取 [模式与示例](references/redundancy-patterns.md)。
 - 已授权实施时，再读取 [实施与验证](references/implementation.md)，完成审计支持的修改及相关检查，不重复索要已有授权。
 

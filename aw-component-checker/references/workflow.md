@@ -1,16 +1,16 @@
 # Component Review & Maintenance
 
-本文定义审查与编辑两种模式的路由、执行顺序及完成边界。[workflow.svg](workflow.svg) 是面向人的语义概览。
+本文定义审查与编辑两种模式的路由、执行顺序及完成边界。[workflow.svg](../docs/workflow.svg) 是面向人的语义概览。
 
 ## Input & Scope
 
 先区分任务模式。审查模式用于设计基本完成的桌面 Web 或桌面应用界面、流程说明、设计稿或对应实现，判断组件为什么适用及如何被使用。仅要求颜色、尺寸、间距等视觉调整时不启动本审查；混合请求中只处理明确涉及组件语义的部分。
 
-用户要求“编辑模式”，或维护组件规则、增删/同步索引、调整 Reference 时，进入编辑模式，读取 [编辑工作流](editing.md)。组件实现的变化是维护依据；单纯请求 Review 不授权自动更新规则。混合请求分别按用户授权完成两类产物。
+用户要求“编辑模式”，或维护组件规则、增删/同步索引、调整 Reference 时，进入编辑模式，读取 [编辑工作流](../docs/editing.md)。组件实现的变化是维护依据；单纯请求 Review 不授权自动更新规则。混合请求分别按用户授权完成两类产物。
 
 ## Identify & Load
 
-两种模式都先读取 [组件索引](../references/components/index.md) 定位目标。审查模式按用户操作、状态、选择、导航或内容结构识别组件，再确认名称与 Gallery ID。一个 Panel 对应一份 Reference；结构型子组件仍随父级语义单独识别。
+两种模式都先读取 [组件索引](components/index.md) 定位目标。审查模式按用户操作、状态、选择、导航或内容结构识别组件，再确认名称与 Gallery ID。一个 Panel 对应一份 Reference；结构型子组件仍随父级语义单独识别。
 
 审查模式只加载本次涉及的 Reference。遇到选择边界不明确时，按其 Similar & Easily Misused Components 中的相对链接补读必要的候选组件。不要为了完整性预加载无关家族；索引以外的元素记录为当前规则尚未覆盖，不强行套用最相似外形。
 
@@ -27,7 +27,7 @@
 
 ## Editing Mode
 
-按 [编辑工作流](editing.md) 核对最新正式注册与实际变更，处理目标 Reference、索引及受影响入链。成员资格依据 `NAV_GROUPS` 的 `general` 与 `composite`，不能把当前索引数量当成永久范围；展示名变化与 Gallery ID 迁移分别处理。
+按 [编辑工作流](../docs/editing.md) 核对最新正式注册与实际变更，处理目标 Reference、索引及受影响入链。成员资格依据 `NAV_GROUPS` 的 `general` 与 `composite`，不能把当前索引数量当成永久范围；展示名变化与 Gallery ID 迁移分别处理。
 
 编辑工作流是增删改、元数据和维护验收的规则事实源；仅在编辑模式加载。维护时不将产品界面 Review 作为前置条件，也不顺带修改 Gallery 或组件代码。
 

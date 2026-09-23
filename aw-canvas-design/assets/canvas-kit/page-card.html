@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>页面卡片 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-spec">
+<header><h1>页面卡片</h1><p>方向 C：顶栏 / 预览 / 底栏三段，上下平衡。卡片宽度随预览撑开（至少 240px），顶栏与底栏不参与撑宽。所有尺寸为画布 100% 缩放下的像素。</p><nav><a href="index.html">目录</a><a href="page-card.html">页面卡片</a><a href="decision-node.html">判断节点</a><a href="reference-node.html">引用节点</a><a href="note-node.html">说明节点</a><a href="edge-styles.html">连线与标签</a><a href="sidebar.html">目录面板</a><a href="legend.html">图例</a><a href="controls.html">视口控件</a><a href="canvas-shell.html">整页组合</a></nav></header>
+<section class="ck-demo">
+<h2>标准状态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots>
+<figure><section class="ck-node" data-kind="screen">
+  <header class="ck-card-bar"><h2 title="密码与验证方式">密码与验证方式</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看说明" title="说明" data-ck-info="下一步「密码与验证方式」里的「验证码登录」去向相同；运营创建的无密码账号只能用验证码登录" data-ck-title="密码与验证方式"><svg class="ck-icon" aria-hidden="true"><use href="#ck-info"/></svg></button><button type="button" class="ck-icon-btn nodrag" aria-label="重置密码与验证方式的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><button type="button" class="ck-variant" aria-pressed="true">有密码</button><button type="button" class="ck-variant" aria-pressed="false">运营创建（无密码）</button></footer>
+</section><figcaption>有说明（info）、场景切换</figcaption></figure><figure><section class="ck-node" data-kind="screen">
+  <header class="ck-card-bar"><h2 title="验证入口不可用">验证入口不可用</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置验证入口不可用的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><ul class="ck-exits" aria-label="出口"><li><button type="button" class="ck-exit nodrag" data-ck-tip="回到主流程的「密码与验证方式」" aria-label="重新申请，回到「密码与验证方式」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>重新申请</button></li><li><button type="button" class="ck-exit nodrag" data-ck-tip="回到主流程的「输入账号」" aria-label="返回登录，回到「输入账号」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>返回登录</button></li></ul></footer>
+</section><figcaption>出口：悬停显示去向</figcaption></figure><figure><section class="ck-node" data-kind="screen"><span class="ck-entry">入口 · /login</span>
+  <header class="ck-card-bar"><h2 title="输入账号">输入账号</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置输入账号的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+
+</section><figcaption>入口小旗在卡片外上方</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>顶栏 52px：标题 16px / 600 单行，放不下截断并在悬停时显示全名；右侧次要图标按钮，info 在左、重置场景在右。</li><li>说明不在卡片里展开：点 info 打开只有「知道了」的 Dialog（本页可点）。重置场景通知预览回到节点场景，不重新载入；预览下方不放状态行。</li><li>预览区：中性浅灰底（黑 3%）、内边距 14px；预览本身透明，不垫白底、不套内框，缩放 0.5。</li><li>底栏：场景切换是描边小按钮（26px），当前项描边与文字加深；出口是无边框文字控件，去向在当前流程时悬停画临时虚线，否则用提示说明「回到 {流程} 的「{页面}」」。</li><li>只列有去向的返回、取消；重新发送、刷新状态这类页面内一眼能懂的原地操作不列。</li><li>描边用最浅一档线色（0.5px）、圆角 12px、浮起投影。标题栏若用于拖动，内部按钮必须带 nodrag，否则要点两次。</li></ul>
+</section>
+<section class="ck-demo">
+<h2>其他状态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots>
+<figure><section class="ck-node" data-kind="screen">
+  <header class="ck-card-bar"><h2 title="邮箱验证码 / 登录链接">邮箱验证码 / 登录链接</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置邮箱验证码 / 登录链接的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-skeleton" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
+
+</section><figcaption>加载中：骨架，不显示空白框</figcaption></figure><figure><section class="ck-node" data-kind="screen" data-selected>
+  <header class="ck-card-bar"><h2 title="选择版本并创建付费组织的超长标题">选择版本并创建付费组织的超长标题</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置选择版本并创建付费组织的超长标题的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+
+</section><figcaption>选中态 + 长标题截断</figcaption></figure><figure><section class="ck-node" data-kind="screen">
+  <header class="ck-card-bar"><h2 title="等待开通">等待开通</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置等待开通的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview" style="width:300px"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><button type="button" class="ck-variant" aria-pressed="true">完成支付</button><button type="button" class="ck-variant" aria-pressed="false">销售联系</button></footer>
+</section><figcaption>宽页面：卡片随预览撑开</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>收到预览的首次尺寸上报后才撤掉骨架。</li><li>选中态：3px 深色外框，外扩 6px；不改卡片本身的描边。</li><li>宽度 fit-content、min-width 240px；顶栏与底栏用 contain: inline-size，长标题不会把卡片撑宽，宽页面也不能溢出卡片。</li></ul>
+</section>
+
+</main>
+</body>
+</html>

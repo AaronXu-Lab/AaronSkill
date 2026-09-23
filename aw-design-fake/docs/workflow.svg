@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1430" role="img" aria-labelledby="title desc">
   <title id="title">AW Design Fake 工作流程</title>
-  <desc id="desc">按任务确认 fake 需求与项目现状、读取必要资料；仅展示源码且无 bundle 时从唯一文本资产接入已有 fixture，仅审查时只读报告；修改时沿用已授权目录，保留较新项目版本，否则准备 bundle 并按占位操作、占位内容或演示状态实现；全局字段不足时核对已有维护授权，缺少必要授权才确认；源码仅展示不执行，隔离真实业务，修复并验证本次分支后交付。</desc>
+  <desc id="desc">按任务确认 fake 需求与项目现状、读取必要资料；仅展示源码且无 bundle 时从唯一文本资产接入已有 fixture，仅审查时只读报告；修改时沿用已授权目录，保留较新项目版本，否则准备 bundle 并按占位操作、占位内容或演示状态实现。已接入的真实契约数据与状态始终优先；演示仅补充未接入区域或进入显式可退出的隔离场景；源码只展示不执行，fake ID 不进入真实写接口。修复并验证后交付。</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/>
@@ -24,7 +24,7 @@
 
   <rect class="canvas" width="1200" height="1430"/>
   <text class="title" x="600" y="54" text-anchor="middle">AW Design Fake</text>
-  <text class="subtitle" x="600" y="82" text-anchor="middle">统一内容入口，源码只展示不执行，fake 与真实业务隔离</text>
+  <text class="subtitle" x="600" y="82" text-anchor="middle">真实契约优先；演示仅补充未接入区域，源码只展示不执行</text>
 
   <!-- 只读审查绕过所有写入阶段 -->
   <path class="link" d="M870 270 H920"/>
@@ -109,7 +109,7 @@
 
   <rect class="step" x="330" y="940" width="540" height="90" rx="14"/>
   <text class="label" x="600" y="976">隔离真实业务</text>
-  <text class="detail" x="600" y="1003">源码不执行；fake 不写真实对象、不改变正式契约</text>
+  <text class="detail" x="600" y="1003">真实契约与状态优先；演示写入隔离，fake ID 不进真实接口</text>
 
   <polygon class="judge" points="600,1065 800,1135 600,1205 400,1135"/>
   <text class="label" x="600" y="1129">行为与关闭验证通过？</text>

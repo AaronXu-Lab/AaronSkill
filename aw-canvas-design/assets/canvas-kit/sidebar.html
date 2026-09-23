@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>目录面板 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-spec">
+<header><h1>目录面板</h1><p>复用设计系统侧边栏组件，按其 Gallery 的组合搭建；本页是没有设计系统时的同等实现。</p><nav><a href="index.html">目录</a><a href="page-card.html">页面卡片</a><a href="decision-node.html">判断节点</a><a href="reference-node.html">引用节点</a><a href="note-node.html">说明节点</a><a href="edge-styles.html">连线与标签</a><a href="sidebar.html">目录面板</a><a href="legend.html">图例</a><a href="controls.html">视口控件</a><a href="canvas-shell.html">整页组合</a></nav></header>
+<section class="ck-demo">
+<h2>展开态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots style="padding:32px">
+<figure><aside class="ck-sidebar" aria-label="流程目录" style="position:relative;inset:auto;height:640px">
+  <div class="ck-sidebar-topbar">
+    <button type="button" class="ck-topbar-btn" aria-label="收起目录" title="收起目录"><svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-double-left"/></svg></button>
+    <button type="button" class="ck-topbar-btn" aria-label="单独预览" title="单独预览"><svg class="ck-icon" aria-hidden="true"><use href="#ck-play"/></svg></button>
+  </div>
+  <div class="ck-sidebar-title"><span>登录流程画布 · 6 个流程</span></div>
+  <nav class="ck-sidebar-body" aria-label="流程">
+    <section class="ck-section" aria-label="流程">
+      <button type="button" class="ck-section-header" data-ck-collapse aria-expanded="true"><span>流程</span><span>3</span></button>
+      <div class="ck-section-items">
+        <div class="ck-group">
+          <button type="button" class="ck-item" data-ck-collapse aria-expanded="true"><svg class="ck-icon" aria-hidden="true"><use data-ck-folder href="#ck-folder-open"/></svg><span>通用登录</span><span class="ck-item-trailing">4</span></button>
+          <div class="ck-group-items">
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="true"><span>主流程</span></button>
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="false"><span>注册与找回</span></button>
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="false"><span>邀请与申请</span></button>
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="false"><span>选择与开通组织</span></button>
+          </div>
+        </div>
+        <button type="button" class="ck-item" data-ck-select="aria-current" aria-current="false"><svg class="ck-icon" aria-hidden="true"><use href="#ck-buildings"/></svg><span>企业登录</span></button>
+        <button type="button" class="ck-item" data-ck-select="aria-current" aria-current="false"><svg class="ck-icon" aria-hidden="true"><use href="#ck-desktop"/></svg><span>客户端连接</span></button>
+      </div>
+    </section>
+    <section class="ck-section" aria-label="连线">
+      <button type="button" class="ck-section-header" data-ck-collapse aria-expanded="true"><span>连线</span></button>
+      <div class="ck-section-items">
+        <button type="button" class="ck-item" data-ck-select="aria-pressed" aria-pressed="true"><span>全部</span></button>
+        <button type="button" class="ck-item" data-ck-select="aria-pressed" aria-pressed="false"><span>主路径</span></button>
+        <button type="button" class="ck-item" data-ck-select="aria-pressed" aria-pressed="false"><span>仅异常分支</span></button>
+      </div>
+    </section>
+  </nav>
+</aside><figcaption>当前流程用白底标出</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>面板：宽 280px、凹陷底色、圆角 16px、无描边，只用最淡一档投影；浮在画布上，上下左各距 20px，不挤占布局。</li><li>头部 64px、左右各 12px：左侧「收起目录」，右侧只有「单独预览」；不放返回业务页、画布说明。头部下方是 12px 淡色的画布名与流程数。</li><li>分组标题 13px 淡色、32px 高，可收起，右侧可带数量。目录项 40px 高、16px 字，常态中灰，悬停浅底；当前项白底深色，不能只改文字颜色。</li><li>有子流程的顶层流程是可折叠分组（文件夹图标 + 数量），父流程本身作为分组第一项，与子流程同级缩进（38px）；最多两级。</li><li>连线筛选组默认项「全部」放第一位：全部 / 主路径 / 仅异常分支。当前位置只由目录选中态表达，画布内不放面包屑。</li></ul>
+</section>
+<section class="ck-demo">
+<h2>收起态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots style="padding:32px">
+<figure><button type="button" class="ck-sidebar-trigger" style="position:static" aria-label="展开目录" title="展开目录"><svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-double-right"/></svg></button><figcaption>「展开目录」出现在收起按钮的同一位置</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>面板保持挂载并设 inert，平移淡出（190ms）；展开按钮 40px 圆形、白底描边、浮起投影。</li><li>收起或展开后，画布重新适配视口。</li></ul>
+</section>
+
+</main>
+</body>
+</html>

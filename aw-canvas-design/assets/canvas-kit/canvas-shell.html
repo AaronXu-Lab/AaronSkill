@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>整页组合 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-canvas" data-static-dots aria-label="流程画布" style="position:fixed;inset:0;--ck-dot-gap:16.20px;--ck-sidebar-space:300px"
+  data-checks="连线通过 · 全图 9.6px">
+<button type="button" class="ck-sidebar-trigger" data-hidden data-ck-sidebar-open aria-label="展开目录" title="展开目录" tabindex="-1"><svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-double-right"/></svg></button>
+<aside class="ck-sidebar" aria-label="流程目录">
+  <div class="ck-sidebar-topbar">
+    <button type="button" class="ck-topbar-btn" data-ck-sidebar-close aria-label="收起目录" title="收起目录"><svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-double-left"/></svg></button>
+    <button type="button" class="ck-topbar-btn" aria-label="单独预览" title="单独预览"><svg class="ck-icon" aria-hidden="true"><use href="#ck-play"/></svg></button>
+  </div>
+  <div class="ck-sidebar-title"><span>登录流程画布 · 6 个流程</span></div>
+  <nav class="ck-sidebar-body" aria-label="流程">
+    <section class="ck-section" aria-label="流程">
+      <button type="button" class="ck-section-header" data-ck-collapse aria-expanded="true"><span>流程</span><span>3</span></button>
+      <div class="ck-section-items">
+        <div class="ck-group">
+          <button type="button" class="ck-item" data-ck-collapse aria-expanded="true"><svg class="ck-icon" aria-hidden="true"><use data-ck-folder href="#ck-folder-open"/></svg><span>通用登录</span><span class="ck-item-trailing">4</span></button>
+          <div class="ck-group-items">
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="true"><span>主流程</span></button>
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="false"><span>注册与找回</span></button>
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="false"><span>邀请与申请</span></button>
+            <button type="button" class="ck-item" data-indent data-ck-select="aria-current" aria-current="false"><span>选择与开通组织</span></button>
+          </div>
+        </div>
+        <button type="button" class="ck-item" data-ck-select="aria-current" aria-current="false"><svg class="ck-icon" aria-hidden="true"><use href="#ck-buildings"/></svg><span>企业登录</span></button>
+        <button type="button" class="ck-item" data-ck-select="aria-current" aria-current="false"><svg class="ck-icon" aria-hidden="true"><use href="#ck-desktop"/></svg><span>客户端连接</span></button>
+      </div>
+    </section>
+    <section class="ck-section" aria-label="连线">
+      <button type="button" class="ck-section-header" data-ck-collapse aria-expanded="true"><span>连线</span></button>
+      <div class="ck-section-items">
+        <button type="button" class="ck-item" data-ck-select="aria-pressed" aria-pressed="true"><span>全部</span></button>
+        <button type="button" class="ck-item" data-ck-select="aria-pressed" aria-pressed="false"><span>主路径</span></button>
+        <button type="button" class="ck-item" data-ck-select="aria-pressed" aria-pressed="false"><span>仅异常分支</span></button>
+      </div>
+    </section>
+  </nav>
+</aside>
+<div data-ck-stage data-ck-zoom="0.6" style="position:absolute;left:360px;top:30px;width:1640px;height:1260px;transform:scale(0.6);transform-origin:0 0">
+<svg class="ck-edges" width="1640" height="1260" viewBox="0 0 1640 1260"><defs>
+  <marker id="ck-arrow-main" viewBox="-10 -10 20 20" refX="0" refY="0" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><polyline points="-5,-4 0,0 -5,4 -5,-4" fill="#080d14" stroke="#080d14" stroke-width="1" stroke-linejoin="round"/></marker>
+  <marker id="ck-arrow-branch" viewBox="-10 -10 20 20" refX="0" refY="0" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><polyline points="-5,-4 0,0 -5,4 -5,-4" fill="#4b5565" stroke="#4b5565" stroke-width="1" stroke-linejoin="round"/></marker>
+  <marker id="ck-arrow-fault" viewBox="-10 -10 20 20" refX="0" refY="0" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><polyline points="-5,-4 0,0 -5,4 -5,-4" fill="#dc0736" stroke="#dc0736" stroke-width="1" stroke-linejoin="round"/></marker>
+  <marker id="ck-arrow-peek" viewBox="-10 -10 20 20" refX="0" refY="0" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><polyline points="-5,-4 0,0 -5,4 -5,-4" fill="#3363ad" stroke="#3363ad" stroke-width="1" stroke-linejoin="round"/></marker>
+</defs><path class="ck-edge" data-kind="main" d="M 280 124 L 440 124" marker-end="url(#ck-arrow-main)"/><path class="ck-edge" data-kind="main" d="M 680 124 L 840 124" marker-end="url(#ck-arrow-main)"/><path class="ck-edge" data-kind="main" d="M 1100 124 L 1320 124" marker-end="url(#ck-arrow-main)"/><path class="ck-edge" data-kind="branch" data-tone="faded" d="M 280 370 L 310 370 Q 320 370 320 380 L 320 574 Q 320 584 330 584 L 440 584" marker-end="url(#ck-arrow-branch)"/><path class="ck-edge" data-kind="branch" data-tone="faded" d="M 680 404 L 690 404 Q 700 404 700 394 L 700 324 Q 700 314 710 314 L 840 314" marker-end="url(#ck-arrow-branch)"/><path class="ck-edge" data-kind="branch" data-tone="faded" d="M 680 404 L 690 404 Q 700 404 700 414 L 700 754 Q 700 764 710 764 L 840 764" marker-end="url(#ck-arrow-branch)"/><path class="ck-edge" data-kind="fault" data-tone="faded" d="M 1080 314 L 1100 314 Q 1110 314 1110 324 L 1110 834 Q 1110 844 1120 844 L 1320 844" marker-end="url(#ck-arrow-fault)"/><path class="ck-edge" data-kind="branch" data-tone="faded" d="M 1100 182 L 1140 182 Q 1150 182 1150 192 L 1150 574 Q 1150 584 1160 584 L 1320 584" marker-end="url(#ck-arrow-branch)"/><path class="ck-edge" data-kind="branch" data-tone="faded" d="M 1100 182 L 1140 182 Q 1150 182 1150 192 L 1150 654 Q 1150 664 1160 664 L 1320 664" marker-end="url(#ck-arrow-branch)"/><path class="ck-edge" data-kind="branch" data-tone="faded" d="M 1100 182 L 1140 182 Q 1150 182 1150 192 L 1150 734 Q 1150 744 1160 744 L 1320 744" marker-end="url(#ck-arrow-branch)"/></svg>
+<div style="position:absolute;left:40px;top:100px"><section class="ck-node" data-kind="screen" id="n1"><span class="ck-entry">入口 · /login</span>
+  <header class="ck-card-bar"><h2 title="输入账号">输入账号</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看说明" title="说明" data-ck-info="下一步「密码与验证方式」里的「验证码登录」去向相同；运营创建的无密码账号只能用验证码登录" data-ck-title="输入账号"><svg class="ck-icon" aria-hidden="true"><use href="#ck-info"/></svg></button><button type="button" class="ck-icon-btn nodrag" aria-label="重置输入账号的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+
+</section></div><div style="position:absolute;left:440px;top:100px"><section class="ck-node" data-kind="screen" id="n2">
+  <header class="ck-card-bar"><h2 title="密码与验证方式">密码与验证方式</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置密码与验证方式的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><button type="button" class="ck-variant" aria-pressed="true">有密码</button><button type="button" class="ck-variant" aria-pressed="false">运营创建（无密码）</button></footer>
+</section></div><div style="position:absolute;left:840px;top:100px"><section class="ck-node" data-kind="decision" id="n3">
+  <header class="ck-card-bar"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg><h2>登录后去哪里？</h2></header><p class="ck-decision-detail">登录、注册或续接成功后，按邀请、渠道与组织状态分流</p>
+</section></div><div style="position:absolute;left:1320px;top:100px"><section class="ck-node" data-kind="screen" id="n4">
+  <header class="ck-card-bar"><h2 title="Desk / 原目标">Desk / 原目标</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置Desk / 原目标的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><ul class="ck-exits" aria-label="出口"><li><button type="button" class="ck-exit nodrag" data-ck-target="n1" aria-label="退出登录，回到「输入账号」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>退出登录</button></li><li><button type="button" class="ck-exit nodrag" data-ck-tip="回到选择与开通组织的「选择组织」" aria-label="切换组织，回到「选择组织」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>切换组织</button></li></ul></footer>
+</section></div><div style="position:absolute;left:840px;top:290px"><section class="ck-node" data-kind="screen" id="n5">
+  <header class="ck-card-bar"><h2 title="邮箱验证码 / 登录链接">邮箱验证码 / 登录链接</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置邮箱验证码 / 登录链接的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><ul class="ck-exits" aria-label="出口"><li><button type="button" class="ck-exit nodrag" data-ck-target="n1" aria-label="修改邮箱，回到「输入账号」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>修改邮箱</button></li></ul></footer>
+</section></div><div style="position:absolute;left:1320px;top:820px"><section class="ck-node" data-kind="screen" id="n6">
+  <header class="ck-card-bar"><h2 title="验证入口不可用">验证入口不可用</h2><button type="button" class="ck-icon-btn nodrag" aria-label="重置验证入口不可用的场景" title="重置场景"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button></header>
+  <div class="ck-card-body"><div class="ck-preview"><div class="ck-mock-page" aria-hidden="true"><i data-w="logo"></i><i data-w="title"></i><i data-w="line"></i><i data-w="input"></i><i data-w="input"></i><i data-w="button"></i><i data-w="line"></i></div></div></div>
+  <footer class="ck-card-foot nodrag"><ul class="ck-exits" aria-label="出口"><li><button type="button" class="ck-exit nodrag" data-ck-target="n2" aria-label="重新申请，回到「密码与验证方式」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>重新申请</button></li><li><button type="button" class="ck-exit nodrag" data-ck-target="n1" aria-label="返回登录，回到「输入账号」"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-u-down-left"/></svg>返回登录</button></li></ul></footer>
+</section></div><div style="position:absolute;left:440px;top:560px"><section class="ck-node" data-kind="reference">
+  <header class="ck-compact"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg><h2>注册与找回</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看注册与找回" title="查看注册与找回"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-right"/></svg></button></header>
+</section></div><div style="position:absolute;left:840px;top:740px"><section class="ck-node" data-kind="reference">
+  <header class="ck-compact"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg><h2>找回密码</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看注册与找回" title="查看注册与找回"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-right"/></svg></button></header>
+</section></div><div style="position:absolute;left:1320px;top:560px"><section class="ck-node" data-kind="reference">
+  <header class="ck-compact"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg><h2>邀请与申请</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看邀请与申请" title="查看邀请与申请"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-right"/></svg></button></header>
+</section></div><div style="position:absolute;left:1320px;top:640px"><section class="ck-node" data-kind="reference">
+  <header class="ck-compact"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg><h2>选择与开通组织</h2><button type="button" class="ck-icon-btn nodrag" aria-label="查看选择与开通组织" title="查看选择与开通组织"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-right"/></svg></button></header>
+</section></div><div style="position:absolute;left:1320px;top:720px"><section class="ck-node" data-kind="note">
+  <details class="ck-compact"><summary><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-info-bold"/></svg><h2>渠道页回跳</h2></summary><p class="ck-note-body nodrag">redirect 指向合作渠道页时，登录或注册成功后直接返回该渠道页，不需要组织上下文。</p></details>
+</section></div>
+<div class="ck-edge-label" data-kind="main" style="left:364px;top:108px;width:60px">继续</div><div class="ck-edge-label" data-kind="main" style="left:724px;top:108px;width:100px">密码正确</div><div class="ck-edge-label" data-kind="main" style="left:1184px;top:108px;width:120px">有当前组织</div><div class="ck-edge-label" data-kind="branch" style="left:364px;top:568px;width:60px">注册</div><div class="ck-edge-label" data-kind="branch" style="left:704px;top:298px;width:120px">验证码登录</div><div class="ck-edge-label" data-kind="branch" style="left:724px;top:748px;width:100px">忘记密码</div><div class="ck-edge-label" data-kind="fault" style="left:1184px;top:828px;width:120px">验证码失效</div><div class="ck-edge-label" data-kind="branch" style="left:1204px;top:568px;width:100px">邀请目标</div><div class="ck-edge-label" data-kind="branch" style="left:1204px;top:648px;width:100px">开通组织</div><div class="ck-edge-label" data-kind="branch" style="left:1204px;top:728px;width:100px">渠道目标</div>
+</div>
+<aside class="ck-legend" data-open aria-label="图例">
+  <button type="button" class="ck-legend-toggle" aria-expanded="true">图例<svg class="ck-icon" aria-hidden="true"><use href="#ck-caret-down"/></svg></button>
+  <section aria-label="节点"><h3>节点</h3><ul>
+    <li><span class="ck-legend-node" data-kind="screen"></span>页面</li>
+    <li><span class="ck-legend-node" data-kind="decision"><svg class="ck-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg></span>判断</li>
+    <li><span class="ck-legend-node" data-kind="reference"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-square-out"/></svg></span>跨流程</li>
+    <li><span class="ck-legend-node" data-kind="note"><svg class="ck-icon" aria-hidden="true"><use href="#ck-info-bold"/></svg></span>说明</li>
+  </ul></section>
+  <section aria-label="连线"><h3>连线</h3><ul>
+    <li><span class="ck-legend-line" data-kind="main"></span>主路径</li>
+    <li><span class="ck-legend-line" data-kind="branch"></span>分支</li>
+    <li><span class="ck-legend-line" data-kind="fault"></span>异常</li>
+  </ul></section>
+</aside>
+<div class="ck-controls" role="toolbar" aria-label="视口">
+  <button type="button" class="ck-control" title="放大" aria-label="放大"><svg class="ck-icon" aria-hidden="true"><use href="#ck-plus"/></svg></button>
+  <button type="button" class="ck-control" title="缩小" aria-label="缩小"><svg class="ck-icon" aria-hidden="true"><use href="#ck-minus"/></svg></button>
+  <button type="button" class="ck-control" title="适配全图（Shift+1）" aria-label="适配全图"><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrows-out"/></svg></button>
+  <button type="button" class="ck-control" title="缩放到选中卡片（Shift+2）" aria-label="缩放到选中卡片" disabled><svg class="ck-icon" aria-hidden="true"><use href="#ck-frame-corners"/></svg></button>
+  <button type="button" class="ck-control" title="重置布局" aria-label="重置布局" disabled><svg class="ck-icon" aria-hidden="true"><use href="#ck-arrow-counter-clockwise"/></svg></button>
+</div>
+</main>
+</body>
+</html>

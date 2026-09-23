@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>判断节点 · canvas-kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="kit.js" defer></script>
+</head>
+<body class="ck-page">
+<main class="ck-spec">
+<header><h1>判断节点</h1><p>没有预览，判断依据直接写在标题下；只写分流的时机与依据，不重复出边标签已写明的去向。</p><nav><a href="index.html">目录</a><a href="page-card.html">页面卡片</a><a href="decision-node.html">判断节点</a><a href="reference-node.html">引用节点</a><a href="note-node.html">说明节点</a><a href="edge-styles.html">连线与标签</a><a href="sidebar.html">目录面板</a><a href="legend.html">图例</a><a href="controls.html">视口控件</a><a href="canvas-shell.html">整页组合</a></nav></header>
+<section class="ck-demo">
+<h2>标准状态</h2>
+<div class="ck-demo-stage ck-canvas" data-static-dots>
+<figure><section class="ck-node" data-kind="decision">
+  <header class="ck-card-bar"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg><h2>登录后去哪里？</h2></header><p class="ck-decision-detail">登录、注册或续接成功后，按邀请、渠道与组织状态分流</p>
+</section><figcaption>带判断依据</figcaption></figure><figure><section class="ck-node" data-kind="decision">
+  <header class="ck-card-bar"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg><h2>企业身份是什么状态？</h2></header>
+</section><figcaption>只有问题</figcaption></figure><figure><section class="ck-node" data-kind="decision"><span class="ck-entry">入口 · 邀请链接</span>
+  <header class="ck-card-bar"><svg class="ck-icon ck-kind-icon" aria-hidden="true"><use href="#ck-git-fork"/></svg><h2>邀请链接对当前账号是否有效？</h2></header>
+</section><figcaption>作为子流程入口</figcaption></figure>
+</div>
+<ul class="ck-rules"><li>宽 260px，2px 强调色描边，圆角 16px，强调色浅底；标题强调色 16px / 600，可以换行。</li><li>判断依据 13px、行高 1.55，缩进与标题文字对齐（左 38px），不放进 info。</li><li>依据写全去向会把节点撑高、破坏连线指标；去向写在出边标签上。</li></ul>
+</section>
+
+</main>
+</body>
+</html>
