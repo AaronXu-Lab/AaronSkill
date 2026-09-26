@@ -1,8 +1,8 @@
 ---
 name: temp-local-service-doctor
-description: 启动项目的本地前后端及必要依赖，定位启动脚本失败、端口冲突、接口不可达或页面加载失败，并验证实际可用性。用于“起服务看看”“本地页面打不开”“多服务启动失败”等请求；不用于生产部署、普通软件启动或系统级网络与性能排障。
+description: "Start a project's local frontend, backend, and required dependencies; diagnose startup-script failures, port conflicts, unreachable APIs, or page-loading failures; and verify actual usability. Use for requests such as \"start the services so I can take a look,\" \"the local page will not open,\" or \"multiple services fail to start\"; not for production deployment, launching ordinary applications, or system-level network and performance troubleshooting."
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   author: "aaron_xu"
   creation_context: "本地开发与设计预览中反复出现多服务启动、端口漂移和前后端链路故障。将现有入口识别、按证据修复及用户目标验证沉淀为可复用流程。"
 ---

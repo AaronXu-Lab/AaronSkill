@@ -1,8 +1,8 @@
 ---
 name: aw-component-checker
-description: 审查桌面端组件的语义、组合与内部使用；或在组件变化后以编辑模式维护 Reference 和索引增删。不用于单纯视觉规格检查。
+description: "Review the semantics, composition, and internal usage of desktop components; or use editing mode after component changes to maintain Reference documentation and add or remove index entries. Not for checks limited to visual specifications."
 metadata:
-  version: "1.24.0"
+  version: "1.24.1"
   author: "aaron_xu"
   creation_context: "为桌面产品设计完成后的组件使用审查建立统一判断依据，减少相似组件误用、职责重复和内部意图冲突。"
 ---
