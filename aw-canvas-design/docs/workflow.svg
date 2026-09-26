@@ -1,13 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
-<title id="title">交互式流程画布设计</title><desc id="desc">检测现有环境，按需初始化或直接进入业务设计；评论与验收失败时修复，设计完成后仅在明确授权下迁移业务。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1420" role="img" aria-labelledby="title desc">
+<title id="title">交互式流程画布设计</title><desc id="desc">先复用项目现有画布与依赖，仅在能力缺失时按需引入；画布是第一步的设计整理入口，评论与验收失败时修复。只有明确授权后才把设计接入第二步的实际业务入口。</desc>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#243746;text-anchor:middle}.title{font-size:30px;font-weight:700}.node{font-size:18px;font-weight:600}.detail{font-size:14px}.line{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}</style>
 <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker></defs>
-<path fill="#f7f9fb" d="M0 0H1200V1200H0Z"/><text class="title" x="600" y="52">交互式流程画布设计</text>
+<path fill="#f7f9fb" d="M0 0H1200V1420H0Z"/><text class="title" x="600" y="52">交互式流程画布设计</text>
 <rect x="410" y="88" width="380" height="70" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/>
 <text class="node" x="600.0" y="118">明确范围，检测现有画布</text>
 <text class="detail" x="600.0" y="143">读取项目约定与环境就绪记录</text>
-<path d="M600 184L750 232L600 280L450 232Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text class="node" x="600" y="238">环境能力满足？</text>
 <path class="line" d="M600 158V184"/>
+<path d="M600 184L750 232L600 280L450 232Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text class="node" x="600" y="238">现有依赖可用？</text>
+<text class="detail" x="250" y="228">复用项目已安装的能力</text>
+<text class="detail" x="250" y="250">参考实现不限定技术栈或版本</text>
+<rect x="850" y="198" width="300" height="70" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/>
+<text class="node" x="1000.0" y="228">按需引入缺失能力</text>
+<text class="detail" x="1000.0" y="253">说明版本、命令、锁文件与许可</text>
+<path class="line" d="M750 232H850"/>
+<text class="detail" x="800" y="218">否</text>
+<rect x="850" y="310" width="300" height="70" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/>
+<text class="node" x="1000.0" y="340">无法引入：受影响项暂停</text>
+<text class="detail" x="1000.0" y="365">继续可独立完成的工作</text>
+<path class="line" d="M1000 268V310"/>
+<text class="detail" x="1030" y="294">不可引入</text>
+<path class="line" style="marker-end:none" d="M850 255H800V390H600"/>
+<text class="detail" x="740" y="382">按项目约定安装</text>
+<path class="line" d="M600 280V404"/>
+<text class="detail" x="572" y="352">是</text>
+<g transform="translate(0,220)">
+<path d="M600 184L750 232L600 280L450 232Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text class="node" x="600" y="238">环境能力满足？</text>
 <rect x="850" y="198" width="300" height="70" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
 <text class="node" x="1000.0" y="228">独立初始化 / 增量补齐</text>
 <text class="detail" x="1000.0" y="253">路由、隔离、分层布局</text>
@@ -31,7 +49,7 @@
 <text class="detail" x="1045" y="409">继续业务时</text>
 <rect x="410" y="535" width="380" height="70" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
 <text class="node" x="600.0" y="565">设计可交互的实际组件</text>
-<text class="detail" x="600.0" y="590">按场景处理字段、步骤与结果</text>
+<text class="detail" x="600.0" y="590">复制 canvas-kit，按场景处理字段与结果</text>
 <path class="line" d="M600 490V535"/>
 <rect x="410" y="650" width="380" height="70" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/>
 <text class="node" x="600.0" y="680">评论迭代，回核入口覆盖</text>
@@ -46,8 +64,8 @@
 <text class="detail" x="390" y="782">否</text>
 <path class="line" d="M190 757V685H410"/>
 <rect x="410" y="882" width="380" height="70" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>
-<text class="node" x="600.0" y="912">交付画布设计与验证证据</text>
-<text class="detail" x="600.0" y="937">清理验证临时资源</text>
+<text class="node" x="600.0" y="912">Step 1 · 交付画布设计</text>
+<text class="detail" x="600.0" y="937">整理与评审，非业务正式页面</text>
 <path class="line" d="M600 845V882"/>
 <text class="detail" x="624" y="868">是</text>
 <path d="M600 980L750 1026L600 1072L450 1026Z" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text class="node" x="600" y="1032">明确要求业务迁移？</text>
@@ -58,8 +76,10 @@
 <path class="line" d="M450 1026H330"/>
 <text class="detail" x="390" y="1012">否</text>
 <rect x="845" y="990" width="305" height="70" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/>
-<text class="node" x="997.5" y="1020">复用已审阅组件接入业务</text>
+<text class="node" x="997.5" y="1020">Step 2 · 接入实际业务入口</text>
 <text class="detail" x="997.5" y="1045">逐实际入口验证并交付</text>
 <path class="line" d="M750 1026H845"/>
 <text class="detail" x="798" y="1012">是</text>
-<text class="detail" x="600" y="1146">文本工作流为事实源 · 初始化可复用 · 业务能力决定分支 · 不限定技术栈</text></svg>
+<text class="detail" x="600" y="1146">文本工作流为事实源 · 优先复用项目现有能力 · 业务能力决定分支</text>
+</g>
+</svg>

@@ -1,0 +1,49 @@
+# Base UI
+
+官方无样式 React 基础组件；源码位于 mui/base-ui 的 packages/react。
+
+- Status: `fresh`
+- Last checked: `2026-09-24T06:30:51+00:00`
+- Last successful refresh: `2026-09-24T06:30:51+00:00`
+- Discovery leads: `37`
+- Evidence: index metadata only; verify exact source, behavior, dependencies and license.
+
+| Component | Description | Preview | Source |
+|---|---|---|---|
+| Accordion | A high-quality, unstyled React accordion component that displays a set of collapsible panels with headings. | [Preview](https://base-ui.com/react/components/accordion) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/accordion) |
+| Alert Dialog | A high-quality, unstyled React alert dialog component that requires a user response to proceed. | [Preview](https://base-ui.com/react/components/alert-dialog) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/alert-dialog) |
+| Autocomplete | A high-quality, unstyled React autocomplete component that renders an input with a list of filtered options. | [Preview](https://base-ui.com/react/components/autocomplete) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/autocomplete) |
+| Avatar | A high-quality, unstyled React avatar component that is easy to customize. | [Preview](https://base-ui.com/react/components/avatar) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/avatar) |
+| Button | A high-quality, unstyled React button component that can be rendered as another tag or focusable when disabled. | [Preview](https://base-ui.com/react/components/button) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/button) |
+| Checkbox | A high-quality, unstyled React checkbox component that is easy to customize. | [Preview](https://base-ui.com/react/components/checkbox) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/checkbox) |
+| Checkbox Group | A high-quality, unstyled React checkbox group component that provides a shared state for a series of checkboxes. | [Preview](https://base-ui.com/react/components/checkbox-group) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/checkbox-group) |
+| Collapsible | A high-quality, unstyled React collapsible component that displays a panel controlled by a button. | [Preview](https://base-ui.com/react/components/collapsible) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/collapsible) |
+| Combobox | A high-quality, unstyled React combobox component that renders an input combined with a list of predefined items to select. | [Preview](https://base-ui.com/react/components/combobox) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/combobox) |
+| Context Menu | A high-quality, unstyled React context menu component that appears at the pointer on right click or long press. | [Preview](https://base-ui.com/react/components/context-menu) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/context-menu) |
+| Dialog | A high-quality, unstyled React dialog component that opens on top of the entire page. | [Preview](https://base-ui.com/react/components/dialog) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/dialog) |
+| Drawer | A high-quality, unstyled React drawer component with swipe-to-dismiss gestures. | [Preview](https://base-ui.com/react/components/drawer) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/drawer) |
+| Field | A high-quality, unstyled React field component that provides labeling and validation for form controls. | [Preview](https://base-ui.com/react/components/field) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/field) |
+| Fieldset | A high-quality, unstyled React fieldset component with an easily stylable legend. | [Preview](https://base-ui.com/react/components/fieldset) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/fieldset) |
+| Form | A high-quality, unstyled React form component with consolidated error handling. | [Preview](https://base-ui.com/react/components/form) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/form) |
+| Input | A high-quality, unstyled React input component. | [Preview](https://base-ui.com/react/components/input) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/input) |
+| Menu | A high-quality, unstyled React menu component that displays list of actions in a dropdown, enhanced with keyboard navigation. | [Preview](https://base-ui.com/react/components/menu) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/menu) |
+| Menubar | A menu bar providing commands and options for your application. | [Preview](https://base-ui.com/react/components/menubar) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/menubar) |
+| Meter | A high-quality, unstyled React meter component that provides a graphical display of a numeric value. | [Preview](https://base-ui.com/react/components/meter) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/meter) |
+| Navigation Menu | A high-quality, unstyled React navigation menu component that displays a collection of links and menus for website navigation. | [Preview](https://base-ui.com/react/components/navigation-menu) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/navigation-menu) |
+| Number Field | A high-quality, unstyled React number field component with increment and decrement buttons, and a scrub area. | [Preview](https://base-ui.com/react/components/number-field) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/number-field) |
+| OTP Field | A high-quality, unstyled React OTP field component for one-time password and verification code entry. | [Preview](https://base-ui.com/react/components/otp-field) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/otp-field) |
+| Popover | A high-quality, unstyled React popover component that displays an accessible popup anchored to a button. | [Preview](https://base-ui.com/react/components/popover) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/popover) |
+| Preview Card | A high-quality, unstyled React preview card component for a link that shows a destination preview without interrupting keyboard or screen reader navigation. | [Preview](https://base-ui.com/react/components/preview-card) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/preview-card) |
+| Progress | A high-quality, unstyled React progress bar component that displays the status of a task that takes a long time. | [Preview](https://base-ui.com/react/components/progress) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/progress) |
+| Radio Group | A high-quality, unstyled React radio group component that provides shared state to a series of radio buttons. | [Preview](https://base-ui.com/react/components/radio-group) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/radio-group) |
+| Scroll Area | A high-quality, unstyled React scroll area that provides a native scroll container with custom scrollbars. | [Preview](https://base-ui.com/react/components/scroll-area) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/scroll-area) |
+| Select | A high-quality, unstyled React select component for choosing a predefined value in a dropdown menu. | [Preview](https://base-ui.com/react/components/select) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/select) |
+| Separator | A high-quality, unstyled React separator component that is accessible to screen readers. | [Preview](https://base-ui.com/react/components/separator) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/separator) |
+| Slider | A high-quality, unstyled React slider component that works like a range input and is easy to style. | [Preview](https://base-ui.com/react/components/slider) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/slider) |
+| Switch | A high-quality, unstyled React switch component that indicates whether a setting is on or off. | [Preview](https://base-ui.com/react/components/switch) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/switch) |
+| Tabs | A high-quality, unstyled React tabs component for toggling between related panels on the same page. | [Preview](https://base-ui.com/react/components/tabs) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/tabs) |
+| Toast | A high-quality, unstyled React toast component to generate notifications. | [Preview](https://base-ui.com/react/components/toast) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/toast) |
+| Toggle | A high-quality, unstyled React toggle component that displays a two-state button that can be on or off. | [Preview](https://base-ui.com/react/components/toggle) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/toggle) |
+| Toggle Group | A high-quality, unstyled React toggle group component that provides shared state to a series of toggle buttons. | [Preview](https://base-ui.com/react/components/toggle-group) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/toggle-group) |
+| Toolbar | A high-quality, unstyled React toolbar component that groups a set of buttons and controls. | [Preview](https://base-ui.com/react/components/toolbar) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/toolbar) |
+| Tooltip | A high-quality, unstyled React tooltip component that appears when an element is hovered or focused, showing a hint for sighted users. | [Preview](https://base-ui.com/react/components/tooltip) | [Source](https://github.com/mui/base-ui/tree/master/packages/react/src/tooltip) |

@@ -228,10 +228,10 @@ def _base_item(
         "category": category,
         "preview_url": preview_url,
         "source_url": source_url,
-        "foundation": source["foundation"],
-        "variant": source["variant"],
+        "foundation": source.get("foundation", "unverified"),
+        "variant": source.get("variant", "unverified"),
         "dependencies": dependencies or [],
-        "license": source.get("license", "unknown"),
+        "license": source.get("license", "unverified"),
         "base_ui_evidence": source["base_ui_evidence"],
         "port_eligible": False,
         "verification_status": "unverified",
@@ -497,7 +497,8 @@ def parse_shadcn_registry_variants(
                 title,
                 slug,
                 raw_item.get("description") or "",
-                source["preview_template"].format(slug=slug),
+                source.get("preview_overrides", {}).get(slug)
+                or source["preview_template"].format(slug=slug),
                 source.get("source_template", "").format(
                     slug=slug, registry_slug=registry_slug
                 )
@@ -592,7 +593,7 @@ def refresh_catalogs(
     validator: Callable[[str], bool] = url_exists,
 ) -> dict[str, Any]:
     config = read_json(sources_path, {})
-    if config.get("schema_version") != 1:
+    if config.get("schema_version") != 2:
         raise ValueError("Unsupported or missing sources schema_version")
 
     configured_ids = {source["id"] for source in config.get("sources", [])}
@@ -605,7 +606,13 @@ def refresh_catalogs(
     catalog.setdefault("sources", {})
     now = utc_now()
 
-    for source in config.get("sources", []):
+    for configured_source in config.get("sources", []):
+        source = {
+            **configured_source["config"],
+            "id": configured_source["id"],
+            "name": configured_source["name"],
+            "description": configured_source["description"],
+        }
         source_id = source["id"]
         if selected_sources and source_id not in selected_sources:
             continue
@@ -664,6 +671,7 @@ def refresh_catalogs(
             entry = {
                 "id": source_id,
                 "name": source["name"],
+                "description": source["description"],
                 "status": "fresh",
                 "last_checked_at": now,
                 "last_success_at": last_success,
@@ -677,6 +685,7 @@ def refresh_catalogs(
                 **old_entry,
                 "id": source_id,
                 "name": source["name"],
+                "description": source["description"],
                 "status": "stale" if old_items else "unavailable",
                 "last_checked_at": now,
                 "error": f"{type(error).__name__}: {error}",
@@ -698,6 +707,8 @@ def _escape_markdown(value: Any) -> str:
 def write_catalog_markdown(path: Path, source: dict[str, Any]) -> None:
     lines = [
         f"# {source.get('name', source.get('id', 'Catalog'))}",
+        "",
+        source.get("description", ""),
         "",
         f"- Status: `{source.get('status', 'unknown')}`",
         f"- Last checked: `{source.get('last_checked_at', 'never')}`",
@@ -823,6 +834,7 @@ def search_catalog(
             {
                 "id": source.get("id"),
                 "name": source.get("name"),
+                "description": source.get("description", ""),
                 "status": source.get("status", "unavailable"),
                 "last_verified_at": None,  # A catalog fetch is not source verification.
                 "catalog_last_checked_at": source.get("last_checked_at"),

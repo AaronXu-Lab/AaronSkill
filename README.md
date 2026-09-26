@@ -83,7 +83,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.29.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准 Default／Properties／Demo 结构；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.8.0` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.4.0` | 发现、比较并移植具体 UI 组件实现 | 仅处理组件级意图；整应用、页面、工作区或通用文件迁移不触发，Find 与 Port 保持选择门 |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `1.7.0` | 发现、比较并移植具体 UI 组件实现 | 仅处理组件级意图；整应用、页面、工作区或通用文件迁移不触发，Find 与 Port 保持选择门 |
 
 ### 设计 · Agent
 
@@ -91,7 +91,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-canvas-design`](./aw-canvas-design/) | `1.2.6` | 用实际组件画布设计多弹层业务流程，挂在所属业务路由下的 `/<业务路由>/design-canvas` 并支持 `?preview={name}` 单流程走查，以分层布局、连线精简和默认视图可读性走查保持画布可读，通过评论迭代并验收入口覆盖，提供独立环境初始化 | 复用已有画布、按需补齐；不限定技术栈；画布认可不自动授权业务迁移 |
+| [`aw-canvas-design`](./aw-canvas-design/) | `1.5.0` | 用实际组件画布设计多弹层业务流程，`/<业务路由>/design-canvas` 是设计整理入口，支持 `?preview={name}` 单流程走查；附带 canvas-kit 标准件（可直接打开的 HTML 组件与 React 参考实现），通过评论迭代并验收入口覆盖 | 优先复用项目已有画布和依赖，不强制对齐 canvas-kit 版本；画布不是业务正式页面，只有明确要求时才接入实际入口 |
 | [`aw-component-checker`](./aw-component-checker/) | `1.24.0` | 审查桌面端组件的语义、组合与内部使用，并维护 Component Reference 和索引 | 按需读取相关规则；纯审查不自动改写；不用于单纯视觉规格检查 |
 | [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.7.0` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
 | [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.12.0` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |

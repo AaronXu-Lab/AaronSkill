@@ -1,8 +1,10 @@
 # Dice UI Base
 
+Dice UI 的 Base UI 组件变体。
+
 - Status: `fresh`
-- Last checked: `2026-09-21T03:33:21+00:00`
-- Last successful refresh: `2026-09-20T15:30:21+00:00`
+- Last checked: `2026-09-24T06:26:19+00:00`
+- Last successful refresh: `2026-09-24T06:26:19+00:00`
 - Discovery leads: `40`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 

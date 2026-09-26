@@ -1,8 +1,10 @@
 # ReUI Public Base
 
+ReUI 公开仓库中的 Base UI 组件，排除付费版本。
+
 - Status: `fresh`
-- Last checked: `2026-09-21T03:33:21+00:00`
-- Last successful refresh: `2026-09-17T04:45:10+00:00`
+- Last checked: `2026-09-24T06:26:19+00:00`
+- Last successful refresh: `2026-09-24T06:26:19+00:00`
 - Discovery leads: `75`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 

@@ -3,7 +3,7 @@ name: aw-find-and-port-ui-component
 description: Find and compare implementations for a concrete UI component, or adapt an explicitly selected component implementation into a target project. Use for component-level discovery or porting, not whole app, page, workspace, or generic file migration.
 metadata:
   author: aaron_xu
-  version: "1.4.0"
+  version: "1.7.0"
   creation_context: "为将 UI 组件发现、比较、来源验证与项目移植整合为通用的两阶段工作流而创建，在保留用户明确选择门的同时，统一处理许可证、依赖兼容性、现有组件复用与目标项目风格适配。"
 ---
 

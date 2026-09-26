@@ -82,6 +82,35 @@ class CatalogParsingTests(unittest.TestCase):
         self.assertFalse(items[0]["port_eligible"])
         self.assertEqual(items[0]["verification_status"], "unverified")
 
+    def test_markdown_parser_maps_official_component_docs_to_source(self) -> None:
+        source = {
+            "id": "base-ui-official",
+            "name": "Base UI",
+            "sections": ["Components"],
+            "strip_preview_suffix": ".md",
+            "source_template": "https://github.com/mui/base-ui/tree/master/packages/react/src/{slug}",
+            "verify_preview": True,
+            "base_ui_evidence": "official docs and source",
+        }
+        markdown = """## Components
+- [Accordion](https://base-ui.com/react/components/accordion.md): Panels.
+## Utilities
+- [useRender](https://base-ui.com/react/utils/use-render.md): Utility.
+"""
+        items = parse_markdown_index(
+            source,
+            markdown,
+            validator=lambda url: url == "https://base-ui.com/react/components/accordion",
+        )
+        self.assertEqual([item["slug"] for item in items], ["accordion"])
+        self.assertEqual(
+            items[0]["preview_url"], "https://base-ui.com/react/components/accordion"
+        )
+        self.assertEqual(
+            items[0]["source_url"],
+            "https://github.com/mui/base-ui/tree/master/packages/react/src/accordion",
+        )
+
     def test_registry_parser_intersects_base_sitemap_and_component_types(self) -> None:
         source = {
             "id": "dice",
@@ -120,8 +149,8 @@ class CatalogParsingTests(unittest.TestCase):
 
     def test_nested_markdown_parser_keeps_only_component_links(self) -> None:
         source = {
-            "id": "exabase",
-            "name": "exaBase",
+            "id": "nested-docs",
+            "name": "Nested Docs",
             "base_url": "https://example.test/design/",
             "link_prefix": "/docs/components/",
             "preview_template": "https://example.test/design/docs/components/{slug}/",
@@ -237,6 +266,43 @@ class CatalogParsingTests(unittest.TestCase):
             dialog["source_url"], "https://example.test/r/dialog-base.json"
         )
 
+    def test_registry_parser_keeps_distinct_items_and_preview_overrides(self) -> None:
+        source = {
+            "id": "basecn",
+            "name": "basecn",
+            "preview_template": "https://example.test/docs/{slug}",
+            "preview_overrides": {
+                "form": "https://example.test/docs/form-with-react-hook-form"
+            },
+            "source_template": "https://example.test/r/{registry_slug}.json",
+            "preferred_suffix": "",
+            "verify_preview": True,
+            "base_ui_evidence": "verify exact item",
+        }
+        registry = json.dumps(
+            {
+                "items": [
+                    {"name": "form", "type": "registry:ui"},
+                    {"name": "drawer", "type": "registry:ui"},
+                    {"name": "drawer-base", "type": "registry:ui"},
+                ]
+            }
+        )
+        items = parse_shadcn_registry_variants(
+            source,
+            registry,
+            validator=lambda url: url != "https://example.test/docs/form",
+        )
+        self.assertEqual([item["slug"] for item in items], ["drawer", "drawer-base", "form"])
+        form = next(item for item in items if item["slug"] == "form")
+        self.assertEqual(
+            form["preview_url"], "https://example.test/docs/form-with-react-hook-form"
+        )
+        self.assertEqual(form["source_url"], "https://example.test/r/form.json")
+        self.assertEqual(form["foundation"], "unverified")
+        self.assertEqual(form["variant"], "unverified")
+        self.assertEqual(form["license"], "unverified")
+
 
 class CatalogRefreshTests(unittest.TestCase):
     def test_failed_refresh_preserves_cache_as_stale(self) -> None:
@@ -248,17 +314,18 @@ class CatalogRefreshTests(unittest.TestCase):
             sources_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 1,
+                        "schema_version": 2,
                         "sources": [
                             {
                                 "id": "example",
                                 "name": "Example",
-                                "kind": "markdown_index",
-                                "catalog_url": "https://example.test/llms.txt",
-                                "sections": ["Components"],
-                                "foundation": "base-ui",
-                                "variant": "base",
-                                "base_ui_evidence": "verified",
+                                "description": "Example component library.",
+                                "config": {
+                                    "kind": "markdown_index",
+                                    "catalog_url": "https://example.test/llms.txt",
+                                    "sections": ["Components"],
+                                    "base_ui_evidence": "verified",
+                                },
                             }
                         ],
                     }
@@ -310,8 +377,56 @@ class CatalogRefreshTests(unittest.TestCase):
             )
             entry = catalog["sources"]["example"]
             self.assertEqual(entry["status"], "stale")
+            self.assertEqual(entry["description"], "Example component library.")
             self.assertEqual(entry["items"], [cached_item])
             self.assertIn("offline", entry["error"])
+
+    def test_nested_source_config_refreshes_catalog(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            sources_path = root / "sources.json"
+            catalog_path = root / "catalog.json"
+            catalogs_dir = root / "catalogs"
+            sources_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 2,
+                        "sources": [
+                            {
+                                "id": "example",
+                                "name": "Example",
+                                "description": "Example component library.",
+                                "config": {
+                                    "kind": "markdown_index",
+                                    "catalog_url": "https://example.test/llms.txt",
+                                    "sections": ["Components"],
+                                    "source_template": "https://example.test/r/{slug}.json",
+                                    "base_ui_evidence": "verify exact item",
+                                },
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            def fetcher(*_args, **_kwargs):
+                return "## Components\n- [Button](https://example.test/button): Action.\n", {}
+
+            catalog = refresh_catalogs(
+                sources_path,
+                catalog_path,
+                catalogs_dir,
+                fetcher=fetcher,
+            )
+            entry = catalog["sources"]["example"]
+            self.assertEqual(entry["status"], "fresh")
+            self.assertEqual(entry["description"], "Example component library.")
+            self.assertEqual([item["slug"] for item in entry["items"]], ["button"])
+            self.assertEqual(
+                entry["items"][0]["source_url"],
+                "https://example.test/r/button.json",
+            )
 
 
 class CatalogSearchTests(unittest.TestCase):

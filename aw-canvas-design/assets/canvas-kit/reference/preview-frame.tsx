@@ -24,7 +24,7 @@ function releaseSlot() {
   else loading -= 1
 }
 
-const PreviewFrame = forwardRef<HTMLIFrameElement | null, IPreviewFrameProps>(function PreviewFrame({ nodeId, title, src, width, height, scale = 1 }, ref) {
+const PreviewFrame = forwardRef<HTMLIFrameElement, IPreviewFrameProps>(function PreviewFrame({ nodeId, title, src, width, height, scale = 1 }, ref) {
   const { setNodes } = useReactFlow()
   const [ready, setReady] = useState(false)
   const [loaded, setLoaded] = useState(false)
@@ -32,7 +32,7 @@ const PreviewFrame = forwardRef<HTMLIFrameElement | null, IPreviewFrameProps>(fu
   const frame = useRef<HTMLIFrameElement>(null)
   const release = useRef<(() => void) | undefined>(undefined)
   const cleanup = useRef<(() => void) | undefined>(undefined)
-  useImperativeHandle(ref, () => frame.current, [])
+  useImperativeHandle(ref, () => frame.current!, [])
 
   useEffect(() => {
     let cancelled = false

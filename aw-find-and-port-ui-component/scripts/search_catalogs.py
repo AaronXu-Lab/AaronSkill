@@ -31,7 +31,8 @@ def main() -> int:
     cached_sources = catalog.get("sources", {})
     catalog["sources"] = {
         source["id"]: cached_sources.get(source["id"], {
-            "id": source["id"], "name": source["name"], "status": "unavailable",
+            "id": source["id"], "name": source["name"],
+            "description": source["description"], "status": "unavailable",
             "error": "No cached catalog; run refresh_catalogs.py", "items": [],
         })
         for source in config.get("sources", [])

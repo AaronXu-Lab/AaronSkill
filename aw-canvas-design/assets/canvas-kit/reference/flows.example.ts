@@ -26,7 +26,7 @@ export const FLOWS: TCanvasFlows<IDemoTarget> = {
     ],
     edges: [
       mainEdge('account', 'credentials', '继续'), mainEdge('credentials', 'route', '密码正确'), mainEdge('route', 'workspace', '有当前组织'),
-      edge('account', 'registration', '注册'), edge('credentials', 'otp', '验证码登录'), edge('otp', 'route', '验证通过'),
+      edge('account', 'registration', '注册'), edge('account', 'otp', '验证码登录'), edge('otp', 'route', '验证通过'),
       faultEdge('otp', 'invalid', '验证码失效'), edge('route', 'channel', '渠道目标'),
     ],
   },

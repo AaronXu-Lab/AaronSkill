@@ -14,6 +14,8 @@ python3 scripts/refresh_catalogs.py --json
 
 目录中的 `port_eligible: false`、`verification_status: unverified` 和 `requires_verification: true` 表示待核验，不代表已判定不兼容。刷新时间只证明目录获取，不能充当源码核验时间。搜索 `match` 是词面排序提示，不是最终行为判断。
 
+目录不预填具体组件的基础依赖、变体或许可证结论；输出中的这些字段为 `unverified` 时，以准确源码和许可证核验结果为准。
+
 请求描述行为或使用别名时读取 [组件别名](component-aliases.md)，按原词及有用别名搜索：
 
 ```bash
@@ -24,11 +26,12 @@ python3 scripts/search_catalogs.py --query "<component>" --alias "<alternate ter
 
 对有希望的候选执行 [来源核验](source-retrieval.md)，检查预览与源码的一致性、维护状态以及目标兼容性。没有目标项目信息时明确兼容性假设，不编造已安装依赖。
 
-内置目录当前提供 Base UI 或原生变体线索，包括 shadcn/ui Base、coss ui、Dice UI Base、ReUI 公开 MIT 仓库、exaBase Design System V4 和 Fluid Functionalism。这是发现范围，不是永久兼容性结论，也不限制 Port 的准确来源。
+内置目录当前提供 Base UI 或原生变体线索，包括 Base UI 官方仓库、shadcn/ui Base、basecn、coss ui、Dice UI Base、ReUI 公开 MIT 仓库和 Fluid Functionalism。这是发现范围，不是永久兼容性结论，也不限制 Port 的准确来源。
 
 - 目录缺少合适候选时，检查同一库当前官方变体；准确变体不兼容不能推导整个库不兼容。
+- Base UI 官方仓库：提供无样式 React 基础组件；比较和移植时区分它与已封装样式的成套组件实现，并核验目标项目是否已有 `@base-ui/react`。
 - ReUI：仅接受可追溯到公开仓库的源码，付费或鉴权分发单独处理。
-- exaBase：准确区分上游与 ExaWizards 来源；复制部分涉及 CC BY 4.0 时保留所需署名与修改说明。
+- basecn：公开 registry 同时包含依赖 Base UI 的组件和原生组件；`drawer` 与 `drawer-base` 是不同条目，`form` 和 `form-tanstack` 的文档路径不同于 registry 名称，按准确 registry 项核验基础依赖与预览。
 - Fluid Functionalism：同时存在 Base UI 与 Radix 变体时优先检查 Base UI registry 项；沿准确项的依赖图核验，名称不能证明基础依赖。
 - 按行为将候选分为 `Exact`、`Equivalent`、`Composite`，依次优先；不能把词面命中当成满足需求。
 
