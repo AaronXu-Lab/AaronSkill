@@ -3,7 +3,7 @@
 官方无样式 React 基础组件，样式较丑所以参考价值较低。
 
 - Status: `fresh`
-- Last checked: `2026-09-27T12:20:47+00:00`
+- Last checked: `2026-09-28T08:41:16+00:00`
 - Last successful refresh: `2026-09-27T12:20:47+00:00`
 - Discovery leads: `37`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'unstyled'}`

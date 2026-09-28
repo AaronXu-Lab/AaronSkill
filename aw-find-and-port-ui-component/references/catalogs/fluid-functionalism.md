@@ -3,7 +3,7 @@
 优先收录 Base UI 变体，并保留兼容的原生组件。
 
 - Status: `fresh`
-- Last checked: `2026-09-27T12:20:47+00:00`
+- Last checked: `2026-09-28T08:41:16+00:00`
 - Last successful refresh: `2026-09-27T12:20:47+00:00`
 - Discovery leads: `42`
 - Source type hint: `{'foundation': 'mixed', 'styling': 'tailwind-css'}`
