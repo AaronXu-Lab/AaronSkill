@@ -219,6 +219,7 @@ def _base_item(
     category: str,
     dependencies: list[str] | None = None,
 ) -> dict[str, Any]:
+    source_type = source.get("type", {})
     return {
         "source_id": source["id"],
         "library": source["name"],
@@ -228,11 +229,15 @@ def _base_item(
         "category": category,
         "preview_url": preview_url,
         "source_url": source_url,
-        "foundation": source.get("foundation", "unverified"),
+        "foundation_hint": source_type.get("foundation", "unverified"),
+        "styling_hint": source_type.get("styling", "unverified"),
+        "foundation": "unverified",
+        "styling": "unverified",
         "variant": source.get("variant", "unverified"),
         "dependencies": dependencies or [],
-        "license": source.get("license", "unverified"),
-        "base_ui_evidence": source["base_ui_evidence"],
+        "license": "unverified",
+        "source_license_hint": source.get("license", "unverified"),
+        "foundation_evidence": source.get("foundation_evidence", "unverified"),
         "port_eligible": False,
         "verification_status": "unverified",
         "requires_verification": True,
@@ -404,6 +409,55 @@ def parse_github_tree_paths(
     return _deduplicate(items)
 
 
+def parse_github_tree_sitemap(
+    source: dict[str, Any], tree_text: str, sitemap_text: str
+) -> list[dict[str, Any]]:
+    """Use official component pages and public source files as discovery leads."""
+    tree = json.loads(tree_text)
+    if tree.get("truncated"):
+        raise ValueError("GitHub tree is truncated; complete source evidence is required")
+    root = ET.fromstring(sitemap_text)
+    prefix = source["sitemap_prefix"]
+    path_prefix = source["path_prefix"]
+    paths = {
+        entry.get("path", "")
+        for entry in tree.get("tree", [])
+        if entry.get("type") == "blob"
+        and entry.get("path", "").startswith(path_prefix)
+    }
+    tsx_by_stem: dict[str, list[str]] = {}
+    for path in paths:
+        if path.endswith(".tsx"):
+            tsx_by_stem.setdefault(Path(path).stem, []).append(path)
+
+    items: list[dict[str, Any]] = []
+    for element in root.iter():
+        if not element.tag.endswith("loc") or not element.text:
+            continue
+        preview_url = element.text.rstrip("/")
+        if not preview_url.startswith(prefix):
+            continue
+        slug = preview_url[len(prefix):]
+        if not slug or "/" in slug or slug.startswith("use"):
+            continue
+        direct_component = f"{path_prefix}{slug}/{slug}.tsx"
+        direct_index = f"{path_prefix}{slug}/index.ts"
+        candidates = sorted(
+            tsx_by_stem.get(slug, []),
+            key=lambda path: (path.count("/"), len(path), path),
+        )
+        path = (
+            direct_component if direct_component in paths else
+            direct_index if direct_index in paths else
+            candidates[0] if candidates else None
+        )
+        source_url = source["source_template"].format(path=path) if path else None
+        items.append(
+            _base_item(source, slug, slug, "", preview_url, source_url, "Components")
+        )
+    return _deduplicate(items)
+
+
 def parse_shadcn_cli(
     source: dict[str, Any],
     text: str,
@@ -441,10 +495,9 @@ def parse_shadcn_registry_variants(
     text: str,
     validator: Callable[[str], bool] = url_exists,
 ) -> list[dict[str, Any]]:
-    """Prefer explicit Base UI variants and keep compatible native UI items."""
+    """Keep every public UI variant; exact foundations are verified later."""
     registry = json.loads(text)
     preferred_suffix = source.get("preferred_suffix", "-base")
-    forbidden = tuple(source.get("forbidden_dependencies", []))
     groups: dict[str, list[dict[str, Any]]] = {}
 
     for raw_item in registry.get("items", []):
@@ -462,13 +515,7 @@ def parse_shadcn_registry_variants(
 
     candidates: list[dict[str, Any]] = []
     for slug, variants in groups.items():
-        preferred = [
-            item
-            for item in variants
-            if preferred_suffix and item["name"].endswith(preferred_suffix)
-        ]
-        selected = preferred or variants
-        for raw_item in selected:
+        for raw_item in variants:
             dependencies = list(
                 dict.fromkeys(
                     [
@@ -477,12 +524,6 @@ def parse_shadcn_registry_variants(
                     ]
                 )
             )
-            if any(
-                dependency == prefix or dependency.startswith(prefix)
-                for dependency in dependencies
-                for prefix in forbidden
-            ):
-                continue
             registry_slug = raw_item["name"]
             title = raw_item.get("title") or slug.replace("-", " ").title()
             preferred_title_suffix = source.get("preferred_title_suffix", "")
@@ -507,6 +548,14 @@ def parse_shadcn_registry_variants(
                 dependencies,
             )
             item["registry_slug"] = registry_slug
+            if any(dep.startswith("@base-ui/react") for dep in dependencies) or (
+                preferred_suffix and registry_slug.endswith(preferred_suffix)
+            ):
+                item["foundation_hint"] = "base-ui"
+            elif any(
+                dep.startswith(("@radix-ui/", "radix-ui")) for dep in dependencies
+            ):
+                item["foundation_hint"] = "radix-ui"
             candidates.append(item)
 
     if source.get("verify_preview"):
@@ -522,8 +571,25 @@ def parse_shadcn_registry_variants(
 def _deduplicate(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     unique: dict[tuple[str, str], dict[str, Any]] = {}
     for item in items:
-        unique[(item["source_id"], item["slug"])] = item
+        unique[(item["source_id"], item.get("registry_slug", item["slug"]))] = item
     return sorted(unique.values(), key=lambda item: normalize_text(item["name"]))
+
+
+def _normalize_cached_item(item: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
+    """Preserve a stale lead without promoting old catalog claims to verification."""
+    source_type = source.get("type", {})
+    normalized = {key: value for key, value in item.items() if key != "base_ui_evidence"}
+    normalized.setdefault("foundation_hint", source_type.get("foundation", "unverified"))
+    normalized.setdefault("styling_hint", source_type.get("styling", "unverified"))
+    normalized["foundation"] = "unverified"
+    normalized["styling"] = "unverified"
+    normalized["source_license_hint"] = source.get("license", item.get("license", "unverified"))
+    normalized["license"] = "unverified"
+    normalized["foundation_evidence"] = source.get("foundation_evidence", "unverified")
+    normalized["port_eligible"] = False
+    normalized["verification_status"] = "unverified"
+    normalized["requires_verification"] = True
+    return normalized
 
 
 def _fetch_source_documents(
@@ -559,7 +625,7 @@ def _fetch_source_documents(
         return {key: completed.stdout}, metadata
 
     urls = [source["catalog_url"]]
-    if source["kind"] == "registry_sitemap":
+    if source["kind"] in {"registry_sitemap", "github_tree_sitemap"}:
         urls.append(source["sitemap_url"])
 
     fetched: dict[str, str | None] = {}
@@ -593,7 +659,7 @@ def refresh_catalogs(
     validator: Callable[[str], bool] = url_exists,
 ) -> dict[str, Any]:
     config = read_json(sources_path, {})
-    if config.get("schema_version") != 2:
+    if config.get("schema_version") != 3:
         raise ValueError("Unsupported or missing sources schema_version")
 
     configured_ids = {source["id"] for source in config.get("sources", [])}
@@ -601,7 +667,7 @@ def refresh_catalogs(
         raise ValueError(f"Unknown source ids: {sorted(selected_sources - configured_ids)}")
 
     catalog = read_json(
-        catalog_path, {"schema_version": 1, "generated_at": None, "sources": {}}
+        catalog_path, {"schema_version": 2, "generated_at": None, "sources": {}}
     )
     catalog.setdefault("sources", {})
     now = utc_now()
@@ -612,12 +678,16 @@ def refresh_catalogs(
             "id": configured_source["id"],
             "name": configured_source["name"],
             "description": configured_source["description"],
+            "type": configured_source["type"],
         }
         source_id = source["id"]
         if selected_sources and source_id not in selected_sources:
             continue
         old_entry = catalog["sources"].get(source_id, {})
-        old_items = old_entry.get("items", [])
+        old_items = [
+            _normalize_cached_item(item, source)
+            for item in old_entry.get("items", [])
+        ]
         config_hash = hashlib.sha256(
             json.dumps(source, sort_keys=True, ensure_ascii=False).encode("utf-8")
         ).hexdigest()
@@ -653,6 +723,13 @@ def refresh_catalogs(
                     source, documents[source["catalog_url"]]
                 )
                 last_success = now
+            elif source["kind"] == "github_tree_sitemap":
+                items = parse_github_tree_sitemap(
+                    source,
+                    documents[source["catalog_url"]],
+                    documents[source["sitemap_url"]],
+                )
+                last_success = now
             elif source["kind"] == "shadcn_cli":
                 command_key = "command:" + " ".join(source["command"])
                 items = parse_shadcn_cli(
@@ -672,6 +749,7 @@ def refresh_catalogs(
                 "id": source_id,
                 "name": source["name"],
                 "description": source["description"],
+                "type": source["type"],
                 "status": "fresh",
                 "last_checked_at": now,
                 "last_success_at": last_success,
@@ -686,6 +764,7 @@ def refresh_catalogs(
                 "id": source_id,
                 "name": source["name"],
                 "description": source["description"],
+                "type": source["type"],
                 "status": "stale" if old_items else "unavailable",
                 "last_checked_at": now,
                 "error": f"{type(error).__name__}: {error}",
@@ -694,7 +773,7 @@ def refresh_catalogs(
         catalog["sources"][source_id] = entry
         write_catalog_markdown(catalogs_dir / f"{source_id}.md", entry)
 
-    catalog["schema_version"] = 1
+    catalog["schema_version"] = 2
     catalog["generated_at"] = now
     atomic_write(catalog_path, json.dumps(catalog, indent=2, ensure_ascii=False) + "\n")
     return catalog
@@ -714,6 +793,7 @@ def write_catalog_markdown(path: Path, source: dict[str, Any]) -> None:
         f"- Last checked: `{source.get('last_checked_at', 'never')}`",
         f"- Last successful refresh: `{source.get('last_success_at', 'never')}`",
         f"- Discovery leads: `{len(source.get('items', []))}`",
+        f"- Source type hint: `{_escape_markdown(source.get('type', {}))}`",
         "- Evidence: index metadata only; verify exact source, behavior, dependencies and license.",
     ]
     if source.get("error"):
@@ -721,8 +801,8 @@ def write_catalog_markdown(path: Path, source: dict[str, Any]) -> None:
     lines.extend(
         [
             "",
-            "| Component | Description | Preview | Source |",
-            "|---|---|---|---|",
+            "| Component | Foundation hint | Styling hint | Description | Preview | Source |",
+            "|---|---|---|---|---|---|",
         ]
     )
     for item in source.get("items", []):
@@ -731,8 +811,10 @@ def write_catalog_markdown(path: Path, source: dict[str, Any]) -> None:
             f"[Source]({item['source_url']})" if item.get("source_url") else "—"
         )
         lines.append(
-            "| {name} | {description} | {preview} | {source_link} |".format(
+            "| {name} | {foundation} | {styling} | {description} | {preview} | {source_link} |".format(
                 name=_escape_markdown(item["name"]),
+                foundation=_escape_markdown(item.get("foundation_hint", "unverified")),
+                styling=_escape_markdown(item.get("styling_hint", "unverified")),
                 description=_escape_markdown(item.get("description")),
                 preview=preview,
                 source_link=source_link,
@@ -829,12 +911,17 @@ def search_catalog(
                     "port_eligible": False, "verification_status": "unverified",
                     "requires_verification": True,
                 })
-        scored.sort(key=lambda item: (-item["score"], normalize_text(item["name"])))
+        scored.sort(key=lambda item: (
+            -item["score"],
+            item.get("foundation_hint") != "base-ui",
+            normalize_text(item["name"]),
+        ))
         result["sources"].append(
             {
                 "id": source.get("id"),
                 "name": source.get("name"),
                 "description": source.get("description", ""),
+                "type": source.get("type", {}),
                 "status": source.get("status", "unavailable"),
                 "last_verified_at": None,  # A catalog fetch is not source verification.
                 "catalog_last_checked_at": source.get("last_checked_at"),
@@ -852,7 +939,7 @@ def search_as_markdown(result: dict[str, Any]) -> str:
         "",
         "Catalog leads only. Match labels are lexical hints; behavior, source, dependencies and license remain unverified.",
         "",
-        "| Library | Component | Match hint | Preview | Source | Catalog license claim | Catalog foundation claim | Source verified |",
+        "| Library | Component | Match hint | Preview | Source | Foundation hint | Styling hint | Source verified |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for source in result["sources"]:
@@ -866,14 +953,14 @@ def search_as_markdown(result: dict[str, Any]) -> str:
                 f"[Source]({item['source_url']})" if item.get("source_url") else "—"
             )
             lines.append(
-                "| {library} | {component} | {match} | [Preview]({preview}) | {source_link} | {license} | {evidence} | {verified} |".format(
+                "| {library} | {component} | {match} | [Preview]({preview}) | {source_link} | {foundation} | {styling} | {verified} |".format(
                     library=_escape_markdown(source["name"]),
                     component=_escape_markdown(item["name"]),
                     match=item["match"],
                     preview=item["preview_url"],
                     source_link=source_link,
-                    license=_escape_markdown(item.get("license", "unknown")),
-                    evidence=_escape_markdown(item.get("base_ui_evidence", "unknown")),
+                    foundation=_escape_markdown(item.get("foundation_hint", "unverified")),
+                    styling=_escape_markdown(item.get("styling_hint", "unverified")),
                     verified="No",
                 )
             )

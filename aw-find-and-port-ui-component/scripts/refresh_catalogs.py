@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh curated Base UI catalogs with stale-cache fallback."""
+"""Refresh curated UI component catalogs with stale-cache fallback."""
 
 from __future__ import annotations
 

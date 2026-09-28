@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "sources": [
     {
       "id": "base-ui-official",
@@ -14,7 +14,11 @@
         "strip_preview_suffix": ".md",
         "source_template": "https://github.com/mui/base-ui/tree/master/packages/react/src/{slug}",
         "verify_preview": true,
-        "base_ui_evidence": "Official Base UI documentation lists the React components; each listed component matches an export in the public MIT-licensed mui/base-ui repository. Verify the exact package source and dependencies before porting."
+        "foundation_evidence": "Official Base UI documentation lists the React components; each listed component matches an export in the public MIT-licensed mui/base-ui repository. Verify the exact package source and dependencies before porting."
+      },
+      "type": {
+        "foundation": "base-ui",
+        "styling": "unstyled"
       }
     },
     {
@@ -36,7 +40,11 @@
         "preview_template": "https://ui.shadcn.com/docs/components/base/{slug}",
         "source_template": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/bases/base/ui/{slug}.tsx",
         "verify_preview": true,
-        "base_ui_evidence": "Official shadcn registry item and Base component documentation path verified live."
+        "foundation_evidence": "Official shadcn registry item and Base component documentation path verified live."
+      },
+      "type": {
+        "foundation": "base-ui",
+        "styling": "tailwind-css"
       }
     },
     {
@@ -54,15 +62,11 @@
         "source_template": "https://basecn.dev/r/{registry_slug}.json",
         "verify_preview": true,
         "preferred_suffix": "",
-        "forbidden_dependencies": [
-          "radix-ui",
-          "@radix-ui/",
-          "react-aria",
-          "@react-aria/",
-          "@ark-ui/",
-          "@headlessui/"
-        ],
-        "base_ui_evidence": "Official basecn docs describe a Base UI foundation, and the public MIT registry contains both @base-ui/react items and native React/HTML items. Verify each exact registry item and its transitive dependencies before recommending or porting."
+        "foundation_evidence": "Official basecn docs describe a Base UI foundation, and the public MIT registry contains both @base-ui/react items and native React/HTML items. Verify each exact registry item and its transitive dependencies before recommending or porting."
+      },
+      "type": {
+        "foundation": "mixed",
+        "styling": "tailwind-css"
       }
     },
     {
@@ -78,7 +82,11 @@
         ],
         "strip_preview_suffix": ".md",
         "source_template": "https://coss.com/ui/r/{slug}.json",
-        "base_ui_evidence": "Official coss ui catalog states that the active component library is built on Base UI."
+        "foundation_evidence": "Official coss ui catalog states that the active component library is built on Base UI."
+      },
+      "type": {
+        "foundation": "base-ui",
+        "styling": "unverified"
       }
     },
     {
@@ -100,7 +108,11 @@
           "@ark-ui/",
           "@headlessui/"
         ],
-        "base_ui_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present."
+        "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present."
+      },
+      "type": {
+        "foundation": "base-ui",
+        "styling": "tailwind-css"
       }
     },
     {
@@ -114,7 +126,11 @@
         "path_suffix": ".json",
         "preview_template": "https://reui.io/components/{slug}",
         "source_template": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/{slug}",
-        "base_ui_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting."
+        "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting."
+      },
+      "type": {
+        "foundation": "base-ui",
+        "styling": "unverified"
       }
     },
     {
@@ -129,15 +145,30 @@
         "verify_preview": true,
         "preferred_suffix": "-base",
         "preferred_title_suffix": " (Base UI)",
-        "forbidden_dependencies": [
-          "radix-ui",
-          "@radix-ui/",
-          "react-aria",
-          "@react-aria/",
-          "@ark-ui/",
-          "@headlessui/"
-        ],
-        "base_ui_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting."
+        "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting."
+      },
+      "type": {
+        "foundation": "mixed",
+        "styling": "tailwind-css"
+      }
+    },
+    {
+      "id": "astryx",
+      "name": "Astryx",
+      "description": "Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。",
+      "type": {
+        "foundation": "custom",
+        "styling": "stylex"
+      },
+      "config": {
+        "kind": "github_tree_sitemap",
+        "catalog_url": "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1",
+        "sitemap_url": "https://astryx.atmeta.com/sitemap.xml",
+        "sitemap_prefix": "https://astryx.atmeta.com/components/",
+        "path_prefix": "packages/core/src/",
+        "source_template": "https://github.com/facebook/astryx/blob/main/{path}",
+        "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+        "license": "MIT"
       }
     }
   ]

@@ -7,10 +7,10 @@ External repository layouts and supported variants change. Discover the current 
 Treat eligibility as a property of the exact component variant, not of the library name.
 
 1. Resolve the official documentation, exact preview, registry item, repository, default branch, and license.
-2. Inspect source imports, package dependencies, registry dependencies, peer dependencies, and required providers.
-3. Compare those requirements with the target project's actual framework, component foundation, version constraints, build system, and styling approach.
-4. Mark a variant compatible only when it can use the project's existing stack or when the user explicitly approves the required additions.
-5. Record exact evidence: source path or registry item, relevant imports, dependency findings, license, and compatibility conclusion.
+2. Inspect source imports, package dependencies, registry dependencies, peer dependencies, required providers, and styling or token tools. A source-level type or catalog hint is not proof of the exact component's foundation.
+3. Separate dependencies that are part of the required behavior from source implementation choices that can be replaced. Compare the required behavior with the target project's React, Base UI, CSS Modules, versions, build system, components, and tokens.
+4. Mark a variant suitable for Port only when its required behavior and user-specified details can be recreated in the target Base UI + CSS Modules stack, or when the user has approved a concrete unavoidable addition or deviation. Source use of another foundation or styling tool alone does not make it unsuitable.
+5. Record exact evidence: source path or registry item, relevant imports, dependencies to keep or replace, license, conversion risk, and compatibility conclusion.
 
 Do not permanently classify a whole library from one incompatible variant. Recheck current variants when upstream sources change.
 
@@ -51,4 +51,4 @@ After retrieval, identify:
 
 Use these findings for the selected phase: [Find comparison](find.md) or [Port adaptation](port.md). Read only that phase; source retrieval does not switch phases.
 
-Stop when the exact source cannot be verified, the license does not permit the intended use, or compatibility would require an unapproved foundational dependency.
+Stop when the exact source cannot be verified, the license does not permit the intended use, or the proposed conversion would require an unapproved detail loss or dependency.

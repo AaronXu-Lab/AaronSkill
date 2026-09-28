@@ -13,6 +13,7 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 from catalog_lib import (  # noqa: E402
     load_alias_terms,
     parse_github_tree_paths,
+    parse_github_tree_sitemap,
     parse_markdown_index,
     parse_markdown_link_prefix,
     parse_registry_sitemap,
@@ -201,9 +202,40 @@ class CatalogParsingTests(unittest.TestCase):
         )
         items = parse_github_tree_paths(source, tree)
         self.assertEqual([item["slug"] for item in items], ["breadcrumb"])
-        self.assertEqual(items[0]["license"], "MIT public only")
+        self.assertEqual(items[0]["license"], "unverified")
+        self.assertEqual(items[0]["source_license_hint"], "MIT public only")
 
-    def test_registry_variant_parser_prefers_base_and_keeps_native_items(self) -> None:
+    def test_astryx_sitemap_keeps_components_and_maps_nested_source(self) -> None:
+        source = {
+            "id": "astryx",
+            "name": "Astryx",
+            "type": {"foundation": "custom", "styling": "stylex"},
+            "sitemap_prefix": "https://astryx.atmeta.com/components/",
+            "path_prefix": "packages/core/src/",
+            "source_template": "https://github.com/facebook/astryx/blob/main/{path}",
+            "license": "MIT",
+        }
+        tree = json.dumps({"tree": [
+            {"path": "packages/core/src/Button/Button.tsx", "type": "blob"},
+            {"path": "packages/core/src/Avatar/AvatarStatusDot.tsx", "type": "blob"},
+        ]})
+        sitemap = """<urlset><url><loc>https://astryx.atmeta.com/components/Button</loc></url>
+<url><loc>https://astryx.atmeta.com/components/AvatarStatusDot</loc></url>
+<url><loc>https://astryx.atmeta.com/components/useButton</loc></url></urlset>"""
+        items = parse_github_tree_sitemap(source, tree, sitemap)
+        self.assertEqual([item["slug"] for item in items], ["AvatarStatusDot", "Button"])
+        self.assertTrue(items[0]["source_url"].endswith("/Avatar/AvatarStatusDot.tsx"))
+        self.assertEqual(items[0]["foundation_hint"], "custom")
+        self.assertEqual(items[0]["styling_hint"], "stylex")
+        self.assertEqual(items[0]["foundation"], "unverified")
+        self.assertEqual(items[0]["license"], "unverified")
+
+    def test_astryx_truncated_tree_is_not_treated_as_complete(self) -> None:
+        source = {"path_prefix": "packages/core/src/", "sitemap_prefix": "https://astryx.atmeta.com/components/"}
+        with self.assertRaisesRegex(ValueError, "truncated"):
+            parse_github_tree_sitemap(source, '{"truncated":true,"tree":[]}', "<urlset/>")
+
+    def test_registry_variant_parser_keeps_base_radix_and_native_items(self) -> None:
         source = {
             "id": "fluid",
             "name": "Fluid",
@@ -258,10 +290,13 @@ class CatalogParsingTests(unittest.TestCase):
             registry,
             validator=lambda url: not url.endswith("/missing"),
         )
-        self.assertEqual([item["slug"] for item in items], ["badge", "dialog"])
-        dialog = next(item for item in items if item["slug"] == "dialog")
+        self.assertEqual([item["slug"] for item in items], ["badge", "dialog", "dialog", "radix-only"])
+        dialog = next(item for item in items if item["registry_slug"] == "dialog-base")
         self.assertEqual(dialog["name"], "Dialog")
         self.assertEqual(dialog["registry_slug"], "dialog-base")
+        self.assertEqual(dialog["foundation_hint"], "base-ui")
+        radix = next(item for item in items if item["registry_slug"] == "dialog")
+        self.assertEqual(radix["foundation_hint"], "radix-ui")
         self.assertEqual(
             dialog["source_url"], "https://example.test/r/dialog-base.json"
         )
@@ -314,12 +349,13 @@ class CatalogRefreshTests(unittest.TestCase):
             sources_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 2,
+                        "schema_version": 3,
                         "sources": [
                             {
                                 "id": "example",
                                 "name": "Example",
                                 "description": "Example component library.",
+                                "type": {"foundation": "base-ui", "styling": "unverified"},
                                 "config": {
                                     "kind": "markdown_index",
                                     "catalog_url": "https://example.test/llms.txt",
@@ -378,7 +414,10 @@ class CatalogRefreshTests(unittest.TestCase):
             entry = catalog["sources"]["example"]
             self.assertEqual(entry["status"], "stale")
             self.assertEqual(entry["description"], "Example component library.")
-            self.assertEqual(entry["items"], [cached_item])
+            self.assertEqual(entry["items"][0]["name"], cached_item["name"])
+            self.assertEqual(entry["items"][0]["foundation_hint"], "base-ui")
+            self.assertEqual(entry["items"][0]["foundation"], "unverified")
+            self.assertFalse(entry["items"][0]["port_eligible"])
             self.assertIn("offline", entry["error"])
 
     def test_nested_source_config_refreshes_catalog(self) -> None:
@@ -390,12 +429,13 @@ class CatalogRefreshTests(unittest.TestCase):
             sources_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 2,
+                        "schema_version": 3,
                         "sources": [
                             {
                                 "id": "example",
                                 "name": "Example",
                                 "description": "Example component library.",
+                                "type": {"foundation": "base-ui", "styling": "unverified"},
                                 "config": {
                                     "kind": "markdown_index",
                                     "catalog_url": "https://example.test/llms.txt",
@@ -430,6 +470,18 @@ class CatalogRefreshTests(unittest.TestCase):
 
 
 class CatalogSearchTests(unittest.TestCase):
+    def test_equal_lexical_matches_show_base_first_without_hiding_other_foundations(self) -> None:
+        catalog = {"sources": {"one": {
+            "id": "one", "name": "One", "status": "fresh",
+            "items": [
+                {"name": "Dialog", "slug": "dialog", "foundation_hint": "radix-ui"},
+                {"name": "Dialog", "slug": "dialog", "foundation_hint": "base-ui"},
+            ],
+        }}}
+        result = search_catalog(catalog, "dialog", [])
+        hints = [item["foundation_hint"] for item in result["sources"][0]["matches"]]
+        self.assertEqual(hints, ["base-ui", "radix-ui"])
+
     def test_alias_search_and_explicit_no_match_per_source(self) -> None:
         catalog = {
             "generated_at": "now",

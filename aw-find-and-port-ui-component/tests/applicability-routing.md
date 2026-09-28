@@ -19,9 +19,14 @@
 | “只比较这个 Combobox 组件的准确源码 URL 与现有实现。” | Find；准确 URL 不构成实施授权。 |
 | “已选定 `design-pr-0918/src/components/Button.tsx`，把这个 Button 适配到 `worker-fe` 的共享 Button。” | Port；同仓库本地来源已准确映射到具体组件及目标落点。 |
 | “拆分应用时，另请为 `worker-fe` 找一个符合这些交互要求的 Date Picker。” | 仅 Date Picker 子任务使用 Find；本 Skill 不接管应用拆分。 |
+| “比较 Astryx 与 Base UI 的 Command Palette；Astryx 完全满足需求，Base UI 候选只满足部分行为。” | Find；两类来源都核验并呈现，行为更匹配的 Astryx 候选优先推荐，同时说明转换工作量和偏差风险。 |
+| “已选定 Astryx 的 Button 源码，把它移植到采用 Base UI 与 CSS Modules 的 React 组件库。” | Port；来源的 StyleX 与内部模块需要评估并转换，不能直接复制依赖；已知所需细节损失和新增依赖在转换前一并确认。 |
+| “把选定的 React 组件移植到 Vue 项目并保留现有 Vue 组件体系。” | 不进入本 Skill 的 Port；目标不采用所支持的 React／Base UI ＋ CSS Modules 规范。 |
 
 ## 本次维护走查记录
 
 1.3.0：维护者依据上述输入逐项追踪 description → 入口 → 适用门 → Find／Port 路由。双应用拆分、页面迁移、文件复制与普通本地修复均停在适用门外；具体组件发现进入 Find；已选同仓库组件实现进入 Port；大任务中的明确组件子任务仅局部适用。
 
 这是文档语义走查，未运行独立模型回放或真实项目移植，不能证明未来模型必然执行，也不代表反例项目已被修改。
+
+2.0.0：维护者按新增三例复核 Find 的跨基础比较与 Port 的目标技术栈门槛。以上仍是文档语义走查，不是独立模型回放或真实组件移植。
