@@ -1,9 +1,9 @@
 ---
 name: aw-logo-asset-cook
-description: 从用户指定的 SVG、图片或图标资源目录生成全平台图标资源；图片先判断矢量化可行性，再循环重绘、渲染对照为 SVG，不适合高保真转换时提示降级并确认。覆盖明暗主题、平台验证与分平台用法 README。
+description: "Generate icon assets for all platforms from a user-specified SVG, image, or icon asset directory. For images, assess vectorization feasibility first, then iteratively redraw as SVG and compare renders; explain fidelity loss and obtain confirmation when high-fidelity conversion is unsuitable. Covers light and dark themes, platform validation, and a README with platform-specific usage instructions."
 metadata:
   author: aaron_xu
-  version: "1.3.0"
+  version: "1.3.1"
   creation_context: "为从用户显式选择的 SVG 或经可行性评估和迭代重绘的图片建立 SVG 唯一事实源稳定生成网页 favicon、可引用的安装图标、桌面端、移动端、菜单栏及托盘图标，并提供可随资源同步更新的分平台用法说明；同时在单主题补色、清理产物和 Apple Icon Composer 验证前设置明确授权门禁。"
 ---
 

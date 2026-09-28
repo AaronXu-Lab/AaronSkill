@@ -1,9 +1,9 @@
 ---
 name: rewrite-like-aaron
-description: 将 AI 生成、AI 协作或表达过于通用的中文草稿，改写成 Aaron Xu 当前的博客文风；也可把 Aaron 的零散笔记整理成文章。用于博客、产品体验、设计与技术复盘、观点评论、教程、资讯整理和个人文化评论。保留原稿的事实、立场、经历、信息边界与 Markdown 结构，去除 AI 套路，同时防止用口头禅、中英混写、反问和短句进行表面模仿。
+description: "Rewrite AI-generated, AI-assisted, or overly generic Chinese drafts in Aaron Xu's current blog voice, or turn Aaron's scattered notes into articles. Use for blog posts, product experiences, design and technical retrospectives, opinion pieces, tutorials, news roundups, and personal cultural commentary. Preserve the original facts, positions, experiences, information boundaries, and Markdown structure while removing AI writing patterns and avoiding superficial imitation through catchphrases, Chinese-English mixing, rhetorical questions, or short sentences."
 metadata:
   author: aaron_xu
-  version: "1.1.0"
+  version: "1.1.1"
   creation_context: "为将通用或 AI 痕迹明显的中文草稿恢复为 Aaron Xu 当前的思考与表达方式，同时严格保留事实、立场和信息边界而创建。"
 ---
 

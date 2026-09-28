@@ -1,8 +1,8 @@
 ---
 name: aw-mail-read-later
-description: 根据当前情境、时间、阅读长度和已保存反馈，从用户 Outlook 中名称恰好为 Read Later 的文件夹推荐一项适合当前阅读的内容；也可处理该文件夹中当前推荐内容的阅读、总结、翻译、反馈、暂时跳过、归档或排除。仅在请求明确涉及 Outlook 的 Read Later 文件夹或其中已经推荐的内容时使用。
+description: "Recommend one item suited to the current reading context from the Outlook folder named exactly Read Later, considering available time, reading length, and saved feedback. Also handle reading, summarizing, translating, feedback, temporary skipping, archiving, or excluding the currently recommended item from that folder. Use only for requests explicitly involving the Outlook Read Later folder or an item already recommended from it."
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   author: "aaron_xu"
   creation_context: "为把 Outlook Read Later 文件夹中的链接安全同步到项目索引，并结合情境、投入时间和历史反馈一次推荐或处理一项内容而创建。"
 ---

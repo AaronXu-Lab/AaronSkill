@@ -1,8 +1,8 @@
 ---
 name: aw-ux-info-redundancy-audit
-description: 审查 UI/UX 的信息重复、密度与层级，给出有依据的精简决策。纯样式调整、逐字翻译或非语义代码修复不触发。
+description: "Review information redundancy, density, and hierarchy in UI/UX, and provide evidence-based simplification decisions. Do not trigger for styling-only changes, literal translation, or code fixes that do not affect semantics."
 metadata:
-  version: "1.7.0"
+  version: "1.7.1"
   author: "aaron_xu"
   creation_context: "为在界面改动前系统识别语义重复、信息密度和层级问题，并形成可验证的最小安全改动决策而创建。"
 ---

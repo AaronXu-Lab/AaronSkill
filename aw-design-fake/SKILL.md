@@ -1,8 +1,8 @@
 ---
 name: aw-design-fake
-description: "为前端原型接入或审查占位交互、统一假数据、源码展示与可关闭的演示状态，维护共享 fake bundle。不用于单元测试 mock、网络 mock 或生产功能实现。"
+description: "Integrate or review placeholder interactions, shared fake data, source-code displays, and demo states that can be turned off in frontend prototypes, and maintain a shared fake bundle. Not for unit-test mocks, network mocks, or production feature implementation."
 metadata:
-  version: "1.8.0"
+  version: "1.8.1"
   author: "aaron_xu"
   creation_context: "原型与设计验证工程里的占位交互、占位文案和演示数据长期靠人凭记忆各写各的，导致同一语义的假数据出现多份副本、假提示混进真实链路、演示开关关不干净。为把 fake 的分层判断、统一入口和真实契约隔离固化成与具体项目无关、可同步可校验的流程而创建。"
 ---

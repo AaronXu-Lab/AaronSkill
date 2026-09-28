@@ -1,8 +1,8 @@
 ---
 name: aw-canvas-design
-description: 用可交互的实际组件画布设计和迭代多 Modal、Sheet、Dialog 业务流程，支持独立环境初始化、评论闭环与入口覆盖验收。不用于纯流程图或单个弹窗样式修改。
+description: "Design and iterate on business flows involving multiple Modals, Sheets, and Dialogs using an interactive canvas of actual components, with standalone environment initialization, comment resolution, and entry-point coverage verification. Not for plain flowcharts or styling a single dialog."
 metadata:
-  version: "1.5.0"
+  version: "1.5.1"
   author: "aaron_xu"
   creation_context: "源于在 ADM 画布中并列操作真实弹窗、分支与结果并通过评论迭代的实践，将可复用画布基础设施与多弹层业务设计分离，支持不同业务和技术栈。"
 ---
