@@ -42,7 +42,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 ## Skills
 
-目前共收录 **19 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另设 Working On 分组，并单独标记不再维护的 Skill。
+目前共收录 **20 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另设 Working On 分组，并单独标记不再维护的 Skill。
 
 ### 元 Skill
 
@@ -60,6 +60,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | --- | --- | --- | --- |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
+| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.5.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按当前复杂度与历史上下文收益派发实施任务 | 当前任务先定档，历史只加权；简单后续任务可降档；执行会话独立校验且互不通信 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
 ### 资源获取
@@ -81,7 +82,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.0.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准结构及文档版式；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.1.0` | 从 Base UI 与其他 React 来源发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 先比较并等待选择，Port 提前确认所需细节损失或新增依赖 |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.2.0` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
 
 ### 设计 · Agent
 

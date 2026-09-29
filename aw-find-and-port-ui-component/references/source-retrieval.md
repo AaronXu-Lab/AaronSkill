@@ -28,6 +28,8 @@ gh api repos/<owner>/<repo>/git/trees/<default-branch>?recursive=1 --jq '.tree[]
 gh api repos/<owner>/<repo>/contents/<exact-path> --jq '.content' | base64 -d
 ```
 
+For Lobe UI, start with the [official component documentation](https://ui.lobehub.com/) or its [component index](https://ui.lobehub.com/llms.txt), then verify the selected variant in [lobehub/lobe-ui](https://github.com/lobehub/lobe-ui). Check the repository's [LICENSE](https://github.com/lobehub/lobe-ui/blob/master/LICENSE) at the same revision as the source before copying code. The catalog's `mixed` and `antd-style` labels are discovery hints; inspect the exact component and its imports, providers and styling rather than treating the whole library as one implementation.
+
 For registry-based sources:
 
 1. Fetch the exact registry item.

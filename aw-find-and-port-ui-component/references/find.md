@@ -34,7 +34,7 @@ python3 scripts/search_catalogs.py --query "<component>" --alias "<alternate ter
 - basecn：公开 registry 同时包含依赖 Base UI 的组件和原生组件；`drawer` 与 `drawer-base` 是不同条目，`form` 和 `form-tanstack` 的文档路径不同于 registry 名称，按准确 registry 项核验基础依赖与预览。
 - Fluid Functionalism：同时存在 Base UI 与其他变体时分别核验准确 registry 项；名称不能证明基础依赖。
 - Astryx：官方公开 React／StyleX 源码和 MIT 许可；目录可由公开仓库及文档索引定位候选。移植其源码可能牵涉内部模块、主题与 StyleX，不把预编译 CSS 或单一文件当作独立可移植实现。
-- Lobe UI：官方组件索引与公开 MIT 仓库用于定位候选；组件可能依赖 Ant Design、Base UI、主题 Provider、动效或内部模块。按准确组件核验其依赖与样式，目录里的 `mixed` 和 `antd-style` 只是来源线索，不代表每个组件的基础或转换成本。
+- Lobe UI：以 [官方组件文档](https://ui.lobehub.com/) 和已配置的 `llms.txt` 索引定位候选，再到 [公开源码仓库](https://github.com/lobehub/lobe-ui) 核对准确变体。组件可能依赖 Ant Design、Base UI、主题 Provider、动效或内部模块；核验准确源码、依赖、样式和 [仓库许可证](https://github.com/lobehub/lobe-ui/blob/master/LICENSE) 后再推荐。目录里的 `mixed` 和 `antd-style` 只是来源线索，不代表每个组件的基础或转换成本。
 - 按行为将候选分为 `Exact`、`Equivalent`、`Composite`，依次优先；这些搜索标签只是词面提示，最终级别按核实的行为确定。行为完全匹配的非 Base UI 候选优先于行为近似的 Base UI 候选；相同匹配程度下优先 Base UI。若两类都有可行候选，都给出推荐并标明来源基础、转换工作量与偏差风险。非 Base UI 来源不预设成品效果较差。
 
 只有用户明确要求时才扩展内置来源之外的搜索，并核验新增来源的官方文档、准确实现、许可证、维护状态与兼容性。将其加入 `references/sources.json` 持续维护前另需用户批准。

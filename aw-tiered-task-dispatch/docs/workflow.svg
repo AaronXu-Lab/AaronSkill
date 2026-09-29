@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1120" role="img" aria-labelledby="title desc">
+  <title id="title">分档任务派发流程</title>
+  <desc id="desc">主会话直接完成讨论和只读研究；实施任务先从当前复杂度定档，再衡量关联历史能否显著减少理解成本或衔接风险，按本次任务和上下文收益选择会话，由执行会话自行校验并报告。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#52606d"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#203040;text-anchor:middle}
+      .heading{font-size:30px;font-weight:700}.node{font-size:18px;font-weight:600}.sub{font-size:14px;font-weight:400}.edge{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}
+      .input{fill:#fff;stroke:#9eacb8}.stage{fill:#edf6ff;stroke:#287bbb}.decision{fill:#fff7e6;stroke:#c98312}.stop{fill:#fff0ef;stroke:#c94b43}.done{fill:#edf9f1;stroke:#2e8b54}
+    </style>
+  </defs>
+  <rect width="1200" height="1120" fill="#f7f9fb"/>
+  <text x="600" y="55" class="heading">分档任务派发</text>
+  <rect x="410" y="90" width="380" height="70" rx="14" class="input" stroke-width="2"/>
+  <text x="600" y="120" class="node">用户显式调用</text><text x="600" y="143" class="sub">当前会话担任主会话</text>
+  <path d="M600 160 V196" class="edge"/>
+  <polygon points="600,195 775,260 600,325 425,260" class="decision" stroke-width="2"/>
+  <text x="600" y="253" class="node">要求建立或实际实施？</text><text x="600" y="276" class="sub">只读查询和分析留在主会话</text>
+  <path d="M425 260 H240 V370" class="edge"/><text x="335" y="248" class="sub">否</text>
+  <rect x="65" y="370" width="350" height="65" rx="14" class="done" stroke-width="2"/><text x="240" y="410" class="node">主会话调查并直接回答</text>
+  <path d="M600 325 V370" class="edge"/><text x="622" y="351" class="sub">是</text>
+  <rect x="410" y="370" width="380" height="70" rx="14" class="stage" stroke-width="2"/>
+  <text x="600" y="400" class="node">确认平台、项目、授权与映射</text><text x="600" y="423" class="sub">复用会话，缺失档位再建立</text>
+  <path d="M600 440 V476" class="edge"/>
+  <polygon points="600,475 775,540 600,605 425,540" class="decision" stroke-width="2"/>
+  <text x="600" y="532" class="node">平台会话与模型可用？</text><text x="600" y="555" class="sub">三档模型与强度必须可确认</text>
+  <path d="M775 540 H960 V630" class="edge"/><text x="860" y="528" class="sub">否</text>
+  <rect x="790" y="630" width="345" height="70" rx="14" class="stop" stroke-width="2"/>
+  <text x="962" y="660" class="node">说明阻塞并请用户决定</text><text x="962" y="683" class="sub">不自行替换配置</text>
+  <path d="M600 605 V640" class="edge"/><text x="622" y="623" class="sub">是</text>
+  <rect x="400" y="640" width="400" height="70" rx="14" class="stage" stroke-width="2"/>
+  <text x="600" y="670" class="node">先按当前任务从低档定级</text><text x="600" y="693" class="sub">不继承原任务的复杂度</text>
+  <path d="M600 710 V750" class="edge"/>
+  <polygon points="600,750 810,825 600,900 390,825" class="decision" stroke-width="2"/>
+  <text x="600" y="817" class="node">历史上下文有显著收益？</text><text x="600" y="840" class="sub">减少理解成本、衔接或迁移风险</text>
+  <path d="M390 825 H235 V940" class="edge"/><text x="330" y="810" class="sub">是且适合</text>
+  <rect x="65" y="940" width="340" height="75" rx="14" class="stage" stroke-width="2"/>
+  <text x="235" y="970" class="node">考虑复用原会话</text><text x="235" y="993" class="sub">说明本次档位与上下文收益</text>
+  <path d="M600 900 V940" class="edge"/><text x="625" y="923" class="sub">无或不足</text>
+  <rect x="435" y="940" width="350" height="75" rx="14" class="stage" stroke-width="2"/>
+  <text x="610" y="970" class="node">按当前档位派发</text><text x="610" y="993" class="sub">简单后续任务可降档</text>
+  <path d="M235 1015 V1040 H600" fill="none" stroke="#52606d" stroke-width="2.5"/>
+  <path d="M600 1015 V1040" fill="none" stroke="#52606d" stroke-width="2.5"/>
+  <path d="M600 1040 V1060" class="edge"/>
+  <rect x="400" y="1060" width="400" height="55" rx="14" class="done" stroke-width="2"/>
+  <text x="600" y="1090" class="node">执行会话自行校验并报告</text>
+</svg>
