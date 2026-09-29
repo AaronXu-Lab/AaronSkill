@@ -78,10 +78,10 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `3.29.1` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准 Default／Properties／Demo 结构；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.0.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准结构及文档版式；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.0.0` | 从 Base UI 与其他 React 来源发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 先比较并等待选择，Port 提前确认所需细节损失或新增依赖 |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.1.0` | 从 Base UI 与其他 React 来源发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 先比较并等待选择，Port 提前确认所需细节损失或新增依赖 |
 
 ### 设计 · Agent
 

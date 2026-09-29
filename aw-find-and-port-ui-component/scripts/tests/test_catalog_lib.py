@@ -14,6 +14,7 @@ from catalog_lib import (  # noqa: E402
     load_alias_terms,
     parse_github_tree_paths,
     parse_github_tree_sitemap,
+    parse_lobe_ui_index,
     parse_markdown_index,
     parse_markdown_link_prefix,
     parse_registry_sitemap,
@@ -25,6 +26,35 @@ from catalog_lib import (  # noqa: E402
 
 
 class CatalogParsingTests(unittest.TestCase):
+    def test_lobe_ui_index_joins_grouped_docs_to_exact_source(self) -> None:
+        source = {
+            "id": "lobe-ui", "name": "Lobe UI",
+            "source_template": "https://github.com/lobehub/lobe-ui/blob/master/{path}",
+            "type": {"foundation": "mixed", "styling": "antd-style"},
+            "license": "MIT",
+        }
+        index = "\n".join([
+            "- [Button](https://ui.lobehub.com/skills/components/button.md): Button. Docs: https://ui.lobehub.com/components/button",
+            "- [ChatInputArea](https://ui.lobehub.com/skills/components/chat/chat-input-area.md): Chat input.",
+            "- [ChatInputArea](https://ui.lobehub.com/skills/components/mobile/chat-input-area.md): Mobile chat input.",
+            "- [Missing](https://ui.lobehub.com/skills/components/missing.md): Absent source.",
+        ])
+        tree = json.dumps({"truncated": False, "tree": [
+            {"type": "blob", "path": path} for path in [
+                "src/Button/index.mdx", "src/Button/index.ts",
+                "src/chat/ChatInputArea/index.mdx", "src/chat/ChatInputArea/index.ts",
+                "src/mobile/ChatInputArea/index.mdx", "src/mobile/ChatInputArea/index.ts",
+            ]
+        ]})
+        items = parse_lobe_ui_index(source, index, tree)
+        self.assertEqual(len(items), 3)
+        by_slug = {item["slug"]: item for item in items}
+        self.assertEqual(by_slug["chat/chat-input-area"]["preview_url"], "https://ui.lobehub.com/components/chat/chat-input-area")
+        self.assertTrue(by_slug["chat/chat-input-area"]["source_url"].endswith("/src/chat/ChatInputArea/index.ts"))
+        self.assertEqual(by_slug["mobile/chat-input-area"]["category"], "mobile")
+        self.assertEqual(items[0]["foundation"], "unverified")
+        self.assertFalse(items[0]["port_eligible"])
+
     def test_shadcn_cli_parser_keeps_only_ui_items_with_base_pages(self) -> None:
         source = {
             "id": "shadcn",

@@ -170,6 +170,23 @@
         "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
         "license": "MIT"
       }
+    },
+    {
+      "id": "lobe-ui",
+      "name": "Lobe UI",
+      "description": "面向 AI 应用的 React 组件库，混用 Ant Design、Base UI 与自定义实现；按具体组件核验移植成本。",
+      "type": {
+        "foundation": "mixed",
+        "styling": "antd-style"
+      },
+      "config": {
+        "kind": "lobe_ui_index",
+        "catalog_url": "https://ui.lobehub.com/llms.txt",
+        "tree_url": "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1",
+        "source_template": "https://github.com/lobehub/lobe-ui/blob/master/{path}",
+        "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+        "license": "MIT"
+      }
     }
   ]
 }

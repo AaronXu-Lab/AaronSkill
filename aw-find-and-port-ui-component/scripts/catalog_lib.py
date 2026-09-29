@@ -458,6 +458,67 @@ def parse_github_tree_sitemap(
     return _deduplicate(items)
 
 
+def parse_lobe_ui_index(
+    source: dict[str, Any], index_text: str, tree_text: str
+) -> list[dict[str, Any]]:
+    """Join Lobe UI's official component index to its public source tree."""
+    tree = json.loads(tree_text)
+    if tree.get("truncated"):
+        raise ValueError("GitHub tree is truncated; complete source evidence is required")
+    paths = {
+        entry.get("path", "")
+        for entry in tree.get("tree", [])
+        if entry.get("type") == "blob"
+    }
+    source_dirs = {
+        path.rsplit("/", 1)[0]
+        for path in paths
+        if path.startswith("src/") and path.endswith("/index.mdx")
+    }
+    items: list[dict[str, Any]] = []
+    for raw_line in index_text.splitlines():
+        match = LINK_RE.match(raw_line.strip())
+        if not match:
+            continue
+        name, indexed_url, description = match.groups()
+        parsed = urllib.parse.urlparse(indexed_url)
+        prefix = "/skills/components/"
+        if parsed.netloc != "ui.lobehub.com" or not parsed.path.startswith(prefix):
+            continue
+        relative = parsed.path[len(prefix):]
+        if not relative.endswith(".md"):
+            continue
+        parts = relative[:-3].split("/")
+        if len(parts) > 2 or not parts or any(not part for part in parts):
+            continue
+        group = parts[0] if len(parts) == 2 else ""
+        slug = relative[:-3]
+        component_name = re.sub(r"[^a-z0-9]", "", name.lower())
+        candidates = [
+            directory for directory in source_dirs
+            if (not group or directory.startswith(f"src/{group}/"))
+            and re.sub(r"[^a-z0-9]", "", Path(directory).name.lower())
+            == component_name
+        ]
+        if not group:
+            candidates = [directory for directory in candidates if directory.count("/") == 1]
+        if len(candidates) != 1:
+            continue
+        directory = candidates[0]
+        source_path = f"{directory}/index.ts"
+        if source_path not in paths:
+            source_path = f"{directory}/index.mdx"
+        preview_url = f"https://ui.lobehub.com/components/{relative[:-3]}"
+        items.append(
+            _base_item(
+                source, name, slug, description or "", preview_url,
+                source["source_template"].format(path=source_path),
+                group or "Components",
+            )
+        )
+    return _deduplicate(items)
+
+
 def parse_shadcn_cli(
     source: dict[str, Any],
     text: str,
@@ -627,6 +688,8 @@ def _fetch_source_documents(
     urls = [source["catalog_url"]]
     if source["kind"] in {"registry_sitemap", "github_tree_sitemap"}:
         urls.append(source["sitemap_url"])
+    if source["kind"] == "lobe_ui_index":
+        urls.append(source["tree_url"])
 
     fetched: dict[str, str | None] = {}
     metadata: dict[str, dict[str, str]] = {}
@@ -728,6 +791,12 @@ def refresh_catalogs(
                     source,
                     documents[source["catalog_url"]],
                     documents[source["sitemap_url"]],
+                )
+                last_success = now
+            elif source["kind"] == "lobe_ui_index":
+                items = parse_lobe_ui_index(
+                    source, documents[source["catalog_url"]],
+                    documents[source["tree_url"]],
                 )
                 last_success = now
             elif source["kind"] == "shadcn_cli":

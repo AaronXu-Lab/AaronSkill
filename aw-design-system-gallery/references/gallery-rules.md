@@ -28,38 +28,62 @@ Caption 只列真实公开 API 的属性轴与组件状态。`container`、stage
 
 ### Panel 内容结构
 
-新增组件 Panel，或实质调整现有 Panel 的示例结构时，先查目标项目是否已有标准组件 Panel 场景或共享内容适配器。若当地已定义 Default、Properties、Demo 等固定组合，必须复用该组合及共享适配器，不得继续使用各 Example 各自包舞台、再把 Caption 放在舞台下方的旧结构。Internal、Temporary、实验性或仅供 Gallery 使用的分类不构成例外；分类表示归属，不改变组件 Panel 的阅读结构。
+新增组件 Panel，或实质调整现有 Panel 的示例结构时，先查目标项目是否已有标准组件 Panel 场景或共享内容适配器。若当地已定义文档版式或旧版 Default／Properties／Demo 等固定组合，必须复用对应组合及共享适配器；旧版代码概念与文档版式的用户可见名称按下述映射处理，不得继续使用各 Example 各自包舞台、再把 Caption 放在舞台下方的旧结构。Internal、Temporary、实验性或仅供 Gallery 使用的分类不构成例外；分类表示归属，不改变组件 Panel 的阅读结构。
 
-- Default 用当地标准编辑器承载当前默认值，并在同一个默认舞台渲染结果；默认设置与后续属性对比共享状态。
-- Properties 按正式设计轴逐项展示 Caption 与比较舞台，每项只覆写正在比较的轴，并继承当前 Default 的其他值。
-- Demo 仅在需要真实触发才能理解行为时出现，沿用当前 Default，不把触发方式伪装成属性轴。
-- 没有正式展示轴时仍使用当地标准的单一 Default 结构，省略空 Controls、Properties 与空 Caption；不要退回旧的独立 Example 卡片排版。
+- Playground 是 Default 编辑器的用户可见名称；Default 仅作代码内部概念，不向用户展示。它用当地标准编辑器承载当前默认值，并在同一个默认舞台渲染结果；默认设置与后续属性对比共享状态。
+- Properties 按正式设计轴逐项展示 Caption 与比较舞台，每项只覆写正在比较的轴，并继承当前 Playground 的其他值；两处使用同一份轴顺序，不分别维护顺序表。
+- 文档版式按 Playground、Anatomy、Properties、Best practices 组织；Anatomy 说明组件构成，Best practices 承载使用建议，复用当地共享文档结构。
+- Demo 仅在需要真实触发才能理解行为时出现，沿用当前 Playground 设置，不把触发方式伪装成属性轴。
+- 没有正式展示轴时仍使用当地标准的单一 Playground 编辑器结构，省略空 Controls、Properties 与空 Caption；不要退回旧的独立 Example 卡片排版。
 
 验收时把目标 Panel 与当地标准场景并排核对：标题层级、Controls、舞台、Caption 位置、区块间距和共享状态必须属于同一内容模型。仅让示例“看起来接近”或保留相同边框，不算复用标准结构。
+
+### Playground 重置
+
+Reset 仅在存在非默认值时可用：组件设置偏离默认值，或预览主题选择了 Follow Gallery 以外的覆写，任一成立即启用。点击 Reset 同时恢复组件默认值与 Follow Gallery；全部恢复后按钮禁用。仅切换属性依赖前提不能清空用户值。
+
+验收默认状态、仅属性修改、仅主题覆写、两者同时修改及重置后状态；不能只用组件属性是否改变判断 Reset。
+
+### Section 头部与深链
+
+- hover Section 标题时显示 copy link 图标按钮；键盘聚焦也应能发现并操作该按钮。点击复制指向当前 Section 的链接，复制成功后短暂显示已复制状态，再恢复；复制失败不得显示成功。
+- Properties 头部在 link 按钮右侧增加 Panel 菜单，复用旧版 Panel 菜单及 Block Background 等既有能力，不另造一套菜单状态。
+- 页面使用路径路由，如 `/components/button`；`#` 只用于页内定位，如 `/components/button#properties`，不再使用 `#/components/button` 形式。侧边栏、复制链接与页内导航使用同一套路由和稳定 Section ID。
+- 首次打开带 hash 的链接，以及同页切换 hash 时，均在目标 Section 可用后滚动到它；不能只在首次挂载时处理。页面直接打开或刷新也应能解析路径。
+
+验收 hover／键盘操作、复制内容与短暂反馈、Properties 菜单顺序与原功能，以及深链首次打开、刷新和同页 hash 切换。分类迁移继续遵守 §8 的稳定标识要求。
+
+### 轴排序
 
 1. 列出当前范围内的全部设计审阅轴。
 2. 标出父轴与仅在父轴特定值下才有意义的子轴，将依赖组连续排列。
 3. 对剩余轴使用可调整的兜底：几何/布局 → 主视觉 → 内容/槽位 → 状态 → 行为。
 4. 让组件自身语义、用户决策或项目契约覆盖兜底；不要建立跨项目的固定字段优先级。
 
+排序示例：`size` → `style`、`fillColor`、`fillHover`（后两者依赖 `style`，依赖组连续）→ `type`、`dropdown` → `disabled`（状态放最后）。示例说明分组逻辑，不是跨组件固定字段表。
+
 当 `size` 轴的值构成可比较的尺寸阶梯时，Gallery 中的默认值编辑器、Caption 与属性对比统一按实际渲染尺寸从小到大排列，例如 `xs → sm → md → lg → xl`。语义尺寸名称也按实际占用空间排序，例如 `compact → default`；代码枚举或类型声明的原始顺序不约束 Gallery。若值之间没有稳定的大小关系，不把它们伪装成尺寸阶梯，应改用能准确表达差异的轴名或分类。
 
 ### 属性依赖与失效展示
 
-先区分三个位置：组件本体按契约隐藏不支持的结构（例如某模式没有拖动手柄）；Properties 保留设计轴以解释适用条件；Default 配置控件用于保存当前设置。组件本体的隐藏不能推导为删除 Gallery 的配置入口或属性轴。
+先区分三个位置：组件本体按契约隐藏不支持的结构（例如某模式没有拖动手柄）；Properties 保留设计轴以解释适用条件；Playground 配置控件用于保存当前设置。组件本体的隐藏不能推导为删除 Gallery 的配置入口或属性轴。
 
-下述整块禁用要求针对 Properties 的子轴比较 Block，不自动扩展为禁用整个 Default 或全部配置控件。Default 保留相关配置入口和用户值；具体控件是否禁用，依目标项目契约或共享编辑器约定确定，并说明适用条件。没有约定时可保留可编辑设置并提示当前不生效，不另造全局禁用政策。
+Playground（即 Default 编辑器）中的依赖控件与 Properties 子轴比较 Block 使用一致的禁用处理，并共用同一份依赖判断与 `disabledReason`；不得各写一套。只禁用前提不满足的依赖项，不禁用整个 Playground 或无关控件，保留入口、轴说明和用户值。
 
-当 Gallery 采用可编辑默认值与属性轴比较时，每个轴继承当前默认值，仅覆写当前轴。若子轴依赖的前提不满足，仍保留该轴的说明与 Block，但将整个 Block 及内部内容呈现为禁用状态，阻止点击、键盘操作和内部触发器响应；不要隐藏该轴，也不要为制造差异而偷偷覆写前提属性。由 Block 外层承接 hover Tooltip，明确说明启用条件，并提供键盘聚焦可读取的同等提示。前提满足后恢复交互；禁用只影响 Gallery 展示，不改组件契约或清空用户设置。采用 `inert` 或当地等价机制阻断内部交互时，提示触发层须在阻断范围之外；只有灰化、`aria-disabled` 或 `pointer-events: none` 不能证明鼠标与键盘均被阻断。
+每个 Properties 轴继承当前 Playground 值，仅覆写当前轴。子轴前提不满足时，依赖控件、比较 Block 及其内部内容均灰化，并用 `inert` 阻断点击、键盘操作和内部触发器响应；不要隐藏该轴，也不要为制造差异而偷偷覆写前提属性。两处都由 `inert` 范围之外的外层触发器承接 hover 与键盘聚焦 Tooltip。非 DOM 平台使用能同等阻断交互的机制；只有灰化、`aria-disabled` 或 `pointer-events: none` 不能证明鼠标与键盘均被阻断。前提满足后恢复交互与原设置，不改组件契约或清空用户值。
+
+#### Tooltip 文案
+
+统一使用 `Set 「属性名」 to 「值」 to enable`，属性名与每个值名均用「」包裹，并使用 Gallery 设计名称。多个可选值用 `or`：`Set 「type」 to 「icon」 or 「icon+text」 to enable`；多个同时成立的条件用 `and`：`Set 「type」 to 「icon」 or 「icon+text」 and 「dropdown」 to 「true」 to enable`。Tooltip 不得出现 `Default`，它是代码内部概念。Playground 与 Properties 直接复用同一份 `disabledReason` 文案。
 
 #### 依赖验收
 
 在当前有效设置中先保存一个非默认子轴值，切换到前提不满足的模式，再切回并单独测试显式重置：
 
-- 失效时说明与比较 Block 仍可见，整块及内部均呈禁用态；示例没有偷偷改回父轴前提。
-- 鼠标点击、拖动（若适用）、Tab 与 Enter／Space 不触发 Block 内部交互；外层 hover 和键盘聚焦均能读取明确的启用条件。
+- 失效时 Playground 依赖控件、轴说明与 Properties 比较 Block 仍可见，依赖控件与整块内部均呈禁用态；示例没有偷偷改回父轴前提。
+- 鼠标点击、拖动（若适用）、Tab 与 Enter／Space 不触发依赖控件或 Block 内部交互；外层 hover 和键盘聚焦均能读取明确的启用条件。
 - 前提恢复后交互恢复，用户先前设置仍在；前提切换不等于重置，只有显式重置才按项目默认机制处理。
-- 分别核对组件本体、Default 配置控件、Properties 比较块，记录所用契约或控件约定及实际观察。未运行的交互检查明确标为未验证。
+- 分别核对组件本体、Playground 依赖控件与 Properties 比较块，确认后两者共用 `disabledReason`、提示格式一致，记录实际观察。未运行的交互检查明确标为未验证。
 
 非约束示例：`surfaceMode → surfaceTone → surfaceHover`、`trailingSlot → trailingInteraction`、`sortable → sortDirection`、`contentMode → contentDetail`、`layoutMode → layoutPreset`。这些名称仅说明依赖形态，不是推荐 API。
 
