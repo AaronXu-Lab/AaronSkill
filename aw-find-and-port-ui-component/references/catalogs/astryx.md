@@ -2,13 +2,12 @@
 
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
-- Status: `stale`
-- Last checked: `2026-09-28T08:41:16+00:00`
-- Last successful refresh: `2026-09-28T08:33:48+00:00`
+- Status: `fresh`
+- Last checked: `2026-09-30T06:24:18+00:00`
+- Last successful refresh: `2026-09-30T06:15:36+00:00`
 - Discovery leads: `179`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
-- Refresh error: `URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>`
 
 | Component | Foundation hint | Styling hint | Description | Preview | Source |
 |---|---|---|---|---|---|

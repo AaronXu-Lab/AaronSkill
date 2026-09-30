@@ -3,9 +3,9 @@
 优先收录 Base UI 变体，并保留兼容的原生组件。
 
 - Status: `fresh`
-- Last checked: `2026-09-28T08:41:16+00:00`
-- Last successful refresh: `2026-09-27T12:20:47+00:00`
-- Discovery leads: `42`
+- Last checked: `2026-09-30T06:24:18+00:00`
+- Last successful refresh: `2026-09-30T02:50:43+00:00`
+- Discovery leads: `43`
 - Source type hint: `{'foundation': 'mixed', 'styling': 'tailwind-css'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -15,6 +15,7 @@
 | Accordion | base-ui | tailwind-css | Collapsible accordion with animated height transitions, spring-animated chevron, and fluid hover in grouped mode. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/accordion) | [Source](https://www.fluidfunctionalism.com/r/accordion-base.json) |
 | Ask User Questions | base-ui | tailwind-css | Stepped question flow with numbered options, keyboard shortcuts (1–9), single or multi-select, inline 'other' text input, optional skip, fluid hover, and multi-question navigation. Auto-advances on selection in single-select. | [Preview](https://www.fluidfunctionalism.com/docs/ask-user-questions) | [Source](https://www.fluidfunctionalism.com/r/ask-user-questions.json) |
 | Badge | mixed | tailwind-css | Compact label with solid and dot variants, Tailwind color palette, and three sizes. | [Preview](https://www.fluidfunctionalism.com/docs/badge) | [Source](https://www.fluidfunctionalism.com/r/badge.json) |
+| Banner | mixed | tailwind-css | Status message built from parts (Banner, BannerTitle, BannerDescription, BannerActions, BannerAction): 5 statuses (filled glyphs for info, success, warning and error; the icon set's outline info icon for default), low or high contrast, primary, secondary and ghost actions (the library Button) that trail a one-line banner (primary at the edge) and drop under a description (primary first), a dismiss that collapses its height, and a fixed variant that sticks full-bleed to the top of the page. | [Preview](https://www.fluidfunctionalism.com/docs/banner) | [Source](https://www.fluidfunctionalism.com/r/banner.json) |
 | Button | radix-ui | tailwind-css | Animated button with variants (primary, secondary, tertiary, ghost), icon support, loading spinner, and fluid font-weight transitions on hover. | [Preview](https://www.fluidfunctionalism.com/docs/button) | [Source](https://www.fluidfunctionalism.com/r/button.json) |
 | Button | base-ui | tailwind-css | Animated button with variants (primary, secondary, tertiary, ghost), icon support, loading spinner, and fluid font-weight transitions on hover. Base UI flavor. | [Preview](https://www.fluidfunctionalism.com/docs/button) | [Source](https://www.fluidfunctionalism.com/r/button-base.json) |
 | Card | mixed | tailwind-css | shadcn's compositional card (Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter) with the Fluid Functionalism layer: transparent substrate, weight-animated title, media/logo/feature/image slots, and a CardGroup that owns stacked, inline, and grid layouts plus 2-D fluid-hover highlighting. | [Preview](https://www.fluidfunctionalism.com/docs/card) | [Source](https://www.fluidfunctionalism.com/r/card.json) |

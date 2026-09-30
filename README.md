@@ -42,6 +42,25 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 
 ## Skills
 
+### 本地仓库软链安装
+
+在本地仓库执行以下命令，检查所有一级 Skill 目录并补齐到 `~/.agents/skills` 的软链（包含 Working On 和不再维护的 Skill）：
+
+macOS 用户也可以直接双击根目录的 `link-skills.command`，运行完成后按回车关闭结果窗口。
+
+```bash
+python3 link-skills.py
+```
+
+脚本按自身位置定位仓库，可从任意工作目录运行；重复运行会跳过正确的软链。同名实体目录、文件或指向其他位置的软链会保留并报告冲突，退出码为 `1`。
+
+只检查而不写入，或指定其他全局目录：
+
+```bash
+python3 link-skills.py --dry-run
+python3 link-skills.py --target ~/.codex/skills
+```
+
 目前共收录 **20 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另设 Working On 分组，并单独标记不再维护的 Skill。
 
 ### 元 Skill
@@ -60,7 +79,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | --- | --- | --- | --- |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
-| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.5.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按当前复杂度与历史上下文收益派发实施任务 | 当前任务先定档，历史只加权；简单后续任务可降档；执行会话独立校验且互不通信 |
+| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.7.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
 ### 资源获取
