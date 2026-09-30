@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-import { formatNextRunTime, formatTimeDisplay } from '../assets/format-time.ts'
+import {
+  formatNextRunTime,
+  formatTimeDisplay,
+  TIME_LABELS,
+  type TTimeLocale,
+} from '../assets/format-time.ts'
 
 const MINUTE = 60_000
 const HOUR = 3_600_000
@@ -159,4 +164,74 @@ test('calendar strings without a timezone are interpreted in local time', () => 
 test('next run always uses relative mode with exact time enabled', () => {
   const baseTime = localTime(2026, 7, 15, 12, 0)
   assert.equal(formatNextRunTime(localTime(2026, 7, 16, 9, 0), baseTime), '明天 09:00')
+})
+
+test('each locale renders every relative tier with its own vocabulary', () => {
+  const baseTime = localTime(2026, 7, 15, 12, 0)
+  const cases: Array<[string, number]> = [
+    ['justNow', baseTime - 30_000],
+    ['soon', baseTime + 30_000],
+    ['minutesAgo', baseTime - 5 * MINUTE],
+    ['minutesLater', baseTime + 5 * MINUTE],
+    ['sameDay', baseTime + 2 * HOUR],
+    ['dayBeforeYesterday', localTime(2026, 7, 13, 9, 5)],
+    ['yesterday', localTime(2026, 7, 14, 9, 5)],
+    ['tomorrow', localTime(2026, 7, 16, 9, 5)],
+    ['dayAfterTomorrow', localTime(2026, 7, 17, 9, 5)],
+    ['daysAgo', localTime(2026, 7, 12, 9, 5)],
+    ['daysLater', localTime(2026, 7, 21, 9, 5)],
+    ['sameYear', localTime(2026, 7, 8, 9, 5)],
+    ['otherYear', localTime(2025, 12, 20, 9, 5)],
+  ]
+  const expected: Record<TTimeLocale, string[]> = {
+    'zh-Hans': ['刚刚', '马上', '5 分钟前', '5 分钟后', '14:00', '前天', '昨天', '明天', '后天', '3 天前', '6 天后'],
+    en: ['Just now', 'In a moment', '5 min ago', 'In 5 min', '14:00', '2 days ago', 'Yesterday', 'Tomorrow', 'In 2 days', '3 days ago', 'In 6 days'],
+    ja: ['たった今', 'まもなく', '5 分前', '5 分後', '14:00', '一昨日', '昨日', '明日', '明後日', '3 日前', '6 日後'],
+    ko: ['방금', '곧', '5분 전', '5분 후', '14:00', '그저께', '어제', '내일', '모레', '3일 전', '6일 후'],
+  }
+
+  for (const [locale, words] of Object.entries(expected) as Array<[TTimeLocale, string[]]>) {
+    const outputs = [...words, '07/08', '2025/12/20']
+    cases.forEach(([tier, value], index) => {
+      assert.equal(
+        formatTimeDisplay(value, { mode: 'relative', baseTime, locale }),
+        outputs[index],
+        `${locale} ${tier}`,
+      )
+    })
+    // Dates, clocks and the exact-time suffix never change with the locale.
+    assert.equal(
+      formatTimeDisplay(localTime(2026, 7, 8, 9, 5), { mode: 'absolute', showExactTime: true, baseTime, locale }),
+      '07/08 09:05',
+    )
+    assert.equal(
+      formatNextRunTime(localTime(2026, 7, 16, 9, 0), baseTime, locale),
+      `${words[7]} 09:00`,
+    )
+  }
+})
+
+test('english day counts are pluralized and labels can be injected from project i18n', () => {
+  const baseTime = localTime(2026, 7, 15, 12, 0)
+  // The day tier only reaches 3–6, but injected or reused labels may receive 1.
+  assert.equal(TIME_LABELS.en.daysAgo(1), '1 day ago')
+  assert.equal(TIME_LABELS.en.daysLater(1), 'In 1 day')
+  assert.equal(TIME_LABELS.en.daysAgo(4), '4 days ago')
+  const t = (key: string, count?: number) => `[${key}:${count ?? ''}]`
+  const options = {
+    mode: 'relative' as const,
+    baseTime,
+    locale: 'en' as const,
+    labels: {
+      justNow: t('justNow'),
+      minutesAgo: (n: number) => t('minutesAgo', n),
+      dayOffsets: { [-1]: t('yesterday') },
+    },
+  }
+  assert.equal(formatTimeDisplay(baseTime - 1_000, options), '[justNow:]')
+  assert.equal(formatTimeDisplay(baseTime - 5 * MINUTE, options), '[minutesAgo:5]')
+  assert.equal(formatTimeDisplay(localTime(2026, 7, 14, 9, 5), options), '[yesterday:]')
+  // Keys left out of the override keep the selected locale's built-in wording.
+  assert.equal(formatTimeDisplay(localTime(2026, 7, 16, 9, 5), options), 'Tomorrow')
+  assert.equal(formatTimeDisplay(baseTime + 30_000, options), 'In a moment')
 })

@@ -15,6 +15,19 @@ Duration、Elapsed、Countdown 与 Recurrence 不进入时间点 formatter。周
 - 完整会话已授权格式化器及调用处改动：直接完成接入和验证，无需再次询问。
 - 仅审查或仅改字符串：遵循 [工作流第 4 节](../references/workflow.md#4-按已有授权完成修改) 的非字符串项确认流程；先完成已授权的独立字符串修改，再单独提出必要时间实现项的具体方案与影响范围，明确请求同意后接入。待确认接入不阻断审查结果与独立字符串修改。
 
-接入时将 `assets/format-time.ts` 复制到项目约定的工具目录，按导入风格调整路径和名称；替换授权范围内的手写格式为 `formatTimeDisplay`，将“下一次运行”接到 `formatNextRunTime`。该文件无依赖、无框架绑定；其他语言可通过 `labels` 覆盖默认中文标签，不改变时间分档优先级。
+接入时将 `assets/format-time.ts` 复制到项目约定的工具目录，按导入风格调整路径和名称；替换授权范围内的手写格式为 `formatTimeDisplay`，将“下一次运行”接到 `formatNextRunTime`。该文件无依赖、无框架绑定；多语言项目按 [D3](rules.md#d-日期与时间) 传入 `locale`，已有 i18n 时通过 `labels` 注入项目词条，均不改变时间分档优先级与日期、时钟格式。例如：
 
-运行项目类型检查和受影响的时间点测试，覆盖秒/分钟/小时边界、本地自然日、跨年、前三档不受 `showExactTime` 影响，以及 Absolute 过去与未来共用规则。修复本次接入造成的问题并重验，交付改动位置、验证结果与未修项；无需为了调用接入再修改本 Skill 的资源。
+```ts
+formatTimeDisplay(value, {
+  mode: 'relative',
+  locale,
+  labels: {
+    justNow: t('time.justNow'),
+    minutesAgo: (count) => t('time.minutesAgo', { count }),
+    dayOffsets: { [-1]: t('time.yesterday') },
+    // 其余 key 同理；未注入的 key 使用所选 locale 的内置措辞
+  },
+})
+```
+
+运行项目类型检查和受影响的时间点测试，覆盖秒/分钟/小时边界、本地自然日、跨年、前三档不受 `showExactTime` 影响、Absolute 过去与未来共用规则，以及项目支持的每种语言的各档措辞。修复本次接入造成的问题并重验，交付改动位置、验证结果与未修项；无需为了调用接入再修改本 Skill 的资源。

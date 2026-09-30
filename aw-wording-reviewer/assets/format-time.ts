@@ -7,12 +7,17 @@
  *
  * 无依赖、无框架绑定，可直接放进任意 TypeScript 项目。所有日历判断都使用运行
  * 环境的本地时区；昨天、前天、明天、后天与天数按自然日计算，不按连续 24 小时。
+ *
+ * 相对时间措辞内置 zh-Hans、en、ja、ko 四套，通过 `locale` 选择，默认 zh-Hans；
+ * 日期 `MM/DD`、`YYYY/MM/DD` 与 24 小时 `HH:mm` 不随语言变化。项目已有 i18n
+ * 时用 `labels` 注入项目词条，覆盖同名内置措辞。
  */
 
 export type TTimeDisplayMode = 'relative' | 'absolute'
 export type TTimeValue = number | string | Date | null | undefined
+export type TTimeLocale = 'zh-Hans' | 'en' | 'ja' | 'ko'
 
-/** 默认简体中文；用于其他语言时可以覆盖文案，不改变分档逻辑。 */
+/** 相对时间各档的措辞；换语言只换措辞，不改变分档逻辑。 */
 export interface ITimeDisplayLabels {
   /** 键为本地日历自然日差：-2、-1、1、2。 */
   dayOffsets: Record<number, string>
@@ -39,6 +44,9 @@ export interface ITimeDisplayOptions {
   showExactTime?: boolean
   /** 用于判断相对距离、同日和同年的基准；省略时使用 Date.now()。 */
   baseTime?: TTimeValue
+  /** 内置措辞的语言，默认 'zh-Hans'。 */
+  locale?: TTimeLocale
+  /** 覆盖所选 locale 的内置措辞，例如接入项目自身的 i18n 词条。 */
   labels?: TTimeDisplayLabelOverrides
 }
 
@@ -46,17 +54,55 @@ const MINUTE = 60_000
 const HOUR = 3_600_000
 const DAY = 86_400_000
 
-/** 数字与中文单位之间保留一个半角空格。 */
-export const DEFAULT_TIME_LABELS: ITimeDisplayLabels = {
-  dayOffsets: { [-2]: '前天', [-1]: '昨天', 1: '明天', 2: '后天' },
-  justNow: '刚刚',
-  soon: '马上',
-  minutesAgo: (n) => `${n} 分钟前`,
-  minutesLater: (n) => `${n} 分钟后`,
-  daysAgo: (n) => `${n} 天前`,
-  daysLater: (n) => `${n} 天后`,
-  empty: '—',
+/**
+ * 数字空格：zh-Hans、ja、en 在数字与单位之间保留一个半角空格；
+ * ko 数字紧贴单位（`5분`），单位与「전 / 후」之间保留一个空格。
+ */
+export const TIME_LABELS: Record<TTimeLocale, ITimeDisplayLabels> = {
+  'zh-Hans': {
+    dayOffsets: { [-2]: '前天', [-1]: '昨天', 1: '明天', 2: '后天' },
+    justNow: '刚刚',
+    soon: '马上',
+    minutesAgo: (n) => `${n} 分钟前`,
+    minutesLater: (n) => `${n} 分钟后`,
+    daysAgo: (n) => `${n} 天前`,
+    daysLater: (n) => `${n} 天后`,
+    empty: '—',
+  },
+  en: {
+    dayOffsets: { [-2]: '2 days ago', [-1]: 'Yesterday', 1: 'Tomorrow', 2: 'In 2 days' },
+    justNow: 'Just now',
+    soon: 'In a moment',
+    minutesAgo: (n) => `${n} min ago`,
+    minutesLater: (n) => `In ${n} min`,
+    daysAgo: (n) => `${n} ${n === 1 ? 'day' : 'days'} ago`,
+    daysLater: (n) => `In ${n} ${n === 1 ? 'day' : 'days'}`,
+    empty: '—',
+  },
+  ja: {
+    dayOffsets: { [-2]: '一昨日', [-1]: '昨日', 1: '明日', 2: '明後日' },
+    justNow: 'たった今',
+    soon: 'まもなく',
+    minutesAgo: (n) => `${n} 分前`,
+    minutesLater: (n) => `${n} 分後`,
+    daysAgo: (n) => `${n} 日前`,
+    daysLater: (n) => `${n} 日後`,
+    empty: '—',
+  },
+  ko: {
+    dayOffsets: { [-2]: '그저께', [-1]: '어제', 1: '내일', 2: '모레' },
+    justNow: '방금',
+    soon: '곧',
+    minutesAgo: (n) => `${n}분 전`,
+    minutesLater: (n) => `${n}분 후`,
+    daysAgo: (n) => `${n}일 전`,
+    daysLater: (n) => `${n}일 후`,
+    empty: '—',
+  },
 }
+
+/** 默认 zh-Hans 措辞，保留旧导出名。 */
+export const DEFAULT_TIME_LABELS: ITimeDisplayLabels = TIME_LABELS['zh-Hans']
 
 function pad(value: number): string {
   return String(value).padStart(2, '0')
@@ -147,11 +193,16 @@ function resolveTime(value: TTimeValue): number | null {
   return Number.isFinite(time) ? time : null
 }
 
-function resolveLabels(overrides?: TTimeDisplayLabelOverrides): ITimeDisplayLabels {
+function resolveLabels(
+  locale: TTimeLocale = 'zh-Hans',
+  overrides?: TTimeDisplayLabelOverrides,
+): ITimeDisplayLabels {
+  const base = TIME_LABELS[locale] ?? DEFAULT_TIME_LABELS
   return {
-    ...DEFAULT_TIME_LABELS,
+    ...base,
     ...overrides,
-    dayOffsets: { ...DEFAULT_TIME_LABELS.dayOffsets, ...overrides?.dayOffsets },
+    // Partial 覆盖只写入提供的键，合并结果仍覆盖 -2、-1、1、2。
+    dayOffsets: { ...base.dayOffsets, ...overrides?.dayOffsets } as ITimeDisplayLabels['dayOffsets'],
   }
 }
 
@@ -205,7 +256,7 @@ function formatAbsoluteTimePoint(
 
 /** 产品中的时间点统一经本函数输出，不要在页面里手写分档。 */
 export function formatTimeDisplay(value: TTimeValue, options: ITimeDisplayOptions): string {
-  const labels = resolveLabels(options.labels)
+  const labels = resolveLabels(options.locale, options.labels)
   const time = resolveTime(value)
   if (time === null) return labels.empty
 
@@ -222,6 +273,7 @@ export function formatTimeDisplay(value: TTimeValue, options: ITimeDisplayOption
 export function formatNextRunTime(
   value: TTimeValue,
   baseTime: TTimeValue = Date.now(),
+  locale?: TTimeLocale,
 ): string {
-  return formatTimeDisplay(value, { mode: 'relative', showExactTime: true, baseTime })
+  return formatTimeDisplay(value, { mode: 'relative', showExactTime: true, baseTime, locale })
 }

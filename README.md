@@ -93,7 +93,7 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
 | [`aw-canvas-design`](./aw-canvas-design/) | `1.5.1` | 用实际组件画布设计多弹层业务流程，`/<业务路由>/design-canvas` 是设计整理入口，支持 `?preview={name}` 单流程走查；附带 canvas-kit 标准件（可直接打开的 HTML 组件与 React 参考实现），通过评论迭代并验收入口覆盖 | 优先复用项目已有画布和依赖，不强制对齐 canvas-kit 版本；画布不是业务正式页面，只有明确要求时才接入实际入口 |
 | [`aw-component-checker`](./aw-component-checker/) | `1.24.1` | 审查桌面端组件的语义、组合与内部使用，并维护 Component Reference 和索引 | 按需读取相关规则；纯审查不自动改写；不用于单纯视觉规格检查 |
 | [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.7.1` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
-| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.12.1` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
+| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.13.0` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
 
 ### Working On
 

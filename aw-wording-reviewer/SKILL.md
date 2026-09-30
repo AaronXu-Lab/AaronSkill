@@ -2,7 +2,7 @@
 name: aw-wording-reviewer
 description: "Review or, when requested, revise Simplified Chinese UI copy to standardize typography, terminology, microcopy, and data display formats. Use for copy proofreading and Chinese i18n reviews; not for other languages, code naming, or information architecture reviews."
 metadata:
-  version: "0.12.1"
+  version: "0.13.0"
   author: "aaron_xu"
   creation_context: "中文界面的排版与微文案约定通常散落在各项目的设计文档和语料惯例里，每次改文案都要重新推断混排空格、分隔符和日期格式的边界。为把这些通用规则固化成与具体项目无关、可机械校验的审查流程而创建。"
 ---
