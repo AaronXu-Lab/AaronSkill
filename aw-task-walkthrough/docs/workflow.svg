@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1130" viewBox="0 0 1200 1130" role="img" aria-labelledby="title desc">
+  <title id="title">独立任务走查工作流</title>
+  <desc id="desc">独立会话准备，确认原型可操作，读取需求并提出任务和用户类型。用户选定后从界面实际走查，保留首次证据并复现核实，交付问题报告等待人工 review。不可操作或任务未选定时暂停相关执行。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8 Z" fill="#52606d"/></marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; text-anchor: middle; fill: #243746; }
+    .heading { font-size: 30px; font-weight: 700; }
+    .label { font-size: 18px; font-weight: 600; }
+    .note { font-size: 14px; font-weight: 400; }
+    .input { fill: #fff; stroke: #9eacb8; stroke-width: 2; }
+    .stage { fill: #edf6ff; stroke: #287bbb; stroke-width: 2; }
+    .decision { fill: #fff7e6; stroke: #c98312; stroke-width: 2; }
+    .stop { fill: #fff0ef; stroke: #c94b43; stroke-width: 2; }
+    .output { fill: #edf9f1; stroke: #2e8b54; stroke-width: 2; }
+    .line { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+  </style>
+  <path fill="#f7f9fb" d="M0 0H1200V1130H0Z"/>
+  <text x="600" y="48" class="heading">独立任务走查</text>
+  <text x="600" y="76" class="note">流程补全后 · 独立会话 · 真实交互 · 文案收敛前</text>
+
+  <rect x="380" y="106" width="440" height="76" rx="14" class="input"/>
+  <text x="600" y="136" class="label">准备独立会话与目标入口</text>
+  <text x="600" y="161" class="note">已有设计历史时，先交接到新会话</text>
+  <path d="M600 182V212" class="line"/>
+  <path d="M600 212L780 268L600 324L420 268Z" class="decision"/>
+  <text x="600" y="264" class="label">原型可以实际操作？</text>
+  <text x="600" y="287" class="note">入口、工具与必要数据就绪</text>
+  <path d="M780 268H862" class="line"/>
+  <text x="819" y="255" class="note">否</text>
+  <rect x="862" y="230" width="294" height="76" rx="14" class="stop"/>
+  <text x="1009" y="260" class="label">说明缺失条件并暂停</text>
+  <text x="1009" y="285" class="note">静态图不能代替交互走查</text>
+  <path d="M600 324V362" class="line"/>
+  <text x="619" y="348" class="note">是</text>
+
+  <rect x="380" y="362" width="440" height="82" rx="14" class="stage"/>
+  <text x="600" y="392" class="label">理解需求，提出任务与用户类型</text>
+  <text x="600" y="418" class="note">可完整读 PRD；简报仅辅助任务选择与覆盖规划</text>
+  <path d="M600 444V478" class="line"/>
+  <path d="M600 478L780 532L600 586L420 532Z" class="decision"/>
+  <text x="600" y="527" class="label">用户已选定任务？</text>
+  <text x="600" y="550" class="note">默认 A：懂业务的首次使用者</text>
+  <path d="M780 532H862" class="line"/>
+  <text x="819" y="519" class="note">否</text>
+  <rect x="862" y="494" width="294" height="76" rx="14" class="stop"/>
+  <text x="1009" y="524" class="label">等待选择</text>
+  <text x="1009" y="549" class="note">任务选定后继续，已有选择沿用</text>
+  <path d="M600 586V624" class="line"/>
+  <text x="619" y="610" class="note">是</text>
+
+  <rect x="380" y="624" width="440" height="82" rx="14" class="stage"/>
+  <text x="600" y="655" class="label">从界面寻找路径并实际操作</text>
+  <text x="600" y="681" class="note">理解、发现、反馈与任务负担；即时保存证据</text>
+  <path d="M600 706V748" class="line"/>
+  <rect x="380" y="748" width="440" height="82" rx="14" class="stage"/>
+  <text x="600" y="779" class="label">保留首次记录，再复现与核实</text>
+  <text x="600" y="805" class="note">受阻任务注明原因，继续其他独立任务</text>
+  <path d="M600 830V872" class="line"/>
+  <rect x="380" y="872" width="440" height="82" rx="14" class="output"/>
+  <text x="600" y="903" class="label">保存任务结果与问题报告</text>
+  <text x="600" y="929" class="note">事实、影响、证据与待核实项；允许零问题</text>
+  <path d="M600 954V996" class="line"/>
+  <rect x="380" y="996" width="440" height="82" rx="14" class="input"/>
+  <text x="600" y="1027" class="label">等待人工 review</text>
+  <text x="600" y="1053" class="note">默认不附方案；获准修复后再做 Wording 收敛</text>
+</svg>

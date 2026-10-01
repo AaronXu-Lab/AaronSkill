@@ -3,7 +3,7 @@
 基于 Base UI 的组件与交互粒子。
 
 - Status: `fresh`
-- Last checked: `2026-09-30T06:24:18+00:00`
+- Last checked: `2026-10-01T13:05:59+00:00`
 - Last successful refresh: `2026-09-27T12:20:47+00:00`
 - Discovery leads: `55`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'unverified'}`

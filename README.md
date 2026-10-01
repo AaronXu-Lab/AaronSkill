@@ -1,35 +1,39 @@
 <p align="center">
-  <img src="./assets/readme/hero.svg" width="100%" alt="AaronSkill：一组可直接安装的实用 Agent Skills">
+  <a href="./README.zh-CN.md">中文 README</a> · <strong>English</strong>
 </p>
 
 <p align="center">
-  <strong>把真实工作流封装成可发现、可验证、可复用的 Agent Skills。</strong>
+  <img src="./assets/readme/hero.en.svg" width="100%" alt="AaronSkill: practical Agent Skills, ready to install">
 </p>
 
 <p align="center">
-  设计系统 · UI/UX · 品牌资产 · Figma 工具 · Skill 工程 · 内容工作流
+  <strong>Turn real workflows into discoverable, verifiable, reusable Agent Skills.</strong>
 </p>
 
-## 一条命令安装
+<p align="center">
+  Design systems · UI/UX · brand assets · Figma tools · Skill engineering · content workflows
+</p>
+
+## Install in one command
 
 ```bash
 npx skills@latest add AaronXu-Lab/AaronSkill
 ```
 
-安装器会发现仓库中所有包含 `SKILL.md` 的技能，并让你选择需要安装的项目。只查看可用技能：
+The installer discovers every Skill in the repository that contains a `SKILL.md` and lets you choose which ones to install. To list the available Skills without installing them:
 
 ```bash
 npx skills@latest add AaronXu-Lab/AaronSkill --list
 ```
 
-安装单个技能：
+Install one Skill:
 
 ```bash
 npx skills@latest add AaronXu-Lab/AaronSkill \
   --skill aw-find-and-port-ui-component
 ```
 
-全局安装到 Codex：
+Install globally for Codex:
 
 ```bash
 npx skills@latest add AaronXu-Lab/AaronSkill \
@@ -38,154 +42,162 @@ npx skills@latest add AaronXu-Lab/AaronSkill \
   --global
 ```
 
-> `skills` CLI 默认在项目范围安装；添加 `--global` 可供所有项目使用。交互式安装默认推荐软链，使用 `--copy` 才会创建独立副本。
+> The `skills` CLI installs to the current project by default. Add `--global` to use a Skill across projects. Interactive installation recommends symlinks; use `--copy` to create a standalone copy.
 
 ## Skills
 
-### 本地仓库软链安装
+### Install local repository symlinks
 
-在本地仓库执行以下命令，检查所有一级 Skill 目录并补齐到 `~/.agents/skills` 的软链（包含 Working On 和不再维护的 Skill）：
+Run this from the repository to check all first-level Skill directories and create any missing symlinks in `~/.agents/skills`. This includes the Working On and no-longer-maintained Skills.
 
-macOS 用户也可以直接双击根目录的 `link-skills.command`，运行完成后按回车关闭结果窗口。
+On macOS, you can also double-click `link-skills.command` in the repository root, then press Return to close the results window when it finishes.
 
 ```bash
 python3 link-skills.py
 ```
 
-脚本按自身位置定位仓库，可从任意工作目录运行；重复运行会跳过正确的软链。同名实体目录、文件或指向其他位置的软链会保留并报告冲突，退出码为 `1`。
+The script locates the repository relative to itself, so it can run from any working directory. Re-running it skips correct symlinks. It preserves and reports conflicting same-name files, directories, or symlinks that point elsewhere, and exits with code `1`.
 
-只检查而不写入，或指定其他全局目录：
+Preview changes without writing, or choose another global directory:
 
 ```bash
 python3 link-skills.py --dry-run
 python3 link-skills.py --target ~/.codex/skills
 ```
 
-目前共收录 **20 个 Skill**，按主要用途分为元 Skill、工具类、资源获取、设计支撑和设计 Agent；另设 Working On 分组，并单独标记不再维护的 Skill。
+The repository currently contains **24 Skills**, grouped by primary purpose into meta Skills, tools, resource discovery, design support, and design agents. It also has a Working On group and a separate list of no-longer-maintained Skills.
 
-### 元 Skill
+### Meta Skill
 
-用于创建、升级和规范化其他 Skill 的元能力。
+Capabilities for creating, upgrading, and standardizing other Skills.
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
-| [`aw-meta-skill`](./aw-meta-skill/) | `1.9.1` | 创建或更新任何 Skill，完整替代 `skill-creator` 作为统一入口 | 按变更范围读取与验证；Markdown 为执行事实源，SVG 细则按需加载 |
+| [`aw-meta-skill`](./aw-meta-skill/) | `1.9.1` | Creates or updates any Skill, serving as the unified entry point in place of `skill-creator` | Reads and validates according to the change scope; Markdown is the source of truth, and SVG details are loaded as needed |
 
-### 工具类
+### Tools
 
-面向明确输入与结果的实用工作流，帮助完成资产加工、内容处理或专项工程任务。
+Reusable workflows for well-defined inputs and outputs, including asset processing, content handling, and focused engineering tasks.
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
-| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
-| [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
-| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.7.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信 |
-| [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
+| [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | Creates and validates cross-platform icon assets from SVGs or images that have been assessed and iteratively redrawn | Requires user-specified input; confirm low-fidelity conversions, and check compatibility and themes after a redraw is approved |
+| [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | Recommends, reads, summarizes, or translates one item from Outlook's `Read Later` folder | Handles one item per manual run; requires confirmation before archiving or removing an email |
+| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.7.0` | Handles read-only research in the main session and dispatches implementation work in Codex or Claude based on remaining uncertainty, impact, and coordination complexity | Uses the lower tier for settled, local work and the middle tier for substantive design or coordination; clarifies key plans first and treats history only as a weighting signal; resolves the latest available model by series, with user choice taking priority; execution sessions validate independently and do not communicate with each other |
+| [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | Rewrites AI-generated Chinese drafts in Aaron's current blog voice | Preserves facts and positions; limits catchphrases, rhetorical questions, and surface-level imitation through Chinese-English mixing |
 
-### 资源获取
+### Resource discovery
 
-负责从外部来源检索、验证、筛选并整理可用资源。
+Finds, verifies, filters, and organizes useful resources from external sources.
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
-| [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | `1.1.0` | 收集漫画封面、整理来源介绍、生成小红书封面与最终档案 | 高清化需确认费用；社媒图使用原创视觉而非复刻封面 |
-| [`aw-logo-finder`](./aw-logo-finder/) | `1.1.0` | 从官网、Logo 资源站和应用商店寻找、比对并导出品牌或产品 Logo | 必须先确认候选与输出尺寸，再生成无损 WebP |
+| [`aw-comic-dossier-packer`](./aw-comic-dossier-packer/) | `1.1.0` | Collects comic covers, source information, Xiaohongshu covers, and a final dossier | Confirm costs before upscaling; use original visuals rather than reproducing covers in social media graphics |
+| [`aw-logo-finder`](./aw-logo-finder/) | `1.1.0` | Finds, compares, and exports brand or product logos from official sites, logo directories, and app stores | Confirm candidates and output dimensions before generating lossless WebP files |
 
-### 设计 · 支撑
+### Design support
 
-为设计系统、组件实现和设计交付提供基础设施、规范与工程支撑。
+Infrastructure, standards, and engineering support for design systems, component implementation, and design delivery.
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
-| [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.0.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准结构及文档版式；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
-| [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
-| [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.2.0` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
+| [`aw-design-orchestrator`](./aw-design-orchestrator/) | `1.0.0` | Coordinates the AW design workflow from varied requirements through initial UI generation, audits, task walkthrough, and wording review; offers standalone `/help` | Sequential orchestration only; preserves human review and fresh-session handoff; loads stage Skills as needed and reports missing dependencies; no optional enhancements |
+| [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | Creates, reviews, and maintains complete `DESIGN.md` visual contracts following Google Labs conventions | Protects ownership and comment-only boundaries; reports when official validation is unavailable; does not replace code or Figma |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.0.0` | Creates, reviews, or improves Gallery default examples, real design axes, and state comparisons | Reuses the local standard structure and documentation layout for component panels; Playground and Properties share axis order, values, and dependency-based disabling; Reset includes theme overrides; section links use path routing and in-page anchors; robustness-only checks do not enter the production Gallery by default; composite examples do not replace child matrices; captions show only real public axes; boundary hints use the existing toggle and both states are verified; project configuration stays in the target repository |
+| [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | Unifies fake data, demo source code, and placeholder interactions in prototype projects, and initializes or syncs bundles | Prioritizes real contract data and states; demo scenarios must be explicitly escapable and isolate writes; source code is reused verbatim and displayed without execution; does not touch unit-test mocks |
+| [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | Compares Figma Variables, `DESIGN.md`, and CSS/Less tokens | Produces audit evidence only and does not rewrite tokens automatically |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.2.1` | Finds and compares specific components from Base UI and other React sources, including Lobe UI, then adapts them for Base UI and CSS Modules | Handles component-level requests only; Find verifies the exact source and license, then waits for a selection; Port confirms details lost or dependencies added in advance |
 
-### 设计 · Agent
+### Design agents
 
-直接参与界面判断、审查和表达质量控制的设计 Agent。
+Design agents that make interface decisions, conduct reviews, and improve communication quality.
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
-| [`aw-canvas-design`](./aw-canvas-design/) | `1.5.1` | 用实际组件画布设计多弹层业务流程，`/<业务路由>/design-canvas` 是设计整理入口，支持 `?preview={name}` 单流程走查；附带 canvas-kit 标准件（可直接打开的 HTML 组件与 React 参考实现），通过评论迭代并验收入口覆盖 | 优先复用项目已有画布和依赖，不强制对齐 canvas-kit 版本；画布不是业务正式页面，只有明确要求时才接入实际入口 |
-| [`aw-component-checker`](./aw-component-checker/) | `1.24.1` | 审查桌面端组件的语义、组合与内部使用，并维护 Component Reference 和索引 | 按需读取相关规则；纯审查不自动改写；不用于单纯视觉规格检查 |
-| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.7.1` | 审计各类 UI/UX 的信息任务价值、语义重复、适用阶段与视觉承载物必要性 | 先输出审计证据与最小改动决策，再实施界面修改 |
-| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.13.0` | 审查简体中文 UI 的排版、术语、格式、跨组件数据展示与微文案 | 默认只审查不修改；不用于英文、日文或产品信息架构评审 |
+| [`aw-design-shaping`](./aw-design-shaping/) | `1.1.0` | Shapes ideas, PRDs, and competitor references into an agreed UI/UX direction through focused questions, research, and wireframes | Users choose the exploration approach and key trade-offs; keeps the initial-generation brief aligned with later approved decisions and implementation status; no exhaustive state coverage or automatic production implementation |
+| [`aw-canvas-design`](./aw-canvas-design/) | `1.5.1` | Designs multi-modal business flows on a canvas of real components. `/<business-route>/design-canvas` is the design workspace, and `?preview={name}` walks through one flow. Includes canvas-kit reference components (standalone HTML and React implementations), iterates through comments, and checks route coverage | Reuses the project's existing canvas and dependencies when possible; does not require alignment with a canvas-kit version. The canvas is not a production page and is connected to a real entry point only when explicitly requested |
+| [`aw-component-checker`](./aw-component-checker/) | `1.24.1` | Reviews desktop component semantics, composition, and internal usage, and maintains the Component Reference and index | Loads relevant rules as needed; review alone does not rewrite code; not intended for visual-spec checks alone |
+| [`aw-ux-info-redundancy-audit`](./aw-ux-info-redundancy-audit/) | `1.7.1` | Audits the information value, semantic duplication, appropriate stage, and visual necessity of UI/UX elements | Reports evidence and a minimal-change decision before implementing interface changes |
+| [`aw-flow-completeness-audit`](./aw-flow-completeness-audit/) | `1.1.0` | Audits flow completeness across steps, branches, transitions, handoffs, recovery, and observable outcomes, with evidence and minimal completion proposals | Prioritizes implemented interfaces; records out-of-scope dependencies and unresolved product decisions; requires human review before implementing explicitly approved changes; synchronizes existing design briefs when key decisions change |
+| [`aw-task-walkthrough`](./aw-task-walkthrough/) | `1.1.0` | Independently walks through user-selected tasks on interactive prototypes or working products to assess understanding, discoverability, task burden, and outcomes | Runs in a fresh session before wording review; the brief is only a supporting planning reference; may read the full PRD; defaults to a first-time product user who knows the domain; requires real interaction and reports problems with evidence for human review, without proposing fixes or changing the product by default |
+| [`aw-wording-reviewer`](./aw-wording-reviewer/) | `0.13.0` | Reviews Simplified Chinese UI typography, terminology, formatting, cross-component data display, and microcopy | Reviews without editing by default; not for English or Japanese, or product information architecture reviews |
+
+Use [`aw-design-orchestrator`](./aw-design-orchestrator/) as the workflow entry point; invoke it with `/help` for a standalone beginner guide.
+
+Recommended sequence: design shaping → initial UI generation with the component library and DESIGN.md → information redundancy audit → component review → flow completeness audit → human review, approved fixes, and rechecks → independent task walkthrough → human review and approved fixes → wording review. Update the existing design brief when approved changes affect key decisions. Wording review retains its consistency rules, including necessary explanatory repetition.
 
 ### Working On
 
-正在持续完善的 Skill，保留独立目录，可按需安装和使用。
+Skills under active development, each kept in its own directory for optional installation and use.
 
-| Skill | 版本 | 它解决什么问题 | 关键边界 |
+| Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
-| [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.1` | 启动本地多服务并定位端口、接口与页面加载故障 | 优先复用现有入口；确认进程归属；以调用链和目标页面验证结果 |
-| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.1` | 从项目 PRD 查证需求并按需与界面或实现对照 | 区分明确规定、推断与未覆盖；只读查证或沿已有授权修正 |
-| [`temp-small-improves`](./temp-small-improves/) | `1.1.1` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
+| [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.1` | Starts local multi-service projects and diagnoses port, API, and page-loading failures | Prefers existing entry points; confirms process ownership; verifies through call paths and the target page |
+| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.1` | Verifies requirements against a project PRD and, when needed, compares them with the interface or implementation | Separates explicit requirements, inferences, and gaps; performs read-only checks or fixes within existing authorization |
+| [`temp-small-improves`](./temp-small-improves/) | `1.1.1` | Explicitly checks and improves commonly missed details in interface typography, controls, and motion | Runs only when the user names it; makes the smallest evidence-based changes |
 
-### 不再维护
+### No longer maintained
 
-以下 Skill 保留在仓库中供已有使用者参考，但不再主动演进或纳入新能力建设。
+These Skills remain in the repository for existing users, but are no longer actively developed or considered for new capabilities.
 
-| Skill | 版本 | 状态 |
+| Skill | Version | Status |
 | --- | --- | --- |
-| [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.10.0` | 不再维护 |
+| [`aw-figma-component-governance`](./aw-figma-component-governance/) | `0.10.0` | No longer maintained |
 
-## 这些 Skill 如何工作
+## How these Skills work
 
 ```text
-真实需求
+Real request
    │
-   ├─ 读取项目、来源与环境约束
+   ├─ Read project, source, and environment constraints
    │
-   ├─ 执行窄范围、可追溯的工作流
+   ├─ Follow a narrow, traceable workflow
    │
-   ├─ 在高风险或高成本动作前停下确认
+   ├─ Pause for confirmation before high-risk or costly actions
    │
-   └─ 用 lint、结构化报告或结果回读完成验证
+   └─ Verify with linting, structured reports, or read-back
 ```
 
-仓库里的 Skill 倾向于把脆弱、重复的步骤放进 `scripts/`，把规则和 schema 放进 `references/`，并让 `SKILL.md` 保持为清晰的执行入口。
+Skills in this repository put fragile, repetitive steps in `scripts/`, keep rules and schemas in `references/`, and use `SKILL.md` as a clear entry point for execution.
 
-## 仓库结构
+## Repository structure
 
 ```text
 <skill-name>/
-├── SKILL.md              # 触发说明与完整工作流
-├── scripts/              # 可重复执行的确定性工具（按需）
-├── references/           # schema、规范与运行手册（按需）
-└── fixtures / graders    # 评测资产（按需）
+├── SKILL.md              # Trigger guidance and complete workflow
+├── scripts/              # Repeatable, deterministic tools (optional)
+├── references/           # Schemas, standards, and runbooks (optional)
+└── fixtures / graders    # Evaluation assets (optional)
 ```
 
-`skills` CLI 会递归发现仓库中的 `SKILL.md`，因此每个一级目录都可以作为独立技能安装。
+The `skills` CLI recursively discovers `SKILL.md` files, so every first-level directory can be installed as an independent Skill.
 
-## 使用前先看依赖
+## Check dependencies before use
 
-每个 Skill 的依赖不同。调用前请阅读对应 `SKILL.md`：
+Dependencies vary by Skill. Read the relevant `SKILL.md` before invoking one:
 
-- Figma 等外部工具流程需要对应应用、权限或授权状态。
-- 图片高清化需要 Gemini API Key，并可能产生 API 费用。
-- 网页检索、GitHub 源码验证和远程发布需要网络访问。
-- 标注为 optional 的 Skill 缺失时应降级执行，而不是伪造能力。
+- Workflows that use Figma or other external tools require the relevant app, permissions, or authorization.
+- Image upscaling requires a Gemini API key and may incur API charges.
+- Web research, GitHub source verification, and remote publishing require network access.
+- If an optional Skill is unavailable, use a fallback instead of claiming capabilities you do not have.
 
-## 开发与验证
+## Development and validation
 
-修改 Skill 后，至少检查 frontmatter 与目录结构：
+After modifying a Skill, at minimum check its frontmatter and directory structure:
 
 ```bash
 python /path/to/skill-creator/scripts/quick_validate.py ./<skill-name>
 ```
 
-如果 Skill 自带脚本、测试或 grader，还应运行对应验证。不要把成功加载 `SKILL.md` 当作工作流已经通过验证。
+If the Skill includes scripts, tests, or graders, run the relevant checks too. Successfully loading `SKILL.md` does not mean its workflow has been validated.
 
-## 更新
+## Updates
 
-通过 `skills` CLI 安装后，可以更新全部或指定 Skill：
+After installing with the `skills` CLI, update all Skills or a specific Skill:
 
 ```bash
 npx skills@latest update
 npx skills@latest update aw-find-and-port-ui-component
 ```
 
-更多安装选项参见 [`skills` CLI](https://github.com/vercel-labs/skills)。
+See the [`skills` CLI](https://github.com/vercel-labs/skills) for more installation options.

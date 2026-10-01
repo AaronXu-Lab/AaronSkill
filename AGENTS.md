@@ -8,7 +8,7 @@
 - 只有用户明确要求升级大版本号时才提升 MAJOR。遇到不兼容改动但用户未明确授权时，先停止并确认，不得自行升级 MAJOR。
 - 每次版本号发生变化，都必须主动通知用户并报告“旧版本 → 新版本”，不得静默升级。
 - 只修改仓库级文件且没有改变任何 Skill 时，不提升 Skill 版本。
-- 版本变化后，同步更新根目录 `README.md` 的 Skill 版本列，确保它与 `SKILL.md` 一致。
+- 版本变化后，同步更新根目录 `README.md` 和 `README.zh-CN.md` 的 Skill 版本列，确保两者均与 `SKILL.md` 一致。
 - 工作流发生变化时，先更新 `references/workflow.md`，再同步 `docs/workflow.svg` 和 `SKILL.md` 中的相关说明。
 - 交付前同时运行 `skill-creator` 的基础校验器和 `aw-meta-skill/scripts/validate_aw_skill.py`，不得把校验失败的 Skill 标记为完成。
 
@@ -28,9 +28,13 @@
 
 ## README 维护
 
-- 每次新增、重命名、迁移或移除 Skill，都同步更新 `README.md` 的 Skills 区域及 Skill 总数。
+- 仓库同时维护英文 `README.md` 和中文 `README.zh-CN.md`。每次更新任一 README 时，必须在同一次变更中同步更新另一个 README，确保结构、技能清单、版本、数量及关键事实一致，并分别使用对应语言撰写。
+- 凡仓库变更需要 README 反映时，必须在同一次变更中更新两个 README；不能只更新英文版或中文版。
+- 每次新增、重命名、迁移或移除 Skill，必须同时更新两个 README 的 Skills 区域及 Skill 总数。
+- 修改 Skill 描述、分类、版本、安装方式、依赖说明或其他仓库介绍时，必须同时检查并更新两个 README；不能只改其中一个。
+
 - 活跃 Skill 必须出现在一个分类中，分类内按产品关系或工作流关系排列；没有明确关系时按目录名排序。
-- 活跃分类表格沿用四列：`Skill`、`版本`、`它解决什么问题`、`关键边界`。描述和版本应来自 `SKILL.md`，不得凭目录名猜测。
+- 活跃分类表格沿用四列：英文 README 使用 `Skill`、`Version`、`What it does`、`Key boundaries`；中文 README 使用 `Skill`、`版本`、`它解决什么问题`、`关键边界`。描述和版本应来自 `SKILL.md`，不得凭目录名猜测。
 - 已明确停止维护的 Skill 移入“不再维护”，不再出现在活跃分类中；除非用户明确要求，否则不要删除其目录。
 - 新 Skill 无法可靠归类时，先根据上述判定顺序给出最合理分类；只有分类会实质改变仓库结构或发布策略时才向用户确认。
 
