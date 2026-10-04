@@ -101,7 +101,6 @@ python3 link-skills.py --target ~/.codex/skills
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-design-orchestrator`](./aw-design-orchestrator/) | `1.0.0` | 接收多种形式需求，顺序编排设计塑形、初版生成、审查、任务走查与文案收敛，提供独立 `/help` | 只编排主流程；保留人工 Review 与新会话交接，按阶段加载 Skill 并报告缺失依赖，不包含按需增强 |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
 | [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.0.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准结构及文档版式；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
@@ -114,6 +113,7 @@ python3 link-skills.py --target ~/.codex/skills
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
+| [`aw-design-orchestrator`](./aw-design-orchestrator/) | `1.0.0` | 接收多种形式需求，顺序编排设计塑形、初版生成、审查、任务走查与文案收敛，提供独立 `/help` | 只编排主流程；保留人工 Review 与新会话交接，按阶段加载 Skill 并报告缺失依赖，不包含按需增强 |
 | [`aw-design-shaping`](./aw-design-shaping/) | `1.1.0` | 通过聚焦追问、竞品研究与线框图，将想法、PRD 和参考共同塑形成可生成初版的 UI/UX 方向 | 用户选择探索方式并决定关键取舍；简报随后续已批准决定更新并记录实施状态，不穷举状态或自动实施正式界面 |
 | [`aw-canvas-design`](./aw-canvas-design/) | `1.5.1` | 用实际组件画布设计多弹层业务流程，`/<业务路由>/design-canvas` 是设计整理入口，支持 `?preview={name}` 单流程走查；附带 canvas-kit 标准件（可直接打开的 HTML 组件与 React 参考实现），通过评论迭代并验收入口覆盖 | 优先复用项目已有画布和依赖，不强制对齐 canvas-kit 版本；画布不是业务正式页面，只有明确要求时才接入实际入口 |
 | [`aw-component-checker`](./aw-component-checker/) | `1.24.1` | 审查桌面端组件的语义、组合与内部使用，并维护 Component Reference 和索引 | 按需读取相关规则；纯审查不自动改写；不用于单纯视觉规格检查 |
