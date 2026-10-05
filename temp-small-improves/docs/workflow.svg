@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1160" viewBox="0 0 1200 1160" role="img" aria-labelledby="title desc">
   <title id="title">小型界面优化工作流程</title>
-  <desc id="desc">先确认显式调用，再收集界面证据、检查十四条细节规则、判断是否存在问题与修改授权，最后验证并交付结果。</desc>
+  <desc id="desc">先确认显式调用，再收集界面证据、按编号顺序检查六十六条细节规则、判断是否存在问题与修改授权，最后验证并交付结果。</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#52606d"/>
@@ -41,8 +41,8 @@
   <text x="615" y="290" class="branch">是</text>
 
   <rect x="425" y="450" width="350" height="90" rx="14" class="process"/>
-  <text x="600" y="488" class="node-title">逐条检查 14 项规则</text>
-  <text x="600" y="512" class="note">标记适用、满足、问题或待验证</text>
+  <text x="600" y="488" class="node-title">按顺序检查 66 项规则</text>
+  <text x="600" y="512" class="note">逐项记录状态与证据，合并重复问题</text>
   <path class="line" d="M600 400 V450"/>
 
   <path class="decision" d="M600 590 L770 660 L600 730 L430 660 Z"/>
@@ -51,8 +51,8 @@
   <path class="line" d="M600 540 V590"/>
 
   <rect x="855" y="615" width="260" height="90" rx="14" class="result"/>
-  <text x="985" y="654" class="node-title">交付无需修改</text>
-  <text x="985" y="678" class="note">报告已满足与待验证项</text>
+  <text x="985" y="654" class="node-title">交付当前判断</text>
+  <text x="985" y="678" class="note">无需修改或证据待补充</text>
   <path class="line" d="M770 660 H855"/>
   <text x="804" y="648" class="branch">否</text>
 

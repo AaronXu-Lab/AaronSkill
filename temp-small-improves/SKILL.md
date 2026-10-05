@@ -1,8 +1,8 @@
 ---
 name: temp-small-improves
-description: "Only when the user explicitly names `$temp-small-improves` or requests invoking temp-small-improves, review or implement a narrow set of UI detail improvements covering media placeholders, text wrapping, numeric alignment, control spacing, tooltips, and animation continuity. Do not trigger automatically for ordinary design, frontend, review, or optimization requests."
+description: "Only when the user explicitly names `$temp-small-improves` or requests invoking temp-small-improves, review or implement a narrow set of UI detail improvements covering media, interface details, motion, typography, colors, accessibility, layout, and wording in a fixed sequential checklist. Do not trigger automatically for ordinary design, frontend, review, or optimization requests."
 metadata:
-  version: "1.1.1"
+  version: "1.2.0"
   author: "aaron_xu"
   creation_context: "为把容易遗漏但可复用的界面细节判断集中记录为一次显式调用的轻量设计检查，并在不扩张产品范围的前提下实施最小优化而创建。"
 ---
@@ -21,7 +21,7 @@ metadata:
 
 ## 目标
 
-针对用户提供或指定的界面、设计稿、截图、原型或实现，逐条判断 14 项细节规则是否适用、是否已经满足，以及是否存在可验证的问题。只对命中的问题提出或实施最小改动；不要为了使用完规则而制造问题。
+针对用户提供或指定的界面、设计稿、截图、原型或实现，按编号 1–66 顺序判断细节规则是否适用、是否已经满足，以及是否存在可验证的问题。只对命中的问题提出或实施最小改动；不要为了使用完规则而制造问题。
 
 ## 工作方式
 
@@ -34,6 +34,8 @@ metadata:
 开始判断前，先确认目标表面、主要任务、相关状态、使用频率、平台能力、既有组件和设计 Token。证据不足时把结论标记为“待验证”，不要根据规则标题猜测实现问题。
 
 ## 判断原则
+
+这是临时的小检查与小改动清单。检测顺序固定为原有 1–14 项，再检查界面、动画、排版、颜色、无障碍、布局、文案补充项；不适用的项目记录原因后继续。重复命中的问题集中合并修复，不扩大为全库迁移或整体审计。
 
 对每条规则记录 `不适用 / 已满足 / 建议优化 / 待验证`：
 
@@ -51,6 +53,6 @@ metadata:
 - 检查范围与证据；
 - 命中的规则、具体位置、当前问题和判断理由；
 - 最小优化建议；
-- 未命中、待验证或因既有规范而不采用的事项。
+- 未命中、待验证或因既有规范而不采用的事项；所有编号须有状态记录，最终答复可按状态汇总。
 
-实施模式还要交付实际修改、验证结果和剩余风险。若 14 条均无可验证问题，明确报告“未发现需要修改的小型优化”，不要为了产生改动而降低标准。
+实施模式还要交付实际修改、验证结果和剩余风险。若 66 条均无可验证问题，明确报告“未发现需要修改的小型优化”，不要为了产生改动而降低标准；存在待验证项时同时说明覆盖不完整。

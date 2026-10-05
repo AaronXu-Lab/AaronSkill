@@ -134,7 +134,7 @@ python3 link-skills.py --target ~/.codex/skills
 | --- | --- | --- | --- |
 | [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.1` | 启动本地多服务并定位端口、接口与页面加载故障 | 优先复用现有入口；确认进程归属；以调用链和目标页面验证结果 |
 | [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.1` | 从项目 PRD 查证需求并按需与界面或实现对照 | 区分明确规定、推断与未覆盖；只读查证或沿已有授权修正 |
-| [`temp-small-improves`](./temp-small-improves/) | `1.1.1` | 显式检查并优化一组容易遗漏的界面排版、控件与动效细节 | 仅用户主动点名时调用；只处理有证据支持的最小改动 |
+| [`temp-small-improves`](./temp-small-improves/) | `1.2.0` | 按顺序检测 66 项界面、动效、排版、颜色、无障碍、布局与文案的小型优化 | 仅用户主动点名时调用；合并重合检查，只处理有证据支持的最小改动 |
 
 ### 不再维护
 

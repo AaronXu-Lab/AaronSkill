@@ -134,7 +134,7 @@ Skills under active development, each kept in its own directory for optional ins
 | --- | --- | --- | --- |
 | [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.1` | Starts local multi-service projects and diagnoses port, API, and page-loading failures | Prefers existing entry points; confirms process ownership; verifies through call paths and the target page |
 | [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.1` | Verifies requirements against a project PRD and, when needed, compares them with the interface or implementation | Separates explicit requirements, inferences, and gaps; performs read-only checks or fixes within existing authorization |
-| [`temp-small-improves`](./temp-small-improves/) | `1.1.1` | Explicitly checks and improves commonly missed details in interface typography, controls, and motion | Runs only when the user names it; makes the smallest evidence-based changes |
+| [`temp-small-improves`](./temp-small-improves/) | `1.2.0` | Sequentially checks 66 small UI improvements across interface details, motion, typography, colors, accessibility, layout, and wording | Runs only when explicitly named; merges overlapping checks and makes the smallest evidence-based changes |
 
 ### No longer maintained
 
