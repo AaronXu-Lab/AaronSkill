@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-01T13:05:59+00:00",
+  "generated_at": "2026-10-08T03:50:19+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,7 +1374,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -2606,17 +2606,17 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
-      "last_success_at": "2026-09-30T02:50:43+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
           "etag": "\"c39230cc4990be3de01204a7a01705b3\"",
-          "last_modified": "Wed, 30 Sep 2026 02:51:52 GMT"
+          "last_modified": "Wed, 07 Oct 2026 16:10:09 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"e0f2e2f2ec655be18fc0c3ce8ccc43ed\"",
-          "last_modified": "Wed, 30 Sep 2026 02:51:54 GMT"
+          "etag": "\"652262f1d7e2f5cba5e9db6e6f39de90\"",
+          "last_modified": "Wed, 07 Oct 2026 16:10:07 GMT"
         }
       },
       "config_sha256": "90af17f4cecdcd519c1bdb29cbb7b8aaa080bef27af1b514395ecc05e8e321fc",
@@ -3745,13 +3745,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
-      "last_success_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"fa3706817f5770d5bbd961ebe5129f67ff759a8c0ad0442a1c987207a671ebf1\"",
-          "last_modified": "Thu, 01 Oct 2026 12:59:57 GMT"
+          "etag": "W/\"55a17b046926662cb0b3412fec4e5855a6493bc3ad8833bc06249720a625bdc7\"",
+          "last_modified": "Wed, 07 Oct 2026 13:42:09 GMT"
         }
       },
       "config_sha256": "75ea0fc4a6799d31b8d90fd783bb4365b8a65ddbae8ccb2e0ab24ab197ed1f83",
@@ -3847,6 +3847,28 @@
         {
           "source_id": "reui-public-base",
           "library": "ReUI Public Base",
+          "name": "Attachment",
+          "slug": "attachment",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/attachment",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/attachment",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
           "name": "Autocomplete",
           "slug": "autocomplete",
           "description": "",
@@ -3919,6 +3941,28 @@
           "category": "Components and examples",
           "preview_url": "https://reui.io/components/breadcrumb",
           "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/breadcrumb",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Bubble",
+          "slug": "bubble",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/bubble",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/bubble",
           "foundation_hint": "base-ui",
           "styling_hint": "unverified",
           "foundation": "unverified",
@@ -4705,12 +4749,78 @@
         {
           "source_id": "reui-public-base",
           "library": "ReUI Public Base",
+          "name": "Marker",
+          "slug": "marker",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/marker",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/marker",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
           "name": "Menubar",
           "slug": "menubar",
           "description": "",
           "category": "Components and examples",
           "preview_url": "https://reui.io/components/menubar",
           "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/menubar",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Message",
+          "slug": "message",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/message",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/message",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Message Scroller",
+          "slug": "message-scroller",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/message-scroller",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/message-scroller",
           "foundation_hint": "base-ui",
           "styling_hint": "unverified",
           "foundation": "unverified",
@@ -4903,6 +5013,28 @@
         {
           "source_id": "reui-public-base",
           "library": "ReUI Public Base",
+          "name": "Questionnaire",
+          "slug": "questionnaire",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/questionnaire",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/questionnaire",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
           "name": "Radio Group",
           "slug": "radio-group",
           "description": "",
@@ -5063,6 +5195,50 @@
           "category": "Components and examples",
           "preview_url": "https://reui.io/components/sheet",
           "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/sheet",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Sidebar",
+          "slug": "sidebar",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/sidebar",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/sidebar",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "Signature Pad",
+          "slug": "signature-pad",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/signature-pad",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/signature-pad",
           "foundation_hint": "base-ui",
           "styling_hint": "unverified",
           "foundation": "unverified",
@@ -5299,6 +5475,28 @@
         {
           "source_id": "reui-public-base",
           "library": "ReUI Public Base",
+          "name": "Time Picker",
+          "slug": "time-picker",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/time-picker",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/time-picker",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
           "name": "Timeline",
           "slug": "timeline",
           "description": "",
@@ -5417,13 +5615,13 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
-      "last_success_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"baab012ac9651ecb8bac24b78daa7bef\"",
-          "last_modified": "Thu, 01 Oct 2026 13:06:24 GMT"
+          "etag": "\"276936e914724d18987aa57c904fd002\"",
+          "last_modified": "Wed, 07 Oct 2026 16:10:13 GMT"
         }
       },
       "config_sha256": "b6a894d6f983b559d11bae33a6d6a5323c815909d08d6243d441db3b3fefa030",
@@ -5524,7 +5722,8 @@
             "https://www.fluidfunctionalism.com/r/use-merge-split.json",
             "https://www.fluidfunctionalism.com/r/button.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5552,7 +5751,8 @@
             "class-variance-authority",
             "utils",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5619,7 +5819,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5653,7 +5854,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5686,7 +5888,8 @@
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5746,7 +5949,8 @@
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/use-touch-primary.json",
             "https://www.fluidfunctionalism.com/r/file-thumbnail.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5853,7 +6057,8 @@
             "https://www.fluidfunctionalism.com/r/slider.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tooltip.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5895,7 +6100,8 @@
             "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5937,7 +6143,8 @@
             "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -5977,7 +6184,8 @@
             "https://www.fluidfunctionalism.com/r/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/dialog.json",
             "https://www.fluidfunctionalism.com/r/tabs-subtle.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6012,7 +6220,8 @@
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/button.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6047,7 +6256,8 @@
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/base/button.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6062,7 +6272,7 @@
           "library": "Fluid Functionalism",
           "name": "Dropdown",
           "slug": "dropdown",
-          "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), and multiple selection with merged backgrounds. Radix flavor.",
+          "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), submenus (DropdownSub) whose trigger row stays lit across the safe area, and multiple selection with merged backgrounds. Radix flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/dropdown",
           "source_url": "https://www.fluidfunctionalism.com/r/dropdown.json",
@@ -6087,7 +6297,8 @@
             "https://www.fluidfunctionalism.com/r/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6102,7 +6313,7 @@
           "library": "Fluid Functionalism",
           "name": "Dropdown",
           "slug": "dropdown",
-          "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), and multiple selection with merged backgrounds. Base UI flavor.",
+          "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), submenus (DropdownSub) whose trigger row stays lit across the safe area, and multiple selection with merged backgrounds. Base UI flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/dropdown",
           "source_url": "https://www.fluidfunctionalism.com/r/dropdown-base.json",
@@ -6127,7 +6338,8 @@
             "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6194,7 +6406,8 @@
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6232,7 +6445,8 @@
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/button.json",
             "https://www.fluidfunctionalism.com/r/tooltip.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6339,7 +6553,8 @@
             "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6380,7 +6595,8 @@
             "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6421,7 +6637,8 @@
             "https://www.fluidfunctionalism.com/r/tooltip.json",
             "https://www.fluidfunctionalism.com/r/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/button.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6462,7 +6679,8 @@
             "https://www.fluidfunctionalism.com/r/base/tooltip.json",
             "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/base/button.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6494,7 +6712,8 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6526,7 +6745,8 @@
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6651,6 +6871,8 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6686,6 +6908,8 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6720,6 +6944,7 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6754,6 +6979,7 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6785,7 +7011,8 @@
             "framer-motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json"
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6820,7 +7047,8 @@
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/badge.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6855,7 +7083,8 @@
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/badge.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6885,7 +7114,8 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json"
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6915,7 +7145,8 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json"
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6936,7 +7167,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8367,7 +8598,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -9203,17 +9434,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
-      "last_success_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_success_at": "2026-10-08T02:54:45+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"aa562c13dfccab2c2fdc92e879ca727a276f08889992a9ea96b4e28f3c4f8002\"",
-          "last_modified": "Thu, 01 Oct 2026 11:34:25 GMT"
+          "etag": "W/\"3a09c244de02f9f58d5e57103e8793cefb21848b4889a4facd254c1aa1197c21\"",
+          "last_modified": "Thu, 08 Oct 2026 02:39:56 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"24c3b54c6534e9d7271cf68b03969e04\"",
-          "last_modified": "Thu, 01 Oct 2026 13:06:32 GMT"
+          "etag": "\"9118a37be6d0dc2c3a85be11cea2ad58\"",
+          "last_modified": "Thu, 08 Oct 2026 02:55:34 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -10657,6 +10888,28 @@
           "category": "Components",
           "preview_url": "https://astryx.atmeta.com/components/DropdownMenuDivider",
           "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuDivider.tsx",
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
+          "name": "DropdownMenuGroup",
+          "slug": "DropdownMenuGroup",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/DropdownMenuGroup",
+          "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuGroup.tsx",
           "foundation_hint": "custom",
           "styling_hint": "stylex",
           "foundation": "unverified",
@@ -12543,6 +12796,28 @@
         {
           "source_id": "astryx",
           "library": "Astryx",
+          "name": "TableSelectionToolbar",
+          "slug": "TableSelectionToolbar",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/TableSelectionToolbar",
+          "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/Table/TableSelectionToolbar.tsx",
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
           "name": "TabList",
           "slug": "TabList",
           "description": "",
@@ -12703,6 +12978,28 @@
           "category": "Components",
           "preview_url": "https://astryx.atmeta.com/components/TimeInput",
           "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/TimeInput/TimeInput.tsx",
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
+          "name": "Timer",
+          "slug": "Timer",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/Timer",
+          "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/Timer/Timer.tsx",
           "foundation_hint": "custom",
           "styling_hint": "stylex",
           "foundation": "unverified",
@@ -13167,17 +13464,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-01T13:05:59+00:00",
-      "last_success_at": "2026-10-01T13:05:59+00:00",
+      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"ee01ba31e7dd76f420ff43de2044b353\"",
-          "last_modified": "Thu, 01 Oct 2026 13:06:33 GMT"
+          "etag": "W/\"bcfe155ce6302097989d801b2567cb9a\"",
+          "last_modified": "Wed, 07 Oct 2026 16:10:23 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"3bf87eac9218cdfd78e5195bae29e8e20485631e23d27c03942e06e9092136b8\"",
-          "last_modified": "Thu, 01 Oct 2026 11:11:46 GMT"
+          "etag": "W/\"e89f2d8d2967775a32e400512537ba84cfdf17d78a73960f3d6dafc1fb06e972\"",
+          "last_modified": "Tue, 06 Oct 2026 18:19:13 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -15607,7 +15904,7 @@
           "library": "Lobe UI",
           "name": "Image",
           "slug": "image",
-          "description": "Category: Data Display. Image is an enhanced image component with a self-contained zoom-and-pan preview viewer, custom actions, and various display styles. Preview is powered by a Base UI dialog with FLIP open/close transitions, deep zoom, and gallery navigation — it no longer wraps Ant Design's Image. Outline: Gallery, Dual Source Preview, Deep Zoom, Default Zoom, Toolbar Addon, Interaction Model, Breaking Changes, Image, PreviewGroup, ImagePreviewOptions. Docs: https://ui.lobehub.com/components/image",
+          "description": "Category: Data Display. Image is an enhanced image component with a self-contained zoom-and-pan preview viewer, custom actions, and various display styles. Preview is powered by a Base UI dialog with FLIP open/close transitions, deep zoom, and gallery navigation — it no longer wraps Ant Design's Image. Outline: Gallery, Dual Source Preview, Deep Zoom, Default Zoom, Toolbar Addon, Interaction Model, Breaking Changes, Image, PreviewGroup, ImagePreviewOptions, useImagePreview. Docs: https://ui.lobehub.com/components/image",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/image",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Image/index.ts",

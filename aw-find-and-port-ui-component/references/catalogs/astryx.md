@@ -3,9 +3,9 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-10-01T13:05:59+00:00`
-- Last successful refresh: `2026-10-01T13:05:59+00:00`
-- Discovery leads: `179`
+- Last checked: `2026-10-08T03:50:19+00:00`
+- Last successful refresh: `2026-10-08T02:54:45+00:00`
+- Discovery leads: `182`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -77,6 +77,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | DropdownMenu | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenu) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenu.tsx) |
 | DropdownMenuCheckboxItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuCheckboxItem) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuCheckboxItem.tsx) |
 | DropdownMenuDivider | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuDivider) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuDivider.tsx) |
+| DropdownMenuGroup | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuGroup) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuGroup.tsx) |
 | DropdownMenuItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuItem) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuItem.tsx) |
 | DropdownMenuRadioGroup | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuRadioGroup) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuRadioGroup.tsx) |
 | DropdownMenuRadioItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuRadioItem) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuRadioItem.tsx) |
@@ -162,6 +163,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | TableHeader | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TableHeader) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Table/TableHeader.tsx) |
 | TableHeaderCell | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TableHeaderCell) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Table/TableHeaderCell.tsx) |
 | TableRow | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TableRow) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Table/TableRow.tsx) |
+| TableSelectionToolbar | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TableSelectionToolbar) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Table/TableSelectionToolbar.tsx) |
 | TabList | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TabList) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/TabList/TabList.tsx) |
 | TabMenu | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TabMenu) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/TabList/TabMenu.tsx) |
 | Text | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Text) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Text/Text.tsx) |
@@ -170,6 +172,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | Theme | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Theme) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/theme/Theme.tsx) |
 | Thumbnail | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Thumbnail) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Thumbnail/Thumbnail.tsx) |
 | TimeInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/TimeInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/TimeInput/TimeInput.tsx) |
+| Timer | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Timer) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Timer/Timer.tsx) |
 | Timestamp | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Timestamp) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Timestamp/Timestamp.tsx) |
 | Toast | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Toast) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Toast/Toast.tsx) |
 | ToggleButton | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/ToggleButton) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/ToggleButton/ToggleButton.tsx) |

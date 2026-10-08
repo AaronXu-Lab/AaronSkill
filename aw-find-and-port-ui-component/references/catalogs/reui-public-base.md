@@ -3,9 +3,9 @@
 ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 
 - Status: `fresh`
-- Last checked: `2026-10-01T13:05:59+00:00`
-- Last successful refresh: `2026-10-01T13:05:59+00:00`
-- Discovery leads: `75`
+- Last checked: `2026-10-08T03:50:19+00:00`
+- Last successful refresh: `2026-10-07T16:09:44+00:00`
+- Discovery leads: `84`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'unverified'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -15,10 +15,12 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Alert | base-ui | unverified |  | [Preview](https://reui.io/components/alert) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/alert) |
 | Alert Dialog | base-ui | unverified |  | [Preview](https://reui.io/components/alert-dialog) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/alert-dialog) |
 | Aspect Ratio | base-ui | unverified |  | [Preview](https://reui.io/components/aspect-ratio) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/aspect-ratio) |
+| Attachment | base-ui | unverified |  | [Preview](https://reui.io/components/attachment) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/attachment) |
 | Autocomplete | base-ui | unverified |  | [Preview](https://reui.io/components/autocomplete) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/autocomplete) |
 | Avatar | base-ui | unverified |  | [Preview](https://reui.io/components/avatar) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/avatar) |
 | Badge | base-ui | unverified |  | [Preview](https://reui.io/components/badge) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/badge) |
 | Breadcrumb | base-ui | unverified |  | [Preview](https://reui.io/components/breadcrumb) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/breadcrumb) |
+| Bubble | base-ui | unverified |  | [Preview](https://reui.io/components/bubble) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/bubble) |
 | Button | base-ui | unverified |  | [Preview](https://reui.io/components/button) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/button) |
 | Button Group | base-ui | unverified |  | [Preview](https://reui.io/components/button-group) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/button-group) |
 | Calendar | base-ui | unverified |  | [Preview](https://reui.io/components/calendar) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/calendar) |
@@ -54,7 +56,10 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Kanban | base-ui | unverified |  | [Preview](https://reui.io/components/kanban) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/kanban) |
 | Kbd | base-ui | unverified |  | [Preview](https://reui.io/components/kbd) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/kbd) |
 | Label | base-ui | unverified |  | [Preview](https://reui.io/components/label) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/label) |
+| Marker | base-ui | unverified |  | [Preview](https://reui.io/components/marker) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/marker) |
 | Menubar | base-ui | unverified |  | [Preview](https://reui.io/components/menubar) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/menubar) |
+| Message | base-ui | unverified |  | [Preview](https://reui.io/components/message) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/message) |
+| Message Scroller | base-ui | unverified |  | [Preview](https://reui.io/components/message-scroller) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/message-scroller) |
 | Name Index | base-ui | unverified |  | [Preview](https://reui.io/components/name-index) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/name-index) |
 | Native Select | base-ui | unverified |  | [Preview](https://reui.io/components/native-select) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/native-select) |
 | Navigation Menu | base-ui | unverified |  | [Preview](https://reui.io/components/navigation-menu) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/navigation-menu) |
@@ -63,6 +68,7 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Phone Input | base-ui | unverified |  | [Preview](https://reui.io/components/phone-input) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/phone-input) |
 | Popover | base-ui | unverified |  | [Preview](https://reui.io/components/popover) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/popover) |
 | Progress | base-ui | unverified |  | [Preview](https://reui.io/components/progress) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/progress) |
+| Questionnaire | base-ui | unverified |  | [Preview](https://reui.io/components/questionnaire) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/questionnaire) |
 | Radio Group | base-ui | unverified |  | [Preview](https://reui.io/components/radio-group) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/radio-group) |
 | Rating | base-ui | unverified |  | [Preview](https://reui.io/components/rating) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/rating) |
 | Resizable | base-ui | unverified |  | [Preview](https://reui.io/components/resizable) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/resizable) |
@@ -71,6 +77,8 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Select | base-ui | unverified |  | [Preview](https://reui.io/components/select) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/select) |
 | Separator | base-ui | unverified |  | [Preview](https://reui.io/components/separator) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/separator) |
 | Sheet | base-ui | unverified |  | [Preview](https://reui.io/components/sheet) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/sheet) |
+| Sidebar | base-ui | unverified |  | [Preview](https://reui.io/components/sidebar) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/sidebar) |
+| Signature Pad | base-ui | unverified |  | [Preview](https://reui.io/components/signature-pad) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/signature-pad) |
 | Skeleton | base-ui | unverified |  | [Preview](https://reui.io/components/skeleton) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/skeleton) |
 | Slider | base-ui | unverified |  | [Preview](https://reui.io/components/slider) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/slider) |
 | Sonner | base-ui | unverified |  | [Preview](https://reui.io/components/sonner) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/sonner) |
@@ -81,6 +89,7 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Table | base-ui | unverified |  | [Preview](https://reui.io/components/table) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/table) |
 | Tabs | base-ui | unverified |  | [Preview](https://reui.io/components/tabs) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/tabs) |
 | Textarea | base-ui | unverified |  | [Preview](https://reui.io/components/textarea) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/textarea) |
+| Time Picker | base-ui | unverified |  | [Preview](https://reui.io/components/time-picker) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/time-picker) |
 | Timeline | base-ui | unverified |  | [Preview](https://reui.io/components/timeline) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/timeline) |
 | Toggle | base-ui | unverified |  | [Preview](https://reui.io/components/toggle) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/toggle) |
 | Toggle Group | base-ui | unverified |  | [Preview](https://reui.io/components/toggle-group) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/toggle-group) |
