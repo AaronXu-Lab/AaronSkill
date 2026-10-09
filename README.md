@@ -155,6 +155,8 @@ The `skills` CLI recursively discovers `SKILL.md` files, so every first-level di
 
 ## Check dependencies before use
 
+The eight design agents are maintained in [Design-Agent](https://github.com/AaronXu-Lab/Design-Agent) and installed separately. Its workflow entry is `aw-design-orchestrator`; `aw-component-advisor` provides guidance/audit using the manually started [AaronUI-Web knowledge MCP](https://github.com/AaronXu-Lab/AaronUI-Web/tree/main/mcp). Only `component/dialog` is covered in this iteration; Gallery displays more components. The old `aw-component-checker` is a deprecated redirect with no component-rule fallback. Design support and `aw-meta-skill` remain in this repository.
+
 Dependencies vary by Skill. Read the relevant `SKILL.md` before invoking one:
 
 - Workflows that use Figma or other external tools require the relevant app, permissions, or authorization.

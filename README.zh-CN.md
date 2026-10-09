@@ -155,6 +155,8 @@ python3 link-skills.py --target ~/.codex/skills
 
 ## 使用前先看依赖
 
+八个设计 Agent 在 [Design-Agent](https://github.com/AaronXu-Lab/Design-Agent) 中维护，需要单独安装。主流程入口为 `aw-design-orchestrator`；`aw-component-advisor` 通过手动启动的 [AaronUI-Web 知识 MCP](https://github.com/AaronXu-Lab/AaronUI-Web/tree/main/mcp) 提供 guidance/audit。本轮仅覆盖 `component/dialog`，Gallery 展示范围更广。旧 `aw-component-checker` 仅为弃用转发入口，无组件规则兜底；设计支撑与 `aw-meta-skill` 仍在本仓库。
+
 每个 Skill 的依赖不同。调用前请阅读对应 `SKILL.md`：
 
 - Figma 等外部工具流程需要对应应用、权限或授权状态。
