@@ -107,14 +107,6 @@ Infrastructure, standards, and engineering support for design systems, component
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | Compares Figma Variables, `DESIGN.md`, and CSS/Less tokens | Produces audit evidence only and does not rewrite tokens automatically |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.2.1` | Finds and compares specific components from Base UI and other React sources, including Lobe UI, then adapts them for Base UI and CSS Modules | Handles component-level requests only; Find verifies the exact source and license, then waits for a selection; Port confirms details lost or dependencies added in advance |
 
-### Design agents
-
-The **8 design agent Skills** have moved to [Design Agent](https://github.com/AaronXu-Lab/Design-Agent). Install them from the new repository:
-
-```bash
-npx skills@latest add AaronXu-Lab/Design-Agent
-```
-
 ### Working On
 
 Skills under active development, each kept in its own directory for optional installation and use.

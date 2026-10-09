@@ -107,14 +107,6 @@ python3 link-skills.py --target ~/.codex/skills
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.2.1` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
 
-### 设计 · Agent
-
-**8 个设计 Agent Skill** 已迁移至 [Design Agent](https://github.com/AaronXu-Lab/Design-Agent)，请从新仓库安装：
-
-```bash
-npx skills@latest add AaronXu-Lab/Design-Agent
-```
-
 ### Working On
 
 正在持续完善的 Skill，保留独立目录，可按需安装和使用。
