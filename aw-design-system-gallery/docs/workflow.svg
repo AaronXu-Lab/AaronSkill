@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
 <title id="title">Design System Gallery 工作流程</title>
-<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，属性适用条件变化先识别父子依赖并读取规则，区分组件本体、Playground 控件与 Properties 比较块，共享依赖禁用和提示；验收前提切换、阻断、恢复和值保留。文档版式同时核对共享轴序、重置、Section 操作和路径深链。名称映射需分离 Gallery 设计值、代码值与渲染适配。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
+<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，属性适用条件变化先识别父子依赖并读取规则，区分组件本体、Playground 控件与 Properties 比较块，共享依赖禁用和提示；验收前提切换、阻断、恢复和值保留。文档版式同时核对共享轴序、重置、Section 操作和路径深链。组件身份以显示名称为准，核对类名、目录与路由；属性映射分离设计值、代码值与渲染适配。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606d"/></marker>
 <style>
 text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#1f2933}
@@ -43,7 +43,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <text class="body" x="600.0" y="405">适用条件变化先识别父子依赖，读取 §3</text>
 <rect class="stage" x="330" y="470" width="540" height="95" rx="14"/>
 <text class="node-title" x="600.0" y="500">按任务章节审阅展示</text>
-<text class="body" x="600.0" y="525">只读取当前动作所需规则，跨任务组合读取</text>
+<text class="body" x="600.0" y="525">名称检查：显示名、组件类名、目录与路由一致</text>
 <text class="body" x="600.0" y="546">Playground 与 Properties 共享轴序、取值及依赖提示</text>
 <polygon class="decision" points="600,600 780,660 600,720 420,660"/>
 <text class="node-title" x="600" y="656">存在歧义或范围阻塞？</text>

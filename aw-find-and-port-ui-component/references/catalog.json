@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-08T03:50:19+00:00",
+  "generated_at": "2026-10-09T03:38:18+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,7 +1374,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -2606,7 +2606,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
@@ -3745,7 +3745,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
@@ -5615,7 +5615,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-10-07T16:09:44+00:00",
       "error": null,
       "fetch": {
@@ -7167,7 +7167,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8598,7 +8598,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -9434,17 +9434,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
-      "last_success_at": "2026-10-08T02:54:45+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
+      "last_success_at": "2026-10-09T03:38:18+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"3a09c244de02f9f58d5e57103e8793cefb21848b4889a4facd254c1aa1197c21\"",
-          "last_modified": "Thu, 08 Oct 2026 02:39:56 GMT"
+          "etag": "W/\"c03c9e132ab440d707a44e213bca9aa4622175dc30822437296a311ce242197b\"",
+          "last_modified": "Fri, 09 Oct 2026 03:32:21 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"9118a37be6d0dc2c3a85be11cea2ad58\"",
-          "last_modified": "Thu, 08 Oct 2026 02:55:34 GMT"
+          "etag": "\"585e3347b48972d09bf985eaf57ecd91\"",
+          "last_modified": "Fri, 09 Oct 2026 03:38:41 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -13464,8 +13464,8 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-08T03:50:19+00:00",
-      "last_success_at": "2026-10-07T16:09:44+00:00",
+      "last_checked_at": "2026-10-09T03:38:18+00:00",
+      "last_success_at": "2026-10-09T03:25:19+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
@@ -13473,8 +13473,8 @@
           "last_modified": "Wed, 07 Oct 2026 16:10:23 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"e89f2d8d2967775a32e400512537ba84cfdf17d78a73960f3d6dafc1fb06e972\"",
-          "last_modified": "Tue, 06 Oct 2026 18:19:13 GMT"
+          "etag": "W/\"5d56028beea7ca8031ccb9d594e95fca0e1013da5ec752edfb61d61899aafb7d\"",
+          "last_modified": "Thu, 08 Oct 2026 18:13:19 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",

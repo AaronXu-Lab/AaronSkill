@@ -2,7 +2,7 @@
 name: aw-design-system-gallery
 description: "Use when creating or modifying design-system Gallery displays, including Gallery Panels, default or comparison examples, property axes and their applicability conditions, Captions, placeholder copy, or icons created or adjusted alongside component additions or changes, even without an explicit request for a Gallery review. Not for ordinary component implementation or product copy changes that do not involve the Gallery."
 metadata:
-  version: "4.0.0"
+  version: "4.1.0"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---
@@ -22,7 +22,7 @@ metadata:
 | 排列依赖轴、核对 default、处理无轴组件 | [§3 轴顺序与默认示例](references/gallery-rules.md#3-决定轴顺序) |
 | 新增或调整组件 Panel 的整体内容结构、Playground／Anatomy／Properties／Best practices 或旧版组合 | [§3 Panel 内容结构](references/gallery-rules.md#panel-内容结构)；涉及轴选择时同时读 §2 |
 | 调整 Playground Reset、Section 头部、copy link、Panel 菜单或页面深链 | [§3 Playground 重置](references/gallery-rules.md#playground-重置) 与 [§3 Section 头部与深链](references/gallery-rules.md#section-头部与深链)，按受影响行为读取 |
-| 核对名称映射、组件契约、代码 API 更新后的 Gallery 同步或修改 API | [§4 名称与 API](references/gallery-rules.md#4-核对-gallery-名称与实现-api)，按其链接读取相关 API 约束 |
+| 核对显示名称、组件类名／导出名、目录、路由的一致性及属性名称映射、组件契约、代码 API 更新后的 Gallery 同步或修改 API | [§4 名称与 API](references/gallery-rules.md#4-核对-gallery-名称与实现-api)，按其链接读取相关 API 约束 |
 | 判断、增改真实占位范围提示或接入边界开关 | [§5 范围提示](references/gallery-rules.md#5-决定真实占位范围提示) |
 | 调整示例内容、触发器与浮层选项文案、比较布局或浮层表面 | [§6 可比较示例](references/gallery-rules.md#6-构造可比较示例) |
 | 审阅复合组件、父级组合、子级矩阵或确认内部子组件内化 | [§7 父子展示与内化](references/gallery-rules.md#7-展示复合组件与公开子组件)；涉及轴选择时同时读 §2 |

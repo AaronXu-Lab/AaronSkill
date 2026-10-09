@@ -3,8 +3,8 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-10-08T03:50:19+00:00`
-- Last successful refresh: `2026-10-08T02:54:45+00:00`
+- Last checked: `2026-10-09T03:38:18+00:00`
+- Last successful refresh: `2026-10-09T03:38:18+00:00`
 - Discovery leads: `182`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
