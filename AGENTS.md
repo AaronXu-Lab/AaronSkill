@@ -41,7 +41,9 @@
 ## 当前分类基线
 
 - 元 Skill：`aw-meta-skill`
-- 工具类：`aw-logo-asset-cook`、`aw-mail-read-later`、`rewrite-like-aaron`
+- 工具类：`aw-logo-asset-cook`、`aw-mail-read-later`、`aw-tiered-task-dispatch`、`rewrite-like-aaron`
 - 资源获取：`aw-comic-dossier-packer`、`aw-logo-finder`
-- 设计 · 支撑：`aw-design-md-author`、`aw-component-gallery-builder`、`aw-design-fake`、`aw-design-token-consistency-auditor`、`aw-find-and-port-ui-component`
+- 设计 · 支撑：`aw-design-md-author`、`aw-design-system-gallery`、`aw-design-fake`、`aw-design-token-consistency-auditor`、`aw-find-and-port-ui-component`
+- 设计 · Agent：已移出本仓库，在独立仓库中继续开发。
+- Working On：`temp-local-service-doctor`、`temp-prd-verifier`、`temp-small-improves`
 - 不再维护：`aw-figma-component-governance`

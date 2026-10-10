@@ -58,10 +58,14 @@ python3 link-skills.py
 
 脚本按自身位置定位仓库，可从任意工作目录运行；重复运行会跳过正确的软链。同名实体目录、文件或指向其他位置的软链会保留并报告冲突，退出码为 `1`。
 
-只检查而不写入，或指定其他全局目录：
+添加 `--prune` 可清理解析后指向本仓库一级目录、名称相同且已无 `SKILL.md` 的失效软链；其他仓库的软链及普通文件、目录会保留。
+
+预览变更、清理失效软链，或指定其他全局目录：
 
 ```bash
 python3 link-skills.py --dry-run
+python3 link-skills.py --prune --dry-run
+python3 link-skills.py --prune
 python3 link-skills.py --target ~/.codex/skills
 ```
 

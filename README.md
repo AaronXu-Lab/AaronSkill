@@ -58,10 +58,14 @@ python3 link-skills.py
 
 The script locates the repository relative to itself, so it can run from any working directory. Re-running it skips correct symlinks. It preserves and reports conflicting same-name files, directories, or symlinks that point elsewhere, and exits with code `1`.
 
-Preview changes without writing, or choose another global directory:
+Add `--prune` to remove stale same-name symlinks whose resolved destinations are first-level directories in this repository without a `SKILL.md`. Other repositories' symlinks and regular files or directories are preserved.
+
+Preview changes, clean stale links, or choose another global directory:
 
 ```bash
 python3 link-skills.py --dry-run
+python3 link-skills.py --prune --dry-run
+python3 link-skills.py --prune
 python3 link-skills.py --target ~/.codex/skills
 ```
 
