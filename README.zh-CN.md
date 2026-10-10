@@ -87,7 +87,7 @@ python3 link-skills.py --target ~/.codex/skills
 | --- | --- | --- | --- |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
-| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.7.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信 |
+| [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.8.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信；三档使用独立分支/worktree 与端口，完整需求 rebase 后一次本地合入 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
 ### 资源获取
