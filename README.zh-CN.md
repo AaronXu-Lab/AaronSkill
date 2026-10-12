@@ -85,7 +85,7 @@ python3 link-skills.py --target ~/.codex/skills
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-clash-network-doctor`](./aw-clash-network-doctor/) | `1.4.0` | 独立处理 Claude 清理与网络/环境诊断优化，含 Android 分流、订阅重新合并与时区 | 列出具体调整项获准后执行；记录 IPKK 完整前后分数；仅扫描不清理 |
+| [`aw-clash-network-doctor`](./aw-clash-network-doctor/) | `1.5.0` | 独立处理 Claude 清理与网络/环境诊断优化，含 Android 分流、订阅重新合并与时区 | 列出具体调整项获准后执行；记录 IPKK 完整前后分数；仅扫描不清理 |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
 | [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.9.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信；三档使用独立分支/worktree 与端口，完整需求 rebase 后持仓库锁一次本地合入；主会话派发即结束，执行会话自行验证、整合与回报 |
