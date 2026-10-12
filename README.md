@@ -69,7 +69,7 @@ python3 link-skills.py --prune
 python3 link-skills.py --target ~/.codex/skills
 ```
 
-The repository currently contains **16 Skills**, grouped by primary purpose into meta Skills, tools, resource discovery, and design support. It also has a Working On group and a separate list of no-longer-maintained Skills.
+The repository currently contains **17 Skills**, grouped by primary purpose into meta Skills, tools, resource discovery, and design support. It also has a Working On group and a separate list of no-longer-maintained Skills.
 
 ### Meta Skill
 
@@ -85,6 +85,7 @@ Reusable workflows for well-defined inputs and outputs, including asset processi
 
 | Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
+| [`aw-clash-network-doctor`](./aw-clash-network-doctor/) | `1.4.0` | Separates Claude cleanup from network and environment optimization, including Android routing, subscription remerging and timezone | Lists concrete adjustments for approval before execution; records completed IPKK scores before and after; scan-only requests do not clean |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | Creates and validates cross-platform icon assets from SVGs or images that have been assessed and iteratively redrawn | Requires user-specified input; confirm low-fidelity conversions, and check compatibility and themes after a redraw is approved |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | Recommends, reads, summarizes, or translates one item from Outlook's `Read Later` folder | Handles one item per manual run; requires confirmation before archiving or removing an email |
 | [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.8.0` | Handles read-only research in the main session and dispatches implementation work in Codex or Claude based on remaining uncertainty, impact, and coordination complexity | Uses the lower tier for settled, local work and the middle tier for substantive design or coordination; clarifies key plans first and treats history only as a weighting signal; resolves the latest available model by series, with user choice taking priority; execution sessions validate independently and do not communicate with each other; each tier uses an independent branch/worktree and preview port, then rebases and integrates the complete request once locally |
