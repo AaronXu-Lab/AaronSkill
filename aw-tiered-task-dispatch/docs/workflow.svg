@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2060" role="img" aria-labelledby="title desc">
-<title id="title">分档隔离实施与单次整合</title>
-<desc id="desc">主会话承担讨论与只读分析；用户明确建立后为三档初始化独立分支、worktree与端口，保护主预览。方向明确后按当前任务定档并核实最新模型。执行者完成完整需求和校验，由协调者串行安排，rebase目标最新分支后一次合入，再验证主预览。未提交归属不清时停止受影响操作；冒烟失败停止后续整合并安全恢复。</desc>
+<title id="title">派发即结束 · 执行会话自主交付</title>
+<desc id="desc">主会话承担讨论与只读分析；用户明确建立后为三档初始化独立分支、worktree与端口，保护主预览。方向明确后按当前任务定档并核实最新模型。执行者完成完整需求和校验，由执行者取得仓库锁串行整合，rebase目标最新分支后一次合入，再验证主预览。未提交归属不清时停止受影响操作；冒烟失败停止后续整合并安全恢复。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#52606d"/></marker>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#203040;text-anchor:middle}.title{font-size:30px;font-weight:700}.node{font-size:18px;font-weight:600}.sub{font-size:14px}.edge{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#arrow)}.input{fill:#fff;stroke:#9eacb8}.stage{fill:#edf6ff;stroke:#287bbb}.decision{fill:#fff7e6;stroke:#c98312}.stop{fill:#fff0ef;stroke:#c94b43}.done{fill:#edf9f1;stroke:#2e8b54}</style></defs>
 <rect width="1200" height="2060" fill="#f7f9fb"/>
-<text x="600" y="52" class="title">分档隔离实施与单次整合</text>
+<text x="600" y="52" class="title">派发即结束 · 执行会话自主交付</text>
 <rect x="410" y="85" width="380" height="76" rx="14" class="input" stroke-width="2"/><text x="600.0" y="116" class="node">用户请求</text><text x="600.0" y="141" class="sub">当前聊天保持主会话</text>
 <path d="M600 161 V190" class="edge"/>
 <polygon points="600,190 785,255 600,320 415,255" class="decision" stroke-width="2"/><text x="600" y="249" class="node">建立或实施？</text><text x="600" y="274" class="sub">只读讨论由主会话直接完成</text>
@@ -33,11 +33,11 @@
 <rect x="40" y="852" width="340" height="76" rx="14" class="stage" stroke-width="2"/><text x="210.0" y="883" class="node">主会话继续讨论</text><text x="210.0" y="908" class="sub">明确后再定档和派发</text>
 <path d="M600 955 V985" class="edge"/>
 <text x="621" y="974" class="sub">是</text>
-<rect x="410" y="985" width="380" height="76" rx="14" class="stage" stroke-width="2"/><text x="600.0" y="1016" class="node">按当前任务定档并派发</text><text x="600.0" y="1041" class="sub">从低档起评；历史只衡量实际收益</text>
+<rect x="410" y="985" width="380" height="76" rx="14" class="stage" stroke-width="2"/><text x="600.0" y="1016" class="node">按当前任务定档并派发</text><text x="600.0" y="1041" class="sub">含整合授权与锁位置；主会话至此结束</text>
 <path d="M600 1061 V1090" class="edge"/>
 <rect x="410" y="1090" width="380" height="76" rx="14" class="stage" stroke-width="2"/><text x="600.0" y="1121" class="node">执行者在隔离区完成整个需求</text><text x="600.0" y="1146" class="sub">含连续补充、必要校验和任务提交</text>
 <path d="M600 1166 V1195" class="edge"/>
-<rect x="410" y="1195" width="380" height="76" rx="14" class="stage" stroke-width="2"/><text x="600.0" y="1226" class="node">协调者安排串行整合窗口</text><text x="600.0" y="1251" class="sub">主会话只协调；无窗口则待整合</text>
+<rect x="410" y="1195" width="380" height="76" rx="14" class="stage" stroke-width="2"/><text x="600.0" y="1226" class="node">执行者取得仓库互斥锁</text><text x="600.0" y="1251" class="sub">自主有限等待；阻塞在执行会话报告</text>
 <path d="M600 1271 V1300" class="edge"/>
 <rect x="410" y="1300" width="380" height="76" rx="14" class="stage" stroke-width="2"/><text x="600.0" y="1331" class="node">rebase 目标最新 HEAD 并校验</text><text x="600.0" y="1356" class="sub">冲突在隔离区解决，不能夹带他人修改</text>
 <path d="M600 1376 V1405" class="edge"/>
@@ -56,7 +56,7 @@
 <rect x="825" y="1840" width="340" height="76" rx="14" class="stop" stroke-width="2"/><text x="995.0" y="1871" class="node">停止后续整合并安全恢复</text><text x="995.0" y="1896" class="sub">保留成果；不能安全恢复则报告</text>
 <path d="M600 1800 V1840" class="edge"/>
 <text x="622" y="1824" class="sub">是</text>
-<rect x="410" y="1840" width="380" height="76" rx="14" class="done" stroke-width="2"/><text x="600.0" y="1871" class="node">交付可用版本与整合证据</text><text x="600.0" y="1896" class="sub">提交、验证、预览和遗留项</text>
+<rect x="410" y="1840" width="380" height="76" rx="14" class="done" stroke-width="2"/><text x="600.0" y="1871" class="node">执行会话交付版本与证据</text><text x="600.0" y="1896" class="sub">主会话不等待、不轮询、不自动监控</text>
 <path d="M600 1916 V1950" class="edge"/>
 <rect x="410" y="1950" width="380" height="76" rx="14" class="input" stroke-width="2"/><text x="600.0" y="1981" class="node">后续需求复用聊天、新开任务分支</text><text x="600.0" y="2006" class="sub">从目标最新 HEAD 开始，保持环境隔离</text>
 </svg>
