@@ -3,9 +3,9 @@
 ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 
 - Status: `fresh`
-- Last checked: `2026-10-09T03:38:18+00:00`
-- Last successful refresh: `2026-10-07T16:09:44+00:00`
-- Discovery leads: `84`
+- Last checked: `2026-10-13T05:47:28+00:00`
+- Last successful refresh: `2026-10-13T05:47:28+00:00`
+- Discovery leads: `87`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'unverified'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -31,6 +31,7 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Checkbox | base-ui | unverified |  | [Preview](https://reui.io/components/checkbox) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/checkbox) |
 | Code Block | base-ui | unverified |  | [Preview](https://reui.io/components/code-block) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/code-block) |
 | Collapsible | base-ui | unverified |  | [Preview](https://reui.io/components/collapsible) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/collapsible) |
+| Color Picker | base-ui | unverified |  | [Preview](https://reui.io/components/color-picker) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/color-picker) |
 | Combobox | base-ui | unverified |  | [Preview](https://reui.io/components/combobox) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/combobox) |
 | Command | base-ui | unverified |  | [Preview](https://reui.io/components/command) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/command) |
 | Context Menu | base-ui | unverified |  | [Preview](https://reui.io/components/context-menu) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/context-menu) |
@@ -39,9 +40,11 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Dialog | base-ui | unverified |  | [Preview](https://reui.io/components/dialog) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/dialog) |
 | Drawer | base-ui | unverified |  | [Preview](https://reui.io/components/drawer) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/drawer) |
 | Dropdown Menu | base-ui | unverified |  | [Preview](https://reui.io/components/dropdown-menu) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/dropdown-menu) |
+| Emoji Picker | base-ui | unverified |  | [Preview](https://reui.io/components/emoji-picker) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/emoji-picker) |
 | Empty | base-ui | unverified |  | [Preview](https://reui.io/components/empty) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/empty) |
 | Event Calendar | base-ui | unverified |  | [Preview](https://reui.io/components/event-calendar) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/event-calendar) |
 | Field | base-ui | unverified |  | [Preview](https://reui.io/components/field) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/field) |
+| File Type | base-ui | unverified |  | [Preview](https://reui.io/components/file-type) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/file-type) |
 | File Upload | base-ui | unverified |  | [Preview](https://reui.io/components/file-upload) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/file-upload) |
 | Filters | base-ui | unverified |  | [Preview](https://reui.io/components/filters) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/filters) |
 | Frame | base-ui | unverified |  | [Preview](https://reui.io/components/frame) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/frame) |

@@ -3,9 +3,9 @@
 Dice UI 的 Base UI 组件变体。
 
 - Status: `fresh`
-- Last checked: `2026-10-09T03:38:18+00:00`
-- Last successful refresh: `2026-10-07T16:09:44+00:00`
-- Discovery leads: `40`
+- Last checked: `2026-10-13T05:47:28+00:00`
+- Last successful refresh: `2026-10-13T05:47:28+00:00`
+- Discovery leads: `47`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'tailwind-css'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -16,21 +16,27 @@ Dice UI 的 Base UI 组件变体。
 | Avatar Group | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/avatar-group) | [Source](https://diceui.com/r/base-vega/avatar-group.json) |
 | Badge Overflow | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/badge-overflow) | [Source](https://diceui.com/r/base-vega/badge-overflow.json) |
 | Banner | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/banner) | [Source](https://diceui.com/r/base-vega/banner.json) |
+| Checkbox Group | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/checkbox-group) | [Source](https://diceui.com/r/base-vega/checkbox-group.json) |
 | Circular Progress | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/circular-progress) | [Source](https://diceui.com/r/base-vega/circular-progress.json) |
 | Color Picker | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/color-picker) | [Source](https://diceui.com/r/base-vega/color-picker.json) |
 | Color Swatch | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/color-swatch) | [Source](https://diceui.com/r/base-vega/color-swatch.json) |
+| Combobox | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/combobox) | [Source](https://diceui.com/r/base-vega/combobox.json) |
+| Command Stack | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/command-stack) | [Source](https://diceui.com/r/base-vega/command-stack.json) |
 | Compare Slider | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/compare-slider) | [Source](https://diceui.com/r/base-vega/compare-slider.json) |
 | Cropper | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/cropper) | [Source](https://diceui.com/r/base-vega/cropper.json) |
 | Editable | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/editable) | [Source](https://diceui.com/r/base-vega/editable.json) |
+| Faceted | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/faceted) | [Source](https://diceui.com/r/base-vega/faceted.json) |
 | File Upload | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/file-upload) | [Source](https://diceui.com/r/base-vega/file-upload.json) |
 | Fps | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/fps) | [Source](https://diceui.com/r/base-vega/fps.json) |
 | Gauge | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/gauge) | [Source](https://diceui.com/r/base-vega/gauge.json) |
 | Kanban | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/kanban) | [Source](https://diceui.com/r/base-vega/kanban.json) |
 | Key Value | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/key-value) | [Source](https://diceui.com/r/base-vega/key-value.json) |
+| Listbox | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/listbox) | [Source](https://diceui.com/r/base-vega/listbox.json) |
 | Marquee | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/marquee) | [Source](https://diceui.com/r/base-vega/marquee.json) |
 | Mask Input | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/mask-input) | [Source](https://diceui.com/r/base-vega/mask-input.json) |
 | Masonry | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/masonry) | [Source](https://diceui.com/r/base-vega/masonry.json) |
 | Media Player | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/media-player) | [Source](https://diceui.com/r/base-vega/media-player.json) |
+| Mention | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/mention) | [Source](https://diceui.com/r/base-vega/mention.json) |
 | Phone Input | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/phone-input) | [Source](https://diceui.com/r/base-vega/phone-input.json) |
 | Presentation | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/presentation) | [Source](https://diceui.com/r/base-vega/presentation.json) |
 | Qr Code | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/qr-code) | [Source](https://diceui.com/r/base-vega/qr-code.json) |
@@ -48,6 +54,7 @@ Dice UI 的 Base UI 组件变体。
 | Status | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/status) | [Source](https://diceui.com/r/base-vega/status.json) |
 | Stepper | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/stepper) | [Source](https://diceui.com/r/base-vega/stepper.json) |
 | Swap | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/swap) | [Source](https://diceui.com/r/base-vega/swap.json) |
+| Tags Input | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/tags-input) | [Source](https://diceui.com/r/base-vega/tags-input.json) |
 | Time Picker | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/time-picker) | [Source](https://diceui.com/r/base-vega/time-picker.json) |
 | Timeline | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/timeline) | [Source](https://diceui.com/r/base-vega/timeline.json) |
 | Tour | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/tour) | [Source](https://diceui.com/r/base-vega/tour.json) |

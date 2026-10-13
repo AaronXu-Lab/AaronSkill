@@ -85,7 +85,7 @@ python3 link-skills.py --target ~/.codex/skills
 
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
-| [`aw-clash-network-doctor`](./aw-clash-network-doctor/) | `1.5.0` | 独立处理 Claude 清理与网络/环境诊断优化，含 Android 分流、订阅重新合并与时区 | 列出具体调整项获准后执行；记录 IPKK 完整前后分数；仅扫描不清理 |
+| [`aw-clash-network-doctor`](./aw-clash-network-doctor/) | `1.7.0` | 清理独立；诊断优化分为网络接管与DNS、应用分流与中转、时区、持久更新与验证 | 采用实际执行措施与验证记录；具体调整获准后执行，记录IPKK完整前后分数 |
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.3.1` | 从 SVG 或经评估、迭代重绘的图片生成并验证全平台图标资源 | 用户明确指定输入；低保真转换须确认，重绘通过后仍需兼容性与主题检查 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
 | [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.9.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信；三档使用独立分支/worktree 与端口，完整需求 rebase 后持仓库锁一次本地合入；主会话派发即结束，执行会话自行验证、整合与回报 |
@@ -107,7 +107,7 @@ python3 link-skills.py --target ~/.codex/skills
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.1.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准结构及文档版式；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.2.0` | 创建、审查或优化 Gallery 的默认示例、真实设计轴与状态对比 | 组件 Panel 复用当地标准结构及文档版式；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.2.1` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |

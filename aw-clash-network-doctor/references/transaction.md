@@ -1,35 +1,45 @@
-# 事务与验证接口
+# Mac updater事务接口
 
-用于改进现有 updater；不是可直接执行的固定脚本。读取当前实现后按客户端适配。ClashX Meta 实例常见 `~/.config/clash.meta/XSUS.yaml`、`ADJUST_RULE` 和 `UPDATE_SUBSCRIPTIONS_AND_ADJUST_RULES.command`，每次需重新定位。
+用于维护本次已实现的`.command`。执行与容错条件统一采用 [工作流第四块](workflow.md#4-持久更新与验证)，本文保存已使用的接口和保护项。
 
-## 实现条件
+## 输入、持久合并与保护
 
-- 建立互斥锁，候选、活动和备份分开；下载使用当前客户端合适的 User-Agent，验证非空 YAML 和来源，绝不输出带 token 的订阅链接。
-- 明确允许 overlay 的键，拒绝未支持覆盖而非静默忽略。验证节点、组和规则引用、持久规则顺序，以及不期望的 DNS 回退；新增键需同时更新合并器和校验器。
-- 按当前系统架构运行对应 Mihomo helper 的 `-t`，不能假定私有 app 路径通用。校验嵌入 zsh/Python/Ruby 中实际改变部分的语法。
-- DoH 预查发送正确 RFC 8484 wire-format A/AAAA 请求，检查事务 ID、rcode、answer 与预期域名。DNS-over-HTTPS 请求成功不等于配置实际使用；安装后需核心日志/连接和真实浏览器佐证。
-- 精确 STUN IP 规则与当前解析结果对齐。新地址出现时重新审查规则或采用已验证域名路由，不安装已知遗漏候选。
-- 隔离核心应绑定已核实物理接口、TUN false 和独立端口/目录；不干扰线上核心。临时变更线上组只在必要时执行并 finally 恢复，恢复失败使预查失败。
-- 原子替换活动 YAML/overlay 后加载、恢复运行偏好、清普通 DNS 缓存并核对实际加载内容。回滚和监测应由本地进程承担，云端失联仍可运行。
+活动文件为`~/.config/clash.meta/XSUS.yaml`、`ADJUST_RULE`及`UPDATE_SUBSCRIPTIONS_AND_ADJUST_RULES.command`。执行前定位本机实际文件、客户端helper和API，按当前架构运行隔离核心校验。
 
-## 命令参数真实语义
+已使用互斥锁、私有候选目录、独立备份及原子替换。合并器实际用于DNS、指定节点dialer-proxy、prepend规则和Fake-IP排除。逻辑规则按括号深度解析，兼容核心API的规范化表示；Fake-IP排除与prepend规则分段合并，AXO规则及排除按本机原合同保留。
 
-现有脚本可能有 `--check`（可能联网、写诊断及临时切组，不能叫纯静态）、`--source`、`--rules-file`、`--recover` 和 `--await-safari`。不要未经读取就使用；`--recover` 只能用于已授权的异常基线恢复，不能绕过失败预查。
+DNS验证使用RFC8484应答；隔离核心TUN关闭并绑定物理接口，使用独立目录/端口，复用本机geodata。核心节点预查与实际正常路径验收分别记录。
 
-## Safari 双阶段事务
+## 已实现的命令模式
 
-若采用本次同类 schema，标记包括 `transactionId`、`stage`、`pid`、`configSha256`、`backupPath`、`decision`、`updatedAt`。以本机实际 schema 为准，勿猜字段名。
+| 参数/模式 | 实际行为 |
+| --- | --- |
+| 默认下载 | macOS系统curl按客户端User-Agent下载，证书校验开启，URL由stdin输入；真实下载检查通过 |
+| `--check` | 合并、核心和隔离DNS/节点检查，记录诊断；活动YAML和订阅时间保持 |
+| `--source FILE` | 本地订阅输入，跳过下载及更新时间写入；已用于同步安装 |
+| `--rules-file FILE` | 校验后安装持久规则，异常恢复原overlay |
+| `--rules-only` | 已安装XSUS作输入，仅允许rules变化，校验期间活动文件改变则停止；默认保留网络状态 |
+| `--preserve-network-state` | 沿用全部Selector选择；主动缓存维护/关闭连接参数与其互斥，冲突在修改前返回参数错误 |
+| `--await-safari` | 本地监测进程等待真实Safari的开始/最终决定，有限等待和超时恢复 |
 
-1. `await-safari-start` 只接受当前事务 `start`，表示开始本地持续监测。
-2. 监测完成进入 `await-safari` 后，完整浏览器和业务验收才允许 pass；失败用 fail。
-3. 每次写前重新读取，核对 transactionId、stage、仍存活的预期 PID 与实际活动配置 SHA-256；过期或不匹配停止写入。
-4. 保留全部未知/已有字段，只更新 decision/updatedAt，用同目录临时文件、0600、fsync/os.replace 原子写入。示例字段如 `configSha256` 不应误写成 `yamlSha256`。
-5. 开始与最终各有明确等待上限（本次为各 300 秒）；超时本地自动回滚，不能无人值守启动后期待自动通过。轮询脚本直到实际 commit/rollback 退出，再检查标记清理。
+仅规则模式的字段保护通过实际函数检查：规则增量可接受，DNS/节点/组/profile/IPv6变化或缺失非rules键均拒绝。重复合并幂等、策略组覆盖保持、互斥参数和保留网络状态默认行为均有验证记录。
+
+下载分支曾出现Python证书信任库错误；改用系统curl后，实测下载、合并和隔离检查通过。源配置与订阅更新时间的实际变化分别核对。
+
+## Safari双阶段事务
+
+实际记录包含transactionId、stage、pid、configSha256（兼容config_sha256）、backupPath、decision、updatedAt及healthPolicy。
+
+1. 安装后`await-safari-start`接受当前事务的`start`，启动持续观察。
+2. 观察完成进入`await-safari`，完整Safari结果及业务恢复满足条件后写`pass`，失败写`fail`。
+3. 写入前重读并核对ID、stage、存活PID与活动配置SHA；保留原字段，仅更新决定及时间。临时文件0600，fsync/os.replace原子写入。
+4. 开始和最终等待各有300秒上限；本地进程负责超时回滚。
+5. 保存最终committed/rolled-back记录，等待进程退出，再清理当前事务标记与自建资源。
+
+healthPolicy保存观察时长、连续失败阈值、累计比例/最小轮次、最终成功轮数、恢复窗口、请求重试次数及网络状态模式。阈值的事实源是 [有限容错验收](workflow.md#有限容错验收)。
 
 ## 留证与恢复
 
-保存每轮时间戳、端点、curl 退出码、HTTP、DNS/TCP/TLS/总耗时和代理链，能区分真正的失败轮次、结束成功连续次数、总轮次与总时长。日志中不要混淆阶段计数，例如阶段曾显示 50 轮，最终结果 55 轮时以最终日志解释。
+每轮保留时间、目标、路径、退出码、HTTP、DNS/TCP/TLS/总耗时；CONNECT仅为对照。保存累计失败、最长连续失败和最终连续成功；恢复不删除首次失败。
 
-将验收重试策略显式保存在本次参数或事务记录中，区分单请求重试与整轮重试；等待和重试消耗实际观察时长及验收期限，不能延后本地回滚期限来等成功。恢复条件以相同正常网络路径和相同目标的新请求为准，显式 HTTP CONNECT 成功只作对照。全部失败尝试和恢复轮次保留；预算耗尽或持续失败达到阈值时仍回滚，不把最后一次成功覆盖成“全程通过”。
-
-备份应覆盖本次修改范围。配置失败自动恢复 YAML/overlay 不代表 updater 本身或所有偏好已恢复；保留独立脚本备份并说明恢复方式。失败候选不能留为后续自动更新默认输入。回滚后确认本机文件哈希、运行规则与正常路径恢复；原线路也坏则诚实报告恢复边界。
+备份覆盖YAML、overlay、updater及运行/相关偏好。实际曾由脚本恢复YAML/overlay，再从独立初始备份恢复updater；最终核对三个文件哈希、全部Selector及正常联网。观察失败、文件恢复和联网恢复分别记述。完整配置及节点凭据保持私有。

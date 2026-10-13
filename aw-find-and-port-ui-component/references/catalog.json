@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T03:38:18+00:00",
+  "generated_at": "2026-10-13T05:47:28+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,13 +1374,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-09-27T12:20:47+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
-          "etag": "W/\"78c8a00bd32f32c6051a1f3cb8014c36\"",
-          "last_modified": "Sun, 27 Sep 2026 12:22:13 GMT"
+          "etag": "\"78c8a00bd32f32c6051a1f3cb8014c36\"",
+          "last_modified": "Tue, 13 Oct 2026 05:47:58 GMT"
         }
       },
       "config_sha256": "dd76b6683468c97e7b62d53aa6d95370693ebd136c11071268f34ba2ae7459e5",
@@ -2606,17 +2606,17 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-10-07T16:09:44+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
-          "etag": "\"c39230cc4990be3de01204a7a01705b3\"",
-          "last_modified": "Wed, 07 Oct 2026 16:10:09 GMT"
+          "etag": "\"f65a8fe33d452e2c8f321c96e03a484b\"",
+          "last_modified": "Tue, 13 Oct 2026 05:48:02 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"652262f1d7e2f5cba5e9db6e6f39de90\"",
-          "last_modified": "Wed, 07 Oct 2026 16:10:07 GMT"
+          "etag": "\"97b0a20d1817b4ab85e493ba0007e726\"",
+          "last_modified": "Tue, 13 Oct 2026 05:48:04 GMT"
         }
       },
       "config_sha256": "90af17f4cecdcd519c1bdb29cbb7b8aaa080bef27af1b514395ecc05e8e321fc",
@@ -2638,10 +2638,9 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "button",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect"
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2667,10 +2666,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2720,7 +2717,8 @@
           "variant": "unverified",
           "dependencies": [
             "cn",
-            "@base-ui/react"
+            "@base-ui/react",
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2746,9 +2744,33 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "button",
-            "@diceui/use-as-ref",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "button"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Checkbox Group",
+          "slug": "checkbox-group",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/checkbox-group",
+          "source_url": "https://diceui.com/r/base-vega/checkbox-group.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@diceui/checkbox-group"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2799,15 +2821,12 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "button",
             "input",
             "popover",
             "select",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref",
-            "@diceui/compose-refs"
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2844,6 +2863,59 @@
         {
           "source_id": "dice-ui-base",
           "library": "Dice UI Base",
+          "name": "Combobox",
+          "slug": "combobox",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/combobox",
+          "source_url": "https://diceui.com/r/base-vega/combobox.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@diceui/combobox"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Command Stack",
+          "slug": "command-stack",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/command-stack",
+          "source_url": "https://diceui.com/r/base-vega/command-stack.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@base-ui/react",
+            "@base-ui/utils",
+            "cmdk",
+            "command"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
           "name": "Compare Slider",
           "slug": "compare-slider",
           "description": "",
@@ -2858,9 +2930,7 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2886,9 +2956,7 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2914,10 +2982,37 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Faceted",
+          "slug": "faceted",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/faceted",
+          "source_url": "https://diceui.com/r/base-vega/faceted.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@base-ui/react",
+            "@base-ui/utils",
+            "cmdk",
+            "command",
+            "popover"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2943,9 +3038,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -2994,7 +3088,8 @@
           "variant": "unverified",
           "dependencies": [
             "cn",
-            "@base-ui/react"
+            "@base-ui/react",
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3020,11 +3115,11 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "@dnd-kit/core",
             "@dnd-kit/modifiers",
             "@dnd-kit/sortable",
-            "@dnd-kit/utilities",
-            "@diceui/use-isomorphic-layout-effect"
+            "@dnd-kit/utilities"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3050,12 +3145,35 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "button",
             "input",
-            "textarea",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "textarea"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Listbox",
+          "slug": "listbox",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/listbox",
+          "source_url": "https://diceui.com/r/base-vega/listbox.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@diceui/listbox"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3081,6 +3199,7 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "direction"
           ],
           "license": "unverified",
@@ -3106,7 +3225,8 @@
           "variant": "unverified",
           "dependencies": [
             "cn",
-            "@base-ui/react"
+            "@base-ui/react",
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3131,7 +3251,7 @@
           "variant": "unverified",
           "dependencies": [
             "@base-ui/react",
-            "@diceui/use-isomorphic-layout-effect"
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3157,14 +3277,38 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "media-chrome",
             "badge",
             "button",
             "dropdown-menu",
             "tooltip",
-            "direction",
-            "@diceui/compose-refs",
-            "@diceui/use-lazy-ref"
+            "direction"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Mention",
+          "slug": "mention",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/mention",
+          "source_url": "https://diceui.com/r/base-vega/mention.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@diceui/mention"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3190,13 +3334,11 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "cmdk",
             "popover",
             "command",
-            "input",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "input"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3249,8 +3391,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "qrcode",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "qrcode"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3276,10 +3418,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3330,11 +3470,9 @@
           "variant": "unverified",
           "dependencies": [
             "cn",
+            "@base-ui/utils",
             "dialog",
             "drawer",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref",
             "@diceui/use-mobile"
           ],
           "license": "unverified",
@@ -3361,10 +3499,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3389,7 +3525,8 @@
           "variant": "unverified",
           "dependencies": [
             "cn",
-            "@base-ui/react"
+            "@base-ui/react",
+            "@base-ui/utils"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3442,11 +3579,9 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "@floating-ui/react-dom",
-            "button",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "button"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3472,11 +3607,11 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "@dnd-kit/core",
             "@dnd-kit/modifiers",
             "@dnd-kit/sortable",
-            "@dnd-kit/utilities",
-            "@diceui/use-isomorphic-layout-effect"
+            "@dnd-kit/utilities"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3502,10 +3637,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "button",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "button"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3606,10 +3739,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3635,9 +3766,32 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official Dice UI base-vega registry item and Base documentation path are both present.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "dice-ui-base",
+          "library": "Dice UI Base",
+          "name": "Tags Input",
+          "slug": "tags-input",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://diceui.com/docs/components/base/tags-input",
+          "source_url": "https://diceui.com/r/base-vega/tags-input.json",
+          "foundation_hint": "base-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "cn",
+            "@diceui/tags-input"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3663,10 +3817,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "popover",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "popover"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3692,9 +3844,8 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
-            "direction",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "@base-ui/utils",
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3720,12 +3871,10 @@
           "dependencies": [
             "cn",
             "@base-ui/react",
+            "@base-ui/utils",
             "@floating-ui/react-dom",
             "button",
-            "direction",
-            "@diceui/use-as-ref",
-            "@diceui/use-isomorphic-layout-effect",
-            "@diceui/use-lazy-ref"
+            "direction"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3745,13 +3894,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-10-07T16:09:44+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"55a17b046926662cb0b3412fec4e5855a6493bc3ad8833bc06249720a625bdc7\"",
-          "last_modified": "Wed, 07 Oct 2026 13:42:09 GMT"
+          "etag": "W/\"d181578fab63bf08b531d9c49e4e4fd0d6259853bf4a2e62eb8adc2660f80c78\"",
+          "last_modified": "Tue, 13 Oct 2026 03:21:09 GMT"
         }
       },
       "config_sha256": "75ea0fc4a6799d31b8d90fd783bb4365b8a65ddbae8ccb2e0ab24ab197ed1f83",
@@ -4199,6 +4348,28 @@
         {
           "source_id": "reui-public-base",
           "library": "ReUI Public Base",
+          "name": "Color Picker",
+          "slug": "color-picker",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/color-picker",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/color-picker",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
           "name": "Combobox",
           "slug": "combobox",
           "description": "",
@@ -4375,6 +4546,28 @@
         {
           "source_id": "reui-public-base",
           "library": "ReUI Public Base",
+          "name": "Emoji Picker",
+          "slug": "emoji-picker",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/emoji-picker",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/emoji-picker",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
           "name": "Empty",
           "slug": "empty",
           "description": "",
@@ -4425,6 +4618,28 @@
           "category": "Components and examples",
           "preview_url": "https://reui.io/components/field",
           "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/field",
+          "foundation_hint": "base-ui",
+          "styling_hint": "unverified",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Component category is present under the public repository's Base catalog. Verify the exact public source before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "reui-public-base",
+          "library": "ReUI Public Base",
+          "name": "File Type",
+          "slug": "file-type",
+          "description": "",
+          "category": "Components and examples",
+          "preview_url": "https://reui.io/components/file-type",
+          "source_url": "https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/file-type",
           "foundation_hint": "base-ui",
           "styling_hint": "unverified",
           "foundation": "unverified",
@@ -5615,13 +5830,13 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-10-07T16:09:44+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"276936e914724d18987aa57c904fd002\"",
-          "last_modified": "Wed, 07 Oct 2026 16:10:13 GMT"
+          "etag": "\"137f1dd4b43f85ac325ff03cabffd566\"",
+          "last_modified": "Tue, 13 Oct 2026 05:48:07 GMT"
         }
       },
       "config_sha256": "b6a894d6f983b559d11bae33a6d6a5323c815909d08d6243d441db3b3fefa030",
@@ -5641,11 +5856,12 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-accordion",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/omit.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
@@ -5664,41 +5880,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Accordion",
-          "slug": "accordion",
-          "description": "Collapsible accordion with animated height transitions, spring-animated chevron, and fluid hover in grouped mode. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/accordion",
-          "source_url": "https://www.fluidfunctionalism.com/r/accordion-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "accordion-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Ask User Questions",
           "slug": "ask-user-questions",
           "description": "Stepped question flow with numbered options, keyboard shortcuts (1–9), single or multi-select, inline 'other' text input, optional skip, fluid hover, and multi-question navigation. Auto-advances on selection in single-select.",
@@ -5711,8 +5892,8 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
+            "motion",
+            "@base-ui/react@^1.9.0",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
@@ -5777,7 +5958,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
@@ -5810,11 +5991,12 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-slot",
             "class-variance-authority",
             "lucide-react",
             "utils",
+            "https://www.fluidfunctionalism.com/r/omit.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
@@ -5833,41 +6015,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Button",
-          "slug": "button",
-          "description": "Animated button with variants (primary, secondary, tertiary, ghost), icon support, loading spinner, and fluid font-weight transitions on hover. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/button",
-          "source_url": "https://www.fluidfunctionalism.com/r/button-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "class-variance-authority",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "button-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Card",
           "slug": "card",
           "description": "shadcn's compositional card (Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter) with the Fluid Functionalism layer: transparent substrate, weight-animated title, media/logo/feature/image slots, and a CardGroup that owns stacked, inline, and grid layouts plus 2-D fluid-hover highlighting.",
@@ -5880,7 +6027,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
@@ -5914,7 +6061,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
@@ -5943,7 +6090,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
@@ -5975,7 +6122,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-checkbox",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -5997,40 +6144,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Checkbox Group",
-          "slug": "checkbox-group",
-          "description": "Animated checkbox group with fluid hover, contiguous selection merging, and spring-animated check marks. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/checkbox-group",
-          "source_url": "https://www.fluidfunctionalism.com/r/checkbox-group-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/use-merge-split.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "checkbox-group-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Color Picker",
           "slug": "color-picker",
           "description": "Color picker with HEX, RGB, HSL, and OKLCH formats, alpha channel, optional swatches, and a popover trigger. Built on Base UI's Popover, Menu, and NumberField primitives with native EyeDropper support.",
@@ -6043,8 +6156,8 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
+            "@base-ui/react@^1.9.0",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
@@ -6084,11 +6197,12 @@
           "variant": "unverified",
           "dependencies": [
             "@radix-ui/react-popover",
-            "framer-motion",
+            "motion",
             "class-variance-authority",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/omit.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/surface-context.json",
             "https://www.fluidfunctionalism.com/r/surface-classes.json",
@@ -6114,49 +6228,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Combobox",
-          "slug": "combobox",
-          "description": "Type-to-filter combobox with single or multiple (chips, merged selection backgrounds) selection: a text field that filters a list as you type, with keyboard highlight, fluid hover, spring-animated popover, animated checkmark, and clear/chevron controls. Optional create-from-query row (onCreate) and hideSelected for chips fields. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/combobox",
-          "source_url": "https://www.fluidfunctionalism.com/r/combobox-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
-            "class-variance-authority",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/use-merge-split.json",
-            "https://www.fluidfunctionalism.com/r/elevated.json",
-            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
-            "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
-            "https://www.fluidfunctionalism.com/r/popup.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "combobox-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Command Menu",
           "slug": "command-menu",
           "description": "Search field over a list of actions: type to filter, arrows to move the fluid hover highlight, Enter to run. Grouped rows with icons, descriptions, and shortcut caps; suggestions listed first while nothing is typed; subtle tabs or a borderless filter bar under the field; and a dialog shell opened by a global shortcut (default ⌘K / Ctrl+K). The list needs no primitive; the dialog is the library's Dialog in either flavor.",
@@ -6169,7 +6240,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -6210,7 +6281,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-dialog",
             "lucide-react",
             "utils",
@@ -6234,42 +6305,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Dialog",
-          "slug": "dialog",
-          "description": "Animated modal dialog with spring-based scale and opacity transitions in three widths (sm, lg, and an xl canvas for composed layouts such as a sidebar), plus a container prop to scope it to a region. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/dialog",
-          "source_url": "https://www.fluidfunctionalism.com/r/dialog-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/base/button.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "dialog-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Dropdown",
           "slug": "dropdown",
           "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), submenus (DropdownSub) whose trigger row stays lit across the safe area, and multiple selection with merged backgrounds. Radix flavor.",
@@ -6283,7 +6318,7 @@
           "variant": "unverified",
           "dependencies": [
             "@radix-ui/react-dropdown-menu",
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
@@ -6311,47 +6346,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Dropdown",
-          "slug": "dropdown",
-          "description": "Dropdown menu with fluid hover, animated selection indicator, inline panel or triggered popup with collision-aware positioning, typeahead, and close-on-select. Includes MenuItem, DropdownSearch (a search field inside the popup), submenus (DropdownSub) whose trigger row stays lit across the safe area, and multiple selection with merged backgrounds. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/dropdown",
-          "source_url": "https://www.fluidfunctionalism.com/r/dropdown-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/use-merge-split.json",
-            "https://www.fluidfunctionalism.com/r/elevated.json",
-            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
-            "https://www.fluidfunctionalism.com/r/popup.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "dropdown-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Input Copy",
           "slug": "input-copy",
           "description": "Read-only input with a copy-to-clipboard button and animated check feedback. Supports optional label and shape context.",
@@ -6364,7 +6358,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -6399,7 +6393,7 @@
           "variant": "unverified",
           "dependencies": [
             "lucide-react",
-            "@base-ui/react",
+            "@base-ui/react@^1.9.0",
             "utils",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
@@ -6432,9 +6426,10 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/omit.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6471,7 +6466,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-radio-group",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -6492,39 +6487,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Radio Group",
-          "slug": "radio-group",
-          "description": "Animated radio group with fluid hover, spring-animated selection dot. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/radio-group",
-          "source_url": "https://www.fluidfunctionalism.com/r/radio-group-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "radio-group-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Select",
           "slug": "select",
           "description": "Animated select menu with collision-aware positioning, typeahead, fluid hover, spring-animated popover, and animated checkmark. Radix flavor.",
@@ -6538,7 +6500,7 @@
           "variant": "unverified",
           "dependencies": [
             "@radix-ui/react-select",
-            "framer-motion",
+            "motion",
             "class-variance-authority",
             "lucide-react",
             "utils",
@@ -6567,48 +6529,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Select",
-          "slug": "select",
-          "description": "Animated select menu with collision-aware positioning, typeahead, fluid hover, spring-animated popover, and animated checkmark. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/select",
-          "source_url": "https://www.fluidfunctionalism.com/r/select-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
-            "class-variance-authority",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/elevated.json",
-            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
-            "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
-            "https://www.fluidfunctionalism.com/r/popup.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "select-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Sidebar",
           "slug": "sidebar",
           "description": "Refined, composable app sidebar with offcanvas collapse, floating and inset variants, a mobile drawer, cookie-persisted state, keyboard shortcut, and fluid-hover menus with traveling selection, hover, and focus indicators. Radix flavor.",
@@ -6622,7 +6542,7 @@
           "variant": "unverified",
           "dependencies": [
             "@radix-ui/react-dialog",
-            "framer-motion",
+            "motion",
             "lucide-react",
             "class-variance-authority",
             "utils",
@@ -6651,48 +6571,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Sidebar",
-          "slug": "sidebar",
-          "description": "Refined, composable app sidebar with offcanvas collapse, floating and inset variants, a mobile drawer, cookie-persisted state, keyboard shortcut, and fluid-hover menus with traveling selection, hover, and focus indicators. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/sidebar",
-          "source_url": "https://www.fluidfunctionalism.com/r/sidebar-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
-            "lucide-react",
-            "class-variance-authority",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/base/tooltip.json",
-            "https://www.fluidfunctionalism.com/r/base/scroll-area.json",
-            "https://www.fluidfunctionalism.com/r/base/button.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "sidebar-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Slider",
           "slug": "slider",
           "description": "Animated slider with spring-snapped thumb, step dots, range mode, and click-to-edit value display. Built on Radix UI Slider.",
@@ -6705,10 +6583,11 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-slider",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/omit.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6726,39 +6605,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Slider",
-          "slug": "slider",
-          "description": "Animated slider with spring-snapped thumb, step dots, range mode, and click-to-edit value display. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/slider",
-          "source_url": "https://www.fluidfunctionalism.com/r/slider-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "slider-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Switch",
           "slug": "switch",
           "description": "Animated toggle switch with spring-based thumb animation and fluid font-weight label transitions. Built on Radix UI Switch.",
@@ -6771,7 +6617,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-switch",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -6790,37 +6636,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Switch",
-          "slug": "switch",
-          "description": "Animated toggle switch with spring-based thumb animation and fluid font-weight label transitions. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/switch",
-          "source_url": "https://www.fluidfunctionalism.com/r/switch-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "switch-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Table",
           "slug": "table",
           "description": "Animated table with fluid hover row highlighting and fluid border transitions. Includes TableHeader, TableBody, TableRow, TableHead, and TableCell sub-components.",
@@ -6833,7 +6648,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
@@ -6864,7 +6679,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-tabs",
             "lucide-react",
             "utils",
@@ -6889,43 +6704,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Tabs",
-          "slug": "tabs",
-          "description": "Segmented control tabs with sliding active indicator, fluid hover, and spring animations. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/tabs",
-          "source_url": "https://www.fluidfunctionalism.com/r/tabs-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "tabs-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Tabs Subtle",
           "slug": "tabs-subtle",
           "description": "Horizontal tab navigation with fluid hover, animated pill selection indicator, and fluid font-weight transitions. Radix flavor.",
@@ -6939,7 +6717,7 @@
           "variant": "unverified",
           "dependencies": [
             "@radix-ui/react-tabs",
-            "framer-motion",
+            "motion",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -6961,41 +6739,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Tabs Subtle",
-          "slug": "tabs-subtle",
-          "description": "Horizontal tab navigation with fluid hover, animated pill selection indicator, and fluid font-weight transitions. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/tabs-subtle",
-          "source_url": "https://www.fluidfunctionalism.com/r/tabs-subtle-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "tabs-subtle-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Thinking Indicator",
           "slug": "thinking-indicator",
           "description": "Animated loading indicator with morphing SVG path (circle to infinity loop) and shimmer text rotation. Cycles through customizable status words.",
@@ -7008,7 +6751,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "utils",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -7038,7 +6781,7 @@
           "variant": "unverified",
           "dependencies": [
             "@radix-ui/react-collapsible",
-            "framer-motion",
+            "motion",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -7061,42 +6804,6 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
-          "name": "Thinking Steps",
-          "slug": "thinking-steps",
-          "description": "Collapsible AI reasoning steps with animated expand/collapse, per-step icons, sources, and nested details. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/thinking-steps",
-          "source_url": "https://www.fluidfunctionalism.com/r/thinking-steps-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@base-ui/react",
-            "framer-motion",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/badge.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "thinking-steps-base"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
           "name": "Tooltip",
           "slug": "tooltip",
           "description": "Floating tooltip with spring-based animations, configurable placement, and rich content support.",
@@ -7109,7 +6816,7 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "framer-motion",
+            "motion",
             "@radix-ui/react-tooltip",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
@@ -7124,37 +6831,6 @@
           "verification_status": "unverified",
           "requires_verification": true,
           "registry_slug": "tooltip"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
-          "name": "Tooltip",
-          "slug": "tooltip",
-          "description": "Floating tooltip with spring-based animations, configurable placement, and rich content support. Base UI flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/tooltip",
-          "source_url": "https://www.fluidfunctionalism.com/r/tooltip-base.json",
-          "foundation_hint": "base-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "framer-motion",
-            "@base-ui/react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "tooltip-base"
         }
       ]
     },
@@ -7167,7 +6843,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8598,12 +8274,12 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-09-27T12:20:47+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://base-ui.com/llms.txt": {
-          "etag": "\"22b1e49f455c6b32739da9ecfd3eacf2-ssl\"",
+          "etag": "\"d8e0cd8530d75dc9bced98f3cdbbae5f-ssl\"",
           "last_modified": ""
         }
       },
@@ -9434,17 +9110,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-10-09T03:38:18+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"c03c9e132ab440d707a44e213bca9aa4622175dc30822437296a311ce242197b\"",
-          "last_modified": "Fri, 09 Oct 2026 03:32:21 GMT"
+          "etag": "W/\"d5fc04e019a410271fa480e65132e7cbe0df843ae071655ad8ff2ae003a12fb2\"",
+          "last_modified": "Tue, 13 Oct 2026 04:59:09 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"585e3347b48972d09bf985eaf57ecd91\"",
-          "last_modified": "Fri, 09 Oct 2026 03:38:41 GMT"
+          "etag": "\"ebba2c5ca71d66da2ffb7a06019ebc94\"",
+          "last_modified": "Tue, 13 Oct 2026 05:48:22 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -13464,17 +13140,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-09T03:38:18+00:00",
-      "last_success_at": "2026-10-09T03:25:19+00:00",
+      "last_checked_at": "2026-10-13T05:47:28+00:00",
+      "last_success_at": "2026-10-13T05:47:28+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"bcfe155ce6302097989d801b2567cb9a\"",
-          "last_modified": "Wed, 07 Oct 2026 16:10:23 GMT"
+          "etag": "W/\"0fffd8211618b9b30e2f8f638e1af470\"",
+          "last_modified": "Tue, 13 Oct 2026 05:48:25 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"5d56028beea7ca8031ccb9d594e95fca0e1013da5ec752edfb61d61899aafb7d\"",
-          "last_modified": "Thu, 08 Oct 2026 18:13:19 GMT"
+          "etag": "W/\"1fb35842bbaf92987a45e2ea31f2db3fa4536d11c45d49a7cc0032e7f3a0d5b3\"",
+          "last_modified": "Tue, 13 Oct 2026 05:09:49 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -14192,6 +13868,28 @@
           "category": "icons",
           "preview_url": "https://ui.lobehub.com/components/icons/casdoor",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/icons/Casdoor/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "ChartGrid",
+          "slug": "dashboard/chart-grid",
+          "description": "Category: Layout. ChartGrid lays out peer charts two-up and drops to one column when its own container is narrower than 640px. A single child keeps a readable width instead of stretching across the page. Docs: https://ui.lobehub.com/components/dashboard/chart-grid",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/chart-grid",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/ChartGrid/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -15308,6 +15006,28 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "FilterStrip",
+          "slug": "dashboard/filter-strip",
+          "description": "Category: Data Display. FilterStrip is one Surface of selectable counts that acts as a radio group. A tone colors a count only when it is above zero. Number formatting and the empty placeholder are props. Docs: https://ui.lobehub.com/components/dashboard/filter-strip",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/filter-strip",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/FilterStrip/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "Flex",
           "slug": "flex",
           "description": "Category: Layout. Flexible layout components based on Flexbox Outline: Flexbox, Direction, Alignment, Gap, Wrap, Center, Center, FlexBasic, ContentPosition, FlexDirection, CommonSpaceNumber. Docs: https://ui.lobehub.com/components/flex",
@@ -16012,6 +15732,28 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "LabelWithKey",
+          "slug": "dashboard/label-with-key",
+          "description": "Category: Data Display. LabelWithKey shows a human label followed by its machine key as a tag, for settings, permissions and other records that have both. Docs: https://ui.lobehub.com/components/dashboard/label-with-key",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/label-with-key",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/LabelWithKey/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "LandingHero",
           "slug": "awesome/landing-hero",
           "description": "Category: Landing. The opening band of a landing page, with a badge, a title with a gradient accent, a description and actions. Outline: Split layout, Routing. Docs: https://ui.lobehub.com/components/awesome/landing-hero",
@@ -16606,6 +16348,28 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "MetricStrip",
+          "slug": "dashboard/metric-strip",
+          "description": "Category: Data Display. MetricStrip is one Surface divided into metric cells. Each cell has a label, a figure, an optional semantic delta and hint, and can link (through renderLink / SurfaceLinkProvider) or act as a button. Docs: https://ui.lobehub.com/components/dashboard/metric-strip",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/metric-strip",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/MetricStrip/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "MicrosoftEntra",
           "slug": "icons/microsoft-entra",
           "description": "Category: Auth Icons. Provides the MicrosoftEntra monochrome icon and avatar variant, together with title and primary-color metadata. Docs: https://ui.lobehub.com/components/icons/microsoft-entra",
@@ -16804,12 +16568,56 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "PageToolbar",
+          "slug": "dashboard/page-toolbar",
+          "description": "Category: Layout. PageToolbar is the row under a page header. Filters start at the left edge and actions hold the right edge, also after the row wraps on a narrow screen. Docs: https://ui.lobehub.com/components/dashboard/page-toolbar",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/page-toolbar",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/PageToolbar/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "Pagination",
           "slug": "base-ui/pagination",
           "description": "Category: Navigation. Page navigation with a windowed page list, prev/next controls, and an optional page-size changer. Outline: APIs, Migrating from antd Pagination. Docs: https://ui.lobehub.com/components/base-ui/pagination",
           "category": "base-ui",
           "preview_url": "https://ui.lobehub.com/components/base-ui/pagination",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/base-ui/Pagination/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "PanelSurface",
+          "slug": "dashboard/panel-surface",
+          "description": "Category: Layout. PanelSurface is a titled Surface with a fixed body inset (default or small). On first load the body is a placeholder; on refresh the header shows a spinner and the content stays. Docs: https://ui.lobehub.com/components/dashboard/panel-surface",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/panel-surface",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/PanelSurface/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -17096,6 +16904,28 @@
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/search-bar",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/SearchBar/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "Section",
+          "slug": "dashboard/section",
+          "description": "Category: Layout. Section is a titled page block with a description, extra actions and a \"more\" link. `variant=\"card\"` puts it in a Surface. Links go through renderLink / SurfaceLinkProvider. Docs: https://ui.lobehub.com/components/dashboard/section",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/section",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/Section/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -17554,7 +17384,7 @@
           "library": "Lobe UI",
           "name": "Surface",
           "slug": "dashboard/surface",
-          "description": "Category: Layout. Surface is an elevated card for dashboard panels. It steps the fill and border up from the workspace canvas so nested content stays distinct in light and dark themes. Docs: https://ui.lobehub.com/components/dashboard/surface",
+          "description": "Category: Layout. Surface is an elevated card for dashboard panels. Bare, it is a plain frame. With a title, description or extra it gets a header, a padded body whose trailing table meets the card edges, an optional chart slot, and first-load / refresh states. Links go through `renderLink` or `SurfaceLinkProvider`, so the app router stays in the app. Docs: https://ui.lobehub.com/components/dashboard/surface",
           "category": "dashboard",
           "preview_url": "https://ui.lobehub.com/components/dashboard/surface",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/Surface/index.ts",
@@ -17624,6 +17454,28 @@
           "category": "base-ui",
           "preview_url": "https://ui.lobehub.com/components/base-ui/table",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/base-ui/Table/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "TableIconActions",
+          "slug": "dashboard/table-icon-actions",
+          "description": "Category: Data Display. TableIconActions is the row of icon buttons in a table's last column. Each action is a small filled ActionIcon whose label is both its accessible name and its tooltip; tableActionColumnWidth sizes the column so the icons are not clipped. Docs: https://ui.lobehub.com/components/dashboard/table-icon-actions",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/table-icon-actions",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/TableIconActions/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -17844,6 +17696,28 @@
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/theme-switch",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/ThemeSwitch/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "TitleWithTips",
+          "slug": "dashboard/title-with-tips",
+          "description": "Category: Data Display. TitleWithTips is a column or field title followed by a muted info icon that explains the metric in a tooltip. Docs: https://ui.lobehub.com/components/dashboard/title-with-tips",
+          "category": "dashboard",
+          "preview_url": "https://ui.lobehub.com/components/dashboard/title-with-tips",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/TitleWithTips/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
