@@ -1,32 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1250" viewBox="0 0 1200 1250" role="img">
-<title>诊断与优化：四块执行流程</title><desc>真实浏览器前测和只读诊断列项，获准后按范围选择网络接管与DNS、应用分流与中转、时区、持久更新与验证；验收通过交付，失败恢复并复查。</desc>
-<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker></defs>
-<style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#203040;text-anchor:middle}.title{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px}.line,.join{fill:none;stroke:#52606d;stroke-width:2.5}.line{marker-end:url(#a)}</style>
-<rect width="1200" height="1250" fill="#f7f9fb"/><text x="600" y="55" class="title">诊断与优化：四块执行流程</text>
-<rect x="340" y="100" width="520" height="80" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/><text x="600.0" y="131" class="label">记录完整前测与设备基线</text><text x="600.0" y="159" class="note">真实浏览器分数、出口、时区与业务结果</text>
-<rect x="340" y="230" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="261" class="label">只读诊断并列出具体调整项</text><text x="600.0" y="289" class="note">按目标列出已执行流程中的措施与恢复方式</text>
-<polygon points="600,335 790,390 600,445 410,390" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="395" class="label">具体调整项获准？</text>
-<rect x="870" y="350" width="280" height="80" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/><text x="1010.0" y="381" class="label">交付诊断，等待选择</text><text x="1010.0" y="409" class="note">仅诊断或待确认时停止</text>
-<rect x="270" y="485" width="660" height="325" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/><text x="600" y="515" class="label">按获准范围选择四块</text>
-<rect x="295" y="545" width="295" height="85" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="442.5" y="576" class="label">1. 网络接管与 DNS</text><text x="442.5" y="604" class="note">VPN接管、DoH与STUN路径</text>
-<rect x="610" y="545" width="295" height="85" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="757.5" y="576" class="label">2. 应用分流与中转</text><text x="757.5" y="604" class="note">域名、进程路径与节点中转</text>
-<rect x="295" y="665" width="295" height="85" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="442.5" y="696" class="label">3. 时区</text><text x="442.5" y="724" class="note">IANA、自动开关与浏览器核验</text>
-<rect x="610" y="665" width="295" height="85" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="757.5" y="696" class="label">4. 持久更新与验证</text><text x="757.5" y="724" class="note">合并安装、完整后测及有限容错</text>
-<text x="600" y="785" class="note">记录实际执行项目及验证等级</text>
-<polygon points="600,865 790,920 600,975 410,920" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="925" class="label">效果及容错验收通过？</text>
-<rect x="870" y="880" width="280" height="80" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/><text x="1010.0" y="911" class="label">恢复旧状态并复查</text><text x="1010.0" y="939" class="note">保存失败与独立恢复结果</text>
-<rect x="340" y="1110" width="520" height="80" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/><text x="600.0" y="1141" class="label">交付措施与前后结果</text><text x="600.0" y="1169" class="note">完整分数、失败恢复、验证等级及备份</text>
-<path d="M600 180V230" class="line"/>
-<path d="M600 310V335" class="line"/>
-<path d="M790 390H870" class="line"/>
-<path d="M600 445V485" class="line"/>
-<path d="M600 810V865" class="line"/>
-<path d="M790 920H870" class="line"/>
-<path d="M600 975V1055" class="join"/>
-<path d="M1010 960V1055H600" class="join"/>
-<path d="M600 1055V1110" class="line"/>
-<text x="830" y="375" class="note">否</text>
-<text x="628" y="472" class="note">是</text>
-<text x="830" y="903" class="note">否</text>
-<text x="630" y="1005" class="note">是</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1450" viewBox="0 0 1200 1450" role="img"><title>macOS：持续提升目标网站分数</title><desc>识别配置，多配置先选择；记录基线，获准后一次性修正或持久重放，逐轮验证，三站评分与原始证据核验、回退并继续，达到可验证停止条件才交付。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker></defs><style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#203040;text-anchor:middle}.title{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px}.line{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}</style>
+<rect width="1200" height="1450" fill="#f7f9fb"/><text x="600" y="50" class="title">macOS：持续提升目标网站分数</text>
+<rect x="340" y="90" width="520" height="80" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/><text x="600.0" y="121" class="label">识别配置、活动状态与更新入口</text><text x="600.0" y="149" class="note">多份候选且未明确目标时先询问；选定前只读</text>
+<rect x="340" y="220" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="251" class="label">完整前测，列出扣分假设与具体改动</text><text x="600.0" y="279" class="note">IPKK · Net.Coffee · CLIS 各自建立基线</text>
+<path d="M600 170V220" class="line"/>
+<polygon points="600,340 795,395 600,450 405,395" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="401" class="label">目标与具体调整已明确获准？</text>
+<path d="M600 300V340" class="line"/>
+<rect x="865" y="355" width="300" height="80" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/><text x="1015.0" y="386" class="label">等待选择或具体授权</text><text x="1015.0" y="414" class="note">可继续只读诊断；不写入</text>
+<path d="M795 395H865" class="line"/>
+<text x="830" y="379" class="note">否</text>
+<rect x="120" y="510" width="420" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="330.0" y="541" class="label">一次性修正</text><text x="330.0" y="569" class="note">设置不会被刷新覆盖：直接修改、回读</text>
+<rect x="660" y="510" width="420" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="870.0" y="541" class="label">更新后重放</text><text x="870.0" y="569" class="note">独立 overlay 与所选配置的 .command</text>
+<path d="M600 450V480H330V510" class="line"/>
+<text x="475" y="476" class="note">按实际归属</text>
+<path d="M600 480H870V510" class="line"/>
+<rect x="340" y="660" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="691" class="label">三站正式候选复测与正常路径验收</text><text x="600.0" y="719" class="note">分数不合并；升降冲突先核实与明确取舍</text>
+<path d="M330 590V625H600V660" class="line"/>
+<path d="M870 590V625H600" fill="none" stroke="#52606d" stroke-width="2.5"/>
+<polygon points="600,790 795,845 600,900 405,845" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="851" class="label">仍有有依据的可行候选？</text>
+<path d="M600 740V790" class="line"/>
+<path d="M405 845H70V260H340" class="line"/>
+<text x="205" y="829" class="note">是，继续对照</text>
+<rect x="340" y="980" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="1011" class="label">验证最佳状态与持久更新</text><text x="600.0" y="1039" class="note">三站最终评分与持久更新；缺项标为部分评价</text>
+<path d="M600 900V980" class="line"/>
+<text x="700" y="942" class="note">否 / 已确认满分</text>
+<polygon points="600,1100 795,1155 600,1210 405,1155" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="1161" class="label">必要验证通过？</text>
+<path d="M600 1060V1100" class="line"/>
+<rect x="865" y="1115" width="300" height="80" rx="14" fill="#fff0ef" stroke="#c94b43" stroke-width="2"/><text x="1015.0" y="1146" class="label">恢复并报告受阻</text><text x="1015.0" y="1174" class="note">缺少条件不等于达到上限</text>
+<path d="M795 1155H865" class="line"/>
+<text x="830" y="1139" class="note">否</text>
+<rect x="340" y="1300" width="520" height="80" rx="14" fill="#edf9f1" stroke="#2e8b54" stroke-width="2"/><text x="600.0" y="1331" class="label">交付当前约束下已验证最佳</text><text x="600.0" y="1359" class="note">一次性设置、更新入口、剩余扣分与停止依据</text>
+<path d="M600 1210V1300" class="line"/>
+<text x="630" y="1250" class="note">是</text>
 </svg>
