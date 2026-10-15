@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550" role="img"><title>清理与分设备网络优化</title><desc>清理独立；macOS 持续优化目标网站分数；Android 保持四块诊断流程。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550" role="img"><title>清理与分设备网络优化</title><desc>清理独立；macOS 持续优化目标网站分数，并补齐获准的缺失规则，核对活动配置、核心规则与真实业务连接；Android 保持四块诊断流程。</desc>
 <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker></defs><style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#203040;text-anchor:middle}.title{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px}.line{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}</style>
 <rect width="1200" height="550" fill="#f7f9fb"/><text x="600" y="50" class="title">清理与分设备网络优化</text>
 <rect x="400" y="100" width="400" height="80" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/><text x="600.0" y="131" class="label">确定目的与设备</text><text x="600.0" y="159" class="note">单纯解释或修改 Skill 不触发网络写入</text>
 <rect x="40" y="300" width="340" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="210.0" y="331" class="label">Claude 数据清理</text><text x="210.0" y="359" class="note">限定范围 → 扫描 → 选择 → 复查</text>
 <a href="workflow.cleanup.svg"><text x="210" y="420" class="note">workflow.cleanup.svg</text></a>
 <path d="M600 180V240H210V300" class="line"/>
-<rect x="430" y="300" width="340" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="331" class="label">macOS 持续优化</text><text x="600.0" y="359" class="note">选择配置 → 对照提升 → 持久更新</text>
+<rect x="430" y="300" width="340" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="331" class="label">macOS 持续优化</text><text x="600.0" y="359" class="note">选配置 → 补规则 → 持久更新与验收</text>
 <a href="workflow.optimize.svg"><text x="600" y="420" class="note">workflow.optimize.svg</text></a>
 <path d="M600 180V240H600V300" class="line"/>
 <rect x="820" y="300" width="340" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="990.0" y="331" class="label">Android 四块诊断</text><text x="990.0" y="359" class="note">前测 → 获准调整 → 后测或恢复</text>

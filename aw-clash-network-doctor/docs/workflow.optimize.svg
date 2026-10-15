@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1450" viewBox="0 0 1200 1450" role="img"><title>macOS：持续提升目标网站分数</title><desc>识别配置，多配置先选择；记录基线，获准后一次性修正或持久重放，逐轮验证，三站评分与原始证据核验、回退并继续，达到可验证停止条件才交付。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1450" viewBox="0 0 1200 1450" role="img"><title>macOS：持续提升目标网站分数</title><desc>识别活动配置及持久入口绑定，多配置先选择；记录三站与业务连接基线，获准后补齐缺失应用规则并持久重放，逐轮核对域名及应用进程路径规则、核心加载和目标应用真实命中，达到可验证停止条件才交付。</desc>
 <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker></defs><style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#203040;text-anchor:middle}.title{font-size:30px;font-weight:700}.label{font-size:18px;font-weight:600}.note{font-size:14px}.line{fill:none;stroke:#52606d;stroke-width:2.5;marker-end:url(#a)}</style>
 <rect width="1200" height="1450" fill="#f7f9fb"/><text x="600" y="50" class="title">macOS：持续提升目标网站分数</text>
-<rect x="340" y="90" width="520" height="80" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/><text x="600.0" y="121" class="label">识别配置、活动状态与更新入口</text><text x="600.0" y="149" class="note">多份候选且未明确目标时先询问；选定前只读</text>
-<rect x="340" y="220" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="251" class="label">完整前测，列出扣分假设与具体改动</text><text x="600.0" y="279" class="note">IPKK · Net.Coffee · CLIS 各自建立基线</text>
+<rect x="340" y="90" width="520" height="80" rx="14" fill="#ffffff" stroke="#9eacb8" stroke-width="2"/><text x="600.0" y="121" class="label">识别活动配置与持久更新入口</text><text x="600.0" y="149" class="note">核对文件、overlay 与 .command 绑定；多配置先选定</text>
+<rect x="340" y="220" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="251" class="label">完整前测，列出扣分假设与具体改动</text><text x="600.0" y="279" class="note">三站基线；域名及应用规则、节点、实际命中</text>
 <path d="M600 170V220" class="line"/>
 <polygon points="600,340 795,395 600,450 405,395" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="401" class="label">目标与具体调整已明确获准？</text>
 <path d="M600 300V340" class="line"/>
@@ -10,18 +10,18 @@
 <path d="M795 395H865" class="line"/>
 <text x="830" y="379" class="note">否</text>
 <rect x="120" y="510" width="420" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="330.0" y="541" class="label">一次性修正</text><text x="330.0" y="569" class="note">设置不会被刷新覆盖：直接修改、回读</text>
-<rect x="660" y="510" width="420" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="870.0" y="541" class="label">更新后重放</text><text x="870.0" y="569" class="note">独立 overlay 与所选配置的 .command</text>
+<rect x="660" y="510" width="420" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="870.0" y="541" class="label">更新后重放</text><text x="870.0" y="569" class="note">缺失规则补入 overlay 与对应 .command</text>
 <path d="M600 450V480H330V510" class="line"/>
 <text x="475" y="476" class="note">按实际归属</text>
 <path d="M600 480H870V510" class="line"/>
-<rect x="340" y="660" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="691" class="label">三站正式候选复测与正常路径验收</text><text x="600.0" y="719" class="note">分数不合并；升降冲突先核实与明确取舍</text>
+<rect x="340" y="660" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="691" class="label">三站复测与目标应用连接验收</text><text x="600.0" y="719" class="note">验证路径正反例、规则优先级与新连接命中</text>
 <path d="M330 590V625H600V660" class="line"/>
 <path d="M870 590V625H600" fill="none" stroke="#52606d" stroke-width="2.5"/>
 <polygon points="600,790 795,845 600,900 405,845" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="851" class="label">仍有有依据的可行候选？</text>
 <path d="M600 740V790" class="line"/>
 <path d="M405 845H70V260H340" class="line"/>
 <text x="205" y="829" class="note">是，继续对照</text>
-<rect x="340" y="980" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="1011" class="label">验证最佳状态与持久更新</text><text x="600.0" y="1039" class="note">三站最终评分与持久更新；缺项标为部分评价</text>
+<rect x="340" y="980" width="520" height="80" rx="14" fill="#edf6ff" stroke="#287bbb" stroke-width="2"/><text x="600.0" y="1011" class="label">验证最佳状态与订阅重放</text><text x="600.0" y="1039" class="note">复核活动文件 → 核心加载 → 真实业务连接</text>
 <path d="M600 900V980" class="line"/>
 <text x="700" y="942" class="note">否 / 已确认满分</text>
 <polygon points="600,1100 795,1155 600,1210 405,1155" fill="#fff7e6" stroke="#c98312" stroke-width="2"/><text x="600" y="1161" class="label">必要验证通过？</text>
