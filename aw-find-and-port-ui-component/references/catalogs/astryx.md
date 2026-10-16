@@ -3,9 +3,9 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-10-13T05:47:28+00:00`
-- Last successful refresh: `2026-10-13T05:47:28+00:00`
-- Discovery leads: `182`
+- Last checked: `2026-10-16T03:26:54+00:00`
+- Last successful refresh: `2026-10-16T03:26:54+00:00`
+- Discovery leads: `183`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -133,6 +133,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | RadioList | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/RadioList) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/RadioList/RadioList.tsx) |
 | RadioListItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/RadioListItem) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/RadioList/RadioListItem.tsx) |
 | ResizeHandle | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/ResizeHandle) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Resizable/ResizeHandle.tsx) |
+| RichTextEditor | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/RichTextEditor) | — |
 | ScrollableArea | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/ScrollableArea) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/ScrollableArea/ScrollableArea.tsx) |
 | Section | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Section) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Section/Section.tsx) |
 | SegmentedControl | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/SegmentedControl) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/SegmentedControl/SegmentedControl.tsx) |
