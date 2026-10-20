@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
 <title id="title">Design System Gallery 工作流程</title>
-<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，属性适用条件变化先识别父子依赖并读取规则，区分组件本体、Playground 控件与 Properties 比较块，共享依赖禁用和提示；验收前提切换、阻断、恢复和值保留。Components 页面按固定章节组织，不显示 API Props；Temporary 可只保留 Playground。文档版式同时核对共享轴序、重置、Section 操作和路径深链。组件身份以显示名称为准，核对类名、目录与路由；同语义跨组件代码命名一致，保留原生属性，集中转换设计名称和值，不用 MCP 例外掩盖源头问题。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
+<desc id="desc">按完整会话识别审查或实施。目标证据不足时请求必要输入；仅缺少项目约定时使用当地结构与最小 fallback。按本次任务读取规则章节和当地证据，属性适用条件变化先识别父子依赖并读取规则，区分组件本体、Playground 控件与 Properties 比较块，共享依赖禁用和提示；验收前提切换、阻断、恢复和值保留。Components 页面按固定章节组织，不显示 API Props；Temporary 可只保留 Playground。设计属性按尺寸布局、外观语义、内容构成、交互模式、当前状态、内容编辑排序，依赖组连续、核心模式可优先；轴内 value 按自然顺序或语义分组，同义值跨组件一致，默认值不决定排序；Properties 表、Playground、Caption 与比较示例同序，纯排序保留属性契约。后续调整排序时提醒用户核对 Skill，获许可后同步规则与版本，已有明确写回授权沿用。文档版式同时核对共享轴序、重置、Section 操作和路径深链。组件身份以显示名称为准，核对类名、目录与路由；同语义跨组件代码命名一致，保留原生属性，集中转换设计名称和值，不用 MCP 例外掩盖源头问题。语义歧义或未授权写入只阻塞受影响项，独立工作继续。只读路径交付建议，实施路径完成获授权修改、范围相称的验证与修复重验，报告局部阻塞和未验证项。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606d"/></marker>
 <style>
 text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#1f2933}
@@ -44,7 +44,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <rect class="stage" x="330" y="470" width="540" height="95" rx="14"/>
 <text class="node-title" x="600.0" y="500">按任务章节审阅展示</text>
 <text class="body" x="600.0" y="525">Components 固定章节；Temporary 可只留 Playground</text>
-<text class="body" x="600.0" y="546">API Props 不展示；编辑器与比较轴同步</text>
+<text class="body" x="600.0" y="546">属性按语义、值按自然顺序或语义；各展示同序</text>
 <polygon class="decision" points="600,600 780,660 600,720 420,660"/>
 <text class="node-title" x="600" y="656">存在歧义或范围阻塞？</text>
 <text class="body" x="600" y="680">唯一映射直接记录；不擅改 API</text>
@@ -62,7 +62,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <rect class="stage" x="700" y="970" width="460" height="110" rx="14"/>
 <text class="node-title" x="930.0" y="1000">实施修改、检查并修复</text>
 <text class="body" x="930.0" y="1025">按范围验收依赖、Reset、Section 操作与深链</text>
-<text class="body" x="930.0" y="1046">检查共享状态与交互，修复后重验受影响部分</text>
+<text class="body" x="930.0" y="1046">排序规则写回 Skill：提醒并获许可后同步</text>
 <rect class="output" x="300" y="1190" width="600" height="85" rx="14"/>
 <text class="node-title" x="600.0" y="1220">交付证据、修改或建议及验证状态</text>
 <text class="body" x="600.0" y="1245">恢复预览、清理临时展示；明确局部阻塞与未验证项</text>
