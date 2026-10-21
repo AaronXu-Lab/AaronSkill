@@ -24,9 +24,10 @@
 
 | 测试请求 | 应选择的路径与判定 |
 | --- | --- |
-| “把 Panel 改成文档版式。” | 读 §3 Panel 内容结构；四个 Section 按约定排列，Playground 与 Properties 共享轴序和取值。 |
+| “调整组件页面的文档版式。” | 读 §3 组件页面内容结构；普通组件页面按当地约定排列章节，Playground 与 Properties 共享轴序和取值；不恢复旧 Panel 外壳。 |
+| “Internal 组件页面只保留 Playground。” | 读 §3 组件页面内容结构；每页只留一个可见 Playground，移除其他投影章节。 |
 | “属性没改，只切换预览主题后 Reset 仍不可用。” | 读 §3 Playground 重置；主题覆写计入修改，Reset 恢复属性默认值和 Follow Gallery；无需重新筛选轴。 |
-| “Properties 标题增加复制链接及背景菜单。” | 读 §3 Section 头部与深链；复制 Section 链接并短暂反馈，link 右侧复用原 Panel 菜单。 |
+| “Properties 标题增加复制链接及背景菜单。” | 读 §3 Section 头部与深链；复制 Section 链接并短暂反馈，link 右侧复用当前 Section 菜单。 |
 | “直接打开 button 的 properties 链接没有定位，同页换 hash 也无效。” | 读 §3 深链规则；路径识别页面，hash 识别 Section，首次打开和同页切换均滚动；不恢复 hash 页面路由。 |
 
 ## 本次维护走查记录
