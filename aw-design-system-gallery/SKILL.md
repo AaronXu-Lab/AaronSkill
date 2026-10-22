@@ -2,7 +2,7 @@
 name: aw-design-system-gallery
 description: "Use when creating or modifying design-system Gallery pages, default or comparison examples, property axes and their applicability conditions, Captions, placeholder copy, or icons created or adjusted alongside component additions or changes, even without an explicit request for a Gallery review. Not for ordinary component implementation or product copy changes that do not involve the Gallery."
 metadata:
-  version: "4.3.0"
+  version: "4.4.0"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---
@@ -17,6 +17,7 @@ metadata:
 
 | 当前任务 | 读取资料 |
 | --- | --- |
+| 新增或改名设计轴，包括组件升级时自行增加属性 | 定义前读取 [§4 名称与 API](references/gallery-rules.md#4-核对-gallery-名称与实现-api) 及其命名映射预检；按设计名建立编辑器、Caption 和文档，不能直接沿用代码 prop 名；同时按 §2 筛选设计价值 |
 | 选择展示轴、筛选正式场景、调整 Caption | [§2 正式展示筛选](references/gallery-rules.md#2-选择设计审阅轴) |
 | 新增或修改属性适用条件；某模式下不生效、禁用、隐藏或条件展示 | 修改前识别父子依赖，读取 [§3 属性依赖与失效展示](references/gallery-rules.md#属性依赖与失效展示)，按其依赖验收取证；区分组件本体、Playground（Default 编辑器）控件与 Properties 比较块，不只按章节标题筛选 |
 | 排列依赖轴、核对 default、处理无轴组件 | [§3 轴顺序与默认示例](references/gallery-rules.md#3-决定轴顺序) |
