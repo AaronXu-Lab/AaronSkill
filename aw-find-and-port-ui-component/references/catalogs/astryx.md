@@ -3,9 +3,9 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-10-16T03:26:54+00:00`
-- Last successful refresh: `2026-10-16T03:26:54+00:00`
-- Discovery leads: `183`
+- Last checked: `2026-10-23T05:46:00+00:00`
+- Last successful refresh: `2026-10-23T05:46:00+00:00`
+- Discovery leads: `185`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -74,6 +74,8 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | Dialog | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Dialog) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Dialog/Dialog.tsx) |
 | DialogHeader | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DialogHeader) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Dialog/DialogHeader.tsx) |
 | Divider | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Divider) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Divider/Divider.tsx) |
+| Drawer | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Drawer) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Drawer/Drawer.tsx) |
+| DrawerHeader | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DrawerHeader) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Drawer/DrawerHeader.tsx) |
 | DropdownMenu | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenu) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenu.tsx) |
 | DropdownMenuCheckboxItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuCheckboxItem) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuCheckboxItem.tsx) |
 | DropdownMenuDivider | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DropdownMenuDivider) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DropdownMenu/DropdownMenuDivider.tsx) |

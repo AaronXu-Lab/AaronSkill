@@ -3,9 +3,9 @@
 ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 
 - Status: `fresh`
-- Last checked: `2026-10-16T03:26:54+00:00`
-- Last successful refresh: `2026-10-13T05:47:28+00:00`
-- Discovery leads: `87`
+- Last checked: `2026-10-23T05:46:00+00:00`
+- Last successful refresh: `2026-10-22T15:08:11+00:00`
+- Discovery leads: `88`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'unverified'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -97,4 +97,5 @@ ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 | Toggle | base-ui | unverified |  | [Preview](https://reui.io/components/toggle) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/toggle) |
 | Toggle Group | base-ui | unverified |  | [Preview](https://reui.io/components/toggle-group) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/toggle-group) |
 | Tooltip | base-ui | unverified |  | [Preview](https://reui.io/components/tooltip) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/tooltip) |
+| Trace | base-ui | unverified |  | [Preview](https://reui.io/components/trace) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/trace) |
 | Tree | base-ui | unverified |  | [Preview](https://reui.io/components/tree) | [Source](https://github.com/keenthemes/reui/tree/main/registry-reui/bases/base/components/tree) |
