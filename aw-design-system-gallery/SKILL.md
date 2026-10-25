@@ -1,32 +1,28 @@
 ---
 name: aw-design-system-gallery
-description: "Use when creating or modifying design-system Gallery pages, default or comparison examples, property axes and their applicability conditions, Captions, placeholder copy, or icons created or adjusted alongside component additions or changes, even without an explicit request for a Gallery review. Not for ordinary component implementation or product copy changes that do not involve the Gallery."
+description: "Use when reviewing, validating, creating, or modifying design-system Gallery pages, default or comparison examples, property axes and their applicability conditions, Captions, placeholder copy, or icons created or adjusted alongside component additions or changes, even without an explicit request for a Gallery review. Not for ordinary component implementation or product copy changes that do not involve the Gallery."
 metadata:
-  version: "4.5.1"
+  version: "4.13.1"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---
 
 # AW Design System Gallery
 
-以目标项目的事实源和 Gallery 约定审查或优化组件展示。执行模式、授权范围、证据与完成标准见 [Gallery 工作流](references/workflow.md)；首次执行读取这份短工作流，本会话已读且仍适用时直接复用。
+目标是让设计系统页面展示与组件内部代码清晰、一致。首次执行读取 [短工作流](references/workflow.md)，本会话已读且仍适用时复用；已有项目事实源和授权继续有效。
+
+取证采用 [源码优先、必要时浏览器复核](references/verification.md#源码优先必要时浏览器复核)，复用已有测试与有效证据，不默认逐组件完整浏览器巡检。
 
 ## 按任务读取
 
-下表指向详细规则的唯一维护位置。按本次实际动作读取对应章节，不因文件存在而通读；任务跨多项时组合读取，完整 Gallery 审计覆盖全部适用章节。只改现有轴的顺序无需重新筛选所有场景；新增场景、增删展示轴或改变 Caption 表达的属性或状态时同时读取正式展示筛选。
+最上层先判断本次对象，再进入对应标准：
 
-| 当前任务 | 读取资料 |
+| 对象／任务 | 读取入口 |
 | --- | --- |
-| 新增或改名设计轴，包括组件升级时自行增加属性 | 定义前读取 [§4 名称与 API](references/gallery-rules.md#4-核对-gallery-名称与实现-api) 及其命名映射预检；按设计名建立编辑器、Caption 和文档，不能直接沿用代码 prop 名；同时按 §2 筛选设计价值 |
-| 选择展示轴、筛选正式场景、调整 Caption | [§2 正式展示筛选](references/gallery-rules.md#2-选择设计审阅轴) |
-| 新增或修改属性适用条件；某模式下不生效、禁用、隐藏或条件展示 | 修改前识别父子依赖，读取 [§3 属性依赖与失效展示](references/gallery-rules.md#属性依赖与失效展示)，按其依赖验收取证；区分组件本体、Playground（Default 编辑器）控件与 Properties 比较块，不只按章节标题筛选 |
-| 核对显示名称、组件类名／导出名、目录、路由的一致性及同语义跨组件属性命名、集中映射、组件契约、代码 API 更新后的 Gallery 同步或修改 API | [§4 名称与 API](references/gallery-rules.md#4-核对-gallery-名称与实现-api)，按其链接读取相关 API 约束 |
-| 判断、增改真实占位范围提示或接入边界开关 | [§5 范围提示](references/gallery-rules.md#5-决定真实占位范围提示) |
-| 调整示例内容、触发器与浮层选项文案、比较布局或浮层表面 | [§6 可比较示例](references/gallery-rules.md#6-构造可比较示例) |
-| 审阅复合组件、父级组合、子级矩阵或确认内部子组件内化 | [§7 父子展示与内化](references/gallery-rules.md#7-展示复合组件与公开子组件)；涉及轴选择时同时读 §2 |
-| 调整通用分类或迁移组件页面 | [§8 分类与稳定标识](references/gallery-rules.md#8-组织通用-gallery-分类) |
-| 验证实施结果 | 对应规则的验收条件与 [§9 验证与恢复](references/gallery-rules.md#9-验证与恢复) |
+| 其他页面：Docs、Styles、Scenario、概览与导航等非组件详情页 | [其他页面标准](references/other-pages.md)，按页面职责和本次改动读取 |
+| Components：组件页面及相关开发契约 | [Components 九项标准](references/components.md)，完整校验依次覆盖，局部任务只选对应项 |
+| 设计系统校验、组件检查或批量审计的结果汇总 | [统一校验报告](references/audit-report.md)，组件名为首列，固定九项列，编号与表后列表对应 |
 
-## 工作流概览
+一项任务可涉及两类页面，分别应用其标准。专题按需展开，同一规则只在其事实源维护；不要为了填满报告扩大任务或将未验证项记为通过。
 
 ![Gallery 工作流程](docs/workflow.svg)
