@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-26T03:04:23+00:00",
+  "generated_at": "2026-10-27T10:33:18+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,8 +1374,8 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
-      "last_success_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_success_at": "2026-10-27T10:33:18+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
@@ -2606,7 +2606,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
       "last_success_at": "2026-10-22T15:08:11+00:00",
       "error": null,
       "fetch": {
@@ -3895,7 +3895,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
       "last_success_at": "2026-10-22T15:08:11+00:00",
       "error": null,
       "fetch": {
@@ -5853,13 +5853,13 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
-      "last_success_at": "2026-10-23T03:29:31+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_success_at": "2026-10-27T10:33:18+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"93b92045c1f179dde98dcb8134114cec\"",
-          "last_modified": "Thu, 22 Oct 2026 18:00:31 GMT"
+          "etag": "\"b402ba3fb822cf58c2371c2a4dfbf251\"",
+          "last_modified": "Tue, 27 Oct 2026 05:00:31 GMT"
         }
       },
       "config_sha256": "b6a894d6f983b559d11bae33a6d6a5323c815909d08d6243d441db3b3fefa030",
@@ -6034,6 +6034,47 @@
           "verification_status": "unverified",
           "requires_verification": true,
           "registry_slug": "button"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Calendar",
+          "slug": "calendar",
+          "description": "Month grid on DayPicker v10 for a single day or a range: one fluid hover highlight across one or two months that follows keyboard focus, a range band that previews the end under the pointer, booked (struck through) and unavailable days, ISO week numbers, a cellSize prop and fill mode, and a direction-aware month slide.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/calendar",
+          "source_url": "https://www.fluidfunctionalism.com/r/calendar.json",
+          "foundation_hint": "mixed",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "@daypicker/react@~10.0.2",
+            "motion",
+            "lucide-react",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/omit.json",
+            "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
+            "https://www.fluidfunctionalism.com/r/use-keyboard-nav-gate.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
+            "https://www.fluidfunctionalism.com/r/button.json",
+            "https://www.fluidfunctionalism.com/r/tooltip.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "calendar"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6288,6 +6329,48 @@
           "verification_status": "unverified",
           "requires_verification": true,
           "registry_slug": "command-menu"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Date Picker",
+          "slug": "date-picker",
+          "description": "Field or ghost trigger for a date, a range, or a date and a time: a calendar popover that opens on the selected day, optional range presets, and editable time fields with slot lists that show each duration. Radix flavor.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/date-picker",
+          "source_url": "https://www.fluidfunctionalism.com/r/date-picker.json",
+          "foundation_hint": "radix-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "@radix-ui/react-popover",
+            "motion",
+            "lucide-react",
+            "https://www.fluidfunctionalism.com/r/calendar.json",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/springs.json",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-context.json",
+            "https://www.fluidfunctionalism.com/r/surface-classes.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/elevated.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
+            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
+            "https://www.fluidfunctionalism.com/r/scroll-area.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "date-picker"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6866,7 +6949,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8297,7 +8380,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
       "last_success_at": "2026-10-26T03:04:23+00:00",
       "error": null,
       "fetch": {
@@ -9133,17 +9216,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
-      "last_success_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_success_at": "2026-10-27T10:33:18+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"ffb1f0d5afadf1133f6635efe0e62c526408025b619ee8fd8af0a46a5b6772ad\"",
-          "last_modified": "Mon, 26 Oct 2026 02:58:09 GMT"
+          "etag": "W/\"fbe538355f40e1be7378bec869dffddcfdc301323c63ded9cb741e0d33b96711\"",
+          "last_modified": "Tue, 27 Oct 2026 10:06:56 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
           "etag": "\"cbd50ad7b8a71241ae6d0e897535de83\"",
-          "last_modified": "Mon, 26 Oct 2026 03:05:34 GMT"
+          "last_modified": "Tue, 27 Oct 2026 10:34:06 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -13229,17 +13312,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-26T03:04:23+00:00",
-      "last_success_at": "2026-10-26T03:04:23+00:00",
+      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_success_at": "2026-10-27T10:33:18+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"3a064f9d1eddbb2e8349166cdde41259\"",
-          "last_modified": "Sat, 24 Oct 2026 14:49:49 GMT"
+          "etag": "W/\"a2c43bd70b8013d412f7c5b2ba04fd85\"",
+          "last_modified": "Tue, 27 Oct 2026 07:56:09 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"f72727052186ee746cfd32aad1c18822153039c7a72905882fc9b31a69028998\"",
-          "last_modified": "Sun, 25 Oct 2026 07:10:52 GMT"
+          "etag": "W/\"f679fedc8617fe52596851f75800aec57d11e218817db32ecb6c41c2d54e2d2a\"",
+          "last_modified": "Tue, 27 Oct 2026 06:56:22 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -13495,6 +13578,28 @@
           "category": "dashboard",
           "preview_url": "https://ui.lobehub.com/components/dashboard/auth-layout",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/dashboard/AuthLayout/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "AutoComplete",
+          "slug": "auto-complete",
+          "description": "Category: Data Entry. Base UI-powered AutoComplete input that filters its own suggestion list as you type. Outline: Default, APIs, Class names. Docs: https://ui.lobehub.com/components/auto-complete",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/auto-complete",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/AutoComplete/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -13979,6 +14084,28 @@
           "category": "chat",
           "preview_url": "https://ui.lobehub.com/components/chat/chat-list",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/chat/ChatList/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "Checkbox",
+          "slug": "checkbox",
+          "description": "Category: Data Entry. Base UI-powered Checkbox and CheckboxGroup with the lobe visual style. Outline: Checkbox, CheckboxGroup, Class names. Docs: https://ui.lobehub.com/components/checkbox",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/checkbox",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Checkbox/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -14963,6 +15090,28 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "Form",
+          "slug": "form-kit",
+          "description": "Category: Data Entry. Controlled form from @lobehub/ui/form — a form instance, schema-first validation and field-level render granularity, with the engine kept behind an internal adapter. Outline: Rules of thumb, useForm. Docs: https://ui.lobehub.com/components/form-kit",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/form-kit",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Form/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "Freeze",
           "slug": "freeze",
           "description": "Category: General. Prevents DOM updates in descendant content through React Suspense, primarily to keep exit animations visually stable. Outline: APIs. Docs: https://ui.lobehub.com/components/freeze",
@@ -15409,6 +15558,28 @@
           "category": "icons",
           "preview_url": "https://ui.lobehub.com/components/icons/i-message",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/icons/IMessage/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "Input",
+          "slug": "input",
+          "description": "Category: Data Entry. Base UI-powered text input with variants, sizes, clear button and slots, plus the Password, Number, OTP and TextArea family. Outline: Password, Number and OTP, Clear, Enter and counting, Input, InputPassword, InputNumber, InputOTP, TextArea, Class names. Docs: https://ui.lobehub.com/components/input",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/input",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Input/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
