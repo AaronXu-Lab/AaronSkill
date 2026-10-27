@@ -2,7 +2,7 @@
 name: aw-design-system-gallery
 description: "Use when reviewing, validating, creating, or modifying design-system Gallery pages, default or comparison examples, property axes and their applicability conditions, Captions, placeholder copy, or icons created or adjusted alongside component additions or changes, even without an explicit request for a Gallery review. Not for ordinary component implementation or product copy changes that do not involve the Gallery."
 metadata:
-  version: "4.16.0"
+  version: "4.17.0"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---

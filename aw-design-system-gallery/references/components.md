@@ -6,7 +6,7 @@
 | --- | --- |
 | 1. 页面结构／MDX | 页面结构、章节条件、MDX 格式和引用正确。读 [页面结构](gallery-page.md#组件页面内容结构)；菜单和深链变化再读其操作小节。 |
 | 2. Playground | 当前默认组合能被正确展示和编辑，核对实例数量、目标宽度与居中、无属性工具栏及事件归属。进入 [Playground 判断路由](playground.md)，按属性、默认与行为、内容展开。 |
-| 3. 代码与开发契约 | 开发调用满足一致标准。读 [代码检查路由](component-api-design.md#代码检查路由)，覆盖页面名与真实组件调用名的对应关系、可调用属性、映射、原生能力、父子依赖与健壮性；按实际问题展开。 |
+| 3. 代码与开发契约 | 开发调用满足一致标准；核对设计属性默认值与组件运行时默认值的一致性。读 [代码检查路由](component-api-design.md#代码检查路由)，覆盖页面名与真实组件调用名的对应关系、可调用属性、映射、默认值、原生能力、父子依赖与健壮性；按实际问题展开。 |
 | 4. Anatomy | 可选；先判断组件自身是否拥有值得说明的可视部位，再核对稳定部位抽象、简短名称、层级和直白说明。读 [Anatomy](component-sections.md#anatomy)。 |
 | 5. Interactive Demo | 可选；只演示当前组件核心 UX，保留必要的最小上下文，以统一方式体验。读 [Interactive Demo](component-sections.md#interactive-demo)。 |
 | 6. Properties | 每个 value 默认单实例，与正式设计属性对应；每个实例只覆写当前轴，其余跟随 Playground，宽度与排列独立判断。读 [Properties](component-sections.md#properties)，再按改动进入属性、顺序或依赖细则。 |
