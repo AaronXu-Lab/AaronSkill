@@ -24,7 +24,9 @@
 
 在现有九项内复核示例语义：多实例是否必要、Anatomy 是否有独立自身部位、互斥状态是否误拆部位、事件效果归组件还是调用方。按 [实例数量](gallery-examples.md#实例数量)、[交互归属](gallery-examples.md#交互归属) 和 Anatomy 标准判定，不另增检查项。
 
-检查占位文案时，按 [可比较示例](gallery-examples.md#可比较示例) 区分通用文本与描述角色，允许描述使用 Description，不因缺少特殊业务语义而机械替换为 Text。
+检查占位文案时，按 [可比较示例](gallery-examples.md#可比较示例) 区分通用文本与描述角色，允许描述使用 Description，不因缺少特殊业务语义而机械替换为 Text。 遇到任意自定义内容插槽时，同节核对 Content 加虚线占位与场景 Example 的分工；文本、图标等专用插槽不套用通用内容占位。
+
+涉及舞台或比较布局时，分别按 [展示宽度与排列](gallery-examples.md#展示宽度与排列) 判断目标宽度、实际组件对齐与比较排列，按范围提示规则核对最外层 Bounds；无可调属性时读取 Playground 的展示方式。演示先确认当前组件核心 UX，Anatomy 核对稳定职责与简短名称，空预览补查首次加载／刷新，均归既有九项，不增加报告列。
 
 涉及移除交互或空预览时，按 [移除与空预览](gallery-page.md#移除与空预览) 判断真实移除及共享恢复入口。
 
@@ -36,7 +38,7 @@
 
 设计系统校验、组件检查或批量审计按 [统一校验报告](audit-report.md) 输出矩阵和编号问题列表；普通实施任务报告本次修改与验证，不强制运行完整审计。交付范围、修改或建议、关键依据、实际验证和未解决项；恢复临时预览并清理临时展示。未运行的检查明确标为未验证。
 
-仅维护本 Skill 时，按改动选择 [依赖与页面回归](../tests/dependency-routing.md)、[命名回归](../tests/design-axis-naming.md)、[动画轴回归](../tests/animation-design-axes.md)、[渐进读取回归](../tests/progressive-disclosure.md) 和 [九项标准与报告回归](../tests/component-audit.md)；普通 Gallery 任务不读取维护测试。
+仅维护本 Skill 时，按改动选择 [依赖与页面回归](../tests/dependency-routing.md)、[命名回归](../tests/design-axis-naming.md)、[动画轴回归](../tests/animation-design-axes.md)、[渐进读取回归](../tests/progressive-disclosure.md)、[九项标准与报告回归](../tests/component-audit.md) 和 [展示语义回归](../tests/display-semantics.md)；普通 Gallery 任务不读取维护测试。
 
 ## 停止与局部阻塞
 

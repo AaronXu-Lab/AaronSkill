@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1320" role="img" aria-labelledby="title desc">
 <title id="title">Design System Gallery 工作流程</title>
-<desc id="desc">沿用完整会话授权并确定范围。证据不足时请求必要输入，缺少专门约定文档不阻塞。入口先区分其他页面与 Components；组件按页面结构、Playground、开发契约、Anatomy、Interactive Demo、Properties、Usage、Composition、Best Practices 九项渐进读取，Playground 进一步按属性、行为、内容分组。取证先审查源码，复用相关测试与已完成的运行证据；仅源码不足、疑似异常或需观察运行表现时使用浏览器最小路径复核，不默认逐组件完整巡检。占位按角色判断：通用 Text 与描述 Description 均允许，不扩大为任意业务文案。默认 Playground 单实例、Properties 每值单实例，多实例需必要组合或明确比较目的。外层容器默认省略 Anatomy，互斥状态形态合为稳定部位；组件行为真实运行，调用方效果默认无副作用承接。尺寸和加载检查不能替代这些语义判断。Anatomy 先按组件自身可视构成判断适用性，不把调用方内容或行为机制作为必需理由，Composition 依赖说明独立判断。新增或改名轴先做正式筛选与命名预检，依赖变化先识别三处关系，疑点或运行表现需确认时，浏览器最小路径复核。歧义或未授权写入仅阻塞受影响项。只读路径交付建议，实施路径按专题验收并修复重验，移除交互按真实移除与共享空预览恢复规则处理，恢复预览并报告未验证项。设计系统校验以组件名为首列、九项为后续列，问题 cell 使用全报告唯一编号及简述，表后按编号完整展开；通过、不适用与待验分别标记。其他页面单独列表。</desc>
+<desc id="desc">沿用完整会话授权并确定范围。证据不足时请求必要输入，缺少专门约定文档不阻塞。入口先区分其他页面与 Components；组件按页面结构、Playground、开发契约、Anatomy、Interactive Demo、Properties、Usage、Composition、Best Practices 九项渐进读取，Playground 进一步按属性、行为、内容分组。取证先审查源码，复用相关测试与已完成的运行证据；仅源码不足、疑似异常或需观察运行表现时使用浏览器最小路径复核，不默认逐组件完整巡检。展示需分别判断目标宽度、实际组件居中和比较排列，Bounds 仅目标外层一层，无可调属性使用项目浮动工具栏或无侧栏机制；Demo 仅当前核心 UX，Anatomy 简短职责名，Restore 不误判加载或入场为空。占位按角色判断：通用 Text 与描述 Description 均允许，不扩大为任意业务文案。任意自定义内容插槽使用 Content 加虚线占位，真实组合归场景 Example，文本和图标等专用插槽仍按职责处理。默认 Playground 单实例、Properties 每值单实例，多实例需必要组合或明确比较目的。外层容器默认省略 Anatomy，互斥状态形态合为稳定部位；组件行为真实运行，调用方效果默认无副作用承接。尺寸和加载检查不能替代这些语义判断。Anatomy 先按组件自身可视构成判断适用性，不把调用方内容或行为机制作为必需理由，Composition 依赖说明独立判断。新增或改名轴先做正式筛选与命名预检，依赖变化先识别三处关系，疑点或运行表现需确认时，浏览器最小路径复核。歧义或未授权写入仅阻塞受影响项。只读路径交付建议，实施路径按专题验收并修复重验，移除交互按真实移除与共享空预览恢复规则处理，恢复预览并报告未验证项。设计系统校验以组件名为首列、九项为后续列，问题 cell 使用全报告唯一编号及简述，表后按编号完整展开；通过、不适用与待验分别标记。其他页面单独列表。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52606d"/></marker>
 <style>
 text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-anchor:middle;fill:#1f2933}
@@ -43,7 +43,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <text class="body" x="600.0" y="405">先分页面类型；源码优先，复用已有测试与证据</text>
 <rect class="stage" x="330" y="470" width="540" height="95" rx="14"/>
 <text class="node-title" x="600.0" y="500">按所选专题作出判断</text>
-<text class="body" x="600.0" y="525">九项核对实例、部位、事件与角色占位</text>
+<text class="body" x="600.0" y="525">九项核对边界、宽度排列、插槽占位与演示归属</text>
 <text class="body" x="600.0" y="546">疑点或运行表现需确认时，浏览器最小路径复核</text>
 <polygon class="decision" points="600,600 780,660 600,720 420,660"/>
 <text class="node-title" x="600" y="656">存在歧义或范围阻塞？</text>
@@ -62,7 +62,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <rect class="stage" x="700" y="970" width="460" height="110" rx="14"/>
 <text class="node-title" x="930.0" y="1000">实施修改、检查并修复</text>
 <text class="body" x="930.0" y="1025">按专题验收；源码、测试不足时浏览器补验</text>
-<text class="body" x="930.0" y="1046">观察实际结果；空预览复用容器 Restore</text>
+<text class="body" x="930.0" y="1046">核对自身部位命名、浮动工具栏与 Restore 时机</text>
 <text class="body" x="930.0" y="1067">排序规则写回 Skill：提醒并获许可后同步</text>
 <rect class="output" x="300" y="1190" width="600" height="85" rx="14"/>
 <text class="node-title" x="600.0" y="1220">交付统一矩阵、编号问题与验证状态</text>
