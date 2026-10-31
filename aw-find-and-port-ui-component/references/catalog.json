@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T10:33:18+00:00",
+  "generated_at": "2026-10-31T03:37:23+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,13 +1374,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
-      "last_success_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
+      "last_success_at": "2026-10-31T03:37:23+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
           "etag": "\"fe45cebe6ceebed9a88d9beafc22adfe\"",
-          "last_modified": "Thu, 22 Oct 2026 11:59:37 GMT"
+          "last_modified": "Fri, 30 Oct 2026 00:56:36 GMT"
         }
       },
       "config_sha256": "dd76b6683468c97e7b62d53aa6d95370693ebd136c11071268f34ba2ae7459e5",
@@ -2606,7 +2606,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
       "last_success_at": "2026-10-22T15:08:11+00:00",
       "error": null,
       "fetch": {
@@ -3895,7 +3895,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
       "last_success_at": "2026-10-22T15:08:11+00:00",
       "error": null,
       "fetch": {
@@ -5853,13 +5853,13 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
-      "last_success_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
+      "last_success_at": "2026-10-31T03:35:03+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"b402ba3fb822cf58c2371c2a4dfbf251\"",
-          "last_modified": "Tue, 27 Oct 2026 05:00:31 GMT"
+          "etag": "\"8840285b70291dcc5c66765c3515a8f3\"",
+          "last_modified": "Fri, 30 Oct 2026 23:00:29 GMT"
         }
       },
       "config_sha256": "b6a894d6f983b559d11bae33a6d6a5323c815909d08d6243d441db3b3fefa030",
@@ -5956,7 +5956,8 @@
             "utils",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
+            "https://www.fluidfunctionalism.com/r/type-scale.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6231,6 +6232,7 @@
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/elevated.json",
+            "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/slider.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tooltip.json",
@@ -6294,7 +6296,7 @@
           "library": "Fluid Functionalism",
           "name": "Command Menu",
           "slug": "command-menu",
-          "description": "Search field over a list of actions: type to filter, arrows to move the fluid hover highlight, Enter to run. Grouped rows with icons, descriptions, and shortcut caps; suggestions listed first while nothing is typed; subtle tabs or a borderless filter bar under the field; and a dialog shell opened by a global shortcut (default ⌘K / Ctrl+K). The list needs no primitive; the dialog is the library's Dialog in either flavor.",
+          "description": "Search field over a list of actions: type to filter, arrows to move the fluid hover highlight, Enter to run. Grouped rows with icons, descriptions, and shortcut caps; suggestions listed first while nothing is typed; tabs or a borderless filter bar under the field; and a dialog shell opened by a global shortcut (default ⌘K / Ctrl+K). The list needs no primitive; the dialog is the library's Dialog in either flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/command-menu",
           "source_url": "https://www.fluidfunctionalism.com/r/command-menu.json",
@@ -6318,7 +6320,7 @@
             "https://www.fluidfunctionalism.com/r/popup.json",
             "https://www.fluidfunctionalism.com/r/scroll-area.json",
             "https://www.fluidfunctionalism.com/r/dialog.json",
-            "https://www.fluidfunctionalism.com/r/tabs-subtle.json",
+            "https://www.fluidfunctionalism.com/r/tabs.json",
             "https://www.fluidfunctionalism.com/r/tokens.json",
             "https://www.fluidfunctionalism.com/r/type-scale.json"
           ],
@@ -6775,7 +6777,7 @@
           "library": "Fluid Functionalism",
           "name": "Tabs",
           "slug": "tabs",
-          "description": "Segmented control tabs with sliding active indicator, fluid hover, and spring animations. Built on Radix UI Tabs.",
+          "description": "Horizontal tab navigation with fluid hover, animated pill selection indicator, and fluid font-weight transitions. Radix flavor.",
           "category": "Components",
           "preview_url": "https://www.fluidfunctionalism.com/docs/tabs",
           "source_url": "https://www.fluidfunctionalism.com/r/tabs.json",
@@ -6785,15 +6787,13 @@
           "styling": "unverified",
           "variant": "unverified",
           "dependencies": [
-            "motion",
             "@radix-ui/react-tabs",
+            "motion",
             "lucide-react",
             "utils",
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-context.json",
-            "https://www.fluidfunctionalism.com/r/surface-classes.json",
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
@@ -6806,41 +6806,6 @@
           "verification_status": "unverified",
           "requires_verification": true,
           "registry_slug": "tabs"
-        },
-        {
-          "source_id": "fluid-functionalism",
-          "library": "Fluid Functionalism",
-          "name": "Tabs Subtle",
-          "slug": "tabs-subtle",
-          "description": "Horizontal tab navigation with fluid hover, animated pill selection indicator, and fluid font-weight transitions. Radix flavor.",
-          "category": "Components",
-          "preview_url": "https://www.fluidfunctionalism.com/docs/tabs-subtle",
-          "source_url": "https://www.fluidfunctionalism.com/r/tabs-subtle.json",
-          "foundation_hint": "radix-ui",
-          "styling_hint": "tailwind-css",
-          "foundation": "unverified",
-          "styling": "unverified",
-          "variant": "unverified",
-          "dependencies": [
-            "@radix-ui/react-tabs",
-            "motion",
-            "lucide-react",
-            "utils",
-            "https://www.fluidfunctionalism.com/r/springs.json",
-            "https://www.fluidfunctionalism.com/r/font-weight.json",
-            "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/icon-context.json",
-            "https://www.fluidfunctionalism.com/r/use-fluid-hover.json",
-            "https://www.fluidfunctionalism.com/r/size-context.json",
-            "https://www.fluidfunctionalism.com/r/tokens.json"
-          ],
-          "license": "unverified",
-          "source_license_hint": "unverified",
-          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
-          "port_eligible": false,
-          "verification_status": "unverified",
-          "requires_verification": true,
-          "registry_slug": "tabs-subtle"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6949,7 +6914,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8380,7 +8345,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
       "last_success_at": "2026-10-26T03:04:23+00:00",
       "error": null,
       "fetch": {
@@ -9216,17 +9181,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
-      "last_success_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
+      "last_success_at": "2026-10-31T03:37:23+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"fbe538355f40e1be7378bec869dffddcfdc301323c63ded9cb741e0d33b96711\"",
-          "last_modified": "Tue, 27 Oct 2026 10:06:56 GMT"
+          "etag": "W/\"db96118526071cfd7806aa9752b9276827e1d0704bacced5e34daf405e4a0657\"",
+          "last_modified": "Sat, 31 Oct 2026 03:36:22 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"cbd50ad7b8a71241ae6d0e897535de83\"",
-          "last_modified": "Tue, 27 Oct 2026 10:34:06 GMT"
+          "etag": "\"39768a2ac4ae2ad33c37ee77646fd1d1\"",
+          "last_modified": "Sat, 31 Oct 2026 03:35:45 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -13312,17 +13277,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-10-27T10:33:18+00:00",
-      "last_success_at": "2026-10-27T10:33:18+00:00",
+      "last_checked_at": "2026-10-31T03:37:23+00:00",
+      "last_success_at": "2026-10-31T03:35:03+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"a2c43bd70b8013d412f7c5b2ba04fd85\"",
-          "last_modified": "Tue, 27 Oct 2026 07:56:09 GMT"
+          "etag": "W/\"dea32948793dfe0d3dabf72b46420d8a\"",
+          "last_modified": "Thu, 29 Oct 2026 19:02:18 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"f679fedc8617fe52596851f75800aec57d11e218817db32ecb6c41c2d54e2d2a\"",
-          "last_modified": "Tue, 27 Oct 2026 06:56:22 GMT"
+          "etag": "W/\"7afc3dfb29573c05a36be96f4139196b6cb50a2d28ed3cbf56a9307b170d1015\"",
+          "last_modified": "Fri, 30 Oct 2026 12:58:32 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -14322,7 +14287,7 @@
           "library": "Lobe UI",
           "name": "ConfigProvider",
           "slug": "config-provider",
-          "description": "Category: Theme. Configures library-wide CDN resource resolution and the motion runtime for descendant components. Outline: Default, Custom CDN, What it provides, Custom primary colour, Custom neutral colour, Custom status palette, Motion, Global keyboard focus, Config, CdnFn, Class names. Docs: https://ui.lobehub.com/components/config-provider",
+          "description": "Category: Theme. Configures library-wide CDN resource resolution and the motion runtime for descendant components. Outline: Default, Custom CDN, What it provides, Font stack by language, Custom primary colour, Custom neutral colour, Custom status palette, Motion, Global keyboard focus, Config, CdnFn, Class names. Docs: https://ui.lobehub.com/components/config-provider",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/config-provider",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/ConfigProvider/index.mdx",
