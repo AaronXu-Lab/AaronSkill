@@ -15,6 +15,6 @@
 
 ## 导航与验收
 
-分类迁移读 [稳定标识](gallery-navigation.md)，Section 操作变化读 [共享页面操作](gallery-page.md#section-头部与深链)。已有链接仍核对目标和锚点；不主动审计关联覆盖或要求增加关联入口。
+分类迁移读 [稳定标识](gallery-navigation.md)，Section 操作变化读 [共享页面操作](gallery-page.md#section-头部与深链)。已有链接仍核对目标和锚点；不做全站关联覆盖普查；已知独立案例的入口按 [关联文章](gallery-page.md#关联文章) 检查。
 
 按改动核对内容源和实际页面；涉及交互、主题或响应式时按 [验证与恢复](verification.md) 检查受影响项。设计系统校验的其他页面结果按 [统一报告](audit-report.md#其他页面) 单独列示，不伪装为组件。
