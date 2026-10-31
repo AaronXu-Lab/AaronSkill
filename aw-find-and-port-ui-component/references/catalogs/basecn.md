@@ -3,7 +3,7 @@
 基于 Base UI 的 shadcn 风格组件，也包含原生 React/HTML 实现。
 
 - Status: `fresh`
-- Last checked: `2026-10-29T14:13:56+00:00`
+- Last checked: `2026-10-31T03:37:23+00:00`
 - Last successful refresh: `2026-09-27T12:20:47+00:00`
 - Discovery leads: `55`
 - Source type hint: `{'foundation': 'mixed', 'styling': 'tailwind-css'}`

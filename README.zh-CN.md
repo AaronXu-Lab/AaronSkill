@@ -110,7 +110,7 @@ python3 link-skills.py --target ~/.codex/skills
 | [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.18.0` | 创建、审查或优化 Gallery 的默认示例、包含可感知动画行为的真实设计轴与状态对比 | 源码优先、必要时浏览器复核；其他页面与 Components 分流，组件按九项渐进检查并用编号矩阵报告；语义复核默认实例、稳定部位与调用方效果归属；对照设计默认值与运行时默认值；允许 Text 及描述角色的 Description 占位；任意自定义插槽用 Content 加虚线占位，真实组合归场景 Example；核对目标单层 Bounds、宽度与排列、核心演示及 Restore 时机；Anatomy 仅适用于组件自身有值得说明的可视构成时；组件 Panel 复用当地标准结构及文档版式；项目明确规定时 Internal 页面只显示一个 Playground；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；边界提示接入现有开关并验证两态；项目配置留在目标仓库 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
-| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.3.0` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
+| [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.3.1` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
 
 ### Working On
 
