@@ -43,7 +43,7 @@ rect,polygon{stroke-width:2}.flow,.join{fill:none;stroke:#52606d;stroke-width:2.
 <text class="body" x="600.0" y="405">先分页面类型；源码优先，复用已有测试与证据</text>
 <rect class="stage" x="330" y="470" width="540" height="95" rx="14"/>
 <text class="node-title" x="600.0" y="500">按所选专题作出判断</text>
-<text class="body" x="600.0" y="525">九项核对边界、宽度排列、插槽占位与演示归属</text>
+<text class="body" x="600.0" y="525">九项核对边界、布局、占位或用法文案与演示归属</text>
 <text class="body" x="600.0" y="546">疑点或运行表现需确认时，浏览器最小路径复核</text>
 <polygon class="decision" points="600,600 780,660 600,720 420,660"/>
 <text class="node-title" x="600" y="656">存在歧义或范围阻塞？</text>

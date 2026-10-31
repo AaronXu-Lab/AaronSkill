@@ -3,7 +3,7 @@
 shadcn/ui 官方 Base UI 组件变体。
 
 - Status: `fresh`
-- Last checked: `2026-10-27T10:33:18+00:00`
+- Last checked: `2026-10-29T14:13:56+00:00`
 - Last successful refresh: `2026-09-28T08:33:48+00:00`
 - Discovery leads: `61`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'tailwind-css'}`
