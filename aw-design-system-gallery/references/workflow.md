@@ -22,6 +22,12 @@
 
 先完成所选专题的判断，再处理呈现与实现。Anatomy 等可选章节先判断适用性；Anatomy 以组件自身拥有的可视构成为依据，调用方内容、上下文或行为管理不构成必需理由，Composition 依赖说明另行判断。新增或改名轴先读取正式展示筛选及 API 命名预检；已有轴只调整顺序不触发全页命名审查。属性适用条件变化须在实施前识别依赖并读依赖规则；不能因组件本体隐藏结构而删掉 Gallery 配置或比较轴。
 
+Best Practices 按 [UX 建议边界](component-sections.md#best-practices) 核对建议职责，将纯开发契约放回对应文档，并用用户能理解的动作与结果说明建议。
+
+用法说明按 [术语与使用说明](component-sections.md#术语与使用说明) 核对状态、属性和取值名称，尽量使用直白语言解释含义及适用场景，并同步相关译文。
+
+Usage 涉及相似组件时，按 [场景比较](component-sections.md#相似组件的场景比较) 合并同场景候选、纳入当前组件并核对全部组件链接，在已确定的参与页面中复用正文与译文。
+
 按 [Composition](component-sections.md#composition) 区分组合关系说明与完整任务案例；已有独立 Example 时检查重复维护，并按关联文章规则保留入口。发现案例正文放错位置归第 8 项，已知 Example 缺少关联入口归第 1 项；不另加报告维度。
 
 核对部件身份、职责和配置归属：Anatomy 按 [部件命名与职责说明](component-sections.md#anatomy) 检查，组合 API 按 [组合职责与属性归属](component-api-design.md#组合职责与属性归属) 追踪到实际子组件；同步检查公开契约、Playground、Properties 与用法说明的一致性。发现职责重复时报告实现层建议，不只改展示文案，也不因审查自行迁移 API。
