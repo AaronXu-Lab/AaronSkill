@@ -10,7 +10,7 @@
 | 4. Anatomy | 可选；先判断组件自身是否拥有值得说明的可视部位，再核对稳定部位抽象、简短名称、层级和直白说明。读 [Anatomy](component-sections.md#anatomy)。 |
 | 5. Interactive Demo | 可选；只演示当前组件核心 UX，保留必要的最小上下文，以统一方式体验。读 [Interactive Demo](component-sections.md#interactive-demo)。 |
 | 6. Properties | 每个 value 默认单实例，与正式设计属性对应；每个实例只覆写当前轴，其余跟随 Playground，宽度与排列独立判断。读 [Properties](component-sections.md#properties)，再按改动进入属性、顺序或依赖细则。 |
-| 7. Usage | 格式正确，说明何时、为何以及如何使用。读 [Usage](component-sections.md#usage)。 |
+| 7. Usage | 格式正确，从 UI/UX 说明场景与设计选择，排除开发接入说明。读 [Usage](component-sections.md#usage)。 |
 | 8. Composition | 关联组件的常见组合足够、真实且分工清楚。读 [Composition](component-sections.md#composition)。 |
 | 9. Best Practices | 建议具体、正确且可执行。读 [Best Practices](component-sections.md#best-practices)。 |
 
