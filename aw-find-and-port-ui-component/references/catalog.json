@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-03T08:31:05+00:00",
+  "generated_at": "2026-11-04T08:13:57+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,8 +1374,8 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
-      "last_success_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_success_at": "2026-11-04T08:13:57+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
@@ -2606,17 +2606,17 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
-      "last_success_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_success_at": "2026-11-04T01:45:04+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
-          "etag": "\"8e8e8ff60c6998cfccfa8871aee0e61c\"",
-          "last_modified": "Tue, 03 Nov 2026 08:31:36 GMT"
+          "etag": "\"43d9e2e82437d011938c9b5d47910379\"",
+          "last_modified": "Wed, 04 Nov 2026 01:45:24 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"7a23c0155d1f65656f06bcf47144da1f\"",
-          "last_modified": "Mon, 02 Nov 2026 23:15:08 GMT"
+          "etag": "\"d2bb9bb11f34c8e67e05d1929aac3007\"",
+          "last_modified": "Tue, 03 Nov 2026 16:24:43 GMT"
         }
       },
       "config_sha256": "90af17f4cecdcd519c1bdb29cbb7b8aaa080bef27af1b514395ecc05e8e321fc",
@@ -3366,7 +3366,7 @@
             "cn",
             "@diceui/pptx",
             "button",
-            "@diceui/use-mobile"
+            "use-mobile"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3473,8 +3473,7 @@
             "cn",
             "@base-ui/utils",
             "dialog",
-            "drawer",
-            "@diceui/use-mobile"
+            "drawer"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -3895,7 +3894,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
       "last_success_at": "2026-10-29T14:11:55+00:00",
       "error": null,
       "fetch": {
@@ -5853,7 +5852,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
       "last_success_at": "2026-11-03T08:31:05+00:00",
       "error": null,
       "fetch": {
@@ -6914,7 +6913,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8345,7 +8344,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
       "last_success_at": "2026-10-26T03:04:23+00:00",
       "error": null,
       "fetch": {
@@ -9181,17 +9180,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
-      "last_success_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_success_at": "2026-11-04T08:13:57+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"594a749d572817335dc733768ebb75a5dceb0bb8dfadf737572ec1250e858399\"",
-          "last_modified": "Tue, 03 Nov 2026 08:31:04 GMT"
+          "etag": "W/\"01a0bfa435637f553484b810b0ab0a97db0383e10a7bdb437598975bee381db2\"",
+          "last_modified": "Wed, 04 Nov 2026 08:08:16 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"39768a2ac4ae2ad33c37ee77646fd1d1\"",
-          "last_modified": "Tue, 03 Nov 2026 08:31:51 GMT"
+          "etag": "\"64d76899f4c165a66d4d8e571091e522\"",
+          "last_modified": "Wed, 04 Nov 2026 08:14:30 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -11075,6 +11074,28 @@
           "category": "Components",
           "preview_url": "https://astryx.atmeta.com/components/IconButton",
           "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/IconButton/IconButton.tsx",
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
+          "name": "InfoTip",
+          "slug": "InfoTip",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/InfoTip",
+          "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/InfoTip/InfoTip.tsx",
           "foundation_hint": "custom",
           "styling_hint": "stylex",
           "foundation": "unverified",
@@ -13277,17 +13298,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-03T08:31:05+00:00",
-      "last_success_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_success_at": "2026-11-04T08:13:57+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"9664d6f14bf0d19336aa45d3495b6158\"",
-          "last_modified": "Mon, 02 Nov 2026 22:45:56 GMT"
+          "etag": "W/\"f2944de59e70e6de04cd522c62af4422\"",
+          "last_modified": "Tue, 03 Nov 2026 23:02:17 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"0f5939362d64cd8acbdbd5b9c9640a360f1636c136e9907cb03d5658a5947947\"",
-          "last_modified": "Tue, 03 Nov 2026 08:22:44 GMT"
+          "etag": "W/\"1bb0165cd8d8caeaa841fc6292ec3a6bc68a7c03bfd763d12d40622635e8170f\"",
+          "last_modified": "Wed, 04 Nov 2026 03:49:27 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -13583,7 +13604,7 @@
           "library": "Lobe UI",
           "name": "Avatar",
           "slug": "avatar",
-          "description": "Category: Data Display. Avatar and AvatarGroup with emoji, image, text fallback and loading overlay support, built on Base UI-era primitives. Outline: Generated Fallback, Avatar, Styles, Class names. Docs: https://ui.lobehub.com/components/avatar",
+          "description": "Category: Data Display. Avatar and AvatarGroup with emoji, image, text fallback and loading overlay support, built on Base UI-era primitives. Outline: Generated Fallback, Group with Rings, Avatar, Styles, Class names. Docs: https://ui.lobehub.com/components/avatar",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/avatar",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Avatar/index.ts",
@@ -17349,6 +17370,28 @@
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/toast",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Toast/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "Toc",
+          "slug": "toc",
+          "description": "Category: Navigation. Scroll-spy table of contents with an animated SVG outline rail that highlights the active section. Outline: Features, APIs, Item Format, Relationship to Anchor, Styles, Class names. Docs: https://ui.lobehub.com/components/toc",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/toc",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Toc/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
