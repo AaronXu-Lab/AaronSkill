@@ -32,7 +32,7 @@ Description 表达部件职责，回答“它负责什么、作用于什么对�
 
 仅展示 [正式设计轴](design-axes.md)，与 Playground 的属性、值、相对顺序及适用条件对应。两处共用定义和当前设置；编辑器专用内容项可按约定过滤，不为追求数量相等补造比较轴。
 
-按 [实例数量](gallery-examples.md#实例数量) 核对每个 value 默认单实例及组合例外。每个比较实例只覆写当前逻辑轴，其他属性继承 Playground；不能为制造差异偷偷覆写父轴前提。顺序变化读 [属性排序](property-model.md#轴排序)，适用条件变化读 [依赖与验收](property-model.md#属性依赖与失效展示)，宽度、对齐与排列变化读 [展示宽度与排列](gallery-examples.md#展示宽度与排列)，呈现变化读 [比较示例](gallery-examples.md#可比较示例)。
+按 [实例数量](gallery-examples.md#实例数量) 核对每个 value 默认单实例及组合例外。每个比较实例只覆写当前逻辑轴，其他属性继承 Playground；不能为制造差异偷偷覆写父轴前提。比较差异不明显时不为该轴添加容器、背景或限高舞台，按 [设计轴](design-axes.md) 中“差异不明显”一段 处理。顺序变化读 [属性排序](property-model.md#轴排序)，适用条件变化读 [依赖与验收](property-model.md#属性依赖与失效展示)，宽度、对齐与排列变化读 [展示宽度与排列](gallery-examples.md#展示宽度与排列)，呈现变化读 [比较示例](gallery-examples.md#可比较示例)。
 
 验收修改 Playground 的非目标属性后各比较实例同步更新、目标轴保留声明值；依赖失效、恢复与 Reset 按同一模型工作。Caption 使用设计侧名称与真实值。
 
