@@ -3,9 +3,9 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-11-03T08:31:05+00:00`
-- Last successful refresh: `2026-11-03T08:31:05+00:00`
-- Discovery leads: `185`
+- Last checked: `2026-11-04T08:13:57+00:00`
+- Last successful refresh: `2026-11-04T08:13:57+00:00`
+- Discovery leads: `186`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -97,6 +97,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | HStack | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/HStack) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/HStack/HStack.tsx) |
 | Icon | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Icon) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Icon/Icon.tsx) |
 | IconButton | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/IconButton) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/IconButton/IconButton.tsx) |
+| InfoTip | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/InfoTip) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/InfoTip/InfoTip.tsx) |
 | InputGroup | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/InputGroup) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/InputGroup/InputGroup.tsx) |
 | InputGroupText | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/InputGroupText) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/InputGroup/InputGroupText.tsx) |
 | InternationalizationProvider | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/InternationalizationProvider) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/i18n/InternationalizationProvider.tsx) |
