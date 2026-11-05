@@ -14,6 +14,6 @@
 | 8. Composition | 关联组件的常见组合足够、真实且分工清楚。读 [Composition](component-sections.md#composition)。 |
 | 9. Best Practices | 建议具体、正确且可执行。读 [Best Practices](component-sections.md#best-practices)。 |
 
-仅分类迁移时读 [分类与稳定标识](gallery-navigation.md)，组件身份改名进入第 3 项。各项验收就近维护；实施时按 [验证与恢复](verification.md) 选择受影响检查。校验结果按 [统一报告](audit-report.md) 展示。
+分类迁移、新增组件、部件或槽位结构变化及完整审计时，读 [分类与稳定标识](gallery-navigation.md) 复核 Foundations／Composites／Container 归属，不符项归第 1 项；组件身份改名进入第 3 项。各项验收就近维护；实施时按 [验证与恢复](verification.md) 选择受影响检查。校验结果按 [统一报告](audit-report.md) 展示。
 
 不做全站关联覆盖普查；已有文章关联的目标、呈现方式及已知独立 Example 的关联入口归第 1 项，按 [关联文章](gallery-page.md#关联文章) 检查。完整案例误放 Composition 归第 8 项。

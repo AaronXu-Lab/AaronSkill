@@ -11,6 +11,9 @@
 | “切换主题后 Reset 不可用。” | gallery-page 的 Playground 重置；主题覆写计入修改，不重选轴或读取全部命名映射。 |
 | “缺少 Usage，另有独立 Demo。” | gallery-page 的组件页面内容结构；普通 Components 页保留 Usage；独立 Demo 按 component-sections 的 Interactive Demo 标准判断必要性与呈现。Internal 例外须有项目证据。 |
 | “只移动到 Foundations。” | gallery-navigation；保留页面 ID 和链接，不触发组件身份或 API 改名。 |
+| “新增一个由图标、标题、描述和操作组成的状态组件。” | components 第 1 项 → gallery-navigation 的分类判断；多种不同部件分别搭配，归 Composites；不因内部未 import 其它组件而归 Foundation。 |
+| “Code Block 内部引用了 Button、Tooltip，应该归 Composites 吧？” | gallery-navigation；按整体使用、无可分别搭配的不同部件，归 Foundations；import 关系不作依据。 |
+| “Button Group 自带一个溢出按钮，仍在 Container。” | gallery-navigation 的 Container 判断；报告容器自带可见控件的实现问题，不改判为 Composite。 |
 | “页面显示 Stat Card，目录和路由还是 Stat。” | component-api-design 的组件身份；改名授权内同步身份与引用，实际打开新地址；不因读取该节自动审查全部 API 建模。 |
 | “父级已经展示子组件，删掉子级矩阵。” | gallery-examples 的父子展示；根据子级独立设计价值判断。仅展示关系不触发公开导出内化。 |
 | “这个子项只服务父组件，评估是否内化。” | component-api-design 的公开子组件与内化；查消费契约与调用证据，已有确认才实施，不以隐藏 Gallery 入口代替取消公开契约。 |
@@ -22,3 +25,9 @@
 维护者逐项追踪入口 → 短工作流 → 专题小节 → 对应验收，并复核既有依赖、命名与动画回归。保留旧 gallery-rules.md 章节锚点作为跳转索引，正式规则仅在专题维护。已确认 Usage、动画轴、依赖禁用和值保留规则仍可达；澄清设计属性定义表是已有元数据，不要求新增页面 API Props 表。
 
 这是文档语义走查，未运行独立模型回放或真实项目 UI 测试。
+
+## 4.27.0 维护记录（组件分类判断）
+
+新增 Foundations／Composites／Container 的判定顺序、非判断依据和主动检查时机；新增组件、部件结构变化和完整审计时经 components 第 1 项进入。规则依据维护者对 Topbar、Code Block、Turn Navigator、Suggestion、Empty State、Menu、Breadcrumb、Chip／Item 和 Modal Actions 等现有归类的逐项裁定整理；项目组件清单留在目标项目。
+
+这是文档语义走查，未运行独立模型回放。
