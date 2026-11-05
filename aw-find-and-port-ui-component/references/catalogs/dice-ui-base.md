@@ -3,7 +3,7 @@
 Dice UI 的 Base UI 组件变体。
 
 - Status: `fresh`
-- Last checked: `2026-11-04T08:13:57+00:00`
+- Last checked: `2026-11-05T06:15:22+00:00`
 - Last successful refresh: `2026-11-04T01:45:04+00:00`
 - Discovery leads: `47`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'tailwind-css'}`

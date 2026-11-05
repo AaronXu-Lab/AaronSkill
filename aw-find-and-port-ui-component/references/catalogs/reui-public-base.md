@@ -3,7 +3,7 @@
 ReUI 公开仓库中的 Base UI 组件，排除付费版本。
 
 - Status: `fresh`
-- Last checked: `2026-11-04T08:13:57+00:00`
+- Last checked: `2026-11-05T06:15:22+00:00`
 - Last successful refresh: `2026-10-29T14:11:55+00:00`
 - Discovery leads: `88`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'unverified'}`

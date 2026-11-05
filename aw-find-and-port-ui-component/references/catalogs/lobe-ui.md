@@ -3,7 +3,7 @@
 面向 AI 应用的 React 组件库，混用 Ant Design、Base UI 与自定义实现；按具体组件核验移植成本。
 
 - Status: `fresh`
-- Last checked: `2026-11-04T08:13:57+00:00`
+- Last checked: `2026-11-05T06:15:22+00:00`
 - Last successful refresh: `2026-11-04T08:13:57+00:00`
 - Discovery leads: `196`
 - Source type hint: `{'foundation': 'mixed', 'styling': 'antd-style'}`

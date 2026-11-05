@@ -3,9 +3,9 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-11-04T08:13:57+00:00`
-- Last successful refresh: `2026-11-04T08:13:57+00:00`
-- Discovery leads: `186`
+- Last checked: `2026-11-05T06:15:22+00:00`
+- Last successful refresh: `2026-11-05T06:15:22+00:00`
+- Discovery leads: `187`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -68,6 +68,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | ComplexSelector | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/ComplexSelector) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/ComplexSelector/ComplexSelector.tsx) |
 | ContextMenu | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/ContextMenu) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/ContextMenu/ContextMenu.tsx) |
 | ContextMenuItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/ContextMenuItem) | — |
+| createAnimator | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/createAnimator) | — |
 | DateInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DateInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DateInput/DateInput.tsx) |
 | DateRangeInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DateRangeInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DateRangeInput/DateRangeInput.tsx) |
 | DateTimeInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DateTimeInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DateTimeInput/DateTimeInput.tsx) |

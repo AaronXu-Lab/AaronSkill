@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-04T08:13:57+00:00",
+  "generated_at": "2026-11-05T06:15:22+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,13 +1374,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
-      "last_success_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
+      "last_success_at": "2026-11-05T06:15:22+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
           "etag": "\"fe45cebe6ceebed9a88d9beafc22adfe\"",
-          "last_modified": "Mon, 02 Nov 2026 20:53:25 GMT"
+          "last_modified": "Wed, 04 Nov 2026 21:48:20 GMT"
         }
       },
       "config_sha256": "dd76b6683468c97e7b62d53aa6d95370693ebd136c11071268f34ba2ae7459e5",
@@ -2606,7 +2606,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
       "last_success_at": "2026-11-04T01:45:04+00:00",
       "error": null,
       "fetch": {
@@ -3894,7 +3894,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
       "last_success_at": "2026-10-29T14:11:55+00:00",
       "error": null,
       "fetch": {
@@ -5852,13 +5852,13 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
-      "last_success_at": "2026-11-03T08:31:05+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
+      "last_success_at": "2026-11-05T06:15:22+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"595936b618dc6937fae9ec35791852f1\"",
-          "last_modified": "Tue, 03 Nov 2026 01:51:22 GMT"
+          "etag": "\"d667de21d5e99b777e779f5abecc8fb3\"",
+          "last_modified": "Thu, 05 Nov 2026 06:15:47 GMT"
         }
       },
       "config_sha256": "b6a894d6f983b559d11bae33a6d6a5323c815909d08d6243d441db3b3fefa030",
@@ -6174,6 +6174,35 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
+          "name": "Checkbox",
+          "slug": "checkbox",
+          "description": "A single checkbox: a hairline square that darkens on hover and a check that draws itself. Pairs with Field. Radix flavor.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/checkbox",
+          "source_url": "https://www.fluidfunctionalism.com/r/checkbox.json",
+          "foundation_hint": "radix-ui",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "motion",
+            "@radix-ui/react-checkbox",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "checkbox"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
           "name": "Checkbox Group",
           "slug": "checkbox-group",
           "description": "Animated checkbox group with fluid hover, contiguous selection merging, and spring-animated check marks. Built on Radix UI Checkbox.",
@@ -6449,6 +6478,72 @@
           "verification_status": "unverified",
           "requires_verification": true,
           "registry_slug": "dropdown"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Field",
+          "slug": "field",
+          "description": "Compose a label, a control, helper text, and a validation message into one accessible field: fieldsets, legends, groups, separators, and vertical, horizontal, or responsive layouts.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/field",
+          "source_url": "https://www.fluidfunctionalism.com/r/field.json",
+          "foundation_hint": "mixed",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "lucide-react",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json",
+            "https://www.fluidfunctionalism.com/r/input.json",
+            "https://www.fluidfunctionalism.com/r/textarea.json"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "field"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
+          "name": "Input",
+          "slug": "input",
+          "description": "Single-line text field drawn like the Select trigger: a fixed hairline, a hover fill, and a neutral focus border; file inputs get an icon. Pairs with Field.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/input",
+          "source_url": "https://www.fluidfunctionalism.com/r/input.json",
+          "foundation_hint": "mixed",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "lucide-react",
+            "utils",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/icon-context.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "input"
         },
         {
           "source_id": "fluid-functionalism",
@@ -6809,6 +6904,36 @@
         {
           "source_id": "fluid-functionalism",
           "library": "Fluid Functionalism",
+          "name": "Textarea",
+          "slug": "textarea",
+          "description": "Multi-line text field with the Input's hairline that grows with its content. Pairs with Field.",
+          "category": "Components",
+          "preview_url": "https://www.fluidfunctionalism.com/docs/textarea",
+          "source_url": "https://www.fluidfunctionalism.com/r/textarea.json",
+          "foundation_hint": "mixed",
+          "styling_hint": "tailwind-css",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [
+            "utils",
+            "https://www.fluidfunctionalism.com/r/font-weight.json",
+            "https://www.fluidfunctionalism.com/r/shape-context.json",
+            "https://www.fluidfunctionalism.com/r/size-context.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json",
+            "https://www.fluidfunctionalism.com/r/type-scale.json"
+          ],
+          "license": "unverified",
+          "source_license_hint": "unverified",
+          "foundation_evidence": "Official documentation states that components ship in Radix and Base UI flavors. The catalog prefers paired Base UI registry items and otherwise keeps only compatible native implementations; verify the exact registry item and dependency graph before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true,
+          "registry_slug": "textarea"
+        },
+        {
+          "source_id": "fluid-functionalism",
+          "library": "Fluid Functionalism",
           "name": "Thinking Indicator",
           "slug": "thinking-indicator",
           "description": "Animated loading indicator with morphing SVG path (circle to infinity loop) and shimmer text rotation. Cycles through customizable status words.",
@@ -6892,7 +7017,8 @@
             "https://www.fluidfunctionalism.com/r/springs.json",
             "https://www.fluidfunctionalism.com/r/font-weight.json",
             "https://www.fluidfunctionalism.com/r/shape-context.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
+            "https://www.fluidfunctionalism.com/r/type-scale.json",
+            "https://www.fluidfunctionalism.com/r/tokens.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -6913,7 +7039,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8344,7 +8470,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
       "last_success_at": "2026-10-26T03:04:23+00:00",
       "error": null,
       "fetch": {
@@ -9180,17 +9306,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
-      "last_success_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
+      "last_success_at": "2026-11-05T06:15:22+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"01a0bfa435637f553484b810b0ab0a97db0383e10a7bdb437598975bee381db2\"",
-          "last_modified": "Wed, 04 Nov 2026 08:08:16 GMT"
+          "etag": "W/\"203c3dc9867bf5cce0b6a40967a960a9d21ac78fef4a16ac3b45bcc7af038aeb\"",
+          "last_modified": "Thu, 05 Nov 2026 06:02:34 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"64d76899f4c165a66d4d8e571091e522\"",
-          "last_modified": "Wed, 04 Nov 2026 08:14:30 GMT"
+          "etag": "\"1f5a5e6e602c027edd2e624754387102\"",
+          "last_modified": "Thu, 05 Nov 2026 06:15:59 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -10435,6 +10561,28 @@
           "description": "",
           "category": "Components",
           "preview_url": "https://astryx.atmeta.com/components/ContextMenuItem",
+          "source_url": null,
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
+          "name": "createAnimator",
+          "slug": "createAnimator",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/createAnimator",
           "source_url": null,
           "foundation_hint": "custom",
           "styling_hint": "stylex",
@@ -13298,7 +13446,7 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-04T08:13:57+00:00",
+      "last_checked_at": "2026-11-05T06:15:22+00:00",
       "last_success_at": "2026-11-04T08:13:57+00:00",
       "error": null,
       "fetch": {
