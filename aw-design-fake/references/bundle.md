@@ -35,6 +35,8 @@ node <本 SKILL 目录>/scripts/fake-bundle.mjs --project-root <项目根目录>
 - `notify(notice)`：把 `{ title, description, actionLabel }` 交给项目真实的 toast / sonner 组件。
 - `assetUrl(path)`：把静态资源相对路径转成项目的可访问 URL。
 
+缓存 Fake 的注册表、业务 store/repository 与存储实现属于项目自有代码，按 [缓存 Fake](persistence.md) 接入；bundle 的 `current` 不能证明持久化或身份隔离已验证。
+
 ## 同步与文件保护
 
 - 所有调用方只从 bundle 目录入口导入，不直接依赖 `data.ts`、`actions.ts` 或 `version.ts`，也不创建 `fake-main.ts`、`fake-sonner.ts` 这类平铺入口。

@@ -108,7 +108,7 @@ python3 link-skills.py --target ~/.codex/skills
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
 | [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.27.0` | 创建、审查或优化 Gallery 的默认示例、包含可感知动画行为的真实设计轴与状态对比 | 源码优先、必要时浏览器复核；其他页面与 Components 分流，组件按九项渐进检查并用编号矩阵报告；组件 Usage 聚焦 UI/UX 选择，开发接入说明归开发契约；语义复核默认实例、稳定部位与调用方效果归属；对照设计默认值与运行时默认值；允许 Text 及描述角色的 Description 占位；任意自定义插槽用 Content 加虚线占位，真实组合归场景 Example；核对目标单层 Bounds、宽度与排列、核心演示及 Restore 时机；Anatomy 区分部件身份与职责，组合属性归属实际职责所有者；Container 通常省略 Anatomy，组件自身有值得说明的可视构成时除外；Composition 说明组合关系，完整案例在独立 Example 集中维护，已知相关案例通过 Relates 提供入口；已有文章关联复用 Relates 与 Announcement；组件 Panel 复用当地标准结构及文档版式；项目明确规定时 Internal 页面只显示一个 Playground；Playground 与 Properties 共享轴序、取值及依赖禁用；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；共享默认禁用态集中展示，不重复列为组件设计轴，保留运行时 API；边界提示接入现有开关并验证两态；项目配置留在目标仓库；组件按纯容器、可分别搭配的不同部件或特化业务语义的顺序判定 Container／Composites／Foundations，并在新增组件或部件变化时复核 |
-| [`aw-design-fake`](./aw-design-fake/) | `1.8.1` | 为原型工程统一 fake 数据、演示源码与占位交互，并初始化或同步 bundle | 真实契约数据与状态优先；演示场景显式可退出、写入隔离；源码逐字复用且仅展示不执行；不碰单测 mock |
+| [`aw-design-fake`](./aw-design-fake/) | `1.9.0` | 统一原型 fake 数据、源码展示、占位交互与尚未接后端的演示数据临时本地持久化，并初始化或同步 bundle | 真实契约优先；模拟持久化统一注册、作用域隔离、读写受开关控制、显式重置并可替换后端；不治理真实接口缓存或单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.3.1` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
 
