@@ -6,7 +6,9 @@ from __future__ import annotations
 import argparse
 import copy
 import json
-import re
+import hashlib
+import os
+import sys
 import shutil
 import struct
 import subprocess
@@ -14,17 +16,20 @@ import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from PIL import Image
+# Inspection and the delivered selector do not require platform dependencies.
+try:
+    from PIL import Image
+except ImportError:
+    Image = None
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import resources as resources
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
 PROJECT_ROOT = Path.cwd().resolve()
 COMPOSE_SKILL_DIR = PROJECT_ROOT / ".agents" / "skills" / "compose-app-icon"
 SVG_NS = "http://www.w3.org/2000/svg"
-GENERATED_DIRS = ("web", "iOS&macOS", "windows", "linux", "android")
-GENERATED_ROOT_FILES = ("README.md",)
-LEGACY_DIRS = ("macos", "ios")
-LEGACY_FILES = ("contact-sheet.png", "ASSET-MAP.md", "skills-lock.json", "checksums.sha256")
 
 ET.register_namespace("", SVG_NS)
 
@@ -48,10 +53,10 @@ def preflight_compose_skill() -> Path:
     if missing:
         details = "\n".join(f"  - {path}" for path in missing)
         raise SystemExit(
-            "Required skill compose-app-icon is missing or incomplete.\n"
+            "Apple .icon generation requires compose-app-icon, which is missing or incomplete.\n"
             f"Expected it at: {COMPOSE_SKILL_DIR}\n"
             f"Missing files:\n{details}\n"
-            "Do not generate or clean assets. Ask the user for permission to install "
+            "No requested output has been changed. Base-only and --platforms web,windows,linux,android do not need this Apple dependency. Ask permission to install "
             "compose-app-icon, install it after approval, then rerun this cook."
         )
     require("uv")
@@ -77,177 +82,63 @@ def copy_asset(source: Path, destination: Path) -> None:
 
 
 def resolve_source(raw_source: Path) -> Path:
-    source = raw_source.expanduser()
-    if not source.is_absolute():
-        raise SystemExit("--source must be an absolute SVG or directory path explicitly supplied by the user")
-    source = source.resolve()
-    if source.is_dir():
-        candidates = sorted(
-            path.resolve()
-            for path in source.iterdir()
-            if path.is_file() and path.suffix.lower() == ".svg"
-        )
-        if not candidates:
-            raise SystemExit(f"No SVG exists at the root of the explicitly selected directory: {source}")
-        if len(candidates) > 1:
-            choices = "\n".join(f"  - {path}" for path in candidates)
-            raise SystemExit(
-                "Multiple SVG files exist at the root of the explicitly selected directory. "
-                "Ask the user which one is canonical, then rerun with that file:\n"
-                f"{choices}"
-            )
-        return candidates[0]
-    if not source.is_file():
-        raise SystemExit(f"Explicitly selected source does not exist or is not a file/directory: {source}")
-    if source.suffix.lower() != ".svg":
-        raise SystemExit(f"--source must point to an SVG file or a directory whose root has one SVG: {source}")
-    return source
-
-
-def _extract_css_block(css: str, theme: str) -> str:
-    match = re.search(
-        rf"@media\s*\(\s*prefers-color-scheme\s*:\s*{theme}\s*\)\s*\{{",
-        css,
-        flags=re.IGNORECASE,
-    )
-    if not match:
-        return ""
-    depth = 1
-    index = match.end()
-    start = index
-    while index < len(css) and depth:
-        if css[index] == "{":
-            depth += 1
-        elif css[index] == "}":
-            depth -= 1
-        index += 1
-    if depth:
-        raise SystemExit(f"Canonical SVG has an unterminated prefers-color-scheme: {theme} block")
-    return css[start : index - 1]
-
-
-def _css_palette(css: str) -> dict[str, str]:
-    patterns = {
-        "ink": r"(?:^|\})\s*path(?:\.ink)?\s*\{[^}]*fill:\s*(#[0-9A-Fa-f]{6})",
-        "background": r"(?:^|\})\s*path\.bg\s*\{[^}]*fill:\s*(#[0-9A-Fa-f]{6})",
-        "alert": r"(?:^|\})\s*path\.alert\s*\{[^}]*fill:\s*(#[0-9A-Fa-f]{6})",
-    }
-    palette: dict[str, str] = {}
-    for role, pattern in patterns.items():
-        match = re.search(pattern, css, flags=re.DOTALL | re.IGNORECASE)
-        if match:
-            palette[role] = match.group(1)
-    return palette
-
-
-def _relative_luminance(hex_color: str) -> float:
-    value = hex_color.lstrip("#")
-    channels = [int(value[index : index + 2], 16) / 255 for index in (0, 2, 4)]
-    linear = [channel / 12.92 if channel <= 0.04045 else ((channel + 0.055) / 1.055) ** 2.4 for channel in channels]
-    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+    """Compatibility helper for callers that explicitly need one file."""
+    entries = resources.entries_for_sources([raw_source])
+    if len(entries) != 1:
+        raise SystemExit("Multiple role-mapped resources; use the resource-group interface")
+    return Path(entries[0]["path"])
 
 
 def inspect_svg_palette(source: Path) -> dict[str, object]:
-    root = ET.parse(source).getroot()
-    css = "\n".join(
-        style.text or "" for style in root.findall(f".//{{{SVG_NS}}}style")
-    )
-    base: dict[str, str] = {}
-    for path in root.findall(f".//{{{SVG_NS}}}path"):
-        classes = set(path.attrib.get("class", "").split())
-        fill = path.attrib.get("fill")
-        if not fill:
+    entries = resources.entries_for_sources([source])
+    records, backgrounds, _ = resources.collect({"sources": entries})
+    entry = entries[0]
+    palettes = {}
+    for theme in resources.THEMES:
+        key = entry["layout"], entry["kind"], theme
+        if key not in records:
             continue
-        if "bg" in classes:
-            base["background"] = fill
-        elif "alert" in classes:
-            base["alert"] = fill
-        elif "ink" in classes or "ink" not in base:
-            base["ink"] = fill
-
-    light_css = _css_palette(_extract_css_block(css, "light"))
-    dark_css = _css_palette(_extract_css_block(css, "dark"))
-    base_css = re.split(r"@media\s*\(", css, maxsplit=1, flags=re.IGNORECASE)[0]
-    base = {**_css_palette(base_css), **base}
-    required = {"background", "ink", "alert"}
-    missing_base = required - base.keys()
-    if missing_base:
-        raise SystemExit(
-            "Canonical SVG is missing base color roles: " + ", ".join(sorted(missing_base))
-        )
-
-    if light_css or dark_css:
-        light = {**base, **light_css}
-        dark = {**base, **dark_css}
-        if not light_css:
-            light = base
-        if not dark_css:
-            dark = base
-        mode = "dual" if light != dark else "single-light" if _relative_luminance(base["background"]) >= 0.35 else "single-dark"
-        return {"theme_mode": mode, "palettes": {"light": light, "dark": dark}}
-
-    single_theme = "light" if _relative_luminance(base["background"]) >= 0.35 else "dark"
-    return {"theme_mode": f"single-{single_theme}", "palettes": {single_theme: base}}
+        original = resources.parse(source)
+        frozen = resources.freeze(original, theme)
+        colors = [e.get("fill") for e in frozen.iter() if resources.tag(e) in resources.SHAPES]
+        bg = backgrounds.get((entry["layout"], theme))
+        foreground = [c for c in colors if c != bg and c != "none"]
+        palettes[theme] = {"background": bg, "ink": foreground[0] if foreground else "#000000"}
+        if len(foreground) > 1:
+            palettes[theme]["alert"] = foreground[1]
+    mode = "dual" if entry["theme"] == "adaptive" else "single-" + entry["theme"]
+    return {"theme_mode": mode, "palettes": palettes}
 
 
 def svg_palette(source: Path) -> dict[str, dict[str, str]]:
     inspection = inspect_svg_palette(source)
-    mode = inspection["theme_mode"]
-    if mode != "dual":
-        missing_theme = "dark" if mode == "single-light" else "light"
-        raise SystemExit(
-            f"Theme inspection result: {mode}. Do not generate or clean assets. "
-            f"Tell the user that the SVG lacks a {missing_theme} theme and ask whether AI may "
-            "create the complementary theme colors. If the user declines, stop. If approved, "
-            "create a theme-complete SVG and rerun with that file."
-        )
-    return inspection["palettes"]  # type: ignore[return-value]
+    if inspection["theme_mode"] != "dual":
+        raise SystemExit("Do not generate or clean assets. Single theme requires explicit complementary-color authorization and a reviewed theme-complete source")
+    return inspection["palettes"]
 
 
-def variant_svg(
-    source: Path,
-    palette: dict[str, dict[str, str]],
-    theme: str,
-    *,
-    foreground: bool = False,
-    monochrome: str | None = None,
-    full_bleed: bool = False,
-    canvas: int | None = None,
-) -> str:
-    root = copy.deepcopy(ET.parse(source).getroot())
-    style = root.find(f"{{{SVG_NS}}}style")
-    if style is not None:
-        root.remove(style)
-
-    background_index = None
-    for index, path in enumerate(list(root)):
-        if path.tag != f"{{{SVG_NS}}}path":
-            continue
-        classes = set(path.attrib.get("class", "").split())
-        if "bg" in classes:
-            background_index = index
-            if foreground or full_bleed:
-                root.remove(path)
-                continue
-            path.set("fill", palette[theme]["background"])
-        elif monochrome:
-            path.set("fill", monochrome)
-        elif "alert" in classes:
-            path.set("fill", palette[theme]["alert"])
-        else:
-            path.set("fill", palette[theme]["ink"])
-
-    if full_bleed and not foreground:
-        rect = ET.Element(
-            f"{{{SVG_NS}}}rect",
-            {"width": "32", "height": "32", "fill": palette[theme]["background"]},
-        )
-        root.insert(background_index if background_index is not None else 0, rect)
+def variant_svg(source, palette, theme, *, foreground=False, monochrome=None,
+                full_bleed=False, canvas=None):
+    # Retain the public helper while resolving groups, rects and arbitrary viewBox.
+    root, _ = resources.normalize(source, theme, "transparent" if foreground else "background")
+    if monochrome:
+        root = monochrome_root(root, monochrome)
     if canvas:
         root.set("width", str(canvas))
         root.set("height", str(canvas))
-    ET.indent(root, space="  ")
-    return ET.tostring(root, encoding="unicode") + "\n"
+    return resources.serialize(root)
+
+
+def monochrome_root(root, paint):
+    root = copy.deepcopy(root)
+    for element in root.iter():
+        for key in ("opacity", "fill-opacity", "stroke-opacity"):
+            if key in element.attrib:
+                element.set(key, "1")
+        for key in ("fill", "stroke"):
+            if element.get(key) != "none":
+                element.set(key, paint)
+    return root
 
 
 def render(svg: Path, png: Path, size: int) -> None:
@@ -269,56 +160,57 @@ def force_rgba_png(path: Path) -> None:
         rgba.save(path, format="PNG")
 
 
-def resized_foreground(source_png: Path, output: Path, size: int, ratio: float = 0.66) -> None:
+def verify_safe_circle(image, diameter_fraction):
+    rgba = image.convert("RGBA")
+    center = rgba.width / 2
+    radius = rgba.width * diameter_fraction / 2
+    alpha = rgba.getchannel("A")
+    if not alpha.getbbox():
+        raise ValueError("Safe-zone foreground is empty")
+    for y in range(rgba.height):
+        for x in range(rgba.width):
+            if alpha.getpixel((x, y)) and (x + .5 - center) ** 2 + (y + .5 - center) ** 2 > radius ** 2:
+                raise ValueError("Visible foreground extends outside the platform safe circle")
+
+
+def safe_foreground(source_png, size, diameter_fraction):
+    """Scale actual visible pixels, then verify every antialiased edge pixel."""
     with Image.open(source_png) as source:
         source = source.convert("RGBA")
-        inner = max(1, round(size * ratio))
-        scaled = source.resize((inner, inner), Image.Resampling.LANCZOS)
-        canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-        offset = (size - inner) // 2
-        canvas.alpha_composite(scaled, (offset, offset))
-        output.parent.mkdir(parents=True, exist_ok=True)
-        canvas.save(output)
+    bounds = source.getchannel("A").getbbox()
+    if not bounds:
+        raise ValueError("Foreground is empty")
+    # A bounding square inside the safe circle is conservative for every shape.
+    # Measure the visible bounds, not a canvas that might already contain padding.
+    foreground = source.crop(bounds)
+    edge = max(1, int(size * diameter_fraction / 2 ** .5 * .98))
+    scale = edge / max(foreground.size)
+    foreground = foreground.resize((max(1, round(foreground.width * scale)), max(1, round(foreground.height * scale))), Image.Resampling.LANCZOS)
+    canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    canvas.alpha_composite(foreground, ((size - foreground.width)//2, (size - foreground.height)//2))
+    verify_safe_circle(canvas, diameter_fraction)
+    return canvas
 
 
-def save_maskable_icon(
-    foreground_png: Path,
-    output: Path,
-    size: int,
-    background: str,
-    ratio: float = 0.8,
-) -> None:
-    """Place the foreground inside the maskable safe zone on an opaque canvas."""
-    value = background.lstrip("#")
-    if len(value) != 6:
-        raise ValueError(f"Maskable background must be a six-digit hex color: {background}")
-    color = tuple(int(value[index : index + 2], 16) for index in (0, 2, 4))
-    with Image.open(foreground_png) as source:
-        foreground = source.convert("RGBA")
-        inner = max(1, round(size * ratio))
-        foreground = foreground.resize((inner, inner), Image.Resampling.LANCZOS)
-        canvas = Image.new("RGBA", (size, size), (*color, 255))
-        offset = (size - inner) // 2
-        canvas.alpha_composite(foreground, (offset, offset))
-        output.parent.mkdir(parents=True, exist_ok=True)
-        canvas.save(output)
+def resized_foreground(source_png, output, size, ratio=2/3):
+    result = safe_foreground(source_png, size, ratio)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    result.save(output)
+
+
+def save_maskable_icon(foreground_png, output, size, background, ratio=.8):
+    foreground = safe_foreground(foreground_png, size, ratio)
+    color = tuple(int(background[i:i+2], 16) for i in (1, 3, 5))
+    canvas = Image.new("RGBA", (size, size), (*color, 255))
+    canvas.alpha_composite(foreground)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(output)
 
 
 def srgb(hex_color: str) -> str:
     value = hex_color.lstrip("#")
     channels = [int(value[index : index + 2], 16) / 255 for index in (0, 2, 4)]
     return "srgb:" + ",".join(f"{channel:.10f}".rstrip("0").rstrip(".") for channel in channels) + ",1"
-
-
-def clean_outputs() -> None:
-    for dirname in GENERATED_DIRS + LEGACY_DIRS:
-        target = PROJECT_ROOT / dirname
-        if target.is_dir():
-            shutil.rmtree(target)
-    for filename in GENERATED_ROOT_FILES + LEGACY_FILES:
-        target = PROJECT_ROOT / filename
-        if target.is_file():
-            target.unlink()
 
 
 def write_pwa_manifest(root: Path) -> None:
@@ -349,51 +241,27 @@ def write_pwa_manifest(root: Path) -> None:
     )
 
 
-def write_usage_readme(source: Path) -> None:
-    write_text(
-        PROJECT_ROOT / "README.md",
-        f"""# 应用图标资源使用说明
+def write_usage_readme(config, records, platforms):
+    rules = (SKILL_DIR / "references" / "selection.md").read_text(encoding="utf-8")
+    inventory = "\n".join(f"- `base/{resources.filename(key)}`" for key in sorted(records))
+    scenarios = {name: resources.choose_layout(records, name, config) for name in ("app", "favicon", "status")}
+    mapping = "\n".join(f"- {name}: {layout}" for name, layout in scenarios.items())
+    write_text(PROJECT_ROOT / "base" / "README.md", "# 基础 Logo 规则\n\n" + rules + "\n## 实际固定资源\n\n" + inventory + "\n")
+    platform_rules = (SKILL_DIR / "references" / "platform-validation.md").read_text(encoding="utf-8")
+    usage = """## 平台接入方式
 
-本目录由唯一事实源 `{source.name}` 生成。除更新该 SVG 外，不要直接编辑平台产物；源文件变化后应重新运行图标生成 SKILL。
+- Web：用 `<link rel="icon" type="image/svg+xml" href="web/favicon.svg">`；旧环境用 web/favicon.ico。web/apple-touch-icon.png 用于网页添加主屏幕；web/pwa/manifest.webmanifest 的 icons 合并进现有 manifest 后以 link rel="manifest" 引用，不覆盖产品名称或启动配置。
+- iOS/macOS：将 iOS&macOS/app.icon 加入 Xcode / Icon Composer 图标配置；传统 iOS&macOS/app.icns 放应用包 Contents/Resources，以 CFBundleIconFile 引用，或用打包工具对应配置。两格式并存。iOS&macOS/menu-bar/appTemplate.svg、appTemplate.png、appTemplate@2x.png 加载后标为 template image，由系统着色。
+- Windows：windows/app.ico 用于 exe、安装器、窗口或快捷方式。按实际托盘背景选择 windows/tray-light.ico / windows/tray-dark.ico，并监听外观变化。
+- Linux：linux/app.svg 用于 desktop entry 或对应打包配置；必要时从该 SVG 渲染固定尺寸 PNG，不编辑生成文件后反向继承。
+- Android：将 android/res/ 中本次资源合并到应用模块 src/main/res，adaptive XML 引用背景、foreground、monochrome；不要覆盖无关资源。android/play-store-512.png 用于商店提交。
 
-## Web
-
-- `web/favicon.svg`：现代浏览器首选 favicon，保留 SVG 内部的明暗主题切换。部署后通过 `<link rel=\"icon\" type=\"image/svg+xml\">` 引用。
-- `web/favicon.ico`：旧浏览器及 `/favicon.ico` 约定的兼容回退，包含常用小尺寸。
-- `web/apple-touch-icon.png`：iOS/iPadOS 网页添加到主屏幕时使用。它是满幅不透明方图，不要再次预制圆角。
-- `web/pwa/icon-192.png` 与 `web/pwa/icon-512.png`：PWA 的普通应用图标。
-- `web/pwa/icon-maskable-512.png`：PWA maskable 图标，背景满幅且主体位于安全区。
-- `web/pwa/manifest.webmanifest`：只声明上述三张 PWA 图标。若产品已有 manifest，应合并 `icons`，不要覆盖名称、启动路径、显示模式、范围或主题色；网页仍需通过 `<link rel=\"manifest\">` 引用最终 manifest URL。
-
-## iOS 与 macOS
-
-- `iOS&macOS/app.icon`：iOS 与 macOS 共用的 Icon Composer 应用图标包，包含 Default、Dark 与 Tinted/Mono 外观。通过 Xcode 或 Icon Composer 加入应用图标配置，不要转换为 `.icns` 代替。
-- `iOS&macOS/app.icns`：用于传统 macOS（包括 2023 年以前的版本）或要求 ICNS 的打包工具，与 `.icon` 同时保留。内含 16、32、128、256、512 点的 1x/2x 图像，最大 1024×1024；固定明色主题，不自动切换外观，保留源图轮廓与透明区域。原生应用可放入 `Contents/Resources` 并通过 `CFBundleIconFile` 引用；其他打包工具使用对应图标配置。临时 `.iconset` 不随资源交付。
-- `iOS&macOS/menu-bar/appTemplate.svg`：macOS 菜单栏 Template Image 的矢量源，由系统按当前外观着色。
-- `iOS&macOS/menu-bar/appTemplate.png` 与 `appTemplate@2x.png`：分别用于 1x/2x 菜单栏位图接入。加载后应标记为 template image，不要作为全彩应用图标使用。
-
-## Windows
-
-- `windows/app.ico`：用于应用可执行文件、安装器、快捷方式及窗口图标，内含多种尺寸。
-- `windows/tray-light.ico`：用于浅色系统主题或浅色托盘背景，图形采用深色前景。
-- `windows/tray-dark.ico`：用于深色系统主题或深色托盘背景，图形采用浅色前景。应用应监听系统主题并选择对应文件。
-
-## Linux
-
-- `linux/app.svg`：可缩放应用图标，并保留 SVG 明暗主题行为。优先作为桌面集成的矢量源；若目标桌面或打包格式要求固定 PNG 尺寸，应在集成阶段从该 SVG 渲染，不要反向编辑生成文件。
-
-## Android
-
-- `android/res/`：自适应启动图标资源。将所需文件合并到应用模块的 `src/main/res/`，不要覆盖项目中无关资源。
-- `mipmap-anydpi-v26/ic_launcher.xml` 与 `ic_launcher_round.xml`：自适应图标入口，引用背景、前景与 monochrome 图层。
-- 各密度 `ic_launcher_foreground.png`：自适应前景；各密度 `ic_launcher_monochrome.png`：Android 主题图标遮罩；`ic_launcher.png`：旧版本回退。
-- `android/play-store-512.png`：提交 Google Play Console 的 512×512 商店图。它是满幅、无预制圆角的 32-bit RGBA PNG；Alpha 通道存在且所有像素均为 255，由商店负责最终遮罩与阴影。
-
-## 集成边界
-
-这些文件是资源交付，不会自动修改产品仓库的 HTML、manifest、Xcode、Windows 打包、Linux desktop entry 或 Android Gradle 配置。接入时应遵循目标项目现有结构，并合并而不是覆盖既有产品元数据。
-""",
-    )
+资源生成不修改 HTML、manifest、Xcode、desktop entry、Gradle 或打包配置。只按下列本次平台清单使用；未列平台未在本次生成。实际文件列表以受管清单为准。
+"""
+    write_text(PROJECT_ROOT / "README.md", "# 应用图标资源使用说明\n\n" + rules + "\n## 本次场景映射\n\n" + mapping + "\n\n本次生成平台：" + (", ".join(platforms) or "仅基础资源") + "\n\n" + usage + "\n" + platform_rules)
+    template = (SKILL_DIR / "scripts" / "select_logo.py").read_text(encoding="utf-8")
+    selector_config = {k: config[k] for k in ("scenarios", "compact_max_size") if k in config}
+    write_text(PROJECT_ROOT / "select_logo.py", template.replace("CONFIG = {}", "CONFIG = " + repr(selector_config)))
 
 
 def cook_web(
@@ -477,14 +345,16 @@ def cook_macos_legacy(build: Path) -> None:
     print("ICNS round-trip verified: all ten standard/Retina images, 16–1024 pixels")
 
 
-def cook_apple(build: Path, palette: dict[str, dict[str, str]], validator: Path) -> None:
+def write_apple_package(build: Path, palette: dict[str, dict[str, str]]) -> Path:
     root = PROJECT_ROOT / "iOS&macOS"
     package = root / "app.icon"
     assets = package / "Assets"
     assets.mkdir(parents=True, exist_ok=True)
-    copy_asset(build / "foreground-light.svg", assets / "foreground-light.svg")
-    copy_asset(build / "foreground-dark.svg", assets / "foreground-dark.svg")
-    copy_asset(build / "foreground-mono.svg", assets / "foreground-mono.svg")
+    for theme in ('light', 'dark', 'mono'):
+        foreground = ET.parse(build / f'foreground-{theme}.svg').getroot()
+        foreground.set('width', '1024')
+        foreground.set('height', '1024')
+        write_text(assets / f'foreground-{theme}.svg', resources.serialize(foreground))
     write_json(
         package / "icon.json",
         {
@@ -513,16 +383,10 @@ def cook_apple(build: Path, palette: dict[str, dict[str, str]], validator: Path)
         },
     )
 
-    menu_svg = build / "status-template.svg"
-    copy_asset(menu_svg, root / "menu-bar" / "appTemplate.svg")
-    render(menu_svg, root / "menu-bar" / "appTemplate.png", 16)
-    render(menu_svg, root / "menu-bar" / "appTemplate@2x.png", 32)
+    return package
 
-    compose_scripts = validator.parent
-    run("uv", "sync", cwd=compose_scripts)
-    result = run("uv", "run", "python", validator.name, str(package), cwd=compose_scripts)
-    print(result.stdout.strip())
 
+def validate_icon_engine(package: Path, build: Path) -> bool:
     ictool_candidates: list[Path] = []
     if shutil.which("xcode-select"):
         try:
@@ -534,7 +398,7 @@ def cook_apple(build: Path, palette: dict[str, dict[str, str]], validator: Path)
     ictool = next((path for path in ictool_candidates if path.is_file()), None)
     if not ictool:
         print("SKIPPED .icon engine validation: Icon Composer ictool unavailable")
-        return
+        return False
     renditions = ("Default", "Dark", "TintedLight", "TintedDark", "ClearLight", "ClearDark")
     for platform in ("iOS", "macOS"):
         for rendition in renditions:
@@ -555,7 +419,28 @@ def cook_apple(build: Path, palette: dict[str, dict[str, str]], validator: Path)
                 "--scale",
                 "1",
             )
+            output = build / f"{platform}-{rendition}.png"
+            with Image.open(output) as image:
+                if image.size != (1024, 1024) or not image.convert('RGBA').getchannel('A').getbbox():
+                    raise ValueError(f'Icon Composer produced an empty or wrong-sized render: {platform}/{rendition}')
     print("Icon Composer rendered iOS/macOS Default, Dark, Mono, and Clear successfully")
+    return True
+
+
+def cook_apple(build: Path, palette: dict[str, dict[str, str]], validator: Path) -> None:
+    root = PROJECT_ROOT / "iOS&macOS"
+    package = write_apple_package(build, palette)
+    menu_svg = build / "status-template.svg"
+    copy_asset(menu_svg, root / "menu-bar" / "appTemplate.svg")
+    render(menu_svg, root / "menu-bar" / "appTemplate.png", 16)
+    render(menu_svg, root / "menu-bar" / "appTemplate@2x.png", 32)
+
+    compose_scripts = validator.parent
+    run("uv", "sync", cwd=compose_scripts)
+    result = run("uv", "run", "python", validator.name, str(package), cwd=compose_scripts)
+    print(result.stdout.strip())
+
+    validate_icon_engine(package, build)
 
 
 def cook_windows(build: Path, light_png: Path) -> None:
@@ -579,10 +464,10 @@ def cook_android(build: Path, palette: dict[str, dict[str, str]]) -> None:
     foreground_master = build / "foreground-light-1024.png"
     mono_master = build / "monochrome-1024.png"
     render(build / "foreground-light.svg", foreground_master, 1024)
-    render(build / "status-template.svg", mono_master, 1024)
+    render(build / "foreground-mono.svg", mono_master, 1024)
 
     for density, size in densities.items():
-        render(build / "full-light.svg", res / f"mipmap-{density}" / "ic_launcher.png", size)
+        render(build / "unrounded-light.svg", res / f"mipmap-{density}" / "ic_launcher.png", size)
     for density, size in foreground_sizes.items():
         resized_foreground(foreground_master, res / f"mipmap-{density}" / "ic_launcher_foreground.png", size)
         resized_foreground(mono_master, res / f"mipmap-{density}" / "ic_launcher_monochrome.png", size)
@@ -599,85 +484,332 @@ def cook_android(build: Path, palette: dict[str, dict[str, str]]) -> None:
     force_rgba_png(play_store)
 
 
+def validate_platform_files(stage, platforms):
+    expected = {}
+    if 'web' in platforms:
+        expected.update({'web/apple-touch-icon.png':180, 'web/pwa/icon-192.png':192,
+                         'web/pwa/icon-512.png':512, 'web/pwa/icon-maskable-512.png':512})
+    if 'apple' in platforms:
+        expected.update({'iOS&macOS/menu-bar/appTemplate.png':16, 'iOS&macOS/menu-bar/appTemplate@2x.png':32})
+    if 'android' in platforms:
+        expected['android/play-store-512.png'] = 512
+        for density, size in {'mdpi':48, 'hdpi':72, 'xhdpi':96, 'xxhdpi':144, 'xxxhdpi':192}.items():
+            for suffix in ('', '_foreground', '_monochrome'):
+                expected[f'android/res/mipmap-{density}/ic_launcher{suffix}.png'] = size * (3 if suffix else 1)
+    for relative, size in expected.items():
+        with Image.open(stage / relative) as image:
+            if image.size != (size, size):
+                raise ValueError(f'Wrong raster size: {relative}')
+            rgba = image.convert('RGBA')
+            if not rgba.getchannel('A').getbbox():
+                raise ValueError(f'Empty raster: {relative}')
+            if relative in ('web/apple-touch-icon.png', 'web/pwa/icon-maskable-512.png', 'android/play-store-512.png'):
+                if rgba.getchannel('A').getextrema() != (255, 255):
+                    raise ValueError(f'Expected fully opaque raster: {relative}')
+            if relative == 'android/play-store-512.png' and (image.mode != 'RGBA' or (stage/relative).read_bytes()[25] != 6):
+                raise ValueError('Play Store PNG must retain its explicit alpha channel')
+            if relative.endswith(('_foreground.png', '_monochrome.png')):
+                verify_safe_circle(rgba, 2/3)
+            if 'appTemplate' in relative or relative.endswith('_monochrome.png'):
+                expected_color = (0, 0, 0) if 'appTemplate' in relative else (255, 255, 255)
+                if any(pixel[:3] != expected_color for pixel in (rgba.get_flattened_data() if hasattr(rgba, "get_flattened_data") else rgba.getdata()) if pixel[3]):
+                    raise ValueError(f'Status/Mono image is not monochrome: {relative}')
+    icos = {}
+    if 'web' in platforms:
+        icos['web/favicon.ico'] = (16, 32, 48)
+    if 'windows' in platforms:
+        icos.update({'windows/app.ico':(16,24,32,48,64,128,256), 'windows/tray-light.ico':(16,20,24,32), 'windows/tray-dark.ico':(16,20,24,32)})
+    for relative, sizes in icos.items():
+        with Image.open(stage / relative) as image:
+            if image.info['sizes'] != {(size,size) for size in sizes}:
+                raise ValueError(f'ICO sizes mismatch: {relative}')
+            for size in sizes:
+                decoded = image.ico.getimage((size,size)).convert('RGBA')
+                if not decoded.getchannel('A').getbbox():
+                    raise ValueError(f'Empty ICO entry: {relative}/{size}')
+                if 'tray-' in relative:
+                    paint = (0,0,0) if 'tray-light' in relative else (255,255,255)
+                    if any(pixel[:3] != paint for pixel in (decoded.get_flattened_data() if hasattr(decoded, "get_flattened_data") else decoded.getdata()) if pixel[3]):
+                        raise ValueError(f'Tray entry is not monochrome: {relative}/{size}')
+
+
+def hash_file(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def publish(stage, target, sources, replace_existing=False):
+    """Publish only validated files; preserve unknown files and roll back errors."""
+    manifest_name = ".logo-cook-managed.json"
+    manifest = target / manifest_name
+    if manifest.is_symlink():
+        raise SystemExit(f'Refusing symlink manifest: {manifest}')
+    previous = json.loads(manifest.read_text()) if manifest.is_file() else {}
+    if not isinstance(previous, dict) or any(not isinstance(k, str) or not isinstance(v, str) for k, v in previous.items()):
+        raise SystemExit('Invalid ownership manifest; preserve target and review')
+    files = sorted(path for path in stage.rglob("*") if path.is_file() and path.name != manifest_name)
+    for path in files:
+        relative = path.relative_to(stage)
+        destination = target / relative
+        for parent in (destination, *destination.parents):
+            if parent.is_symlink():
+                raise SystemExit(f"Refusing symlink target: {parent}")
+            if parent == target:
+                break
+        if destination.resolve() in sources:
+            raise SystemExit(f"Protected input source conflicts with generated path: {destination}")
+        if destination.exists():
+            if not destination.is_file():
+                raise SystemExit(f"Output conflicts with directory: {destination}")
+            old_hash = previous.get(str(relative))
+            if old_hash and hash_file(destination) != old_hash:
+                raise SystemExit(f"Managed file has local edits; preserve and review: {destination}")
+            if not old_hash and not replace_existing:
+                raise SystemExit(f"Unmanaged file protected: {destination}; explicit path takeover requires --replace-existing")
+    # Retain ownership of untouched platforms, but never delete stale files.
+    updated = {relative: digest for relative, digest in previous.items() if (target / relative).resolve() not in sources}
+    for path in files:
+        updated[str(path.relative_to(stage))] = hash_file(path)
+    write_json(stage / manifest_name, updated)
+    files.append(stage / manifest_name)
+    with tempfile.TemporaryDirectory(prefix="logo-cook-backup-") as temp:
+        backup = Path(temp)
+        applied, created_dirs = [], []
+        try:
+            for path in files:
+                relative = path.relative_to(stage)
+                destination = target / relative
+                if destination.exists():
+                    copy_asset(destination, backup / relative)
+                missing = []
+                parent = destination.parent
+                while not parent.exists():
+                    missing.append(parent)
+                    parent = parent.parent
+                for parent in reversed(missing):
+                    parent.mkdir()
+                    created_dirs.append(parent)
+                applied.append(relative)
+                # Same-directory temporary file permits atomic individual replacement.
+                with tempfile.NamedTemporaryFile(dir=destination.parent, delete=False) as handle:
+                    temporary = Path(handle.name)
+                try:
+                    shutil.copy2(path, temporary)
+                    os.replace(temporary, destination)
+                finally:
+                    temporary.unlink(missing_ok=True)
+        except BaseException:
+            for relative in reversed(applied):
+                destination = target / relative
+                if (backup / relative).exists():
+                    shutil.copy2(backup / relative, destination)
+                else:
+                    destination.unlink(missing_ok=True)
+            for directory in reversed(created_dirs):
+                directory.rmdir()
+            raise
+
+
+def preserve_in_place_sources(stage, target, sources, build):
+    """Use an already-correct source at its output path without changing its bytes."""
+    for output in list(stage.rglob('*.svg')):
+        destination = (target / output.relative_to(stage)).resolve()
+        if destination not in sources:
+            continue
+        original_png, normalized_png = build / 'original-in-place.png', build / 'normalized-in-place.png'
+        render(destination, original_png, 256)
+        render(output, normalized_png, 256)
+        if pixels(original_png) != pixels(normalized_png):
+            raise SystemExit(f'Protected source requires normalization at the same output path; choose a separate output directory: {destination}')
+        output.unlink()  # only the temporary duplicate; the original is untouched
+        print(f'Preserved existing source in place: {destination}')
+
+
+def pixels(path):
+    with Image.open(path) as image:
+        rgba = image.convert("RGBA")
+        return rgba.size, rgba.tobytes()
+
+
+def validate_base(stage, build, records):
+    """Real SVG renderer verifies background coverage and adaptive parity."""
+    adaptive_count = 0
+    for key, root in records.items():
+        fixed = stage / "base" / resources.filename(key)
+        write_text(fixed, resources.serialize(root))
+        png = build / (fixed.stem + '.png')
+        render(fixed, png, 128)
+        if key[1] == 'background':
+            with Image.open(png) as image:
+                if image.convert('RGBA').getchannel('A').getextrema() != (255, 255):
+                    raise ValueError(f'Base background is not full-bleed opaque: {key}')
+    for layout, kind in sorted({key[:2] for key in records}):
+        light, dark = records.get((layout, kind, 'light')), records.get((layout, kind, 'dark'))
+        if light is None or dark is None:
+            continue
+        combined = resources.adaptive(light, dark)
+        if combined is None:
+            print(f'No lossless adaptive available: {layout}/{kind}; fixed themes retained')
+            continue
+        output = stage / 'base' / 'adaptive' / f'logo-{layout}-{kind}.svg'
+        write_text(output, resources.serialize(combined))
+        for theme in resources.THEMES:
+            frozen = build / f'adaptive-{layout}-{kind}-{theme}.svg'
+            write_text(frozen, resources.serialize(resources.freeze(combined, theme)))
+            png = frozen.with_suffix('.png')
+            render(frozen, png, 128)
+            if pixels(png) != pixels(build / f'logo-{layout}-{kind}-{theme}.png'):
+                raise ValueError(f'Adaptive/fixed render mismatch: {layout}/{kind}/{theme}')
+        adaptive_count += 1
+    print(f'Base validated: {len(records)} fixed, {adaptive_count} adaptive')
+
+
+def platform_plan(records, backgrounds, config, platforms):
+    layouts = {name: resources.choose_layout(records, name, config) for name in ('app', 'favicon', 'status')}
+    needed = {layouts['app']}
+    if 'web' in platforms:
+        needed.add(layouts['favicon'])
+    if 'apple' in platforms or 'windows' in platforms:
+        needed.add(layouts['status'])
+    for layout in needed:
+        for theme in resources.THEMES:
+            if (layout, 'transparent', theme) not in records:
+                raise SystemExit(f'Do not generate or clean assets. Missing {layout}/{theme} foreground; complementary-color generation requires explicit authorization')
+    if set(platforms) & {'web', 'apple', 'android'}:
+        for theme in resources.THEMES:
+            if (layouts['app'], theme) not in backgrounds:
+                raise SystemExit(f'Do not generate or clean assets. Missing confirmed {theme} app background for the requested platform scope')
+    return layouts
+
+
+def build_platforms(stage, build, records, backgrounds, config, platforms, validator):
+    layouts = platform_plan(records, backgrounds, config, platforms)
+    print('Scenario compositions: ' + json.dumps(layouts))
+    app, favicon, status = (layouts[n] for n in ('app', 'favicon', 'status'))
+    palette = {theme: {'background': backgrounds.get((app, theme))} for theme in resources.THEMES}
+    radius = float(config.get('scenarios', {}).get('app', {}).get('radius_fraction', 0))
+    for theme in resources.THEMES:
+        root = records.get((app, 'background', theme), records[app, 'transparent', theme])
+        write_text(build / f'unrounded-{theme}.svg', resources.serialize(root))
+        write_text(build / f'full-{theme}.svg', resources.serialize(resources.rounded(root, radius)))
+        write_text(build / f'foreground-{theme}.svg', resources.serialize(records[app, 'transparent', theme]))
+        if 'apple' in platforms or 'windows' in platforms:
+            write_text(build / f'status-{theme}.svg', resources.serialize(monochrome_root(records[status, 'transparent', theme], '#000000' if theme == 'light' else '#FFFFFF')))
+    write_text(build / 'full-bleed-light.svg', resources.serialize(records.get((app, 'background', 'light'), records[app, 'transparent', 'light'])))
+    write_text(build / 'foreground-mono.svg', resources.serialize(monochrome_root(records[app, 'transparent', 'light'], '#FFFFFF')))
+    if 'apple' in platforms or 'windows' in platforms:
+        write_text(build / 'status-template.svg', resources.serialize(monochrome_root(records[status, 'transparent', 'light'], '#000000')))
+    light_png = build / 'full-light-1024.png'
+    render(build / 'full-light.svg', light_png, 1024)
+    if 'web' in platforms:
+        favicon_kind = 'background' if (favicon, 'background', 'light') in records else 'transparent'
+        adaptive = stage / 'base' / 'adaptive' / f'logo-{favicon}-{favicon_kind}.svg'
+        if not adaptive.is_file():
+            raise SystemExit('Web favicon needs a lossless adaptive resource; clarify differing theme geometry')
+        favicon_png = build / 'favicon-light-256.png'
+        render(stage / 'base' / resources.filename((favicon, 'background' if (favicon, 'background', 'light') in records else 'transparent', 'light')), favicon_png, 256)
+        cook_web(adaptive, build, palette, favicon_png)
+    if 'apple' in platforms:
+        cook_macos_legacy(build)
+        cook_apple(build, palette, validator)
+    if 'windows' in platforms:
+        cook_windows(build, light_png)
+    if 'linux' in platforms:
+        kind = 'background' if (app, 'background', 'light') in records and (app, 'background', 'dark') in records else 'transparent'
+        combined = resources.adaptive(records[app, kind, 'light'], records[app, kind, 'dark'])
+        if combined is None:
+            raise SystemExit('Linux adaptive export requires matching theme geometry')
+        write_text(stage / 'linux' / 'app.svg', resources.serialize(resources.rounded(combined, radius)))
+    if 'android' in platforms:
+        cook_android(build, palette)
+
+
 def main() -> None:
     global COMPOSE_SKILL_DIR, PROJECT_ROOT, RSVG
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--project-root",
-        type=Path,
-        help="Absolute path to the favicon-package project root; required when cooking",
-    )
-    parser.add_argument(
-        "--source",
-        "--source-svg",
-        dest="source",
-        required=True,
-        type=Path,
-        help="Absolute path to the SVG or resource directory explicitly selected by the user",
-    )
-    parser.add_argument(
-        "--inspect-theme",
-        action="store_true",
-        help="Print theme inspection JSON without checking dependencies or changing outputs",
-    )
+    parser.add_argument('--project-root', type=Path)
+    parser.add_argument('--source', '--source-svg', dest='sources', action='append', type=Path)
+    parser.add_argument('--source-map', type=Path)
+    parser.add_argument('--layout', choices=('original', 'compact', 'spacious'))
+    parser.add_argument('--theme', choices=('light', 'dark', 'adaptive'), help='Explicit single-file theme role; use source-map for groups')
+    parser.add_argument('--inspect-theme', action='store_true')
+    parser.add_argument('--base-only', action='store_true')
+    parser.add_argument('--platforms', default='web,apple,windows,linux,android')
+    parser.add_argument('--allow-padding', action='store_true', help='Only after explicit authorization for the proposed transform')
+    parser.add_argument('--allow-colors', action='store_true', help='Only after explicit complementary-color authorization')
+    parser.add_argument('--replace-existing', action='store_true', help='Take over exact output paths only after user authorization')
     args = parser.parse_args()
-    source = resolve_source(args.source)
-    inspection = inspect_svg_palette(source)
+    if bool(args.sources) == bool(args.source_map):
+        parser.error('Supply --source (repeatable) or --source-map, exclusively')
+    if args.source_map and (args.layout or args.theme):
+        parser.error('--layout/--theme apply to --source; declare source-map roles in JSON')
+    config = resources.load_map(args.source_map) if args.source_map else {'sources': resources.entries_for_sources(args.sources, args.layout, args.theme)}
+    collected_config = {'sources': config['sources']} if args.inspect_theme else config
+    records, backgrounds, sources = resources.collect(collected_config, args.allow_padding, args.allow_colors)
     if args.inspect_theme:
-        print(json.dumps({"source": str(source), **inspection}, indent=2, ensure_ascii=False))
+        report = resources.inventory(records)
+        report['proposed_derivations'] = {k: config[k] for k in ('derive_layouts', 'derive_themes') if k in config}
+        if len(config['sources']) == 1:
+            entry = config['sources'][0]
+            report['source'] = entry['path']
+            report['theme_inferred'] = entry.get('theme_inferred', False)
+            report['theme_mode'] = 'dual' if entry['theme'] == 'adaptive' else 'single-' + entry['theme']
+            report['palettes'] = {}
+            for theme in resources.THEMES:
+                key = entry['layout'], entry['kind'], theme
+                if key in records:
+                    bg = backgrounds.get((entry['layout'], theme))
+                    colors = [e.get('fill') for e in records[key].iter() if resources.tag(e) in resources.SHAPES and e.get('fill') not in (bg, 'none')]
+                    report['palettes'][theme] = {'background': bg, 'ink': colors[0] if colors else None}
+                    if len(colors) > 1:
+                        report['palettes'][theme]['alert'] = colors[1]
+        report['source_roles'] = config['sources']
+        report['sources'] = [str(p) for p in sorted(sources)]
+        print(json.dumps(report, indent=2, ensure_ascii=False))
         return
-    if args.project_root is None:
-        raise SystemExit("--project-root is required when cooking assets")
-    project_root = args.project_root.expanduser()
-    if not project_root.is_absolute():
-        raise SystemExit("--project-root must be an absolute path")
-    project_root = project_root.resolve()
-    if not project_root.is_dir():
-        raise SystemExit(f"Project root does not exist or is not a directory: {project_root}")
-    PROJECT_ROOT = project_root
-    COMPOSE_SKILL_DIR = PROJECT_ROOT / ".agents" / "skills" / "compose-app-icon"
-    palette = svg_palette(source)
-    validator = preflight_compose_skill()
-    RSVG = require("rsvg-convert")
-    require("iconutil")
-    clean_outputs()
-
-    with tempfile.TemporaryDirectory(prefix="app-logo-cook-") as temp:
-        build = Path(temp)
-        for theme in ("light", "dark"):
-            write_text(build / f"full-{theme}.svg", variant_svg(source, palette, theme))
-            write_text(
-                build / f"foreground-{theme}.svg",
-                variant_svg(source, palette, theme, foreground=True, canvas=1024),
-            )
-            write_text(
-                build / f"status-{theme}.svg",
-                variant_svg(source, palette, theme, foreground=True, monochrome=palette[theme]["ink"]),
-            )
-        write_text(
-            build / "full-bleed-light.svg",
-            variant_svg(source, palette, "light", full_bleed=True),
-        )
-        write_text(
-            build / "foreground-mono.svg",
-            variant_svg(source, palette, "light", foreground=True, monochrome="#FFFFFF", canvas=1024),
-        )
-        write_text(
-            build / "status-template.svg",
-            variant_svg(source, palette, "light", foreground=True, monochrome="#000000"),
-        )
-        light_png = build / "full-light-1024.png"
-        render(build / "full-light.svg", light_png, 1024)
-        cook_web(source, build, palette, light_png)
-        cook_macos_legacy(build)
-        cook_apple(build, palette, validator)
-        cook_windows(build, light_png)
-        cook_linux(source)
-        cook_android(build, palette)
-        write_usage_readme(source)
-
-    print(f"Cooked minimal app assets from {source.name}")
+    if args.project_root is None or not args.project_root.expanduser().is_absolute():
+        raise SystemExit('--project-root must be explicitly supplied as an absolute path')
+    # Canonicalize user-selected target; publish rejects redirects inside its tree.
+    raw_target = args.project_root.expanduser()
+    if raw_target.is_symlink():
+        raise SystemExit('Output target cannot be a symlink')
+    target = raw_target.resolve()
+    if target.exists() and not target.is_dir():
+        raise SystemExit('Output target must be a directory')
+    platforms = [] if args.base_only else [p.strip() for p in args.platforms.split(',') if p.strip()]
+    if set(platforms) - {'web', 'apple', 'windows', 'linux', 'android'}:
+        raise SystemExit('Unknown --platforms value')
+    if platforms and any(not any(key[2] == theme for key in records) for theme in resources.THEMES):
+        raise SystemExit('Do not generate or clean assets. Missing complementary theme requires explicit color authorization')
+    if any(entry.get('theme_inferred') for entry in config['sources']):
+        raise SystemExit('Confirm the advisory single-theme role with --theme light|dark or --source-map before organizing it; do not guess its semantic role')
+    PROJECT_ROOT = target
+    COMPOSE_SKILL_DIR = target / '.agents' / 'skills' / 'compose-app-icon'
+    if platforms:
+        platform_plan(records, backgrounds, config, platforms)
+    validator = preflight_compose_skill() if 'apple' in platforms else None
+    RSVG = require('rsvg-convert')
+    if Image is None:
+        raise SystemExit('Pillow is required for raster verification; inspection and select_logo.py remain available')
+    if 'apple' in platforms:
+        require('iconutil')
+    with tempfile.TemporaryDirectory(prefix='app-logo-cook-') as temp:
+        build = Path(temp) / 'build'
+        stage = Path(temp) / 'stage'
+        build.mkdir()
+        stage.mkdir()
+        try:
+            PROJECT_ROOT = stage
+            validate_base(stage, build, records)
+            if platforms:
+                build_platforms(stage, build, records, backgrounds, config, platforms, validator)
+                validate_platform_files(stage, platforms)
+            write_usage_readme(config, records, platforms)
+        finally:
+            PROJECT_ROOT = target
+        preserve_in_place_sources(stage, target, sources, build)
+        publish(stage, target, sources, args.replace_existing)
+    print(f'Cooked validated resources into {target}')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

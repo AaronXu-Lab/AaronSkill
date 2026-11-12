@@ -30,5 +30,5 @@
 <rect class="stop" x="840" y="730" width="330" height="70" rx="14"/><text class="label" x="1005.0" y="759">报告生成器限制并保留 SVG</text><text class="detail" x="1005.0" y="783">适配或获准简化后再继续</text>
 <path class="line" d="M600 800 V855"/>
 <text class="detail" x="625" y="832">兼容</text>
-<rect class="done" x="420" y="855" width="360" height="70" rx="14"/><text class="label" x="600.0" y="884">进入原有主题与依赖门禁</text><text class="detail" x="600.0" y="908">重绘授权不包含补色或依赖安装</text>
+<rect class="done" x="420" y="855" width="360" height="70" rx="14"/><text class="label" x="600.0" y="884">进入角色、授权与范围预检</text><text class="detail" x="600.0" y="908">重绘不授权留白、补色或依赖安装</text>
 </svg>

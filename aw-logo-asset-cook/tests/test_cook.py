@@ -76,7 +76,7 @@ class ThemeInspectionTests(unittest.TestCase):
             with (
                 mock.patch("sys.argv", argv),
                 mock.patch.object(COOK, "preflight_compose_skill") as preflight,
-                mock.patch.object(COOK, "clean_outputs") as clean,
+                mock.patch.object(COOK, "publish") as clean,
             ):
                 with self.assertRaisesRegex(SystemExit, "Do not generate or clean assets"):
                     COOK.main()
@@ -130,7 +130,7 @@ class WebAssetTests(unittest.TestCase):
             children = list(root)
 
             self.assertEqual(children[0].tag, f"{{{COOK.SVG_NS}}}rect")
-            self.assertEqual(children[0].attrib, {"width": "32", "height": "32", "fill": "#FFF9EF"})
+            self.assertEqual({k: children[0].get(k) for k in ("width", "height", "fill")}, {"width": "32", "height": "32", "fill": "#FFF9EF"})
             self.assertFalse(any("bg" in child.attrib.get("class", "").split() for child in children))
 
     def test_maskable_icon_has_opaque_background_and_padded_foreground(self) -> None:
@@ -223,8 +223,9 @@ class UsageReadmeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             project = Path(temp)
             source = project / "logo.svg"
+            source.write_text(svg("#FFFFFF", "#111111", "#CC2200"))
             with mock.patch.object(COOK, "PROJECT_ROOT", project):
-                COOK.write_usage_readme(source)
+                COOK.write_usage_readme({}, COOK.resources.collect({"sources": COOK.resources.entries_for_sources([source])})[0], ["web", "apple", "windows", "linux", "android"])
             content = (project / "README.md").read_text(encoding="utf-8")
 
             for path in expected_paths:

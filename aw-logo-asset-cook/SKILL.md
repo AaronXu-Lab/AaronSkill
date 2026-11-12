@@ -1,118 +1,47 @@
 ---
 name: aw-logo-asset-cook
-description: "Generate icon assets for all platforms from a user-specified SVG, image, or icon asset directory. For images, assess vectorization feasibility first, then iteratively redraw as SVG and compare renders; explain fidelity loss and obtain confirmation when high-fidelity conversion is unsuitable. Covers light and dark themes, platform validation, and a README with platform-specific usage instructions."
+description: "Organize explicitly supplied SVG resource groups and generate validated platform icons with scenario-consistent composition. Assess and iteratively vectorize image inputs; require separate authorization for missing spacing or theme colors."
 metadata:
   author: aaron_xu
-  version: "1.3.1"
-  creation_context: "为从用户显式选择的 SVG 或经可行性评估和迭代重绘的图片建立 SVG 唯一事实源稳定生成网页 favicon、可引用的安装图标、桌面端、移动端、菜单栏及托盘图标，并提供可随资源同步更新的分平台用法说明；同时在单主题补色、清理产物和 Apple Icon Composer 验证前设置明确授权门禁。"
+  version: "1.4.0"
+  creation_context: "为从用户显式选择的 SVG 或经可行性评估和迭代重绘的图片建立可追溯的 SVG 资源组稳定生成网页 favicon、可引用的安装图标、桌面端、移动端、菜单栏及托盘图标，并提供可随资源同步更新的分平台用法说明；同时在留白补齐、单主题补色、替换受管产物和 Apple Icon Composer 验证前设置明确授权门禁。"
 ---
 
 # AW 应用图标资源生成
 
-本 SKILL 独立存放。用户必须明确指定源 SVG、可读取的图片文件/附件，或一个图标资源目录。图片入口先按文本工作流评估并重绘成 SVG；原图始终保留。目录模式只检查该目录根层的 `*.svg`：恰好一个时自动采用；没有时停止并提示；多个时列出候选并询问用户哪个是唯一事实源。不得递归搜索，也不能扫描未被用户指定的当前目录、项目根目录或 SKILL 目录来猜测。
+从用户明确指定的 SVG、多个 SVG 资源组、图片/可读取附件或图标目录整理基础资源并生成平台图标。只检查指定目录根层 SVG，不扫描当前项目猜源；多个文件先映射角色和缺项，不要求选唯一来源。原始源始终保留，不默认覆盖或归档。
 
-以下两类表达都属于有效的明确指定：直接给出 `/绝对路径/logo.svg`；或像 `/绝对路径/favicon-package` 加“这里有个图标资源”这样，明确把该目录指定为本次图标资源范围。仅提到项目名称、当前目录或“看看图标”而没有给出可解析路径，不算指定。
-
-图片输入的可行性与重绘循环见 [图片转 SVG](references/workflow.md#图片转-svg)。可行时自动迭代至通过；不适合高保真转换时说明具体降级并取得强制转换授权。`cook.py` 不直接接收位图，图片转换通过后还需检查生成器兼容性。
-
-执行脚本时通过 `--source` 传入该 SVG（含已通过重绘与兼容性检查的 SVG）或目录的绝对路径；为兼容旧调用，`--source-svg` 是同一参数的别名。
-
-目标 `favicon-package` 默认使用原始源文件所在目录（图片模式不取临时 SVG 目录）；目录模式默认使用用户指定的目录。如果用户指定了其他目标目录，以用户指定为准。运行生成时仍必须通过 `--project-root` 显式传入目标目录，禁止根据当前工作目录或 SKILL 所在位置猜测。
-
-## 流程概览
-
-执行时先读取 [应用图标资源生成文本工作流](references/workflow.md)。
+执行时读取 [文本工作流](references/workflow.md)，它是决策、授权、停止条件与交付标准的唯一事实源。
 
 ![应用图标资源生成核心流程](docs/workflow.svg)
 
-## 源文件与主题预检
+## 按任务读取
 
-先把用户指定的 SVG、图片或资源目录按文本工作流解析或重绘为兼容的 SVG，再运行只读主题检查：
+- 图片入口：先按 [图片转 SVG](references/workflow.md#图片转-svg) 评估，实际查看并迭代重绘；不适合高保真转换时说明损失并取得降级授权。保留原有评估/4 轮对照循环，转换授权不包含留白或补色。脚本仍仅接收 SVG。
+- 单 SVG / 资源组：[资源映射与 CLI](references/resource-map.md) 说明角色、缺项、场景配置和授权派生。兼容旧 `--source-svg`；`--source` 可重复或指定目录；非标准多源用 `--source-map` 明确角色，不猜测。
+- 基础整理或集成说明：[选择规则](references/selection.md) 包含完整 AI 可执行逻辑、示例、圆角和轮廓责任；同样内容交付在根 README 与 base/README，不能只交选择器。
+- 平台生成：读取 [平台产物与验证](references/platform-validation.md)，保留 Apple Schema、Icon Composer 真渲染、ICNS 十尺寸 RGBA 回读、单色模板、不透明商店图和实际前景安全圆检查。
 
-```bash
-python3 scripts/cook.py \
-  --source /绝对路径/logo.svg \
-  --inspect-theme
-```
+## 必须保持的边界
 
-目录模式可将 `--source` 改为 `/绝对路径/favicon-package`。若根层 SVG 不唯一，脚本只报告候选并停止；由用户选择后，使用所选 SVG 的绝对路径重跑。
+已有留白与配色直接使用，只处理缺项。新增留白先提出整体等比缩放/平移建议并取得授权，不重画内部造型；单主题补另一主题也单独取得授权。完整会话已存在的同范围许可可沿用。要求生成图标或更新本 Skill 都不隐含两类授权；缺授权不进行相应生成或清理。
 
-主题检查必须发生在依赖安装、清理和资源生成之前。结果分为：
+确认独立底板后才派生透明版；不确定先问，不能误删标志色块。base 有底版为满幅不透明直角底板；透明版保留主体位置/比例/画布留白。支持分组、rect 和不同 viewBox；不支持的复杂 SVG 明确报告，不能静默损坏。
 
-- `dual`：SVG 已包含可区分的 light 与 dark 配色，保留现有几何、颜色及 `prefers-color-scheme` 行为，继续后续流程。
-- `single-light`：SVG 只有明色主题，提示用户缺少暗色主题。
-- `single-dark`：SVG 只有暗色主题，提示用户缺少明色主题。
+先为场景选一次构图，再导出全部尺寸、倍率和资源档位。32 逻辑 px 仅新场景默认参考，项目映射及已有选择优先；ICO/ICNS、1×/2× 不按条目切换留白。响应式只缩放；安全区是另一个平台处理，同场景各密度保持一致。
 
-单主题的明暗判断依据背景色亮度，只能作为“可能是明色/暗色”的提示；用户明确说明主题归属时以用户判断为准，不得用检测结果覆盖用户语义。
+base 保持直角；普通 UI 由容器裁切。平台轮廓可用明确导出配置，但系统/商店负责遮罩时不重复烘焙。已有圆角不是过期理由，不从上轮平台产物继承轮廓；空目录可重建。圆角建议来自项目，不写死品牌 token。
 
-若结果为单主题，必须询问：`检测到该 SVG 只有明色/暗色主题。是否允许 AI 在不改变现有主题和几何结构的前提下补充互补主题色？` 这是阻塞决策；除非用户已经在同一请求中明确授权，否则不得继续。
+仅检查、基础整理和选择器不要求 compose-app-icon；生成 `.icon` 才检查项目依赖并完整阅读其 SKILL.md，缺失需安装授权。缺依赖准确报告受影响范围，不宣称完成未运行的检查。
 
-- 用户拒绝或未授权：立即停止，不安装依赖、不清理现有产物、不修改 SVG，也不生成任何平台资源。
-- 用户允许：AI 创建临时的双主题 SVG，不覆盖原始文件，保留原主题全部颜色和几何结构，只为缺失主题推导互补配色。若输入为暗色主题，临时 SVG 必须把 AI 补出的明色设为默认回退，并把原暗色放入 `prefers-color-scheme: dark`；若输入为明色主题，保留其为默认并增加 dark media query。
-- AI 补色后分别渲染明暗外观进行视觉检查，再重新运行 `--inspect-theme`。只有结果为 `dual` 才能进入生成；仍为单主题或颜色角色不完整时停止。
+所有产物先在临时目录生成和验证，再事务替换受管文件；不先整目录清理。保护输入、base 中未接管文件和无关资源；不修改产品集成代码。通过后直接交付，不能默认停在第一版再求审批。
 
-AI 补色不是对用户授权的推断。用户只要求生成资源，不代表同意创造新的品牌颜色。
-
-## 依赖预检
-
-运行生成脚本或修改任何生成目录之前，必须检查项目级依赖 `<project-root>/.agents/skills/compose-app-icon`。仅当以下文件全部存在时，才视为安装完整：`SKILL.md`、`scripts/validate_icon.py`、`scripts/icon-schema.json`、`scripts/pyproject.toml`、`scripts/uv.lock`。
-
-若依赖缺失或不完整：
-
-1. 立即停止，不生成资源，也不清理现有产物。
-2. 告知用户必须安装 `compose-app-icon`，说明预期安装位置，并请求安装许可。
-3. 仅在用户明确同意后，使用 `$skill-installer` 或其他可信的 SKILL 安装方式，将准确的 `compose-app-icon` 安装到 `<project-root>/.agents/skills`。禁止依据模糊名称或未经验证的仓库安装；若找不到可信来源，请用户提供来源，不得猜测。
-4. 安装后重新检查必需文件，完整阅读 `compose-app-icon/SKILL.md`，然后自动继续原生成任务。
-
-用户授权前禁止安装依赖。依赖已经存在时，也必须先完整阅读其 `SKILL.md`，并遵循其中的 `uv` 预检要求。
-
-## 生成
-
-运行：
+## 入口示例
 
 ```bash
-python3 scripts/cook.py \
-  --source /绝对路径/logo.svg \
-  --project-root /绝对路径/favicon-package
+python3 scripts/cook.py --source /absolute/logo.svg --inspect-theme
+python3 scripts/cook.py --source-svg /absolute/logo.svg --project-root /absolute/output
+python3 scripts/cook.py --source-map /absolute/map.json --project-root /absolute/output --base-only
 ```
 
-若原 SVG 已是双主题，直接传入原文件；若用户授权 AI 补色，传入已经通过双主题复检的临时 SVG。脚本依赖 `rsvg-convert`、Pillow 与 macOS 的 `iconutil`（生成前检查，缺失时不得清理），只会替换各平台的生成目录。脚本自身会再次执行主题门禁，单主题 SVG 无法进入清理阶段。
-
-## 最小产物
-
-- `README.md`：位于目标根目录，使用中文按 Web、iOS/macOS、Windows、Linux、Android 说明各资源的建议用法、主题与遮罩注意事项及产品集成边界。内容使用通用 `app` 语义，不写入具体品牌名。
-- `web/favicon.svg`：保留已确认或补齐后的 SVG 主题切换；`web/favicon.ico` 仅作为旧环境的亮色回退。网页 UI 应直接使用该主题感知 SVG。
-- `web/apple-touch-icon.png`：180×180 的 iOS/iPadOS 网页主屏幕图标。使用明色主题背景铺满不透明方形画布，不预先烘焙圆角。
-- `web/pwa/`：包含普通的 192×192 与 512×512 PNG、不透明全画布且主体位于安全区内的 512×512 maskable PNG，以及使用相对路径引用三张图标的最小 `manifest.webmanifest`。该 manifest 只声明图标；集成时应合并进目标项目现有 manifest，不能覆盖产品名称、启动路径、显示模式和主题色等字段。
-- `iOS&macOS/app.icon`：现代 Apple 应用图标产物，与旧版 macOS 的 `.icns` 并存。Default 和 Dark 必须分别使用最终双主题 SVG 的明暗配色与前景，Tinted 使用专用高对比 Mono 前景。
-- `iOS&macOS/app.icns`：传统 macOS 应用图标，覆盖 2023 年以前的 macOS 及需要 ICNS 的打包工具。固定使用明色主题，保留源 SVG 轮廓与透明区域，不自动切换明暗。由临时 `.iconset` 的 16、32、128、256、512 点各 1x/2x PNG 编译，最大 1024×1024；不交付临时 `.iconset`。
-- `iOS&macOS/menu-bar/`：包含一个 macOS Template Image SVG，以及 1x/2x PNG；由 macOS 自动着色。
-- `windows/app.ico`：稳定的应用图标。由于 ICO 无法在内部切换主题，只有托盘保留 `tray-light.ico` 与 `tray-dark.ico`。
-- `linux/app.svg`：保留 SVG 内部主题切换。
-- `android/`：只包含一套自适应图标资源；系统主题图标使用 monochrome 图层，不重复生成明暗资源树。`play-store-512.png` 是 512×512 的 32-bit RGBA PNG，使用明色主题背景铺满方形画布，保留 Alpha 通道且所有 Alpha 值为 255，不预先烘焙圆角。
-
-生成平台资源时，除根目录用法 README 与最小 PWA 图标 manifest 外，不额外创建产品元数据、清单、预览、校验和、锁文件、联系表；平台原生自适应格式能够处理外观时，也不显式复制明暗资源。
-
-## Apple 图标验证
-
-生成脚本必须使用 `<project-root>/.agents/skills/compose-app-icon` 校验 `app.icon`，再使用 Icon Composer 的 `ictool` 分别渲染 iOS 与 macOS 的 Default、Dark、Tinted（Mono）及 Clear 模式。渲染图仅用于临时验证，不得保留。
-
-当主题由 AI 补齐时，Apple 产物也必须同步使用新主题：`fill-specializations` 同时写入明暗背景，前景分别提供 Default 与 Dark specialization，Mono 仍使用透明底上的不透明白色遮罩。禁止只补 Web SVG 而让 `app.icon` 继续复用单一主题。
-
-若 Icon Composer 本体不可用，保留已经通过 Schema 校验的 `.icon` 包，并明确报告仅跳过了引擎渲染。`.icns` 是必须同时交付的兼容资源，不能替代 `.icon`，也不能因缺少 Icon Composer 而跳过 `.icns` 验证。
-
-传统 `.icns` 使用 `iconutil -c icns` 打包；16/32px 使用传统 RGB RLE 与独立 Alpha 块，避免部分 `iconutil` 的 ARGB 编码颜色差异。再用 `iconutil -c iconset` 解包到临时目录，逐项验证十张 PNG 的尺寸与 RGBA 像素一致。任何缺失、损坏或像素不一致都应失败。README 应说明旧版原生应用可把 ICNS 放入应用包 `Contents/Resources` 并由 `CFBundleIconFile` 引用；打包工具使用对应图标配置，资源生成不修改这些配置。规格参考 [Apple Icon Set Type](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/IconSetType.html)。
-
-## 不变量
-
-- 图片转换必须经过可行性判断与实际渲染对照；不把嵌入位图的 SVG 当作矢量重绘，不覆盖原图。
-- 从用户指定、通过重绘验收或经授权补齐的 SVG 中提取颜色，不在脚本内重复维护调色板。
-- 已有双主题 SVG 必须原样保留其几何结构、颜色和 `prefers-color-scheme` 行为。
-- 单主题 SVG 未获用户授权时不得修改或生成；获授权时只补缺失主题，不改变原主题的品牌颜色与几何。
-- Apple Mono 专用资源必须是透明底上的不透明白色前景遮罩，不能依赖 Icon Composer 从品牌色自动推导 Mono 对比度。
-- 应用平台的遮罩由平台负责；不得把圆角烘焙进 iOS、Android 自适应图标或 Icon Composer 背景。
-- Apple Touch 与 Play Store 提交图必须是铺满明色主题背景的完全不透明方图，不能保留源 SVG 的透明圆角；系统或商店负责应用最终遮罩。Play Store PNG 还必须显式保留 Alpha 通道，不能因全部像素不透明而优化成 24-bit RGB。
-- PWA maskable 图标必须使用明色主题背景铺满不透明画布，并把重要前景限制在平台安全区内；不能把带透明边角的普通应用图标直接标记为 maskable。
-- macOS 菜单栏与 Windows 托盘图标必须是透明底单色状态图标，不能直接缩小全彩应用图标。
-- 根目录 README 必须与当次实际产物路径一致，分平台说明建议用法与集成边界，不包含具体品牌名，也不能宣称已经修改产品仓库配置。
-- 不覆盖产品仓库中的集成代码；本 SKILL 只重建图标资源库。
+正常交付根 `README.md`、标准库 `select_logo.py`、`base/README.md`、base 固定 SVG 与 `base/adaptive/`，以及所选 `android/`、`iOS&macOS/`、`linux/`、`web/`、`windows/`。完整两留白 × 两主题 × 两底板是 8 固定 + 4 adaptive，但不强制未授权补齐。报告实际缺项、来源、授权、场景映射、校验和真正未验证的集成/引擎范围。
