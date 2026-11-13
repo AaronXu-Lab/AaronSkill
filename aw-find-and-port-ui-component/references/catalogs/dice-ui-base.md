@@ -3,9 +3,9 @@
 Dice UI 的 Base UI 组件变体。
 
 - Status: `fresh`
-- Last checked: `2026-11-05T06:15:22+00:00`
-- Last successful refresh: `2026-11-04T01:45:04+00:00`
-- Discovery leads: `47`
+- Last checked: `2026-11-13T08:17:08+00:00`
+- Last successful refresh: `2026-11-13T08:17:08+00:00`
+- Discovery leads: `48`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'tailwind-css'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -40,6 +40,7 @@ Dice UI 的 Base UI 组件变体。
 | Phone Input | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/phone-input) | [Source](https://diceui.com/r/base-vega/phone-input.json) |
 | Presentation | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/presentation) | [Source](https://diceui.com/r/base-vega/presentation.json) |
 | Qr Code | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/qr-code) | [Source](https://diceui.com/r/base-vega/qr-code.json) |
+| Query Builder | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/query-builder) | [Source](https://diceui.com/r/base-vega/query-builder.json) |
 | Rating | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/rating) | [Source](https://diceui.com/r/base-vega/rating.json) |
 | Relative Time Card | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/relative-time-card) | [Source](https://diceui.com/r/base-vega/relative-time-card.json) |
 | Responsive Dialog | base-ui | tailwind-css |  | [Preview](https://diceui.com/docs/components/base/responsive-dialog) | [Source](https://diceui.com/r/base-vega/responsive-dialog.json) |

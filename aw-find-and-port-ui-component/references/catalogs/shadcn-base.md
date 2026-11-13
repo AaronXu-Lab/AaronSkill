@@ -2,12 +2,13 @@
 
 shadcn/ui 官方 Base UI 组件变体。
 
-- Status: `fresh`
-- Last checked: `2026-11-05T06:15:22+00:00`
+- Status: `stale`
+- Last checked: `2026-11-13T08:17:08+00:00`
 - Last successful refresh: `2026-09-28T08:33:48+00:00`
 - Discovery leads: `61`
 - Source type hint: `{'foundation': 'base-ui', 'styling': 'tailwind-css'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
+- Refresh error: `TimeoutExpired: Command '['npx', '-y', 'shadcn@latest', 'list', '@shadcn', '--json', '--limit', '100']' timed out after 60 seconds`
 
 | Component | Foundation hint | Styling hint | Description | Preview | Source |
 |---|---|---|---|---|---|
