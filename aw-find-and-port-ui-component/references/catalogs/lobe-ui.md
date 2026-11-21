@@ -3,9 +3,9 @@
 面向 AI 应用的 React 组件库，混用 Ant Design、Base UI 与自定义实现；按具体组件核验移植成本。
 
 - Status: `fresh`
-- Last checked: `2026-11-05T06:15:22+00:00`
-- Last successful refresh: `2026-11-04T08:13:57+00:00`
-- Discovery leads: `196`
+- Last checked: `2026-11-20T07:45:03+00:00`
+- Last successful refresh: `2026-11-19T07:57:07+00:00`
+- Discovery leads: `197`
 - Source type hint: `{'foundation': 'mixed', 'styling': 'antd-style'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -205,5 +205,6 @@
 | Upload | mixed | antd-style | Category: Data Entry. Headless file picker trigger with a hidden input, drag-and-drop dragger, and accept/maxCount filtering. Outline: APIs, Migrating from antd Upload. Docs: https://ui.lobehub.com/components/upload | [Preview](https://ui.lobehub.com/components/upload) | [Source](https://github.com/lobehub/lobe-ui/blob/master/src/Upload/index.ts) |
 | Video | mixed | antd-style | Category: Data Display. A video player with sections and markers on a segmented timeline, marker captions, hover frame preview, frame stepping, speed and mute controls, and a player handle for driving it from your own code. Outline: Default, Sections and markers, Many sections, Composing parts, Player handle, Load failure, Keyboard, Migrating from v5 Video, Styles, Class names. Docs: https://ui.lobehub.com/components/video | [Preview](https://ui.lobehub.com/components/video) | [Source](https://github.com/lobehub/lobe-ui/blob/master/src/Video/index.ts) |
 | WeChat | mixed | antd-style | Category: Channel Icons. Provides the WeChat monochrome icon and avatar variant, together with title and primary-color metadata. Docs: https://ui.lobehub.com/components/icons/we-chat | [Preview](https://ui.lobehub.com/components/icons/we-chat) | [Source](https://github.com/lobehub/lobe-ui/blob/master/src/icons/WeChat/index.ts) |
+| WeCom | mixed | antd-style | Category: Channel Icons. Provides the WeCom (企业微信) monochrome icon and avatar variant, together with title and primary-color metadata. Docs: https://ui.lobehub.com/components/icons/we-com | [Preview](https://ui.lobehub.com/components/icons/we-com) | [Source](https://github.com/lobehub/lobe-ui/blob/master/src/icons/WeCom/index.ts) |
 | WhatsApp | mixed | antd-style | Category: Channel Icons. Provides the WhatsApp monochrome icon and avatar variant, together with title and primary-color metadata. Docs: https://ui.lobehub.com/components/icons/whats-app | [Preview](https://ui.lobehub.com/components/icons/whats-app) | [Source](https://github.com/lobehub/lobe-ui/blob/master/src/icons/WhatsApp/index.ts) |
 | Zitadel | mixed | antd-style | Category: Auth Icons. Provides the Zitadel monochrome icon and avatar variant, together with title and primary-color metadata. Docs: https://ui.lobehub.com/components/icons/zitadel | [Preview](https://ui.lobehub.com/components/icons/zitadel) | [Source](https://github.com/lobehub/lobe-ui/blob/master/src/icons/Zitadel/index.ts) |
