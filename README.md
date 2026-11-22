@@ -69,7 +69,7 @@ python3 link-skills.py --prune
 python3 link-skills.py --target ~/.codex/skills
 ```
 
-The repository currently contains **17 Skills**, grouped by primary purpose into meta Skills, tools, resource discovery, and design support. It also has a Working On group and a separate list of no-longer-maintained Skills.
+The repository currently contains **18 Skills**, grouped by primary purpose into meta Skills, tools, resource discovery, and design support. It also has a Working On group and a separate list of no-longer-maintained Skills.
 
 ### Meta Skill
 
@@ -89,6 +89,7 @@ Reusable workflows for well-defined inputs and outputs, including asset processi
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.4.0` | Organizes SVG resource groups and assessed image redraws into base assets and validated platform icons, with one composition per usage scenario | Explicit inputs only; spacing and theme generation require separate authorization; stage and validate before replacing managed files |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | Recommends, reads, summarizes, or translates one item from Outlook's `Read Later` folder | Handles one item per manual run; requires confirmation before archiving or removing an email |
 | [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.9.0` | Handles read-only research in the main session and dispatches implementation work in Codex or Claude based on remaining uncertainty, impact, and coordination complexity | Uses the lower tier for settled, local work and the middle tier for substantive design or coordination; clarifies key plans first and treats history only as a weighting signal; resolves the latest available model by series, with user choice taking priority; execution sessions validate independently and do not communicate with each other; each tier uses an independent branch/worktree and preview port, then rebases and integrates the complete request once locally under a repository lock; the main session ends after dispatch, while execution sessions validate, integrate and report |
+| [`convert-swf-to-h5`](./convert-swf-to-h5/) | `1.0.0` | Ports authorized legacy SWF games to browser-runnable HTML5 or packages them with Ruffle | Preserves original inputs and checks gameplay and browser delivery against the SWF |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | Rewrites AI-generated Chinese drafts in Aaron's current blog voice | Preserves facts and positions; limits catchphrases, rhetorical questions, and surface-level imitation through Chinese-English mixing |
 
 ### Resource discovery
@@ -111,6 +112,7 @@ Infrastructure, standards, and engineering support for design systems, component
 | [`aw-design-fake`](./aw-design-fake/) | `1.9.0` | Unifies prototype fake data, source displays, placeholder interactions, and temporary browser persistence for demo data awaiting backend integration; initializes or syncs bundles | Real contracts take priority; demo persistence has scoped registration, gated reads/writes, explicit reset, and a backend replacement path; excludes real API caching and unit-test mocks |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | Compares Figma Variables, `DESIGN.md`, and CSS/Less tokens | Produces audit evidence only and does not rewrite tokens automatically |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.3.1` | Finds and compares specific components from Base UI and other React sources, including Lobe UI, then adapts them for Base UI and CSS Modules | Handles component-level requests only; Find verifies the exact source and license, then waits for a selection; Port confirms details lost or dependencies added in advance |
+| [`mg-import-fix`](./mg-import-fix/) | `1.9.0` | Prepares MasterGo/Figma comparison pages and repairs MG and ZIP import fidelity | Uses the MasterGo2Figma project and its test workflow; final visual acceptance remains with the user |
 
 ### Working On
 
@@ -119,8 +121,9 @@ Skills under active development, each kept in its own directory for optional ins
 | Skill | Version | What it does | Key boundaries |
 | --- | --- | --- | --- |
 | [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.1` | Starts local multi-service projects and diagnoses port, API, and page-loading failures | Prefers existing entry points; confirms process ownership; verifies through call paths and the target page |
-| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.1` | Verifies requirements against a project PRD and, when needed, compares them with the interface or implementation | Separates explicit requirements, inferences, and gaps; performs read-only checks or fixes within existing authorization |
 | [`temp-small-improves`](./temp-small-improves/) | `1.2.0` | Sequentially checks 66 small UI improvements across interface details, motion, typography, colors, accessibility, layout, and wording | Runs only when explicitly named; merges overlapping checks and makes the smallest evidence-based changes |
+
+Working On also tracks `temp-prd-verifier`, which has no installable directory in this repository.
 
 ### No longer maintained
 

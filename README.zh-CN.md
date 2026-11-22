@@ -69,7 +69,7 @@ python3 link-skills.py --prune
 python3 link-skills.py --target ~/.codex/skills
 ```
 
-目前共收录 **17 个 Skill**，按主要用途分为元 Skill、工具类、资源获取和设计支撑；另设 Working On 分组，并单独标记不再维护的 Skill。
+目前共收录 **18 个 Skill**，按主要用途分为元 Skill、工具类、资源获取和设计支撑；另设 Working On 分组，并单独标记不再维护的 Skill。
 
 ### 元 Skill
 
@@ -89,6 +89,7 @@ python3 link-skills.py --target ~/.codex/skills
 | [`aw-logo-asset-cook`](./aw-logo-asset-cook/) | `1.4.0` | 整理 SVG 资源组或经评估重绘的图片，生成基础资源与经验证的平台图标，同一场景保持统一构图 | 仅使用明确输入；留白和补色分别授权；临时生成验证后才替换受管文件 |
 | [`aw-mail-read-later`](./aw-mail-read-later/) | `1.1.1` | 从 Outlook 的 `Read Later` 文件夹推荐、阅读、总结或翻译一项内容 | 手动一次处理一项；归档或移除邮件前必须得到用户确认 |
 | [`aw-tiered-task-dispatch`](./aw-tiered-task-dispatch/) | `1.9.0` | 主会话直接完成只读研究，在 Codex 或 Claude 按剩余不确定性、影响范围与协调复杂度派发实施任务 | 已定局部执行低档，实质设计或协调中档；关键方案先澄清，历史只加权；模型按系列最新可用解析，用户指定优先；执行会话独立校验且互不通信；三档使用独立分支/worktree 与端口，完整需求 rebase 后持仓库锁一次本地合入；主会话派发即结束，执行会话自行验证、整合与回报 |
+| [`convert-swf-to-h5`](./convert-swf-to-h5/) | `1.0.0` | 将有权移植的旧 SWF 游戏转成可在浏览器运行的 HTML5，或用 Ruffle 封装 | 保留原始输入，对照 SWF 验证玩法和浏览器交付 |
 | [`rewrite-like-aaron`](./rewrite-like-aaron/) | `1.1.1` | 将 AI 中文草稿改写为 Aaron 当前的博客文风 | 保留事实与立场；限制口头禅、反问和中英混写的表面模仿 |
 
 ### 资源获取
@@ -107,10 +108,11 @@ python3 link-skills.py --target ~/.codex/skills
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`aw-design-md-author`](./aw-design-md-author/) | `1.7.0` | 按 Google Labs 规范创建、审查和维护完整的 `DESIGN.md` 视觉契约 | 保护所有权与纯注释边界；官方验证不可用时如实报告；不代替代码或 Figma |
-| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.27.2` | 创建、审查或优化 Gallery 的默认示例、包含可感知动画行为的真实设计轴与状态对比 | 源码优先、必要时浏览器复核；其他页面与 Components 分流，组件按九项渐进检查并用编号矩阵报告；组件 Usage 聚焦 UI/UX 选择，开发接入说明归开发契约；语义复核默认实例、稳定部位与调用方效果归属；对照设计默认值与运行时默认值；通用示例使用 Text、Placeholder 图标和 😀 Emoji，描述角色可用 Description；任意自定义插槽用 Content 加虚线占位，真实组合归场景 Example；核对目标单层 Bounds、宽度与排列、核心演示及 Restore 时机；Anatomy 区分部件身份与职责，组合属性归属实际职责所有者；Container 通常省略 Anatomy，组件自身有值得说明的可视构成时除外；Composition 说明组合关系，完整案例在独立 Example 集中维护，已知相关案例通过 Relates 提供入口；已有文章关联复用 Relates 与 Announcement；组件 Panel 复用当地标准结构及文档版式；项目明确规定时 Internal 页面只显示一个 Playground；Playground 与 Properties 共享轴序、取值及依赖禁用；Playground 默认状态须在默认背景下正常呈现，其他状态可用现有背景切换审阅；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；共享默认禁用态集中展示，不重复列为组件设计轴，保留运行时 API；边界提示接入现有开关并验证两态；项目配置留在目标仓库；组件按纯容器、可分别搭配的不同部件或特化业务语义的顺序判定 Container／Composites／Foundations，并在新增组件或部件变化时复核 |
+| [`aw-design-system-gallery`](./aw-design-system-gallery/) | `4.27.3` | 创建、审查或优化 Gallery 的默认示例、包含可感知动画行为的真实设计轴与状态对比 | 源码优先、必要时浏览器复核；其他页面与 Components 分流，组件按九项渐进检查并用编号矩阵报告；组件 Usage 聚焦 UI/UX 选择，开发接入说明归开发契约；语义复核默认实例、稳定部位与调用方效果归属；对照设计默认值与运行时默认值；通用示例使用 Text、Placeholder 图标和 😀 Emoji，描述角色可用 Description；任意自定义插槽用 Content 加虚线占位，真实组合归场景 Example；核对目标单层 Bounds、宽度与排列、核心演示及 Restore 时机；Anatomy 区分部件身份与职责，组合属性归属实际职责所有者；Container 通常省略 Anatomy，组件自身有值得说明的可视构成时除外；Composition 说明组合关系，完整案例在独立 Example 集中维护，已知相关案例通过 Relates 提供入口；已有文章关联复用 Relates 与 Announcement；组件 Panel 复用当地标准结构及文档版式；项目明确规定时 Internal 页面只显示一个 Playground；Playground 与 Properties 共享轴序、取值及依赖禁用；Playground 默认状态须在默认背景下正常呈现，其他状态可用现有背景切换审阅；Reset 包含主题覆写；Section 链接使用路径路由与页内锚点；纯健壮性验证不默认进入正式 Gallery；复合展示不替代子级矩阵；Caption 仅含真实公开轴；共享默认禁用态集中展示，不重复列为组件设计轴，保留运行时 API；边界提示接入现有开关并验证两态；项目配置留在目标仓库；组件按纯容器、可分别搭配的不同部件或特化业务语义的顺序判定 Container／Composites／Foundations，并在新增组件或部件变化时复核 |
 | [`aw-design-fake`](./aw-design-fake/) | `1.9.0` | 统一原型 fake 数据、源码展示、占位交互与尚未接后端的演示数据临时本地持久化，并初始化或同步 bundle | 真实契约优先；模拟持久化统一注册、作用域隔离、读写受开关控制、显式重置并可替换后端；不治理真实接口缓存或单测 mock |
 | [`aw-design-token-consistency-auditor`](./aw-design-token-consistency-auditor/) | `0.9.0` | 比较 Figma Variables、`DESIGN.md` 和 CSS/Less Token | 只生成审计证据，不自动改写 Token |
 | [`aw-find-and-port-ui-component`](./aw-find-and-port-ui-component/) | `2.3.1` | 从 Base UI 与其他 React 来源（含 Lobe UI）发现、比较具体组件，并适配为 Base UI ＋ CSS Modules 实现 | 仅处理组件级意图；Find 核验准确源码与许可证后等待选择，Port 提前确认所需细节损失或新增依赖 |
+| [`mg-import-fix`](./mg-import-fix/) | `1.9.0` | 准备 MasterGo/Figma 对比测试页，修复 MG 和 ZIP 导入还原问题 | 依赖 MasterGo2Figma 项目及其测试流程，最终效果由用户验收 |
 
 ### Working On
 
@@ -119,8 +121,9 @@ python3 link-skills.py --target ~/.codex/skills
 | Skill | 版本 | 它解决什么问题 | 关键边界 |
 | --- | --- | --- | --- |
 | [`temp-local-service-doctor`](./temp-local-service-doctor/) | `1.1.1` | 启动本地多服务并定位端口、接口与页面加载故障 | 优先复用现有入口；确认进程归属；以调用链和目标页面验证结果 |
-| [`temp-prd-verifier`](./temp-prd-verifier/) | `1.1.1` | 从项目 PRD 查证需求并按需与界面或实现对照 | 区分明确规定、推断与未覆盖；只读查证或沿已有授权修正 |
 | [`temp-small-improves`](./temp-small-improves/) | `1.2.0` | 按顺序检测 66 项界面、动效、排版、颜色、无障碍、布局与文案的小型优化 | 仅用户主动点名时调用；合并重合检查，只处理有证据支持的最小改动 |
+
+Working On 也跟踪 `temp-prd-verifier`，它在本仓库暂无可安装目录。
 
 ### 不再维护
 

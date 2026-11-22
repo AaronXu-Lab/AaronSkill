@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">SWF-to-H5 conversion</title>
+  <desc id="desc">Preserve the SWF and capture its baseline, inspect scripts and assets, choose native HTML5 or Ruffle, then validate against the original. Fix and retest discrepancies before delivering.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#52606d"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; text-anchor: middle; fill: #203041; font-size: 14px; }
+    .heading { font-size: 30px; font-weight: 700; }
+    .label { font-size: 18px; font-weight: 600; }
+    .edge, .join { fill: none; stroke: #52606d; stroke-width: 2.5; }
+    .edge { marker-end: url(#arrow); }
+    .input,.step,.choice,.done { stroke-width: 2; }
+    .input { fill: #fff; stroke: #9eacb8; }
+    .step { fill: #edf6ff; stroke: #287bbb; }
+    .choice { fill: #fff7e6; stroke: #c98312; }
+    .done { fill: #edf9f1; stroke: #2e8b54; }
+  </style>
+  <rect width="1200" height="750" fill="#f7f9fb"/>
+  <text class="heading" x="600" y="48">SWF-to-H5 conversion</text>
+  <path class="edge" d="M600 150V175"/>
+  <path class="edge" d="M600 245V270"/>
+  <path class="edge" d="M445 315H350V395"/>
+  <path class="edge" d="M755 315H850V395"/>
+  <path class="join" d="M350 465V485H850V465"/>
+  <path class="edge" d="M600 485V510"/>
+  <path class="edge" d="M600 610V665"/>
+  <path class="edge" d="M765 560H1100V210H800"/>
+  <rect class="input" x="400" y="80" width="400" height="70" rx="14"/>
+  <text class="label" x="600" y="109">Preserve the SWF and capture a baseline</text>
+  <text x="600" y="132">Record hashes, metadata and original behavior</text>
+  <rect class="step" x="400" y="175" width="400" height="70" rx="14"/>
+  <text class="label" x="600" y="204">Inspect scripts, timelines and assets</text>
+  <text x="600" y="227">Recover logic and record supporting evidence</text>
+  <path class="choice" d="M600 270L755 315L600 360L445 315Z"/>
+  <text class="label" x="600" y="321">Choose a delivery</text>
+  <text x="289" y="351">Native HTML5</text>
+  <text x="880" y="351">Ruffle</text>
+  <rect class="step" x="180" y="395" width="340" height="70" rx="14"/>
+  <text class="label" x="350" y="424">Port gameplay and prepare assets</text>
+  <text x="350" y="447">Test the simulation and document differences</text>
+  <rect class="step" x="680" y="395" width="340" height="70" rx="14"/>
+  <text class="label" x="850" y="424">Package the SWF with Ruffle</text>
+  <text x="850" y="447">Verify local loading and required resources</text>
+  <path class="choice" d="M600 510L765 560L600 610L435 560Z"/>
+  <text class="label" x="600" y="555">Do the fidelity and</text>
+  <text class="label" x="600" y="578">delivery checks pass?</text>
+  <text x="925" y="550">No, investigate and retest</text>
+  <text x="624" y="640">Yes</text>
+  <rect class="done" x="400" y="665" width="400" height="60" rx="14"/>
+  <text class="label" x="600" y="690">Deliver the browser build</text>
+  <text x="600" y="712">Include the run instructions and verification results</text>
+</svg>
