@@ -32,7 +32,7 @@ Best Practices 按 [UX 建议边界](component-sections.md#best-practices) 核�
 
 Usage 涉及相似组件时，按 [场景比较](component-sections.md#相似组件的场景比较) 合并同场景候选、纳入当前组件并核对全部组件链接，在已确定的参与页面中复用正文与译文。
 
-按 [Composition](component-sections.md#composition) 区分组合关系说明与完整任务案例；已有独立 Example 时检查重复维护，并按关联文章规则保留入口。发现案例正文放错位置归第 8 项，已知 Example 缺少关联入口归第 1 项；不另加报告维度。
+按 [Composition](component-sections.md#composition) 判断组合说明的归属，先核对依赖父组件的子组件是否需要独立指引，再区分组合关系与完整任务案例；已有独立 Example 时检查重复维护，并按关联文章规则保留入口。发现案例正文放错位置归第 8 项，已知 Example 缺少关联入口归第 1 项；不另加报告维度。
 
 核对部件身份、职责和配置归属：Anatomy 按 [部件命名与职责说明](component-sections.md#anatomy) 检查，组合 API 按 [组合职责与属性归属](component-api-design.md#组合职责与属性归属) 追踪到实际子组件；同步检查公开契约、Playground、Properties 与用法说明的一致性。发现职责重复时报告实现层建议，不只改展示文案，也不因审查自行迁移 API。
 
