@@ -3,9 +3,9 @@
 Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移植时须核验内部模块与样式转换。
 
 - Status: `fresh`
-- Last checked: `2026-11-20T07:45:03+00:00`
-- Last successful refresh: `2026-11-20T07:45:03+00:00`
-- Discovery leads: `193`
+- Last checked: `2026-11-25T01:21:57+00:00`
+- Last successful refresh: `2026-11-25T01:21:57+00:00`
+- Discovery leads: `195`
 - Source type hint: `{'foundation': 'custom', 'styling': 'stylex'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
 
@@ -72,6 +72,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | createDragToSnapPoints | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/createDragToSnapPoints) | — |
 | createPanGesture | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/createPanGesture) | — |
 | createReorderable | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/createReorderable) | — |
+| createSwipe | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/createSwipe) | — |
 | DateInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DateInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DateInput/DateInput.tsx) |
 | DateRangeInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DateRangeInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DateRangeInput/DateRangeInput.tsx) |
 | DateTimeInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/DateTimeInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/DateTimeInput/DateTimeInput.tsx) |
@@ -127,6 +128,7 @@ Meta 公开的 React／StyleX 设计系统；目录索引为组件线索，移�
 | MoreMenu | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/MoreMenu) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/MoreMenu/MoreMenu.tsx) |
 | MultiSelector | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/MultiSelector) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/MultiSelector/MultiSelector.tsx) |
 | NavHeadingMenu | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/NavHeadingMenu) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/NavMenu/NavHeadingMenu.tsx) |
+| NavHeadingMenuItem | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/NavHeadingMenuItem) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/NavMenu/NavHeadingMenuItem.tsx) |
 | NavIcon | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/NavIcon) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/NavIcon/NavIcon.tsx) |
 | NumberInput | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/NumberInput) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/NumberInput/NumberInput.tsx) |
 | Outline | custom | stylex |  | [Preview](https://astryx.atmeta.com/components/Outline) | [Source](https://github.com/facebook/astryx/blob/main/packages/core/src/Outline/Outline.tsx) |

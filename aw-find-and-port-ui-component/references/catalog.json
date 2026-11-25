@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T07:45:03+00:00",
+  "generated_at": "2026-11-25T01:21:57+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,13 +1374,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
-      "last_success_at": "2026-11-20T07:45:03+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
           "etag": "\"fe45cebe6ceebed9a88d9beafc22adfe\"",
-          "last_modified": "Wed, 18 Nov 2026 12:07:39 GMT"
+          "last_modified": "Tue, 24 Nov 2026 07:44:39 GMT"
         }
       },
       "config_sha256": "dd76b6683468c97e7b62d53aa6d95370693ebd136c11071268f34ba2ae7459e5",
@@ -2606,17 +2606,17 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
-      "last_success_at": "2026-11-19T07:57:07+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
         "https://diceui.com/r/base-vega/registry.json": {
           "etag": "\"88f5336bc3f391713003549fe48a241a\"",
-          "last_modified": "Wed, 18 Nov 2026 18:28:38 GMT"
+          "last_modified": "Wed, 25 Nov 2026 01:22:24 GMT"
         },
         "https://diceui.com/sitemap.xml": {
-          "etag": "\"1e9588ae923fc343bcfd75bf24d2aa8d\"",
-          "last_modified": "Wed, 18 Nov 2026 17:16:05 GMT"
+          "etag": "\"5b545d5514f0a848b7310e8246b0a9f6\"",
+          "last_modified": "Mon, 23 Nov 2026 15:50:19 GMT"
         }
       },
       "config_sha256": "90af17f4cecdcd519c1bdb29cbb7b8aaa080bef27af1b514395ecc05e8e321fc",
@@ -3923,7 +3923,7 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
       "last_success_at": "2026-10-29T14:11:55+00:00",
       "error": null,
       "fetch": {
@@ -5881,13 +5881,13 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
-      "last_success_at": "2026-11-19T07:57:07+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
         "https://www.fluidfunctionalism.com/r/registry.json": {
-          "etag": "\"17f50ec2540be42cfb8b638b63f458d1\"",
-          "last_modified": "Wed, 18 Nov 2026 11:00:31 GMT"
+          "etag": "\"2fb96ad1aa347afa646ef2f248b3dd2f\"",
+          "last_modified": "Mon, 23 Nov 2026 00:00:31 GMT"
         }
       },
       "config_sha256": "b6a894d6f983b559d11bae33a6d6a5323c815909d08d6243d441db3b3fefa030",
@@ -6089,7 +6089,8 @@
             "https://www.fluidfunctionalism.com/r/icon-context.json",
             "https://www.fluidfunctionalism.com/r/size-context.json",
             "https://www.fluidfunctionalism.com/r/tokens.json",
-            "https://www.fluidfunctionalism.com/r/type-scale.json"
+            "https://www.fluidfunctionalism.com/r/type-scale.json",
+            "https://www.fluidfunctionalism.com/r/key-cap.json"
           ],
           "license": "unverified",
           "source_license_hint": "unverified",
@@ -7228,7 +7229,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8659,7 +8660,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
       "last_success_at": "2026-10-26T03:04:23+00:00",
       "error": null,
       "fetch": {
@@ -9495,17 +9496,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
-      "last_success_at": "2026-11-20T07:45:03+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"f50af44609822bc189a3bb2a3c5255eec65cd1886f192beaf7ed3d09ff5d8f25\"",
-          "last_modified": "Fri, 20 Nov 2026 07:44:39 GMT"
+          "etag": "W/\"beed2b30af789e8628e3202d12ef41dd05b610da8cd1e0edf33ff46556bc4099\"",
+          "last_modified": "Wed, 25 Nov 2026 01:19:12 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
-          "etag": "\"2d89d74e5a60c74ec0e4db36116418b3\"",
-          "last_modified": "Fri, 20 Nov 2026 07:45:35 GMT"
+          "etag": "\"904c99f851985fa994512fc4efe2c991\"",
+          "last_modified": "Wed, 25 Nov 2026 01:22:41 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -10855,6 +10856,28 @@
         {
           "source_id": "astryx",
           "library": "Astryx",
+          "name": "createSwipe",
+          "slug": "createSwipe",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/createSwipe",
+          "source_url": null,
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
           "name": "DateInput",
           "slug": "DateInput",
           "description": "",
@@ -12049,6 +12072,28 @@
           "category": "Components",
           "preview_url": "https://astryx.atmeta.com/components/NavHeadingMenu",
           "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/NavMenu/NavHeadingMenu.tsx",
+          "foundation_hint": "custom",
+          "styling_hint": "stylex",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official Astryx documentation and public repository describe React components authored with StyleX; verify each exact component and its internal dependencies before Port.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "astryx",
+          "library": "Astryx",
+          "name": "NavHeadingMenuItem",
+          "slug": "NavHeadingMenuItem",
+          "description": "",
+          "category": "Components",
+          "preview_url": "https://astryx.atmeta.com/components/NavHeadingMenuItem",
+          "source_url": "https://github.com/facebook/astryx/blob/main/packages/core/src/NavMenu/NavHeadingMenuItem.tsx",
           "foundation_hint": "custom",
           "styling_hint": "stylex",
           "foundation": "unverified",
@@ -13767,17 +13812,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-20T07:45:03+00:00",
-      "last_success_at": "2026-11-19T07:57:07+00:00",
+      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"b71dd0a035b3ec7b7206bd9143641d0d\"",
-          "last_modified": "Tue, 17 Nov 2026 00:42:39 GMT"
+          "etag": "W/\"ee3a866389479ccd99f856900d34d2ba\"",
+          "last_modified": "Tue, 24 Nov 2026 03:47:52 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"8ac27a70a2ec442903e300d9643fd91162b0992b90c86dbcdd2a268a1c0d84fc\"",
-          "last_modified": "Wed, 18 Nov 2026 19:41:20 GMT"
+          "etag": "W/\"31bc7a5f707b8295a1902ff27d60de981bdf6dc5382a2882cde63b93fd92f909\"",
+          "last_modified": "Tue, 24 Nov 2026 20:42:25 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -13853,7 +13898,7 @@
           "library": "Lobe UI",
           "name": "AgentAvatar",
           "slug": "agent-avatar",
-          "description": "Category: Data Display. AgentAvatar draws a deterministic character for an AI agent from a seed, a flat silhouette with big logo-style eyes. Shape and color come from a stable hash and can be overridden, the color follows the theme in dark mode, and the activity state is shown through the eyes and an optional animation. Outline: Default, Shapes, Colors, States, APIs, Styles, Class names. Docs: https://ui.lobehub.com/components/agent-avatar",
+          "description": "Category: Data Display. AgentAvatar gives an AI agent a small character with the big eyes of the Lobot logo. A seed picks a stable shape and color, the body has soft 3D volume, and the state shows what the agent is doing. Outline: Playground, Usage, Shapes, Colors, States, Follow pointer, Sizes, Picker, In EmojiPicker, AgentAvatarPicker, Styles, Class names. Docs: https://ui.lobehub.com/components/agent-avatar",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/agent-avatar",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/AgentAvatar/index.ts",
@@ -14073,7 +14118,7 @@
           "library": "Lobe UI",
           "name": "Avatar",
           "slug": "avatar",
-          "description": "Category: Data Display. Avatar and AvatarGroup with emoji, image, text fallback and loading overlay support, built on Base UI-era primitives. Outline: Generated Fallback, Group with Rings, Avatar, Styles, Class names. Docs: https://ui.lobehub.com/components/avatar",
+          "description": "Category: Data Display. Avatar and AvatarGroup with emoji, image, text fallback and loading overlay support, built on Base UI-era primitives. Outline: Generated Fallback, Group with Rings, Interactive Group, Avatar, Styles, Class names. Docs: https://ui.lobehub.com/components/avatar",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/avatar",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Avatar/index.ts",
@@ -15217,7 +15262,7 @@
           "library": "Lobe UI",
           "name": "EmojiPicker",
           "slug": "emoji-picker",
-          "description": "Category: Data Entry. EmojiPicker is a component that allows users to select emoji icons or upload custom avatars. It supports multiple tabs, custom emoji sets, model avatars from @lobehub/icons, and includes options for uploading and deleting avatars. Outline: EmojiPickerCustomEmoji, EmojiPickerCustomTab, Styles, Class names. Docs: https://ui.lobehub.com/components/emoji-picker",
+          "description": "Category: Data Entry. EmojiPicker is a component that allows users to select emoji icons or upload custom avatars. It supports multiple tabs, custom emoji sets, model avatars from @lobehub/icons, and includes options for uploading and deleting avatars. Outline: Agent Avatar, EmojiPickerCustomEmoji, EmojiPickerCustomTab, Styles, Class names. Docs: https://ui.lobehub.com/components/emoji-picker",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/emoji-picker",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/EmojiPicker/index.ts",
@@ -16337,6 +16382,116 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "Lobot",
+          "slug": "brand/lobot",
+          "description": "Category: Combine. A brand component for the Lobot logo, as the mark, the wordmark or the combined lockup, with an optional product name after it. Outline: Styles, Class names. Docs: https://ui.lobehub.com/components/brand/lobot",
+          "category": "brand",
+          "preview_url": "https://ui.lobehub.com/components/brand/lobot",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/brand/Lobot/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "LobotBrandLoading",
+          "slug": "brand/lobot-brand-loading",
+          "description": "Category: Components. The Lobot brand mark as an app-level loader, black with its white outline in both themes. Its two bubbles circle the head while the eyes follow them, and it rests on the static logo when reduced motion is preferred. Outline: Example, Sizes, Styles, Class names. Docs: https://ui.lobehub.com/components/brand/lobot-brand-loading",
+          "category": "brand",
+          "preview_url": "https://ui.lobehub.com/components/brand/lobot-brand-loading",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/brand/LobotBrandLoading/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "LobotBrandLoading3d",
+          "slug": "brand/lobot-brand-loading3d",
+          "description": "Category: Components. A faint gray Lobot loader with implied volume. It jumps with a full turn of the head, lands into a smile and looks around while its bubbles circle above, as a quiet placeholder for content that is on its way. Outline: Example, Sizes, Motion, Styles, Class names. Docs: https://ui.lobehub.com/components/brand/lobot-brand-loading3d",
+          "category": "brand",
+          "preview_url": "https://ui.lobehub.com/components/brand/lobot-brand-loading3d",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/brand/LobotBrandLoading3d/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "LobotMono",
+          "slug": "brand/lobot-mono",
+          "description": "Category: Components. Renders the Lobot mark, a black body with a white outline that stays readable on light and dark backgrounds. Outline: Styles, Class names. Docs: https://ui.lobehub.com/components/brand/lobot-mono",
+          "category": "brand",
+          "preview_url": "https://ui.lobehub.com/components/brand/lobot-mono",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/brand/LobotMono/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "LobotText",
+          "slug": "brand/lobot-text",
+          "description": "Category: Components. Renders the Lobot wordmark as a current-color SVG with configurable size. Outline: Styles, Class names. Docs: https://ui.lobehub.com/components/brand/lobot-text",
+          "category": "brand",
+          "preview_url": "https://ui.lobehub.com/components/brand/lobot-text",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/brand/LobotText/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "Logo3d",
           "slug": "brand/logo3d",
           "description": "Category: Components. A component that renders a 3D image of the LobeHub logo using a CDN-hosted asset. Outline: APIs, Styles, Class names. Docs: https://ui.lobehub.com/components/brand/logo3d",
@@ -17263,7 +17418,7 @@
           "library": "Lobe UI",
           "name": "Select",
           "slug": "select",
-          "description": "Category: Data Entry. Base UI-powered Select component. Outline: Viewport Bounds, SelectOption, SelectOptionGroup, SelectClassNames, Styles, Class names. Docs: https://ui.lobehub.com/components/select",
+          "description": "Category: Data Entry. Base UI-powered Select component. Outline: Trailing Description, Viewport Bounds, SelectOption, SelectOptionGroup, SelectClassNames, Styles, Class names. Docs: https://ui.lobehub.com/components/select",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/select",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Select/index.ts",

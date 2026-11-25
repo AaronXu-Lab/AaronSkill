@@ -40,6 +40,24 @@
 
 维护者沿工作流的占位判断入口走查上述六例，核对规则适用边界、默认／比较一致性、场景归属及项目尺寸边界。本次为文档语义走查，未进行独立模型回放或新增 Gallery UI 修改。
 
+## Interactive Demo 准入（4.33.2–4.33.3）
+
+| 给定事实／请求 | 预期判断 |
+| --- | --- |
+| Button 页面已能切换和比较 loading，独立 Demo 只用定时器模拟完成并显示结果。 | 省略 Interactive Demo，保留 Playground 和 Properties 中的状态。 |
+| Dialog 的 Playground 展示弹层外观，读者仍需亲手打开、按 Esc 关闭并观察焦点回到触发器。 | 可保留验证这段核心行为的最小演示。 |
+| 仅需触发两个版本以比较 `closeOnOutsideClick`。 | 在对应 Properties 属性轴内提供触发器。 |
+| Filter Bar 的 Demo 模拟远端请求、分页和已选名称保留。 | 省略独立章节。调用方的数据和请求约定归开发契约，按需通过测试验证。 |
+| Message Source 的 Demo 用 1、3、6 个来源展示姓名、头像叠放和 `+n`。 | 作为 Properties 的样例数量比较。用现有 `sources` 数据验证从 5 到 6 的边界，无需增加组件属性。 |
+| Search Bar 的 Demo 展示常规搜索和前后跳转，并加入宿主的历史加载及全局搜索联动。 | 保留 Playground 中的基础操作，省略独立章节。宿主集成有独立说明价值时归相应 Scenario。 |
+
+## 通用头像示例（4.33.1）
+
+| 给定事实／请求 | 预期判断 |
+| --- | --- |
+| Breadcrumb Item 的 `avatar+text` 比较使用外部人物照片，标签是 `Text`，Avatar 已提供默认占位。 | 修正通用头像来源。核对 Properties 和切换到 `avatar+text` 后的 Playground 均使用默认占位。 |
+| 项目已指定通用头像资源，或者 Avatar 的 Interactive Demo 专门展示上传照片后的加载效果。 | 通用示例沿用项目指定头像。加载演示保留能呈现该行为的照片。 |
+
 ## 用法文案回归（4.18.0）
 
 | 给定事实／请求 | 预期判断 |

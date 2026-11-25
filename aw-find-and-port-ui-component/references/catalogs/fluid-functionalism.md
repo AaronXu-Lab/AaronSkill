@@ -3,8 +3,8 @@
 优先收录 Base UI 变体，并保留兼容的原生组件。
 
 - Status: `fresh`
-- Last checked: `2026-11-20T07:45:03+00:00`
-- Last successful refresh: `2026-11-19T07:57:07+00:00`
+- Last checked: `2026-11-25T01:21:57+00:00`
+- Last successful refresh: `2026-11-25T01:21:57+00:00`
 - Discovery leads: `37`
 - Source type hint: `{'foundation': 'mixed', 'styling': 'tailwind-css'}`
 - Evidence: index metadata only; verify exact source, behavior, dependencies and license.
