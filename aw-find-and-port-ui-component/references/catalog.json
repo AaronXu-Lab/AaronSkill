@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-25T01:21:57+00:00",
+  "generated_at": "2026-11-25T16:30:16+00:00",
   "sources": {
     "shadcn-base": {
       "id": "shadcn-base",
@@ -11,7 +11,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
       "last_success_at": "2026-09-28T08:33:48+00:00",
       "error": null,
       "fetch": {
@@ -1374,8 +1374,8 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
-      "last_success_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
+      "last_success_at": "2026-11-25T16:30:16+00:00",
       "error": null,
       "fetch": {
         "https://coss.com/ui/llms.txt": {
@@ -2606,7 +2606,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
       "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
@@ -3923,13 +3923,13 @@
         "styling": "unverified"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
-      "last_success_at": "2026-10-29T14:11:55+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
+      "last_success_at": "2026-11-25T16:30:16+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/keenthemes/reui/git/trees/main?recursive=1": {
-          "etag": "W/\"63003f21519c1862ad7307b36967f3ca852e69e73fd9b7b13f3ad7a3aa14debc\"",
-          "last_modified": "Thu, 22 Oct 2026 08:23:56 GMT"
+          "etag": "W/\"078629b2ca6aafb245be078d54efcdc020aad1d38952fa3025b8635cedfaeaed\"",
+          "last_modified": "Wed, 25 Nov 2026 15:39:43 GMT"
         }
       },
       "config_sha256": "75ea0fc4a6799d31b8d90fd783bb4365b8a65ddbae8ccb2e0ab24ab197ed1f83",
@@ -5881,7 +5881,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
       "last_success_at": "2026-11-25T01:21:57+00:00",
       "error": null,
       "fetch": {
@@ -7229,7 +7229,7 @@
         "styling": "tailwind-css"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
       "last_success_at": "2026-09-27T12:20:47+00:00",
       "error": null,
       "fetch": {
@@ -8660,7 +8660,7 @@
         "styling": "unstyled"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
       "last_success_at": "2026-10-26T03:04:23+00:00",
       "error": null,
       "fetch": {
@@ -9496,17 +9496,17 @@
         "styling": "stylex"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
-      "last_success_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
+      "last_success_at": "2026-11-25T16:30:16+00:00",
       "error": null,
       "fetch": {
         "https://api.github.com/repos/facebook/astryx/git/trees/main?recursive=1": {
-          "etag": "W/\"beed2b30af789e8628e3202d12ef41dd05b610da8cd1e0edf33ff46556bc4099\"",
-          "last_modified": "Wed, 25 Nov 2026 01:19:12 GMT"
+          "etag": "W/\"b76d168cdd11b3d15921c8356dfd58e8f3cf2a87d41f7bb4c82d61a4631c61d8\"",
+          "last_modified": "Wed, 25 Nov 2026 16:31:02 GMT"
         },
         "https://astryx.atmeta.com/sitemap.xml": {
           "etag": "\"904c99f851985fa994512fc4efe2c991\"",
-          "last_modified": "Wed, 25 Nov 2026 01:22:41 GMT"
+          "last_modified": "Wed, 25 Nov 2026 16:31:16 GMT"
         }
       },
       "config_sha256": "b057683b91cd4609a8c2d2317202490f877861b8f4a0978d0fc392121638921c",
@@ -13812,17 +13812,17 @@
         "styling": "antd-style"
       },
       "status": "fresh",
-      "last_checked_at": "2026-11-25T01:21:57+00:00",
-      "last_success_at": "2026-11-25T01:21:57+00:00",
+      "last_checked_at": "2026-11-25T16:30:16+00:00",
+      "last_success_at": "2026-11-25T16:30:16+00:00",
       "error": null,
       "fetch": {
         "https://ui.lobehub.com/llms.txt": {
-          "etag": "W/\"ee3a866389479ccd99f856900d34d2ba\"",
-          "last_modified": "Tue, 24 Nov 2026 03:47:52 GMT"
+          "etag": "W/\"98f502561980723a74a4f9779bd5c78d\"",
+          "last_modified": "Wed, 25 Nov 2026 03:47:56 GMT"
         },
         "https://api.github.com/repos/lobehub/lobe-ui/git/trees/master?recursive=1": {
-          "etag": "W/\"31bc7a5f707b8295a1902ff27d60de981bdf6dc5382a2882cde63b93fd92f909\"",
-          "last_modified": "Tue, 24 Nov 2026 20:42:25 GMT"
+          "etag": "W/\"631e90102e953679115c91f1ffc9a26fb926f1766b15c848d590aa6e98f57352\"",
+          "last_modified": "Wed, 25 Nov 2026 09:12:59 GMT"
         }
       },
       "config_sha256": "bc6f51482649ada956447dda3759655073c01d2037d8e1415d3c8532621acc4e",
@@ -13968,6 +13968,28 @@
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/anchor",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Anchor/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "AnimatedNumber",
+          "slug": "animated-number",
+          "description": "Category: Data Display. A number that counts up or down to its new value whenever it changes, for token totals, costs and other live counters. It renders plain text and inherits the surrounding typography. Outline: Basic, APIs. Docs: https://ui.lobehub.com/components/animated-number",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/animated-number",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/AnimatedNumber/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -14996,6 +15018,28 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "DiffStat",
+          "slug": "diff-stat",
+          "description": "Category: Data Display. A git-style line stat showing added and removed lines in green and red, optionally led by a dot for the kind of change. Use it on file rows, edit summaries and pull request lists. Outline: Basic, Styles, Class names. Docs: https://ui.lobehub.com/components/diff-stat",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/diff-stat",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/DiffStat/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "DingTalk",
           "slug": "icons/ding-talk",
           "description": "Category: Channel Icons. Provides the DingTalk monochrome icon and avatar variant, together with title and primary-color metadata. Docs: https://ui.lobehub.com/components/icons/ding-talk",
@@ -15260,6 +15304,28 @@
         {
           "source_id": "lobe-ui",
           "library": "Lobe UI",
+          "name": "ElapsedTime",
+          "slug": "elapsed-time",
+          "description": "Category: Data Display. A live duration label for running work such as tool calls, tasks and generations. It ticks from a start time, freezes on an end time, and keeps a steady width. Outline: Basic, APIs, Styles, Class names. Docs: https://ui.lobehub.com/components/elapsed-time",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/elapsed-time",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/ElapsedTime/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
           "name": "EmojiPicker",
           "slug": "emoji-picker",
           "description": "Category: Data Entry. EmojiPicker is a component that allows users to select emoji icons or upload custom avatars. It supports multiple tabs, custom emoji sets, model avatars from @lobehub/icons, and includes options for uploading and deleting avatars. Outline: Agent Avatar, EmojiPickerCustomEmoji, EmojiPickerCustomTab, Styles, Class names. Docs: https://ui.lobehub.com/components/emoji-picker",
@@ -15288,6 +15354,28 @@
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/empty",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Empty/index.ts",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "Favicon",
+          "slug": "favicon",
+          "description": "Category: Data Display. The icon of a website, looked up by host name or URL, for search results, citations and link previews. A site that cannot be resolved shows a globe instead of a broken image. Outline: Basic, Icon source, Styles, Class names. Docs: https://ui.lobehub.com/components/favicon",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/favicon",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/Favicon/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -15662,6 +15750,28 @@
           "category": "icons",
           "preview_url": "https://ui.lobehub.com/components/icons/github",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/icons/Github/index.mdx",
+          "foundation_hint": "mixed",
+          "styling_hint": "antd-style",
+          "foundation": "unverified",
+          "styling": "unverified",
+          "variant": "unverified",
+          "dependencies": [],
+          "license": "unverified",
+          "source_license_hint": "MIT",
+          "foundation_evidence": "Official component index and public MIT repository locate source candidates; inspect the exact component imports, providers, styles and transitive dependencies before recommending or porting.",
+          "port_eligible": false,
+          "verification_status": "unverified",
+          "requires_verification": true
+        },
+        {
+          "source_id": "lobe-ui",
+          "library": "Lobe UI",
+          "name": "GlideHighlight",
+          "slug": "glide-highlight",
+          "description": "Category: General. A single hover layer that glides between the rows of a menu, list or tab strip instead of blinking on each one. It follows the pointer and keyboard focus. Outline: Basic, Horizontal, APIs, Styles, Class names. Docs: https://ui.lobehub.com/components/glide-highlight",
+          "category": "Components",
+          "preview_url": "https://ui.lobehub.com/components/glide-highlight",
+          "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/GlideHighlight/index.ts",
           "foundation_hint": "mixed",
           "styling_hint": "antd-style",
           "foundation": "unverified",
@@ -16252,7 +16362,7 @@
           "library": "Lobe UI",
           "name": "List",
           "slug": "list",
-          "description": "Category: Navigation. A vertical list of selectable rows with icons or avatars, descriptions, trailing extras, hover actions and dividers. Outline: APIs, Migrating from antd Menu / List, Styles, Class names. Docs: https://ui.lobehub.com/components/list",
+          "description": "Category: Navigation. A vertical list of selectable rows with icons or avatars, descriptions, trailing extras, hover actions and dividers. Outline: Gliding hover, APIs, Migrating from antd Menu / List, Styles, Class names. Docs: https://ui.lobehub.com/components/list",
           "category": "Components",
           "preview_url": "https://ui.lobehub.com/components/list",
           "source_url": "https://github.com/lobehub/lobe-ui/blob/master/src/List/index.ts",
