@@ -2,7 +2,7 @@
 name: aw-design-system-gallery
 description: "Use when reviewing, validating, creating, or modifying design-system Gallery pages, default or comparison examples, property axes and their applicability conditions, Captions, placeholder copy, or icons created or adjusted alongside component additions or changes, even without an explicit request for a Gallery review. Not for ordinary component implementation or product copy changes that do not involve the Gallery."
 metadata:
-  version: "4.33.3"
+  version: "4.34.0"
   author: "aaron_xu"
   creation_context: "为以可控成本优化设计系统组件的 Gallery 展示，使属性轴、示例结构与目标项目事实源保持一致，并支持从局部改进渐进扩展到获授权的批量审查而创建。"
 ---
@@ -22,6 +22,8 @@ metadata:
 | 其他页面：Docs、Styles、Scenario、概览与导航等非组件详情页 | [其他页面标准](references/other-pages.md)，按页面职责和本次改动读取 |
 | Components：组件页面及相关开发契约 | [Components 九项标准](references/components.md)，完整校验依次覆盖，局部任务只选对应项 |
 | 设计系统校验、组件检查或批量审计的结果汇总 | [统一校验报告](references/audit-report.md)，组件名为首列，固定九项列，编号与表后列表对应 |
+
+Docs 正文审阅与改写按[关联 Skill 检测与管理](references/related-skills.md)使用 technical-writing。
 
 部件检查区分身份、职责与配置归属：Anatomy 说明部件本身的用途，组合 API 追踪实际职责所有者；分别归第 4 项和第 3 项，不另增检查列。父子组件的组合指引归属与完整案例的分工见 [Composition](references/component-sections.md#composition)；完整案例归独立 Example；案例正文集中维护，组件页通过 Relates 提供已知案例入口。
 
